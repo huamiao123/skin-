@@ -91,7 +91,7 @@ def export_checkpoint(checkpoint,cfg,*,run_id,alpha=1.,weight=0.,method='d0',d0_
                             loss_view='canonical_letterbox_valid',fp_added=0,fn_added=0,fp_removed=0,fn_removed=0,
                             message_rms=0.,logit_delta_rms=0.,changed_pixel_fraction=0.)))
         print(f'Exported {run_id} {subset}: {len(dataset)} validation images',flush=True)
-    destination=Path(destination or PROJECT/'outputs/per_reference'/f'{run_id}.csv')
+    destination=Path(destination or PROJECT/'outputs/per_reference'/f'seed{seed}'/f'{run_id}.csv')
     destination.parent.mkdir(parents=True,exist_ok=True)
     fields=sorted(set().union(*(set(r) for r in rows)))
     temp=destination.with_suffix('.tmp.csv')
