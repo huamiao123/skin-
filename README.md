@@ -22,6 +22,8 @@ python -u -m rsi.run_pilot --seed 17
 
 全量训练入口要求完整文件审计成功且绑定当前 manifest SHA256；固定16图的单独审计不能解锁全量训练。断点继续使用相同命令，校验配置、seed、初始化、清单及代码 hash，恢复模型、optimizer、scheduler、scaler、RNG，并清除未提交 epoch 的日志。
 
+AMP 溢出由 GradScaler 跳过更新；日志分别记录实际 optimizer 更新、尝试次数、跳过次数及非有限梯度范数数量。范数均值只汇总有限值，全溢出时保留空均值。第一次 A-CNN 在第31轮诊断汇总中断，完整失败目录已封存；修复后从 ImageNet 起点按原100轮预算重新运行，未把失败 run 的权重混入共同起点。
+
 文档中的分阶段命令已实现为 `rsi.train_anchor`、`rsi.train_message`、`rsi.export_actions`、`rsi.prepare_abs_threshold`、`rsi.train_objective`、`rsi.summarize_pilot`，每个入口可用 `--help` 查看参数。`RUN_B` 应替换为对应 seed 的 B 目录或其 best.pth。
 
 所有 A/B/D 阶段跑满固定预算，按原图 val macro mean-rater hard Dice 选 checkpoint，精确并列取更早 epoch。B/D 只更新消息参数，CNN/Transformer/辅助头全部冻结并保持 eval；逐 epoch 校验冻结 hash 与固定 FP32 anchor 输出。四个 D 目标共享同一个已完成且选定的 B，各自新建 optimizer，使用相同增强与采样序列。q 仅来自 B 的 canonical M train，每图再每参考加权75%分位。

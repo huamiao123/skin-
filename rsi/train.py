@@ -176,6 +176,31 @@ def make_optimizer(model,stage,cfg):
     return optimizer,[g['lr'] for g in groups]
 
 
+def finish_optimizer_step(optimizer, scaler, parameters, max_norm):
+    """Keep AMP overflow handling intact and observe actual optimizer calls."""
+    scaler.unscale_(optimizer)
+    norm = float(torch.nn.utils.clip_grad_norm_(parameters, max_norm))
+    updated = False
+    def record_update(*_):
+        nonlocal updated
+        updated = True
+    handle = optimizer.register_step_post_hook(record_update)
+    try:
+        scaler.step(optimizer); scaler.update()
+    finally:
+        handle.remove()
+    if not math.isfinite(norm) and updated:
+        raise FloatingPointError('Nonfinite gradient norm was not skipped by AMP')
+    return dict(norm=norm, clipped=math.isfinite(norm) and norm>max_norm, skipped=not updated)
+
+
+def gradient_norm_summary(norms):
+    finite = [x for x in norms if math.isfinite(x)]
+    return dict(gradient_norm_before_clip=float(np.mean(finite)) if finite else None,
+                gradient_norm_finite_count=len(finite),
+                gradient_norm_nonfinite_count=len(norms)-len(finite))
+
+
 def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name=None,resume=True):
     audit=json.loads(Path(cfg['audit']).read_text())
     if not audit.get('file_audit_complete',False) or audit.get('scope') not in ['full','all_selected_M_H_T1']:
@@ -219,7 +244,7 @@ def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name
     scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lambda e: (e+1)/warmup if e<warmup else
          .5*(1+math.cos(math.pi*(e-warmup)/max(1,budget-warmup))))
     scaler=torch.cuda.amp.GradScaler(enabled=cfg['amp'])
-    epoch_start=1;best=-math.inf;best_epoch=None;steps=0;elapsed_before=0.
+    epoch_start=1;best=-math.inf;best_epoch=None;steps=0;step_attempts=0;elapsed_before=0.
     if resume and (run_dir/'latest.pth').is_file():
         last=torch.load(run_dir/'latest.pth',map_location='cpu')
         if last['manifest_hash']!=manifest_hash: raise ValueError('Resume manifest changed')
@@ -232,7 +257,8 @@ def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name
         model.load_state_dict(last['model']);optimizer.load_state_dict(last['optimizer'])
         scheduler.load_state_dict(last['scheduler']);scaler.load_state_dict(last['scaler'])
         restore_rng(last['rng']);epoch_start=last['epoch']+1;best=last['best_dice'];best_epoch=last['best_epoch']
-        steps=last['optimizer_steps'];elapsed_before=last['wall_seconds']
+        steps=last['optimizer_steps'];step_attempts=last.get('optimizer_step_attempts',steps)
+        elapsed_before=last['wall_seconds']
         if last['epoch'] == best_epoch:
             # latest is saved before best; an interruption between these atomic
             # writes still contains the complete selected checkpoint.
@@ -260,7 +286,7 @@ def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name
         batches=loader(train,cfg['microbatch_start'],cfg['workers'],seed=seed,epoch=epoch,shuffle=True)
         accumulation=cfg['effective_batch']//cfg['microbatch_start']
         if accumulation*cfg['microbatch_start']!=cfg['effective_batch']: raise ValueError('Invalid effective batch')
-        totals={k:0. for k in fields};seen=0;grad_norms=[];clipped=0;message_rms=[];delta_rms=[]
+        totals={k:0. for k in fields};seen=0;grad_norms=[];clipped=0;skipped=0;message_rms=[];delta_rms=[]
         torch.cuda.reset_peak_memory_stats()
         optimizer.zero_grad(set_to_none=True)
         for batch_index,cpu_batch in enumerate(batches):
@@ -277,10 +303,11 @@ def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name
                 message_rms.append(scalar(out['message'].float().square().mean().sqrt()))
                 delta_rms.append(scalar((out['z1'].float()-out['z0'].float()).square().mean().sqrt()))
             if (batch_index+1)%accumulation==0 or batch_index+1==len(batches):
-                scaler.unscale_(optimizer)
-                norm=torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad],cfg['gradient_clip'])
-                grad_norms.append(scalar(norm));clipped+=int(norm>cfg['gradient_clip'])
-                scaler.step(optimizer);scaler.update();optimizer.zero_grad(set_to_none=True);steps+=1
+                step_info=finish_optimizer_step(optimizer,scaler,
+                    [p for p in model.parameters() if p.requires_grad],cfg['gradient_clip'])
+                grad_norms.append(step_info['norm']);clipped+=int(step_info['clipped'])
+                skipped+=int(step_info['skipped']);steps+=int(not step_info['skipped']);step_attempts+=1
+                optimizer.zero_grad(set_to_none=True)
         if frozen_hash is not None:
             if model.frozen_state_hash()!=frozen_hash: raise RuntimeError('Anchor/frozen parameters or buffers changed')
             model.eval()
@@ -306,18 +333,21 @@ def train_stage(cfg,seed,stage,*,init=None,method='d0',weight=0.,q=None,run_name
                  **{f'augmented_train_{k}':v/seen for k,v in totals.items()},
                  **{f'canonical_train_{k}':(train_metrics or {}).get(k) for k in fields},
                  **{f'val_{k}':val_metrics[k] for k in val_metrics},**diagnostics,
-                 gradient_norm_before_clip=float(np.mean(grad_norms)),gradient_clip_fraction=clipped/len(grad_norms),
+                 **gradient_norm_summary(grad_norms),gradient_clip_fraction=clipped/len(grad_norms),
+                 amp_skipped_steps=skipped,amp_skipped_step_fraction=skipped/len(grad_norms),
                  augmented_message_rms=float(np.mean(message_rms)) if message_rms else None,
                  augmented_logit_delta_rms=float(np.mean(delta_rms)) if delta_rms else None,
                  lr_group0=optimizer.param_groups[0]['lr'],lr_group1=optimizer.param_groups[1]['lr'] if len(optimizer.param_groups)>1 else None,
                  epoch_seconds=epoch_seconds,peak_cuda_bytes=torch.cuda.max_memory_allocated(),
                  anchor_max_absolute_error=anchor_max_absolute_error,
-                 best_epoch=best_epoch,best_val_dice=best,optimizer_steps=steps)
+                 best_epoch=best_epoch,best_val_dice=best,optimizer_steps=steps,optimizer_step_attempts=step_attempts,
+                 skipped_optimizer_steps=step_attempts-steps)
         append_csv(run_dir/'epoch_diagnostics.csv',row)
         scheduler.step()
         payload=dict(model=model.state_dict(),optimizer=optimizer.state_dict(),scheduler=scheduler.state_dict(),
                      scaler=scaler.state_dict(),rng=rng_state(),epoch=epoch,seed=seed,stage=stage,method=method,
                      weight=weight,q=q,best_dice=best,best_epoch=best_epoch,optimizer_steps=steps,
+                     optimizer_step_attempts=step_attempts,skipped_optimizer_steps=step_attempts-steps,
                      config=cfg,manifest_hash=manifest_hash,code=provenance,frozen_hash=frozen_hash,
                      init_checkpoint_hash=init_hash,
                      wall_seconds=elapsed_before+time.monotonic()-wall_start,selection_rule='max_val_macro_mean_rater_hard_dice_earlier_tie')
