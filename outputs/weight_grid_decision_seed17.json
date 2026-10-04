@@ -1,0 +1,40 @@
+{
+  "decided_utc": "2026-10-03T14:51:35.054287+00:00",
+  "decision": "run_registered_symmetric_weights_0.3_and_3",
+  "seed": 17,
+  "maximum_D_training_tasks_including_D0": 10,
+  "additional_tasks": 6,
+  "methods": [
+    "rsi",
+    "mean_hinge",
+    "abs_hard"
+  ],
+  "positive_weights": [
+    0.3,
+    1.0,
+    3.0
+  ],
+  "initial_lambda1_all_full_budget_complete": true,
+  "FixedShrink_four_core_points_complete": true,
+  "reasons": [
+    "T0 and ordinary-message T1 passed with nonzero training risk and gradients",
+    "At lambda1, learned RSI reduces harm vs D0 but its aggregate Dice/G+/H_epsilon are almost reproduced by registered FixedShrink alpha2/3",
+    "Need to separate objective behavior from choice of penalty weight; cannot reject RSI on lambda1 alone",
+    "Both extra weights are added to all three weighted objectives under identical budgets and shared B/q"
+  ],
+  "limitations": [
+    "Tiny core-coordinate differences are not substantive dominance evidence",
+    "RSI any-harm and sign-flip are modestly lower than alpha2/3; full boundaries, worst-tail and direct paired intervals are still pending",
+    "All selection and current results are exploratory development validation"
+  ],
+  "reference_files": [
+    "fixed_shrink_core_seed17.json",
+    "lambda1_selected_epoch_comparison_seed17.csv",
+    "D0_RSI1_training_review.json",
+    "T1_summary_seed17/decision_inputs.json"
+  ],
+  "test_scoring_locked": true,
+  "H_T1_not_used_for_parameter_selection": true,
+  "seed29_decision_pending": true,
+  "formal_seeds_not_started": true
+}

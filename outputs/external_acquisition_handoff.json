@@ -1,0 +1,68 @@
+{
+  "updated_utc": "2026-10-03T10:34:30Z",
+  "rsi_source_changes_since_freeze": false,
+  "owned_active_download_processes": [],
+  "model_test_scoring_performed": false,
+  "ISIC2017_pairs": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "ISIC2018_pairs": {
+    "train": 2594,
+    "val": 100,
+    "test": 1000
+  },
+  "all_ISIC_RGB_mask_pairs_full_file_audit_passed": true,
+  "ISIC2018_training_archive_complete": false,
+  "ISIC2018_training_required_original_JPEG_members_complete": true,
+  "ISIC2018_member_recovery": {
+    "exact_2017_size_crc_reuse": 2450,
+    "complete_official_prefix_recovered_members": 144,
+    "tail_central_directory_verified": true
+  },
+  "PH2_mirror_pairs": 200,
+  "PH2_mirror_full_file_audit_passed": true,
+  "PH2_mirror_MD5_zenodo_published": "a37f6a83c777ca861f055fdf49757991",
+  "PH2_mirror_SHA256": "03e79a7eefa36d49e7f4bc7be2f26d3091b83b7b5bc79666e27f26b943c8c5e9",
+  "PH2_original_official_archive_equivalence_verified": false,
+  "final_IMA_overlap_manifest_unique_images": 2145,
+  "final_IMA_overlap_manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "notable_ISIC2017_official_cross_split_identical_JPEG_pairs": [
+    {
+      "test": "ISIC_0015982",
+      "train": "ISIC_0012175"
+    },
+    {
+      "test": "ISIC_0016018",
+      "train": "ISIC_0012271"
+    },
+    {
+      "test": "ISIC_0016002",
+      "val": "ISIC_0012221"
+    },
+    {
+      "train": "ISIC_0012970",
+      "val": "ISIC_0012127"
+    }
+  ],
+  "scope_limitations": [
+    "No complete patient identity audit possible for P1/PH2 without patient metadata",
+    "PH2 exact image-level overlap absent; perceptual/near-duplicate overlap was not screened",
+    "No model evaluation on any test dataset performed",
+    "ISIC2018 selected member CRC+size and decoded-file checks complete; full training ZIP archive hash not available"
+  ],
+  "status": "outputs/external_data_status.json",
+  "audits": [
+    "data_manifests/external_isic2018_train_image_recovery_summary.json",
+    "data_manifests/external_ph2_mirror_audit.json",
+    "data_manifests/external_overlap_summary.json",
+    "data_manifests/external_decoded_overlap_dimensions_audit.json"
+  ],
+  "required_segmentation_datasets_complete": true,
+  "PH2_historical_original_directory_archive_byte_equivalence_verified": true,
+  "PH2_verified_scope": "All200RGB and200lesion masks; historical original directory additionally includes50ROI and clinical200ID80/80/40 metadata",
+  "PH2_official_creator_controlled_archive_equivalence_unverified": true,
+  "PH2_historical_provenance": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_ph2_historical_provenance.json",
+  "PH2_state": "historical_original_directory_archive_byte_equivalence_verified"
+}

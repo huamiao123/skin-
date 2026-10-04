@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "decision_author": "root",
+  "decided_utc": "2026-10-04T06:28:07.812307+00:00",
+  "status": "registered_seed17_feasibility_complete_claims_narrowed",
+  "completion_scope": "required_dataset_members_and_T0_T1_full_registered_T2_seed17",
+  "protocol_id": "P2-IMA-M-v2",
+  "seed": 17,
+  "run_seed29": false,
+  "formal_seeds_started": false,
+  "T3_modules_started": false,
+  "test_scoring_locked": true,
+  "test_scores_read": false,
+  "no_H_T1_test_selection": true,
+  "workpoints_reselected": false,
+  "scientific_pass_for_expansion": false,
+  "feasibility_pass": true,
+  "unique_advantage_established": false,
+  "cross_source_robustness_established": false,
+  "statistical_equivalence_claimed": false,
+  "strict_simple_control_dominance_claimed": false,
+  "hypothesis_declared_universally_invalid": false,
+  "decision_reason": "完整网格支持工程可执行和相对D0降低退化，但实际Fixed-Shrink提供强对照：RSI3对S2/3的H改进伴G减少，对合格S1/3多保留G也多承担风险，Dice优势未定，来源与同图M参考回退。当前缺少值得用新seed确认的独特积极信号，收束首轮扩展。",
+  "seed29_allowed_in_principle": true,
+  "why_seed29_not_triggered": "文档允许合理未定差异的一次冻结复核，非强制。新初始化不增加H/T1病例，也不能单独排除保守消息权衡解释。本次不为寻找有利种子续跑。",
+  "support": [
+    "T0实现和完整数据审计通过",
+    "T1普通消息有平均正收益与跨参考抵消",
+    "RSI对D0降低Hε并改善最差尾部，仍保留正收益"
+  ],
+  "claims_narrowed": [
+    "简单消息缩放不能解释的内容改进",
+    "跨来源普遍稳定或每参考硬Dice安全"
+  ],
+  "future_confirmation_only_if_new_explicit_objective": {
+    "frozen_RSI_lambda": 3.0,
+    "strongest_simple_control": "Shrink-D0-0.333333",
+    "frozen_control_alpha": 0.3333333333333333,
+    "include_D0": true,
+    "own_fresh_A_B_per_seed": true,
+    "no_lambda_alpha_reselection": true
+  },
+  "selected_workpoints": [
+    {
+      "run_id": "AbsHard-1",
+      "method": "abs_hard",
+      "lambda": "1.0",
+      "alpha": "1.0",
+      "checkpoint_hash": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168"
+    },
+    {
+      "run_id": "D0",
+      "method": "d0",
+      "lambda": "0.0",
+      "alpha": "1.0",
+      "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+    },
+    {
+      "run_id": "MeanHinge-3",
+      "method": "mean_hinge",
+      "lambda": "3.0",
+      "alpha": "1.0",
+      "checkpoint_hash": "0df5ad8bc3e2976f7e9d2e569fc8ba34993ec7e46fa8153ee61792bdda7498d7"
+    },
+    {
+      "run_id": "RSI-3",
+      "method": "rsi",
+      "lambda": "3.0",
+      "alpha": "1.0",
+      "checkpoint_hash": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "method": "shrink",
+      "lambda": "0.0",
+      "alpha": "0.3333333333333333",
+      "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+    }
+  ],
+  "M_selected_and_context_values": {
+    "Anchor": {
+      "dice": 0.8552520003612387,
+      "G_plus": 0.0,
+      "H_epsilon": 0.0,
+      "worst_tail_10pct": 0.0,
+      "any_harm": 0.0,
+      "sign_flip": 0.0,
+      "bf1": 0.3886079197875741,
+      "hd95_normalized": 0.053639315683159126
+    },
+    "D0": {
+      "dice": 0.858316915574831,
+      "G_plus": 0.012552872267370662,
+      "H_epsilon": 0.0074222018819997725,
+      "worst_tail_10pct": -0.06666460902230338,
+      "any_harm": 0.6233183856502242,
+      "sign_flip": 0.42152466367713004,
+      "bf1": 0.3803099174830215,
+      "hd95_normalized": 0.052603580986980106
+    },
+    "RSI-3": {
+      "dice": 0.8580102222798561,
+      "G_plus": 0.00785694858417242,
+      "H_epsilon": 0.003259121028041759,
+      "worst_tail_10pct": -0.03846017709358078,
+      "any_harm": 0.5291479820627802,
+      "sign_flip": 0.36771300448430494,
+      "bf1": 0.38910959198274014,
+      "hd95_normalized": 0.052984391152327046
+    },
+    "MeanHinge-3": {
+      "dice": 0.8586199376315766,
+      "G_plus": 0.011895752895099703,
+      "H_epsilon": 0.006553848743810593,
+      "worst_tail_10pct": -0.061382241995475206,
+      "any_harm": 0.6188340807174888,
+      "sign_flip": 0.4260089686098655,
+      "bf1": 0.38346213955449,
+      "hd95_normalized": 0.05263723183035504
+    },
+    "AbsHard-1": {
+      "dice": 0.8581613524392527,
+      "G_plus": 0.012182584223945775,
+      "H_epsilon": 0.00716316146250508,
+      "worst_tail_10pct": -0.0628710036682402,
+      "any_harm": 0.6547085201793722,
+      "sign_flip": 0.43946188340807174,
+      "bf1": 0.378906005225702,
+      "hd95_normalized": 0.052854549386701456
+    },
+    "Shrink-D0-0.333333": {
+      "dice": 0.8574917796083505,
+      "G_plus": 0.004892064791755145,
+      "H_epsilon": 0.001216368681239338,
+      "worst_tail_10pct": -0.019155720119735428,
+      "any_harm": 0.3452914798206278,
+      "sign_flip": 0.242152466367713,
+      "bf1": 0.392886958472366,
+      "hd95_normalized": 0.052677194458871195
+    },
+    "Shrink-D0-0.666667": {
+      "dice": 0.8584540270090811,
+      "G_plus": 0.008927142350336393,
+      "H_epsilon": 0.0038657405316973766,
+      "worst_tail_10pct": -0.04072335472162955,
+      "any_harm": 0.5381165919282511,
+      "sign_flip": 0.38565022421524664,
+      "bf1": 0.3905958109018727,
+      "hd95_normalized": 0.052808854266908144
+    }
+  },
+  "selected_RSI_core_comparisons": [
+    {
+      "cohort": "M",
+      "rsi_run_id": "RSI-3",
+      "control_run_id": "D0",
+      "dice_rsi": 0.8580102222798562,
+      "dice_control": 0.858316915574831,
+      "dice_difference": -0.00030669329497479136,
+      "dice_ci_low": -0.001831972135657271,
+      "dice_ci_high": 0.0011828710836968006,
+      "G_plus_rsi": 0.007856948584172418,
+      "G_plus_control": 0.012552872267370665,
+      "G_plus_difference": -0.004695923683198247,
+      "G_plus_ci_low": -0.006134828810328285,
+      "G_plus_ci_high": -0.003382940164688249,
+      "H_epsilon_rsi": 0.0032591210280417614,
+      "H_epsilon_control": 0.007422201881999784,
+      "H_epsilon_difference": -0.004163080853958022,
+      "H_epsilon_ci_low": -0.005296950429311996,
+      "H_epsilon_ci_high": -0.0031132842569347634,
+      "worst_tail_10pct_rsi": -0.03846017709358078,
+      "worst_tail_10pct_control": -0.06666460902230338,
+      "worst_tail_10pct_difference": 0.0282044319287226,
+      "worst_tail_10pct_ci_low": 0.016814658668236133,
+      "worst_tail_10pct_ci_high": 0.03809800177830723,
+      "n_images": 223,
+      "n_references": 471,
+      "bootstrap_units": 222,
+      "any_harm_definition": "min reference Dice-current minus Dice-anchor < -0.005",
+      "sign_flip_definition": "min gain < -0.005 and max gain > 0.005",
+      "interval_scope": "exploratory selected-development validation, unadjusted",
+      "any_harm_rsi": 0.5291479820627802,
+      "any_harm_control": 0.6233183856502242,
+      "any_harm_difference": -0.09417040358744394,
+      "any_harm_ci_low": -0.15246636771300448,
+      "any_harm_ci_high": -0.036036036036036036,
+      "any_harm_rsi_count": 118,
+      "any_harm_control_count": 139,
+      "sign_flip_rsi": 0.36771300448430494,
+      "sign_flip_control": 0.42152466367713004,
+      "sign_flip_difference": -0.053811659192825115,
+      "sign_flip_ci_low": -0.10762331838565023,
+      "sign_flip_ci_high": -0.004463789682539685,
+      "sign_flip_rsi_count": 82,
+      "sign_flip_control_count": 94
+    },
+    {
+      "cohort": "M",
+      "rsi_run_id": "RSI-3",
+      "control_run_id": "Shrink-D0-0.333333",
+      "dice_rsi": 0.8580102222798562,
+      "dice_control": 0.8574917796083509,
+      "dice_difference": 0.0005184426715053592,
+      "dice_ci_low": -0.00030775815860686504,
+      "dice_ci_high": 0.001401240451855955,
+      "G_plus_rsi": 0.007856948584172418,
+      "G_plus_control": 0.004892064791755144,
+      "G_plus_difference": 0.002964883792417274,
+      "G_plus_ci_low": 0.0021312627733989695,
+      "G_plus_ci_high": 0.003906474575126091,
+      "H_epsilon_rsi": 0.0032591210280417614,
+      "H_epsilon_control": 0.0012163686812393375,
+      "H_epsilon_difference": 0.0020427523468024237,
+      "H_epsilon_ci_low": 0.0015039593723587133,
+      "H_epsilon_ci_high": 0.00264462184155172,
+      "worst_tail_10pct_rsi": -0.03846017709358078,
+      "worst_tail_10pct_control": -0.019155720119735428,
+      "worst_tail_10pct_difference": -0.019304456973845353,
+      "worst_tail_10pct_ci_low": -0.027535039200828646,
+      "worst_tail_10pct_ci_high": -0.011729876784937457,
+      "n_images": 223,
+      "n_references": 471,
+      "bootstrap_units": 222,
+      "any_harm_definition": "min reference Dice-current minus Dice-anchor < -0.005",
+      "sign_flip_definition": "min gain < -0.005 and max gain > 0.005",
+      "interval_scope": "exploratory selected-development validation, unadjusted",
+      "any_harm_rsi": 0.5291479820627802,
+      "any_harm_control": 0.3452914798206278,
+      "any_harm_difference": 0.18385650224215247,
+      "any_harm_ci_low": 0.12946428571428573,
+      "any_harm_ci_high": 0.23873873873873874,
+      "any_harm_rsi_count": 118,
+      "any_harm_control_count": 77,
+      "sign_flip_rsi": 0.36771300448430494,
+      "sign_flip_control": 0.242152466367713,
+      "sign_flip_difference": 0.12556053811659193,
+      "sign_flip_ci_low": 0.08,
+      "sign_flip_ci_high": 0.17490758695915637,
+      "sign_flip_rsi_count": 82,
+      "sign_flip_control_count": 54
+    },
+    {
+      "cohort": "M",
+      "rsi_run_id": "RSI-3",
+      "control_run_id": "Shrink-D0-0.666667",
+      "dice_rsi": 0.8580102222798562,
+      "dice_control": 0.8584540270090808,
+      "dice_difference": -0.0004438047292245617,
+      "dice_ci_low": -0.0011049218434970743,
+      "dice_ci_high": 0.00018918947327052233,
+      "G_plus_rsi": 0.007856948584172418,
+      "G_plus_control": 0.00892714235033639,
+      "G_plus_difference": -0.001070193766163973,
+      "G_plus_ci_low": -0.0017058556918989806,
+      "G_plus_ci_high": -0.0004109771928823249,
+      "H_epsilon_rsi": 0.0032591210280417614,
+      "H_epsilon_control": 0.00386574053169738,
+      "H_epsilon_difference": -0.0006066195036556186,
+      "H_epsilon_ci_low": -0.0011696177579496737,
+      "H_epsilon_ci_high": -7.085175626413606e-05,
+      "worst_tail_10pct_rsi": -0.03846017709358078,
+      "worst_tail_10pct_control": -0.04072335472162955,
+      "worst_tail_10pct_difference": 0.002263177628048771,
+      "worst_tail_10pct_ci_low": -0.006013253986060884,
+      "worst_tail_10pct_ci_high": 0.009113524744277584,
+      "n_images": 223,
+      "n_references": 471,
+      "bootstrap_units": 222,
+      "any_harm_definition": "min reference Dice-current minus Dice-anchor < -0.005",
+      "sign_flip_definition": "min gain < -0.005 and max gain > 0.005",
+      "interval_scope": "exploratory selected-development validation, unadjusted",
+      "any_harm_rsi": 0.5291479820627802,
+      "any_harm_control": 0.5381165919282511,
+      "any_harm_difference": -0.008968609865470852,
+      "any_harm_ci_low": -0.05405405405405406,
+      "any_harm_ci_high": 0.04035874439461883,
+      "any_harm_rsi_count": 118,
+      "any_harm_control_count": 120,
+      "sign_flip_rsi": 0.36771300448430494,
+      "sign_flip_control": 0.38565022421524664,
+      "sign_flip_difference": -0.017937219730941704,
+      "sign_flip_ci_low": -0.058302528986385486,
+      "sign_flip_ci_high": 0.026905829596412557,
+      "sign_flip_rsi_count": 82,
+      "sign_flip_control_count": 86
+    }
+  ],
+  "fixed_source_comparisons_vs_D0": [
+    {
+      "cohort": "H",
+      "n_images": 47,
+      "n_references": 104,
+      "dice_difference": -0.005550942048353935,
+      "dice_ci_low": -0.009345020580570807,
+      "dice_ci_high": -0.0020585753957867068,
+      "H_epsilon_difference": -0.0026855630740588074,
+      "bf1_difference": -0.0030282215144935647,
+      "hd95_difference": 4.657601572051987
+    },
+    {
+      "cohort": "T1",
+      "n_images": 20,
+      "n_references": 49,
+      "dice_difference": -0.007482517795321275,
+      "dice_ci_low": -0.013454931532968553,
+      "dice_ci_high": -0.0017789374932408917,
+      "H_epsilon_difference": -0.001020127152259259,
+      "bf1_difference": -0.019214359748845868,
+      "hd95_difference": 4.9014319495606955
+    },
+    {
+      "cohort": "M_references_on_H_images",
+      "n_images": 47,
+      "n_references": 109,
+      "dice_difference": -0.005263001570892656,
+      "dice_ci_low": -0.008783552862177526,
+      "dice_ci_high": -0.002043083378283923,
+      "H_epsilon_difference": -0.002647965957932082,
+      "bf1_difference": -0.0030400823201783976,
+      "hd95_difference": 4.592770245590302
+    },
+    {
+      "cohort": "M_references_on_T1_images",
+      "n_images": 20,
+      "n_references": 55,
+      "dice_difference": -0.007441040386020892,
+      "dice_ci_low": -0.013174355637124506,
+      "dice_ci_high": -0.0022772459740650775,
+      "H_epsilon_difference": -0.0010838400845816724,
+      "bf1_difference": -0.020423115387283686,
+      "hd95_difference": 4.744342598441317
+    }
+  ],
+  "readiness": {
+    "status": "ready",
+    "M_points": 16,
+    "full_training_stages": 13,
+    "source_cohorts": 48,
+    "reference_rows": 9984,
+    "epochs": 640,
+    "positive_weights": [
+      0.3,
+      1.0,
+      3.0
+    ],
+    "test_scoring_locked": true
+  },
+  "limits": [
+    "All intervals exploratory and unadjusted, using the validation set already used for checkpoint/workpoint selection.",
+    "Pairing retains reference sets and methods together within known case groups; missing identities use image units.",
+    "Worst10% reference-gain tails are reranked within each method after every bootstrap draw, with ceil(0.1N).",
+    "H/T1 and exactly matched M-reference image cohorts describe source plus case-cohort sensitivity, never tuning.",
+    "A crossing-zero interval does not establish equivalence; coordinate dominance without a substantive advantage does not prove superiority.",
+    "Eligibility under Dice tolerance is an engineering selection flag, not scientific success.",
+    "Soft-risk improvement does not ensure every hard-Dice reference is safe.",
+    "Known group separation and duplicate audit do not prove independence of unknown patient/lesion identities."
+  ],
+  "peer_review": {
+    "finish_review": "independent full-evidence read; recommends end first round without seed29/T3",
+    "science_review": "full-evidence read; recommends narrow claims and end first round",
+    "recovery_review": "independent source/tail/boundary review; seed29 would only be frozen confirmation, no expansion"
+  },
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "inputs_preserved": true,
+  "generated_decision_inputs_are_publication_snapshot": true,
+  "evidence": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/full_scientific_review.json",
+      "sha256": "d69178b9b3c8bacf0956fc99f1074ddb587802bacce1d47cdb1aa59a38dec04a",
+      "bytes": 5056771
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/full_scientific_comparisons.csv",
+      "sha256": "f6fda89a83adf49d9a61d8ddde66d3ff0d056a449902229f8553793070479d1b",
+      "bytes": 93325
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/pilot_main_table.csv",
+      "sha256": "67ca9d8fa4a07a2c98dcd10333022ee8b0da2d6494937eaf741cb7b5b3e64d2e",
+      "bytes": 83171
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/paired_controls/paired_control_comparison.csv",
+      "sha256": "7dbb0c95039875901c67741bba62f2144642231c7339cc01e34abdc16525778a",
+      "bytes": 44609
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/finalization_audit.json",
+      "sha256": "e81468d678511ab7b9da623a9cd20393bee19367b0add23e2fecdb8fbf2713c1",
+      "bytes": 18363
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/final_evidence_integrity_seed17.json",
+      "sha256": "1eb0c3cd17ffa5a4ee9a65db2bd8f7e338c41ed7178f9d226b7f6e9047eafd08",
+      "bytes": 20250
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/decision_inputs.json",
+      "sha256": "abf3846812ae1689860932a8d8e7cf0952878c07a2ae7e2350d236e699e7cc9b",
+      "bytes": 606
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_learning_curves_seed17.json",
+      "sha256": "a4d424bf3c71d0edd9fcd09ae1f7453c8735cdabfdaee07376aa50f94005c9b5",
+      "bytes": 30309
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/gain_harm_tradeoff_readable.json",
+      "sha256": "3cd91ccdfe86e60d39bb2fb343e03972bd9fc61cbf00a73183131d8165f3c924",
+      "bytes": 127921
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/FEASIBILITY_REPORT_2026-10-04.md",
+      "sha256": "dd99bb3011b2d3d8d25ac01787164f507ffef3924e38c40784b38789a247ff76",
+      "bytes": 8858
+    }
+  ]
+}

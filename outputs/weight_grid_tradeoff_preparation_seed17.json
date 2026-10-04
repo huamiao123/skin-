@@ -1,0 +1,48 @@
+{
+  "status": "prepared_actual_pending_gate_verified",
+  "prepared_utc": "2026-10-04T05:10:56.965736+00:00",
+  "tool": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/tools/plot_weight_grid_tradeoff.py",
+    "bytes": 17384,
+    "sha256": "05833b9bdd50207c86089ff4cd840f3acff4e6c1e08655eb64f99658a6d3bebe"
+  },
+  "guard": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/tools/full_scientific_readout.py",
+    "bytes": 37433,
+    "sha256": "9c196bc8666a31db89d31485d00b67e8cd9f85cc8f7cdf12a36dc9f46e826dc8"
+  },
+  "actual_gate": {
+    "status": "not_ready",
+    "missing_completed_inputs": [
+      "finalization_audit.json",
+      "paired_controls/paired_control_comparison.csv",
+      "paired_controls/paired_control_comparison.json",
+      "sensitivity/source_threshold_sensitivity.csv"
+    ],
+    "outputs_written": false,
+    "test_scoring_locked": true
+  },
+  "actual_publication_exercised": false,
+  "figures_rendered": false,
+  "original_autofigure_and_own_output_paths_unchanged": true,
+  "source_or_existing_tools_modified": false,
+  "source_CSVs_modified": false,
+  "models_or_GPU_used": false,
+  "reason": "Complete full-grid evidence is still pending; no fake matrix or partial plot generated",
+  "pending_gate_checks": [
+    "actual not_ready",
+    "actual outputs_written false",
+    "original autofigure and readable output paths unchanged"
+  ],
+  "pending_gate_checked_utc": "2026-10-04T05:11:40.121822+00:00",
+  "frozen_tool_sha256": "05833b9bdd50207c86089ff4cd840f3acff4e6c1e08655eb64f99658a6d3bebe",
+  "independent_peer_review": {
+    "agent": "/root/finish_review",
+    "status": "passed_no_protocol_blockers",
+    "reviewed_utc": "2026-10-04T05:15:15.473178+00:00",
+    "scope": "read-only pinned full13stage/16M scientific guard, unchangedMcoordinates/flags/endpoint16pointprovenance/observedShrinks/ownnamespace/inputhashes/planned deterministic insideaxes labelboxes",
+    "actual_pending_validate_only": "not_ready outputs_writtenfalse",
+    "actual_full_rendering_exercised": false,
+    "visual_inspection_still_required_on_actual_final_png": true
+  }
+}

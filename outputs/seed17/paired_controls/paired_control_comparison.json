@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-10-04T06:10:34.258980+00:00",
+  "status": "complete",
+  "subset": "M",
+  "split": "val",
+  "test_scoring_locked": true,
+  "input_files": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/per_reference_gains.csv",
+      "sha256": "2358ca9036abb9b4e2ba95507bc1675743a7101f4cc6ec1833c0ade4c7333036"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/pilot_main_table.csv",
+      "sha256": "67ca9d8fa4a07a2c98dcd10333022ee8b0da2d6494937eaf741cb7b5b3e64d2e"
+    }
+  ],
+  "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/paired_control_comparison.py",
+  "tool_sha256": "738f854195ee119fee387dc655c91a2a509387349dc0210d9169abaf02914ddb",
+  "existing_point_count": 16,
+  "comparison_count": 39,
+  "selected_rsi_from_existing_main_table": [
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "RSI-3",
+      "checkpoint_hash": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784",
+      "action": "1.0",
+      "lambda": "3.0",
+      "alpha": "1.0"
+    }
+  ],
+  "selected_simple_controls_from_existing_main_table": [
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "AbsHard-1",
+      "checkpoint_hash": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+      "action": "1.0",
+      "lambda": "1.0",
+      "alpha": "1.0"
+    },
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "D0",
+      "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "action": "1.0",
+      "lambda": "0.0",
+      "alpha": "1.0"
+    },
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "MeanHinge-3",
+      "checkpoint_hash": "0df5ad8bc3e2976f7e9d2e569fc8ba34993ec7e46fa8153ee61792bdda7498d7",
+      "action": "1.0",
+      "lambda": "3.0",
+      "alpha": "1.0"
+    },
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "Shrink-D0-0.333333",
+      "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "action": "0.3333333333333333",
+      "lambda": "0.0",
+      "alpha": "0.3333333333333333"
+    }
+  ],
+  "workpoints_reselected": false,
+  "new_lambda_or_alpha": false,
+  "epsilon_d": 0.005,
+  "bootstrap_seed": 17,
+  "bootstrap_repeats": 2000,
+  "worst_tail_definition": "Each resampled cohort: per-image minimum reference Dice gain versus the shared CNN anchor; independently sort each method and mean the first max(1, ceil(0.1 * resampled_image_count)) images",
+  "difference_orientation": "RSI minus control; positive Dice/G+/tail and negative H_epsilon are favorable",
+  "interval_scope": "exploratory M validation used for checkpoint and workpoint selection",
+  "final_continue_or_stop_decision_pending": true,
+  "GPU_compute": false,
+  "prior_output_backups": [],
+  "output_csv_sha256": "7dbb0c95039875901c67741bba62f2144642231c7339cc01e34abdc16525778a"
+}

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- Template Design by TheWebhub.com | http://www.thewebhub.com | Released for free under a Creative Commons Attribution-Share Alike 3.0 Philippines -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="SHORTCUT ICON" href="img/ADDI_icon.ico"/>
+<title>ADDI - Automatic computer-based Diagnosis system for Dermoscopy Images</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="wrapper">
+	<a href="index.html"><div id="header"></div></a>
+	<div id="menu">
+		<ul>
+			<li><a href="project.html">Project</a></li>
+			<li><a href="ph2 database.html">PH² Database</a></li>
+			<li><a href="tasks.html">Tasks</a></li>
+			<li><a href="team.html">Team</a></li>
+			<li><a href="partners.html">Partners</a></li>
+			<li><a href="documents.html">Publications</a></li>
+			<li><a href="prototypes.html">Prototypes</a></li>
+			<li><a href="events.html">Events</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="left">
+		<h2>PH² database</h2>
+		
+		<!-- The links -->
+				<p style="text-align:center;">
+				<a href="javascript:ShowAllDivs();"><img src="PH2 icons/plus.gif" border='0' alt="toggle" /> &nbsp Show all</a>&nbsp; | &nbsp; 
+				<a href="javascript:HideAllDivs();"><img src="PH2 icons/minus.gif" border='0' alt="toggle" /> &nbsp Hide all</a>
+				</p>
+
+				<script language="javascript"> 
+				function toggle() {
+					var ele = document.getElementById("toggleText");
+					var imageEle  = document.getElementById("displayText");
+					if(ele.style.display == "block") {
+							ele.style.display = "none";
+						imageEle.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText" href="javascript:toggle();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle();"><b>1 - Introduction</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText" style="display: none"><p>The increasing incidence of melanoma has recently promoted the development of computer-aided diagnosis systems for the classification of dermoscopic images. The PH² dataset has been developed for research and benchmarking purposes, in order to facilitate comparative studies on both segmentation and classification algorithms of dermoscopic images. PH² is a dermoscopic image database acquired at the Dermatology Service of Hospital Pedro Hispano, Matosinhos, Portugal.</p></div></p>
+				
+				<script language="javascript"> 
+				function toggle2() {
+					var ele = document.getElementById("toggleText2");
+					var imageEle2  = document.getElementById("displayText2");
+					if(ele.style.display == "block") {
+							ele.style.display = "none";
+						imageEle2.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle2.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText2" href="javascript:toggle2();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle2();"><b>2 - Data Description</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText2" style="display: none">
+				<p>The dermoscopic images were obtained at the Dermatology Service of Hospital Pedro Hispano (Matosinhos, Portugal) under the same conditions through Tuebinger Mole Analyzer system using a magnification of 20x. They are 8-bit RGB color images with a resolution of 768x560 pixels.</p>
+				<p>This image database contains a total of 200 dermoscopic images of melanocytic lesions, including 80 common nevi, 80 atypical nevi, and 40 melanomas. The PH² database includes medical annotation of all the images namely medical segmentation of the lesion, clinical and histological diagnosis and the assessment of several dermoscopic criteria (colors; pigment network; dots/globules; streaks; regression areas; blue-whitish veil).</p>
+				<p>The assessment of each parameter was performed by an expert dermatologist, according to the following parameters:</p>
+								
+				<table border="1" bordercolor="#CCCCCC" cellpadding="2" style="margin-top:15px; margin-bottom:5px; font-size:10px">
+					
+					<tr align="center" bgcolor="#CCCCCC">
+					<td><strong>Criterion</strong></td><td><strong>PH² Segmentation</strong></td>
+					</tr>
+					
+					<tr><td rowspan="3"><strong>Clinical Diagnosis</strong></td><td>0 - Common Nevus</td></tr><tr><td>1 - Atypical Nevus</td></tr><tr><td>2 - Melanoma</td></tr>
+					
+					<tr>
+					<td rowspan="1"><strong>Lesion Segmentation</strong></td><td>Available as a binary mask (with the same size of the original image).</td>
+					</tr>
+					
+					<tr>
+					<td rowspan="1"><strong>Color Segmentation</strong></td><td>Available as a binary mask (with the same size of the original image) (If available).</td>
+					</tr>
+					
+					<tr><td rowspan="3"><strong>Asymmetry</strong></td><td>0 - Fully Simmetry</td></tr><tr><td>1 – Asymmetry in One Axis</td></tr><tr><td>2 - Fully Asimmetry</td></tr>
+					
+					<tr><td rowspan="2"><strong>Pigment Network</strong></td><td>AT - Atypical</td></tr><tr><td>T - Typical</td></tr>
+					
+					<tr><td rowspan="3"><strong>Dots/Globules</strong></td><td>A - Absent</td></tr><tr><td>AT - Atypical</td></tr><tr><td>T - Typical</td></tr>
+					
+					<tr><td rowspan="2"><strong>Streaks</strong></td><td>A - Absent</td></tr><tr><td>P - Present</td></tr>
+					
+					<tr><td rowspan="2"><strong>Regression Areas</strong></td><td>A - Absent</td></tr><tr><td>P - Present</td></tr>
+					
+					<tr><td rowspan="2"><strong>Blue Whitish Veil</strong></td><td>A - Absent</td></tr><tr><td>P - Present</td></tr>
+					
+					<tr><td rowspan="6"><strong>Colors</strong></td><td>1 - White</td></tr><tr><td>2 - Red</td></tr><tr><td>3 - Light-Brown</td></tr><tr><td>4 - Dark-Brown</td></tr><tr><td>5 - Blue-Gray</td></tr><tr><td>6 - Black</td></tr>
+					
+				</table>
+				
+				</div></p>
+				
+				
+
+				<script language="javascript"> 
+				function toggle3() {
+					var ele = document.getElementById("toggleText3");
+					var imageEle3  = document.getElementById("displayText3");
+					if(ele.style.display == "block") {
+							ele.style.display = "none";
+						imageEle3.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle3.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText3" href="javascript:toggle3();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle3();"><b>3 - Terms of Use</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText3" style="display: none">
+				<p>The data included in the PH² database can be used for research and educational purposes. It is important to note that redistribution and commercial use is not allowed. All publications that make use of this dataset must cite the following paper:</p>
+				<p>- <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6610779&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6610779">Teresa Mendonça, Pedro M. Ferreira, Jorge Marques, Andre R. S. Marcal, Jorge Rozeira. <b>PH² - A dermoscopic image database for research and benchmarking</b>, <i>35th International Conference of the IEEE Engineering in Medicine and Biology Society</i>,  July 3-7, 2013, Osaka, Japan.</a></p>
+				</div>
+				</p>
+				
+				<script language="javascript"> 
+				function toggle4() {
+					var ele = document.getElementById("toggleText4");
+					var imageEle4  = document.getElementById("displayText4");
+					if(ele.style.display == "block") {
+						ele.style.display = "none";
+						imageEle4.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle4.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText4" href="javascript:toggle4();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle4();"><b>4 - PH² Browser: a PH² Database Related Tool</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText4" style="display: none">
+				<p><b>4.1 - About</b></p>
+				<p>The PH² database can be used independently by the user or with the PH² Browser tool.</p>
+				<p>The PH² Browser software is a customized tool of the PH² image database. This tool allows the visualization of the medical segmentations and classifications of each image of the database. Moreover, it allows searching dermoscopic images according to the desired criteria as well as the exportation of the selected images, along with the corresponding segmentation and classification, into several formats (See <a  href="PH2BrowserTutorial.pdf" target="_blank">tutorial</a> for more information).</p>
+				</br>
+				<p><b>4.2 - Installation</b></p>
+				<p>The PH² Browser tool was developed in Matlab™ and is available for public as an MS Windows™ (x86/x64) executable.</p>
+				<p>To install the PH² Browser software, it is necessary to download the entire PH² winrar package. After downloading this package the user must unzip the “PH² Browser” folder. Inside this folder the user can find a MS Windows™ (x86) version as well as a MS Windows™ (x64) version of the software. Then, the user should select one of these versions accordingly to the Windows version of the computer in which the software will be used. If MATLAB™ is already installed in the user’s computer, no other installation steps are required. Otherwise, in a computer in which MATLAB™ is not installed, the PH² Browser tool can also be used after a simple installation of the MATLAB™ Compiler Runtime (MCR).
+				</br><h3>- Links to download: <a href="https://www.dropbox.com/s/v1v4vwihoqhpbxh/MCR%20Installer%20%28x86%29.exe" target="_blank">MRC Installer (x86)</a> / <a href="https://www.dropbox.com/s/v9i6hcvvsmxlw3b/MCR%20Installer%20%28x64%29.exe" target="_blank">MRC Installer (x64)</a></h3></p>
+				<p>After all installation steps are completed the user must double-click on the PH²_Browser.exe file to start using the software.</p>
+				</div>
+				</p>
+				
+				
+				<script language="javascript"> 
+				function toggle5() {
+					var ele = document.getElementById("toggleText5");
+					var imageEle5  = document.getElementById("displayText5");
+					if(ele.style.display == "block") {
+							ele.style.display = "none";
+						imageEle5.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle5.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText5" href="javascript:toggle5();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle5();"><b>5 - Download</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText5" style="display: none">
+					<p>The PH² Database pack (image database and medical annotation) and the PH² Browser can be downloaded here after you fill a quick registration form.
+					<ul>
+					<li><b>PH² Dataset - </b> <a href="https://www.dropbox.com/s/k88qukc20ljnbuo/PH2Dataset.rar" target="_blank"><strong>download link</strong></a>
+					<li><b>PH² Browser - </b> <a href="PH2 Browser Form.html" target="_blank"><strong>download link</strong></a>
+					</ul>
+					</p>
+				</div>
+				</p>
+				
+				<script language="javascript"> 
+				function toggle6() {
+					var ele = document.getElementById("toggleText6");
+					var imageEle6  = document.getElementById("displayText6");
+					if(ele.style.display == "block") {
+						ele.style.display = "none";
+						imageEle6.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle6.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText6" href="javascript:toggle6();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle6();"><b>6 - Benchmarking results</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText6" style="display: none">
+				
+				<p> The following table presents the classification algorithms, along with their results, that have been applied to the PH² database for benchmarking purposes.</p>
+				
+<table border="1" bordercolor="#CCCCCC" cellpadding="2" style="margin-top:15px; margin-bottom:5px; font-size:10px">
+<caption>Benchmarking results of the classification algorithms applied to the PH² database.</caption>
+  <tr>
+    <td width="45%", align="center"><b>Authors/Paper</b></td>
+    <td colspan="2", align="center"><b>Extracted features</b></td>
+    <td align="center"><b>Sensibility/Specificity</b></td>
+  </tr>
+  <tr>
+    <td rowspan="4"><a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6570764">C.Barata, M.Ruela, <i>et al.</i>, <b>Two Systems for the Detection of Melanomas in Dermoscopy Images using Texture and Color Features</b>, <i>IEEE Systems Journal</i>, no. 99, pp. 1-15, 2013.</a></td>
+    <td rowspan="2", align="center">Global Method</td>
+    <td align="center">Color features</td>
+	<td align="center">90% / 89%</td>
+  </tr>
+  <tr align="center">
+    <td>Texture features</td>
+    <td>93% / 78%</td>
+  </tr>
+  <tr align="center">
+    <td rowspan="2">Local method</td>
+	<td>Color features</td>
+	<td>93% / 84%</td>
+  </tr>
+  <tr align="center">
+    <td>Texture features</td>
+    <td>88% / 76%</td>
+  </tr>
+</table>
+
+<br>
+<p><b>ADD YOUR RESULTS</b></p>
+
+<p>We encourage all researchers to run their algorithms in the PH² database and, then, send us the results. To ensure the integrity of results, you should apply your classification algorithms in all images of the PH² database. In addition, you should indicate a paper, a report, or even a website in which your algorithm is described.</p>
+<p> To upload your results, contact Dr. Terera Mendonça by e-mail: <a href="mailto:tmendo@fc.up.pt">tmendo@fc.up.pt</a>.</p>
+
+
+
+				</div>
+				</p>
+				
+				
+				<script language="javascript"> 
+				function toggle7() {
+					var ele = document.getElementById("toggleText7");
+					var imageEle7  = document.getElementById("displayText7");
+					if(ele.style.display == "block") {
+						ele.style.display = "none";
+						imageEle7.innerHTML = '<img src="img/plus.png" BORDER="0">';
+					}
+					else {
+						ele.style.display = "block";
+						imageEle7.innerHTML = '<img src="img/minus.png" BORDER="0">';
+					}
+				} 
+				</script>
+                
+				<p>
+				<table>
+				<tr>
+				<td><div style="margin-left:0px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<a id="displayText7" href="javascript:toggle7();"><img src="img/plus.png" BORDER="0"></div></td>
+				<td><a href="javascript:toggle7();"><b>7 - Support</b></a></td>
+				</tr>
+				</table>
+				<div id="toggleText7" style="display: none">
+				<p>The PH² Database was built up through a joint research collaboration between the <i>Universidade do Porto</i>, <i>Instituto Superior Técnico Lisboa</i>, and the <i>Dermatology Service</i> of <i>Hospital Pedro Hispano in Matosinhos</i>, Portugal. This research work was supported by the <i>Portuguese Foundation for Science and Technology</i> (<b>FCT</b>) through the projects PTDC/SAU-BEB/103471/2008 and PEst-OE/EEI/LA0009/2011, by <i>FEDER</i> funds through the <i>Operational Programme Factors of Competitiveness</i> (<b>COMPETE</b>), by Portuguese funds through the <i>Center for Research and Development in Mathematics and Applications</i> and the <i>FCT</i>, within project PEst-C/MAT/UI4106/2011 with <b>COMPETE</b> number FCOMP-01-0124-FEDER-022690.</p>
+				</div>
+				</p>
+				
+				
+				<script type="text/javascript">
+				/////////////////////////////////////////////////////
+				// Between the quotation marks, list the id values of each div.
+
+				var IDvaluesOfEachDiv = "toggleText toggleText2 toggleText3 toggleText4 toggleText5 toggleText6 toggleText7";
+
+				/////////////////////////////////////////////////////
+				IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(/[,\s"']/g," ");
+				IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(/^\s*/,"");
+				IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(/\s*$/,"");
+				IDvaluesOfEachDiv = IDvaluesOfEachDiv.replace(/  +/g," ");
+				var IDlist = IDvaluesOfEachDiv.split(" ");
+
+				function ShowAllDivs() {
+				var imageEle  = document.getElementById("displayText");
+				imageEle.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle2  = document.getElementById("displayText2");
+				imageEle2.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle3  = document.getElementById("displayText3");
+				imageEle3.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle4  = document.getElementById("displayText4");
+				imageEle4.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle5  = document.getElementById("displayText5");
+				imageEle5.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle6  = document.getElementById("displayText6");
+				imageEle6.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				var imageEle7  = document.getElementById("displayText6");
+				imageEle7.innerHTML = '<img src="img/minus.png" BORDER="0">';
+				for(var i=0; i<IDlist.length; i++) { 
+				   document.getElementById(IDlist[i]).style.display = "block";
+				   }
+				}
+				
+				function HideAllDivs() {
+				var imageEle  = document.getElementById("displayText");
+				imageEle.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				var imageEle2  = document.getElementById("displayText2");
+				imageEle2.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				var imageEle3  = document.getElementById("displayText3");
+				imageEle3.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				var imageEle4  = document.getElementById("displayText4");
+				imageEle4.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				var imageEle5  = document.getElementById("displayText5");
+				imageEle5.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				var imageEle6  = document.getElementById("displayText6");
+				imageEle6.innerHTML = '<img src="img/plus.png" BORDER="0">';
+				for(var i=0; i<IDlist.length; i++) { 
+				   document.getElementById(IDlist[i]).style.display = "none";
+				   }
+				}
+				</script>
+
+
+		</div>
+		<div id="right">
+			<h2>Next Events</h2>
+			<p><h3>Computer vision and Machine learning events:</h3></p>
+			<table width="250" border="0" cellspacing="0" cellpadding="0" style="background-color:#f0f0f0; margin-top:10px;" height="170">
+			<tr>
+			<td valign="top" align="left">
+			<MARQUEE onmouseover=this.stop() onmouseout=this.start() SCROLLAMOUNT=1 SCROLLDELAY=6 height="160" width="250" direction="up">
+			<div style="margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<p style="text-align: justify"><a href="http://paginas.fe.up.pt/~vipimage/index.html">[Vipimage 2013]</a> <b>IV ECCOMAS Thematic Conferences on Computational Vision and Medical Image Processing</b>, Madeira, Portugal, October 14-16, 2013</p>
+				<p style="text-align: justify"><a href="http://biomedicalimaging.org/2014/">[ISBI 2014]</a> <b>IEEE International Symposium on Biomedical Imaging</b>, Beijing, China, 28 April - 2 May, 2014</p>
+				<p style="text-align: justify"><a href="http://embc.embs.org/2014/">[EMBC 2014]</a> <b>36th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</b>, Chicago, Illinois, USA, August 27-31, 2014</p>				
+			</div>
+			</marquee>	
+			</td></tr>
+			</table>
+			<p><h3>Dermoscopy events:</h3></p>
+			<table width="250" border="0" cellspacing="0" cellpadding="0" style="background-color:#f0f0f0; margin-top:10px;" height="170">
+			<tr>
+			<td valign="top" align="left">
+			<MARQUEE onmouseover=this.stop() onmouseout=this.start() SCROLLAMOUNT=1 SCROLLDELAY=6 height="160" width="250" direction="up">
+			<div style="margin-left:10px; margin-right:10px; margin-top:10px; margin-bottom:5px;">
+				<p style="text-align: justify"><a href="http://www.eadvistanbul2013.org/">[EADV 2013]</a> <b>22nd Congress of the European Academy of Dermatology and Venereology</b>, Istanbul, Turkey, October 2-6, 2013</p>
+				<p style="text-align: justify"><a href="http://www.icddelhi2013.com/home">[icd 2013]</a> <b>XI International Congress of Dermatology</b>, New Delhi, India, December 4-7, 2013</p>
+				<p style="text-align: justify"><a href="http://www.aad.org/meetings/2014-annual-meeting">[AAD 2014]</a> <b>72nd Annual Meeting of the American Academy of Dermatology</b>, Denver, CO – USA, March 21-25, 2014</p>
+			</div>
+			</marquee>	
+			</td></tr>
+			</table>
+			<br/>
+			
+			<h2>Visitors</h2>
+			<object allowscriptaccess="always" type="application/x-shockwave-flash" data="http://soap.banners-service.info/contactus.swf?id=1351037_0" width="200" height="180" wmode="transparent"><param name="allowscriptaccess" value="always" /><param name="movie" value="http://soap.banners-service.info/contactus.swf?id=1351037_0" /><param name="wmode" value="transparent" /><embed src="http://soap.banners-service.info/contactus.swf?id=1351037_0" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent" width="200" height="180" /><video width="200" height="180"><a style=";font-style:normal;font-size:140%;font-weight:bold" href="http://www.binarynavi.com/ranking/26-トレードラッシュ.html">トレードラッシュ評判</a></video></object>
+		
+			<h2>ADDI Work</h2>
+			- <a href="ongoing.html"><strong>Ongoing Work</strong></a><br>
+			- <a href="completed.html"><strong>Completed Work</strong></a>
+			<br/>
+			<br/>
+			<h2>Restricted Area</h2>
+			<p><strong><a href="area.php">Login</a></strong></p>
+		</div>
+	</div>
+	<div id="footer">
+		<p class="copyright">Copyright &copy; 2012 ADDI Project. Webmaster <a href="#">Pedro M. Ferreira</a> (meb09015@fe.up.pt)</p>
+	</div>
+</div>
+</body>
+</html>

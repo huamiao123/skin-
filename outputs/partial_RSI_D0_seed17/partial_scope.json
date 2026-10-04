@@ -1,0 +1,156 @@
+{
+  "created_utc": "2026-10-03T15:03:50.023447+00:00",
+  "status": "complete",
+  "scope": "PARTIAL: only selected B, D0, RSI-lambda1 checkpoints plus CNN Anchor; full Mean-Hinge/Abs-Hard/FixedShrink and conditional grid are absent",
+  "test_scoring_locked": true,
+  "split": "val",
+  "seed": 17,
+  "bootstrap_seed": 17,
+  "bootstrap_repeats": 2000,
+  "checkpoint_selected_development_data": true,
+  "independent_confirmation": false,
+  "full_pilot_matrix_complete": false,
+  "complete_simple_control_workpoints": false,
+  "final_continue_or_stop_decision": null,
+  "inputs": [
+    {
+      "run": "B",
+      "csv_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/B.csv",
+      "csv_sha256": "fdff281788033ea78f18cba3a4938a72b94702c956153d56d7bb133bd545024a",
+      "json_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/B.json",
+      "json_sha256": "d9d2fef103ece2a3a7f013c247a8e6c3a95e3c4547527792248ba23ab42c460b",
+      "reference_rows": 1248,
+      "export_metadata": {
+        "run_id": "B",
+        "checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "reference_rows": 1248,
+        "seconds": 4273.844400066999,
+        "split": "val",
+        "test_scoring_locked": true,
+        "actual_tail_recomputation": true,
+        "alpha": 1.0
+      }
+    },
+    {
+      "run": "D0",
+      "csv_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/D0.csv",
+      "csv_sha256": "73e39378863b5cb493cde81241c4950ad410b478b9d74463579339db0e24f4b8",
+      "json_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/D0.json",
+      "json_sha256": "a014c3ec8cffae93d78d82e13edb7e8fdc4536d3c533e3d3ea5734fb000e2a79",
+      "reference_rows": 624,
+      "export_metadata": {
+        "run_id": "D0",
+        "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+        "reference_rows": 624,
+        "seconds": 307.50564948899773,
+        "split": "val",
+        "test_scoring_locked": true,
+        "actual_tail_recomputation": true,
+        "alpha": 1.0
+      }
+    },
+    {
+      "run": "RSI-1",
+      "csv_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/RSI-1.csv",
+      "csv_sha256": "6cb931c41e1f8562772fe20dc2f77971037b0cc60fc44df281e463a02659f576",
+      "json_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/RSI-1.json",
+      "json_sha256": "80a78e9d5577307488c4d9ee2e95405266a53bba3d78f2987b3888e2b2f0c026",
+      "reference_rows": 624,
+      "export_metadata": {
+        "run_id": "RSI-1",
+        "checkpoint_hash": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+        "reference_rows": 624,
+        "seconds": 301.94897745600247,
+        "split": "val",
+        "test_scoring_locked": true,
+        "actual_tail_recomputation": true,
+        "alpha": 1.0
+      }
+    }
+  ],
+  "input_original_bytes_unchanged": true,
+  "source_provenance": {
+    "commit": "5b81bb1f812360049a89684dd43ce235b4487753",
+    "source_sha256": {
+      "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+      "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+      "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+      "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+      "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+      "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+      "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+      "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+      "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+      "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+      "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+      "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+      "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+      "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+      "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+      "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+      "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+      "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+      "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+      "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+      "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+    },
+    "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+  },
+  "source_unchanged": true,
+  "manifest_path": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/final_references.csv",
+  "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "M_reference_keys_match_across_methods": true,
+  "shared_anchor_D0_reference_values_match": true,
+  "source_selection_rule": "M only; H/T1 have no selected workpoint flags",
+  "CSV_method_corrections": [],
+  "summarization_authority": "unmodified rsi.summarize.summarize_pilot",
+  "paired_control_tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/paired_control_comparison.py",
+  "paired_control_tool_sha256": "738f854195ee119fee387dc655c91a2a509387349dc0210d9169abaf02914ddb",
+  "seconds": 4.366965389002871,
+  "report_json_completed": true,
+  "optional_undefined_conditional_rate_JSON_representation": "null with explicit field audit; original summarizer CSV untouched",
+  "outputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/gain_harm_tradeoff.png",
+      "sha256": "302e39eed6a4e25eac2da6ee1b4def261cd59fd2a81dbb7a6d913b8f50a2d13a"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/paired_controls/paired_control_comparison.csv",
+      "sha256": "e4255cc99766932f7457824ac7fcb174890457414de036a16d004deac8fc37b6"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/paired_controls/paired_control_comparison.json",
+      "sha256": "cb5dbfb6efa7ccca3721473cd70904b8821533c455597cc05af213a5ab750434"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/partial_scientific_review.json",
+      "sha256": "9d1caf5c3bce379abd30775a640f06912dd86036e24ef089ef726cd86de0b71f"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/per_reference_gains.csv",
+      "sha256": "6a426492b0dee361299118d2fc7dce344f863f69a1ddafcad1309dc1e950080d"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/per_reference_gains_vs_D0.csv",
+      "sha256": "6a426492b0dee361299118d2fc7dce344f863f69a1ddafcad1309dc1e950080d"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/per_reference_gains_vs_anchor.csv",
+      "sha256": "6a426492b0dee361299118d2fc7dce344f863f69a1ddafcad1309dc1e950080d"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/pilot_main_table.csv",
+      "sha256": "c8d758690403cb53095b41d21142f810b905a6cc2c18de1c1d057463aa968e3c"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/source_sensitivity.csv",
+      "sha256": "f3549426b8608bbd4e0c07b30a267b92e4c0cbdb2463a3419ae152dc67d43a55"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/update_diagnostics.csv",
+      "sha256": "3594e7dd523214a693fc8e3de63e428c54de83bf4ec8fb79e2c8c66d4dc58039"
+    }
+  ],
+  "finished_utc": "2026-10-03T15:06:11.570666+00:00"
+}

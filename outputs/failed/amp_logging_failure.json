@@ -1,0 +1,10 @@
+{
+  "failure": "A_CNN epoch31 diagnostic mean attempted to sum finite floats with None from AMP nonfinite norm",
+  "failed_run_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/failed/seed17/A_CNN_amp_logging_ae03cd2",
+  "last_completed_epoch": 30,
+  "engineering_fix": "explicit finite norm mean, nonfinite counts, hook-observed optimizer steps and AMP skip counts",
+  "restart": "new ImageNet initialization and original fixed 100-epoch budget; all subsequent stages use this new run",
+  "no_model_or_test_based_budget_extension": true,
+  "old_source_commit": "ae03cd2",
+  "recorded_utc": "2026-10-03T10:30:31Z"
+}

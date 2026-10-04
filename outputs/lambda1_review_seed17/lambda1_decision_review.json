@@ -1,0 +1,483 @@
+{
+  "completed_at_utc": "2026-10-04T04:08:28.840125+00:00",
+  "status": "complete_intermediate_lambda1_scientific_readout",
+  "scope": "seed17 selected-development lambda1; all registered four actual Fixed-Shrink points",
+  "registered_symmetric_0p3_3_grid_results_pending": true,
+  "interim_action": "complete the already registered symmetric weight grid and compare all controls",
+  "unique_RSI_advantage_established": false,
+  "RSI_idea_invalidated": false,
+  "engineering_Dice_tolerance_eligibility_is_not_superiority": true,
+  "seed29_choice_not_made": true,
+  "formal_seeds_or_test_released": false,
+  "H_T1_selection_used": false,
+  "GPU_compute": false,
+  "models_constructed": false,
+  "raw_exports_modified": false,
+  "inputs_sha256_verified": true,
+  "inputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/lambda1_scientific_review.json",
+      "bytes": 876164,
+      "sha256": "95bb5d1f39c10195fa67b8bca1f72c57d5ecd5650bdde6bdd8fd15da6c786cf8"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/partial_scientific_review.json",
+      "bytes": 64903,
+      "sha256": "9d1caf5c3bce379abd30775a640f06912dd86036e24ef089ef726cd86de0b71f"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/complete_scientific_readout.py",
+      "bytes": 9027,
+      "sha256": "57a950bbfc3f17b1e0584fac9f43d5af24ae8218184170f5b06b1f7575a87980"
+    }
+  ],
+  "incidence_RSI_vs_alpha2thirds": {
+    "rsi_run_id": "RSI-1",
+    "control_run_id": "Shrink-D0-0.666667",
+    "subset": "M",
+    "epsilon_D": 0.005,
+    "n_images": 223,
+    "n_references": 471,
+    "bootstrap_unit": "known_case_group",
+    "bootstrap_units": 222,
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 17,
+    "all_images_multi_reference": true,
+    "difference_orientation": "RSI minus alpha2/3; negative is lower incidence",
+    "any_harm_definition": "per image min reference Dice gain < -0.005",
+    "sign_flip_definition": "per image min reference Dice gain < -0.005 and max reference Dice gain > 0.005",
+    "interval_scope": "multiple exploratory selected-validation metrics; not a new selection criterion",
+    "any_harm_rsi_count": 114,
+    "any_harm_control_count": 120,
+    "any_harm_rsi": 0.5112107623318386,
+    "any_harm_control": 0.5381165919282511,
+    "any_harm_difference": -0.026905829596412557,
+    "any_harm_ci_low": -0.07207207207207207,
+    "any_harm_ci_high": 0.018018018018018018,
+    "sign_flip_rsi_count": 79,
+    "sign_flip_control_count": 86,
+    "sign_flip_rsi": 0.3542600896860987,
+    "sign_flip_control": 0.38565022421524664,
+    "sign_flip_difference": -0.03139013452914798,
+    "sign_flip_ci_low": -0.07589285714285714,
+    "sign_flip_ci_high": 0.013513513513513514
+  },
+  "near_matching_control": {
+    "cohort": "M",
+    "rsi_run_id": "RSI-1",
+    "control_run_id": "Shrink-D0-0.666667",
+    "image_subset": "M",
+    "reference_subset": "M",
+    "n_images": 223,
+    "n_references": 471,
+    "difference_orientation": "RSI minus Fixed-Shrink",
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 17,
+    "selection_scope": "M only; H/T1 and matched M references are descriptive fixed cohorts",
+    "bootstrap_unit": "known_case_group",
+    "worst_tail_definition": "Each resampled cohort: per-image minimum reference Dice gain versus the shared CNN anchor; independently sort each method and mean the first max(1, ceil(0.1 * resampled_image_count)) images",
+    "bootstrap_units": 222,
+    "worst_tail_n_observed": 23,
+    "dice_rsi": 0.8583795894208185,
+    "dice_control": 0.8584540270090808,
+    "dice_difference": -7.44375882623105e-05,
+    "dice_ci_low": -0.0006365470492856683,
+    "dice_ci_high": 0.00048332075615527574,
+    "G_plus_rsi": 0.008773162467152144,
+    "G_plus_control": 0.00892714235033639,
+    "G_plus_difference": -0.0001539798831842465,
+    "G_plus_ci_low": -0.0008135609372146847,
+    "G_plus_ci_high": 0.00045899924005377425,
+    "H_epsilon_rsi": 0.0038679211496023746,
+    "H_epsilon_control": 0.00386574053169738,
+    "H_epsilon_difference": 2.180617904994596e-06,
+    "H_epsilon_ci_low": -0.000410431269608034,
+    "H_epsilon_ci_high": 0.00041677640988507846,
+    "worst_tail_10pct_rsi": -0.041122508708104674,
+    "worst_tail_10pct_control": -0.04072335472162955,
+    "worst_tail_10pct_difference": -0.0003991539864751231,
+    "worst_tail_10pct_ci_low": -0.006222043361178986,
+    "worst_tail_10pct_ci_high": 0.005460154875021742,
+    "core_intervals_reused_from_existing_M_comparison": true,
+    "bf1_rsi": 0.3894684310610939,
+    "bf1_control": 0.3905958109018727,
+    "bf1_difference": -0.001127379840778777,
+    "bf1_ci_low": -0.003647788154694634,
+    "bf1_ci_high": 0.0015007424487358068,
+    "bf1_025_rsi": 0.2239791564473355,
+    "bf1_025_control": 0.2252471161646517,
+    "bf1_025_difference": -0.001267959717316177,
+    "bf1_025_ci_low": -0.003878428667521995,
+    "bf1_025_ci_high": 0.0012018090304880466,
+    "bf1_1pct_rsi": 0.5881212917514534,
+    "bf1_1pct_control": 0.5872559572170416,
+    "bf1_1pct_difference": 0.000865334534411788,
+    "bf1_1pct_ci_low": -0.0012225507451562095,
+    "bf1_1pct_ci_high": 0.003058638829630771,
+    "hd95_rsi": 186.7025554505804,
+    "hd95_control": 187.18361431825338,
+    "hd95_difference": -0.48105886767296535,
+    "hd95_ci_low": -1.3525890756473256,
+    "hd95_ci_high": 0.3018672012338013,
+    "hd95_normalized_rsi": 0.05278175116620032,
+    "hd95_normalized_control": 0.052808854266908144,
+    "hd95_normalized_difference": -2.71031007078441e-05,
+    "hd95_normalized_ci_low": -0.000246059035593479,
+    "hd95_normalized_ci_high": 0.00018659650205109896,
+    "message_rms_rsi": 0.4970903751251149,
+    "logit_delta_rms_rsi": 1.0390178461343595,
+    "changed_pixel_fraction_rsi": 0.011733369814335627,
+    "message_rms_control": 0.5537203169380424,
+    "logit_delta_rms_control": 0.8461932105474348,
+    "changed_pixel_fraction_control": 0.011462674042676852,
+    "raw_message_rms_rsi": 0.4970903751251149,
+    "raw_message_rms_control": 0.5537203169380424,
+    "applied_message_rms_rsi": 0.4970903751251149,
+    "applied_message_rms_control": 0.3691468779586949
+  },
+  "source_cohort_regression": [
+    {
+      "subset": "H",
+      "native_source_Dice_RSI_minus_D0": -0.004199757410319194,
+      "native_source_Dice_case_bootstrap_CI": [
+        -0.007564311792853096,
+        -0.0013072430866871644
+      ],
+      "same_images_M_references_Dice_RSI_minus_D0": -0.003975898829491675,
+      "native_BF1_RSI_minus_D0": 0.0008345842385732993,
+      "native_HD95_pixels_RSI_minus_D0": 4.039243543694681,
+      "native_worst_tail_10pct_RSI_minus_D0": 0.015389819900876268,
+      "selection_used": false,
+      "scope": "Same preselected checkpoints and same source images; descriptive small-cohort sensitivity, exploratory intervals after M checkpoint selection."
+    },
+    {
+      "subset": "T1",
+      "native_source_Dice_RSI_minus_D0": -0.0026714312815556696,
+      "native_source_Dice_case_bootstrap_CI": [
+        -0.0063979878884885795,
+        0.0007754329318629641
+      ],
+      "same_images_M_references_Dice_RSI_minus_D0": -0.0029455266179333472,
+      "native_BF1_RSI_minus_D0": -0.008794108227476283,
+      "native_HD95_pixels_RSI_minus_D0": 2.6160778070698143,
+      "native_worst_tail_10pct_RSI_minus_D0": 0.02060447059109155,
+      "selection_used": false,
+      "scope": "Same preselected checkpoints and same source images; descriptive small-cohort sensitivity, exploratory intervals after M checkpoint selection."
+    }
+  ],
+  "canonical_soft_vs_hard": {
+    "canonical_rho": "0.39387144992526163",
+    "canonical_J_mean": "0.003223227186654715",
+    "canonical_kappa_pm": "0.5426008968609866",
+    "soft_hard_harm_disagreement_reference_count": "94",
+    "soft_hard_harm_disagreement_reference_fraction": "0.19957537154989385",
+    "soft_hard_harm_disagreement_macro_rate": "0.1943198804185351"
+  },
+  "applied_message_provenance": {
+    "generated_at_utc": "2026-10-03T15:37:18.030568+00:00",
+    "rows": 2900,
+    "input": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/update_diagnostics.csv",
+      "bytes": 574897,
+      "sha256": "9de5027922d84d60b42389aa1d8482ae2c0072c7cac01498259a534927f0acdc"
+    },
+    "output": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/update_diagnostics_applied_message.csv",
+      "bytes": 693109,
+      "sha256": "cc026bde1b4abfa3a24bed14b0db40fe27376c75e18b8f9b8411266069350b8c"
+    },
+    "definition": "applied_message_rms = abs(alpha) * raw_message_rms; whole feature tensor",
+    "model_contract": "message is returned before scaling; tail receives f8 + alpha * message",
+    "ordinary_action1": "applied_message_rms equals raw_message_rms",
+    "Anchor_action0": "applied_message_rms is zero",
+    "FixedShrink_alpha0": "raw module message may be nonzero; applied message is exactly zero",
+    "original_update_and_per_reference_csvs_modified": false,
+    "metric_score_columns_modified": false,
+    "models_constructed": false,
+    "GPU_compute": false,
+    "test_scoring_locked": true,
+    "contract_source_files": [
+      {
+        "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/models.py",
+        "bytes": 20188,
+        "sha256": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+        "lines": [
+          376,
+          383
+        ]
+      },
+      {
+        "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/export.py",
+        "bytes": 8103,
+        "sha256": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+        "lines": [
+          37,
+          63
+        ]
+      },
+      {
+        "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/metrics.py",
+        "bytes": 13295,
+        "sha256": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+        "lines": [
+          129,
+          155
+        ]
+      }
+    ],
+    "derivation_script": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/scientific_review.py",
+      "bytes": 20535,
+      "sha256": "014d18bfae971bd83d5bc95b44cbf952a689a786986a9b8f108a6dd0099bf18a"
+    },
+    "per_run_source_summary": [
+      {
+        "run_id": "AbsHard-1",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5722945728914727,
+        "applied_message_rms_mean": 0.5722945728914727
+      },
+      {
+        "run_id": "AbsHard-1",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5726872168179094,
+        "applied_message_rms_mean": 0.5726872168179094
+      },
+      {
+        "run_id": "AbsHard-1",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.561926927045998,
+        "applied_message_rms_mean": 0.561926927045998
+      },
+      {
+        "run_id": "Anchor",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.0,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "Anchor",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.0,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "Anchor",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.0,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "B",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5377559301057929,
+        "applied_message_rms_mean": 0.5377559301057929
+      },
+      {
+        "run_id": "B",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5448845091851863,
+        "applied_message_rms_mean": 0.5448845091851863
+      },
+      {
+        "run_id": "B",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5267752342620232,
+        "applied_message_rms_mean": 0.5267752342620232
+      },
+      {
+        "run_id": "D0",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5511957602828149,
+        "applied_message_rms_mean": 0.5511957602828149
+      },
+      {
+        "run_id": "D0",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5537203169380424,
+        "applied_message_rms_mean": 0.5537203169380424
+      },
+      {
+        "run_id": "D0",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5435935532872397,
+        "applied_message_rms_mean": 0.5435935532872397
+      },
+      {
+        "run_id": "MeanHinge-1",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5365866418890604,
+        "applied_message_rms_mean": 0.5365866418890604
+      },
+      {
+        "run_id": "MeanHinge-1",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5354349130449584,
+        "applied_message_rms_mean": 0.5354349130449584
+      },
+      {
+        "run_id": "MeanHinge-1",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5298880039492595,
+        "applied_message_rms_mean": 0.5298880039492595
+      },
+      {
+        "run_id": "RSI-1",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5025790056827808,
+        "applied_message_rms_mean": 0.5025790056827808
+      },
+      {
+        "run_id": "RSI-1",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.4970903751251149,
+        "applied_message_rms_mean": 0.4970903751251149
+      },
+      {
+        "run_id": "RSI-1",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.49016217308195564,
+        "applied_message_rms_mean": 0.49016217308195564
+      },
+      {
+        "run_id": "Shrink-D0-0.000000",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.5511957602828149,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "Shrink-D0-0.000000",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.5537203169380424,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "Shrink-D0-0.000000",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 0.0,
+        "raw_message_rms_mean": 0.5435935532872397,
+        "applied_message_rms_mean": 0.0
+      },
+      {
+        "run_id": "Shrink-D0-0.333333",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 0.3333333333333333,
+        "raw_message_rms_mean": 0.5511957602828149,
+        "applied_message_rms_mean": 0.18373192009427158
+      },
+      {
+        "run_id": "Shrink-D0-0.333333",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 0.3333333333333333,
+        "raw_message_rms_mean": 0.5537203169380424,
+        "applied_message_rms_mean": 0.18457343897934744
+      },
+      {
+        "run_id": "Shrink-D0-0.333333",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 0.3333333333333333,
+        "raw_message_rms_mean": 0.5435935532872397,
+        "applied_message_rms_mean": 0.18119785109574654
+      },
+      {
+        "run_id": "Shrink-D0-0.666667",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 0.6666666666666666,
+        "raw_message_rms_mean": 0.5511957602828149,
+        "applied_message_rms_mean": 0.36746384018854317
+      },
+      {
+        "run_id": "Shrink-D0-0.666667",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 0.6666666666666666,
+        "raw_message_rms_mean": 0.5537203169380424,
+        "applied_message_rms_mean": 0.3691468779586949
+      },
+      {
+        "run_id": "Shrink-D0-0.666667",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 0.6666666666666666,
+        "raw_message_rms_mean": 0.5435935532872397,
+        "applied_message_rms_mean": 0.3623957021914931
+      },
+      {
+        "run_id": "Shrink-D0-1.000000",
+        "subset": "H",
+        "n_images": 47,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5511957602828149,
+        "applied_message_rms_mean": 0.5511957602828149
+      },
+      {
+        "run_id": "Shrink-D0-1.000000",
+        "subset": "M",
+        "n_images": 223,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5537203169380424,
+        "applied_message_rms_mean": 0.5537203169380424
+      },
+      {
+        "run_id": "Shrink-D0-1.000000",
+        "subset": "T1",
+        "n_images": 20,
+        "alpha": 1.0,
+        "raw_message_rms_mean": 0.5435935532872397,
+        "applied_message_rms_mean": 0.5435935532872397
+      }
+    ]
+  },
+  "statistical_limits": [
+    "Checkpoint and workpoint selection reuse this validation set; all intervals exploratory and unadjusted.",
+    "Paired bootstrap retains images, references and methods together, uses 222 known-group/image units for 223 M images, 2000 draws, seed17.",
+    "An interval crossing zero does not establish equivalence; current evidence does not show a substantive unique advantage.",
+    "Known groups and duplicate audit do not prove independence of unknown patient/lesion identities.",
+    "H47 and strict-T1 20 are descriptive case/source sensitivity cohorts, never tuning inputs."
+  ]
+}

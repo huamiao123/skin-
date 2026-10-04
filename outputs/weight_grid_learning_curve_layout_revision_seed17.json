@@ -1,0 +1,88 @@
+{
+  "status": "layout_revised_figures_regenerated_inputs_unchanged",
+  "completed_utc": "2026-10-04T06:23:38.605283+00:00",
+  "snapshot_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/layout_snapshot/weight_grid_learning_curves_20261004T062117881336Z",
+  "snapshot_manifest": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/layout_snapshot/weight_grid_learning_curves_20261004T062117881336Z/layout_snapshot_manifest.json",
+    "bytes": 24968,
+    "sha256": "873de76f6e7f0f32ae7bb2390c2951e787ed61f5a2f48882ee30167a9da92f5c"
+  },
+  "old_tool_sha256": "a2f5a565a3859c3e1c5e97bea6c4346b5bdd510918abcf34f6aa9d7091b5b5f5",
+  "new_tool": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/tools/plot_weight_grid_learning_curves.py",
+    "bytes": 22147,
+    "sha256": "369143b21aa4a85bcabb692be99c13db0acd3f0a046ad7226026238b348ccc5d"
+  },
+  "layout_changes": {
+    "subplot_bottom_before": 0.12,
+    "subplot_bottom_after": 0.17,
+    "first_footer_y_before": 0.089,
+    "first_footer_y_after": 0.077,
+    "footer_line_step_before": 0.019,
+    "footer_line_step_after": 0.018
+  },
+  "code_diff": [
+    "--- archived_old_tool",
+    "+++ current_new_tool",
+    "@@ -223,7 +223,7 @@",
+    "                          \"axes.spines.top\": False, \"axes.spines.right\": False,",
+    "                          \"pdf.fonttype\": 42, \"ps.fonttype\": 42})",
+    "     fig, axes = plt.subplots(3, 3, figsize=(16.5, 12.3))",
+    "-    fig.subplots_adjust(left=.065, right=.975, bottom=.12, top=.865, hspace=.42, wspace=.30)",
+    "+    fig.subplots_adjust(left=.065, right=.975, bottom=.17, top=.865, hspace=.42, wspace=.30)",
+    "     d0 = evidence[\"stages\"][\"D0\"]",
+    "     x = np.arange(1, 41)",
+    "     for row, (name, _, title, color) in enumerate(FAMILIES):",
+    "@@ -270,7 +270,7 @@",
+    "              \"Validation: original-coordinate hard Dice, mean over references then images; already used for development checkpoint selection.\",",
+    "              \"40 committed epochs per D task. MH-0.3 resumed after interruption; discarded physical work is recorded separately. Test remains locked.\"]",
+    "     for index, note in enumerate(notes):",
+    "-        fig.text(.065, .089 - index * .019, note, fontsize=9.2, color=\"#444444\", ha=\"left\", va=\"top\")",
+    "+        fig.text(.065, .077 - index * .018, note, fontsize=9.2, color=\"#444444\", ha=\"left\", va=\"top\")",
+    "     return fig",
+    " ",
+    " "
+  ],
+  "checks": {
+    "only_two_layout_code_lines_changed": true,
+    "all_other_input_hashes_unchanged": true,
+    "scientific_CSVs_unchanged": true,
+    "frozen_source_config_unchanged": true,
+    "all_ten_D40_curve_reader_and_plot_value_code_unchanged": true,
+    "actual_10stage_selected_epoch_metrics_unchanged": true,
+    "source_and_training_cost_ledger_unchanged": true,
+    "first_publication_artifacts_and_tool_archived_byte_exact": true,
+    "training_and_validation_PNG_visually_checked_by_this_agent": true,
+    "root_final_visual_check_pending": true
+  },
+  "outputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_training_curves_seed17.png",
+      "bytes": 1131353,
+      "sha256": "9579c54aed06457533cb09c8263569ef8f5f1345b08f3ce73c54e440de6beae9"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_training_curves_seed17.pdf",
+      "bytes": 32797,
+      "sha256": "9c9cbf5ddc6d2c6176e7bd3d3c87fb0c3a2a26a5e45295c5acb6db0c45b23824"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_validation_curves_seed17.png",
+      "bytes": 1586953,
+      "sha256": "30d23ee7aeae3c00cbcb8628974d402d1755f7a4968d565fbe94356aa7864992"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_validation_curves_seed17.pdf",
+      "bytes": 32133,
+      "sha256": "4466b9c2b168baa11102ca246ef2ced94a1c022f6e061c50b8dde44f70302c47"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_learning_curves_seed17/weight_grid_learning_curves_seed17.json",
+      "bytes": 30309,
+      "sha256": "a4d424bf3c71d0edd9fcd09ae1f7453c8735cdabfdaee07376aa50f94005c9b5"
+    }
+  ],
+  "full_statistics_rerun": false,
+  "GPU_or_model_inference_used": false,
+  "test_scoring_locked": true
+}

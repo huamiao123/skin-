@@ -1,0 +1,255 @@
+{
+  "protocol_id": "P2-IMA-M-v2",
+  "image_metadata_rows": 14967,
+  "reference_metadata_rows": 22472,
+  "source_sha256": {
+    "iaa_metrics_image.csv": "aff210c8802bd51c4cc6bcebb69ba0279556f4dfab6b1d8bb8b2909717e00809",
+    "iaa_metrics_pairwise.csv": "997dd325888023e8a9aa258bd662a4ad794b37857a624f41b8f097c794be504c",
+    "img_metadata.csv": "5ebc23efdd91de68cc6df6e04365023f2318de574cc23b585ea64b5a800c6942",
+    "seg_metadata.csv": "e8cfb2f6d9366ab5b06a61883a97798af2a61ef2a714d228674bf40b0ff5c9d0",
+    "seg_metadata_multiannotator_subset.csv": "033a3dae5b4c09014b2b4b795b88f202d0e0d56c9fc9fc5560401c9c969903ce",
+    "test.csv": "2d0e1682a8263ed8aa832beaf92ab2f477f006804fa705d5194526defc79d6b9",
+    "train.csv": "bb43cd73cb9a566d7063aba300ac7569e3a3d02cc6d1040679d1c5264118bad9",
+    "val.csv": "7fda76534b2b31689b744bf53ea205b4b2acafba276e6cc10d99c7de73000c0e"
+  },
+  "rules": {
+    "original_annotators": "A00-A15",
+    "subset_filter_before_dedup": true,
+    "dedup_priority": [
+      "T1",
+      "T2",
+      "T3",
+      "mskObjectID_lexicographic"
+    ],
+    "grouping": "patient_id OR lesion_id transitive components across all image metadata, plus documented verified RGB duplicates or conservatively suspected same-case links",
+    "protection_order": [
+      "test",
+      "val",
+      "train"
+    ],
+    "missing_identity": "not merged"
+  },
+  "before_group_cleanup": {
+    "M": {
+      "train": 1568,
+      "val": 231,
+      "test": 451
+    },
+    "H": {
+      "train": 315,
+      "test": 87,
+      "val": 48
+    },
+    "T1": {
+      "train": 116,
+      "test": 35,
+      "val": 20
+    }
+  },
+  "image_counts": {
+    "M": {
+      "train": 1471,
+      "val": 223,
+      "test": 451
+    },
+    "H": {
+      "train": 299,
+      "test": 87,
+      "val": 47
+    },
+    "T1": {
+      "train": 113,
+      "test": 35,
+      "val": 20
+    }
+  },
+  "reference_counts": {
+    "M": {
+      "train": 3102,
+      "val": 471,
+      "test": 948
+    },
+    "H": {
+      "train": 643,
+      "test": 183,
+      "val": 104
+    },
+    "T1": {
+      "train": 268,
+      "test": 79,
+      "val": 49
+    }
+  },
+  "identity_coverage_all_images": {
+    "patient_id": 2078,
+    "lesion_id": 2219
+  },
+  "identity_coverage_retained_M": {
+    "patient_id": 608,
+    "lesion_id": 659
+  },
+  "known_group_count_all_images": 14068,
+  "verified_rgb_duplicate_group_source_sha256": "bdea3b476d62979ab874a944295964ec97a4a8bf61d158f013d780289a3aee4f",
+  "verified_rgb_duplicate_groups": [
+    [
+      "ISIC_0000477",
+      "ISIC_0000512"
+    ],
+    [
+      "ISIC_0001205",
+      "ISIC_0001505"
+    ],
+    [
+      "ISIC_0001208",
+      "ISIC_0001508"
+    ],
+    [
+      "ISIC_0001209",
+      "ISIC_0001509"
+    ],
+    [
+      "ISIC_0001211",
+      "ISIC_0001511"
+    ],
+    [
+      "ISIC_0001247",
+      "ISIC_0001547"
+    ],
+    [
+      "ISIC_0001275",
+      "ISIC_0001575"
+    ],
+    [
+      "ISIC_0012127",
+      "ISIC_0012970"
+    ],
+    [
+      "ISIC_0000162",
+      "ISIC_0014826"
+    ],
+    [
+      "ISIC_0000174",
+      "ISIC_0015071"
+    ],
+    [
+      "ISIC_0000183",
+      "ISIC_0015311"
+    ],
+    [
+      "ISIC_0000193",
+      "ISIC_0015436"
+    ],
+    [
+      "ISIC_0000384",
+      "ISIC_0023557"
+    ],
+    [
+      "ISIC_0000388",
+      "ISIC_0021777"
+    ],
+    [
+      "ISIC_0000395",
+      "ISIC_0023747"
+    ],
+    [
+      "ISIC_0000437",
+      "ISIC_0023696"
+    ],
+    [
+      "ISIC_0000449",
+      "ISIC_0023936"
+    ],
+    [
+      "ISIC_0000453",
+      "ISIC_0024137"
+    ],
+    [
+      "ISIC_0001105",
+      "ISIC_0036287"
+    ],
+    [
+      "ISIC_0001134",
+      "ISIC_0010016"
+    ],
+    [
+      "ISIC_0001155",
+      "ISIC_0022845"
+    ],
+    [
+      "ISIC_0010013",
+      "ISIC_0021152"
+    ],
+    [
+      "ISIC_0010074",
+      "ISIC_0023832"
+    ],
+    [
+      "ISIC_0010568",
+      "ISIC_0021114"
+    ],
+    [
+      "ISIC_0011334",
+      "ISIC_0024095"
+    ],
+    [
+      "ISIC_0011451",
+      "ISIC_0014759"
+    ],
+    [
+      "ISIC_0011692",
+      "ISIC_0011696"
+    ],
+    [
+      "ISIC_0011899",
+      "ISIC_0011900"
+    ],
+    [
+      "ISIC_0013109",
+      "ISIC_0013163"
+    ],
+    [
+      "ISIC_0014936",
+      "ISIC_0015602"
+    ],
+    [
+      "ISIC_0014957",
+      "ISIC_0015257"
+    ],
+    [
+      "ISIC_0021333",
+      "ISIC_0036312"
+    ],
+    [
+      "ISIC_0021440",
+      "ISIC_0036286"
+    ],
+    [
+      "ISIC_0021751",
+      "ISIC_0036297"
+    ],
+    [
+      "ISIC_0022342",
+      "ISIC_0036325"
+    ],
+    [
+      "ISIC_0022649",
+      "ISIC_0022650"
+    ],
+    [
+      "ISIC_0022678",
+      "ISIC_0036189"
+    ]
+  ],
+  "identity_limit": "image deduplication and known patient/lesion isolation; missing identities prevent a complete patient-independent guarantee",
+  "removed_counts": {
+    "train": 97,
+    "val": 8
+  },
+  "known_group_split_intersection": {
+    "train:val": [],
+    "train:test": [],
+    "val:test": []
+  },
+  "selected_references_sha256": "7f84dbf3fa6b519550364ba0e70c18d9172bc44a18dad40b7b8d0f0833ba4729",
+  "status": "metadata_candidates_only; requires RGB/mask file audit"
+}
