@@ -1,0 +1,583 @@
+﻿皮肤病灶分割：RSI方向去留验证——AI执行任务书
+日期：2026-10-04
+版本：1.0；本文件是新增实验计划，不是已经完成的训练报告。
+
+======================================================================
+0. 任务与完成边界：请执行实验，不继续写泛泛综述
+======================================================================
+
+你是负责实现、训练和验证的科研执行AI。
+请基于已有工程完成一次有限、可否证的机制鉴别，并生成诚实的继续/停止判断。
+研究对象是皮肤镜病灶二值分割。
+
+本轮需要回答：
+（1）现有RSI没有形成实质优势，是否主要由于冻结解码器限制了交互适应？
+（2）放开解码器之后，现有RSI是否仍压制有益更新？
+（3）改善是否仅来自普通CNN解码器微调或整体更新变弱？
+
+本轮不需要证明所有CNN–Transformer融合都有严重缺陷。
+本轮不需要提出新模块、训练收益路由器或重新设计网络。
+本轮只做seed17的预注册五组对照，尽可能复用其中两组旧结果。
+新增全量训练通常为三组；复用条件不满足时最多重跑五组。
+完成验收、固定预算训练、导出和判断后结束本轮；不自动开启seed29、
+正式101/202/303、额外权重网格、ISIC新基准或正式test评分。
+
+执行者可以自主完成隔离工作区、必要实现、验收测试、故障排查、
+合法数据定位/获取和本轮训练。遇到常规实施选择请按本文件决定并记录。
+若私有权重或必要数据确实不可取得，完成资产清点与可运行实现，
+报告具体缺失文件及取得方式；不能用随机权重/伪数据代替并宣称完成。
+
+当前设备可以使用用户提供的单卡4090或5090。不要因尚未知道GPU型号
+而取消计划；先检查实际CUDA/框架兼容性和峰值显存，不编造运行小时数。
+本文件的撰写阶段没有启动上述新增训练。
+
+======================================================================
+1. 先读的实际材料与隔离工作区
+======================================================================
+
+本地论文根目录：D:\Apaper\paper
+
+优先源码快照：
+D:\Apaper\paper\24_Experiment_Review_20261004\skin_repo
+对应公开仓库：https://github.com/huamiao123/skin-
+本轮审阅commit：abfb17bc9a175cdce2da82dfcebe827d1b5ba489
+
+优先阅读：
+1）仓库README.md、PUBLICATION.md、FEASIBILITY_REPORT_2026-10-04.md。
+2）configs/p2_ima_m_v2.yaml。
+3）rsi/models.py、objectives.py、datasets.py、train.py、export.py、metrics.py。
+4）publication/weights_manifest.json、runs/seed17/B/DONE.json。
+5）outputs/seed17/per_reference_gains.csv、pilot_main_table.csv、
+   full_scientific_review.md、root_decision_seed17.json。
+6）D:\Apaper\paper\27_RSI_Go_NoGo_20261004\code_decision_audit.md。
+7）同目录decision_numeric_audit.md、nearest_work_audit.md、
+   当前交互方向_继续或停止的研究判断_2026-10-04.md。
+
+读取工作区内适用的AGENTS.md等真实项目说明。不要把自己的新计划
+改写成旧方案早已通过，也不要覆盖历史实验、原始CSV、配置或权重。
+
+建议Windows实验工作区：
+D:\Apaper\paper\28_RSI_Execution_Handoff_20261004\experiment_workspace
+
+若在原Linux训练机执行，建议：
+工程：/home/featurize/work/RSI_TailProbe_20261004
+训练输出：/home/featurize/rsi_runs/RSI-TailProbe-20261004
+
+从固定源码建立独立实验副本。新源码、配置、run目录均与旧实验分开。
+本文件只给逻辑位置，执行前将实际位置写入resolved_paths.json。
+不要把Windows路径直接复制到Linux配置，也不要把原run_root继续指向旧实验。
+
+======================================================================
+2. 必需资产：公开仓库不含真实训练权重
+======================================================================
+
+公开Git只包含代码、结果、清单等；原图和完整训练权重不在Git中。
+原Linux数据位置线索：
+  /home/featurize/rsi_data
+  /home/featurize/work/RSI_datasets/{IMA,ISIC2017,ISIC2018,PH2}
+原权重位置线索：
+  /home/featurize/rsi_runs/P2-IMA-M-v2/seed17
+  /home/featurize/work/RSI_Implementation_20261003/runs/seed17
+  /home/featurize/rsi_publish_assets_20261004
+
+本轮共同初始化必须是已跑满40轮B阶段、按验证规则选出的B/best.pth。
+B的选中epoch为22，不是第22轮就停止训练；不要使用B/latest.pth代替。
+
+B/best.pth：
+  SHA256=1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491
+  bytes=125077601
+旧D0/best.pth：
+  SHA256=6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a
+  bytes=125077601
+旧RSI-3/best.pth：
+  SHA256=40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784
+  bytes=125077601
+
+这些SHA是资产身份线索，须同时核对publication/weights_manifest.json、
+对应DONE.json及checkpoint元数据。不要将成功、失败、debug、latest混用。
+如果文件名一致而SHA不同，先定位差异；禁止删掉校验继续训练。
+
+共同B的checkpoint['model']包含已训练CNN、Transformer、message和aux。
+新增各组只加载共同模型参数，重新创建自己的optimizer/scheduler/scaler。
+不继承B的optimizer；不从D0或RSI-3初始化U组；不将D阶段Wo重新置零。
+不存在原权重时，不自动重训A-CNN100+A-T100+B40来冒充同一批对照。
+重建共同起点应另列协议与成本，不属于本文件的三组训练预算。
+
+资产清点必须留存：实际路径、SHA、大小、seed、stage、完整预算证明、
+best epoch、manifest身份、源代码版本和读取成功状态。
+
+======================================================================
+3. 数据与评价范围：本轮保持原IMA协议
+======================================================================
+
+训练/验证使用原P2-IMA-M-v2的最终审计清单和完全相同划分：
+  M train：1471图 / 3102参考；val：223图 / 471参考。
+  M test：451图 / 948参考，封存，不评分、不选参。
+  H val：47图 / 104参考；T1 val：20图 / 49参考。
+H/T1是M的来源子集，不能累加成独立新增样本。
+
+不要使用原metadata_counts的1486/224代替最终可用1471/223。
+优先定位data_manifests/final_references.csv、file_audit.json及配置所指资产。
+检查文件审计完整、绑定当前最终manifest SHA、图像/标签可解码与尺寸一致。
+
+如果机器迁移导致路径必须调整：
+  保留原manifest；新建路径映射副本；记录新旧SHA。
+  逐条核对image_id/reference_id/annotator/source/group/split/文件内容身份。
+  重新绑定新审计与配置；不能以路径重写为借口取消数据身份校验。
+  不因标签外观、模型成绩或来源分数删图/换标注。
+
+处理固定：256×256 letterbox；RGB双线性、mask最近邻；有效像素mask；
+原ImageNet归一化；原数据增强与坐标恢复；每图先平均参考、再平均图像。
+所有参考保留原source/tool身份；不把工具/生成流程差异自动称多医生意见。
+
+主评价在原尺寸：先裁letterbox padding并恢复logits，再以logit>=0
+即概率>=0.5二值化。不能先阈值后缩放。无TTA、无后处理、无阈值搜索。
+
+H/T1使用同一组M预测，只改变参考集合；不得为它们单独训练、选checkpoint、
+重选α或λ。测试入口必须拒绝split=test。
+
+后续ISIC2017/2018不是本轮自动训练内容：
+ISIC2017 Task1为2000/150/600，ISIC2018 Task1为2594/100/1000。
+跨年份存在重叠，不能直接当独立外测。先完成当前鉴别再谈基准扩展。
+
+======================================================================
+4. 实验矩阵：五组，先争取只新增三组
+======================================================================
+
+全部组从同一B出发，seed17，固定独立teacher，D阶段40轮。
+
+F-Mean：只训练原message；冻结student tail；普通平均分割损失。
+        对应旧D0，可在第7节的复用验收通过后复用。
+
+F-RSI：只训练原message；冻结student tail；原RSI，λ=3。
+       对应旧RSI-3，可在复用验收通过后复用。
+
+U-Mean：训练message和student decoder tail；普通平均分割损失。
+
+U-RSI：训练message和student decoder tail；原RSI，λ=3。
+
+U-NoMessage：只训练student decoder tail；message实际关闭，M=0。
+             不运行Transformer/message来生成分割输出。
+             它是CNN解码器普通微调对照，不是“固定B消息on再调tail”。
+
+本轮不增加第六组“固定B消息on，只调tail”。该组可以进一步分离
+消息学习与tail适应，但不在当前自动预算内。
+
+U-Mean/U-RSI对U-NoMessage的区别包含新增Transformer信息与消息–tail
+共同适应，不能仅靠这个比较证明哪一部分起作用。
+U-NoMessage少一次Transformer前向，不要强行空算使GPU小时看起来一样；
+对齐训练图像、更新次数和选择机会，并如实报告实际参数/前向/时间差。
+
+预计可训练参数：
+  F-Mean/F-RSI：131584。
+  U-Mean/U-RSI：131584+179745=311329。
+  U-NoMessage：179745。
+必须用实际sum(p.numel())验证，输出所有可训练参数名与optimizer参数名。
+这些是可训练参数变化；不是新加网络模块，也不是整个模型总参数。
+
+======================================================================
+5. 最关键实现：teacher固定，student tail独立
+======================================================================
+
+原代码不能直接支持U组：
+  rsi.train/rsi.train_objective的B/D阶段仅训练message。
+  ControlledModel.set_stage/train会把原cnn/tail设为冻结组件。
+  forward_pair原z0和z1共享一个tail，tail解冻后会导致参照漂移。
+  export_actions只实现消息feature缩放，不实现完整更新logit插值。
+  train_stage会mirror到PROJECT/runs，prepare_q会写B目录；不能把旧存档
+  路径直接传给这些有写操作的接口。新runner统一写新实验目录。
+
+因此，在实验副本中新建明确的student-tail变体和相应runner/exporter；
+不能只改requires_grad后沿用原训练/导出接口并宣布U实验完成。
+
+推荐省计算实现：
+  保留B的CNN encoder/prefix、原reference tail、Transformer和aux全固定；
+  student_tail=deepcopy(B的reference tail)；
+  message=deepcopy(B的已训练message)。
+student_tail与reference_tail的参数storage必须不共享。
+
+每个增强训练batch的前向：
+
+  with no_grad():
+      f8,c4 = frozen_CNN_features(同一个增强后的RGB)
+      z_ref = frozen_reference_tail(f8,c4)
+      if group != U-NoMessage:
+          t16 = frozen_Transformer(同一个增强后的RGB)
+
+  if group == U-NoMessage:
+      M = 0
+  else:
+      M = trainable_message(f8,t16,原context_token_valid(pixel_valid))
+
+  z_on = student_tail(f8+M,c4)
+  按第6节计算每参考损失。
+
+冻结student tail的F组，z_on路径仍需保留对message输入的梯度。
+不能在student_tail前向整体使用no_grad，否则F组message学不到。
+U组中frozen features可以no_grad，student_tail/message必须可导。
+
+teacher包括参数与buffers，永远eval、requires_grad=False；所有冻结编码器
+也保持eval。训练mode切换、evaluate、gradient_diagnostic之后均再验收。
+每轮teacher hash和固定FP32 teacher输出不得漂移。
+
+完整teacher应等于B里的真实CNN anchor；B阶段未改变它。它不是新tail
+下的alpha0输出，也不是teacher与student参数共享后的detach结果。
+
+可额外记录z_off_current=student_tail(f8,c4)：
+  总更新收益：Dice(z_on)-Dice(z_ref)。
+  同tail开关变化：Dice(z_on)-Dice(z_off_current)。
+  off输出变化：Dice(z_off_current)-Dice(z_ref)。
+U组的tail若只在on条件训练，off可能是未受训练支持的状态；第二项
+只作诊断，不能当可信anchor，更不能由它单独证明异构特征有害。
+
+======================================================================
+6. 目标函数：保持原目标，不临时加入新损失
+======================================================================
+
+z形状[B,1,H,W]；参考mask形状[B,R,1,H,W]；present形状[B,R]。
+沿用rsi/objectives.py的FP32有效像素与present处理，smooth=1e-6。
+
+ell_ir = 0.5*BCE(z_i,y_ir) + 0.5*(1-SoftDice(z_i,y_ir))。
+ell_ref_ir = 对同一增强图、同一参考与有效区域计算的固定teacher损失。
+
+L_seg = mean_i(mean_{present r}(ell_ir))。
+L_RSI = L_seg + 3*mean_i(mean_{present r}(relu(ell_ir-ell_ref_ir)))。
+epsilon_L=0。
+
+F-Mean/U-Mean/U-NoMessage只用L_seg；F-RSI/U-RSI用L_RSI。
+teacher loss detach，risk项不能detach，均在autocast之外用FP32计算。
+不要先平均参考mask；不要先平均参考loss再relu；不要按参考总数给图像
+不同权重；不要把BCE/SoftDice比重、epsilon_L或λ一起修改。
+
+本轮不使用AbsHard、不需要新增q估计、不追加KL、边界、门控或保收益loss。
+可以记录梯度，不把诊断项加入训练目标。
+
+======================================================================
+7. 复用与正式跑前的工程验收
+======================================================================
+
+旧F两组复用条件必须全部满足：
+  a. B/D0/RSI-3权重、DONE、manifest、配置和40轮日志身份匹配。
+  b. 新F变体能严格装入旧state并复现旧F的前向和目标函数。
+  c. 固定真实训练/验证小batch，输出误差、阈值mask、loss、梯度路径
+     在同环境下逐项通过；冻结hash稳定。
+  d. 固定M评价及导出能复现原主表和逐参考结果，差异列出并解释。
+  e. 训练环境/核心实现/AMP/微批/采样不影响公平复用。
+
+目标原结果用于身份和评价管线验收，不是新增方法需要达到的训练指标：
+  Anchor M Dice=0.855252000。
+  B M Dice=0.858373752。
+  D0 M Dice=0.858316916；H_epsilon=0.007422202；G+=0.012552872。
+  RSI-3 M Dice=0.858010222；H_epsilon=0.003259121；G+=0.007856949。
+
+跨硬件/版本的边界像素可能产生数值差异，先按统一FP32评价进行对齐诊断。
+不要删除差异或放宽容差到足以覆盖算法效果。若环境变化导致旧训练复用
+不充分，在新环境共同重跑F-Mean/F-RSI，再与U组比较；历史分数仍分列。
+历史requirements是torch2.2.2/torchvision0.17.2/cu121/timm1.0.22。
+不能假定该历史环境支持当前GPU；必要兼容更新必须记录并重新验收。
+
+必须新增并通过的有效性检查：
+  1. 从共同B初始化时F/U的z_on一致，reference输出一致。
+  2. student tail刚复制时z_off_current=z_ref。
+  3. teacher/冻结编码器无梯度、hash不变；student与teacher不共享storage。
+  4. F仅message有梯度；U-Mean/U-RSI仅message+student tail有梯度；
+     U-NoMessage仅student tail有梯度，输出不依赖Transformer/message。
+  5. model.train/eval及诊断切换后可训练参数集合不变。
+  6. 与原objective逐参考数值及梯度一致，缺失参考/无效padding正确处理。
+  7. alpha0完整更新缩放精确恢复z_ref；alpha1恢复U-Mean输出。
+  8. 同图参考/增强一致，坐标恢复与原mask尺寸正确。
+  9. 最后不足8图的梯度累积按实际样本数归一，不丢样本、不改变图像权重。
+  10. AMP溢出与实际optimizer更新次数如实记录。
+  11. 断点恢复配置、初始化、代码、数据身份检查生效。
+  12. split=test评分入口明确拒绝。
+
+先用固定少量真实train图做GPU短跑检验梯度/显存，再重置到共同B，
+重置optimizer/RNG开始全量40轮。短跑权重不得成为正式初始化。
+这属于高成本训练前的必要工程验收，不是方法有效性的证据。
+
+======================================================================
+8. 冻结训练配置与预算
+======================================================================
+
+seed=17；input_size=256；每组D=40 epochs；所有组跑满预算，不早停。
+AdamW；weight_decay=1e-4；所有可训练参数lr=1e-4。
+effective_batch=8；优先microbatch=4，梯度累积2。
+前2轮warmup+原cosine调度；gradient_clip=1.0。
+AMP沿用原设置；TF32设置沿用原runtime；workers/eval_batch优先原4。
+不用更强预训练，不调整归一化/增强，不加额外标签。
+
+训练顺序建议：U-NoMessage、U-Mean、U-RSI。
+三个任务顺序执行，避免共享GPU竞争使计时不可比；每组重新set_seed(17)。
+model复制不得无意消耗不同组的采样RNG；采用原seed:epoch:image_id
+增强与原seed+epoch*100003 shuffle逻辑，保存顺序校验。
+
+1471图/effective batch8，对应每epoch184次optimizer尝试，40轮7360次。
+AMP跳步时实际更新数可能少于尝试数；不得偷偷增加epoch补成更大预算。
+若发生大量非有限梯度，先按工程故障调查，不能把坏训练当方法阴性结果。
+故障现场和失败run保留，修复后按同配置重跑并记录额外计算成本。
+
+OOM先调整非科学因素，如worker或数据缓存；需要降低microbatch时，
+effective batch仍为8，累积改为4或8，统一受影响的比较组并重验收。
+若新数值路径不支持旧F公平复用，F一起重跑。不得单独降低某组分辨率、
+丢参考、裁剪难图或改变有效batch。
+
+checkpoint选择：M val原尺寸macro mean-rater hard Dice最大；
+精确并列选更早epoch。不要为RSI选最小风险epoch，为Mean选最高Dice。
+同时保存40轮完整曲线，报告best和最终epoch40；不按结果改主checkpoint。
+
+保存latest/best、模型/optimizer/scheduler/scaler/RNG、epoch、实际更新数、
+配置/代码/manifest/init SHA、teacher hash、累计耗时与峰值显存。
+原code_provenance只glob rsi/*.py与configs/*.yaml：新增runner、模型文件、
+测试、导出/汇总代码都要加入新协议provenance，不能漏掉tools里的新实现。
+
+resume只能恢复相同run的原完整状态。不能从某组latest复制权重初始化另一组。
+按原机制删除未提交epoch日志而非重复计数；代码/配置变更需另立run和说明。
+运行中定期输出阶段、epoch、预算、实际更新数、teacher稳定性和异常；
+不能只启动后台进程就宣称实验完成。
+
+======================================================================
+9. 必做强对照：完整更新缩放与训练侧等幅控制
+======================================================================
+
+U组训练了tail，仅对feature消息乘α已经不能恢复固定teacher。
+所以必须对选中U-Mean生成完整更新logit插值：
+
+  Delta_mean = z_Umean - z_ref。
+  z_alpha = z_ref + alpha*Delta_mean。
+  alpha固定为0、1/3、2/3、1；四点全部展示。
+
+它与旧feature Fixed-Shrink分列，不把两种运算混写。
+插值在恢复原尺寸前的canonical logits上做，随后走相同恢复/阈值流程。
+不要只平均二值mask或概率后还称logit插值。
+不生成中间新α网格，不为每张验证图用GT选择α。
+四点的开发曲线/包络可以描述，不能将其中验证最优α称独立测试结果。
+
+另做一个预先指定的主要等幅控制，不使用任何GT拟合强度：
+在1471张canonical train图、同一选中U-Mean和U-RSI checkpoint上，
+逐图只使用预测和pixel_valid计算：
+
+  S_mean = mean_i(mean_valid_pixels((z_Umean-z_ref)^2))。
+  S_rsi  = mean_i(mean_valid_pixels((z_Ursi-z_ref)^2))。
+  alpha_RMS_raw = sqrt(S_rsi/S_mean)。
+  alpha_RMS = clip(alpha_RMS_raw,0,1)。
+  z_RMS = z_ref + alpha_RMS*(z_Umean-z_ref)。
+
+分母为0则置alpha_RMS=0并标记退化；记录raw、clipped、两S及实际RMS。
+若raw>1而截到1，不得称严格等幅；单列“不完全匹配”并报告限制。
+不能改用validation/test预测拟合，更不能使用真实病灶面积或Dice。
+这个α只标定一次、冻结后评价M/H/T1；不要根据成绩改成LS或另一个比值。
+
+保留旧D0、旧RSI和旧feature α1/3、2/3的历史参照，但环境不等价时
+只作历史结果，不将它们与新组强行作精确科学优劣判断。
+
+计时：U-RSI部署只需student一次tail，无GT/teacher输入；
+完整logit插值对照通常需要teacher与student两个tail。如实计入预算。
+train-side alpha标定额外前向成本单列，不隐去成“零成本”。
+
+======================================================================
+10. 指标、逐病例诊断与统计
+======================================================================
+
+所有收益相对同一个固定teacher，g_ir=Dice(pred_i,y_ir)-Dice(ref_i,y_ir)。
+定义始终为图内参考平均后图间等权：
+  G+ = E_i mean_r max(g_ir,0)。
+  H- = E_i mean_r max(-g_ir,0)。
+  H_epsilon = E_i mean_r max(-g_ir-0.005,0)。
+  mean_gain = G+ - H-，必须数值核验；不能用H_epsilon替代H-。
+
+必报：Dice、IoU、G+、H-、H_epsilon、mean_gain、soft BCE/SoftDice、
+rho/J、precision/recall、预测面积、更新logit RMS、改变像素比例。
+退化统计分开：
+  mean_harm：图内平均g<-epsilon。
+  any_harm：至少一参考g<-epsilon。
+  all_harm：全部参考g<-epsilon。
+  sign_conflict：min g<-epsilon且max g>epsilon。
+epsilon固定0.005为主，0/0.01/0.02/0.05只作预指定敏感性；
+不能拿any_harm说“这么多图整体失败”。
+
+边界指标：原实现BF1容差max(1px,0.5%图像对角线)；0.25%/1%敏感性；
+4邻域边界、欧氏双向距离拼接95百分位的HD95及对角线归一值。
+空mask约定沿用原代码，不能让各组口径不同。
+
+保留旧尾部口径：每图最小参考g，再取最差ceil(10%图数)的均值；
+另报图均值尾部。M为23图，T1仅2图，避免由小尾部做普遍结论。
+
+按选中U-Mean固定定义四类图，后验仅用于诊断：
+  all-benefit：所有参考g>0.005。
+  all-harm：所有参考g<-0.005。
+  conflict：至少一参考>0.005且另一参考<-0.005。
+  other：其余。
+四类不随每个方法重新分组。比较U-RSI、RMS、四α、U-NoMessage在这些
+相同图上的变化和总体贡献，检查是否再次牺牲明确有益更新。
+不能将后验类别或GT传给模型推理。
+
+M/H/T1导出逐参考CSV：包含run/checkpoint/manifest/teacher身份、
+image_id/group_id/reference_id/source/tool/annotator、上述hard/soft指标，
+FP/FN新增/移除计数，canonical/original loss分开，所有α值写清。
+对冻结编码器、teacher和同图预测一致性逐条验收。
+
+五组结果还必须给出因子差分：
+  tail在普通目标下的变化：U-Mean - F-Mean。
+  tail在RSI下的变化：U-RSI - F-RSI。
+  冻结条件下RSI变化：F-RSI - F-Mean。
+  解冻条件下RSI变化：U-RSI - U-Mean。
+  difference-in-differences：
+    (U-RSI-U-Mean) - (F-RSI-F-Mean)。
+对Dice、G+、H-、H_epsilon均分列，避免把tail贡献算成RSI贡献。
+若F因环境差异只能作历史参照，因子差分只能描述，不能当同条件鉴别。
+
+比较均配对，同一次bootstrap索引用于双方，保留同图全部参考关联。
+有已知病例组按组重采样，未知身份不能随意合并为同一“unknown”组；
+也不能声称所有患者完全独立。沿用原已知组/图像222个单位处理，并报告。
+bootstrap2000次、固定rng seed17；另报223图单位敏感性。
+尾部每次重采样后重新排序。报告CI，但不把像素当独立样本。
+
+全部CI是单seed、选中开发集的探索性证据，不是正式显著性、非劣性或
+等效性证明。区间跨0不等于两法相同；多seed也不能替代独立病例。
+
+======================================================================
+11. 预登记的去留筛查：先冻结，再训练
+======================================================================
+
+下面数值只用于本轮资源筛查，是我们的实施选择，不是文献公认、
+临床意义或投稿门槛。执行AI必须在首次全量训练前写入preregistration.json，
+记录本任务书SHA与时间；不得看见新结果后改变门槛或换主要对照。
+如存在工程问题，先标记INVALID，不用训练故障否证科学假设。
+
+使用选中checkpoint的M指标。记D为Dice，H为H_epsilon，G为G+；
+M=U-Mean，R=U-RSI，N=U-NoMessage，C=训练侧alpha_RMS控制。
+满足下面A或B只是“值得下一次独立确认”，不是已经成功的论文方法。
+
+路线A：实质平均收益信号。
+  D_R - max(D_M,D_N,D_C) >= 0.002，即0.2个百分点。
+  H_R <= H_M + 0.0005。
+  需说明四个固定logit α中是否存在能解释同样收益的简单点。
+
+路线B：保留收益前提下的风险改善。
+  D_R >= max(D_M,D_N) - 0.001。
+  D_R >= D_C - 0.001。
+  G_M>0且G_R >= 0.8*G_M。
+  H_M-H_R >= 0.001，且至少降低H_M的20%。
+  H_C-H_R >= 0.0005，且至少降低H_C的10%。
+若对照H为0，不能计算相对下降，路线B不通过；如G_M为0也不通过。
+H_M<0.001或H_C<0.0005时，预定绝对改善没有足够headroom，记录
+LOW_RISK_HEADROOM，不降低门槛，也不将它误写成算法被严格证明无效。
+
+附加限制：
+  1. 若任一固定logit α具有D>=D_R且G>=G_R且H<=H_R，并有一项
+     超过预登记实用幅度（D或G差>=0.001，或H差>=0.0005），
+     判为简单控制能够解释/优于，不触发继续。
+  2. H或T1来源子集相对U-Mean或RMS出现Dice下降>0.005时，
+     标记SOURCE_REGRESSION，不触发自动确认，不以小样本宣判普遍失效。
+     同时固定报告相对U-NoMessage的来源变化；若亦下降>0.005，
+     同样标记来源退化。出现退化后不重挑checkpoint/λ/α补救。
+  3. raw alpha_RMS>1或S_mean为0时，主要等幅对照退化；
+     单列结果，不能以“等幅通过”宣布机制成立。
+  4. 同时给出配对CI和完整40轮趋势；出现末位小数优势但方向/来源
+     不稳定时，判为不确定，不把阈值点估计写成正式检验通过。
+  5. 为防只改善扣容差的H_epsilon，路线A/B均检查未扣容差H-和尾部：
+     相对U-Mean与RMS两主要对照，H-_R不得增加超过0.0005，
+     最差10%逐图最小参考gain不得下降超过0.005。
+     超过时记录TOTAL_HARM_OR_TAIL_REGRESSION，不触发确认。
+
+最终状态必须为以下之一：
+  INVALID：工程/资产/预算不合规，明确修复或缺失事项。
+  STOP_CURRENT_RSI：未达筛查或简单控制足以解释，不再扩λ/模块。
+  INCONCLUSIVE：点估计有信号但对照退化、数值/来源/不确定性未解决。
+  CANDIDATE_FOR_CONFIRMATION：满足冻结筛查且工程合规；只建议后续确认。
+
+无论状态哪种，本轮五组完成后停止扩展、提交报告。不自动跑下一seed。
+后续若确认，应固定设置重建独立seed的共同A/B，而不是只给D换随机数。
+当前实验也不能单独证明异构特异性；CNN自消息及已有FD/SESV近邻是
+后续有信号才考虑的归因/算法对照，不在本轮自动预算内。
+
+======================================================================
+12. 交给执行AI的新接口规范与建议运行顺序
+======================================================================
+
+以下接口是执行AI需要新建的规格，不是声称现仓库已经提供这些命令。
+先实现，再测试--help、dry-run与真实短跑；不要直接复制命令假装成功。
+
+建议新建：
+  rsi/tail_probe_model.py：固定reference/student tail分离。
+  tools/run_tail_probe.py：preflight/train/export/summarize子命令。
+  configs/tail_probe_seed17.yaml：独立完整配置与去留门槛。
+  tests/test_tail_probe.py：第7节必要科学/工程验收。
+
+配置明确包含group、teacher_B、实际manifest/data/cache/run路径、
+可训练组件、40轮超参、test锁、四α、train-side RMS标定和筛查规则。
+不要只把旧freeze_all_except_message_in_B_D=false就当完成新实现。
+
+实现完成后，接口示例：
+  python -u tools/run_tail_probe.py preflight --config configs/tail_probe_seed17.yaml
+  python -u tools/run_tail_probe.py train --config configs/tail_probe_seed17.yaml --group U-NoMessage
+  python -u tools/run_tail_probe.py train --config configs/tail_probe_seed17.yaml --group U-Mean
+  python -u tools/run_tail_probe.py train --config configs/tail_probe_seed17.yaml --group U-RSI
+  python -u tools/run_tail_probe.py export --config configs/tail_probe_seed17.yaml --scope val
+  python -u tools/run_tail_probe.py summarize --config configs/tail_probe_seed17.yaml
+
+若F不能复用，在同一配置中追加F-Mean/F-RSI两次train；不重新启动旧
+run_pilot自动训练A/B或整个旧十项网格。旧入口只用于读法参考/一致性验收。
+
+建议顺序：
+  P0：资产/数据/环境检查和隔离副本。
+  P1：新模型、trainer/exporter实现，冻结预登记，验收与短跑。
+  P2：验证旧F复用，必要时共同重跑F两组。
+  P3：新增三组各40轮；完整失败与恢复记录保留。
+  P4：锁定各组checkpoint；训练侧RMS标定；原尺寸M/H/T1导出。
+  P5：主表、同病例分解、配对区间、图和工程完整性汇总。
+  P6：按第11节作去留判断，提交完整成果包，结束本轮。
+
+======================================================================
+13. 必须交付的结果：让下一位研究者能复核
+======================================================================
+
+新实验目录至少包含：
+  preregistration.json：门槛、主要对照、任务书SHA、时间。
+  resolved_paths.json、asset_audit.json、data_audit.json、environment.json。
+  code_provenance.json：原commit、新diff与所有新增脚本SHA。
+  engineering_acceptance.json：验收逐项PASS/FAIL及实测证据。
+  config_resolved.yaml；明确每组参数与共有初始化。
+  reuse_decision.json：旧F是否复用及理由，不能只写“相同”。
+  runs/seed17/{F-Mean,F-RSI,U-Mean,U-RSI,U-NoMessage}/日志与DONE。
+  真实权重best/latest在用户指定本地或训练机保存，记录SHA，不自动上传Git。
+  epoch_diagnostics.csv、per_reference_results.csv、paired_comparisons.csv。
+  amplitude_match_train.json：RMS标定身份、raw/clipped α与实际误差。
+  main_table.csv：五组、完整更新四α、RMS、历史结果分开。
+  group_decomposition.csv：固定U-Mean四类病例上的收益损失/恢复。
+  gain_harm_tradeoff.png、learning_curves.png、case_panels。
+  decision.json、experiment_report.md、experiment_report.txt。
+  failure_and_resume_log.md：发生故障时留存原因、修复与额外成本。
+  delivery_manifest.json：输入与关键输出SHA、完成状态。
+
+可只缓存223图的canonical logits+geometry，逐图恢复原尺寸评价，避免
+保存每个原尺寸大图的所有浮点预测占满磁盘。RMS训练图统计可流式累积。
+若采用缓存，键必须绑定模型/数据/几何/α/实现身份；不能误用不同epoch
+或不同增强的预测。缓存不能替代真实前向和合法原mask读取。
+
+case panels包含按固定规则选择的受损/改善/冲突/随机例，展示原图、
+各真实参考、固定teacher、U-Mean、U-RSI、RMS、U-NoMessage与差异。
+不得只展示最好病例，也不得把不确定标注差异写成明确医学错误。
+原图与许可受限画册保留用户本地，不自动公开发布。
+
+报告先给决策，再回答三项问题：
+  tail放开是否扩大了有效纠错？
+  RSI是否仍牺牲原本有用的更新？
+  简单微调/缩放是否足以解释收益？
+把“实测事实”“机制推断”“未验证项”分开，不按结果补创新故事。
+
+完成标准不是“代码写完”或“进程启动”，而是：真实资产校验、预算完成、
+teacher固定、逐参考/原尺寸评价、强对照和去留报告均可复核。
+无法完成的项目列为未完成，不能用模板数字补齐。
+
+======================================================================
+14. 给执行AI的最后提醒
+======================================================================
+
+本轮已知：普通交互平均略有益、部分病例受损；现RSI能减害但会削弱收益。
+已有GT知情oracle仅用于判断有限候选里还有空间，不是推理策略或提升承诺。
+
+现在要验证当前方向是否值得投入，不要为了保留方案而增加模块、
+搜索有利seed、筛除病例、修改比较口径或偷偷扩大训练预算。
+符合预先条件就建议独立确认；不符合就诚实结束当前RSI版本。
+整个研究问题是否还有其他实现空间，与本版是否应该继续，是两件事。
