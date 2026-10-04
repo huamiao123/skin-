@@ -21,7 +21,7 @@ from rsi.runtime import save_checkpoint
 from tools import tail_probe_training as training
 from tools.tail_probe_preflight import (accumulation_weights, accumulation_control,
                                       _padding_objective_check, _gradient_audit,
-                                      _cpu_evidence, _finish_f_reuse)
+                                      _cpu_evidence, _finish_f_reuse, _gradient_comparison)
 
 
 class ControlDataset(Dataset):
@@ -292,3 +292,44 @@ def test_full_f_reuse_requires_two_passing_group_readouts(installed):
     assert passed["status"]=="PASS"
     with pytest.raises(AssertionError,match="readout not passed"):
         _finish_f_reuse(cfg,mechanical_pass_result(installed),lambda _:dict(status="PASS",groups=[]))
+
+
+def test_gradient_numerical_comparison_retains_exact_cpu_identity():
+    reference={"q_proj.weight":torch.tensor([0.1,-0.2,0.3]),"k_proj.bias":torch.zeros(2)}
+    result=_gradient_comparison(reference,{name:value.clone() for name,value in reference.items()})
+    assert result["status"]=="PASS"
+    assert max(result["maximum_absolute_errors"].values())==0
+    assert result["global_vector"]["relative_l2_error"]==0
+    assert result["global_vector"]["absolute_norm_difference"]==0
+    assert result["global_vector"]["cosine"]==pytest.approx(1.,abs=1e-15)
+
+
+def test_gradient_numerical_comparison_allows_cuda_roundoff_and_tiny_zero_bias():
+    reference={"q_proj.weight":torch.tensor([0.01,-0.02,0.03]),"k_proj.bias":torch.zeros(2)}
+    current={name:value.clone() for name,value in reference.items()}
+    current["q_proj.weight"][0]+=4.6566e-10
+    current["k_proj.bias"][0]=5e-10
+    result=_gradient_comparison(reference,current)
+    assert result["status"]=="PASS"
+    assert result["maximum_absolute_errors"]["k_proj.bias"]>0
+    assert result["global_vector"]["relative_l2_error"]<=1e-6
+    assert result["tolerance"]==dict(per_tensor_atol=1e-8,per_tensor_rtol=1e-6,
+                                      global_vector_relative_l2_max=1e-6)
+
+
+def test_gradient_numerical_comparison_rejects_material_and_global_vector_errors():
+    original={"weight":torch.ones(4)}
+    result=_gradient_comparison(original,{"weight":torch.ones(4)+2e-5})
+    assert result["status"]=="FAIL"
+    # Per-element absolute tolerance alone would permit this zero-ish vector,
+    # but its aggregate relative discrepancy violates the second criterion.
+    tiny={"weight":torch.full((4,),1e-4)}
+    changed={"weight":torch.full((4,),1e-4+5e-9)}
+    result=_gradient_comparison(tiny,changed)
+    assert result["per_tensor"]["weight"]["allclose"] is True
+    assert result["global_vector"]["relative_l2_error"]>1e-6
+    assert result["status"]=="FAIL"
+    with pytest.raises(AssertionError,match="keys"):
+        _gradient_comparison(original,{"different":torch.ones(4)})
+    with pytest.raises(AssertionError,match="nonfinite"):
+        _gradient_comparison(original,{"weight":torch.full((4,),float("nan"))})
