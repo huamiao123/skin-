@@ -1039,6 +1039,8 @@ def run_summarize(cfg):
     require(len(bootstrap_units(points[("U-Mean","M")]["image_ids"],points[("U-Mean","M")]["group_ids"]))==222,
             "Known M resampling units differ from the registered 222 groups")
     write_csv(root/"main_table.csv",main)
+    checkpoint_comparisons=checkpoint_comparison_rows(main,evidence)
+    write_csv(root/"checkpoint_comparison.csv",checkpoint_comparisons)
     pairs=set()
     for i,a in enumerate(GROUPS):
         for b in GROUPS[i+1:]:
@@ -1092,7 +1094,8 @@ def run_summarize(cfg):
     write_csv(root/"epoch_diagnostics.csv",epoch_rows)
     plot_results(root,main,epoch_rows)
     panels=case_panels(cfg,points,categories,amplitude)
-    report=report_text(cfg,decision,main,comparisons,decomposition,amplitude,evidence,panels)
+    report=report_text(cfg,decision,main,comparisons,decomposition,amplitude,evidence,panels,
+                       checkpoint_comparisons=checkpoint_comparisons)
     (root/"experiment_report.md").write_text(report,encoding="utf-8")
     (root/"experiment_report.txt").write_text(report,encoding="utf-8")
     delivery={"status":"complete" if evidence["engineering_ok"] else "INVALID","decision":decision["status"],
@@ -1100,7 +1103,7 @@ def run_summarize(cfg):
               "test_scoring_locked":True,"weight_upload":False,"weights_location":"local training run directories",
               "input_evidence":evidence,"taskbook":file_record(cfg["taskbook"]),
               "outputs":[],"complete_scope":"five-group seed17 mechanism screen; no automatic extensions"}
-    names=("per_reference_results.csv","export_audit.json","main_table.csv","paired_comparisons.csv",
+    names=("per_reference_results.csv","export_audit.json","main_table.csv","checkpoint_comparison.csv","paired_comparisons.csv",
            "factor_differences.csv","group_decomposition.csv","amplitude_match_train.json",
            "amplitude_match_train_per_image.csv","fixed_U_Mean_case_categories.json","epoch_diagnostics.csv",
            "decision.json","experiment_report.md","experiment_report.txt","gain_harm_tradeoff.png",
@@ -1108,6 +1111,53 @@ def run_summarize(cfg):
     delivery["outputs"]=[file_record(root/name) for name in names]
     write_json(root/"delivery_manifest.json",delivery)
     return delivery
+
+
+def checkpoint_comparison_rows(main,evidence):
+    """Best export versus actual epoch40 log; absent final metrics stay absent."""
+    selected={r["run_id"]:r for r in main if r["subset"]=="M" and r["run_id"] in GROUPS}
+    output=[]
+    metrics=("dice","iou","G_plus","H_minus","H_epsilon","mean_gain","loss","bce","soft_dice",
+             "rho","J","bf1","hd95","worst_tail_10pct")
+    hard_metrics=("dice","iou","G_plus","H_minus","H_epsilon","mean_gain")
+    for budget in evidence["budgets"]:
+        group=budget["group"]
+        epochs=read_csv(budget["epochs"]["path"])
+        best_epoch=int(budget["best_epoch"])
+        chosen=[r for r in epochs if int(r["epoch"])==best_epoch]
+        require(len(chosen)==1 and int(epochs[-1]["epoch"])==40,"Checkpoint comparison lacks best or final epoch log")
+        best=selected[group]
+        for metric in hard_metrics:
+            name="val_"+metric
+            if chosen[0].get(name) not in (None,""):
+                require(abs(finite(chosen[0][name],name)-finite(best[metric],metric))<1e-12,
+                        f"Best exported hard metric differs from its selected epoch log: {group}/{metric}")
+        output.append(dict(group=group,checkpoint_view="best",epoch=best_epoch,subset="M",split="val",
+                           checkpoint_sha256=budget["checkpoint"]["sha256"],
+                           metric_source="selected_checkpoint_full_per_reference_export",
+                           **{k:best.get(k) for k in metrics}))
+        latest=Path(budget["checkpoint"]["path"]).parent/"latest.pth"
+        latest_record=file_record(latest)
+        done=json.loads(Path(budget["DONE"]["path"]).read_text())
+        require(latest_record["sha256"]==done["latest_sha256"],"Epoch40 latest checkpoint does not match DONE")
+        final=dict(group=group,checkpoint_view="epoch40",epoch=40,subset="M",split="val",
+                   checkpoint_sha256=latest_record["sha256"],metric_source="actual_committed_epoch40_validation_log",
+                   epoch_log_sha256=budget["epochs"]["sha256"])
+        missing=[]
+        for metric in metrics:
+            # val_loss is the optimized objective (including RSI risk), whereas
+            # the per-reference main-table loss is the segmentation component.
+            name="val_seg" if metric=="loss" else "val_"+metric
+            if epochs[-1].get(name) not in (None,""):
+                final[metric]=finite(epochs[-1][name],name)
+            else:
+                final[metric]=None
+                missing.append(metric)
+        final["metrics_only_available_in_best_detail"]=",".join(missing)
+        if epochs[-1].get("val_loss") not in (None,""):
+            final["optimized_objective_loss"]=finite(epochs[-1]["val_loss"],"val_loss")
+        output.append(final)
+    return output
 
 
 def plot_results(root, main, epoch_rows):
@@ -1234,7 +1284,7 @@ def case_panels(cfg, points, categories, amplitude):
     return result
 
 
-def report_text(cfg,decision,main,comparisons,decomposition,amplitude,evidence,panels):
+def report_text(cfg,decision,main,comparisons,decomposition,amplitude,evidence,panels,checkpoint_comparisons=None):
     by={(r["run_id"],r["subset"]):r for r in main}
     R,M,N,C=[by[(name,"M")] for name in ("U-RSI","U-Mean","U-NoMessage","U-Mean-logit-RMS")]
     def number(x):
@@ -1273,12 +1323,13 @@ def report_text(cfg,decision,main,comparisons,decomposition,amplitude,evidence,p
     for row in comparisons:
         if row["subset"]=="M" and row["bootstrap_unit"]=="known_group_else_image" and row["current"]=="U-RSI" and row["comparator"] in {"U-Mean","U-Mean-logit-RMS","U-NoMessage"}:
             lines.append(f"| {row['comparator']} | {number(row['dice_difference'])} | [{number(row['dice_ci_low'])}, {number(row['dice_ci_high'])}] | {number(row['H_epsilon_difference'])} | [{number(row['H_epsilon_ci_low'])}, {number(row['H_epsilon_ci_high'])}] |")
-    lines.extend(["", "40轮完整曲线见learning_curves.png/epoch_diagnostics.csv；主checkpoint按M原尺寸macro mean-rater Dice最大选出，精确并列选更早epoch，epoch40保留独立记录。", "",
-                  "| 组 | best epoch | best Dice | epoch40 Dice | 本地权重SHA |", "|---|---:|---:|---:|---|"])
-    for budget in evidence["budgets"]:
-        history=read_csv(budget["epochs"]["path"])
-        final=history[-1]
-        lines.append(f"| {budget['group']} | {budget['best_epoch']} | {number(budget['best_val_dice'])} | {number(float(final['val_dice']))} | {budget['checkpoint']['sha256']} |")
+    lines.extend(["", "40轮完整曲线见learning_curves.png/epoch_diagnostics.csv；主checkpoint按M原尺寸macro mean-rater Dice最大选出，精确并列选更早epoch。checkpoint_comparison.csv逐组核对best导出与被选epoch日志，并单列真实epoch40及best/latest SHA，不重新评分或重选最终权重。", "",
+                  "| 组 | checkpoint / epoch | Dice | G+ | H- | Hε | mean_gain |", "|---|---|---:|---:|---:|---:|---:|"])
+    checkpoint_comparisons=checkpoint_comparisons or checkpoint_comparison_rows(main,evidence)
+    for row in checkpoint_comparisons:
+        numbers=[number(row[k]) if row.get(k) is not None else "未记录" for k in ("dice","G_plus","H_minus","H_epsilon","mean_gain")]
+        lines.append(f"| {row['group']} | {row['checkpoint_view']} / {row['epoch']} | "+" | ".join(numbers)+" |")
+    lines.extend(["", "epoch40数值来自当时真实验证日志，未记录的边界/尾部或soft细项留空并列为仅best细表可用，不用best数值填充。逐参考main_table的loss为L_seg，epoch40对齐val_seg；包含RSI risk的val_loss另标optimized_objective_loss，避免混写。"])
     lines.extend(["", "## 工程与复核边界", "",
                   f"工程验收合规：{decision['engineering_compliant']}。固定teacher来自B/best、参数buffers和输出不漂移；student tail独立storage。逐参考CSV绑定checkpoint、teacher、manifest、canonical cache与geometry SHA。原尺寸logits恢复后阈值，BF1与HD95沿用旧实现及已验证精确KD计算，没有TTA/后处理/阈值搜索。",
                   "",
