@@ -1,6 +1,6 @@
-2026-10-05 更新：本仓库新增 LocalContour ISIC2017 开发诊断与完成的 RSI TailProbe 结果。旧 RSI/EGE 训练权重、缓存和备份已由用户明确要求删除；以下旧清单与路径是历史训练证据，清理元数据见 `publication/cleanup_20261005`。权重不上传 Git 或 Release。
+2026-10-05 更新：本仓库新增 [LocalContour 第二阶段](experiments/LocalContour_ISIC2017_Phase2_20261005/README.md)、[第一阶段](experiments/LocalContour_ISIC2017_20261005/README.md)的 ISIC2017 开发诊断与完成的 RSI TailProbe 结果。第二阶段包含 21 组训练记录、候选/局部/全局对照、审计及结论；当前全局 Transformer 未超过强局部对照，官方 test 未评分。旧 RSI/EGE 训练权重、缓存和备份已由用户明确要求删除；以下旧清单与路径是历史训练证据，清理元数据见 `publication/cleanup_20261005`。权重不上传 Git 或 Release。
 
-新 LocalContour 仅发布自研代码、协议、指标、审计与四张官方 ISIC2017 诊断叠图。[官方数据页](https://challenge.isic-archive.com/data/#2017)将2017 Task1标为CC0；病例图的发布来自用户此次明确提交结果的指令。完整原始图像/GT、NPZ、特征缓存、公开CNN权重及本地边界头权重未进入Git。未复制没有明确再分发许可的上游模型实现；上游固定URL/SHA及下载辅助脚本用于另行获取。
+LocalContour 第一、二阶段仅发布自研代码、协议、指标、审计与分别四张和十五张官方 ISIC2017 诊断叠图。[官方数据页](https://challenge.isic-archive.com/data/#2017)将2017 Task1标为CC0；病例图的发布来自用户明确提交结果的指令。完整原始图像/GT、NPZ、特征缓存、逐候选分数、公开 CNN 权重及本地训练权重未进入 Git。未复制没有明确再分发许可的上游模型实现；上游固定 URL/SHA 及下载辅助脚本用于另行获取。
 
 # RSI v2 实验存档
 

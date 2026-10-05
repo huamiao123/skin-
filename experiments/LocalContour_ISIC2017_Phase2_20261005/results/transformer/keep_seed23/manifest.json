@@ -1,0 +1,24 @@
+{
+  "scope": "ISIC2017 val50 selection and val100 reused development verification; val100 was used in previous phase-1 and DP development, so not independent",
+  "selection": "cal50 mean Dice; ties smallest alpha",
+  "alphas": [
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "models": [
+    "local",
+    "local_large",
+    "local8",
+    "medium32",
+    "global"
+  ],
+  "official_test_GT_opened": false,
+  "prior_dp_grid_val150_access": true,
+  "interpretation": "alpha adds learned-score penalty proportional to absolute offset; zero remains selectable"
+}

@@ -1,0 +1,8 @@
+{
+  "time_utc": "2026-10-05T13:31:01.385399+00:00",
+  "cause": "load_mask returns [1,256,256]; code used [0,0] instead of [0], broadcasting the first GT row over the image",
+  "effect": "train and val GT caches all zero; seed17 local model trained with invalid labels; no result usable",
+  "action": "rebuild all 2150 GT arrays and GT-distance labels; preserve CNN feature, RGB, probability, boundary, candidate points/valid exactly; delete invalid model weights/scores and retrain all seeds",
+  "invalid_seed17_log_sha256": "fcc4c3853e8b3e6d233940ee04601c83444faf1cacdae15835d3751f7e368ec9",
+  "official_test_bytes_opened": false
+}

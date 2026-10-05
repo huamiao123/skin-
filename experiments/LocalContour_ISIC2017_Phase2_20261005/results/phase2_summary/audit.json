@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "split_counts": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "training_rows": 21,
+  "phase2_val100_images": 100,
+  "phase1_val150_GT_changed_pixels": 0,
+  "phase1_val150_prediction_changed_cases": 102,
+  "phase1_val150_prediction_changed_pixels": 405,
+  "phase1_val150_prediction_max_changed_pixels_per_image": 22,
+  "difference_explanation": "same frozen CNN state; Phase1 combined cached and separate inference, Phase2 recomputed every image. Exact numerical cause of 405 changed threshold pixels was not isolated; every Phase2 method shares the recomputed CNN baseline",
+  "historical_old3_G4_max_absolute_dice_difference": 0.0,
+  "gated_thresholds_and_movement": [
+    {
+      "seed": 17,
+      "local_threshold": 0.95,
+      "global_threshold": 0.95,
+      "local_moved": 0.0,
+      "global_moved": 0.0
+    },
+    {
+      "seed": 23,
+      "local_threshold": 0.95,
+      "global_threshold": 0.95,
+      "local_moved": 0.0,
+      "global_moved": 0.0
+    },
+    {
+      "seed": 42,
+      "local_threshold": 0.95,
+      "global_threshold": 0.95,
+      "local_moved": 0.0,
+      "global_moved": 0.0
+    }
+  ],
+  "official_test_image_or_GT_bytes_opened_by_phase2": false,
+  "independent_test_performance_claim": false,
+  "temporary_cache_ready_to_delete": true
+}

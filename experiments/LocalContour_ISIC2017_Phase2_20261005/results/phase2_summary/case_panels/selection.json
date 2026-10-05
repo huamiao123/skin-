@@ -1,0 +1,46 @@
+{
+  "scope": "reused 2017 val100 development cases, seed17 masks shown; category membership uses three-seed mean Dice",
+  "thresholds": {
+    "A": "CNN>=.9 and abs(global-CNN)<=.001 and abs(local-CNN)<=.005",
+    "B": "global-CNN>=.005 and global-local_large>=.005",
+    "C": "global-CNN>=.005 and local_large-CNN>=.005",
+    "D": "oracle-CNN>=.05 and global<=CNN+.001 and local_large<=CNN+.001",
+    "E": "GT-assisted oracle-CNN<=.01"
+  },
+  "counts": {
+    "A": 14,
+    "B": 0,
+    "C": 3,
+    "D": 30,
+    "E": 2
+  },
+  "selected_ids": {
+    "A": [
+      "ISIC_0010459",
+      "ISIC_0015496",
+      "ISIC_0015443",
+      "ISIC_0015124",
+      "ISIC_0013215"
+    ],
+    "B": [],
+    "C": [
+      "ISIC_0013898",
+      "ISIC_0012099",
+      "ISIC_0013132"
+    ],
+    "D": [
+      "ISIC_0012210",
+      "ISIC_0012876",
+      "ISIC_0012513",
+      "ISIC_0012335",
+      "ISIC_0012204"
+    ],
+    "E": [
+      "ISIC_0013527",
+      "ISIC_0013863"
+    ]
+  },
+  "reason_fewer_than_five": "There are fewer real cases under fixed criteria; no cases fabricated.",
+  "oracle_GTagreement": "GT-assisted R32 oracle Dice is case metadata, not a displayed deployable mask",
+  "official_test_scored": false
+}
