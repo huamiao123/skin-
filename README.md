@@ -1,6 +1,16 @@
+# 皮肤病灶分割：实验结果与源码存档
+
+最新实验：[局部候选—整体轮廓（ISIC2017）](experiments/LocalContour_ISIC2017_20261005/README.md)、[一页结论](experiments/LocalContour_ISIC2017_20261005/results/conclusion_1page.txt)。首轮150图/750行已完成：候选覆盖65.35%，未达到80%门槛；离线GT辅助Dice空间为+3.51个百分点，不能当作可部署方法增益。当前先改进候选，不自动训练Transformer。
+
+[RSI TailProbe完整报告](experiments/RSI_TailProbe_20261004/experiment_report.md)结论为 `STOP_CURRENT_RSI`。解冻tail后，λ=3 RSI只保留Mean约46.1%的正收益，且H来源回退超过门槛；五组40轮证据、幅度控制和配对统计均保留。以下历史首轮结果与新机制验证分别存档。
+
+2026-10-05按用户要求清理旧RSI/EGE权重、缓存、备份与冗余副本；源码、方案、数值结果及复核记录保留。[清理核验](publication/cleanup_20261005/final_verification.json)说明删除范围。模型权重不上传Git/Release；历史权重清单记录当时SHA，不表示旧文件仍可恢复。官方ISIC2017四张诊断叠图按用户此次发布要求及CC0数据条款公开，IMA/PH2源图画册仍保留本地。
+
+---
+
 # RSI v2：完整首轮实验存档
 
-代码、配置、协议、全部可公开数值结果、日志、审计与失败记录已纳入本仓库。按用户要求，全部模型检查点（含失败/恢复/T0）及分类预训练权重保留本地，不上传Git或Release；仓库仅保存路径、大小和SHA清单。原数据及受许可限制的源图画册保留本地，公开来源、哈希与获取说明。
+代码、配置、协议、全部可公开数值结果、日志、审计与失败记录已纳入本仓库。按用户要求，全部模型检查点（含失败/恢复/T0）及分类预训练权重未上传Git或Release；旧训练权重已按2026-10-05要求清理，历史清单继续保留；仓库仅保存路径、大小和SHA清单。原数据及受许可限制的源图画册保留本地，公开来源、哈希与获取说明。
 
 请先读 [存档及复现说明](PUBLICATION.md) 和 [最终可行性报告](FEASIBILITY_REPORT_2026-10-04.md)。[本地权重清单](publication/weights_manifest.json)保存32个独立权重对象及59个原路径映射；实验原README副本保存在publication/originals。
 
@@ -14,7 +24,7 @@
 
 - 工程、人工审计、测试与阶段结束后 checkpoint 备份：本目录。
 - 原始数据：`data` 链接到 `/home/featurize/rsi_data`，避免占满 work 的 30GB 共享盘配额。
-- 活跃 checkpoint：`/home/featurize/rsi_runs/P2-IMA-M-v2`。
+- 历史 checkpoint 路径（旧权重已清理）：`/home/featurize/rsi_runs/P2-IMA-M-v2`。
 - IMA 最终可用清单：`data_manifests/final_references.csv`。元数据数目与完成文件/重复隔离后的数目分别记录，不能混用。
 - ISIC 2017/2018、PH2 数据状态和来源：`outputs/external_data_status.json` 及 `data_manifests/external_*`。PH2 官方连接失败与镜像验收分别保留。
 - `../RSI_datasets/{IMA,ISIC2017,ISIC2018,PH2}` 是原始数据的便捷入口。ISIC2017 三个 split 的图像/掩码为 2000/150/600 对；ISIC2018 为 2594/100/1000 对，均完成解码、尺寸及二值掩码验收。2018 训练集全部官方成员已按 ZIP 成员 CRC/尺寸验证，完整 11GB ZIP 尚未下载完；跨年同一官方成员与已下载成员合并的证据单独保存。

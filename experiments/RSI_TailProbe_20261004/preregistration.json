@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "registered_utc": "2026-10-04T10:10:58.955498+00:00",
+  "protocol_id": "RSI-TailProbe-20261004",
+  "taskbook_path": "/home/featurize/task/皮肤病灶分割_RSI方向去留验证_AI执行任务书_2026-10-04.txt",
+  "taskbook_sha256": "00de9076e41a74d1395eb96b6362d3d6dbbe643ff8955cdfb96ec1ef33c32214",
+  "review_commit": "abfb17bc9a175cdce2da82dfcebe827d1b5ba489",
+  "seed": 17,
+  "groups": [
+    "F-Mean",
+    "F-RSI",
+    "U-Mean",
+    "U-RSI",
+    "U-NoMessage"
+  ],
+  "new_train_order": [
+    "U-NoMessage",
+    "U-Mean",
+    "U-RSI"
+  ],
+  "D_epochs_per_group": 40,
+  "max_new_full_training_groups": 5,
+  "preferred_new_full_training_groups": 3,
+  "teacher_B_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+  "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "selection": "M val original macro mean-rater hard Dice maximum; exact ties earlier",
+  "loss": "FP32 0.5 BCE+0.5(1-SoftDice), image then present-reference; RSI lambda3 relu(each loss-ref loss), epsilon_L0",
+  "primary_control": "U-Mean complete-update logit interpolation with train-only prediction RMS scalar",
+  "primary_evaluation_forward": "historical_AMP_same_environment; losses_and_logit_restoration_FP32",
+  "screening_rules": {
+    "route_A": {
+      "dice_advantage_over_max_M_N_C": 0.002,
+      "H_epsilon_R_minus_M_max": 0.0005
+    },
+    "route_B": {
+      "dice_deficit_max_M_N": 0.001,
+      "dice_deficit_C": 0.001,
+      "G_retention_min": 0.8,
+      "M_H_absolute_reduction": 0.001,
+      "M_H_relative_reduction": 0.2,
+      "C_H_absolute_reduction": 0.0005,
+      "C_H_relative_reduction": 0.1
+    },
+    "simple_control": {
+      "dice_or_G_practical_difference": 0.001,
+      "H_practical_difference": 0.0005
+    },
+    "source_dice_regression": 0.005,
+    "H_minus_increase_max": 0.0005,
+    "worst_tail_decrease_max": 0.005,
+    "low_risk_headroom_M": 0.001,
+    "low_risk_headroom_C": 0.0005,
+    "epsilon_d": 0.005,
+    "fixed_logit_alphas": [
+      0.0,
+      0.3333333333333333,
+      0.6666666666666666,
+      1.0
+    ],
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 17,
+    "sensitivity_epsilons": [
+      0.0,
+      0.005,
+      0.01,
+      0.02,
+      0.05
+    ],
+    "decision_states": [
+      "INVALID",
+      "STOP_CURRENT_RSI",
+      "INCONCLUSIVE",
+      "CANDIDATE_FOR_CONFIRMATION"
+    ]
+  },
+  "bootstrap": {
+    "repeats": 2000,
+    "rng_seed": 17,
+    "units": "222 known-group/image units with 223-image sensitivity",
+    "paired": true,
+    "tail_resort": true
+  },
+  "test_scoring_locked": true,
+  "automatic_followup_seeds_allowed": false,
+  "extra_modules_or_grids_allowed": false,
+  "weights_upload_allowed": false,
+  "source_case_panels_publication_allowed": false,
+  "new_full_training_started": false,
+  "missing_review_docs": "Four Windows-only review documents not available; full taskbook and fixed repository read; missing recorded in P0."
+}

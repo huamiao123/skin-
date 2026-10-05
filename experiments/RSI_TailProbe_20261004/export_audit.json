@@ -1,0 +1,230 @@
+{
+  "status": "complete",
+  "reference_rows": 8736,
+  "current_points": 10,
+  "historical_points": 4,
+  "source_cohorts": {
+    "M": [
+      223,
+      471
+    ],
+    "H": [
+      47,
+      104
+    ],
+    "T1": [
+      20,
+      49
+    ]
+  },
+  "test_scoring_locked": true,
+  "scope": "val",
+  "seed": 17,
+  "teacher_predictions_exact_same_all_groups": true,
+  "H_T1_reuse_M_logits": true,
+  "interpolation_view": "canonical logits before restore/threshold",
+  "fixed_alphas": [
+    0.0,
+    0.3333333333333333,
+    0.6666666666666666,
+    1.0
+  ],
+  "amplitude_match": {
+    "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/amplitude_match_train.json",
+    "bytes": 3271,
+    "sha256": "6be4cc803bea42db3d4964b5a897ea8b5f25a2c81b8bee745c57e81f79d27d68"
+  },
+  "checkpoint_indices": {
+    "F-Mean": {
+      "key": "2a6096b1d3e1861afe3ce46c0f58323e62a066bd09f5a38be8e742be6f8f14e9",
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+        "bytes": 125077601,
+        "sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    },
+    "F-RSI": {
+      "key": "095133c95d06b3f06ec0443f483d6766f28c841c775ff910e748f724cdf666c7",
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/best.pth",
+        "bytes": 125077601,
+        "sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    },
+    "U-Mean": {
+      "key": "5ca3f9fed2a631d522b1bd5334bde7efb3613c82a3aa714d8ae5da962737af8c",
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/best.pth",
+        "bytes": 127263453,
+        "sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    },
+    "U-RSI": {
+      "key": "96b02614dfdc0a1f728d1a363e3665d90194de63fcdd890b60cecb36b67138c3",
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/best.pth",
+        "bytes": 127263453,
+        "sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    },
+    "U-NoMessage": {
+      "key": "a289d0582d440a5097a771adefa39611b96bf5f58d53a2e8920bca56661e7723",
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/best.pth",
+        "bytes": 126204085,
+        "sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    }
+  },
+  "implementation": {
+    "tools/tail_probe_analysis.py": "4f10471f4e653075fb7e183740d16bafef201491eec2d007e3187cd49ee39d86",
+    "rsi/tail_probe_model.py": "086b7306c020cd55e4035c45fe6d249a224aa8190cdf8109fda9f510b7eb604d",
+    "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+    "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+    "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+    "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296",
+    "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02"
+  },
+  "metric_cache_statistics": {
+    "calls": 10506,
+    "hits": 5766,
+    "misses": 4740,
+    "errors": 0,
+    "evictions": 0,
+    "entries": 4740,
+    "max_entries": 60000,
+    "hashing_seconds": 431.23312293800154,
+    "calculation_seconds_including_recursion": 2195.0801448010825,
+    "key": "SHA256 of each raw dtype/shape/strides/C-order content; explicit None slots",
+    "cache_payload": "numeric scalar dictionaries only; no input arrays retained",
+    "returns_independent_dictionary_copy": true
+  },
+  "csv": {
+    "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/per_reference_results.csv",
+    "bytes": 13305381,
+    "sha256": "bab537b15f4694d5543c2165658b89df72b275ba691ee381f4fea816bb9b2243"
+  },
+  "deployment_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "group": "F-Mean",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4247656650004501,
+        "milliseconds_per_batch": 8.495313300009002,
+        "milliseconds_per_image": 2.1238283250022505,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+      },
+      {
+        "group": "F-RSI",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.41869622000012896,
+        "milliseconds_per_batch": 8.37392440000258,
+        "milliseconds_per_image": 2.093481100000645,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+      },
+      {
+        "group": "U-Mean",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4199886480000714,
+        "milliseconds_per_batch": 8.399772960001428,
+        "milliseconds_per_image": 2.099943240000357,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      {
+        "group": "U-Mean",
+        "mode": "complete_logit_interpolation",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4573261539990199,
+        "milliseconds_per_batch": 9.146523079980398,
+        "milliseconds_per_image": 2.2866307699950994,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 2,
+        "teacher_forward": true,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      {
+        "group": "U-RSI",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4176597089990537,
+        "milliseconds_per_batch": 8.353194179981074,
+        "milliseconds_per_image": 2.0882985449952685,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+      },
+      {
+        "group": "U-NoMessage",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.16864987000008114,
+        "milliseconds_per_batch": 3.3729974000016227,
+        "milliseconds_per_image": 0.8432493500004057,
+        "transformer_forwards_per_batch": 0,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742"
+      }
+    ],
+    "GPU": "NVIDIA GeForce RTX 4090",
+    "image_ids": [
+      "ISIC_0000038",
+      "ISIC_0000049",
+      "ISIC_0000078",
+      "ISIC_0000110"
+    ],
+    "GT_model_input": false,
+    "no_message_forced_transformer": false,
+    "scope": "fixed real val batch forward latency; not end-to-end clinical throughput"
+  },
+  "finished_utc": "2026-10-04T12:47:03.920266+00:00"
+}

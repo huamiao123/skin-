@@ -1,0 +1,73 @@
+{
+  "S_mean": 7.365702460308882,
+  "S_rsi": 2.6817589531098966,
+  "alpha_RMS_raw": 0.6033964960629474,
+  "alpha_RMS": 0.6033964960629474,
+  "denominator_zero": false,
+  "raw_exceeds_one": false,
+  "strict_amplitude_match": true,
+  "RMS_mean": 2.713982767135577,
+  "RMS_rsi": 1.6376076920648293,
+  "RMS_control": 1.6376076354119218,
+  "RMS_absolute_mismatch": 5.66529074763622e-08,
+  "RMS_control_target": 1.6376076920648293,
+  "S_control_actual": 2.6817587675594257,
+  "RMS_interpolation_roundoff_difference": -5.66529074763622e-08,
+  "actual_RMS_check_seconds": 26.7388375419996,
+  "actual_RMS_check_refitted_alpha": false,
+  "identity": {
+    "checkpoints": {
+      "U-Mean": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/best.pth",
+        "bytes": 127263453,
+        "sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      "U-RSI": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/best.pth",
+        "bytes": 127263453,
+        "sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+      }
+    },
+    "teacher_B": {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+      "bytes": 125077601,
+      "sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491"
+    },
+    "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+    "manifest": {
+      "path": "/home/featurize/work/RSI_TailProbe_20261004/data_manifests/final_references.csv",
+      "bytes": 3786646,
+      "sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596"
+    },
+    "implementation": {
+      "tools/tail_probe_analysis.py": "4f10471f4e653075fb7e183740d16bafef201491eec2d007e3187cd49ee39d86",
+      "rsi/tail_probe_model.py": "086b7306c020cd55e4035c45fe6d249a224aa8190cdf8109fda9f510b7eb604d",
+      "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+      "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+      "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296",
+      "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02"
+    },
+    "image_ids_sha256": "ea63d2ac69f360ab074ba0cb32dc017753a6e0227a12f64222ca715ad8d742ba",
+    "train_images": 1471,
+    "seed": 17,
+    "augmentation": false,
+    "GT_used": false,
+    "mask_files_opened": 0,
+    "reference_masks_materialized": false,
+    "AMP": true,
+    "view": "canonical_train_valid_pixels"
+  },
+  "identity_hash": "bf3b6aa2631fae680e323de3e8450ea73572f3f17c2c0173a5d905c08544321b",
+  "per_image_statistics": {
+    "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/amplitude_match_train_per_image.csv",
+    "bytes": 102159,
+    "sha256": "1c2303a87de8bb1c88129e2cd0634b2a5156196e7371ee8118d3b1e62e38ba29"
+  },
+  "seconds": 80.82465277400024,
+  "GT_used": false,
+  "fitted_once_on_train": true,
+  "validation_used_for_fit": false,
+  "test_used_for_fit": false,
+  "alpha_selection": "predeclared sqrt(mean_image_MSE_RSI/mean_image_MSE_Mean), clip[0,1]"
+}

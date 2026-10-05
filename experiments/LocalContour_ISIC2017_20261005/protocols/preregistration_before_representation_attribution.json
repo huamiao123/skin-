@@ -1,0 +1,131 @@
+{
+  "protocol_id": "LocalContour-ISIC2017-20261005",
+  "registered_utc": "2026-10-05T10:10:05.086086+00:00",
+  "recorded_before_results": true,
+  "no_real_candidate_results_viewed": true,
+  "taskbook_path": "/home/featurize/task/局部候选整体轮廓_简短验证计划_2026-10-05.txt",
+  "taskbook_sha256": "be2b1e750ee4bcaf354af37dc1e60649e7eb8d0a01b47641a37ce453c58a20d6",
+  "dataset_years": [
+    2017
+  ],
+  "train_images": 2000,
+  "validation_images": 150,
+  "calibration_images": 50,
+  "locked_verification_images": 100,
+  "split_sha256": "97fc2912356743e3e6f433bf5dbd6bf6a64780cd371eb7c67657bf77f1e191ce",
+  "prior_validation_exposure": "Public CNN used pooled official2017 train/val70:30. Development diagnostic only; exact author train IDs unavailable.",
+  "official_test_scoring": false,
+  "CNN_new_training": false,
+  "Transformer_training": false,
+  "boundary_head": {
+    "seed": 17,
+    "epochs": 10,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "device": "cuda",
+    "num_workers": 4,
+    "input_size": 256,
+    "feature_channels": 32,
+    "feature_dtype": "float16",
+    "feature_resolution": 256,
+    "boundary_kernel_size": 3,
+    "boundary_definition": "foreground inner 1px 3x3-erosion boundary, then one 3x3 dilation; 3px band",
+    "optimizer": "Adam",
+    "augmentation": "none",
+    "amp": false,
+    "checkpoint_selection": "minimum calibration50 balanced BCE; exact tie keeps earlier epoch",
+    "positive_weight": "negative_pixels / positive_pixels, measured on train2000 boundary targets once",
+    "balanced_normalizer": "1 / (2 * train_negative_pixel_fraction)",
+    "head": "Conv1x1(32,16)+GroupNorm(4,16)+ReLU+Conv3x3(16,1); 705 parameters",
+    "cnn_frozen": true,
+    "test_scoring": false
+  },
+  "geometry": {
+    "nodes": 128,
+    "search_radius_input_pixels": 16,
+    "peaks": 3,
+    "peak_min_distance": 2,
+    "zero_offset_fallback": true,
+    "candidate_tolerance_input_pixels": 2,
+    "BF1_tolerance_input_pixels": 2,
+    "boundary_connectivity": 8,
+    "GT_candidate_generation_allowed": false,
+    "oracle": "candidate-to-GT-boundary point distance replaces local score; same closed DP/lambda/connect/raster; not Dice upper bound"
+  },
+  "DP_lambda_grid": [
+    0.0,
+    0.0001,
+    0.0005,
+    0.002,
+    0.01,
+    0.05
+  ],
+  "DP_selection": "calibration50 mean Dice G3 maximum; exact tie selects earliest/smaller lambda",
+  "sensitivity": {
+    "maximum_runs": 1,
+    "representation_bad": "calibration G1-G0 meanDice<-0.001 ->256 nodes radius16",
+    "range_low": "otherwise calibration macro band coverage<0.9 ->128nodes radius32",
+    "calibration_only_choice": true,
+    "no_extra_parameter_search": true
+  },
+  "reporting_rules": {
+    "primary_scope": "locked100",
+    "calibration_image_count": 50,
+    "locked_image_count": 100,
+    "search_band_aggregation": "macro_image",
+    "search_band_min": 0.9,
+    "candidate_coverage_aggregation": "pooled_covered_over_effective_nodes",
+    "candidate_coverage_min": 0.8,
+    "wrong_rate_aggregation": "pooled_local_wrong_over_candidate_covered_nodes",
+    "local_wrong_rate_min": 0.1,
+    "oracle_dice_gain_min": 0.005,
+    "oracle_bf1_gain_min": 0.02,
+    "oracle_bf1_requires_dice_nonnegative": true,
+    "representation_cal_dice_drop_trigger": -0.001,
+    "representation_sensitivity_budget": 1,
+    "residual_dice_gain_min": 0.0025,
+    "residual_bf1_gain_min": 0.01,
+    "residual_bf1_requires_dice_nonnegative": true,
+    "residual_corresponding_ci_low_must_be_positive": true,
+    "dp_recovery_fraction_keep_min": 0.8,
+    "dp_recovery_metric": "dice_if_oracle_dice_gate_else_bf1",
+    "decision_precedence": [
+      "representation",
+      "generator",
+      "oracle_space",
+      "local_ambiguity",
+      "dp_recovery",
+      "residual"
+    ],
+    "bootstrap_iterations": 2000,
+    "bootstrap_seed": 17,
+    "bootstrap_unit": "paired_image",
+    "bootstrap_shared_draws": "all_methods_metrics_comparisons_within_scope",
+    "confidence_percentiles": [
+      2.5,
+      97.5
+    ],
+    "diagnosis_only": true,
+    "origins": {
+      "taskbook": [
+        "search_band_min",
+        "candidate_coverage_min",
+        "oracle_dice_gain_min",
+        "oracle_bf1_gain_min",
+        "representation_sensitivity_budget"
+      ],
+      "run_before_results_operationalization": [
+        "local_wrong_rate_min",
+        "representation_cal_dice_drop_trigger",
+        "residual_dice_gain_min",
+        "residual_bf1_gain_min",
+        "dp_recovery_fraction_keep_min",
+        "bootstrap_iterations",
+        "bootstrap_seed",
+        "decision_precedence",
+        "search_band_aggregation"
+      ]
+    }
+  },
+  "weights_upload": false
+}

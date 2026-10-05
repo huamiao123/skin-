@@ -1,0 +1,856 @@
+{
+  "status": "PASS",
+  "scope": "engineering artifact and budget integrity only; no efficacy/clinical conclusion",
+  "run": "U-NoMessage",
+  "audit_device": "CPU only; no forward/model training/tests/GPU operations",
+  "started_at": "2026-10-04T11:20:16.575986+00:00",
+  "checks": {
+    "current_source_matches_frozen": {
+      "status": "PASS",
+      "evidence": {
+        "source_bundle_hash": "eb4a630cce730a898de27239e066d6ef2f310c061885d5a1bfb08ae034109693",
+        "source_files": 60
+      }
+    },
+    "best_latest_file_sha_matches_DONE": {
+      "status": "PASS",
+      "evidence": {
+        "best": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742",
+        "latest": "7ccd3fbd7ddd5a74dd480c6486203cf1996e65af1c6fb3ef647d96442ddf82c1"
+      }
+    },
+    "DONE_budget_and_selection": {
+      "status": "PASS",
+      "evidence": {
+        "epochs": 40,
+        "best_epoch": 31,
+        "attempts": 7360,
+        "actual_updates": 7360
+      }
+    },
+    "DONE_signature_binds_current_inputs": {
+      "status": "PASS",
+      "evidence": {
+        "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "common_B_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "preregistration_sha256": "8581bddd2168793e0d07d8d0ba2f5ef91c0ec51e3e1d40736c8a75724d45f2c1",
+        "source_bundle_hash": "eb4a630cce730a898de27239e066d6ef2f310c061885d5a1bfb08ae034109693"
+      }
+    },
+    "shared_B_selected_asset_identity": {
+      "status": "PASS",
+      "evidence": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+        "bytes": 125077601,
+        "sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491"
+      }
+    },
+    "engineering_ACCEPTANCE_binding": {
+      "status": "PASS",
+      "evidence": {
+        "engineering_acceptance_sha256": "8f609161e68d738ab9a29979bc688ae4747ad741aea7dbb2e35150915c3f79b3",
+        "cpu_tests_sha256": "ae0bd2ec8105467e9f27fde5f0a93f76b2c887beca94054f47bb826f39328214"
+      }
+    },
+    "only_student_tail_trainable_and_optimized": {
+      "status": "PASS",
+      "evidence": {
+        "count": 179745,
+        "parameter_names": [
+          "student_tail.c4_proj.0.weight",
+          "student_tail.c4_proj.1.weight",
+          "student_tail.c4_proj.1.bias",
+          "student_tail.fuse.0.0.weight",
+          "student_tail.fuse.0.1.weight",
+          "student_tail.fuse.0.1.bias",
+          "student_tail.fuse.1.0.weight",
+          "student_tail.fuse.1.1.weight",
+          "student_tail.fuse.1.1.bias",
+          "student_tail.up_half.0.weight",
+          "student_tail.up_half.1.weight",
+          "student_tail.up_half.1.bias",
+          "student_tail.up_full.0.weight",
+          "student_tail.up_full.1.weight",
+          "student_tail.up_full.1.bias",
+          "student_tail.output.weight",
+          "student_tail.output.bias"
+        ]
+      }
+    },
+    "forty_committed_unique_epochs": {
+      "status": "PASS",
+      "evidence": {
+        "epoch_count": 40
+      }
+    },
+    "per_epoch_budget_no_AMP_skips_no_teacher_drift": {
+      "status": "PASS",
+      "evidence": {
+        "images_per_epoch": 1471,
+        "attempts_per_epoch": 184,
+        "AMP_skips": 0,
+        "teacher_output_error": 0.0,
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "86b8d7f067bdd175a1b79aece267d23ac1be9023b3f66a89a25060aaebfa76ee"
+      }
+    },
+    "message_disabled_all_epoch_logs": {
+      "status": "PASS",
+      "evidence": {
+        "augmented_message_rms_all_epochs": 0.0
+      }
+    },
+    "selection_max_original_val_Dice_earlier_tie": {
+      "status": "PASS",
+      "evidence": {
+        "selected_epoch": 31,
+        "rule": "max_val_macro_mean_rater_hard_dice_original_coordinates_earlier_tie"
+      }
+    },
+    "selection_history_epoch_1": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_2": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_3": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_4": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_5": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_6": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_7": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_8": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_9": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_10": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_11": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_12": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_13": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_14": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_15": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_16": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_17": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_18": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_19": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_20": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_21": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_22": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_23": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_24": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_25": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_26": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_27": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_28": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_29": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_30": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_31": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_32": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_33": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_34": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_35": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_36": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_37": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_38": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_39": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_40": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "registered_warmup_cosine_lr": {
+      "status": "PASS",
+      "evidence": {
+        "warmup_epochs": 2,
+        "cosine_epochs": 38,
+        "all_40_LR_points_match": true
+      }
+    },
+    "forty_training_shuffle_hashes_reconstructed": {
+      "status": "PASS",
+      "evidence": [
+        {
+          "epoch": 1,
+          "recorded": "194c2729e279abc238beb97b52c85cc012b19ff1c1c24d3d565540cad44eeafc",
+          "reconstructed": "194c2729e279abc238beb97b52c85cc012b19ff1c1c24d3d565540cad44eeafc",
+          "exact": true
+        },
+        {
+          "epoch": 2,
+          "recorded": "7db9d83809c2b0d964e7cf28f28ff55c8f45bb2085e7b94429dd7023584780ad",
+          "reconstructed": "7db9d83809c2b0d964e7cf28f28ff55c8f45bb2085e7b94429dd7023584780ad",
+          "exact": true
+        },
+        {
+          "epoch": 3,
+          "recorded": "f6154a20bc133288ee7b08e41fe20776a4e635a1a0cedb55485ee6f20ebfa8e4",
+          "reconstructed": "f6154a20bc133288ee7b08e41fe20776a4e635a1a0cedb55485ee6f20ebfa8e4",
+          "exact": true
+        },
+        {
+          "epoch": 4,
+          "recorded": "4467842eeb7dd95fc633f85493386f096ae366b6ed2f1ed56c0d224e6992d497",
+          "reconstructed": "4467842eeb7dd95fc633f85493386f096ae366b6ed2f1ed56c0d224e6992d497",
+          "exact": true
+        },
+        {
+          "epoch": 5,
+          "recorded": "839e1701c336d7da9ed1e7d31b19b56c0f3283c4add1448c1dba5b18f02d89a2",
+          "reconstructed": "839e1701c336d7da9ed1e7d31b19b56c0f3283c4add1448c1dba5b18f02d89a2",
+          "exact": true
+        },
+        {
+          "epoch": 6,
+          "recorded": "ff942e7f1c8ab67ccadf79140aaddf7bdc4736521ccee070310a036d9b793f88",
+          "reconstructed": "ff942e7f1c8ab67ccadf79140aaddf7bdc4736521ccee070310a036d9b793f88",
+          "exact": true
+        },
+        {
+          "epoch": 7,
+          "recorded": "f16d26660361d156df5f92a675829d3cd263d83640e98d3d2e2c62ac12344de1",
+          "reconstructed": "f16d26660361d156df5f92a675829d3cd263d83640e98d3d2e2c62ac12344de1",
+          "exact": true
+        },
+        {
+          "epoch": 8,
+          "recorded": "ab0a5094cddd81aa49a9488e300dde83e9cfb5acf924c6890480ea3b7a080ba3",
+          "reconstructed": "ab0a5094cddd81aa49a9488e300dde83e9cfb5acf924c6890480ea3b7a080ba3",
+          "exact": true
+        },
+        {
+          "epoch": 9,
+          "recorded": "acd7f43481217fed15055ff4aa90d6323884e3f42f7f2ec5f647455449087251",
+          "reconstructed": "acd7f43481217fed15055ff4aa90d6323884e3f42f7f2ec5f647455449087251",
+          "exact": true
+        },
+        {
+          "epoch": 10,
+          "recorded": "4c65fd8e9ebd7e5061e406144c9b6f25d1c6b83d4d3dd604458fd7c9215cb338",
+          "reconstructed": "4c65fd8e9ebd7e5061e406144c9b6f25d1c6b83d4d3dd604458fd7c9215cb338",
+          "exact": true
+        },
+        {
+          "epoch": 11,
+          "recorded": "58f6d3912ae7f932ce94604b71180708147018e93603839039d4892143c1be8e",
+          "reconstructed": "58f6d3912ae7f932ce94604b71180708147018e93603839039d4892143c1be8e",
+          "exact": true
+        },
+        {
+          "epoch": 12,
+          "recorded": "fc4bf6355c4f226ae101418b19f3e64409b584bc2b971639e4165345a1b101ec",
+          "reconstructed": "fc4bf6355c4f226ae101418b19f3e64409b584bc2b971639e4165345a1b101ec",
+          "exact": true
+        },
+        {
+          "epoch": 13,
+          "recorded": "d4795e01d0a3b53bc1e10b65aac11bcee607a5dac95c873a78e59e873663364b",
+          "reconstructed": "d4795e01d0a3b53bc1e10b65aac11bcee607a5dac95c873a78e59e873663364b",
+          "exact": true
+        },
+        {
+          "epoch": 14,
+          "recorded": "38cf60c1d25280241875072b11129ec6befa5ed1f45bab6821e9aa5b18945f79",
+          "reconstructed": "38cf60c1d25280241875072b11129ec6befa5ed1f45bab6821e9aa5b18945f79",
+          "exact": true
+        },
+        {
+          "epoch": 15,
+          "recorded": "250d16e7f54d8b5dd4ae8eb9e37b16fc558acecdfd2361450216969670dc0bd9",
+          "reconstructed": "250d16e7f54d8b5dd4ae8eb9e37b16fc558acecdfd2361450216969670dc0bd9",
+          "exact": true
+        },
+        {
+          "epoch": 16,
+          "recorded": "790a48213c56cbcd4c4e445333b28bbadad249f14b61a9898739b3974771f35f",
+          "reconstructed": "790a48213c56cbcd4c4e445333b28bbadad249f14b61a9898739b3974771f35f",
+          "exact": true
+        },
+        {
+          "epoch": 17,
+          "recorded": "fbfecb4ce3dd1440d748d76099ac3b4d5a336e5cfe27eddba00b0ad3c9ac3842",
+          "reconstructed": "fbfecb4ce3dd1440d748d76099ac3b4d5a336e5cfe27eddba00b0ad3c9ac3842",
+          "exact": true
+        },
+        {
+          "epoch": 18,
+          "recorded": "1fc4c64fe7411a95853f0f431b023b11b5c992cf2bf522e2e75ab54066caec8d",
+          "reconstructed": "1fc4c64fe7411a95853f0f431b023b11b5c992cf2bf522e2e75ab54066caec8d",
+          "exact": true
+        },
+        {
+          "epoch": 19,
+          "recorded": "92ca552cd9e9d7153842d5a1ca7be45616021297831b99290a4637460f62c382",
+          "reconstructed": "92ca552cd9e9d7153842d5a1ca7be45616021297831b99290a4637460f62c382",
+          "exact": true
+        },
+        {
+          "epoch": 20,
+          "recorded": "e647e4327a912d27f4285a243bff215c12b823372689a9102602f41779e80641",
+          "reconstructed": "e647e4327a912d27f4285a243bff215c12b823372689a9102602f41779e80641",
+          "exact": true
+        },
+        {
+          "epoch": 21,
+          "recorded": "135ee60fe099eca15f43eb38356a7c8aed77855cedfb5678393eb317a292619a",
+          "reconstructed": "135ee60fe099eca15f43eb38356a7c8aed77855cedfb5678393eb317a292619a",
+          "exact": true
+        },
+        {
+          "epoch": 22,
+          "recorded": "e5eda5bc9c9489fd396474d57a2eae14d4b1b754830556622a64b2160d51c68f",
+          "reconstructed": "e5eda5bc9c9489fd396474d57a2eae14d4b1b754830556622a64b2160d51c68f",
+          "exact": true
+        },
+        {
+          "epoch": 23,
+          "recorded": "ae8a23b2704fc895a491afddd2a57270b5fa749de586a92756c635f3cbeeef9d",
+          "reconstructed": "ae8a23b2704fc895a491afddd2a57270b5fa749de586a92756c635f3cbeeef9d",
+          "exact": true
+        },
+        {
+          "epoch": 24,
+          "recorded": "0f40d7f9279834f513f2cff34fee2909700f962b4a7c66c9e74f55b049d7cecf",
+          "reconstructed": "0f40d7f9279834f513f2cff34fee2909700f962b4a7c66c9e74f55b049d7cecf",
+          "exact": true
+        },
+        {
+          "epoch": 25,
+          "recorded": "9959f2b978e8bdb54e3f47fe9fa891193ff5815553abd94a07a53e8bb0263e32",
+          "reconstructed": "9959f2b978e8bdb54e3f47fe9fa891193ff5815553abd94a07a53e8bb0263e32",
+          "exact": true
+        },
+        {
+          "epoch": 26,
+          "recorded": "46a0467c40147aeeb3dce3c007b8d47df29308cf537e54dd93ba989b0e03a392",
+          "reconstructed": "46a0467c40147aeeb3dce3c007b8d47df29308cf537e54dd93ba989b0e03a392",
+          "exact": true
+        },
+        {
+          "epoch": 27,
+          "recorded": "46a80df37dab643f7d7bcf2d2b7beac7a29cb749d29ba7027c60c9b6a6f8e520",
+          "reconstructed": "46a80df37dab643f7d7bcf2d2b7beac7a29cb749d29ba7027c60c9b6a6f8e520",
+          "exact": true
+        },
+        {
+          "epoch": 28,
+          "recorded": "fe7bb0b3e42817ffe77dff9aaddf4d749807dd31072cb261503c282b105684f2",
+          "reconstructed": "fe7bb0b3e42817ffe77dff9aaddf4d749807dd31072cb261503c282b105684f2",
+          "exact": true
+        },
+        {
+          "epoch": 29,
+          "recorded": "9e8eea15f01860f34a2d6e9be9518bb52600e45d3003c8f674e18454f0780982",
+          "reconstructed": "9e8eea15f01860f34a2d6e9be9518bb52600e45d3003c8f674e18454f0780982",
+          "exact": true
+        },
+        {
+          "epoch": 30,
+          "recorded": "7c0b2045b391e8fcb38c99ccca3234aaa5905e1a96beb005b5fa2a64593ad9d0",
+          "reconstructed": "7c0b2045b391e8fcb38c99ccca3234aaa5905e1a96beb005b5fa2a64593ad9d0",
+          "exact": true
+        },
+        {
+          "epoch": 31,
+          "recorded": "b1bef5ac98ac85311f67f8a7a834c29165d3e665be7a460c45ec7b815ceb291f",
+          "reconstructed": "b1bef5ac98ac85311f67f8a7a834c29165d3e665be7a460c45ec7b815ceb291f",
+          "exact": true
+        },
+        {
+          "epoch": 32,
+          "recorded": "00d5746f835258ee89d47f4ddb3762f0a0d49b5534f6b52f5bf28db5b57a55fa",
+          "reconstructed": "00d5746f835258ee89d47f4ddb3762f0a0d49b5534f6b52f5bf28db5b57a55fa",
+          "exact": true
+        },
+        {
+          "epoch": 33,
+          "recorded": "859e3654a88f97c78115c0cfbf6856bdaa31eacf4be5c322488ed55e6b1a9766",
+          "reconstructed": "859e3654a88f97c78115c0cfbf6856bdaa31eacf4be5c322488ed55e6b1a9766",
+          "exact": true
+        },
+        {
+          "epoch": 34,
+          "recorded": "8fc7845e841efbacbd30eb24a0956ce62edeaed71309294c353aef8dbce40dc1",
+          "reconstructed": "8fc7845e841efbacbd30eb24a0956ce62edeaed71309294c353aef8dbce40dc1",
+          "exact": true
+        },
+        {
+          "epoch": 35,
+          "recorded": "2cc1b6ec833a5173e7b5cbb18fd13158c1407b7e22e892423b4eaab6f7c4be3e",
+          "reconstructed": "2cc1b6ec833a5173e7b5cbb18fd13158c1407b7e22e892423b4eaab6f7c4be3e",
+          "exact": true
+        },
+        {
+          "epoch": 36,
+          "recorded": "4d32cd1426033ea843cc0a3cb9c2c150738773cf4a4f85cf883929640a089870",
+          "reconstructed": "4d32cd1426033ea843cc0a3cb9c2c150738773cf4a4f85cf883929640a089870",
+          "exact": true
+        },
+        {
+          "epoch": 37,
+          "recorded": "38da5963c916b0643652ca64cefc7797755c5d65b5ec3e0452690af9fbd17d14",
+          "reconstructed": "38da5963c916b0643652ca64cefc7797755c5d65b5ec3e0452690af9fbd17d14",
+          "exact": true
+        },
+        {
+          "epoch": 38,
+          "recorded": "b413efebd06b88fb2b1701687e197468fb892819abea4cb34ac92934bcd6fa3b",
+          "reconstructed": "b413efebd06b88fb2b1701687e197468fb892819abea4cb34ac92934bcd6fa3b",
+          "exact": true
+        },
+        {
+          "epoch": 39,
+          "recorded": "df624c8249846a42f10c69bce789de00cdc5a9640bacb471e553d5ef992afaff",
+          "reconstructed": "df624c8249846a42f10c69bce789de00cdc5a9640bacb471e553d5ef992afaff",
+          "exact": true
+        },
+        {
+          "epoch": 40,
+          "recorded": "6a4247581b9de769205975ce7c0d6f9e3a5a7ab91138c174d94fbf2d1516c13d",
+          "reconstructed": "6a4247581b9de769205975ce7c0d6f9e3a5a7ab91138c174d94fbf2d1516c13d",
+          "exact": true
+        }
+      ]
+    },
+    "canonical_diagnostics_complete_all_images_all_references": {
+      "status": "PASS",
+      "evidence": {
+        "unique_image_epoch_rows": 67760,
+        "duplicates_or_identity_errors": [],
+        "train_images_references_each_epoch": [
+          1471,
+          3102
+        ],
+        "val_images_references_each_epoch": [
+          223,
+          471
+        ]
+      }
+    },
+    "teacher_and_frozen_hash_equal_common_B_initialization": {
+      "status": "PASS",
+      "evidence": {
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "86b8d7f067bdd175a1b79aece267d23ac1be9023b3f66a89a25060aaebfa76ee"
+      }
+    },
+    "best_checkpoint_complete_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "epoch": 31,
+        "actual_updates": 5704,
+        "required_fields": [
+          "best_dice",
+          "best_epoch",
+          "best_learned_state_hash",
+          "code",
+          "config",
+          "epoch",
+          "frozen_hash",
+          "group",
+          "init_checkpoint_hash",
+          "manifest_hash",
+          "method",
+          "model",
+          "optimizer",
+          "optimizer_step_attempts",
+          "optimizer_steps",
+          "rng",
+          "scaler",
+          "scheduler",
+          "seed",
+          "selection_rule",
+          "signature",
+          "skipped_optimizer_steps",
+          "stage",
+          "teacher_hash",
+          "wall_seconds",
+          "weight"
+        ]
+      }
+    },
+    "best_checkpoint_identity": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "best_strict_complete_model_load": {
+      "status": "PASS",
+      "evidence": {
+        "state_tensor_keys": 396,
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "all_tensors_finite": true
+      }
+    },
+    "best_frozen_components_exact_B": {
+      "status": "PASS",
+      "evidence": {
+        "frozen_tensor_keys": 379,
+        "exact_reference_CNN_transformer_aux_and_message_B": true,
+        "student_teacher_storage_independent": true
+      }
+    },
+    "best_only_student_tail_changed": {
+      "status": "PASS",
+      "evidence": {
+        "changed_student_tensor_names": [
+          "c4_proj.0.weight",
+          "c4_proj.1.weight",
+          "c4_proj.1.bias",
+          "fuse.0.0.weight",
+          "fuse.0.1.weight",
+          "fuse.0.1.bias",
+          "fuse.1.0.weight",
+          "fuse.1.1.weight",
+          "fuse.1.1.bias",
+          "up_half.0.weight",
+          "up_half.1.weight",
+          "up_half.1.bias",
+          "up_full.0.weight",
+          "up_full.1.weight",
+          "up_full.1.bias",
+          "output.weight",
+          "output.bias"
+        ],
+        "student_parameter_count": 179745
+      }
+    },
+    "best_selected_learned_state_hash": {
+      "status": "PASS",
+      "evidence": {
+        "selected_state_hash": "4ddfa92b74746397c13d563fff940117b21ae227f51958f39e9a7a0395f7df84",
+        "current_learned_state_hash": "4ddfa92b74746397c13d563fff940117b21ae227f51958f39e9a7a0395f7df84"
+      }
+    },
+    "best_complete_AdamW_state": {
+      "status": "PASS",
+      "evidence": {
+        "parameter_state_count": 17,
+        "step_per_parameter": 5704,
+        "AdamW_moments_finite": true
+      }
+    },
+    "best_scheduler_scaler_state": {
+      "status": "PASS",
+      "evidence": {
+        "scheduler_last_epoch": 31,
+        "GradScaler_state": {
+          "scale": 262144.0,
+          "growth_factor": 2.0,
+          "backoff_factor": 0.5,
+          "growth_interval": 2000,
+          "_growth_tracker": 1704
+        }
+      }
+    },
+    "best_complete_CPU_and_CUDA_RNG_state": {
+      "status": "PASS",
+      "evidence": {
+        "Python_NumPy_Torch_CPU_states_restore_in_temporary_generators": true,
+        "CUDA_states_structure_only_no_GPU_restore": true,
+        "Torch_CPU_state_bytes": 5056,
+        "CUDA_state_bytes": [
+          16
+        ],
+        "CUDA_state_sha256": [
+          "8b47fb8c37b46edd9f7329da45697f422f78543f594538e47b07768e1629457e"
+        ]
+      }
+    },
+    "latest_checkpoint_complete_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "epoch": 40,
+        "actual_updates": 7360,
+        "required_fields": [
+          "best_dice",
+          "best_epoch",
+          "best_learned_state_hash",
+          "code",
+          "config",
+          "epoch",
+          "frozen_hash",
+          "group",
+          "init_checkpoint_hash",
+          "manifest_hash",
+          "method",
+          "model",
+          "optimizer",
+          "optimizer_step_attempts",
+          "optimizer_steps",
+          "rng",
+          "scaler",
+          "scheduler",
+          "seed",
+          "selection_rule",
+          "signature",
+          "skipped_optimizer_steps",
+          "stage",
+          "teacher_hash",
+          "wall_seconds",
+          "weight"
+        ]
+      }
+    },
+    "latest_checkpoint_identity": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "latest_strict_complete_model_load": {
+      "status": "PASS",
+      "evidence": {
+        "state_tensor_keys": 396,
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "all_tensors_finite": true
+      }
+    },
+    "latest_frozen_components_exact_B": {
+      "status": "PASS",
+      "evidence": {
+        "frozen_tensor_keys": 379,
+        "exact_reference_CNN_transformer_aux_and_message_B": true,
+        "student_teacher_storage_independent": true
+      }
+    },
+    "latest_only_student_tail_changed": {
+      "status": "PASS",
+      "evidence": {
+        "changed_student_tensor_names": [
+          "c4_proj.0.weight",
+          "c4_proj.1.weight",
+          "c4_proj.1.bias",
+          "fuse.0.0.weight",
+          "fuse.0.1.weight",
+          "fuse.0.1.bias",
+          "fuse.1.0.weight",
+          "fuse.1.1.weight",
+          "fuse.1.1.bias",
+          "up_half.0.weight",
+          "up_half.1.weight",
+          "up_half.1.bias",
+          "up_full.0.weight",
+          "up_full.1.weight",
+          "up_full.1.bias",
+          "output.weight",
+          "output.bias"
+        ],
+        "student_parameter_count": 179745
+      }
+    },
+    "latest_selected_learned_state_hash": {
+      "status": "PASS",
+      "evidence": {
+        "selected_state_hash": "4ddfa92b74746397c13d563fff940117b21ae227f51958f39e9a7a0395f7df84",
+        "current_learned_state_hash": "1a92105d24d5e2751088bea90a4849e88a28a9c410b23fbca1578720e71b54e3"
+      }
+    },
+    "latest_complete_AdamW_state": {
+      "status": "PASS",
+      "evidence": {
+        "parameter_state_count": 17,
+        "step_per_parameter": 7360,
+        "AdamW_moments_finite": true
+      }
+    },
+    "latest_scheduler_scaler_state": {
+      "status": "PASS",
+      "evidence": {
+        "scheduler_last_epoch": 40,
+        "GradScaler_state": {
+          "scale": 524288.0,
+          "growth_factor": 2.0,
+          "backoff_factor": 0.5,
+          "growth_interval": 2000,
+          "_growth_tracker": 1360
+        }
+      }
+    },
+    "latest_complete_CPU_and_CUDA_RNG_state": {
+      "status": "PASS",
+      "evidence": {
+        "Python_NumPy_Torch_CPU_states_restore_in_temporary_generators": true,
+        "CUDA_states_structure_only_no_GPU_restore": true,
+        "Torch_CPU_state_bytes": 5056,
+        "CUDA_state_bytes": [
+          16
+        ],
+        "CUDA_state_sha256": [
+          "8b47fb8c37b46edd9f7329da45697f422f78543f594538e47b07768e1629457e"
+        ]
+      }
+    }
+  },
+  "inputs": {
+    "DONE.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/DONE.json",
+      "bytes": 8823,
+      "sha256": "baca77b4b07c925602967f243dbc9356a50bc88c7034a0e71e8e32dd9fb2db9d"
+    },
+    "best.pth": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/best.pth",
+      "bytes": 126204085,
+      "sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742"
+    },
+    "latest.pth": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/latest.pth",
+      "bytes": 126204991,
+      "sha256": "7ccd3fbd7ddd5a74dd480c6486203cf1996e65af1c6fb3ef647d96442ddf82c1"
+    },
+    "epoch_diagnostics.csv": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/epoch_diagnostics.csv",
+      "bytes": 44870,
+      "sha256": "c21c27a104faea2c736dab8422ebdc7e69dc21be94941774c8ba8e6a53ba805b"
+    },
+    "per_image_canonical_diagnostics.csv": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/per_image_canonical_diagnostics.csv",
+      "bytes": 9615671,
+      "sha256": "216b7c6c7e89f40f8fbe02c11d02b06c08d3fc6c072a30df512aa3e0ae7f5fe1"
+    },
+    "parameter_audit.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/parameter_audit.json",
+      "bytes": 1782,
+      "sha256": "5c58d1261c45e9eab84f8e690d9e4c49d579c3c8beee14caea79de163c447d40"
+    },
+    "config_resolved.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/config_resolved.json",
+      "bytes": 15005,
+      "sha256": "0b1e9db84f70c44bdd4a06a2f5ae155500c46f5100bc0b7ead5c0c9ad971487d"
+    },
+    "environment.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/environment.json",
+      "bytes": 198,
+      "sha256": "4270a998d7398554234e815a9aa10c3830afdb49ee1c89554130a4eeee131f2c"
+    }
+  },
+  "checkpoint_reviews": [
+    {
+      "kind": "best",
+      "epoch": 31,
+      "optimizer_steps": 5704,
+      "wall_seconds": 631.2832904749994,
+      "model_state_sha256": "d13d96499fe52dcc9ed383320b8a3033385c3b11f66b93255370a50dc8335bc3"
+    },
+    {
+      "kind": "latest",
+      "epoch": 40,
+      "optimizer_steps": 7360,
+      "wall_seconds": 807.5094206739996,
+      "model_state_sha256": "3fbbd4bf79088c89f7bf81b3a2ceb09e025aef06b24883ecc5a63fd2c9f92766"
+    }
+  ],
+  "limitations": [
+    "No inference or GPU work was performed by this audit.",
+    "CUDA RNG state identity and shape validated without restoring a CUDA generator.",
+    "No efficacy, source-regression, amplitude-control, tail-risk or clinical conclusion; the full five-group controls and final evaluation remain required."
+  ],
+  "finished_at": "2026-10-04T11:20:19.446781+00:00"
+}

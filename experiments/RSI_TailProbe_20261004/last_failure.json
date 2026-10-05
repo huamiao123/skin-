@@ -1,0 +1,9 @@
+{
+  "timestamp_utc": "2026-10-04T10:33:24.507933+00:00",
+  "command": "preflight",
+  "group": null,
+  "exception_type": "AssertionError",
+  "message": "legacy gradient q_proj.weight differs; maximum absolute error=4.656612873077393e-10",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/run_tail_probe.py\", line 86, in main\n    result=run_preflight(cfg)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/tail_probe_preflight.py\", line 388, in run_preflight\n    result[\"legacy_comparisons\"]=_legacy_comparison(cfg,base,cpu_train,cpu_val)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/tail_probe_preflight.py\", line 201, in _legacy_comparison\n    gradient_errors = {name:_require_exact(p.grad,dict(model.message.named_parameters())[name].grad,\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/tail_probe_preflight.py\", line 201, in <dictcomp>\n    gradient_errors = {name:_require_exact(p.grad,dict(model.message.named_parameters())[name].grad,\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/tail_probe_preflight.py\", line 70, in _require_exact\n    require(torch.equal(a, b), f\"{label} differs; maximum absolute error={error}\")\n  File \"/home/featurize/work/RSI_TailProbe_20261004/tools/tail_probe_preflight.py\", line 33, in require\n    raise AssertionError(message)\nAssertionError: legacy gradient q_proj.weight differs; maximum absolute error=4.656612873077393e-10\n",
+  "test_scoring_locked": true
+}

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "checkpoint_path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/weights/best_model_isic2017.pth",
+  "checkpoint_sha256": "3a7fb064383cc68faf33b76561379b69a84141cf51e94679dc31e3a3e66a515d",
+  "bytes": 6127743,
+  "model": "MSGUNet(in_channels=3,out_channels=1,base_channels=32)",
+  "parameters": 1459943,
+  "strict_load": true,
+  "missing_keys": [],
+  "unexpected_keys": [],
+  "all_weights_finite": true,
+  "CNN_frozen": true,
+  "CNN_training_started": false,
+  "calibration_sanity": [
+    {
+      "image_id": "ISIC_0014946",
+      "dice": 0.9720953575909661,
+      "pred_fraction": 0.297454833984375,
+      "logit_min": 0.0,
+      "logit_max": 6.0,
+      "prob_min": 0.5,
+      "prob_max": 0.9975274205207825
+    },
+    {
+      "image_id": "ISIC_0014611",
+      "dice": 0.5090550965694589,
+      "pred_fraction": 0.07122802734375,
+      "logit_min": 0.0,
+      "logit_max": 5.422874450683594,
+      "prob_min": 0.5,
+      "prob_max": 0.9956049919128418
+    },
+    {
+      "image_id": "ISIC_0013549",
+      "dice": 0.810408013681896,
+      "pred_fraction": 0.0506134033203125,
+      "logit_min": 0.0,
+      "logit_max": 5.609405994415283,
+      "prob_min": 0.5,
+      "prob_max": 0.9963500499725342
+    },
+    {
+      "image_id": "ISIC_0012959",
+      "dice": 0.832102081934184,
+      "pred_fraction": 0.0502471923828125,
+      "logit_min": 0.0,
+      "logit_max": 4.166257858276367,
+      "prob_min": 0.5,
+      "prob_max": 0.9847266674041748
+    },
+    {
+      "image_id": "ISIC_0012143",
+      "dice": 0.7972919937205651,
+      "pred_fraction": 0.123992919921875,
+      "logit_min": 0.0,
+      "logit_max": 5.840622901916504,
+      "prob_min": 0.5,
+      "prob_max": 0.997101366519928
+    }
+  ],
+  "locked100_GT_read": false,
+  "official_test_read": false,
+  "preprocessing": "PIL RGB; cv2 bilinear resize256; nearest GT; ImageNet mean255/std255 FP32",
+  "hard_threshold": "sigmoid(relu6 output)>0.5; strict greater; preserve publisher convention",
+  "previous_training": "author ISIC2017 combined train/val70:30 seed42; validation exposure possible, development diagnostic only",
+  "dataset_years": [
+    2017
+  ]
+}

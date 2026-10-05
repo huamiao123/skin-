@@ -1,0 +1,219 @@
+{
+  "created_utc": "2026-10-05T09:44:20.866917+00:00",
+  "status": "PASS_PUBLIC_ISIC2017_CNN_DEVELOPMENT_DIAGNOSIS",
+  "compliant_isic2017_checkpoint_found": true,
+  "compliant_checkpoint_count": 1,
+  "scanned_roots": [
+    "/home/featurize/work",
+    "/home/featurize/rsi_runs",
+    "/home/featurize/rsi_publish_assets_20261004"
+  ],
+  "inventory_count_including_prediction_caches": 1555,
+  "inventory_sha256": "796ba3e4f391aba3456bd37bc6ec1cb98fdc447bf8f19a3188ad1740334047e2",
+  "archive_scan": {
+    "path": "/home/featurize/work/medseg_core.tar.gz",
+    "fully_listed_without_extraction": true,
+    "checkpoint_or_2017_config_matches": 129,
+    "isic2017_segmentation_checkpoint_found": false,
+    "2017_named_configuration": "liver2017 preprocessing only; not skin lesion segmentation"
+  },
+  "representative_ineligible_existing_CNN_candidates": [
+    {
+      "path": "/home/featurize/work/Pytorch-UNet-master/results/unet_isic18_Saturday_22_August_2026_18h_12m_52s/checkpoints/best-epoch138-loss0.3491.pth",
+      "model": "UNet(n_channels=3,n_classes=1,bilinear=False)",
+      "source_dataset": "ISIC2018 custom 1886 train / 808 val",
+      "training_evidence": "/home/featurize/work/Pytorch-UNet-master/results/unet_isic18_Saturday_22_August_2026_18h_12m_52s/log/train.info.log",
+      "config_source": "/home/featurize/work/Pytorch-UNet-master/train_unet_isic.py",
+      "input_size": [
+        256,
+        256
+      ],
+      "normalization": "myNormalize(isic18,train=False), then myToTensor and myResize(256,256)",
+      "threshold": 0.5,
+      "checkpoint_selection": "best validation loss on custom ISIC2018 val",
+      "rejection_reason": "ISIC2018-trained checkpoint, not an official ISIC2017 Task1 trained baseline; using it would be a separately declared cross-protocol experiment.",
+      "exists_at_audit": true,
+      "eligible_official_isic2017_baseline": false,
+      "bytes": 124233432,
+      "sha256": "4c4a98c03a655bc89de35fe89ed826de86ec1f0d1c21ff1e4e5c0da440618161",
+      "training_evidence_sha256": "b9773397dfab9e396a3061e383f96ac7a5d259ced2d9dadee03b4fa0567d6049",
+      "config_source_sha256": "6b8b7f2c6556f1d0d1eb42d0bbc881bd5689f8433986c637db8fc4fb1f9c263c"
+    },
+    {
+      "path": "/home/featurize/work/EGE_实验成果包/checkpoints/ege_baseline.pth",
+      "model": "EGE-UNet CNN baseline",
+      "source_dataset": "ISIC2018 custom 1886 train / 808 val",
+      "training_evidence": "/home/featurize/work/EGE_实验成果包/README.md",
+      "config_source": "/home/featurize/work/EGE-UNet-main/configs/config_setting.py",
+      "input_size": [
+        256,
+        256
+      ],
+      "normalization": "myNormalize(isic18,train=False), then myToTensor and myResize(256,256)",
+      "threshold": 0.5,
+      "checkpoint_selection": "best validation loss on custom ISIC2018 val",
+      "rejection_reason": "ISIC2018 training protocol; EGE handover explicitly lists ISIC2017 as a future extension.",
+      "exists_at_audit": true,
+      "eligible_official_isic2017_baseline": false,
+      "bytes": 306308,
+      "sha256": "4d2d42c9bf042f498e3cd61d3e7797f5ba675a3ae51e386175e290b5529d5380",
+      "training_evidence_sha256": "e7649db9c3b771c74b08a30f14a0ef927a1db8c49ec50c6f0c18a86399a4048f",
+      "config_source_sha256": "b56085690d1bae53b7e566e6b027344570beb47249aacee2362a7e5fe179b9d0"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/best.pth",
+      "model": "RSI independent ResNet34 CNN segmentation anchor",
+      "source_dataset": "IMA M train1471/val223 with multiple reference masks",
+      "training_evidence": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/config_resolved.json",
+      "config_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/config_resolved.json",
+      "input_size": [
+        256,
+        256
+      ],
+      "normalization": "256 letterbox RGB; ImageNet mean/std inside model",
+      "threshold": 0.5,
+      "checkpoint_selection": "val original-coordinate macro image-then-rater hard Dice on IMA",
+      "rejection_reason": "IMA and its reference selection protocol are not the official 2017 Task1 train2000/val150 protocol.",
+      "exists_at_audit": true,
+      "eligible_official_isic2017_baseline": false,
+      "bytes": 196041300,
+      "sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "training_evidence_sha256": "7acc4bac64b1612b6f873749ad2d4b4e3749b9b78a7d5596ec6aae9d68002041",
+      "config_source_sha256": "7acc4bac64b1612b6f873749ad2d4b4e3749b9b78a7d5596ec6aae9d68002041"
+    }
+  ],
+  "handover_evidence": {
+    "/home/featurize/work/EGE-UNet-main/基线对比与双分支实验交接文档.md": "9a7e69e33cf9f2b055f7f03ad2cc58fc93d942d097b825465215a93ececbe500",
+    "/home/featurize/work/EGE-UNet-main/项目交接文档.md": "516a82b32392bb40930878d4eb1a436cc39f90eba9342c9732fc404aade97b8e"
+  },
+  "strict_task_protocol": "official ISIC2017 Task1 train2000/val150; no test and no cross-year mixed data",
+  "no_random_network_substitution": true,
+  "CNN_training_started": false,
+  "boundary_head_training_started": true,
+  "GPU_inference_started": true,
+  "method_efficacy_claim_possible": true,
+  "assets_that_must_remain_for_probe": [
+    "/home/featurize/rsi_data/benchmarks/isic2017/train/images",
+    "/home/featurize/rsi_data/benchmarks/isic2017/train/masks",
+    "/home/featurize/rsi_data/benchmarks/isic2017/val/images",
+    "/home/featurize/rsi_data/benchmarks/isic2017/val/masks"
+  ],
+  "checkpoint_paths_required_to_preserve_for_this_strict_probe": [],
+  "next_required_asset": "An already trained CNN segmentation checkpoint with official ISIC2017-compatible model definition, preprocessing, probability/logit convention, threshold and data/checkpoint selection provenance. No retraining was authorized by this short plan.",
+  "local_inventory_original_status": "BLOCKED_MISSING_VALID_CNN_CHECKPOINT",
+  "public_checkpoint_validation": {
+    "status": "PASS",
+    "checkpoint_path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/weights/best_model_isic2017.pth",
+    "checkpoint_sha256": "3a7fb064383cc68faf33b76561379b69a84141cf51e94679dc31e3a3e66a515d",
+    "bytes": 6127743,
+    "model": "MSGUNet(in_channels=3,out_channels=1,base_channels=32)",
+    "parameters": 1459943,
+    "strict_load": true,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "all_weights_finite": true,
+    "CNN_frozen": true,
+    "CNN_training_started": false,
+    "calibration_sanity": [
+      {
+        "image_id": "ISIC_0014946",
+        "dice": 0.9720953575909661,
+        "pred_fraction": 0.297454833984375,
+        "logit_min": 0.0,
+        "logit_max": 6.0,
+        "prob_min": 0.5,
+        "prob_max": 0.9975274205207825
+      },
+      {
+        "image_id": "ISIC_0014611",
+        "dice": 0.5090550965694589,
+        "pred_fraction": 0.07122802734375,
+        "logit_min": 0.0,
+        "logit_max": 5.422874450683594,
+        "prob_min": 0.5,
+        "prob_max": 0.9956049919128418
+      },
+      {
+        "image_id": "ISIC_0013549",
+        "dice": 0.810408013681896,
+        "pred_fraction": 0.0506134033203125,
+        "logit_min": 0.0,
+        "logit_max": 5.609405994415283,
+        "prob_min": 0.5,
+        "prob_max": 0.9963500499725342
+      },
+      {
+        "image_id": "ISIC_0012959",
+        "dice": 0.832102081934184,
+        "pred_fraction": 0.0502471923828125,
+        "logit_min": 0.0,
+        "logit_max": 4.166257858276367,
+        "prob_min": 0.5,
+        "prob_max": 0.9847266674041748
+      },
+      {
+        "image_id": "ISIC_0012143",
+        "dice": 0.7972919937205651,
+        "pred_fraction": 0.123992919921875,
+        "logit_min": 0.0,
+        "logit_max": 5.840622901916504,
+        "prob_min": 0.5,
+        "prob_max": 0.997101366519928
+      }
+    ],
+    "locked100_GT_read": false,
+    "official_test_read": false,
+    "preprocessing": "PIL RGB; cv2 bilinear resize256; nearest GT; ImageNet mean255/std255 FP32",
+    "hard_threshold": "sigmoid(relu6 output)>0.5; strict greater; preserve publisher convention",
+    "previous_training": "author ISIC2017 combined train/val70:30 seed42; validation exposure possible, development diagnostic only",
+    "dataset_years": [
+      2017
+    ]
+  },
+  "new_CNN_training_required": false,
+  "current_scope": "Development diagnostic only; historical val exposure",
+  "boundary_head_completed": true,
+  "boundary_head_DONE": {
+    "status": "PASS",
+    "created_utc": "2026-10-05T10:13:22.914834+00:00",
+    "signature_sha256": "e06614d50f04510773520be8e409d2cd5d3e5a7baa4bde6718fefb1865a0c488",
+    "epochs_completed": 10,
+    "best_epoch": 7,
+    "optimizer_updates": 2500,
+    "cnn_state_hash_before": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+    "cnn_state_hash_after": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+    "cnn_parameters_and_buffers_unchanged": true,
+    "cnn_training_performed": false,
+    "transformer_training_performed": false,
+    "training_GT_scope": "official ISIC2017 train2000 only",
+    "checkpoint_selection_GT_scope": "calibration50 only; no locked_verification100",
+    "locked_verification_GT_opened_during_head_training": 0,
+    "test_GT_opened": 0,
+    "feature_cache_seconds": 109.36129938900012,
+    "head_training_seconds": 48.45710937400008,
+    "selected_head_calibration": {
+      "balanced_bce": 0.4806788444519043,
+      "boundary_band_pixel_precision_at_0_5": 0.09568492625724015,
+      "boundary_band_pixel_recall_at_0_5": 0.742838523219902,
+      "boundary_band_pixel_f1_at_0_5": 0.1695324068984694,
+      "images": 50
+    },
+    "head_ability_metric_note": "Pixel precision/recall/F1 of the 3px GT-derived boundary band at probability>0.5; these are calibration diagnostics and do not replace candidate coverage or final segmentation metrics.",
+    "boundary_head_architecture": {
+      "parameters": 705,
+      "input_feature": "frozen CNN dec1 32x256x256",
+      "feature_storage": "CPU float16 memmap; cast back to float32 for the head in every phase",
+      "head_operations": "FP32 Conv1x1(32,16)+GroupNorm(4,16)+ReLU+Conv3x3(16,1)",
+      "additional_rgb_or_gradient_input": false,
+      "new_transformer": false
+    },
+    "head_best_path": "/home/featurize/contour_probe_20261005/boundary_head/best.pth",
+    "feature_cache_dir": "/home/featurize/contour_probe_20261005/boundary_head/feature_cache",
+    "files_sha256": {
+      "best.pth": "4139a7b4226920639340ca6c60636e9dbc58d876877b16413246f56ceb82a8b9",
+      "latest.pth": "1e83f52fccc6e995ea79f853938fbc018cb38773ae7bf0f7189b63695393b6e2",
+      "training_log.csv": "bf37336f00437be5a4525854c951fe994d98d84b247737dc7ab49ad21e107f05"
+    },
+    "historical_val_exposure": "Public CNN trained/selected after pooled official train+val 70/30 split; all probe results are development diagnosis."
+  }
+}

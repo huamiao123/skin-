@@ -1,3 +1,7 @@
+2026-10-05 更新：本仓库新增 LocalContour ISIC2017 开发诊断与完成的 RSI TailProbe 结果。旧 RSI/EGE 训练权重、缓存和备份已由用户明确要求删除；以下旧清单与路径是历史训练证据，清理元数据见 `publication/cleanup_20261005`。权重不上传 Git 或 Release。
+
+新 LocalContour 仅发布自研代码、协议、指标、审计与四张官方 ISIC2017 诊断叠图。[官方数据页](https://challenge.isic-archive.com/data/#2017)将2017 Task1标为CC0；病例图的发布来自用户此次明确提交结果的指令。完整原始图像/GT、NPZ、特征缓存、公开CNN权重及本地边界头权重未进入Git。未复制没有明确再分发许可的上游模型实现；上游固定URL/SHA及下载辅助脚本用于另行获取。
+
 # RSI v2 实验存档
 
 本仓库保存2026-10-04完成的RSI v2首轮可行性实验。范围是本轮RSI工程及两份协议，不包括work目录中的其他历史模型仓库。结果是工程与相对D0降低退化风险可行，超出简单Fixed-Shrink的独特优势尚未成立；没有启动seed29/T3/正式测试。

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "group": "F-Mean",
+      "historical_run": "D0",
+      "cache_key": "2a6096b1d3e1861afe3ce46c0f58323e62a066bd09f5a38be8e742be6f8f14e9",
+      "references": 624,
+      "maximum_absolute_errors": {
+        "dice": 0.0,
+        "dice_anchor": 0.0,
+        "iou": 0.0,
+        "loss": 0.0,
+        "loss_anchor": 0.0,
+        "bce": 0.0,
+        "soft_dice": 0.0
+      },
+      "hard_metrics_exact": true,
+      "canonical_loss_tolerance": 2e-07,
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+        "bytes": 125077601,
+        "sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    },
+    {
+      "group": "F-RSI",
+      "historical_run": "RSI-3",
+      "cache_key": "095133c95d06b3f06ec0443f483d6766f28c841c775ff910e748f724cdf666c7",
+      "references": 624,
+      "maximum_absolute_errors": {
+        "dice": 0.0,
+        "dice_anchor": 0.0,
+        "iou": 0.0,
+        "loss": 0.0,
+        "loss_anchor": 0.0,
+        "bce": 0.0,
+        "soft_dice": 0.0
+      },
+      "hard_metrics_exact": true,
+      "canonical_loss_tolerance": 2e-07,
+      "checkpoint": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/best.pth",
+        "bytes": 125077601,
+        "sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+      },
+      "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029"
+    }
+  ],
+  "scoring_scope": "M/H/T1 val",
+  "test_scoring_locked": true,
+  "historical_source": {
+    "path": "/home/featurize/work/RSI_TailProbe_20261004/outputs/seed17/per_reference_gains.csv",
+    "bytes": 9429954,
+    "sha256": "2358ca9036abb9b4e2ba95507bc1675743a7101f4cc6ec1833c0ade4c7333036"
+  },
+  "note": "Forward/objective/gradient/storage/runtime/budget acceptance must additionally pass preflight."
+}

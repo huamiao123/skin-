@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-05T11:08:25.326547+00:00",
+  "scope": "read_only_final_mechanical_compositor_repair_independent_review",
+  "source_or_results_edited": false,
+  "new_training_inference_or_parameter_selection": false,
+  "production_screen_or_bootstrap_helpers_called": false,
+  "checks": {
+    "150_images_750_unique_complete_paired_rows": {
+      "passed": true,
+      "detail": null
+    },
+    "exact_frozen_50_100_split": {
+      "passed": true,
+      "detail": null
+    },
+    "all_original_candidate_diagnostic_fields_unchanged": {
+      "passed": true,
+      "detail": null
+    },
+    "G0_all_metrics_exact_v1": {
+      "passed": true,
+      "detail": null
+    },
+    "node_csv_byte_identical": {
+      "passed": true,
+      "detail": null
+    },
+    "historical_lambda_curve_byte_identical": {
+      "passed": true,
+      "detail": null
+    },
+    "candidate_geometry_G0_choices_raw_masks_byte_identity": {
+      "passed": true,
+      "detail": {
+        "arrays": 3446,
+        "failures": [],
+        "undefined_empty_contour_choices": [
+          [
+            "ISIC_0013863",
+            "indices_G1",
+            "no_contour_in_both_versions"
+          ],
+          [
+            "ISIC_0013863",
+            "indices_G2",
+            "no_contour_in_both_versions"
+          ],
+          [
+            "ISIC_0013863",
+            "indices_G3",
+            "no_contour_in_both_versions"
+          ],
+          [
+            "ISIC_0013863",
+            "indices_G4",
+            "no_contour_in_both_versions"
+          ]
+        ]
+      }
+    },
+    "150_case_files": {
+      "passed": true,
+      "detail": null
+    },
+    "rules_exact_prereg": {
+      "passed": true,
+      "detail": null
+    },
+    "fixed_single_sensitivity_N256_R16_lambda005": {
+      "passed": true,
+      "detail": null
+    },
+    "no_new_training_inference_selection_test": {
+      "passed": true,
+      "detail": null
+    },
+    "one_head10epochs_2500updates_frozenCNN": {
+      "passed": true,
+      "detail": null
+    },
+    "head_best_latest_log_exact_DONE": {
+      "passed": true,
+      "detail": null
+    },
+    "head_best_CNN_original_weight": {
+      "passed": true,
+      "detail": null
+    },
+    "current_source_matches_frozen": {
+      "passed": true,
+      "detail": null
+    },
+    "head_three_core_source_exact_v1": {
+      "passed": true,
+      "detail": null
+    },
+    "RUN_DONE_all_result_and_case_hashes_match": {
+      "passed": true,
+      "detail": null
+    },
+    "v1_archive_complete_hashes_intact": {
+      "passed": true,
+      "detail": null
+    },
+    "split_manifest_bound_prereg": {
+      "passed": true,
+      "detail": null
+    },
+    "independent_raw_CSV_threshold_decision": {
+      "passed": true,
+      "detail": {
+        "search_band_macro": 0.9064190377621142,
+        "candidate_coverage_pooled": 0.6534662356321839,
+        "effective_nodes": 22272,
+        "candidate_covered_nodes": 14554,
+        "local_wrong_given_covered": 0.2966194860519445,
+        "cal50_G1_minus_G0_Dice": 7.64902430377079e-06,
+        "G4_minus_G0_Dice": 0.035065600401997465,
+        "G4_minus_G0_BF1": 0.15750993905345556,
+        "G4_minus_G3_Dice": 0.03886056277774319,
+        "G4_minus_G3_BF1": 0.162968842913787,
+        "expected_status": "GENERATOR_INADEQUATE"
+      }
+    },
+    "cal_reconstruction_near_zero": {
+      "passed": true,
+      "detail": null
+    },
+    "candidate_pool_coverage_unchanged_v1": {
+      "passed": true,
+      "detail": null
+    },
+    "all48_paired_bootstrap_results_independently_recomputed": {
+      "passed": true,
+      "detail": []
+    },
+    "report_GT_offline_notDicebound_development_diagnostic": {
+      "passed": true,
+      "detail": null
+    },
+    "head_bandF1_defined_separately_from_segmentation_BF1": {
+      "passed": true,
+      "detail": null
+    }
+  },
+  "errors": [],
+  "independent_locked100_numbers": {
+    "search_band_macro": 0.9064190377621142,
+    "candidate_coverage_pooled": 0.6534662356321839,
+    "effective_nodes": 22272,
+    "candidate_covered_nodes": 14554,
+    "local_wrong_given_covered": 0.2966194860519445,
+    "cal50_G1_minus_G0_Dice": 7.64902430377079e-06,
+    "G4_minus_G0_Dice": 0.035065600401997465,
+    "G4_minus_G0_BF1": 0.15750993905345556,
+    "G4_minus_G3_Dice": 0.03886056277774319,
+    "G4_minus_G3_BF1": 0.162968842913787,
+    "expected_status": "GENERATOR_INADEQUATE"
+  },
+  "head_calibration_band_metrics": {
+    "balanced_bce": 0.4806788444519043,
+    "boundary_band_pixel_precision_at_0_5": 0.09568492625724015,
+    "boundary_band_pixel_recall_at_0_5": 0.742838523219902,
+    "boundary_band_pixel_f1_at_0_5": 0.1695324068984694,
+    "images": 50
+  },
+  "GT_assisted_scope": "G4 replaces candidate unary distance only, same fixed closed DP and lambda; not deployable, not a strict Dice upper bound",
+  "interpretation": "current candidate generator below preregistered coverage threshold; GT-assisted space exists, no claim that all contour methods fail",
+  "report_annotations_to_append_without_code_changes": "external_review.txt",
+  "reviewed_RUN_DONE_sha256": "cd5b92091eea1eeb309a326cfefc064ef4c3689d661c9c93c01ac321b9b60c07",
+  "reviewed_report_sha256": "cf2f39b3f9f0c2fa8306b4f5a219f8b073b43f499061591920b16156466b2ab8",
+  "reviewed_prereg_sha256": "15c0c00715d5726090adeb919708631fa97d73d23c7dd6835ea6e41b6665ba75"
+}

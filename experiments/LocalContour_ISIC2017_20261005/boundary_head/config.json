@@ -1,0 +1,37 @@
+{
+  "config": {
+    "seed": 17,
+    "epochs": 10,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "device": "cuda",
+    "num_workers": 4,
+    "input_size": 256,
+    "feature_channels": 32,
+    "feature_dtype": "float16",
+    "feature_resolution": 256,
+    "boundary_kernel_size": 3,
+    "boundary_definition": "foreground inner 1px 3x3-erosion boundary, then one 3x3 dilation; 3px band",
+    "optimizer": "Adam",
+    "augmentation": "none",
+    "amp": false,
+    "checkpoint_selection": "minimum calibration50 balanced BCE; exact tie keeps earlier epoch",
+    "positive_weight": "negative_pixels / positive_pixels, measured on train2000 boundary targets once",
+    "balanced_normalizer": "1 / (2 * train_negative_pixel_fraction)",
+    "head": "Conv1x1(32,16)+GroupNorm(4,16)+ReLU+Conv3x3(16,1); 705 parameters",
+    "cnn_frozen": true,
+    "test_scoring": false
+  },
+  "code_sha256": {
+    "contour/data.py": "9014985f5ccc11aed73554fd5ed5482b9d9d62bffb885f3e6b304df5e8fefe7d",
+    "contour/models.py": "ba0ee31d42284fbddb93a77342d3802b1a0fa7f2ccb578a345d168b86e77a8cf",
+    "tools/train_boundary.py": "acd58cbf0c2ba54bc00a8b7c2fd60c15daf0eb66243c6243ebb652d57a0afc25"
+  },
+  "asset_sha256": {
+    "assets/isic2017_train_asset_manifest.csv": "a374a77f809eb73c325e4a242ce80be960425498c3de8ccb476c0a6ad76d160e",
+    "assets/val_split_seed17.csv": "97fc2912356743e3e6f433bf5dbd6bf6a64780cd371eb7c67657bf77f1e191ce",
+    "third_party/msgu_net/source_manifest.json": "5831facd1c7000d33f61c67176d2b34c351cfc28629e3e66f22a78a66d563878"
+  },
+  "signature_sha256": "e06614d50f04510773520be8e409d2cd5d3e5a7baa4bde6718fefb1865a0c488",
+  "preregistered_before_training_utc": "2026-10-05T10:10:38.197808+00:00"
+}

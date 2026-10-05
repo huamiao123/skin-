@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-05T09:45:21.269417+00:00",
+  "status": "PASS",
+  "dataset": "ISIC2017 Task1 official split",
+  "data_root": "/home/featurize/rsi_data/benchmarks/isic2017",
+  "counts": {
+    "train": 2000,
+    "val": 150
+  },
+  "test_image_or_mask_files_opened": 0,
+  "test_model_scoring_performed": false,
+  "full_current_file_SHA_and_official_CRC_checked_pairs": 2150,
+  "full_decoded_RGB_and_mask_pixels_checked_val_pairs": 150,
+  "train_decode_scope": "PIL headers plus whole-file SHA/official-member CRC; historical complete decoding is preserved by identical SHA",
+  "seed": 17,
+  "split_algorithm": "lexicographically sorted official val IDs; numpy.random.default_rng(17).permutation(150); first 50 calibration, final 100 locked verification",
+  "calibration_count": 50,
+  "locked_verification_count": 100,
+  "source_manifest_and_member_sha256": {
+    "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_isic2017_manifest.csv": "28e6de2ee3fb72a8c76ad77b991cb17302c8972239b57c11dab05c1936f9a481",
+    "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_isic2017_train_images_members.json": "303608a925dd2c0ff4e1807cc80e7a09ef68463becdaa0acc47e8c85f89f5812",
+    "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_isic2017_train_masks_members.json": "af44d90605f97b3d6abd561ef37009962097451729822dc67265091a132c9678",
+    "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_isic2017_val_images_members.json": "9c67ebca22f0ce6dc08f37b20269656a4a2a0d7b77bb9686c2d17e6429491110",
+    "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_isic2017_val_masks_members.json": "0823575665dd4de23511ea6acc4b3888fccf8e2a5727cb6e0f635e45f3f72f7d"
+  },
+  "errors": [],
+  "checkpoint_selection_history": "No compliant 2017 CNN checkpoint has been identified; therefore prior use of official val for such checkpoint selection is unknown and cannot be certified independent.",
+  "independent_test_claim_allowed": false,
+  "prepared_split_is_unused": true,
+  "data_mixing": "No ISIC2018, IMA, PH2 or other years added to probe manifests",
+  "output_sha256": {
+    "/home/featurize/contour_probe_20261005/assets/val_split_seed17.csv": "97fc2912356743e3e6f433bf5dbd6bf6a64780cd371eb7c67657bf77f1e191ce",
+    "/home/featurize/contour_probe_20261005/assets/isic2017_val_asset_manifest.csv": "40e1be76671ddaef2983c6a451628cf34a8872d0cbb32c3e6dbbe2a6da8e249c",
+    "/home/featurize/contour_probe_20261005/assets/external_isic2017_val_images_members.json": "9c67ebca22f0ce6dc08f37b20269656a4a2a0d7b77bb9686c2d17e6429491110",
+    "/home/featurize/contour_probe_20261005/assets/existing_checkpoint_inventory.csv": "796ba3e4f391aba3456bd37bc6ec1cb98fdc447bf8f19a3188ad1740334047e2",
+    "/home/featurize/contour_probe_20261005/assets/external_isic2017_train_masks_members.json": "af44d90605f97b3d6abd561ef37009962097451729822dc67265091a132c9678",
+    "/home/featurize/contour_probe_20261005/assets/external_isic2017_train_images_members.json": "303608a925dd2c0ff4e1807cc80e7a09ef68463becdaa0acc47e8c85f89f5812",
+    "/home/featurize/contour_probe_20261005/assets/isic2017_train_asset_manifest.csv": "a374a77f809eb73c325e4a242ce80be960425498c3de8ccb476c0a6ad76d160e",
+    "/home/featurize/contour_probe_20261005/assets/external_isic2017_val_masks_members.json": "0823575665dd4de23511ea6acc4b3888fccf8e2a5727cb6e0f635e45f3f72f7d"
+  }
+}

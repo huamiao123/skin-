@@ -1,0 +1,162 @@
+{
+  "source_sha256": {
+    "contour/__init__.py": "32054f44a9a5251f4d480db2f8be9efaa9b7e9219e0cffcab713577f1a221866",
+    "contour/data.py": "9014985f5ccc11aed73554fd5ed5482b9d9d62bffb885f3e6b304df5e8fefe7d",
+    "contour/geometry.py": "5e548595af6050e10ffba56f4351bfb56aebc8398730c589f00956191f5dd701",
+    "contour/models.py": "ba0ee31d42284fbddb93a77342d3802b1a0fa7f2ccb578a345d168b86e77a8cf",
+    "contour/panels.py": "ac36d11761914ddeb7c8f4853dc799bcb4e074c7a68c82f8bee934709ead91f4",
+    "contour/reporting.py": "f7642e9004b98bee4c5b72cf3907f07f716c2b866d0b26d54530cbc22a8eb019",
+    "tests/test_geometry.py": "a2e4d2dabf02da36164fe8fd74e1cc2c66854caf32fd327b4f3ec43625845241",
+    "tests/test_models_data.py": "9a995decaa1f3eeb7f4f7152d4042b49d1e4541d8f8167847c5cb25c19da63bd",
+    "tests/test_panels.py": "2d3cfcbc8b427c5f75f338abad7edea9d590e57725d4a6e684c5a32f4b31f81a",
+    "tests/test_reporting.py": "1037cb9b734fb2bd8e8ef7c9adbf30a8851e9872dbe949c199615aad95d1701e",
+    "tests/test_runner.py": "24dd131a369597ecfe57f9c030ccf0cb3b4c1c869884694f97e679f6fc673d0a",
+    "tools/run_probe.py": "7dea8ad39eb4b36b2a846bbaa547b362192bf7fde2d2d1021ed61877c818f567",
+    "tools/train_boundary.py": "acd58cbf0c2ba54bc00a8b7c2fd60c15daf0eb66243c6243ebb652d57a0afc25"
+  },
+  "preregistration_sha256": "15c0c00715d5726090adeb919708631fa97d73d23c7dd6835ea6e41b6665ba75",
+  "split_sha256": "97fc2912356743e3e6f433bf5dbd6bf6a64780cd371eb7c67657bf77f1e191ce",
+  "public_weight_sha256": "3a7fb064383cc68faf33b76561379b69a84141cf51e94679dc31e3a3e66a515d",
+  "public_source_manifest_sha256": "5831facd1c7000d33f61c67176d2b34c351cfc28629e3e66f22a78a66d563878",
+  "head_best_sha256": "4139a7b4226920639340ca6c60636e9dbc58d876877b16413246f56ceb82a8b9",
+  "head_best_epoch": 7,
+  "head_config_sha256": "99cc98fbfd4acac1c4c98a5fa1eb103e27dd62fe04255c90abd5b20c8e7708db",
+  "dataset_manifests_sha256": {
+    "isic2017_train_asset_manifest.csv": "a374a77f809eb73c325e4a242ce80be960425498c3de8ccb476c0a6ad76d160e",
+    "isic2017_val_asset_manifest.csv": "40e1be76671ddaef2983c6a451628cf34a8872d0cbb32c3e6dbbe2a6da8e249c"
+  },
+  "metric_coordinates": "model_input_256x256; original CNN macro per-image Dice/IoU; BF1 tolerance2",
+  "device": "cuda",
+  "pipeline_signature_sha256": "3913dba608c06a723b7b0d14235fd81f6b2ec59d67cc314fb3eb6d4da75b5f9d",
+  "created_utc": "2026-10-05T10:26:45.814467+00:00",
+  "torch_version": "2.2.2+cu121",
+  "cv2_version": "4.10.0",
+  "numpy_version": "1.26.4",
+  "full_third_party_source_and_weight_sha256": {
+    "repository": "https://github.com/A1maan/msgu-net",
+    "commit": "c4b16bf372067eb163a44f16104473383ac7d718",
+    "files": [
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/README.md",
+        "relative_path": "README.md",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/README.md",
+        "bytes": 6980,
+        "sha256": "3d3d59ca0a7d196d10e17d574b6f459a48a7e4ebbdf272e676e070f22bc4b94d"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/model/MSGUNet.py",
+        "relative_path": "model/MSGUNet.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/model/MSGUNet.py",
+        "bytes": 6673,
+        "sha256": "3927b898d596387b59f21b0afbf33e097c06154a5918e56725850e3b56febb4e"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/model/__init__.py",
+        "relative_path": "model/__init__.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/model/__init__.py",
+        "bytes": 51,
+        "sha256": "83cbc0ac8430c2dda927a826432a30cf1118ff8860f10ed9e4a4d00254258f84"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/modules/Attention_Gate.py",
+        "relative_path": "modules/Attention_Gate.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/modules/Attention_Gate.py",
+        "bytes": 2532,
+        "sha256": "c3b2316a2036d481637a8c7d5265779c0378881e20c1a5bafc3c1f49b9fd9039"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/modules/ELA_Module.py",
+        "relative_path": "modules/ELA_Module.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/modules/ELA_Module.py",
+        "bytes": 4289,
+        "sha256": "e01faa01ab7fb89a4b11bed5787231a7f9221f0bff6abcac267f0d5cbe687160"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/modules/Ghost_Module.py",
+        "relative_path": "modules/Ghost_Module.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/modules/Ghost_Module.py",
+        "bytes": 8298,
+        "sha256": "b4bdc31864d80d80e79362942dc0c4e9a4d6d56287cd16c7abb7a3c81f8c1a58"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/modules/SPP_Inception.py",
+        "relative_path": "modules/SPP_Inception.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/modules/SPP_Inception.py",
+        "bytes": 3223,
+        "sha256": "049a7de0cea74f153c59586cb5a4ba9d8062362a61226a55e3748eeba7d153e7"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/modules/__init__.py",
+        "relative_path": "modules/__init__.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/modules/__init__.py",
+        "bytes": 239,
+        "sha256": "a0835d3b09b005f0f8793476eb59e7376f1214539dacc54567a1674b5e18b6cf"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/scripts/train_isic2017.py",
+        "relative_path": "scripts/train_isic2017.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/scripts/train_isic2017.py",
+        "bytes": 9525,
+        "sha256": "aebf0ec8693479c2a886a28f753aa86435fc2c7400041e9356246dbff86b30d4"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/scripts/metrics_isic2017.py",
+        "relative_path": "scripts/metrics_isic2017.py",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/scripts/metrics_isic2017.py",
+        "bytes": 12352,
+        "sha256": "d83fbf6a0e53e2e34493e66813d53cd3102516533ee4a26b5b6d3b415973d2a1"
+      },
+      {
+        "path": "/home/featurize/contour_probe_20261005/third_party/msgu_net/weights/best_model_isic2017.pth",
+        "relative_path": "weights/best_model_isic2017.pth",
+        "url": "https://raw.githubusercontent.com/A1maan/msgu-net/c4b16bf372067eb163a44f16104473383ac7d718/weights/best_model_isic2017.pth",
+        "bytes": 6127743,
+        "sha256": "3a7fb064383cc68faf33b76561379b69a84141cf51e94679dc31e3a3e66a515d"
+      }
+    ],
+    "scope": "ISIC2017 only; no ISIC2018 weights downloaded; official test untouched"
+  },
+  "boundary_head_training_DONE": {
+    "status": "PASS",
+    "created_utc": "2026-10-05T10:13:22.914834+00:00",
+    "signature_sha256": "e06614d50f04510773520be8e409d2cd5d3e5a7baa4bde6718fefb1865a0c488",
+    "epochs_completed": 10,
+    "best_epoch": 7,
+    "optimizer_updates": 2500,
+    "cnn_state_hash_before": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+    "cnn_state_hash_after": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+    "cnn_parameters_and_buffers_unchanged": true,
+    "cnn_training_performed": false,
+    "transformer_training_performed": false,
+    "training_GT_scope": "official ISIC2017 train2000 only",
+    "checkpoint_selection_GT_scope": "calibration50 only; no locked_verification100",
+    "locked_verification_GT_opened_during_head_training": 0,
+    "test_GT_opened": 0,
+    "feature_cache_seconds": 109.36129938900012,
+    "head_training_seconds": 48.45710937400008,
+    "selected_head_calibration": {
+      "balanced_bce": 0.4806788444519043,
+      "boundary_band_pixel_precision_at_0_5": 0.09568492625724015,
+      "boundary_band_pixel_recall_at_0_5": 0.742838523219902,
+      "boundary_band_pixel_f1_at_0_5": 0.1695324068984694,
+      "images": 50
+    },
+    "head_ability_metric_note": "Pixel precision/recall/F1 of the 3px GT-derived boundary band at probability>0.5; these are calibration diagnostics and do not replace candidate coverage or final segmentation metrics.",
+    "boundary_head_architecture": {
+      "parameters": 705,
+      "input_feature": "frozen CNN dec1 32x256x256",
+      "feature_storage": "CPU float16 memmap; cast back to float32 for the head in every phase",
+      "head_operations": "FP32 Conv1x1(32,16)+GroupNorm(4,16)+ReLU+Conv3x3(16,1)",
+      "additional_rgb_or_gradient_input": false,
+      "new_transformer": false
+    },
+    "head_best_path": "/home/featurize/contour_probe_20261005/boundary_head/best.pth",
+    "feature_cache_dir": "/home/featurize/contour_probe_20261005/boundary_head/feature_cache",
+    "files_sha256": {
+      "best.pth": "4139a7b4226920639340ca6c60636e9dbc58d876877b16413246f56ceb82a8b9",
+      "latest.pth": "1e83f52fccc6e995ea79f853938fbc018cb38773ae7bf0f7189b63695393b6e2",
+      "training_log.csv": "bf37336f00437be5a4525854c951fe994d98d84b247737dc7ab49ad21e107f05"
+    },
+    "historical_val_exposure": "Public CNN trained/selected after pooled official train+val 70/30 split; all probe results are development diagnosis."
+  }
+}

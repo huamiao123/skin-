@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-05T10:13:22.914834+00:00",
+  "signature_sha256": "e06614d50f04510773520be8e409d2cd5d3e5a7baa4bde6718fefb1865a0c488",
+  "epochs_completed": 10,
+  "best_epoch": 7,
+  "optimizer_updates": 2500,
+  "cnn_state_hash_before": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+  "cnn_state_hash_after": "00be09cbddb24dd028240008759cf320af2d4353c100adb2dcf64b861c96df91",
+  "cnn_parameters_and_buffers_unchanged": true,
+  "cnn_training_performed": false,
+  "transformer_training_performed": false,
+  "training_GT_scope": "official ISIC2017 train2000 only",
+  "checkpoint_selection_GT_scope": "calibration50 only; no locked_verification100",
+  "locked_verification_GT_opened_during_head_training": 0,
+  "test_GT_opened": 0,
+  "feature_cache_seconds": 109.36129938900012,
+  "head_training_seconds": 48.45710937400008,
+  "selected_head_calibration": {
+    "balanced_bce": 0.4806788444519043,
+    "boundary_band_pixel_precision_at_0_5": 0.09568492625724015,
+    "boundary_band_pixel_recall_at_0_5": 0.742838523219902,
+    "boundary_band_pixel_f1_at_0_5": 0.1695324068984694,
+    "images": 50
+  },
+  "head_ability_metric_note": "Pixel precision/recall/F1 of the 3px GT-derived boundary band at probability>0.5; these are calibration diagnostics and do not replace candidate coverage or final segmentation metrics.",
+  "boundary_head_architecture": {
+    "parameters": 705,
+    "input_feature": "frozen CNN dec1 32x256x256",
+    "feature_storage": "CPU float16 memmap; cast back to float32 for the head in every phase",
+    "head_operations": "FP32 Conv1x1(32,16)+GroupNorm(4,16)+ReLU+Conv3x3(16,1)",
+    "additional_rgb_or_gradient_input": false,
+    "new_transformer": false
+  },
+  "head_best_path": "/home/featurize/contour_probe_20261005/boundary_head/best.pth",
+  "feature_cache_dir": "/home/featurize/contour_probe_20261005/boundary_head/feature_cache",
+  "files_sha256": {
+    "best.pth": "4139a7b4226920639340ca6c60636e9dbc58d876877b16413246f56ceb82a8b9",
+    "latest.pth": "1e83f52fccc6e995ea79f853938fbc018cb38773ae7bf0f7189b63695393b6e2",
+    "training_log.csv": "bf37336f00437be5a4525854c951fe994d98d84b247737dc7ab49ad21e107f05"
+  },
+  "historical_val_exposure": "Public CNN trained/selected after pooled official train+val 70/30 split; all probe results are development diagnosis."
+}

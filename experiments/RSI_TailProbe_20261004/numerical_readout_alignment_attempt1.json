@@ -1,0 +1,20 @@
+{
+  "timestamp_utc": "2026-10-04T10:31:35.491055+00:00",
+  "phase": "F-reuse readout preflight",
+  "reason": "CPU single-image vs historical GPU batch canonical FP32 reduction mismatch; hard metrics all exactly equal",
+  "maximum_errors": {
+    "dice": 0.0,
+    "dice_anchor": 0.0,
+    "iou": 0.0,
+    "loss": 1.1920928955078125e-07,
+    "loss_anchor": 1.1920928955078125e-07,
+    "bce": 2.384185791015625e-07,
+    "soft_dice": 2.384185791015625e-07
+  },
+  "tolerance_changed": false,
+  "fixed_path": "Restore original GPU batch/maxR/present/valid FP32 loss calculation",
+  "method_efficacy_result": false,
+  "full_training_started": false,
+  "failed_incomplete_readout_wall_seconds": null,
+  "extra_cost_note": "First cached forward timing retained in old content-bound index; complete failed readout cost not measured"
+}

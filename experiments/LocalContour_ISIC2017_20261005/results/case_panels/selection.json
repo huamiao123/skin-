@@ -1,0 +1,276 @@
+{
+  "seed": 17,
+  "scope": "locked100",
+  "rules": {
+    "random": "two IDs without replacement from lexicographically sorted locked100 IDs using numpy.default_rng(17)",
+    "failure": "minimum per-image G4-minus-G0 Dice; tie uses image_id",
+    "coverage": "minimum search-band coverage; undefined shown explicitly first; tie uses image_id",
+    "deduplication": "one PNG per unique ID, preserving all selection labels",
+    "selection_does_not_remove_other_images_from_metrics": true
+  },
+  "locked_candidate_image_ids": [
+    "ISIC_0001769",
+    "ISIC_0001852",
+    "ISIC_0001871",
+    "ISIC_0003462",
+    "ISIC_0003539",
+    "ISIC_0003582",
+    "ISIC_0003657",
+    "ISIC_0003805",
+    "ISIC_0004337",
+    "ISIC_0006651",
+    "ISIC_0006914",
+    "ISIC_0007141",
+    "ISIC_0007156",
+    "ISIC_0007241",
+    "ISIC_0007332",
+    "ISIC_0007344",
+    "ISIC_0008524",
+    "ISIC_0010459",
+    "ISIC_0012099",
+    "ISIC_0012109",
+    "ISIC_0012191",
+    "ISIC_0012204",
+    "ISIC_0012206",
+    "ISIC_0012210",
+    "ISIC_0012221",
+    "ISIC_0012222",
+    "ISIC_0012256",
+    "ISIC_0012306",
+    "ISIC_0012313",
+    "ISIC_0012316",
+    "ISIC_0012335",
+    "ISIC_0012400",
+    "ISIC_0012434",
+    "ISIC_0012492",
+    "ISIC_0012513",
+    "ISIC_0012538",
+    "ISIC_0012547",
+    "ISIC_0012660",
+    "ISIC_0012684",
+    "ISIC_0012746",
+    "ISIC_0012876",
+    "ISIC_0012927",
+    "ISIC_0012956",
+    "ISIC_0012965",
+    "ISIC_0013010",
+    "ISIC_0013082",
+    "ISIC_0013104",
+    "ISIC_0013127",
+    "ISIC_0013128",
+    "ISIC_0013132",
+    "ISIC_0013188",
+    "ISIC_0013215",
+    "ISIC_0013232",
+    "ISIC_0013421",
+    "ISIC_0013491",
+    "ISIC_0013501",
+    "ISIC_0013518",
+    "ISIC_0013527",
+    "ISIC_0013561",
+    "ISIC_0013562",
+    "ISIC_0013632",
+    "ISIC_0013651",
+    "ISIC_0013736",
+    "ISIC_0013793",
+    "ISIC_0013863",
+    "ISIC_0013898",
+    "ISIC_0014038",
+    "ISIC_0014139",
+    "ISIC_0014162",
+    "ISIC_0014211",
+    "ISIC_0014212",
+    "ISIC_0014217",
+    "ISIC_0014302",
+    "ISIC_0014310",
+    "ISIC_0014382",
+    "ISIC_0014558",
+    "ISIC_0014572",
+    "ISIC_0014610",
+    "ISIC_0014616",
+    "ISIC_0014618",
+    "ISIC_0014623",
+    "ISIC_0014624",
+    "ISIC_0014637",
+    "ISIC_0014809",
+    "ISIC_0014829",
+    "ISIC_0014857",
+    "ISIC_0014931",
+    "ISIC_0014937",
+    "ISIC_0014985",
+    "ISIC_0014989",
+    "ISIC_0015043",
+    "ISIC_0015062",
+    "ISIC_0015124",
+    "ISIC_0015211",
+    "ISIC_0015243",
+    "ISIC_0015401",
+    "ISIC_0015443",
+    "ISIC_0015445",
+    "ISIC_0015483",
+    "ISIC_0015496"
+  ],
+  "random_image_ids": [
+    "ISIC_0014829",
+    "ISIC_0014310"
+  ],
+  "failure_image_id": "ISIC_0013863",
+  "lowest_coverage_image_id": "ISIC_0012256",
+  "selected": [
+    {
+      "image_id": "ISIC_0014829",
+      "labels": [
+        "seed17_random_locked"
+      ],
+      "g4_minus_g0_dice": 0.022166924629683837,
+      "search_band_coverage": 1.0,
+      "panel_path": "/home/featurize/contour_probe_20261005/results/case_panels/ISIC_0014829.png",
+      "panel_sha256": "4d3a64fd5be2d39576337801e8c0dc4a284f20df3277353ee0599b5291021085",
+      "artifact_path": "/home/featurize/contour_probe_20261005/results/cases/ISIC_0014829.npz",
+      "artifact_sha256": "44abdcc00e9249b6368fd1dacdf18b109c1b8906a9f0e24565fac64f6adf125d",
+      "source": {
+        "source_image_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/images/ISIC_0014829.jpg",
+        "source_mask_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/masks/ISIC_0014829_segmentation.png",
+        "source_image_sha256": "bca409ffd6371f5d03b1eb3f5a0cf661e6e319c8093b0fca01f3c906cf55e448",
+        "source_mask_sha256": "7d64ecd9f4138ec83a9823c73069c609b57b4f7bfac24455f0f40e6bb238b99f",
+        "source_shape": [
+          4441,
+          6642
+        ],
+        "display_shape": [
+          256,
+          256
+        ],
+        "rgb_decode": "PIL RGB",
+        "rgb_resize": "cv2 INTER_LINEAR to 256x256, matching CNN input transform",
+        "gt_resize": "cv2 INTER_NEAREST to 256x256, matching CNN evaluation",
+        "gt_display_source": "verified_evaluated_artifact_and_actual_mask"
+      }
+    },
+    {
+      "image_id": "ISIC_0014310",
+      "labels": [
+        "seed17_random_locked"
+      ],
+      "g4_minus_g0_dice": 0.014794207756650968,
+      "search_band_coverage": 1.0,
+      "panel_path": "/home/featurize/contour_probe_20261005/results/case_panels/ISIC_0014310.png",
+      "panel_sha256": "5b82fa7e75f5db540106a0883efb6d0e11b953b21ac7484da99b8595837f4ad4",
+      "artifact_path": "/home/featurize/contour_probe_20261005/results/cases/ISIC_0014310.npz",
+      "artifact_sha256": "947fda444c1ea0ed8367c5cb05c67fe0f2214ba8b15a8ab2aa518032c3004c2a",
+      "source": {
+        "source_image_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/images/ISIC_0014310.jpg",
+        "source_mask_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/masks/ISIC_0014310_segmentation.png",
+        "source_image_sha256": "b4480227de12f7493536519d5ec7af32942bbc669ea89da79816aaa60bf89ab7",
+        "source_mask_sha256": "0de28bb5e7f1ab2df6799d0867a8ca4aef01831e751d58851c06fb659e5bf60e",
+        "source_shape": [
+          2848,
+          4288
+        ],
+        "display_shape": [
+          256,
+          256
+        ],
+        "rgb_decode": "PIL RGB",
+        "rgb_resize": "cv2 INTER_LINEAR to 256x256, matching CNN input transform",
+        "gt_resize": "cv2 INTER_NEAREST to 256x256, matching CNN evaluation",
+        "gt_display_source": "verified_evaluated_artifact_and_actual_mask"
+      }
+    },
+    {
+      "image_id": "ISIC_0013863",
+      "labels": [
+        "minimum_locked_g4_minus_g0_dice"
+      ],
+      "g4_minus_g0_dice": 0.0,
+      "search_band_coverage": 0.0,
+      "panel_path": "/home/featurize/contour_probe_20261005/results/case_panels/ISIC_0013863.png",
+      "panel_sha256": "5af6435f610cfc106725c100efe08a0e4838edda72c9e1151ec2c5d76f829cdb",
+      "artifact_path": "/home/featurize/contour_probe_20261005/results/cases/ISIC_0013863.npz",
+      "artifact_sha256": "9175e5d61e4777d2658a0a0b44fc9659ebed73ef727d332476235eeced61a07f",
+      "source": {
+        "source_image_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/images/ISIC_0013863.jpg",
+        "source_mask_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/masks/ISIC_0013863_segmentation.png",
+        "source_image_sha256": "953b27f95114fbc719b518ed65353f5380bab35cddd329b514a66d848d6a790f",
+        "source_mask_sha256": "65f5ba93097583a30c816f7e7887c6f82e71ca7f23eea518e854592c61bd5957",
+        "source_shape": [
+          2848,
+          4288
+        ],
+        "display_shape": [
+          256,
+          256
+        ],
+        "rgb_decode": "PIL RGB",
+        "rgb_resize": "cv2 INTER_LINEAR to 256x256, matching CNN input transform",
+        "gt_resize": "cv2 INTER_NEAREST to 256x256, matching CNN evaluation",
+        "gt_display_source": "verified_evaluated_artifact_and_actual_mask"
+      }
+    },
+    {
+      "image_id": "ISIC_0012256",
+      "labels": [
+        "minimum_locked_search_band_coverage"
+      ],
+      "g4_minus_g0_dice": 0.1852146594397685,
+      "search_band_coverage": 0.0,
+      "panel_path": "/home/featurize/contour_probe_20261005/results/case_panels/ISIC_0012256.png",
+      "panel_sha256": "cbcd2c7dcb65c949e2a39b22f5878f369bd72cd4521a82e992aaf70df124f600",
+      "artifact_path": "/home/featurize/contour_probe_20261005/results/cases/ISIC_0012256.npz",
+      "artifact_sha256": "58b8a86fc6107069668db665e50b94ab41ea889ed004a2a6eeabcab0c0f236e6",
+      "source": {
+        "source_image_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/images/ISIC_0012256.jpg",
+        "source_mask_path": "/home/featurize/rsi_data/benchmarks/isic2017/val/masks/ISIC_0012256_segmentation.png",
+        "source_image_sha256": "c1cdac0ec880b6e9faa466b49bf3d26372a66914d3b250833537896e06cfd421",
+        "source_mask_sha256": "661c9697cc6158a333fa684b4f5909ac65773adf307629f708c2d3433f569ccc",
+        "source_shape": [
+          2848,
+          4288
+        ],
+        "display_shape": [
+          256,
+          256
+        ],
+        "rgb_decode": "PIL RGB",
+        "rgb_resize": "cv2 INTER_LINEAR to 256x256, matching CNN input transform",
+        "gt_resize": "cv2 INTER_NEAREST to 256x256, matching CNN evaluation",
+        "gt_display_source": "verified_evaluated_artifact_and_actual_mask"
+      }
+    }
+  ],
+  "local_only_source_visuals": false,
+  "g4_deployable": false,
+  "g4_strict_dice_upper_bound": false,
+  "legend": {
+    "GT_boundary": [
+      255,
+      48,
+      48
+    ],
+    "prediction_boundary": [
+      35,
+      145,
+      255
+    ],
+    "candidate_peaks": [
+      35,
+      255,
+      120
+    ],
+    "original_zero_offset": [
+      250,
+      250,
+      250
+    ],
+    "search_band": [
+      255,
+      210,
+      60
+    ]
+  },
+  "npz_masks_are_not_recomputed": true,
+  "source_RGB_and_GT_are_not_published": true,
+  "publication_scope": "Only the four derived official ISIC2017 diagnostic overlay PNGs, explicitly requested by user on 2026-10-05; source raw JPEGs/GT corpus/NPZ/weights excluded.",
+  "dataset_license": "ISIC2017 Task1 CC0 per https://challenge.isic-archive.com/data/#2017",
+  "publication_requested_by_user": true
+}

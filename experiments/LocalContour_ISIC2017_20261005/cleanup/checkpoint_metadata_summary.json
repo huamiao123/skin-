@@ -1,0 +1,2154 @@
+{
+  "scope": "Historic RSI/EGE checkpoint identities; actual weights deleted locally on explicit user cleanup; tensors and optimizer/RNG values absent.",
+  "full_local_metadata_sha256": "54c672ba40cf8b1fd01a162e03b0f696f3b68c0cd7e7867f13e487e5585c1001",
+  "unique_checkpoint_count": 145,
+  "checkpoints": [
+    {
+      "sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4",
+      "size_bytes": 127263453,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 22,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-Mean",
+        "method": "mean",
+        "weight": 0.0,
+        "best_dice": 0.8587874194126943,
+        "best_epoch": 22,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df",
+        "best_learned_state_hash": "25cbf5db1981d4242abfe1b25a5bf92deb66315b9c211bee8e1468fdd47a4a4d"
+      }
+    },
+    {
+      "sha256": "034fafdeb79a95d032d831b33afbdbacb0037da94a11802ca0cb92e2b850bc03",
+      "size_bytes": 64641642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_difflr_seed42/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "066a034ff3becee63dfc500aaff90b662b86459e5a55657524be189ef8064462",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B2_Wednesday_12_August_2026_20h_43m_22s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "0874af908ee78b43f6a4e830a8632f6183e7f342a3677c3c6520ac1958b0dad5",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-1/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 1.0,
+        "best_dice": 0.8583795894208186,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "0d0f7adcddd1133ba6313f32d149024a6c6db454a41d9249b207b86e499ef3dc",
+      "size_bytes": 1085882,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_wave_v1_seed43_v1_20260914/checkpoints/latest_before_resume_20260929_epoch298.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 298
+      }
+    },
+    {
+      "sha256": "0d3070d9b171962b6ffa03d49f660f4c12d5c668c425d2f13bc701b7c5eaf9e2",
+      "size_bytes": 64656078,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_scf_isic18_Sunday_30_August_2026_21h_32m_33s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "0df5ad8bc3e2976f7e9d2e569fc8ba34993ec7e46fa8153ee61792bdda7498d7",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 15,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 3.0,
+        "best_dice": 0.8586199376315766,
+        "best_epoch": 15,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "0f62ca5cbd8427137854d79d1730798ed969a5a03c42626c6384d82cf85c9bbb",
+      "size_bytes": 64669642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_scf_seed42/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "11086a15f312d207190a92db9b4ecaee38cf548c0c1ea1a64721e8a0f7af5738",
+      "size_bytes": 64669578,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_dual_scf_seed43_v1_20260914/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "1386dc44272a1411c91f5219f3e9ce7d95e4d9e61563745ddb2ed28c667b93b3",
+      "size_bytes": 56834551,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ptu_d4.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 291,
+      "tensor_numel": 14185281,
+      "training_identity": {}
+    },
+    {
+      "sha256": "167735cb85f00b7056ab69523f26cde7226084830c6d5529c7f927a17e785c34",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 11,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 3.0,
+        "best_dice": 0.8581067332797172,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/B/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 22,
+        "seed": 17,
+        "stage": "B",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8583737524417797,
+        "best_epoch": 22,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "1bb49232e61e2f2ffbd03fe40aca323ab467cbf9f13bb0fa6ee1cb26a38b7a47",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-0.3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 15,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 0.3,
+        "best_dice": 0.8582183435384786,
+        "best_epoch": 15,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "1c6f9d54932f3dc244e7069bcbc8f403649059875a691cc9944a25e48df289c8",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_v2_20260912/checkpoints/best-epoch96-loss0.7848.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "1cecf3f2bd2e1617ba3079196b18ac873b33e49b003b9dc4a156fc800166db70",
+      "size_bytes": 63161835,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ptu_d6.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 319,
+      "tensor_numel": 15764801,
+      "training_identity": {}
+    },
+    {
+      "sha256": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-1/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 11,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 1.0,
+        "best_dice": 0.8583795894208186,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "1f55107577ec71ee74e1be330dceda25c511cf0029b9d1374ea9959ace94a328",
+      "size_bytes": 1447379,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_56m_04s/checkpoints/best-epoch16-loss1.0107.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_hrvit.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {}
+    },
+    {
+      "sha256": "20ec38d82e30e78c2215706d2112fede774ea09a02f98f079ef19e8469bc4b12",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_ll_only_isic18_Thursday_20_August_2026_13h_42m_43s/checkpoints/best-epoch129-loss0.8160.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_wave_ll_only.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "21e626e21fe8064eb820e92dead607ac84acae6fb0ebb5a48745f08fe1a32a1a",
+      "size_bytes": 64641642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_v2_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "22a2ee62756f67f40feffbbf33a1d41a3525126f547979339b33bd1897b8138c",
+      "size_bytes": 1091830,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_full_isic18_Wednesday_12_August_2026_14h_26m_37s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "2467d7d08f7d5717af83a54dc2a5d128912cee6dcafdc1ab7d8c5f270da44619",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 3.0,
+        "best_dice": 0.8586199376315766,
+        "best_epoch": 15,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "261a2f14eca269b35cc10b749d0f91b4767fc8f986f02675f4eadcebc210e47a",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 3.0,
+        "best_dice": 0.8581067332797172,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "26a8a5c26db952d9ba661713435d8269e9714d102ff531e22faac7002f651bfc",
+      "size_bytes": 64628078,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_scaug_isic18_Sunday_30_August_2026_19h_12m_12s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "276a8d32341cc54181bb4f3a2c03b0dded5e1feeee570829d6ed61ab92324880",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_wave_ll_only_v1_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "2872c9b8abb338b05e2fd70d3ca19169fda7026fe6c526673bbcf3eb0f7b2cc4",
+      "size_bytes": 1088206,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_21m_31s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 5
+      }
+    },
+    {
+      "sha256": "29af4cf0e568af28a908610d8bbc3b3106352f84ed1d59a0ca613a4a3a183c47",
+      "size_bytes": 1178462,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_psudr_isic18_Friday_14_August_2026_23h_22m_10s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 416,
+      "tensor_numel": 61571,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "2c6dc1ff769015a0b0a20a5a2925eaac5c25860cff07dd57184c7264cc1fae99",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_unet_isic18_Tuesday_11_August_2026_13h_32m_25s/checkpoints/best-epoch122-loss0.7867.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_wave_v1.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "2eb8f2e074662a98a43808ca13bcff0143c17d3de881f2b3c31cd8b2e3f49b24",
+      "size_bytes": 1089986,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B3_Wednesday_12_August_2026_17h_47m_13s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "31522df711f62d078bb452729c400b611b2278933e3db323ab040d939006d3cc",
+      "size_bytes": 1086934,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_unet_isic18_Tuesday_11_August_2026_17h_23m_14s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 334,
+      "tensor_numel": 59207,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "31e45f4bf50e0e06a1b5b8551fc27a0359e8b481276b595ef5faf9e1e4bacbac",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B3_Wednesday_12_August_2026_17h_47m_13s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "32687433c3ba4b9061c47e23eb15ecfd03b0624ac8d4090d8a3005aeaa4d889d",
+      "size_bytes": 21513099,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_scf_seed42/checkpoints/best-epoch119-loss0.7788.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {}
+    },
+    {
+      "sha256": "330d6bda2f593557e7c91a93dbbe6f546095078e2bb19349fd6192934ae64f25",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_ege_baseline_seed43_v1_20260929/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "35b5478d74ac8ddb1ad079974e89de3a15aaf665d0b13ab82d54f3edb8080651",
+      "size_bytes": 64641578,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_difflr_seed43/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "387d2baa303f2858ce076f024f30e647ab3cc6ba7c0d637c9c01d2546fb2ebe0",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_14h_38m_37s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "3aad4f5915d66103446b1b42b5d8e352d8ddf8857903bf29236f1a23cb6d3c29",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-0.3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 7,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 0.3,
+        "best_dice": 0.8584882671218835,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "3ae1a3a2effbcced51486d45255dd6768ed9ba16972d2c61cb563b36b7a9ff04",
+      "size_bytes": 64626990,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_isic18_Saturday_29_August_2026_16h_32m_55s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "3bb229d0ec3d38fbdc1a4cc901afb7f79003ed31bf8e4353d2199d94d4d01f10",
+      "size_bytes": 64640554,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_unified_v1_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "3d997d4963157567368527d9ca114964cd2fd330153bcb8f4ff89ec6374cf33b",
+      "size_bytes": 346320,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/bgct_egeunet_isic18_Friday_07_August_2026_11h_03m_17s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 350,
+      "tensor_numel": 60529,
+      "training_identity": {}
+    },
+    {
+      "sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/best.pth",
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-RSI/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 1,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 3.0,
+        "best_dice": 0.8580102222798561,
+        "best_epoch": 1,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "411deeb097db5aeac8ae9f72be8879db7eff1095eef46a8f15a385d7ec5a44ce",
+      "size_bytes": 4116890,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_52m_28s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {
+        "epoch": 1
+      }
+    },
+    {
+      "sha256": "4147d3a067fa4bce723a222496a406dee84178e271a906ef577e1810c196660f",
+      "size_bytes": 370886,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_psudr_isic18_Friday_14_August_2026_23h_22m_10s/checkpoints/best-epoch104-loss0.8178.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_wave_psudr.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 416,
+      "tensor_numel": 61571,
+      "training_identity": {}
+    },
+    {
+      "sha256": "42937a5a459d12697e477206be41a8ae854eee184f699d303b65170d0f90951a",
+      "size_bytes": 336288,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_unet_isic18_Tuesday_11_August_2026_17h_23m_14s/checkpoints/best-epoch95-loss0.7935.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_wave_v2.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 334,
+      "tensor_numel": 59207,
+      "training_identity": {}
+    },
+    {
+      "sha256": "471b957abe297a90fe5472c31d0858cde329d01e3045cf76be904927e0e27787",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-0.3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 0.3,
+        "best_dice": 0.8584882671218835,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "48656db05b54ca414f1dc6ce426246413541a1ee325e8ed2ef7732a90da92c9c",
+      "size_bytes": 1447379,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_53m_35s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {}
+    },
+    {
+      "sha256": "496112d66a308db8162a0527440e7673c3fc05f9a1be85bb20dda41688dc600c",
+      "size_bytes": 993782,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_13h_04m_56s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "49f2066e4447e4b332569edda4cc507166bf3f1a660309632f9295da89c91be7",
+      "size_bytes": 64641642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_dual_difflr_seed43_v1_20260914_nfs_backup_epoch224_20260929/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 224
+      }
+    },
+    {
+      "sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+      "size_bytes": 298797910,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/A_T/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "A_T",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8538206972870787,
+        "best_epoch": 40,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "4ab889dfd80a046f79dfd6f0e62594b30960a1ed384236c7ea23ef141eceecce",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_isic18_Saturday_29_August_2026_16h_32m_55s/checkpoints/best-epoch75-loss0.8109.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_dual_unified_lr.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "4ad299a463fdce446a16816a416f82b04cad6a9d650078f3b9a1531b356d23d3",
+      "size_bytes": 4447646,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_prh_isic18_Friday_14_August_2026_15h_22m_50s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 501,
+      "tensor_numel": 322224,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "4aeb7dc8f9fd03d4aa1767d6eea60611140014c4c64d4d3ee0f37b2614babb0f",
+      "size_bytes": 64628078,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_isic18_Saturday_29_August_2026_19h_53m_18s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "4b5af874862e92245ffa73dcba2e5615c2d723b10a5661064681c6f5a7fed655",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-1/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 1.0,
+        "best_dice": 0.8581613524392527,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "4badb836f0f748b2ff454279c32bb704aee95c443ed456bfca1af652666f9639",
+      "size_bytes": 64641642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_dual_difflr_seed43_v1_20260914/checkpoints/latest_before_valbatch8_epoch259.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 259
+      }
+    },
+    {
+      "sha256": "4c4a98c03a655bc89de35fe89ed826de86ec1f0d1c21ff1e4e5c0da440618161",
+      "size_bytes": 124233432,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/unet.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 118,
+      "tensor_numel": 31049427,
+      "training_identity": {}
+    },
+    {
+      "sha256": "4ce2c1d205cf59d78c5609951849b8f6ede357821804a3116e6a513197948c35",
+      "size_bytes": 21513099,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_scf_isic18_Sunday_30_August_2026_21h_32m_33s/checkpoints/best-epoch76-loss0.7787.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_dual_scf.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {}
+    },
+    {
+      "sha256": "4d2d42c9bf042f498e3cd61d3e7797f5ba675a3ae51e386175e290b5529d5380",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_13h_04m_56s/checkpoints/best-epoch120-loss0.8128.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_baseline.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "50d260343f4ade2bbfa383860048b029d52004087bafadfa76f686b833f01cc6",
+      "size_bytes": 4116890,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_53m_35s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {
+        "epoch": 3
+      }
+    },
+    {
+      "sha256": "556b7670dded41c80961a9b59c419bdfb1aaf0ab5fd7b359bff2ff0aa6f321d8",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B1_Wednesday_12_August_2026_19h_16m_01s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "56297489a4e4a5cc265d673fc537b3ea060c8e8d301e78091f35177033d93c8b",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_dual_difflr_seed43_v1_20260914_nfs_backup_epoch224_20260929/checkpoints/best.pth",
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_dual_difflr_seed43_v1_20260914/checkpoints/best-epoch120-loss0.7760.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "57a8c767ec94ed476c7684e34f9dfd8044aed5bf75592a4c9f0b71ac660609b7",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_wave_v1_v1_20260912/checkpoints/best-epoch169-loss0.7626.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "587fb9caee2a3e937d19cea1740f0a970617bea464870f6cebf037dbcd2007ea",
+      "size_bytes": 4114854,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_nohalting_isic18_Thursday_13_August_2026_17h_44m_29s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "5934c59de60dd5b77b693dbf5d9dca8245d54df0d6e995ef256b01031a5ea9c3",
+      "size_bytes": 1088142,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_43m_17s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 6
+      }
+    },
+    {
+      "sha256": "5b870a5bb7639365d8ff163f0dd4780891d317edd687c097e1b7cee91c1e7581",
+      "size_bytes": 1120726,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/bgct_egeunet_isic18_Friday_07_August_2026_11h_19m_00s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 350,
+      "tensor_numel": 60529,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "5ee0d49312988d424a54f0164e2d973d6c2c4e979253e18cd3b3a45dea3a5a6e",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_difflr_seed42/checkpoints/best-epoch148-loss0.7646.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "5faee40c4ba3d5128807b0d42ce4289c74892d563ea22465bb420592fe3efd6b",
+      "size_bytes": 1088142,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_23m_58s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 6
+      }
+    },
+    {
+      "sha256": "60214614b8a40c00b490c1843e30df7fc955a3a3eabd1a9c3cdedc57a9a0c84d",
+      "size_bytes": 1007282,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_ege_baseline_seed43_v1_20260929/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 252
+      }
+    },
+    {
+      "sha256": "60bd71d3527d9c516d58aa97d488cc806750e1949216a15a6c676473de4b02fc",
+      "size_bytes": 127264407,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-RSI",
+        "method": "rsi",
+        "weight": 3.0,
+        "best_dice": 0.8579742091430116,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df",
+        "best_learned_state_hash": "82f0d994e60d8aa93b394b820a852f5f8dbfa1a5acd4081705793479d01649b3"
+      }
+    },
+    {
+      "sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b",
+      "size_bytes": 127263453,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 11,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-RSI",
+        "method": "rsi",
+        "weight": 3.0,
+        "best_dice": 0.8579742091430116,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df",
+        "best_learned_state_hash": "82f0d994e60d8aa93b394b820a852f5f8dbfa1a5acd4081705793479d01649b3"
+      }
+    },
+    {
+      "sha256": "620b3af2bc45c68dd76fd4f887746abb38776e96ef14bddddde8eb98d5e2fd3f",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-1/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 7,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 1.0,
+        "best_dice": 0.8583835437676297,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "69c6d3d745f9c3a3d5b6da329ab4993783a1eb71e246d229cc5e78d09ced28ac",
+      "size_bytes": 1072254,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_unet_isic18_Tuesday_11_August_2026_13h_32m_25s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "69ecf965c6d3131f8a04466c40f818d89de8d29ce80cdd353710359b8ab7bc71",
+      "size_bytes": 1100434,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_v1_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 334,
+      "tensor_numel": 59207,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "6a6e8304dde3bef334ea94f1d7b90866ee0a589514e1cc7c160950acc89efad0",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_unified_v1_20260912/checkpoints/best-epoch120-loss0.8241.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "6b77cbf0ce2af66d8741e25a1a2995eb1b15a4e4f589cdbecdb7ef109a07f1b4",
+      "size_bytes": 1447379,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_52m_28s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {}
+    },
+    {
+      "sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/D0/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-Mean/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 7,
+        "seed": 17,
+        "stage": "D",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.858316915574831,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "6e2175e480b57ebec98a0012cf8f94ae75dbbe0ebbaac6f9fe4ed56da3f322c9",
+      "size_bytes": 111987392,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_lite_lr1e-4.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 238,
+      "tensor_numel": 27920996,
+      "training_identity": {}
+    },
+    {
+      "sha256": "6f6ecca5ac4b3057e146d38d33dba127759b1f5b1faaeb192ebdc3ebeac4d833",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-1/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 1.0,
+        "best_dice": 0.8583835437676297,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "7279b0dd4d5cc6a2fc52454d3de760f7db46ff1347f4c4c8943b3590be02d53d",
+      "size_bytes": 1091766,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_full_isic18_Wednesday_12_August_2026_12h_26m_35s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 3
+      }
+    },
+    {
+      "sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "size_bytes": 196041300,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/A_CNN/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 36,
+        "seed": 17,
+        "stage": "A_CNN",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8552520003612387,
+        "best_epoch": 36,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": null,
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "73bcbe1793faabc9756a6035c779efacf533b6c3413e6861f1798b28d1abd7af",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_14h_36m_59s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "75c2a3811dc555dbb60f42ad0ae78b68584b1c99687cb6791fa28ce62ad8cafc",
+      "size_bytes": 21513099,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_dual_scf_seed43_v1_20260914/checkpoints/best-epoch108-loss0.7930.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {}
+    },
+    {
+      "sha256": "764fe666fac5e95603cfe7eb014711d5b527b8e3b179af7180137a91f7cef5a8",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-0.3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 0.3,
+        "best_dice": 0.8583505660391136,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "7776dcd55f632958772a7940d4aed2c4ccf1ecdc9c5745d23daf201c9f54c97e",
+      "size_bytes": 1088206,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B2_Wednesday_12_August_2026_20h_43m_22s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "77c3334979590eb8a7b01cb25bc5c6b1dd110392c170bc27fd305bad96690a14",
+      "size_bytes": 50507331,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ptu_d2.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 263,
+      "tensor_numel": 12605761,
+      "training_identity": {}
+    },
+    {
+      "sha256": "7aafa69e359a3988d735304a93dd4de8dbc104cc297af057b1641d95c01f8aea",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/wave_v1_seed42/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "7ac67ca54965f1d99140c49bf59b15409b0d58948e22cb5f91b93a64de90b46a",
+      "size_bytes": 1085754,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/wave_v1_seed43/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "7cad4431d34f11cb9bc8a6088b2e6435adb68892592f3670c34d442a72bc55e4",
+      "size_bytes": 127264407,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-Mean",
+        "method": "mean",
+        "weight": 0.0,
+        "best_dice": 0.8587874194126943,
+        "best_epoch": 22,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df",
+        "best_learned_state_hash": "25cbf5db1981d4242abfe1b25a5bf92deb66315b9c211bee8e1468fdd47a4a4d"
+      }
+    },
+    {
+      "sha256": "7ccd3fbd7ddd5a74dd480c6486203cf1996e65af1c6fb3ef647d96442ddf82c1",
+      "size_bytes": 126204991,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-NoMessage",
+        "method": "mean",
+        "weight": 0.0,
+        "best_dice": 0.8565025723405442,
+        "best_epoch": 31,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "86b8d7f067bdd175a1b79aece267d23ac1be9023b3f66a89a25060aaebfa76ee",
+        "best_learned_state_hash": "4ddfa92b74746397c13d563fff940117b21ae227f51958f39e9a7a0395f7df84"
+      }
+    },
+    {
+      "sha256": "7e2083f653d2a1054af52f0b3e6185ab698dcc2694c15a0f7826c92cb26065d4",
+      "size_bytes": 64641578,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/p0_smoke_20260912/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 2
+      }
+    },
+    {
+      "sha256": "7e475e36de9b6f27a0fc83f6ed02bbf2d5e8c3267358120a2be5abe9f6f74f99",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/B/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "B",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8583737524417797,
+        "best_epoch": 22,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "8a6213cf3ffcf1690fe62fb35c55fea09aa9760c9e25ddd42fd653dab6055bb4",
+      "size_bytes": 64641642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/seed43_local_mirror_20260929/results/stability_dual_difflr_seed43_v1_20260914/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "8d180d95a9cabe7e9915106474668de76f77b4ec8306317469e6906f186e055d",
+      "size_bytes": 169417148,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_d2262_pretrained.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 354,
+      "tensor_numel": 42236612,
+      "training_identity": {}
+    },
+    {
+      "sha256": "8ea7ed456eab8bd6461fe246dea7916f6e70e15dcab75e641e6bd169d74ce381",
+      "size_bytes": 111987392,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_lite_lr1e-3.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 238,
+      "tensor_numel": 27920996,
+      "training_identity": {}
+    },
+    {
+      "sha256": "8fafc9d2b535942ac60290e93768fa6663927479b9f8456551000e6f08e4bc53",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_18m_51s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "906b5038b167f4f2816bebfba12fce4c5951f52d46e5dfea1d00230d3e0a0f25",
+      "size_bytes": 196042784,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/A_CNN/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 100,
+        "seed": 17,
+        "stage": "A_CNN",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8552520003612387,
+        "best_epoch": 36,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": null,
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "90f41992fe28af5b7773290e8bc6db1c93263f50c77bc91671dd03fde4882ac5",
+      "size_bytes": 1088206,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_56m_52s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "93d64f10ddb0c06aefc64c9106a2db8bd29740c4349ee5530a93a200b27f01cc",
+      "size_bytes": 1088142,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_18m_51s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 3
+      }
+    },
+    {
+      "sha256": "957151e208091382cecde6044a43fd4668e63af63fccd14789d3e8836dfa6259",
+      "size_bytes": 993718,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_14h_36m_59s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 1
+      }
+    },
+    {
+      "sha256": "95e8550a8097c2c02f30a4bfded6795dd2681aeea852767f6987a2828d0b5bc4",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/dual_difflr_seed43/checkpoints/best-epoch86-loss0.7969.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "97925c1a9397c4ef3032b9092c7b8bcfa3fcac1c80097daf5da963691fc2a312",
+      "size_bytes": 21513099,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_scf_v1_20260914/checkpoints/best-epoch97-loss0.7666.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {}
+    },
+    {
+      "sha256": "97a4ce98a04abcd1e6a729ca28b0babe6afc0bc67dba9b8b16da1397c6e0c9d2",
+      "size_bytes": 196042656,
+      "paths": [
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/failed/seed17/A_CNN_amp_logging_ae03cd2/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 30,
+        "seed": 17,
+        "stage": "A_CNN",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8532604302465204,
+        "best_epoch": 26,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": null,
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "9901a421fb70dbd3cea16262783ddd227826287b96415ca61917c72b0f1c153a",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_23m_58s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "99b7f27c5518265ddb8f9b02e809297e5bbed09a369bfe57da64f03e742d65a5",
+      "size_bytes": 1007346,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_baseline_v1_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "9c54097869392e919551b9d5f93d51611d7168f6668d5e95bb22892d3468756c",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_wave_v1_seed43_v1_20260914/checkpoints/latest_before_resume_20260929_epoch105.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 105
+      }
+    },
+    {
+      "sha256": "9e2b34f9807948aa05ad93980ed80b4cd2298c146bd5b3abb7bb5d5e09a30918",
+      "size_bytes": 64669642,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_scf_v1_20260914/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 479,
+      "tensor_numel": 5341778,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "9f71c168d837d1b99dd1dc29e14990a7a9e8bdc5f673d46b04fe36fe15590ad3",
+      "size_bytes": 114342173,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_imagenet_official.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 190,
+      "tensor_numel": 28538058,
+      "training_identity": {}
+    },
+    {
+      "sha256": "a0305829a9007e9bcac4100090f8d22305acc606e79eb3bcb3b7d59cb76674ca",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/D0/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/latest.pth",
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-Mean/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.858316915574831,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "a273ac84528ad94be43e287f9a8d8879a8f6672394da9471cee541b4145413ec",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_baseline_v1_20260912/checkpoints/best-epoch144-loss0.7848.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "acf598e1675093fde1ab54a1dc2212202b06ffeecd70d4211d5fb1625f0efe7b",
+      "size_bytes": 1007346,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/ege_baseline_seed42/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742",
+      "size_bytes": 126204085,
+      "paths": [
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 396,
+      "tensor_numel": 31142028,
+      "training_identity": {
+        "epoch": 31,
+        "seed": 17,
+        "stage": "TailProbe",
+        "group": "U-NoMessage",
+        "method": "mean",
+        "weight": 0.0,
+        "best_dice": 0.8565025723405442,
+        "best_epoch": 31,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "86b8d7f067bdd175a1b79aece267d23ac1be9023b3f66a89a25060aaebfa76ee",
+        "best_learned_state_hash": "4ddfa92b74746397c13d563fff940117b21ae227f51958f39e9a7a0395f7df84"
+      }
+    },
+    {
+      "sha256": "aec446a163540f4309aca5da336605bba684b2d3076fc1cc2717d17cabf48342",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_56m_52s/checkpoints/best-epoch34-loss0.3980.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_weak_baseline.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "af56d5fa684ce315625e46a0d996139cf9d33bab4282163fa5c5f4fd5632da38",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_wave_v1_seed43_v1_20260914/checkpoints/best-epoch181-loss0.7692.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "b98dd7889a74796259ebc95ce9a03baf1b2126e8d127764f9532ee5cc4ccb421",
+      "size_bytes": 336288,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_dual_difflr_v1_20260912/checkpoints/best-epoch160-loss0.7989.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 334,
+      "tensor_numel": 59207,
+      "training_identity": {}
+    },
+    {
+      "sha256": "bed28693c6c6e3cb9f8f3093697acb22fc582ffb8cad8e3448d4c9b22b0bcc11",
+      "size_bytes": 1089986,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/diag_B1_Wednesday_12_August_2026_19h_16m_01s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "c54ad563d364d61686139857ad4bcb704a452e3e841e9d620e7d3bbb9610476f",
+      "size_bytes": 993718,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/egeunet_isic18_Friday_07_August_2026_14h_38m_37s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {
+        "epoch": 26
+      }
+    },
+    {
+      "sha256": "c9ca88cd6292deecf3db9a206dd56ab9e37a878810d5f0c72287501b09a0f199",
+      "size_bytes": 255442827,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ptu_sym12.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 543,
+      "tensor_numel": 63816673,
+      "training_identity": {}
+    },
+    {
+      "sha256": "cc18e86db32f676a6ce5a611beabd452d60fff307a42ba14812406b8462c3ad5",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_wave_v1_seed43_v1_20260914/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "cddeff2bda467366277c3ca472b2e460605d364d1752f9b364a61a77c68c2b7a",
+      "size_bytes": 1120726,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/bgct_egeunet_isic18_Friday_07_August_2026_11h_03m_17s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 350,
+      "tensor_numel": 60529,
+      "training_identity": {
+        "epoch": 29
+      }
+    },
+    {
+      "sha256": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-1/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 11,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 1.0,
+        "best_dice": 0.8581613524392527,
+        "best_epoch": 11,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "ce37d4bfc9ee42760b6f1db3c4fa4cf7bc6a279849ef32d95a9e59fe9d40377b",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/p0_smoke_20260912/best-epoch2-loss1.4215.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "ced8a4413a5d43b5812f0fba30de3877c57e92b3cc8059a9679edd1fd18889b3",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/AbsHard-0.3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "abs_hard",
+        "weight": 0.3,
+        "best_dice": 0.8582183435384786,
+        "best_epoch": 15,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "cf5b125d2ee5637ca37b2e00bf8e09713511afe34c005f68d4376e8ec8b401f9",
+      "size_bytes": 298799646,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/A_T/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 100,
+        "seed": 17,
+        "stage": "A_T",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8538206972870787,
+        "best_epoch": 40,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "cf88aa2d3ab9b205d35f35324d31a8132c5b64f8c48386fa156df811a07d9faa",
+      "size_bytes": 306308,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/ege_baseline_seed42/checkpoints/best-epoch103-loss0.7833.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 314,
+      "tensor_numel": 53374,
+      "training_identity": {}
+    },
+    {
+      "sha256": "d0690e840f28ce0c2fb5792da9e501c50114ed774528228ed57f5ce917c151e9",
+      "size_bytes": 169417148,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_d2262_scratch.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 354,
+      "tensor_numel": 42236612,
+      "training_identity": {}
+    },
+    {
+      "sha256": "d08b789a1516f9e88dcf44f9af50fad99146a89983669f7b8bb75556da6e9524",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/wave_v1_seed43/checkpoints/best-epoch156-loss0.7850.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "d28c8fed5968af01cf30239e7c46cdc43bb447b00717e5fd21dba04c0a521d30",
+      "size_bytes": 1441821,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_prh_isic18_Friday_14_August_2026_15h_22m_50s/checkpoints/best-epoch55-loss1.7746.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_prh.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 501,
+      "tensor_numel": 322224,
+      "training_identity": {}
+    },
+    {
+      "sha256": "d42d1871a8e1c16ab9c5c600dc6ac7a035b0ab05fb743573e4477d8e23ae5639",
+      "size_bytes": 1072254,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_wave_ll_only_isic18_Thursday_20_August_2026_13h_42m_43s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "d4eda905a3809e0d4dc053cf22e738aba2041105cfddffbaa598df2852bdc872",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_full_isic18_Wednesday_12_August_2026_14h_26m_37s/checkpoints/best-epoch39-loss0.4082.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_weak_full.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "d8b1577bac167e46775b9a4df7153469040b0a2802cba8943248fe00d18f75c5",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_isic18_Saturday_29_August_2026_19h_53m_18s/checkpoints/best-epoch97-loss0.7923.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_dual_difflr.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "dc39e2a0432b4105d79a0b04bd34976a955b154f2e6a96c0c9286cb97d56057f",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 25,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 0.3,
+        "best_dice": 0.8583505660391136,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "dd9f196f15654476c655f8303a43d9aa5907cd1ef09ed7b2faab92c0c1d61f8e",
+      "size_bytes": 21504391,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_dual_difflr_scaug_isic18_Sunday_30_August_2026_19h_12m_12s/checkpoints/best-epoch163-loss0.7863.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_dual_scaug.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 467,
+      "tensor_numel": 5340554,
+      "training_identity": {}
+    },
+    {
+      "sha256": "dec473e43b206c5365f658034e96537a660b04610775671f33559a78f448a9c6",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_ege_wave_v1_v1_20260912/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "e39a6e047c8fba3c54e6796030fae24990862ec090bc3dd23a3b38587dfef324",
+      "size_bytes": 1447379,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_nohalting_isic18_Thursday_13_August_2026_17h_44m_29s/checkpoints/best-epoch57-loss0.8054.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_hrvit_nohalting.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {}
+    },
+    {
+      "sha256": "e447f63b08ff238d957573825bdfe9e43e5e84204d92f32892ded71ce8952518",
+      "size_bytes": 111987392,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/swin_lite_lr3e-4.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 238,
+      "tensor_numel": 27920996,
+      "training_identity": {}
+    },
+    {
+      "sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab",
+      "size_bytes": 125077601,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/MeanHinge-0.3/best.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/best.pth",
+        "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 7,
+        "seed": 17,
+        "stage": "D",
+        "method": "mean_hinge",
+        "weight": 0.3,
+        "best_dice": 0.8583505660391136,
+        "best_epoch": 7,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "e7072678fa0c024568ea1ff45efaa801935a4456f56fda6403f63e65184c4fde",
+      "size_bytes": 125078419,
+      "paths": [
+        "/home/featurize/work/RSI_Implementation_20261003/runs/seed17/RSI-3/latest.pth",
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/latest.pth",
+        "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-RSI/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 40,
+        "seed": 17,
+        "stage": "D",
+        "method": "rsi",
+        "weight": 3.0,
+        "best_dice": 0.8580102222798561,
+        "best_epoch": 1,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    {
+      "sha256": "e7e41eec0785eec0cbe3bcd8a31f9b1ff459874d7935393077dd9f03dfff7cc0",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/retrain_wave_ll_only_v1_20260912/checkpoints/best-epoch173-loss0.7785.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "e9387c581124b82eee4b0c193c308fa69e62929fc554640e8a8777b9eff9beb0",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_21m_31s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "ecd7588ea84878c91cb3d5d86de2cdb682e044680390ff5d2ede3eb30334e474",
+      "size_bytes": 62198674,
+      "paths": [
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ptu_dual.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 324,
+      "tensor_numel": 15524261,
+      "training_identity": {}
+    },
+    {
+      "sha256": "ee2591e611abb8e6caa3143279d8b2b14fd3d315e12dc839bce1411bdb3dc5d8",
+      "size_bytes": 1085818,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/stability_wave_v1_seed43_v1_20260914/checkpoints/latest_before_seed44_cancel_epoch221.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {
+        "epoch": 221
+      }
+    },
+    {
+      "sha256": "ef141145a7b037e0b39528e6776053d37ff2a0d5d1ee3a6e007d784f25206432",
+      "size_bytes": 196041172,
+      "paths": [
+        "/home/featurize/rsi_runs/P2-IMA-M-v2/failed/seed17/A_CNN_amp_logging_ae03cd2/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {
+        "epoch": 26,
+        "seed": 17,
+        "stage": "A_CNN",
+        "method": "d0",
+        "weight": 0.0,
+        "best_dice": 0.8532604302465204,
+        "best_epoch": 26,
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": null,
+        "frozen_hash": null
+      }
+    },
+    {
+      "sha256": "f420c9ed063958f5304943454568ea103611ecc818c84691dc5f77d0fcf28569",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_full_isic18_Wednesday_12_August_2026_12h_26m_35s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "f4482b1b5edca96aa2bf22eae99f3e6b09152e8c1ea0fafcb36370d71145cc61",
+      "size_bytes": 331705,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/rebatch8_20260930_mirror/wave_v1_seed42/checkpoints/best-epoch133-loss0.7991.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 329,
+      "tensor_numel": 58487,
+      "training_identity": {}
+    },
+    {
+      "sha256": "f45bf9aa96240d6333fce2ce118083d7a8fa5cd32d1735878572e99c6c3b289a",
+      "size_bytes": 4460494,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_56m_04s/checkpoints/latest.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 503,
+      "tensor_numel": 322873,
+      "training_identity": {
+        "epoch": 300
+      }
+    },
+    {
+      "sha256": "f54d58fb09a5922305368f892787afd697c16ffb9ff8c1a811546e846f767bc2",
+      "size_bytes": 346320,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/bgct_egeunet_isic18_Friday_07_August_2026_11h_19m_00s/checkpoints/best-epoch43-loss0.9772.pth",
+        "/home/featurize/work/EGE_实验成果包/checkpoints/ege_bgct.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 350,
+      "tensor_numel": 60529,
+      "training_identity": {}
+    },
+    {
+      "sha256": "fa38028d3c0066fb160886c5cf91d0dc4503f65e3f71631219a62f08cfba5cd6",
+      "size_bytes": 337740,
+      "paths": [
+        "/home/featurize/work/EGE-UNet-main/results/weak_baseline_isic18_Wednesday_12_August_2026_12h_43m_17s/checkpoints/best.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 338,
+      "tensor_numel": 59257,
+      "training_identity": {}
+    },
+    {
+      "sha256": "fd9eeca766fd8745c096ff96b04c46323eda2d4d485b9387385c9813598419af",
+      "size_bytes": 124000242,
+      "paths": [
+        "/home/featurize/rsi_runs/T0/train16_debug.pth"
+      ],
+      "status": "METADATA_PRESERVED",
+      "tensor_count": 379,
+      "tensor_numel": 30962283,
+      "training_identity": {}
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "created_utc": "2026-10-05T09:47:46.882327+00:00",
+  "scope": "resource telemetry only; no method efficacy or clinical conclusion",
+  "pipeline_status": "complete",
+  "all_execution_phases_pass": true,
+  "source_root": "/home/featurize/rsi_runs/RSI-TailProbe-20261004",
+  "groups": [
+    {
+      "group": "F-Mean",
+      "reused": true,
+      "trainable_parameters": 131584,
+      "parameter_source": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/engineering_acceptance.json",
+        "json_pointer": "groups/F-Mean/trainable_count",
+        "meaning": "actual sum(p.numel()) and optimizer-name audit from real model GPU preflight"
+      },
+      "epochs": 40,
+      "optimizer_attempts": 7360,
+      "actual_optimizer_updates": 7360,
+      "AMP_skipped_updates": 0,
+      "skip_epochs": [],
+      "epoch_seconds_sum": 1309.818204039997,
+      "epoch_seconds_mean": 32.745455100999926,
+      "recorded_DONE_wall_seconds": 1320.231838832,
+      "recorded_DONE_wall_scope": "historical D training",
+      "this_round_training_seconds": 0.0,
+      "this_round_outer_train_phase_seconds": 0.0,
+      "phase_minus_DONE_seconds": null,
+      "peak_torch_cuda_allocated_bytes": 544471552,
+      "peak_torch_cuda_allocated_MiB": 519.24853515625,
+      "student_deployment_transformer_forwards": 1,
+      "student_deployment_tail_decodes": 1,
+      "training_pair_tail_decodes": 2,
+      "inputs": {
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-Mean/DONE.json",
+          "bytes": 887,
+          "sha256": "dcb37cb5f4da17e3b9d35ffd9c23128dc64d837ef2774a1e055ea02daa56bc59"
+        },
+        "epoch_log": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-Mean/epoch_diagnostics.csv",
+          "bytes": 32303,
+          "sha256": "7c5154a26e47c6af550054e2e6fd825a4beec39fcb61555b22fcc5e8e61bbb8d"
+        }
+      }
+    },
+    {
+      "group": "F-RSI",
+      "reused": true,
+      "trainable_parameters": 131584,
+      "parameter_source": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/engineering_acceptance.json",
+        "json_pointer": "groups/F-RSI/trainable_count",
+        "meaning": "actual sum(p.numel()) and optimizer-name audit from real model GPU preflight"
+      },
+      "epochs": 40,
+      "optimizer_attempts": 7360,
+      "actual_optimizer_updates": 7360,
+      "AMP_skipped_updates": 0,
+      "skip_epochs": [],
+      "epoch_seconds_sum": 1253.8200798760013,
+      "epoch_seconds_mean": 31.345501996900033,
+      "recorded_DONE_wall_seconds": 1264.1177304009998,
+      "recorded_DONE_wall_scope": "historical D training",
+      "this_round_training_seconds": 0.0,
+      "this_round_outer_train_phase_seconds": 0.0,
+      "phase_minus_DONE_seconds": null,
+      "peak_torch_cuda_allocated_bytes": 546306560,
+      "peak_torch_cuda_allocated_MiB": 520.99853515625,
+      "student_deployment_transformer_forwards": 1,
+      "student_deployment_tail_decodes": 1,
+      "training_pair_tail_decodes": 2,
+      "inputs": {
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-RSI/DONE.json",
+          "bytes": 896,
+          "sha256": "30bcdbe427f06485b27c6d4b9a3ad8ce229a3e64c56494f13dfbe2d7eaad6cac"
+        },
+        "epoch_log": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/F-RSI/epoch_diagnostics.csv",
+          "bytes": 40920,
+          "sha256": "232cc2af47a5085b6b59a0e629515fd5347cbdd2c97fbec8981fa3d1fd052e40"
+        }
+      }
+    },
+    {
+      "group": "U-Mean",
+      "reused": false,
+      "trainable_parameters": 311329,
+      "parameter_source": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/parameter_audit.json",
+        "bytes": 2209,
+        "sha256": "71f1231432982e43e83172e0c2de6b0a74754c61f83babea473bbbb9cd912eec"
+      },
+      "epochs": 40,
+      "optimizer_attempts": 7360,
+      "actual_optimizer_updates": 7360,
+      "AMP_skipped_updates": 0,
+      "skip_epochs": [],
+      "epoch_seconds_sum": 1034.728888378996,
+      "epoch_seconds_mean": 25.8682222094749,
+      "recorded_DONE_wall_seconds": 1047.8238271070004,
+      "recorded_DONE_wall_scope": "current training-stage loop plus epoch logs/checkpoints/final hashes; excludes earlier construction/preload",
+      "this_round_training_seconds": 1047.8238271070004,
+      "this_round_outer_train_phase_seconds": 1053.2945754840002,
+      "phase_minus_DONE_seconds": 5.470748376999836,
+      "peak_torch_cuda_allocated_bytes": 560544768,
+      "peak_torch_cuda_allocated_MiB": 534.5771484375,
+      "student_deployment_transformer_forwards": 1,
+      "student_deployment_tail_decodes": 1,
+      "training_pair_tail_decodes": 2,
+      "inputs": {
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/DONE.json",
+          "bytes": 8809,
+          "sha256": "2d76ab3c536bbc71bc4ee91316b731bc0fad3d2d0ee37e7be75624ab73a35d07"
+        },
+        "epoch_log": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/epoch_diagnostics.csv",
+          "bytes": 44882,
+          "sha256": "7d7e52d3731eec5c6643e00e44d8f421857c3f04dd29845288a0e5d57db7eb1e"
+        }
+      }
+    },
+    {
+      "group": "U-RSI",
+      "reused": false,
+      "trainable_parameters": 311329,
+      "parameter_source": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/parameter_audit.json",
+        "bytes": 2208,
+        "sha256": "48e9c8727a579b430d8773483185108a9eb876b2fa7638ac97d96fbe46b399c1"
+      },
+      "epochs": 40,
+      "optimizer_attempts": 7360,
+      "actual_optimizer_updates": 7359,
+      "AMP_skipped_updates": 1,
+      "skip_epochs": [
+        34
+      ],
+      "epoch_seconds_sum": 1110.3255297640026,
+      "epoch_seconds_mean": 27.758138244100063,
+      "recorded_DONE_wall_seconds": 1120.914469147,
+      "recorded_DONE_wall_scope": "current training-stage loop plus epoch logs/checkpoints/final hashes; excludes earlier construction/preload",
+      "this_round_training_seconds": 1120.914469147,
+      "this_round_outer_train_phase_seconds": 1130.2282930110005,
+      "phase_minus_DONE_seconds": 9.31382386400037,
+      "peak_torch_cuda_allocated_bytes": 560544768,
+      "peak_torch_cuda_allocated_MiB": 534.5771484375,
+      "student_deployment_transformer_forwards": 1,
+      "student_deployment_tail_decodes": 1,
+      "training_pair_tail_decodes": 2,
+      "inputs": {
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/DONE.json",
+          "bytes": 8802,
+          "sha256": "f2de77e1809ab66cc480290f308ac876f98c2b7992dcff3776d2ef39431aa343"
+        },
+        "epoch_log": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/epoch_diagnostics.csv",
+          "bytes": 52628,
+          "sha256": "0468cfd9548e3282ab105811fb8046de1900a62620e4c11d83142d7ee4b18d7a"
+        }
+      }
+    },
+    {
+      "group": "U-NoMessage",
+      "reused": false,
+      "trainable_parameters": 179745,
+      "parameter_source": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/parameter_audit.json",
+        "bytes": 1782,
+        "sha256": "5c58d1261c45e9eab84f8e690d9e4c49d579c3c8beee14caea79de163c447d40"
+      },
+      "epochs": 40,
+      "optimizer_attempts": 7360,
+      "actual_optimizer_updates": 7360,
+      "AMP_skipped_updates": 0,
+      "skip_epochs": [],
+      "epoch_seconds_sum": 796.2662158370013,
+      "epoch_seconds_mean": 19.906655395925032,
+      "recorded_DONE_wall_seconds": 807.9466463649997,
+      "recorded_DONE_wall_scope": "current training-stage loop plus epoch logs/checkpoints/final hashes; excludes earlier construction/preload",
+      "this_round_training_seconds": 807.9466463649997,
+      "this_round_outer_train_phase_seconds": 1284.0713626440001,
+      "phase_minus_DONE_seconds": 476.1247162790005,
+      "peak_torch_cuda_allocated_bytes": 500439040,
+      "peak_torch_cuda_allocated_MiB": 477.255859375,
+      "student_deployment_transformer_forwards": 0,
+      "student_deployment_tail_decodes": 1,
+      "training_pair_tail_decodes": 2,
+      "inputs": {
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/DONE.json",
+          "bytes": 8823,
+          "sha256": "baca77b4b07c925602967f243dbc9356a50bc88c7034a0e71e8e32dd9fb2db9d"
+        },
+        "epoch_log": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/epoch_diagnostics.csv",
+          "bytes": 44870,
+          "sha256": "c21c27a104faea2c736dab8422ebdc7e69dc21be94941774c8ba8e6a53ba805b"
+        }
+      }
+    }
+  ],
+  "inputs": {
+    "engineering_acceptance": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/engineering_acceptance.json",
+      "bytes": 95108,
+      "sha256": "8f609161e68d738ab9a29979bc688ae4747ad741aea7dbb2e35150915c3f79b3"
+    },
+    "execution_phases": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/execution_phases.json",
+      "bytes": 2405,
+      "sha256": "3700f9e1b02accb2a79029f454f78c646554f60dcca7947c599ec5c4a2615674"
+    },
+    "deployment_timing": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/deployment_timing.json",
+      "bytes": 3831,
+      "sha256": "79c332b9a7201433ea0f48968012396f9adc2c78816d5ae7e9c874932e7bd262"
+    }
+  },
+  "postprocessing_script": {
+    "path": "/home/featurize/rsi_tailprobe_release_review_20261004/finalize_resource_addendum.py",
+    "bytes": 14752,
+    "sha256": "b537230b49c50b8b08c3becd6c3969302e9f770faf80f525ab71006148dfcbdc"
+  },
+  "three_new_groups": {
+    "epochs": 120,
+    "attempts": 22080,
+    "actual_updates": 22079,
+    "AMP_skips": 1,
+    "DONE_training_seconds": 2976.684942619,
+    "outer_phase_seconds": 3467.594231139001
+  },
+  "RMS_calibration_resource": {
+    "total_seconds_including_actual_RMS_check": 80.82465277400024,
+    "actual_RMS_check_seconds_subset": 26.7388375419996,
+    "GT_used": false,
+    "train_images": 1471,
+    "input": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/amplitude_match_train.json",
+      "bytes": 3271,
+      "sha256": "6be4cc803bea42db3d4964b5a897ea8b5f25a2c81b8bee745c57e81f79d27d68"
+    },
+    "add_subset_again": false
+  },
+  "deployment_timing": {
+    "status": "complete",
+    "records": [
+      {
+        "group": "F-Mean",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4247656650004501,
+        "milliseconds_per_batch": 8.495313300009002,
+        "milliseconds_per_image": 2.1238283250022505,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+      },
+      {
+        "group": "F-RSI",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.41869622000012896,
+        "milliseconds_per_batch": 8.37392440000258,
+        "milliseconds_per_image": 2.093481100000645,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+      },
+      {
+        "group": "U-Mean",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4199886480000714,
+        "milliseconds_per_batch": 8.399772960001428,
+        "milliseconds_per_image": 2.099943240000357,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      {
+        "group": "U-Mean",
+        "mode": "complete_logit_interpolation",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4573261539990199,
+        "milliseconds_per_batch": 9.146523079980398,
+        "milliseconds_per_image": 2.2866307699950994,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 2,
+        "teacher_forward": true,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+      },
+      {
+        "group": "U-RSI",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.4176597089990537,
+        "milliseconds_per_batch": 8.353194179981074,
+        "milliseconds_per_image": 2.0882985449952685,
+        "transformer_forwards_per_batch": 1,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+      },
+      {
+        "group": "U-NoMessage",
+        "mode": "student_once",
+        "images_per_batch": 4,
+        "timed_batches": 50,
+        "warmup_batches": 10,
+        "seconds": 0.16864987000008114,
+        "milliseconds_per_batch": 3.3729974000016227,
+        "milliseconds_per_image": 0.8432493500004057,
+        "transformer_forwards_per_batch": 0,
+        "tail_decodes_per_batch": 1,
+        "teacher_forward": false,
+        "GT_used": false,
+        "AMP": true,
+        "includes_input_pipeline": false,
+        "checkpoint_sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742"
+      }
+    ],
+    "GPU": "NVIDIA GeForce RTX 4090",
+    "image_ids": [
+      "ISIC_0000038",
+      "ISIC_0000049",
+      "ISIC_0000078",
+      "ISIC_0000110"
+    ],
+    "GT_model_input": false,
+    "no_message_forced_transformer": false,
+    "scope": "fixed real val batch forward latency; not end-to-end clinical throughput"
+  },
+  "appended_reports": [
+    {
+      "file": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/experiment_report.md",
+        "bytes": 11183,
+        "sha256": "04be6232d1d1522589b084a7918297f8381c70ac262ce9e27f2ed1a4e824424b"
+      },
+      "changed": true,
+      "resource_block_count": 1
+    },
+    {
+      "file": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/experiment_report.txt",
+        "bytes": 11183,
+        "sha256": "04be6232d1d1522589b084a7918297f8381c70ac262ce9e27f2ed1a4e824424b"
+      },
+      "changed": true,
+      "resource_block_count": 1
+    }
+  ],
+  "delivery_manifest_rebinding_required": true
+}

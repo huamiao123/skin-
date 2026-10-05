@@ -1,0 +1,651 @@
+{
+  "status": "PASS",
+  "run": "U-RSI",
+  "scope": "CPU engineering/budget/teacher/sampling integrity only; no efficacy or clinical conclusion",
+  "audit_device": "CPU only; no model forwards, tests, training or GPU operations",
+  "started_at": "2026-10-04T11:55:32.380068+00:00",
+  "checks": {
+    "current_source_matches_frozen": {
+      "status": "PASS",
+      "evidence": {
+        "source_bundle_hash": "eb4a630cce730a898de27239e066d6ef2f310c061885d5a1bfb08ae034109693",
+        "source_files": 60
+      }
+    },
+    "best_latest_SHA_match_DONE": {
+      "status": "PASS",
+      "evidence": {
+        "best": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b",
+        "latest": "60bd71d3527d9c516d58aa97d488cc806750e1949216a15a6c676473de4b02fc"
+      }
+    },
+    "DONE_full_budget_actual_update_identity": {
+      "status": "PASS",
+      "evidence": {
+        "epochs": 40,
+        "best_epoch": 11,
+        "attempts": 7360,
+        "actual_updates": 7359,
+        "AMP_skips": 1,
+        "no_extra_epoch_or_update_compensation": true
+      }
+    },
+    "signature_binds_current_config_init_data_code_task": {
+      "status": "PASS",
+      "evidence": {
+        "source_bundle_hash": "eb4a630cce730a898de27239e066d6ef2f310c061885d5a1bfb08ae034109693",
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "init_checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "preregistration_sha256": "8581bddd2168793e0d07d8d0ba2f5ef91c0ec51e3e1d40736c8a75724d45f2c1"
+      }
+    },
+    "common_selected_B_identity": {
+      "status": "PASS",
+      "evidence": {
+        "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+        "bytes": 125077601,
+        "sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491"
+      }
+    },
+    "engineering_acceptance_identity_binding": {
+      "status": "PASS",
+      "evidence": {
+        "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/engineering_acceptance.json",
+        "bytes": 95108,
+        "sha256": "8f609161e68d738ab9a29979bc688ae4747ad741aea7dbb2e35150915c3f79b3"
+      }
+    },
+    "only_message_and_student_tail_trainable_and_optimized": {
+      "status": "PASS",
+      "evidence": {
+        "count": 311329,
+        "optimizer_names": [
+          "message.q_proj.weight",
+          "message.q_proj.bias",
+          "message.k_proj.weight",
+          "message.k_proj.bias",
+          "message.v_proj.weight",
+          "message.v_proj.bias",
+          "message.Wo.weight",
+          "message.Wo.bias",
+          "student_tail.c4_proj.0.weight",
+          "student_tail.c4_proj.1.weight",
+          "student_tail.c4_proj.1.bias",
+          "student_tail.fuse.0.0.weight",
+          "student_tail.fuse.0.1.weight",
+          "student_tail.fuse.0.1.bias",
+          "student_tail.fuse.1.0.weight",
+          "student_tail.fuse.1.1.weight",
+          "student_tail.fuse.1.1.bias",
+          "student_tail.up_half.0.weight",
+          "student_tail.up_half.1.weight",
+          "student_tail.up_half.1.bias",
+          "student_tail.up_full.0.weight",
+          "student_tail.up_full.1.weight",
+          "student_tail.up_full.1.bias",
+          "student_tail.output.weight",
+          "student_tail.output.bias"
+        ]
+      }
+    },
+    "40_unique_committed_epoch_logs": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "all_epoch_budgets_AMP_and_frozen_teacher_logs_consistent": {
+      "status": "PASS",
+      "evidence": {
+        "errors": [],
+        "total_attempts": 7360,
+        "actual_updates": 7359,
+        "AMP_skips": 1,
+        "overflow_epochs": [
+          {
+            "epoch": 34,
+            "attempts_this_epoch": 184,
+            "actual_updates_this_epoch": 183,
+            "AMP_skips": 1,
+            "gradient_norm_nonfinite_count": 1,
+            "gradient_norm_finite_count": 183,
+            "skip_fraction": 0.005434782608695652
+          }
+        ],
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df",
+        "all_teacher_FP32_output_errors": 0
+      }
+    },
+    "RSI_lambda3_objective_in_all_40_logs": {
+      "status": "PASS",
+      "evidence": {
+        "RSI_lambda": 3,
+        "per_reference_risk_nonnegative": true,
+        "message_active": true
+      }
+    },
+    "best11_is_val_Dice_max_earlier_tie": {
+      "status": "PASS",
+      "evidence": {
+        "selected_epoch": 11,
+        "rule": "max_val_macro_mean_rater_hard_dice_original_coordinates_earlier_tie"
+      }
+    },
+    "selection_history_epoch_1": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_2": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_3": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_4": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_5": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_6": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_7": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_8": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_9": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_10": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_11": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_12": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_13": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_14": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_15": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_16": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_17": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_18": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_19": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_20": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_21": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_22": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_23": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_24": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_25": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_26": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_27": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_28": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_29": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_30": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_31": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_32": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_33": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_34": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_35": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_36": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_37": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_38": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_39": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "selection_history_epoch_40": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "all_40_warmup_cosine_LR_match": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "complete_canonical_image_reference_diagnostics": {
+      "status": "PASS",
+      "evidence": {
+        "unique_rows": 67760,
+        "identity_errors": [],
+        "train_images_references_each_epoch": [
+          1471,
+          3102
+        ],
+        "val_images_references_each_epoch": [
+          223,
+          471
+        ]
+      }
+    },
+    "reference_and_frozen_identity_equals_shared_B": {
+      "status": "PASS",
+      "evidence": {
+        "teacher_hash": "d67353b51c7f853c45c0fad75d4336d0d442799627d3e648686eb70a497ad029",
+        "frozen_hash": "945126eb823fa190365962b123fbdad30b5b93639231fd02e1e25242b85766df"
+      }
+    },
+    "best_checkpoint_full_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "epoch": 11,
+        "actual_updates": 2024,
+        "attempts": 2024,
+        "skips": 0,
+        "required_fields": [
+          "best_dice",
+          "best_epoch",
+          "best_learned_state_hash",
+          "code",
+          "config",
+          "epoch",
+          "frozen_hash",
+          "group",
+          "init_checkpoint_hash",
+          "manifest_hash",
+          "method",
+          "model",
+          "optimizer",
+          "optimizer_step_attempts",
+          "optimizer_steps",
+          "rng",
+          "scaler",
+          "scheduler",
+          "seed",
+          "selection_rule",
+          "signature",
+          "skipped_optimizer_steps",
+          "stage",
+          "teacher_hash",
+          "wall_seconds",
+          "weight"
+        ]
+      }
+    },
+    "best_checkpoint_identity": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "best_strict_finite_model": {
+      "status": "PASS",
+      "evidence": {
+        "model_state_keys": 396,
+        "strict_missing_keys": [],
+        "strict_unexpected_keys": [],
+        "all_tensors_finite": true
+      }
+    },
+    "best_frozen_components_equal_B_storage_independent": {
+      "status": "PASS",
+      "evidence": {
+        "frozen_tensor_keys": 371,
+        "CNN_T_aux_exact_B": true,
+        "student_teacher_storage_independent": true
+      }
+    },
+    "best_message_and_student_tail_changed_only": {
+      "status": "PASS",
+      "evidence": {
+        "changed_message_tensors": [
+          "q_proj.weight",
+          "q_proj.bias",
+          "k_proj.weight",
+          "k_proj.bias",
+          "v_proj.weight",
+          "v_proj.bias",
+          "Wo.weight",
+          "Wo.bias"
+        ],
+        "changed_tail_tensors": [
+          "c4_proj.0.weight",
+          "c4_proj.1.weight",
+          "c4_proj.1.bias",
+          "fuse.0.0.weight",
+          "fuse.0.1.weight",
+          "fuse.0.1.bias",
+          "fuse.1.0.weight",
+          "fuse.1.1.weight",
+          "fuse.1.1.bias",
+          "up_half.0.weight",
+          "up_half.1.weight",
+          "up_half.1.bias",
+          "up_full.0.weight",
+          "up_full.1.weight",
+          "up_full.1.bias",
+          "output.weight",
+          "output.bias"
+        ],
+        "trainable_count": 311329
+      }
+    },
+    "best_selected_learned_state_pointer": {
+      "status": "PASS",
+      "evidence": {
+        "selected_hash": "82f0d994e60d8aa93b394b820a852f5f8dbfa1a5acd4081705793479d01649b3",
+        "current_learned_hash": "82f0d994e60d8aa93b394b820a852f5f8dbfa1a5acd4081705793479d01649b3"
+      }
+    },
+    "best_complete_AdamW_state_actual_step_counts": {
+      "status": "PASS",
+      "evidence": {
+        "parameter_state_count": 25,
+        "actual_step_each_parameter": 2024,
+        "attempts_do_not_replace_actual_steps": true
+      }
+    },
+    "best_scheduler_and_AMP_scaler_state": {
+      "status": "PASS",
+      "evidence": {
+        "scheduler_last_epoch": 11,
+        "scaler_state": {
+          "scale": 131072.0,
+          "growth_factor": 2.0,
+          "backoff_factor": 0.5,
+          "growth_interval": 2000,
+          "_growth_tracker": 24
+        }
+      }
+    },
+    "best_complete_CPU_and_CUDA_RNG_state": {
+      "status": "PASS",
+      "evidence": {
+        "CPU_temporary_generators_restore": true,
+        "CUDA_structure_only_no_GPU_restore": true,
+        "CPU_rng_bytes": 5056,
+        "CUDA_rng_bytes": [
+          16
+        ]
+      }
+    },
+    "latest_checkpoint_full_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "epoch": 40,
+        "actual_updates": 7359,
+        "attempts": 7360,
+        "skips": 1,
+        "required_fields": [
+          "best_dice",
+          "best_epoch",
+          "best_learned_state_hash",
+          "code",
+          "config",
+          "epoch",
+          "frozen_hash",
+          "group",
+          "init_checkpoint_hash",
+          "manifest_hash",
+          "method",
+          "model",
+          "optimizer",
+          "optimizer_step_attempts",
+          "optimizer_steps",
+          "rng",
+          "scaler",
+          "scheduler",
+          "seed",
+          "selection_rule",
+          "signature",
+          "skipped_optimizer_steps",
+          "stage",
+          "teacher_hash",
+          "wall_seconds",
+          "weight"
+        ]
+      }
+    },
+    "latest_checkpoint_identity": {
+      "status": "PASS",
+      "evidence": null
+    },
+    "latest_strict_finite_model": {
+      "status": "PASS",
+      "evidence": {
+        "model_state_keys": 396,
+        "strict_missing_keys": [],
+        "strict_unexpected_keys": [],
+        "all_tensors_finite": true
+      }
+    },
+    "latest_frozen_components_equal_B_storage_independent": {
+      "status": "PASS",
+      "evidence": {
+        "frozen_tensor_keys": 371,
+        "CNN_T_aux_exact_B": true,
+        "student_teacher_storage_independent": true
+      }
+    },
+    "latest_message_and_student_tail_changed_only": {
+      "status": "PASS",
+      "evidence": {
+        "changed_message_tensors": [
+          "q_proj.weight",
+          "q_proj.bias",
+          "k_proj.weight",
+          "k_proj.bias",
+          "v_proj.weight",
+          "v_proj.bias",
+          "Wo.weight",
+          "Wo.bias"
+        ],
+        "changed_tail_tensors": [
+          "c4_proj.0.weight",
+          "c4_proj.1.weight",
+          "c4_proj.1.bias",
+          "fuse.0.0.weight",
+          "fuse.0.1.weight",
+          "fuse.0.1.bias",
+          "fuse.1.0.weight",
+          "fuse.1.1.weight",
+          "fuse.1.1.bias",
+          "up_half.0.weight",
+          "up_half.1.weight",
+          "up_half.1.bias",
+          "up_full.0.weight",
+          "up_full.1.weight",
+          "up_full.1.bias",
+          "output.weight",
+          "output.bias"
+        ],
+        "trainable_count": 311329
+      }
+    },
+    "latest_selected_learned_state_pointer": {
+      "status": "PASS",
+      "evidence": {
+        "selected_hash": "82f0d994e60d8aa93b394b820a852f5f8dbfa1a5acd4081705793479d01649b3",
+        "current_learned_hash": "a861ad7d2d8f2e9e54316f79262dca40a9f16119d0491d0bbb09ad67c3e65da8"
+      }
+    },
+    "latest_complete_AdamW_state_actual_step_counts": {
+      "status": "PASS",
+      "evidence": {
+        "parameter_state_count": 25,
+        "actual_step_each_parameter": 7359,
+        "attempts_do_not_replace_actual_steps": true
+      }
+    },
+    "latest_scheduler_and_AMP_scaler_state": {
+      "status": "PASS",
+      "evidence": {
+        "scheduler_last_epoch": 40,
+        "scaler_state": {
+          "scale": 262144.0,
+          "growth_factor": 2.0,
+          "backoff_factor": 0.5,
+          "growth_interval": 2000,
+          "_growth_tracker": 1176
+        }
+      }
+    },
+    "latest_complete_CPU_and_CUDA_RNG_state": {
+      "status": "PASS",
+      "evidence": {
+        "CPU_temporary_generators_restore": true,
+        "CUDA_structure_only_no_GPU_restore": true,
+        "CPU_rng_bytes": 5056,
+        "CUDA_rng_bytes": [
+          16
+        ]
+      }
+    }
+  },
+  "inputs": {
+    "DONE.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/DONE.json",
+      "bytes": 8802,
+      "sha256": "f2de77e1809ab66cc480290f308ac876f98c2b7992dcff3776d2ef39431aa343"
+    },
+    "best.pth": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/best.pth",
+      "bytes": 127263453,
+      "sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+    },
+    "latest.pth": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/latest.pth",
+      "bytes": 127264407,
+      "sha256": "60bd71d3527d9c516d58aa97d488cc806750e1949216a15a6c676473de4b02fc"
+    },
+    "epoch_diagnostics.csv": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/epoch_diagnostics.csv",
+      "bytes": 52628,
+      "sha256": "0468cfd9548e3282ab105811fb8046de1900a62620e4c11d83142d7ee4b18d7a"
+    },
+    "per_image_canonical_diagnostics.csv": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/per_image_canonical_diagnostics.csv",
+      "bytes": 9399079,
+      "sha256": "fd44b5e8613b4c11136dbfd0fc14f6b715c44e16786dfd9804a595a4ae325128"
+    },
+    "parameter_audit.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/parameter_audit.json",
+      "bytes": 2208,
+      "sha256": "48e9c8727a579b430d8773483185108a9eb876b2fa7638ac97d96fbe46b399c1"
+    },
+    "config_resolved.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/config_resolved.json",
+      "bytes": 14993,
+      "sha256": "5fc2bd5390b1ebbe31f83eb673fe85dbaa7bbf60ed14689acdad05d8fa1025d5"
+    },
+    "environment.json": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/environment.json",
+      "bytes": 198,
+      "sha256": "4270a998d7398554234e815a9aa10c3830afdb49ee1c89554130a4eeee131f2c"
+    }
+  },
+  "checkpoint_reviews": [
+    {
+      "kind": "best",
+      "epoch": 11,
+      "actual_updates": 2024,
+      "attempts": 2024,
+      "skips": 0,
+      "wall_seconds": 293.5815974369998
+    },
+    {
+      "kind": "latest",
+      "epoch": 40,
+      "actual_updates": 7359,
+      "attempts": 7360,
+      "skips": 1,
+      "wall_seconds": 1120.40385875
+    }
+  ],
+  "limitations": [
+    "No model inference, tests or GPU operations by this audit.",
+    "CUDA RNG state structure audited without CUDA restoration.",
+    "A single e34 AMP overflow is explicitly retained; no epoch/update budget was increased to compensate.",
+    "Scientific effect and continuation decision require the complete evaluation/control package."
+  ],
+  "finished_at": "2026-10-04T11:55:34.803075+00:00"
+}

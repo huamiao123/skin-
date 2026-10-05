@@ -1,0 +1,95 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-04T10:53:24.482036+00:00",
+  "phases": [
+    {
+      "phase": "train_U-NoMessage",
+      "argv": [
+        "python",
+        "-u",
+        "tools/run_tail_probe.py",
+        "train",
+        "--config",
+        "configs/tail_probe_seed17.yaml",
+        "--group",
+        "U-NoMessage"
+      ],
+      "status": "PASS",
+      "started_utc": "2026-10-04T10:53:24.482336+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1284.0713626440001,
+      "finished_utc": "2026-10-04T11:14:48.554098+00:00"
+    },
+    {
+      "phase": "train_U-Mean",
+      "argv": [
+        "python",
+        "-u",
+        "tools/run_tail_probe.py",
+        "train",
+        "--config",
+        "configs/tail_probe_seed17.yaml",
+        "--group",
+        "U-Mean"
+      ],
+      "status": "PASS",
+      "started_utc": "2026-10-04T11:14:48.554541+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1053.2945754840002,
+      "finished_utc": "2026-10-04T11:32:21.849621+00:00"
+    },
+    {
+      "phase": "train_U-RSI",
+      "argv": [
+        "python",
+        "-u",
+        "tools/run_tail_probe.py",
+        "train",
+        "--config",
+        "configs/tail_probe_seed17.yaml",
+        "--group",
+        "U-RSI"
+      ],
+      "status": "PASS",
+      "started_utc": "2026-10-04T11:32:21.850050+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1130.2282930110005,
+      "finished_utc": "2026-10-04T11:51:12.078755+00:00"
+    },
+    {
+      "phase": "export",
+      "argv": [
+        "python",
+        "-u",
+        "tools/run_tail_probe.py",
+        "export",
+        "--config",
+        "configs/tail_probe_seed17.yaml"
+      ],
+      "status": "PASS",
+      "started_utc": "2026-10-04T11:51:12.079414+00:00",
+      "exit_code": 0,
+      "wall_seconds": 3352.4912561290002,
+      "finished_utc": "2026-10-04T12:47:04.571127+00:00"
+    },
+    {
+      "phase": "summarize",
+      "argv": [
+        "python",
+        "-u",
+        "tools/run_tail_probe.py",
+        "summarize",
+        "--config",
+        "configs/tail_probe_seed17.yaml"
+      ],
+      "status": "PASS",
+      "started_utc": "2026-10-04T12:47:04.571898+00:00",
+      "exit_code": 0,
+      "wall_seconds": 25.629149417998633,
+      "finished_utc": "2026-10-04T12:47:30.201517+00:00"
+    }
+  ],
+  "test_scoring_locked": true,
+  "weights_upload": false,
+  "finished_utc": "2026-10-04T12:47:30.202294+00:00"
+}

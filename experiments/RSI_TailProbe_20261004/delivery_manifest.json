@@ -1,0 +1,301 @@
+{
+  "status": "complete",
+  "decision": "STOP_CURRENT_RSI",
+  "seed": 17,
+  "groups": 5,
+  "new_training_groups": 3,
+  "test_scoring_locked": true,
+  "weight_upload": false,
+  "weights_location": "Deleted locally by explicit user cleanup 2026-10-05; original hashes and checkpoint metadata retained",
+  "input_evidence": {
+    "engineering_ok": true,
+    "same_conditions": true,
+    "budgets": [
+      {
+        "group": "F-Mean",
+        "checkpoint": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+          "bytes": 125077601,
+          "sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a"
+        },
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+          "bytes": 5157,
+          "sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab"
+        },
+        "epochs": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/epoch_diagnostics.csv",
+          "bytes": 32303,
+          "sha256": "7c5154a26e47c6af550054e2e6fd825a4beec39fcb61555b22fcc5e8e61bbb8d"
+        },
+        "best_epoch": 7,
+        "best_val_dice": 0.858316915574831,
+        "reuse": true
+      },
+      {
+        "group": "F-RSI",
+        "checkpoint": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/best.pth",
+          "bytes": 125077601,
+          "sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784"
+        },
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/DONE.json",
+          "bytes": 5166,
+          "sha256": "151e4f12e15b4460d177a66d60beb40fbd80d2ddad4e2375db966b65ef366d48"
+        },
+        "epochs": {
+          "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/epoch_diagnostics.csv",
+          "bytes": 40920,
+          "sha256": "232cc2af47a5085b6b59a0e629515fd5347cbdd2c97fbec8981fa3d1fd052e40"
+        },
+        "best_epoch": 1,
+        "best_val_dice": 0.8580102222798561,
+        "reuse": true
+      },
+      {
+        "group": "U-Mean",
+        "checkpoint": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/best.pth",
+          "bytes": 127263453,
+          "sha256": "02fc8095c431dfc5451811632a802997c5ba97593e8a98ad29eaf0d9e1211df4"
+        },
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/DONE.json",
+          "bytes": 8809,
+          "sha256": "2d76ab3c536bbc71bc4ee91316b731bc0fad3d2d0ee37e7be75624ab73a35d07"
+        },
+        "epochs": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-Mean/epoch_diagnostics.csv",
+          "bytes": 44882,
+          "sha256": "7d7e52d3731eec5c6643e00e44d8f421857c3f04dd29845288a0e5d57db7eb1e"
+        },
+        "best_epoch": 22,
+        "best_val_dice": 0.8587874194126943,
+        "reuse": false
+      },
+      {
+        "group": "U-RSI",
+        "checkpoint": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/best.pth",
+          "bytes": 127263453,
+          "sha256": "61ca07889b284f3ebfd21795be45e6087eaaa0be56cf36102f8a0ca50798e83b"
+        },
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/DONE.json",
+          "bytes": 8802,
+          "sha256": "f2de77e1809ab66cc480290f308ac876f98c2b7992dcff3776d2ef39431aa343"
+        },
+        "epochs": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-RSI/epoch_diagnostics.csv",
+          "bytes": 52628,
+          "sha256": "0468cfd9548e3282ab105811fb8046de1900a62620e4c11d83142d7ee4b18d7a"
+        },
+        "best_epoch": 11,
+        "best_val_dice": 0.8579742091430116,
+        "reuse": false
+      },
+      {
+        "group": "U-NoMessage",
+        "checkpoint": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/best.pth",
+          "bytes": 126204085,
+          "sha256": "ae691e55b306f8566cfbdcc2617533523582a1bb818d77bea975306117a83742"
+        },
+        "DONE": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/DONE.json",
+          "bytes": 8823,
+          "sha256": "baca77b4b07c925602967f243dbc9356a50bc88c7034a0e71e8e32dd9fb2db9d"
+        },
+        "epochs": {
+          "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/runs/seed17/U-NoMessage/epoch_diagnostics.csv",
+          "bytes": 44870,
+          "sha256": "c21c27a104faea2c736dab8422ebdc7e69dc21be94941774c8ba8e6a53ba805b"
+        },
+        "best_epoch": 31,
+        "best_val_dice": 0.8565025723405442,
+        "reuse": false
+      }
+    ],
+    "rules": {
+      "route_A": {
+        "dice_advantage_over_max_M_N_C": 0.002,
+        "H_epsilon_R_minus_M_max": 0.0005
+      },
+      "route_B": {
+        "dice_deficit_max_M_N": 0.001,
+        "dice_deficit_C": 0.001,
+        "G_retention_min": 0.8,
+        "M_H_absolute_reduction": 0.001,
+        "M_H_relative_reduction": 0.2,
+        "C_H_absolute_reduction": 0.0005,
+        "C_H_relative_reduction": 0.1
+      },
+      "simple_control": {
+        "dice_or_G_practical_difference": 0.001,
+        "H_practical_difference": 0.0005
+      },
+      "source_dice_regression": 0.005,
+      "H_minus_increase_max": 0.0005,
+      "worst_tail_decrease_max": 0.005,
+      "low_risk_headroom_M": 0.001,
+      "low_risk_headroom_C": 0.0005,
+      "epsilon_d": 0.005,
+      "fixed_logit_alphas": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "bootstrap_repeats": 2000,
+      "bootstrap_seed": 17,
+      "sensitivity_epsilons": [
+        0.0,
+        0.005,
+        0.01,
+        0.02,
+        0.05
+      ],
+      "decision_states": [
+        "INVALID",
+        "STOP_CURRENT_RSI",
+        "INCONCLUSIVE",
+        "CANDIDATE_FOR_CONFIRMATION"
+      ]
+    },
+    "preregistration": {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/preregistration.json",
+      "bytes": 2964,
+      "sha256": "8581bddd2168793e0d07d8d0ba2f5ef91c0ec51e3e1d40736c8a75724d45f2c1"
+    }
+  },
+  "taskbook": {
+    "path": "/home/featurize/task/皮肤病灶分割_RSI方向去留验证_AI执行任务书_2026-10-04.txt",
+    "bytes": 32802,
+    "sha256": "00de9076e41a74d1395eb96b6362d3d6dbbe643ff8955cdfb96ec1ef33c32214"
+  },
+  "outputs": [
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/per_reference_results.csv",
+      "bytes": 13305381,
+      "sha256": "bab537b15f4694d5543c2165658b89df72b275ba691ee381f4fea816bb9b2243"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/export_audit.json",
+      "bytes": 8497,
+      "sha256": "51ab381b5d4cccbb11a2917aa0b66cecf312691e72810d7921730d2784799df6"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/main_table.csv",
+      "bytes": 58838,
+      "sha256": "f8adf96fc3c0ded941f2f05897325dde9c25c0ba9fdcd9207e1bee2b7aec1b5d"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/checkpoint_comparison.csv",
+      "bytes": 4562,
+      "sha256": "37fcb4a2216692c281c462082dcd51914b0d27f37ef225e3a57448ba39d094a8"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/paired_comparisons.csv",
+      "bytes": 388761,
+      "sha256": "ad0ead8a50e28df51160c87648ca84758e4529c85c17ca4f9d165f349becc28b"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/factor_differences.csv",
+      "bytes": 23576,
+      "sha256": "41dfd9dfadff0cd59efd0ddc297a98a73ad53537b69aa29adc53d6741421deaf"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/group_decomposition.csv",
+      "bytes": 61365,
+      "sha256": "007e29d0ce9cbeb440c1639611d05bb4639594580a716ed2af9caec5676353ce"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/amplitude_match_train.json",
+      "bytes": 3271,
+      "sha256": "6be4cc803bea42db3d4964b5a897ea8b5f25a2c81b8bee745c57e81f79d27d68"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/amplitude_match_train_per_image.csv",
+      "bytes": 102159,
+      "sha256": "1c2303a87de8bb1c88129e2cd0634b2a5156196e7371ee8118d3b1e62e38ba29"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/fixed_U_Mean_case_categories.json",
+      "bytes": 7159,
+      "sha256": "b7b07a5bd7208bfc11b76984a005bd6da7634fd14ec58044278d293183ebf9d3"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/epoch_diagnostics.csv",
+      "bytes": 213496,
+      "sha256": "de6310fb5dd48936d109ccc5b645d1c9d951eb0639dc2a5c4b29da4ba4dc6c26"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/decision.json",
+      "bytes": 219877,
+      "sha256": "381484052db2d35d1b1ef6d2deac5df289639e2a1989045c46bb8f889ee61235"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/experiment_report.md",
+      "bytes": 11183,
+      "sha256": "04be6232d1d1522589b084a7918297f8381c70ac262ce9e27f2ed1a4e824424b"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/experiment_report.txt",
+      "bytes": 11183,
+      "sha256": "04be6232d1d1522589b084a7918297f8381c70ac262ce9e27f2ed1a4e824424b"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/gain_harm_tradeoff.png",
+      "bytes": 150820,
+      "sha256": "9f4316219f0bf11bddfac861defc70cf0eea9c12ee7e1bdd9568c60c75d13f46"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/learning_curves.png",
+      "bytes": 402291,
+      "sha256": "b535451ee449c14a25856cb37bede9bed425411434363dcaaf4a9f9d3e8d3b59"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/case_panels/selection.json",
+      "bytes": 3912,
+      "sha256": "b7ffdcb577837c6db310a85f31e58438139e8cd9ed36a0caf0fc49ec870f352e"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/deployment_timing.json",
+      "bytes": 3831,
+      "sha256": "79c332b9a7201433ea0f48968012396f9adc2c78816d5ae7e9c874932e7bd262"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/deployment_timing.csv",
+      "bytes": 1316,
+      "sha256": "12552c7beee3644187d453f0d591763db195c49f7e3396bf43aa3cae501af43e"
+    }
+  ],
+  "complete_scope": "five-group seed17 mechanism screen; no automatic extensions",
+  "weight_files_available": false,
+  "cleanup": {
+    "timestamp_utc": "2026-10-05T10:36:30.017286+00:00",
+    "report": {
+      "path": "/home/featurize/cleanup_20261005/cleanup_result.json",
+      "bytes": 618,
+      "sha256": "e4cc123f0f715d946ef5fc91a7034756ae8da188c1baf8356055384a32f743e4"
+    },
+    "checkpoint_metadata": {
+      "path": "/home/featurize/cleanup_20261005/checkpoint_metadata.json",
+      "bytes": 11191528,
+      "sha256": "54c672ba40cf8b1fd01a162e03b0f696f3b68c0cd7e7867f13e487e5585c1001"
+    }
+  },
+  "postprocessing": [
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/postprocessing/case_panel_legend/correction_record.json",
+      "bytes": 82928,
+      "sha256": "e101a1827a991bb873446673bfe913c9075347b494f2d7c15dc2dc1fe00371cc"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/RSI-TailProbe-20261004/postprocessing/resources/resource_accounting.json",
+      "bytes": 15190,
+      "sha256": "af981678d7c1ebf9617b619a2873058baab235645643c7743b010062570c799a"
+    }
+  ]
+}
