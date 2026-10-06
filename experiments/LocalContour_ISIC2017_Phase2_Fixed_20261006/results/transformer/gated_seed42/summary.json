@@ -1,0 +1,56 @@
+{
+  "seed": 42,
+  "scope": "val50 threshold selection and previously exposed val100 development verification; official test untouched",
+  "threshold_selection": "cal50 Dice, exact ties smaller threshold",
+  "models": {
+    "CNN": {
+      "n_images": 100,
+      "threshold": null,
+      "dice": 0.8530507408537263,
+      "iou": 0.7801278692964201,
+      "bf1": 0.5137836627358982,
+      "hd95": 16.178161313798118,
+      "assd": 8.564328713154719,
+      "moved_fraction": null,
+      "repair_precision": null,
+      "repair_recall": null,
+      "keep_rate_on_initially_correct": null,
+      "move_rate_on_initially_correct": null,
+      "distance_increase_rate": null,
+      "correct_to_incorrect_rate": null
+    },
+    "local8_gate": {
+      "n_images": 100,
+      "threshold": 0.9,
+      "dice": 0.8531340303386971,
+      "iou": 0.7802069435629363,
+      "bf1": 0.5134020597282892,
+      "hd95": 16.19020423301593,
+      "assd": 8.574691308789477,
+      "moved_fraction": 0.00039457070707070706,
+      "repair_precision": 0.0,
+      "repair_recall": 0.0,
+      "keep_rate_on_initially_correct": 1.0,
+      "move_rate_on_initially_correct": 0.0,
+      "distance_increase_rate": 1.0,
+      "correct_to_incorrect_rate": 0.0
+    },
+    "global_gate": {
+      "n_images": 100,
+      "threshold": 0.9,
+      "dice": 0.8530954746828617,
+      "iou": 0.7801934449837676,
+      "bf1": 0.5135102645680167,
+      "hd95": 16.181162640049646,
+      "assd": 8.562710643706204,
+      "moved_fraction": 0.000946969696969697,
+      "repair_precision": 0.40740740740740744,
+      "repair_recall": 0.000446432063305191,
+      "keep_rate_on_initially_correct": 0.9993120528343423,
+      "move_rate_on_initially_correct": 0.0006879471656576775,
+      "distance_increase_rate": 0.5925925925925926,
+      "correct_to_incorrect_rate": 0.0006879471656576775
+    }
+  },
+  "official_test_images_or_GT_opened": 0
+}

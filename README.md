@@ -1,6 +1,6 @@
 # 皮肤病灶分割：实验结果与源码存档
 
-最新更正：[LocalContour 第二阶段源码审计错误通知](experiments/LocalContour_ISIC2017_Phase2_20261005/AUDIT_NOTICE_2026-10-06.md)。R32 稠密候选的原位索引是 32，训练中部分 keep 标签却误设为索引 0。第二阶段模型比较和 `STOP_GLOBAL_PRIMARY_AFTER_DEVELOPMENT` 结论暂缓使用，旧数值仅作历史记录；需要修复并重训。官方 test 未评分。[第一阶段候选诊断](experiments/LocalContour_ISIC2017_20261005/README.md)保留作历史对照。
+最新结果：[LocalContour 第二阶段审计后的修复复验](experiments/LocalContour_ISIC2017_Phase2_Fixed_20261006/REPAIRED_REPORT.md)。旧版将 R32 原位索引 32 误标为 0，其模型比较结论作废；[错误通知](experiments/LocalContour_ISIC2017_Phase2_20261005/AUDIT_NOTICE_2026-10-06.md)保留供追溯。修复后重训 21 组模型，开发集三种子全局注意力 Dice 0.85576、局部注意力 0.85441，但尚未稳定超过强局部与 DP 对照，状态为 `HOLD_GLOBAL_PRIMARY_NO_INDEPENDENT_TEST`。官方 test 未评分。[第一阶段候选诊断](experiments/LocalContour_ISIC2017_20261005/README.md)保留作历史对照。
 
 [RSI TailProbe完整报告](experiments/RSI_TailProbe_20261004/experiment_report.md)结论为 `STOP_CURRENT_RSI`。解冻tail后，λ=3 RSI只保留Mean约46.1%的正收益，且H来源回退超过门槛；五组40轮证据、幅度控制和配对统计均保留。以下历史首轮结果与新机制验证分别存档。
 

@@ -1,0 +1,54 @@
+{
+  "seed": 17,
+  "model": "local_large",
+  "scope": "ISIC2017 official validation previously exposed to public CNN and phase1; model selection only",
+  "best_dp": {
+    "seed": 17,
+    "smooth_lambda": 0.2,
+    "displacement_penalty": 0.02,
+    "validation_dice": 0.8474076335890453,
+    "validation_bf1": "not_used_for_grid_selection"
+  },
+  "model_parameters": 291841,
+  "model_best_epoch": 8,
+  "methods": {
+    "CNN": {
+      "dice": 0.8389432597889469,
+      "iou": 0.7587835628235765,
+      "bf1": 0.4755991423886878,
+      "hd95": 19.833770281544197,
+      "assd": 8.761044336178939
+    },
+    "LocalLarge": {
+      "dice": 0.7754916126457848,
+      "iou": 0.6780521335853503,
+      "bf1": 0.43121281490879954,
+      "hd95": 22.15334126501509,
+      "assd": 9.246479498072876
+    },
+    "LocalLarge_DP": {
+      "dice": 0.8474076335890453,
+      "iou": 0.7701778374778526,
+      "bf1": 0.5055222798998013,
+      "hd95": 19.365088814053088,
+      "assd": 8.514754050475089
+    }
+  },
+  "test_images_opened": 0,
+  "dp_candidate_pruning": "zero plus eight highest learned nonzero scores for tractable exact closed DP",
+  "dp_grid": {
+    "lambda": [
+      0.0,
+      0.002,
+      0.01,
+      0.05,
+      0.2
+    ],
+    "displacement": [
+      0.0,
+      0.02,
+      0.1
+    ]
+  },
+  "source_git_commit": "9ea0f449deebb360377481bf6496083ae01ce4f2"
+}

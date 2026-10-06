@@ -1,0 +1,93 @@
+{
+  "scope": "Archive consistency checks, NOT replay of training or image inference",
+  "split_counts": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "split_hash_matches": {
+    "train": true,
+    "val": true,
+    "test": true
+  },
+  "split_overlap_counts": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "archived_feature_records": {
+    "count": 2150,
+    "splits": [
+      "train",
+      "val"
+    ],
+    "gt_shape_verified_for_all": 2150
+  },
+  "maximum_per_seed_summary_absolute_difference": 0.0,
+  "recomputed_main_table": {
+    "CNN": {
+      "dice": 0.8530507408537265,
+      "iou": 0.7801278692964201,
+      "bf1": 0.5137836627358982,
+      "hd95": 16.178161313798118,
+      "assd": 8.56432871315472,
+      "delta_dice_percentage_points_vs_CNN": 1.1102230246251565e-14
+    },
+    "local": {
+      "dice": 0.8531181638916194,
+      "iou": 0.7809781187239024,
+      "bf1": 0.5328366793231738,
+      "hd95": 16.254383451177066,
+      "assd": 8.517948513429824,
+      "delta_dice_percentage_points_vs_CNN": 0.0067423037893088456
+    },
+    "local_large": {
+      "dice": 0.8556354324573857,
+      "iou": 0.7842771150401607,
+      "bf1": 0.5448951101326194,
+      "hd95": 16.122995354047344,
+      "assd": 8.467269710175467,
+      "delta_dice_percentage_points_vs_CNN": 0.25846916036593726
+    },
+    "local8": {
+      "dice": 0.8539325251820183,
+      "iou": 0.7815354238937822,
+      "bf1": 0.5216216968943916,
+      "hd95": 16.169094207216908,
+      "assd": 8.53955209047291,
+      "delta_dice_percentage_points_vs_CNN": 0.08817843282920013
+    },
+    "medium32": {
+      "dice": 0.8536226910126501,
+      "iou": 0.7811773161324481,
+      "bf1": 0.5201173911146837,
+      "hd95": 16.175677814965663,
+      "assd": 8.552500325162498,
+      "delta_dice_percentage_points_vs_CNN": 0.05719501589237508
+    },
+    "global": {
+      "dice": 0.8536029529825074,
+      "iou": 0.781145299952538,
+      "bf1": 0.5196720189914382,
+      "hd95": 16.184433962202213,
+      "assd": 8.555549633189456,
+      "delta_dice_percentage_points_vs_CNN": 0.05522121287810933
+    }
+  },
+  "training_logs": {
+    "count": 21,
+    "hash_or_best_epoch_errors": [],
+    "checkpoints_not_present": "Actual checkpoint tensors cannot be hash-verified from this ZIP"
+  },
+  "zero_motion_vs_original_CNN_on_val100": {
+    "moved_nodes_fraction": 0.0,
+    "number_of_images_with_nonzero_Dice_difference": 29,
+    "mean_Dice_difference": 2.473529915398398e-05,
+    "maximum_absolute_Dice_difference": 0.0005018609734617208,
+    "CNN_mean_Dice": 0.8530507408537263,
+    "zero_motion_mean_Dice": 0.8530754761528805
+  },
+  "candidate_table_consistency_errors": [],
+  "errors": [],
+  "status": "PASS_ARCHIVE_ARITHMETIC_ONLY"
+}

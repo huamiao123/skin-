@@ -1,0 +1,56 @@
+{
+  "seed": 17,
+  "model": "global",
+  "scope": "ISIC2017 official validation previously exposed to public CNN and phase1; model selection only",
+  "best_dp": {
+    "seed": 17,
+    "smooth_lambda": 0.002,
+    "displacement_penalty": 0.1,
+    "validation_dice": 0.8402640757058243,
+    "validation_bf1": "not_used_for_grid_selection"
+  },
+  "model_parameters": 287425,
+  "model_best_epoch": 7,
+  "methods": {
+    "CNN": {
+      "dice": 0.8389432597889469,
+      "iou": 0.7587835628235765,
+      "bf1": 0.4755991423886878,
+      "hd95": 19.833770281544197,
+      "assd": 8.761044336178939
+    },
+    "GlobalTransformer": {
+      "dice": 0.8086558318466424,
+      "iou": 0.720518080594522,
+      "bf1": 0.45401015599568806,
+      "hd95": 20.993725905054205,
+      "assd": 9.065651969239822
+    },
+    "GlobalTransformer_DP": {
+      "dice": 0.8402640757058243,
+      "iou": 0.7611481249579823,
+      "bf1": 0.48819259186622505,
+      "hd95": 19.78269699735287,
+      "assd": 8.729703989310376
+    }
+  },
+  "test_images_opened": 0,
+  "dp_candidate_pruning": "zero plus eight highest nonzero scores after displacement penalty; exact DP only within selected subset",
+  "dp_grid": {
+    "lambda": [
+      0.0,
+      0.002,
+      0.01,
+      0.05,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "displacement": [
+      0.0,
+      0.02,
+      0.1
+    ]
+  },
+  "source_git_commit": "20fc5122b11859a7c502674e29f9fe768ab80cc4"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-06T03:38:32.738170+00:00",
+  "derived_cache_files_deleted": 16,
+  "derived_cache_logical_bytes_deleted": 11159559252,
+  "derived_model_score_files_deleted": 27,
+  "derived_model_score_logical_bytes_deleted": 1509200256,
+  "total_logical_bytes_deleted": 12668759508,
+  "filesystem_free_bytes_before": 677186957312,
+  "filesystem_free_bytes_after": 689855840256,
+  "filesystem_free_bytes_delta": 12668882944,
+  "retained": "all source, protocols, numeric results, diagnostic panels, model DONE and training logs, local best.pth checkpoint files",
+  "weights_to_GitHub": false,
+  "official_test_scored": false,
+  "rebuild": "run build_feature_cache.py, build_candidate_cache.py --radius 32 and build_node_context.py; re-run trained models to regenerate candidate scores",
+  "audit_source": "results/repair_validation/audit.json"
+}

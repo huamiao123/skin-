@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-10-05T13:22:53.264205+00:00",
+  "taskbook_sha256": "056873302ae0cfef56dc323a9d6045b8134a8ebc1a952a878c38cb626826c5d6",
+  "phase_a_summary_sha256": "6ce1fa91c5748049a7cc6de32f1cca533e50961639d308ec1a1c1985088d9265",
+  "radius_sensitivity_sha256": "2526cfe70ae4ba4d0583827d2fef23ba9c3a70481b5ac66b06c02a252c348ffe",
+  "radius32_oracle_summary_sha256": "e2bb912098397c241650fda04fb128f529d21c49862e5c96ebcd205148ec7153",
+  "choice": {
+    "nodes": 256,
+    "radius": 32,
+    "candidate_offsets": "all visible integer offsets -32..32, zero included",
+    "candidate_count": 65,
+    "reason": "search band macro 0.937 at R32 vs 0.884 at R16, dense oracle 0.951 at R32 vs 0.938 at R16; conditional unique-intersection nodes fewer at R32 and ambiguity must be reported"
+  },
+  "strong_local": {
+    "seeds": [
+      17,
+      23,
+      42
+    ],
+    "epochs": 8,
+    "batch_size": 4,
+    "optimizer": "AdamW lr1e-3 weight_decay1e-4",
+    "selection": "minimum official val150 soft candidate cross entropy",
+    "model": "9x9 CNN patch scorer, RGB+frozen decoder32+CNN probability+frozen boundary probability; offset, normal, point position",
+    "label": "GT boundary EDT bilinear distance; softmax temperature1.5; if nearest>4 choose zero"
+  },
+  "evaluation": {
+    "official_train": 2000,
+    "official_val": 150,
+    "official_test": 600,
+    "test_locked_before_final_model_freeze": true,
+    "test_GT_opened": false,
+    "public_CNN_training_history": "author source train+val 70/30, validation exposure; official test omitted by script",
+    "developed_on_old_val150": true,
+    "weights_to_GitHub": false
+  },
+  "gate": "B then C only if strong local predictor and tuned DP complete; global superiority cannot be inferred from oracle"
+}

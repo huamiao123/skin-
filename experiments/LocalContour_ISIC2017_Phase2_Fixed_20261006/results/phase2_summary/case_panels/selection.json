@@ -1,0 +1,54 @@
+{
+  "scope": "reused 2017 val100 development cases, seed17 masks shown; category membership uses three-seed mean Dice",
+  "thresholds": {
+    "A": "CNN>=.9 and abs(global-CNN)<=.001 and abs(local-CNN)<=.005",
+    "B": "global-CNN>=.005 and global-local_large>=.005",
+    "C": "global-CNN>=.005 and local_large-CNN>=.005",
+    "D": "oracle-CNN>=.05 and global<=CNN+.001 and local_large<=CNN+.001",
+    "E": "GT-assisted oracle-CNN<=.01"
+  },
+  "counts": {
+    "A": 7,
+    "B": 6,
+    "C": 28,
+    "D": 32,
+    "E": 2
+  },
+  "selected_ids": {
+    "A": [
+      "ISIC_0015443",
+      "ISIC_0001852",
+      "ISIC_0014217",
+      "ISIC_0015243",
+      "ISIC_0014937"
+    ],
+    "B": [
+      "ISIC_0012335",
+      "ISIC_0013128",
+      "ISIC_0014139",
+      "ISIC_0004337",
+      "ISIC_0013736"
+    ],
+    "C": [
+      "ISIC_0012099",
+      "ISIC_0012316",
+      "ISIC_0014616",
+      "ISIC_0013898",
+      "ISIC_0012746"
+    ],
+    "D": [
+      "ISIC_0012876",
+      "ISIC_0013127",
+      "ISIC_0013518",
+      "ISIC_0012204",
+      "ISIC_0012492"
+    ],
+    "E": [
+      "ISIC_0013527",
+      "ISIC_0013863"
+    ]
+  },
+  "reason_fewer_than_five": "There are fewer real cases under fixed criteria; no cases fabricated.",
+  "oracle_GTagreement": "GT-assisted R32 oracle Dice is case metadata, not a displayed deployable mask",
+  "official_test_scored": false
+}

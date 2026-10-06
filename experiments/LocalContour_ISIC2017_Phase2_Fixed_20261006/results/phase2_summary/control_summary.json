@@ -1,0 +1,38 @@
+{
+  "scope": "previously exposed official ISIC2017 val150 for DP hyperparameter selection/readout; gate threshold cal50 and val100 reused development verification",
+  "official_test_images_or_GT_opened": 0,
+  "dp_mean": {
+    "local": {
+      "dice": 0.8429242598304549,
+      "bf1": 0.5014494344534053,
+      "hd95": 19.68120539307448
+    },
+    "local_large": {
+      "dice": 0.8433468268687293,
+      "bf1": 0.49953991849617524,
+      "hd95": 19.680149757829366
+    },
+    "global": {
+      "dice": 0.8414102353728999,
+      "bf1": 0.4973483988930434,
+      "hd95": 19.705937054436514
+    }
+  },
+  "gated_mean": {
+    "local8_gate": {
+      "dice": 0.8515383978375658,
+      "bf1": 0.511553973880583,
+      "hd95": 16.537685534919138,
+      "moved_fraction": 0.06449915824915825
+    },
+    "global_gate": {
+      "dice": 0.8525892110639686,
+      "bf1": 0.5096650745678014,
+      "hd95": 16.443869109434797,
+      "moved_fraction": 0.08913352272727275
+    }
+  },
+  "gate_thresholds_all_0_95": false,
+  "gated_models_move_no_nodes_after_calibration": false,
+  "DP_selection_on_val150_not_independent": true
+}
