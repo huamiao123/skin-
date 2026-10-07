@@ -1,0 +1,68 @@
+{
+  "definition": "S64 normalized 1D local peaks separated by >=4 offsets; fit p25 margin",
+  "thresholds": {
+    "17": {
+      "low_margin_p25": 0.26700947767349176,
+      "fit_peak_nodes": 413170,
+      "fit_ids_sha256": "c4650888cad9d97064d2f3bb9c72a4b05b208f2c990f1de9a99c635c83c25f08",
+      "s64_scores_sha256": "26f5a4f76ad4c4141a5523d435e6d84a5281cbad3c956c557efe2fa88b707ff8"
+    },
+    "23": {
+      "low_margin_p25": 0.20890126843602252,
+      "fit_peak_nodes": 388973,
+      "fit_ids_sha256": "c4650888cad9d97064d2f3bb9c72a4b05b208f2c990f1de9a99c635c83c25f08",
+      "s64_scores_sha256": "b688d93f28eb93280c3c2a64e310f91ea6f208170925e29787f5038b33e53949"
+    },
+    "42": {
+      "low_margin_p25": 0.1549481429422166,
+      "fit_peak_nodes": 449809,
+      "fit_ids_sha256": "c4650888cad9d97064d2f3bb9c72a4b05b208f2c990f1de9a99c635c83c25f08",
+      "s64_scores_sha256": "32fab99812a7541fce0e1687712d0e87b1b57abdd69ae38aa2236bb6445313c8"
+    }
+  },
+  "dev100": [
+    {
+      "images": 100,
+      "nodes": 25344,
+      "separated_peaks": 24624,
+      "low_margin": 7344,
+      "candidate_reachable": 24156,
+      "fixable": 12020,
+      "s64_failed": 10346,
+      "tg_corrected": 609,
+      "low_margin_fixable_s64_failed": 3426,
+      "low_margin_fixable_s64_failed_tg_corrected": 93,
+      "seed": 17,
+      "focal_correction_rate": 0.02714535901926445
+    },
+    {
+      "images": 100,
+      "nodes": 25344,
+      "separated_peaks": 23796,
+      "low_margin": 6508,
+      "candidate_reachable": 24156,
+      "fixable": 12020,
+      "s64_failed": 11552,
+      "tg_corrected": 1014,
+      "low_margin_fixable_s64_failed": 3127,
+      "low_margin_fixable_s64_failed_tg_corrected": 109,
+      "seed": 23,
+      "focal_correction_rate": 0.034857691077710265
+    },
+    {
+      "images": 100,
+      "nodes": 25344,
+      "separated_peaks": 25200,
+      "low_margin": 7117,
+      "candidate_reachable": 24156,
+      "fixable": 12020,
+      "s64_failed": 9549,
+      "tg_corrected": 401,
+      "low_margin_fixable_s64_failed": 3216,
+      "low_margin_fixable_s64_failed_tg_corrected": 82,
+      "seed": 42,
+      "focal_correction_rate": 0.025497512437810944
+    }
+  ],
+  "caveat": "Nearest 2D GT boundary is a proxy, not semantic contour correspondence"
+}

@@ -67,7 +67,16 @@ def main():
         with (log_dir / f"{family}_seed{seed}.csv").open() as handle:
             rows = list(csv.DictReader(handle))
         profile["model_peak_cuda_bytes"][f"{family}_seed{seed}"] = max(int(row["peak_cuda_bytes"]) for row in rows)
-    profile["limitation"] = "Training GPU memory and full-DP time measured; uncached full-system CNN/candidate inference latency requires separate timing."
+    runtime_path = target / "runtime_profile.json"
+    if runtime_path.is_file():
+        runtime = json.loads(runtime_path.read_text())
+        profile["full_system_runtime_profile"] = "runtime_profile.json"
+        profile["full_system_runtime_mean_ms"] = {
+            method: runtime["measurements"][method+"_total"]["mean_ms"]
+            for method in ("N0_A", "TG_A", "TG_D", "S96_D")}
+        profile["limitation"] = "Full-system timing uses ten fixed cal50 images and seed17; startup and disk I/O excluded."
+    else:
+        profile["limitation"] = "Training GPU memory and full-DP time measured; uncached full-system latency not yet timed."
     (target / "resource_profile.json").write_text(json.dumps(profile, indent=2) + "\n")
     print("COLLECTED", len(entries), "models", flush=True)
 

@@ -1,0 +1,65 @@
+{
+  "status": "HOLD",
+  "go": false,
+  "independent_test_opened": false,
+  "c1_delta_dice": {
+    "images": 100,
+    "mean": 0.00039576846820130754,
+    "seed_means": [
+      0.0006344364925128802,
+      -0.0011420859246013555,
+      0.0016949548366923973
+    ],
+    "ci95": [
+      -0.0009524662007992108,
+      0.0017579009819734294
+    ],
+    "ci975_bonferroni": [
+      -0.0011601732404846645,
+      0.00196437396320654
+    ],
+    "positive_seed_count": 2
+  },
+  "c2_delta_dice": {
+    "images": 100,
+    "mean": -0.001020021400966169,
+    "seed_means": [
+      -0.004299440526410942,
+      0.0009503698331436417,
+      0.00028900649036879317
+    ],
+    "ci95": [
+      -0.0037862826713452266,
+      0.0013666968476169796
+    ],
+    "ci975_bonferroni": [
+      -0.004140177357116656,
+      0.0016620768267134147
+    ],
+    "positive_seed_count": 2
+  },
+  "c1_correct_to_incorrect_increase": 0.03512044507111801,
+  "best_simple_family": "S96",
+  "exact_full65_dp": true,
+  "models": 18,
+  "calibration_configs": 18,
+  "dp_lambda_upper_boundary_configs": 6,
+  "triggers": [
+    "C1 mean +0.000396 below preregistered +0.001 Dice gate",
+    "C2 mean -0.001020 versus cal50-selected S96_D",
+    "C1 correct-to-incorrect rate +0.0351 exceeds +0.005 guardrail",
+    "primary 95% and Bonferroni intervals include zero and useful positive gains",
+    "6/18 DP lambdas selected at upper grid boundary"
+  ],
+  "interpretation": "No GO for independent test; uncertainty is too wide for a precise REDIRECT/equivalence claim.",
+  "next_step": "Audit conservative selection and harmful moves; if continuing, preregister at most one targeted confirmation before test.",
+  "evidence": [
+    "comparison.json",
+    "main_table.csv",
+    "paired_comparisons.csv",
+    "movement_budget.csv",
+    "ambiguity_groups.csv",
+    "oracle_GT_distance_summary.json",
+    "audit_report.json"
+  ]
+}
