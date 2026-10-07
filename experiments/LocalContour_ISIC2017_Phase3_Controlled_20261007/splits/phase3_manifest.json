@@ -1,0 +1,44 @@
+{
+  "protocol": "LC-P3-v1",
+  "status": "LOCKED",
+  "split_unit": "image_id",
+  "patient_independence": "not established: public metadata has no patient/lesion group ID",
+  "selection": "SHA256('LC-P3-v1|' + image_id), first 200 stop; remaining 1800 fit",
+  "val_role_source": "/home/featurize/contour_probe_20261005/assets/val_split_seed17.csv",
+  "val_role_source_sha256": "97fc2912356743e3e6f433bf5dbd6bf6a64780cd371eb7c67657bf77f1e191ce",
+  "metadata_columns": [
+    "image_id",
+    "age_approximate",
+    "sex"
+  ],
+  "metadata_sha256": "c608ce3ed0708c91768b41ee1350d8f8b9ddb79031e5704c24d2fba61d9edd5e",
+  "roles": {
+    "fit": {
+      "count": 1800,
+      "sha256": "c4650888cad9d97064d2f3bb9c72a4b05b208f2c990f1de9a99c635c83c25f08",
+      "path": "splits/fit.txt"
+    },
+    "stop": {
+      "count": 200,
+      "sha256": "9c39587eb4e94cca46633bd9d5cc4c17b4229fecfc78f82ff220e1c0596adfd8",
+      "path": "splits/stop.txt"
+    },
+    "calibration": {
+      "count": 50,
+      "sha256": "74add895b14b64cf8c11ffabd5d85795150ec7ff7b1e6e63db6d6888ea550cc6",
+      "path": "splits/calibration.txt"
+    },
+    "development_readout": {
+      "count": 100,
+      "sha256": "fbc36cfe43731dbe6198304e0c40e3d6e4dafbb5e78bf7c681d61e42d830b352",
+      "path": "splits/development_readout.txt"
+    },
+    "test": {
+      "count": 600,
+      "sha256": "4a1d4d2f422216d1c175ee1667b7ff182210f1080d216d10dafc80087859fbfc",
+      "path": "splits/test.txt"
+    }
+  },
+  "role_intersections": "all empty",
+  "official_test_access": "identity list only; no images, GT, or predictions"
+}

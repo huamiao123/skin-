@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "purpose": "Distinguish trained model source from documentation and audit edits made after training",
+  "repaired_source_commits": ["bfcaee1", "4a5d6c7"],
+  "model_source_commits": "See each results/training_records/training_manifest.csv row; every archived commit contains corrected ZERO_INDEX supervision",
+  "postrun_changes": [
+    "Updated summarize_phase2 scope and decision wording without changing numerical computations; regenerated summary from the same per-image CSV",
+    "Added repaired final audit and report after all model training and evaluation",
+    "Moved obsolete historical audit script under historical_pre_audit",
+    "Adjusted cleanup guard to require repaired audit status and then removed temporary arrays"
+  ],
+  "numerical_evaluation_code_changed_after_training": false,
+  "weights_published": false,
+  "official_test_scored": false
+}

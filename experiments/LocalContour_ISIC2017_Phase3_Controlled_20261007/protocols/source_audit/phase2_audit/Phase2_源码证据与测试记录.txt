@@ -1,0 +1,1230 @@
+LocalContour Phase2 源码证据（原文件行号）
+来源：用户上传 skin--main.zip；ZIP comment 提交标识：45443159f97f3daec4a04953395ad37f3326f765。
+下列内容为原上传文件摘录，未应用补丁。测试数值见文末。
+
+[E01] 稠密候选按 -32..32 排序，零位是索引32
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/radius_sensitivity.py；第19—25行
+SHA256：15cea0684c1430d8bde459418c313e82adaf3e2c308619aa6670121ee5befd28
+  19 | def dense(score, geo):
+  20 |     old=generate_candidates(score,geo)
+  21 |     off=np.arange(-int(geo.search_radius),int(geo.search_radius)+1,dtype=np.float64)
+  22 |     points=geo.points[:,None,:]+off[None,:,None]*geo.normals[:,None,:]
+  23 |     from contour.geometry import CandidateField
+  24 |     return CandidateField(points,np.tile(off,(len(points),1)),old.sample_scores,old.sample_valid,
+  25 |                           old.sample_offsets,old.sample_scores,old.sample_valid)
+
+[E02] 普通选择器的不可达节点保持标签错误
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_local.py；第52—67行
+SHA256：a7c1df08cdebd913066e1449f4bb6f05aef54f28d0d378bc02f84c170a2172db
+  52 | def loss_and_accuracy(logits,batch):
+  53 |     valid=batch['valid'].bool()
+  54 |     has=batch['has_contour'].bool()
+  55 |     masked=logits.float().masked_fill(~valid,-1e4)
+  56 |     distance=batch['gt_distance'].float()
+  57 |     target=F.softmax((-distance/1.5).masked_fill(~valid,-1e4),dim=-1)
+  58 |     # No nearby candidate is evidence to preserve the CNN boundary here.
+  59 |     fixable=distance.masked_fill(~valid,1e4).min(dim=-1).values<=4.0
+  60 |     keep=F.one_hot(torch.zeros_like(fixable,dtype=torch.long),masked.shape[-1]).float()
+  61 |     target=torch.where(fixable[...,None],target,keep)
+  62 |     per_node=-(target*F.log_softmax(masked,dim=-1)).sum(dim=-1)
+  63 |     mask=has[:,None].expand_as(per_node)
+  64 |     loss=per_node[mask].mean() if mask.any() else masked.sum()*0
+  65 |     label=target.argmax(dim=-1)
+  66 |     acc=(masked.argmax(dim=-1)[mask]==label[mask]).float().mean() if mask.any() else torch.tensor(0.,device=logits.device)
+  67 |     return loss,acc
+
+[E03] 门控选择器的保持标签错误
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_gated_refiner.py；第22—41行
+SHA256：249f93e5a54dc03c0407053f862c783c409fd9176706f19b185aa3477c4a7f02
+  22 | def losses(scores,gate_logits,b):
+  23 |     valid=b['valid'].bool();has=b['has_contour'].bool()
+  24 |     distance=b['gt_distance'].float()
+  25 |     other=valid.clone();other[...,32]=False
+  26 |     closest_nonzero=distance.masked_fill(~other,1e4).min(dim=-1).values
+  27 |     zero_distance=distance[...,32]
+  28 |     repair=(zero_distance>2)&(closest_nonzero+0.5<zero_distance)&(closest_nonzero<=4)
+  29 |     repair=repair&has[:,None]
+  30 |     soft=F.softmax((-distance/1.5).masked_fill(~other,-1e4),dim=-1)
+  31 |     zero=F.one_hot(torch.zeros_like(repair,dtype=torch.long),65).float()
+  32 |     target=torch.where(repair[...,None],soft,zero)
+  33 |     masked=scores.float().masked_fill(~valid,-1e4)
+  34 |     candidate_loss=-(target*F.log_softmax(masked,dim=-1)).sum(dim=-1)
+  35 |     gate_loss=F.binary_cross_entropy_with_logits(gate_logits.float(),repair.float(),
+  36 |                                                   pos_weight=torch.tensor(2.,device=gate_logits.device),reduction='none')
+  37 |     use=has[:,None].expand_as(repair)
+  38 |     if not use.any():return masked.sum()*0,0.,0.,0.
+  39 |     c=candidate_loss[use].mean();g=gate_loss[use].mean()
+  40 |     gate_accuracy=((gate_logits[use]>=0)==repair[use]).float().mean()
+  41 |     return c+g,float(c.detach()),float(g.detach()),float(gate_accuracy.detach())
+
+[E04] StrongLocal的四层全图GroupNorm
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/local_model.py；第8—29行
+SHA256：98760f75346a2efbd32a2ad66c2eeaa6827467f21fcf0a37517e9a517037d583
+   8 | class StrongLocal(nn.Module):
+   9 |     def __init__(self, width=64):
+  10 |         super().__init__()
+  11 |         self.encoder=nn.Sequential(
+  12 |             nn.Conv2d(37,width,3,padding=1),nn.GroupNorm(8,width),nn.GELU(),
+  13 |             nn.Conv2d(width,width,3,padding=1),nn.GroupNorm(8,width),nn.GELU(),
+  14 |             nn.Conv2d(width,width,3,padding=1),nn.GroupNorm(8,width),nn.GELU(),
+  15 |             nn.Conv2d(width,width,3,padding=1),nn.GroupNorm(8,width),nn.GELU())
+  16 |         self.classifier=nn.Sequential(nn.Linear(width+5,width),nn.GELU(),nn.Linear(width,1))
+  17 |         self.width=width
+  18 | 
+  19 |     def forward(self,features,rgb,probability,boundary,points,source_points,normals):
+  20 |         # The learned convolution sees only a 9x9 window in the *frozen CNN maps*.
+  21 |         x=torch.cat((features,rgb,probability,boundary),dim=1)
+  22 |         encoded=self.encoder(x)
+  23 |         grid=torch.stack((points[...,0]*2/255-1,points[...,1]*2/255-1),dim=-1)
+  24 |         patch=F.grid_sample(encoded.float(),grid,mode='bilinear',padding_mode='border',align_corners=True)
+  25 |         patch=patch.permute(0,2,3,1)
+  26 |         offset=((points-source_points[:,:,None,:])*normals[:,:,None,:]).sum(dim=-1,keepdim=True)/32.0
+  27 |         extra=torch.cat((offset,normals[:,:,None,:].expand(-1,-1,points.shape[2],-1),
+  28 |                          points/255.0),dim=-1)
+  29 |         return self.classifier(torch.cat((patch,extra),dim=-1)).squeeze(-1)
+
+[E05] 局部/中程/全局注意力掩码与输入
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/refiner_model.py；第7—39行
+SHA256：a8f31cb817af6d0649b99aca296d12ce796dad07b3cffeebcfd7272399b81602
+   7 | class NodeRefiner(nn.Module):
+   8 |     def __init__(self,attention_range: int | None,dim=128,layers=2,heads=4):
+   9 |         super().__init__()
+  10 |         if attention_range not in (8,32,None):raise ValueError('Use +/-8, +/-32, or global')
+  11 |         self.attention_range=attention_range
+  12 |         self.input=nn.Linear(44+65,dim)
+  13 |         layer=nn.TransformerEncoderLayer(d_model=dim,nhead=heads,dim_feedforward=dim*2,
+  14 |                                          dropout=0.1,activation='gelu',batch_first=True,norm_first=True)
+  15 |         self.encoder=nn.TransformerEncoder(layer,num_layers=layers,enable_nested_tensor=False)
+  16 |         self.head=nn.Linear(dim,65)
+  17 |         nn.init.zeros_(self.head.weight);nn.init.zeros_(self.head.bias)
+  18 |         if attention_range is None:self.register_buffer('attention_mask',None,persistent=False)
+  19 |         else:
+  20 |             pos=torch.arange(256)
+  21 |             delta=(pos[:,None]-pos[None,:]).abs()
+  22 |             circular=torch.minimum(delta,256-delta)
+  23 |             self.register_buffer('attention_mask',circular>attention_range,persistent=False)
+  24 | 
+  25 |     def represent(self,context,local_scores,valid):
+  26 |         valid=valid.bool()
+  27 |         scores=local_scores.float().masked_fill(~valid,0)
+  28 |         count=valid.sum(dim=-1,keepdim=True).clamp_min(1)
+  29 |         mean=scores.sum(dim=-1,keepdim=True)/count
+  30 |         centred=(scores-mean).masked_fill(~valid,0)
+  31 |         scale=((centred.square().sum(dim=-1,keepdim=True)/count).sqrt()+1).clamp_min(1)
+  32 |         normalized=(centred/scale).clamp(-5,5)
+  33 |         tokens=self.input(torch.cat((context.float(),normalized),dim=-1))
+  34 |         hidden=self.encoder(tokens,mask=self.attention_mask)
+  35 |         return normalized,hidden
+  36 | 
+  37 |     def forward(self,context,local_scores,valid):
+  38 |         normalized,hidden=self.represent(context,local_scores,valid)
+  39 |         return normalized+self.head(hidden)
+
+[E06] Transformer依赖同种子的已训练局部评分器
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_refiner.py；第16—44行
+SHA256：acee13192ba69f46c41770667fb1a4e287647427bbce9a26b99f18d0a04fa1a1
+  16 | from refiner_model import NodeRefiner,parameter_count
+  17 | from train_local import CACHE,ROOT,loss_and_accuracy,to_device
+  18 | 
+  19 | RANGES={'local8':8,'medium32':32,'global':None}
+  20 | SEEDS=(17,23,42)
+  21 | 
+  22 | class NodeCases(Dataset):
+  23 |     def __init__(self,split,seed):
+  24 |         done=json.loads((CACHE/'COMPLETE.json').read_text())
+  25 |         node_done=json.loads((CACHE/'node_context_COMPLETE.json').read_text())
+  26 |         if done['status']!='PASS' or node_done['status']!='PASS':raise RuntimeError('Node cache incomplete')
+  27 |         local_done=json.loads((ROOT/'models'/f'local_seed{seed}'/'DONE.json').read_text())
+  28 |         if local_done['status']!='PASS':raise RuntimeError('Strong local model incomplete')
+  29 |         self.records=[r for r in done['records'] if r['split']==split]
+  30 |         self.context=np.load(CACHE/'node_context.npy',mmap_mode='r')
+  31 |         self.local=np.load(ROOT/'models'/f'local_seed{seed}'/'candidate_scores.npy',mmap_mode='r')
+  32 |         target=CACHE/'candidates_R32'
+  33 |         self.labels={k:np.load(target/(k+'.npy'),mmap_mode='r') for k in ('valid','gt_distance','has_contour')}
+  34 | 
+  35 |     def __len__(self):return len(self.records)
+  36 | 
+  37 |     def __getitem__(self,i):
+  38 |         rec=self.records[i];j=rec['index']
+  39 |         return {'index':j,'image_id':rec['image_id'],
+  40 |             'context':torch.from_numpy(np.array(self.context[j],copy=True)),
+  41 |             'local_scores':torch.from_numpy(np.array(self.local[j],copy=True)),
+  42 |             **{name:torch.from_numpy(np.array(value[j],copy=True)) for name,value in self.labels.items()}}
+  43 | 
+  44 | def forward(model,b):return model(b['context'],b['local_scores'],b['valid'])
+
+[E07] 新特征缓存的GT修复现状与元数据输出
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/build_feature_cache.py；第44—67行
+SHA256：badd2d3966894a7c8aea32988a365893c070863d3147212f83da31d69d269525
+  44 |     for i,(split,name) in enumerate(ids):
+  45 |         image=DATA/split/'images'/(name+'.jpg')
+  46 |         mask=DATA/split/'masks'/(name+'_segmentation.png')
+  47 |         if not image.is_file() or not mask.is_file():raise RuntimeError(f'Missing {name}')
+  48 |         rgb=load_image(image)
+  49 |         gt=load_mask({'image_id':name,'mask_path':str(mask),'split':split})[0].numpy().astype(np.uint8)
+  50 |         if gt.shape!=(256,256) or not (0<int(gt.sum())<256*256):
+  51 |             raise RuntimeError(f'GT shape/content check failed for {name}')
+  52 |         with torch.inference_mode():
+  53 |             output=cnn.forward_with_features(rgb[None].to(device))
+  54 |             boundary=torch.sigmoid(head(output['features']))
+  55 |         maps['features'][i]=output['features'][0].half().cpu().numpy()
+  56 |         maps['rgb'][i]=rgb.half().numpy()
+  57 |         maps['probability'][i]=output['probability'][0].half().cpu().numpy()
+  58 |         maps['boundary'][i]=boundary[0].half().cpu().numpy()
+  59 |         maps['prediction'][i]=output['mask'][0,0].byte().cpu().numpy()
+  60 |         maps['gt'][i]=gt
+  61 |         if (i+1)%100==0:print(f'{i+1}/{n}',flush=True)
+  62 |     for value in maps.values():value.flush()
+  63 |     if cnn.state_hash()!=before:raise RuntimeError('Frozen CNN state changed')
+  64 |     complete={'status':'PASS','records':[{'index':i,'split':s,'image_id':name} for i,(s,name) in enumerate(ids)],
+  65 |               'cnn_sha256':cnn.architecture_audit()['weight_sha256'],'cnn_state_hash':before,
+  66 |               'test_image_or_gt_opened':False,'purpose':'temporary frozen features, remove after models trained'}
+  67 |     (CACHE/'COMPLETE.json').write_text(json.dumps(complete,indent=2))
+
+[E08] 训练要求构建器未写入的GT审计字段
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_local.py；第96—110行
+SHA256：a7c1df08cdebd913066e1449f4bb6f05aef54f28d0d378bc02f84c170a2172db
+  96 | def train_seed(seed,epochs=8,width=64):
+  97 |     source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+  98 |     if subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip():
+  99 |         raise RuntimeError('Commit phase-2 source changes before training')
+ 100 |     feature_meta=json.loads((CACHE/'COMPLETE.json').read_text())
+ 101 |     candidate_meta=json.loads((CACHE/f'candidates_R{RADIUS}/COMPLETE.json').read_text())
+ 102 |     if feature_meta.get('gt_shape_verified_for_all')!=2150 or candidate_meta.get('gt_distance_label_source') not in ('complete 2D official GT mask','repaired complete 2D official GT mask'):
+ 103 |         raise RuntimeError('Complete 2D GT and candidate labels must pass the repaired-cache audit')
+ 104 |     random.seed(seed);np.random.seed(seed);torch.manual_seed(seed);torch.cuda.manual_seed_all(seed)
+ 105 |     torch.backends.cudnn.benchmark=True
+ 106 |     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+ 107 |     model=StrongLocal(width=width).to(device)
+ 108 |     optimizer=torch.optim.AdamW(model.parameters(),lr=1e-3,weight_decay=1e-4)
+ 109 |     training=DataLoader(CachedCases('train'),batch_size=4,shuffle=True,num_workers=0,pin_memory=True,
+ 110 |                         generator=torch.Generator().manual_seed(seed))
+
+[E09] 历史修复脚本只能处理旧的全零GT缓存
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/repair_gt_cache.py；第25—47行
+SHA256：35a7ad8f3ec4e71174816b3687781aec2faa7435e6ef91b34fdcf6a0f147c81e
+  25 | def main():
+  26 |     meta=json.loads((CACHE/'COMPLETE.json').read_text())
+  27 |     target=CACHE/f'candidates_R{RADIUS}'
+  28 |     candidate_meta=json.loads((target/'COMPLETE.json').read_text())
+  29 |     if meta['status']!='PASS' or candidate_meta['status']!='PASS':raise RuntimeError('Source cache incomplete')
+  30 |     n=len(meta['records'])
+  31 |     gt=np.load(CACHE/'gt.npy',mmap_mode='r+')
+  32 |     points=np.load(target/'points.npy',mmap_mode='r')
+  33 |     valid=np.load(target/'valid.npy',mmap_mode='r')
+  34 |     distances=np.load(target/'gt_distance.npy',mmap_mode='r+')
+  35 |     if n!=2150 or int(gt[0].sum())!=0:raise RuntimeError('Unexpected cache state')
+  36 |     # Invalid seed-17 model was trained on all-zero GT. Preserve a text audit,
+  37 |     # then remove its weights and score arrays so it cannot be selected.
+  38 |     invalid=ROOT/'models/local_seed17'
+  39 |     log=ROOT/'local_seed17.log'
+  40 |     record={'time_utc':datetime.now(timezone.utc).isoformat(),
+  41 |             'cause':'load_mask returns [1,256,256]; code used [0,0] instead of [0], broadcasting the first GT row over the image',
+  42 |             'effect':'train and val GT caches all zero; seed17 local model trained with invalid labels; no result usable',
+  43 |             'action':'rebuild all 2150 GT arrays and GT-distance labels; preserve CNN feature, RGB, probability, boundary, candidate points/valid exactly; delete invalid model weights/scores and retrain all seeds',
+  44 |             'invalid_seed17_log_sha256':hashlib.sha256(log.read_bytes()).hexdigest() if log.exists() else None,
+  45 |             'official_test_bytes_opened':False}
+  46 |     (ROOT/'protocols/invalid_local_training_repair.json').write_text(json.dumps(record,indent=2))
+  47 |     if invalid.exists():shutil.rmtree(invalid)
+
+[E10] 历史修复脚本补写审计字段
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/repair_gt_cache.py；第62—73行
+SHA256：35a7ad8f3ec4e71174816b3687781aec2faa7435e6ef91b34fdcf6a0f147c81e
+  62 |     gt.flush();distances.flush()
+  63 |     sample=np.asarray(distances[:min(100,n)])
+  64 |     if not np.any(sample<4):raise RuntimeError('Repaired candidate target has no near-boundary samples')
+  65 |     meta['gt_repaired_utc']=datetime.now(timezone.utc).isoformat()
+  66 |     meta['gt_shape_verified_for_all']=n
+  67 |     meta['gt_pixel_sum_min']=min(gt_sums);meta['gt_pixel_sum_max']=max(gt_sums)
+  68 |     (CACHE/'COMPLETE.json').write_text(json.dumps(meta,indent=2))
+  69 |     candidate_meta['gt_distance_repaired_utc']=meta['gt_repaired_utc']
+  70 |     candidate_meta['gt_distance_label_source']='repaired complete 2D official GT mask'
+  71 |     (target/'COMPLETE.json').write_text(json.dumps(candidate_meta,indent=2))
+  72 |     print(json.dumps({'status':'PASS','GT_images':n,'min_GT_area':min(gt_sums),
+  73 |                       'max_GT_area':max(gt_sums),'sample_near_boundary_fraction':float((sample<4).mean())},indent=2),flush=True)
+
+[E11] 审计器仅接受repaired标签来源字符串
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/audit_phase2.py；第37—52行
+SHA256：103c27738d6eb1084c362cea519d2f55fa0c4521fc38715dd37ab8229dff773f
+  37 |     pred=np.load(CACHE/'prediction.npy',mmap_mode='r')
+  38 |     gt=np.load(CACHE/'gt.npy',mmap_mode='r')
+  39 |     candidate=json.loads((CACHE/'candidates_R32/COMPLETE.json').read_text())
+  40 |     points=np.load(CACHE/'candidates_R32/points.npy',mmap_mode='r')
+  41 |     source=np.load(CACHE/'candidates_R32/source_points.npy',mmap_mode='r')
+  42 |     valid=np.load(CACHE/'candidates_R32/valid.npy',mmap_mode='r')
+  43 |     distance=np.load(CACHE/'candidates_R32/gt_distance.npy',mmap_mode='r')
+  44 |     if candidate['status']!='PASS' or candidate.get('gt_distance_label_source')!='repaired complete 2D official GT mask':
+  45 |         errors.append('candidate label repair incomplete')
+  46 |     if not np.array_equal(points[:,:,32,:],source):errors.append('mandatory zero candidate differs from source')
+  47 |     if not np.all(valid[:,:,32]):
+  48 |         # A single empty-prediction case is expected to have no contour/candidates.
+  49 |         has=np.load(CACHE/'candidates_R32/has_contour.npy',mmap_mode='r').astype(bool)
+  50 |         if not np.all(valid[has,:,32]) or np.any(valid[~has]):errors.append('zero candidate validity mismatch')
+  51 |     if int(np.min(np.asarray(gt).sum(axis=(1,2))))<=0:errors.append('zero-area GT')
+  52 |     if not np.isfinite(np.asarray(distance[:10])).all():errors.append('nonfinite GT-distance target')
+
+[E12] wrong_move_rate实际统计所有已接近GT节点上的移动
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluation.py；第44—59行
+SHA256：84f1fb6127deaee0c69bf3d880cd2aa49bec0833b9ec6164fa95897d01c10a12
+  44 | def repair_metrics(indices,valid,gt_distance):
+  45 |     if not len(indices):return {k:None for k in ('repair_precision','repair_recall','keep_accuracy','wrong_move_rate','moved_fraction','mean_abs_offset','p95_abs_offset','selection_within_2px')}
+  46 |     rows=np.arange(len(indices))
+  47 |     d=np.where(valid,gt_distance,np.inf)
+  48 |     d0=d[:,32];chosen=d[rows,indices];best=d.min(axis=1)
+  49 |     moved=indices!=32;improved=moved&(chosen<d0-1e-3)
+  50 |     fixable=(d0>2)&(best<d0-1e-3)
+  51 |     correct=d0<=2
+  52 |     values=np.abs(indices-32)
+  53 |     return {'repair_precision':float(improved.sum()/moved.sum()) if moved.any() else None,
+  54 |             'repair_recall':float((improved&fixable).sum()/fixable.sum()) if fixable.any() else None,
+  55 |             'keep_accuracy':float((~moved&correct).sum()/correct.sum()) if correct.any() else None,
+  56 |             'wrong_move_rate':float((moved&correct).sum()/correct.sum()) if correct.any() else None,
+  57 |             'moved_fraction':float(moved.mean()),'mean_abs_offset':float(values.mean()),
+  58 |             'p95_abs_offset':float(np.percentile(values,95)),
+  59 |             'selection_within_2px':float((chosen<=2).mean())}
+
+[E13] DP在加位移惩罚前按原始分数剪枝
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluate_local.py；第18—43行
+SHA256：305a606f2fd6e735c51fb65c26e39a56acd2a0a7ba94162ba6e0708cdf25fe0f
+  18 | LAMBDAS=(0.0,0.002,0.01,0.05,0.2)
+  19 | DISPLACEMENT=(0.0,0.02,0.1)
+  20 | TOP_NONZERO=8
+  21 | 
+  22 | def read_maps():
+  23 |     return {n:np.load(CACHE/(n+'.npy'),mmap_mode='r') for n in ('prediction','gt')},\
+  24 |            {n:np.load(CACHE/'candidates_R32'/(n+'.npy'),mmap_mode='r') for n in ('points','valid','gt_distance','has_contour')}
+  25 | 
+  26 | def prepare_dp(scores,valid,displacement):
+  27 |     rows=len(scores);off=np.arange(-32,33,dtype=np.float64)
+  28 |     index=np.empty((rows,TOP_NONZERO+1),dtype=np.int64)
+  29 |     index[:,0]=32
+  30 |     for i in range(rows):
+  31 |         candidates=np.flatnonzero(valid[i]);candidates=candidates[candidates!=32]
+  32 |         ordered=sorted(candidates,key=lambda j:(-float(scores[i,j]),abs(j-32),j))
+  33 |         if len(ordered)<TOP_NONZERO:ordered+=([32]*(TOP_NONZERO-len(ordered)))
+  34 |         index[i,1:]=ordered[:TOP_NONZERO]
+  35 |     gathered_scores=scores[np.arange(rows)[:,None],index]
+  36 |     gathered_offsets=off[index]
+  37 |     cost=-gathered_scores+np.max(gathered_scores,axis=1,keepdims=True)+displacement*np.abs(gathered_offsets)
+  38 |     return index,cost,gathered_offsets
+  39 | 
+  40 | def choose_dp(scores,valid,lam,displacement):
+  41 |     index,cost,offset=prepare_dp(scores,valid,displacement)
+  42 |     path,_=closed_dp(cost,offset,lam)
+  43 |     return index[np.arange(len(path)),path]
+
+[E14] DP在全部val150选参并读出
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluate_local.py；第81—119行
+SHA256：305a606f2fd6e735c51fb65c26e39a56acd2a0a7ba94162ba6e0708cdf25fe0f
+  81 |     for lam in LAMBDAS:
+  82 |         for disp in DISPLACEMENT:
+  83 |             dice=[];bf1=[]
+  84 |             for case in prepared:
+  85 |                 pred,gt=case['pred'],case['gt']
+  86 |                 if case['context'] is None:mask=pred
+  87 |                 else:
+  88 |                     index,cost,offset=case['dp_inputs'][disp]
+  89 |                     path,_=closed_dp(cost,offset,lam)
+  90 |                     selected=index[np.arange(len(path)),path]
+  91 |                     polygon=case['points'][np.arange(len(selected)),selected]
+  92 |                     mask=compose_prediction_context(rasterize(polygon,pred.shape),case['context'])
+  93 |                 intersection=np.count_nonzero(mask&gt)
+  94 |                 dice.append(2*intersection/(mask.sum()+gt.sum()) if mask.sum()+gt.sum() else 1.)
+  95 |                 bf1.append(float('nan'))
+  96 |             result={'seed':seed,'smooth_lambda':lam,'displacement_penalty':disp,
+  97 |                     'validation_dice':float(np.mean(dice)),'validation_bf1':'not_used_for_grid_selection'}
+  98 |             curve.append(result);print(result,flush=True)
+  99 |     write_csv(output/'dp_grid.csv',curve)
+ 100 |     best=max(curve,key=lambda r:r['validation_dice'])
+ 101 |     for case in prepared:
+ 102 |         rec=case['record'];i=case['index'];pred=case['pred'];gt=case['gt']
+ 103 |         point=case['points'];valid=case['valid']
+ 104 |         dist=np.asarray(candidates['gt_distance'][i],np.float32)
+ 105 |         sample=case['sample']
+ 106 |         methods={'CNN':(pred,None)}
+ 107 |         if case['context'] is not None:
+ 108 |             local=np.argmax(np.where(valid,sample,-np.inf),axis=1)
+ 109 |             index,cost,offset=case['dp_inputs'][best['displacement_penalty']]
+ 110 |             path,_=closed_dp(cost,offset,best['smooth_lambda'])
+ 111 |             dp=index[np.arange(len(path)),path]
+ 112 |             methods[label]=(compose_prediction_context(rasterize(point[np.arange(len(local)),local],pred.shape),case['context']),local)
+ 113 |             methods[label+'_DP']=(compose_prediction_context(rasterize(point[np.arange(len(dp)),dp],pred.shape),case['context']),dp)
+ 114 |         else:
+ 115 |             methods[label]=(pred,None);methods[label+'_DP']=(pred,None)
+ 116 |         for name,(mask,indices) in methods.items():
+ 117 |             row={'image_id':rec['image_id'],'seed':seed,'method':name,
+ 118 |                  'source_git_commit':model_done['source_git_commit'],**full_metrics(mask,gt)}
+ 119 |             if indices is not None:row.update(repair_metrics(indices,valid,dist))
+
+[E15] alpha确实按cal50均值选择
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/calibrate_keep.py；第55—75行
+SHA256：7c56e25801605b9b198c5a474ca8f305340f8b551a9ca002a24119562946cd4f
+  55 |     out=ROOT/'results/transformer'/f'keep_seed{seed}';out.mkdir(parents=True,exist_ok=True)
+  56 |     write_csv(out/'per_image_alpha_curve.csv',rows)
+  57 |     summary=[]
+  58 |     for name in names:
+  59 |         curve=[]
+  60 |         for alpha in ALPHAS:
+  61 |             group=[r for r in rows if r['model']==name and r['alpha']==alpha]
+  62 |             cal=[r['dice'] for r in group if r['role']=='calibration50']
+  63 |             ver=[r['dice'] for r in group if r['role']=='locked_verification100']
+  64 |             curve.append({'seed':seed,'model':name,'alpha':alpha,'cal50_dice':float(np.mean(cal)),
+  65 |                           'val100_dice':float(np.mean(ver)),'all150_dice':float(np.mean([r['dice'] for r in group])),
+  66 |                           'mean_moved_fraction':float(np.mean([r['moved_fraction'] for r in group if r['moved_fraction'] is not None]))})
+  67 |         best=max(curve,key=lambda r:r['cal50_dice'])
+  68 |         summary.extend(curve)
+  69 |         print('CHOSEN',name,best,flush=True)
+  70 |     write_csv(out/'summary.csv',summary)
+  71 |     metadata={'scope':'ISIC2017 val50 selection and val100 reused development verification; val100 was used in previous phase-1 and DP development, so not independent',
+  72 |               'selection':'cal50 mean Dice; ties smallest alpha','alphas':ALPHAS,
+  73 |               'models':names,'official_test_GT_opened':False,
+  74 |               'prior_dp_grid_val150_access':True,'interpretation':'alpha adds learned-score penalty proportional to absolute offset; zero remains selectable'}
+  75 |     (out/'manifest.json').write_text(json.dumps(metadata,indent=2))
+
+[E16] 门控阈值选择与零位推理索引
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluate_gated.py；第49—76行
+SHA256：2971aee84b3bf8311a9abeba0b61fc3e68225c8a625ee97267ae27529588dc67
+  49 |         for model in MODELS:
+  50 |             value=np.asarray(scores[model][i],np.float32)
+  51 |             gate=expit(np.asarray(gates[model][i],np.float32))
+  52 |             usable=valid.copy();usable[:,32]=False
+  53 |             proposal=np.argmax(np.where(usable,value,-np.inf),axis=1)
+  54 |             for threshold in THRESHOLDS:
+  55 |                 if context is None:mask=pred;selected=None
+  56 |                 else:
+  57 |                     selected=np.where(gate>=threshold,proposal,32)
+  58 |                     polygon=point[np.arange(256),selected]
+  59 |                     mask=compose_prediction_context(rasterize(polygon,pred.shape),context)
+  60 |                 intersection=np.count_nonzero(mask&gt)
+  61 |                 dice=2*intersection/(mask.sum()+gt.sum()) if mask.sum()+gt.sum() else 1.
+  62 |                 raw.append({'image_id':rec['image_id'],'role':role,'model':model,
+  63 |                             'threshold':threshold,'dice':dice,
+  64 |                             'moved_fraction':float((selected!=32).mean()) if selected is not None else None})
+  65 |         if n%25==0:print(f'{n}/{len(records)}',flush=True)
+  66 |     selected={}
+  67 |     for model in MODELS:
+  68 |         curve=[]
+  69 |         for threshold in THRESHOLDS:
+  70 |             group=[r for r in raw if r['model']==model and r['threshold']==threshold]
+  71 |             cal=[r['dice'] for r in group if r['role']=='calibration50']
+  72 |             verification=[r['dice'] for r in group if r['role']=='locked_verification100']
+  73 |             curve.append({'model':model,'seed':seed,'threshold':threshold,
+  74 |                           'cal50_dice':float(np.mean(cal)),'val100_dice':float(np.mean(verification)),
+  75 |                           'all150_dice':float(np.mean([r['dice'] for r in group]))})
+  76 |         selected[model]=max(curve,key=lambda r:r['cal50_dice'])
+
+[E17] 门控最终推理正确把32当作零位
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluate_gated.py；第90—105行
+SHA256：2971aee84b3bf8311a9abeba0b61fc3e68225c8a625ee97267ae27529588dc67
+  90 |         for model in MODELS:
+  91 |             value=np.asarray(scores[model][i],np.float32)
+  92 |             gate=expit(np.asarray(gates[model][i],np.float32))
+  93 |             usable=valid.copy();usable[:,32]=False
+  94 |             proposed=np.argmax(np.where(usable,value,-np.inf),axis=1)
+  95 |             threshold=selected[model]['threshold']
+  96 |             if context is None:mask=pred;indices=None
+  97 |             else:
+  98 |                 indices=np.where(gate>=threshold,proposed,32)
+  99 |                 polygon=point[np.arange(256),indices]
+ 100 |                 mask=compose_prediction_context(rasterize(polygon,pred.shape),context)
+ 101 |             row={'image_id':rec['image_id'],'role':role,'seed':seed,'model':model,
+ 102 |                  'threshold':threshold,**full_metrics(mask,gt)}
+ 103 |             if indices is not None:row.update(repair_metrics(indices,valid,dist))
+ 104 |             rows.append(row)
+ 105 |     write_csv(out/'per_image.csv',rows)
+
+[E18] 普通模型在val150选择检查点
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_local.py；第109—132行
+SHA256：a7c1df08cdebd913066e1449f4bb6f05aef54f28d0d378bc02f84c170a2172db
+ 109 |     training=DataLoader(CachedCases('train'),batch_size=4,shuffle=True,num_workers=0,pin_memory=True,
+ 110 |                         generator=torch.Generator().manual_seed(seed))
+ 111 |     validation=DataLoader(CachedCases('val'),batch_size=4,shuffle=False,num_workers=0,pin_memory=True)
+ 112 |     output=ROOT/'models'/(f'local_seed{seed}' if width==64 else f'local_large_seed{seed}')
+ 113 |     output.mkdir(parents=True,exist_ok=True)
+ 114 |     best=np.inf;best_epoch=None;log=[]
+ 115 |     for epoch in range(1,epochs+1):
+ 116 |         model.train();losses=[];accs=[]
+ 117 |         for number,raw in enumerate(training,1):
+ 118 |             b=to_device(raw,device);optimizer.zero_grad(set_to_none=True)
+ 119 |             with torch.autocast(device_type='cuda',dtype=torch.bfloat16,enabled=device.type=='cuda'):
+ 120 |                 scores=forward(model,b)
+ 121 |                 loss,acc=loss_and_accuracy(scores,b)
+ 122 |             loss.backward();nn.utils.clip_grad_norm_(model.parameters(),1.0)
+ 123 |             optimizer.step();losses.append(float(loss.detach()));accs.append(float(acc.detach()))
+ 124 |             if number%100==0:print(f'seed={seed} epoch={epoch} step={number}/{len(training)} train_loss={np.mean(losses):.4f}',flush=True)
+ 125 |         val_loss,val_acc=evaluate(model,validation,device)
+ 126 |         row={'seed':seed,'epoch':epoch,'train_loss':float(np.mean(losses)),'train_candidate_acc':float(np.mean(accs)),
+ 127 |              'val_loss':val_loss,'val_candidate_acc':val_acc,'updates':len(training)*epoch}
+ 128 |         log.append(row);print(json.dumps(row),flush=True)
+ 129 |         if val_loss<best-1e-6:
+ 130 |             best=val_loss;best_epoch=epoch
+ 131 |             torch.save({'state_dict':model.state_dict(),'seed':seed,'epoch':epoch,
+ 132 |                         'val_loss':best,'parameter_count':parameter_count(model)},output/'best.pth')
+
+[E19] 注意力模型在val150选择检查点
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/train_refiner.py；第79—105行
+SHA256：acee13192ba69f46c41770667fb1a4e287647427bbce9a26b99f18d0a04fa1a1
+  79 |     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+  80 |     model=NodeRefiner(RANGES[attention]).to(device)
+  81 |     optimizer=torch.optim.AdamW(model.parameters(),lr=3e-4,weight_decay=1e-4)
+  82 |     training=DataLoader(NodeCases('train',seed),batch_size=16,shuffle=True,num_workers=0,pin_memory=True,
+  83 |                         generator=torch.Generator().manual_seed(seed))
+  84 |     validation=DataLoader(NodeCases('val',seed),batch_size=16,shuffle=False,num_workers=0,pin_memory=True)
+  85 |     root=ROOT/'models'/f'{attention}_seed{seed}';root.mkdir(parents=True,exist_ok=True)
+  86 |     best=float('inf');best_epoch=None;rows=[]
+  87 |     for epoch in range(1,epochs+1):
+  88 |         model.train();losses=[];accs=[]
+  89 |         for step,raw in enumerate(training,1):
+  90 |             b=to_device(raw,device);optimizer.zero_grad(set_to_none=True)
+  91 |             with torch.autocast(device_type='cuda',dtype=torch.bfloat16,enabled=device.type=='cuda'):
+  92 |                 logits=forward(model,b)
+  93 |                 loss,acc=loss_and_accuracy(logits,b)
+  94 |             loss.backward();nn.utils.clip_grad_norm_(model.parameters(),1.0);optimizer.step()
+  95 |             losses.append(float(loss.detach()));accs.append(float(acc.detach()))
+  96 |             if step%50==0:print(f'{attention} seed={seed} epoch={epoch} step={step}/{len(training)}',flush=True)
+  97 |         val_loss,val_acc=evaluate(model,validation,device)
+  98 |         row={'attention':attention,'seed':seed,'epoch':epoch,
+  99 |              'train_loss':float(np.mean(losses)),'train_candidate_acc':float(np.mean(accs)),
+ 100 |              'val_loss':val_loss,'val_candidate_acc':val_acc,'updates':len(training)*epoch}
+ 101 |         rows.append(row);print(json.dumps(row),flush=True)
+ 102 |         if val_loss<best-1e-6:
+ 103 |             best=val_loss;best_epoch=epoch
+ 104 |             torch.save({'state_dict':model.state_dict(),'seed':seed,'attention':attention,
+ 105 |                         'epoch':epoch,'val_loss':best,'parameter_count':parameter_count(model)},root/'best.pth')
+
+[E20] Dice/BF1具体实现
+文件：experiments/LocalContour_ISIC2017_20261005/contour/geometry.py；第535—558行
+SHA256：1d94e0293178b585409f18db555823af0a84d47b0e12f2c1e19930dcca93cfe1
+ 535 | def boundary_pixels(mask: np.ndarray) -> np.ndarray:
+ 536 |     value = _mask(mask)
+ 537 |     return value & ~ndimage.binary_erosion(value, structure=np.ones((3, 3), dtype=bool), border_value=0)
+ 538 | 
+ 539 | 
+ 540 | def segmentation_metrics(prediction: np.ndarray, gt_mask: np.ndarray, boundary_tolerance: float = 2.0) -> dict[str, float]:
+ 541 |     prediction, gt = _mask(prediction), _mask(gt_mask)
+ 542 |     if prediction.shape != gt.shape or boundary_tolerance != 2.0:
+ 543 |         raise ValueError("Metrics require common input coordinates and fixed BF1 tolerance 2")
+ 544 |     intersection = int(np.count_nonzero(prediction & gt))
+ 545 |     pred_count, gt_count = int(prediction.sum()), int(gt.sum())
+ 546 |     union = pred_count + gt_count - intersection
+ 547 |     dice = 2 * intersection / (pred_count + gt_count) if pred_count + gt_count else 1.0
+ 548 |     iou = intersection / union if union else 1.0
+ 549 |     pb, gb = boundary_pixels(prediction), boundary_pixels(gt)
+ 550 |     if not pb.any() and not gb.any():
+ 551 |         precision, recall, bf1 = 1.0, 1.0, 1.0
+ 552 |     elif not pb.any() or not gb.any():
+ 553 |         precision, recall, bf1 = 0.0, 0.0, 0.0
+ 554 |     else:
+ 555 |         precision = float((ndimage.distance_transform_edt(~gb)[pb] <= boundary_tolerance).mean())
+ 556 |         recall = float((ndimage.distance_transform_edt(~pb)[gb] <= boundary_tolerance).mean())
+ 557 |         bf1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+ 558 |     return {"dice": float(dice), "iou": float(iou), "bf1": float(bf1), "boundary_precision": precision, "boundary_recall": recall}
+
+[E21] HD95/ASSD具体实现及空掩码约定
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluation.py；第26—42行
+SHA256：84f1fb6127deaee0c69bf3d880cd2aa49bec0833b9ec6164fa95897d01c10a12
+  26 | def full_metrics(pred,gt):
+  27 |     pred=np.asarray(pred,bool);gt=np.asarray(gt,bool)
+  28 |     result=segmentation_metrics(pred,gt)
+  29 |     tp=int((pred&gt).sum());fp=int((pred&~gt).sum())
+  30 |     fn=int((~pred&gt).sum());tn=int((~pred&~gt).sum())
+  31 |     result.update(pixel_precision=tp/(tp+fp) if tp+fp else 1.,
+  32 |                   pixel_recall=tp/(tp+fn) if tp+fn else 1.,
+  33 |                   specificity=tn/(tn+fp) if tn+fp else 1.)
+  34 |     pb=boundary_pixels(pred);gb=boundary_pixels(gt)
+  35 |     if pb.any() and gb.any():
+  36 |         a=ndimage.distance_transform_edt(~gb)[pb]
+  37 |         b=ndimage.distance_transform_edt(~pb)[gb]
+  38 |         result['hd95']=float(max(np.percentile(a,95),np.percentile(b,95)))
+  39 |         result['assd']=float((a.sum()+b.sum())/(len(a)+len(b)))
+  40 |     elif not pb.any() and not gb.any():result.update(hd95=0.,assd=0.)
+  41 |     else:result.update(hd95=float(np.hypot(*pred.shape)),assd=float(np.hypot(*pred.shape)))
+  42 |     return result
+
+[E22] 闭环动态规划完整递推
+文件：experiments/LocalContour_ISIC2017_20261005/contour/geometry.py；第344—388行
+SHA256：1d94e0293178b585409f18db555823af0a84d47b0e12f2c1e19930dcca93cfe1
+ 344 | def path_objective(indices: np.ndarray, local_costs: np.ndarray, offsets: np.ndarray, smooth_lambda: float) -> float:
+ 345 |     indices = np.asarray(indices, dtype=np.int64)
+ 346 |     rows = np.arange(len(indices))
+ 347 |     selected = offsets[rows, indices]
+ 348 |     return float(local_costs[rows, indices].sum() + smooth_lambda * np.square(selected - np.roll(selected, -1)).sum())
+ 349 | 
+ 350 | 
+ 351 | def closed_dp(local_costs: np.ndarray, offsets: np.ndarray, smooth_lambda: float) -> tuple[np.ndarray, float]:
+ 352 |     """Exact cyclic DP for sum(local) + lambda sum((s_i-s_{i+1})**2).
+ 353 | 
+ 354 |     Enumerating the initial candidate ensures that the final-first transition
+ 355 |     is included. Invalid candidates have +infinity cost. Equal paths are chosen
+ 356 |     deterministically by the first initial state and numpy's first argmin.
+ 357 |     """
+ 358 |     costs = np.asarray(local_costs, dtype=np.float64)
+ 359 |     shifts = np.asarray(offsets, dtype=np.float64)
+ 360 |     if costs.ndim != 2 or shifts.shape != costs.shape or len(costs) == 0 or not np.isfinite(shifts).all() or np.isnan(costs).any() or np.isneginf(costs).any():
+ 361 |         raise ValueError("DP costs/offsets must be nonempty matching NxK arrays")
+ 362 |     if not np.isfinite(smooth_lambda) or smooth_lambda < 0 or np.any(~np.isfinite(costs).any(axis=1)):
+ 363 |         raise ValueError("Nonnegative finite lambda and a valid candidate at every node are required")
+ 364 |     n, k = costs.shape
+ 365 |     best_value, best_path = np.inf, None
+ 366 |     for start in range(k):
+ 367 |         if not np.isfinite(costs[0, start]):
+ 368 |             continue
+ 369 |         value = np.full(k, np.inf)
+ 370 |         value[start] = costs[0, start]
+ 371 |         parents = np.full((n, k), -1, dtype=np.int64)
+ 372 |         for row in range(1, n):
+ 373 |             transition = smooth_lambda * np.square(shifts[row - 1, :, None] - shifts[row, None, :])
+ 374 |             choices = value[:, None] + transition
+ 375 |             parents[row] = np.argmin(choices, axis=0)
+ 376 |             value = choices[parents[row], np.arange(k)] + costs[row]
+ 377 |         closing = value + smooth_lambda * np.square(shifts[-1] - shifts[0, start])
+ 378 |         last = int(np.argmin(closing))
+ 379 |         objective = float(closing[last])
+ 380 |         if objective < best_value:
+ 381 |             path = np.empty(n, dtype=np.int64)
+ 382 |             path[-1] = last
+ 383 |             for row in range(n - 1, 0, -1):
+ 384 |                 path[row - 1] = parents[row, path[row]]
+ 385 |             best_value, best_path = objective, path
+ 386 |     if best_path is None:
+ 387 |         raise ValueError("No feasible closed candidate path")
+ 388 |     return best_path, best_value
+
+[E23] 训练GT距离为内侧边界像素EDT插值
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/build_candidate_cache.py；第39—68行
+SHA256：71a7114f96e8fe23d5bd18b03d328fd4e817c20e12bb60293f15c793b509d801
+  39 |     for i,rec in enumerate(done['records']):
+  40 |         pred=maps['prediction'][i].astype(bool);gt=maps['gt'][i].astype(bool);q=maps['boundary'][i,0].astype(np.float32)
+  41 |         if not (0<int(gt.sum())<256*256):
+  42 |             raise RuntimeError(f'GT cache has invalid 2D lesion mask for {rec["image_id"]}')
+  43 |         geo=extract_geometry(pred,256,16)
+  44 |         if geo is None:
+  45 |             dest['points'][i]=0;dest['source_points'][i]=0;dest['normals'][i]=0
+  46 |             dest['valid'][i]=0;dest['gt_distance'][i]=1000;dest['has_contour'][i]=0
+  47 |             continue
+  48 |         if radius==32:geo=replace(geo,search_radius=32.0)
+  49 |         field=dense(q,geo)
+  50 |         gt_border=boundary_pixels(gt)
+  51 |         edt=ndimage.distance_transform_edt(~gt_border) if gt_border.any() else np.full(gt.shape,1000.0)
+  52 |         distance=ndimage.map_coordinates(edt,[field.points[...,1],field.points[...,0]],order=1,mode='nearest',prefilter=False)
+  53 |         distance=np.where(field.valid,distance,1000.0)
+  54 |         dest['points'][i]=field.points.astype(np.float32)
+  55 |         dest['source_points'][i]=geo.points.astype(np.float32)
+  56 |         dest['normals'][i]=geo.normals.astype(np.float32)
+  57 |         dest['valid'][i]=field.valid.astype(np.uint8)
+  58 |         dest['gt_distance'][i]=distance.astype(np.float16)
+  59 |         dest['has_contour'][i]=1
+  60 |         if (i+1)%100==0:print(f'{i+1}/{n}',flush=True)
+  61 |     for m in dest.values():m.flush()
+  62 |     result={'status':'PASS','radius':radius,'nodes':256,'candidate_count':k,
+  63 |             'records':n,'test_image_or_gt_opened':False,
+  64 |             'training_label':'GT nearest boundary pixel EDT, bilinearly sampled; invalid candidate distance=1000',
+  65 |             'gt_full_shape_verified_for_all':n,
+  66 |             'gt_distance_label_source':'complete 2D official GT mask',
+  67 |             'coordinates':'derived solely from frozen CNN mask, frozen boundary map, and fixed geometry; GT loaded only for label distance',
+  68 |             'temporary_cache':True}
+
+[E24] Oracle为到0.5等值线多边形线段的精确距离
+文件：experiments/LocalContour_ISIC2017_20261005/contour/geometry.py；第413—431行
+SHA256：1d94e0293178b585409f18db555823af0a84d47b0e12f2c1e19930dcca93cfe1
+ 413 | def distance_to_boundary(points: np.ndarray, gt_mask: np.ndarray) -> np.ndarray:
+ 414 |     """Exact Euclidean point-to-subpixel-segment distances for offline G4 cost."""
+ 415 |     points = np.asarray(points, dtype=np.float64)
+ 416 |     shape = points.shape[:-1]
+ 417 |     flat = points.reshape(-1, 2)
+ 418 |     contours = mask_contours(gt_mask)
+ 419 |     if not contours:
+ 420 |         return np.full(shape, np.inf)
+ 421 |     a = np.concatenate(contours)
+ 422 |     b = np.concatenate([np.roll(contour, -1, axis=0) for contour in contours])
+ 423 |     delta = b - a
+ 424 |     length2 = np.square(delta).sum(axis=1)
+ 425 |     result = np.empty(len(flat), dtype=np.float64)
+ 426 |     for begin in range(0, len(flat), 64):
+ 427 |         rel = flat[begin:begin + 64, None, :] - a[None, :, :]
+ 428 |         fraction = np.clip(np.sum(rel * delta[None, :, :], axis=-1) / length2[None, :], 0, 1)
+ 429 |         residual = rel - fraction[..., None] * delta[None, :, :]
+ 430 |         result[begin:begin + 64] = np.sqrt(np.square(residual).sum(axis=-1).min(axis=1))
+ 431 |     return result.reshape(shape)
+
+[E25] 轮廓重建保持其他前景和内部背景
+文件：experiments/LocalContour_ISIC2017_20261005/contour/geometry.py；第263—285行
+SHA256：1d94e0293178b585409f18db555823af0a84d47b0e12f2c1e19930dcca93cfe1
+ 263 | def build_prediction_context(prediction_mask: np.ndarray, source_polygon: np.ndarray) -> PredictionContext:
+ 264 |     """Keep other original foreground and background inside the source exterior.
+ 265 | 
+ 266 |     P is the original CNN prediction and F the *full-vertex* selected original
+ 267 |     exterior polygon fill. C=P&~F and H=F&~P are fixed for all G1--G4 paths.
+ 268 |     This mechanical compositor prevents changing unrepresented components or
+ 269 |     filling original holes from being mistaken for candidate selection effects.
+ 270 |     It uses no GT and does not move or regenerate any candidate.
+ 271 |     """
+ 272 |     prediction = _mask(prediction_mask)
+ 273 |     source = np.asarray(source_polygon, dtype=np.float64)
+ 274 |     if source.ndim != 2 or source.shape[1] != 2 or not np.isfinite(source).all():
+ 275 |         raise ValueError("The full original exterior must have finite Nx2 input coordinates")
+ 276 |     exterior = rasterize(source, prediction.shape)
+ 277 |     return PredictionContext(exterior, prediction & ~exterior, exterior & ~prediction)
+ 278 | 
+ 279 | 
+ 280 | def compose_prediction_context(reconstructed_exterior: np.ndarray, context: PredictionContext) -> np.ndarray:
+ 281 |     """The same (R&~H)|C rule for every reconstructed selector."""
+ 282 |     reconstructed = _mask(reconstructed_exterior)
+ 283 |     if reconstructed.shape != context.source_exterior_mask.shape:
+ 284 |         raise ValueError("Reconstructed mask and fixed original context must share input shape")
+ 285 |     return (reconstructed & ~context.background_to_preserve) | context.foreground_to_preserve
+
+[E26] 重采样的零位也经过直线轮廓栅格化
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/evaluation.py；第17—24行
+SHA256：84f1fb6127deaee0c69bf3d880cd2aa49bec0833b9ec6164fa95897d01c10a12
+  17 | def selected_mask(pred,points,indices):
+  18 |     pred=np.asarray(pred,bool)
+  19 |     contours=mask_contours(pred)
+  20 |     if not contours:return pred.copy()
+  21 |     source=max(contours,key=lambda p:abs(polygon_area(p)))
+  22 |     context=build_prediction_context(pred,source)
+  23 |     path=points[np.arange(len(indices)),indices]
+  24 |     return compose_prediction_context(rasterize(path,pred.shape),context)
+
+[E27] 三种子先按病例平均差值再按病例bootstrap
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/summarize_phase2.py；第50—64行
+SHA256：0230edde70ca16069d26769a2d77b75ade6ab00186181e415a71c293344b915a
+  50 |     rng=np.random.default_rng(17)
+  51 |     draws=rng.integers(0,len(ids),size=(2000,len(ids)))
+  52 |     for a,b in COMPARISONS:
+  53 |         for metric in ('dice','bf1','hd95'):
+  54 |             # Average each image's paired difference across seeds before image bootstrap.
+  55 |             per_image=np.array([np.mean([float(lookup[(s,a,i)][metric])-float(lookup[(s,b,i)][metric]) for s in SEEDS]) for i in ids])
+  56 |             samples=per_image[draws].mean(axis=1)
+  57 |             summary['paired_comparisons'][f'{a}_minus_{b}_{metric}']={
+  58 |                 'mean':float(per_image.mean()),'median':float(np.median(per_image)),
+  59 |                 'ci95':[float(np.percentile(samples,2.5)),float(np.percentile(samples,97.5))],
+  60 |                 'improved_images':int((per_image>0).sum()) if metric!='hd95' else int((per_image<0).sum()),
+  61 |                 'harmed_images':int((per_image<0).sum()) if metric!='hd95' else int((per_image>0).sum()),
+  62 |                 'equal_images':int((per_image==0).sum()),
+  63 |                 'resampling_unit':'paired image, averaging three seeds within image',
+  64 |                 'bootstrap_seed':17,'bootstrap_repetitions':2000}
+
+[E28] PASS审计仍含预期结论和类别数硬编码
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/audit_phase2.py；第63—94行
+SHA256：103c27738d6eb1084c362cea519d2f55fa0c4521fc38715dd37ab8229dff773f
+  63 |     training=json.loads((ROOT/'results/training_records/summary.json').read_text())
+  64 |     if training['model_runs']!=21 or training['weights_in_training_records'] or training['official_test_images_opened_any']:
+  65 |         errors.append('training record incomplete or test exposure')
+  66 |     final=json.loads((ROOT/'results/phase2_summary/summary.json').read_text())
+  67 |     if final['decision']['status']!='STOP_GLOBAL_PRIMARY_AFTER_DEVELOPMENT' or final['n_images']!=100:
+  68 |         errors.append('final stage-C decision mismatch')
+  69 |     gate=[]
+  70 |     for seed in (17,23,42):
+  71 |         result=json.loads((ROOT/'results/transformer'/f'gated_seed{seed}'/'summary.json').read_text())
+  72 |         gate.append({'seed':seed,'local_threshold':result['models']['local8_gate']['threshold'],
+  73 |                      'global_threshold':result['models']['global_gate']['threshold'],
+  74 |                      'local_moved':result['models']['local8_gate']['moved_fraction'],
+  75 |                      'global_moved':result['models']['global_gate']['moved_fraction']})
+  76 |         if len(read(ROOT/'results/transformer'/f'chosen_keep_seed{seed}'/'per_image.csv'))!=900:
+  77 |             errors.append('chosen keep rows '+str(seed))
+  78 |         if len(read(ROOT/'results/transformer'/f'gated_seed{seed}'/'per_image.csv'))!=450:
+  79 |             errors.append('gated rows '+str(seed))
+  80 |     cases=json.loads((ROOT/'results/phase2_summary/case_panels/selection.json').read_text())
+  81 |     if cases['counts']!={'A':14,'B':0,'C':3,'D':30,'E':2}:errors.append('case count mismatch')
+  82 |     audit={'status':'PASS' if not errors else 'FAIL','errors':errors,
+  83 |            'split_counts':{s:len(v) for s,v in ids.items()},
+  84 |            'training_rows':training['model_runs'],'phase2_val100_images':100,
+  85 |            'phase1_val150_GT_changed_pixels':sum(GT_changed),
+  86 |            'phase1_val150_prediction_changed_cases':sum(v>0 for v in prediction_changed),
+  87 |            'phase1_val150_prediction_changed_pixels':sum(prediction_changed),
+  88 |            'phase1_val150_prediction_max_changed_pixels_per_image':max(prediction_changed),
+  89 |            'difference_explanation':'same frozen CNN state; Phase1 combined cached and separate inference, Phase2 recomputed every image. Exact numerical cause of 405 changed threshold pixels was not isolated; every Phase2 method shares the recomputed CNN baseline',
+  90 |            'historical_old3_G4_max_absolute_dice_difference':maxdiff,
+  91 |            'gated_thresholds_and_movement':gate,
+  92 |            'official_test_image_or_GT_bytes_opened_by_phase2':False,
+  93 |            'independent_test_performance_claim':False,
+  94 |            'temporary_cache_ready_to_delete':not errors}
+
+[E29] 阶段A recall@K直接取候选前K列
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/phase2_candidates.py；第31—72行
+SHA256：00b2f8257a95f32d9bfe8d15c80f415644ab5c80035909aee4f3e1a08ea54df3
+  31 | def candidate_field(score_map, geometry, nonzero_limit: int | None):
+  32 |     """Zero gets its own slot; peaks use independent nonzero quota; None=dense."""
+  33 |     old = generate_candidates(score_map, geometry)
+  34 |     samples, offsets = old.sample_scores, old.sample_offsets
+  35 |     sampled_valid = old.sample_valid
+  36 |     rows = len(geometry.points)
+  37 |     width = 1 + (2 * int(RADIUS) if nonzero_limit is None else nonzero_limit)
+  38 |     result_offsets = np.zeros((rows, width), np.float64)
+  39 |     result_scores = np.full((rows, width), -np.inf, np.float64)
+  40 |     result_valid = np.zeros((rows, width), bool)
+  41 |     result_scores[:, 0] = samples[:, int(RADIUS)]
+  42 |     result_valid[:, 0] = True
+  43 |     for row in range(rows):
+  44 |         profile = samples[row]
+  45 |         finite = np.flatnonzero(sampled_valid[row])
+  46 |         if nonzero_limit is None:
+  47 |             selected = [int(i) for i in finite if offsets[i] != 0]
+  48 |         else:
+  49 |             peaks = list(signal.find_peaks(profile, distance=2)[0])
+  50 |             if len(finite):
+  51 |                 first, last = int(finite[0]), int(finite[-1])
+  52 |                 if first < last and profile[first] > profile[first + 1]:
+  53 |                     peaks.append(first)
+  54 |                 if last > first and profile[last] > profile[last - 1]:
+  55 |                     peaks.append(last)
+  56 |             ordered = sorted(set(peaks), key=lambda i: (-profile[i], abs(offsets[i]), offsets[i]))
+  57 |             selected = []
+  58 |             for index in ordered:
+  59 |                 if offsets[index] == 0 or not np.isfinite(profile[index]):
+  60 |                     continue
+  61 |                 if any(abs(index - old_index) < 2 for old_index in selected):
+  62 |                     continue
+  63 |                 selected.append(index)
+  64 |                 if len(selected) >= nonzero_limit:
+  65 |                     break
+  66 |         for cursor, index in enumerate(selected, 1):
+  67 |             result_offsets[row, cursor] = offsets[index]
+  68 |             result_scores[row, cursor] = profile[index]
+  69 |             result_valid[row, cursor] = True
+  70 |     points = geometry.points[:, None, :] + result_offsets[..., None] * geometry.normals[:, None, :]
+  71 |     return CandidateField(points, result_offsets, result_scores, result_valid,
+  72 |                           old.sample_offsets, old.sample_scores, old.sample_valid)
+
+[E30] 阶段A recall@K统计
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/phase2_candidates.py；第94—122行
+SHA256：00b2f8257a95f32d9bfe8d15c80f415644ab5c80035909aee4f3e1a08ea54df3
+  94 |     configs = [('old_3', None), ('fixed_3', 3), ('fixed_4', 4),
+  95 |                ('fixed_8', 8), ('fixed_16', 16), ('dense', None)]
+  96 |     for name, nonzero in configs:
+  97 |         field = generate_candidates(q, geometry) if name == 'old_3' else candidate_field(q, geometry, nonzero)
+  98 |         distances = np.where(field.valid, np.abs(field.offsets - targets[:, None]), np.inf)
+  99 |         nearest = distances.min(axis=1)
+ 100 |         covered = valid & (nearest <= TOLERANCE)
+ 101 |         # The GT-assisted choice uses the same absolute boundary-distance unary
+ 102 |         # and historical closed-DP smoothness for every candidate configuration.
+ 103 |         gt_cost = np.where(field.valid, distance_to_boundary(field.points, gt), np.inf)
+ 104 |         selected, _ = closed_dp(gt_cost, field.offsets, DP_LAMBDA)
+ 105 |         polygon = field.points[np.arange(len(selected)), selected]
+ 106 |         oracle_mask = compose_prediction_context(rasterize(polygon, pred.shape), context)
+ 107 |         oracle = segmentation_metrics(oracle_mask, gt)
+ 108 |         row = {**base, 'config': name, 'effective_nodes': int(valid.sum()),
+ 109 |                'covered_nodes': int(covered.sum()), 'coverage': float(covered.sum()/valid.sum()) if valid.any() else None,
+ 110 |                'oracle_dice': oracle['dice'], 'oracle_bf1': oracle['bf1'],
+ 111 |                'oracle_minus_g0_dice': oracle['dice']-g0['dice'],
+ 112 |                'mean_nearest_gt_distance': float(nearest[valid].mean()) if valid.any() else None,
+ 113 |                'median_nearest_gt_distance': float(np.median(nearest[valid])) if valid.any() else None,
+ 114 |                'p90_nearest_gt_distance': float(np.percentile(nearest[valid],90)) if valid.any() else None,
+ 115 |                'p95_nearest_gt_distance': float(np.percentile(nearest[valid],95)) if valid.any() else None,
+ 116 |                'candidate_count_mean': float(field.valid.sum(axis=1).mean()), 'status': 'ok'}
+ 117 |         for k in (1,2,4,8,16):
+ 118 |             subset = field.valid[:, :min(k, field.valid.shape[1])]
+ 119 |             row[f'recall_at_{k}'] = float((valid & np.any((distances[:, :subset.shape[1]] <= TOLERANCE) & subset, axis=1)).sum()/valid.sum()) if valid.any() else None
+ 120 |         output.append(row)
+ 121 |         for i in np.flatnonzero(valid):
+ 122 |             node_records.append((name, float(nearest[i]), bool(covered[i])))
+
+[E31] 冻结CNN实现
+文件：experiments/LocalContour_ISIC2017_20261005/contour/models.py；第51—103行
+SHA256：ba0ee31d42284fbddb93a77342d3802b1a0fa7f2ccb578a345d168b86e77a8cf
+  51 |     # The unchanged author's model imports a package literally named "modules".
+  52 |     existing = sys.modules.get('modules')
+  53 |     if existing is not None and Path(getattr(existing, '__file__', '')).resolve().parent != (third_party_root / 'modules').resolve():
+  54 |         raise RuntimeError('A different global modules package conflicts with the pinned public CNN')
+  55 |     if str(third_party_root) not in sys.path:
+  56 |         sys.path.insert(0, str(third_party_root))
+  57 |     spec = importlib.util.spec_from_file_location('_contour_public_msgunet', third_party_root / 'model/MSGUNet.py')
+  58 |     module = importlib.util.module_from_spec(spec)
+  59 |     spec.loader.exec_module(module)
+  60 |     return module.MSGUNet
+  61 | 
+  62 | 
+  63 | class FrozenMSGUNet(nn.Module):
+  64 |     def __init__(self, third_party_root: str | Path | None = None, checkpoint_path: str | Path | None = None):
+  65 |         super().__init__()
+  66 |         self.third_party_root = Path(third_party_root or PROJECT_ROOT / 'third_party/msgu_net')
+  67 |         self.checkpoint_path = Path(checkpoint_path or self.third_party_root / 'weights/best_model_isic2017.pth')
+  68 |         if file_sha256(self.checkpoint_path) != PUBLIC_WEIGHT_SHA256:
+  69 |             raise ValueError('A different checkpoint cannot substitute for the verified public CNN')
+  70 |         public_class = _load_public_class(self.third_party_root)
+  71 |         # Avoid consuming the head's RNG sequence when constructing the CNN.
+  72 |         with torch.random.fork_rng(devices=[]):
+  73 |             self.cnn = public_class(in_channels=3, out_channels=1, base_channels=32)
+  74 |         state = torch.load(self.checkpoint_path, map_location='cpu', weights_only=True)
+  75 |         self.cnn.load_state_dict(state, strict=True)
+  76 |         for parameter in self.cnn.parameters():
+  77 |             parameter.requires_grad_(False)
+  78 |         self._feature = None
+  79 |         self._hook = self.cnn.dec1.register_forward_hook(self._capture_feature)
+  80 |         self.train(False)
+  81 | 
+  82 |     def _capture_feature(self, module, args, output):
+  83 |         self._feature = output.detach()
+  84 | 
+  85 |     def train(self, mode: bool = True):
+  86 |         # Every module and every BN buffer remains in evaluation mode.
+  87 |         super().train(False)
+  88 |         self.cnn.eval()
+  89 |         return self
+  90 | 
+  91 |     @torch.no_grad()
+  92 |     def forward(self, normalized_rgb: torch.Tensor) -> torch.Tensor:
+  93 |         return self.cnn(normalized_rgb)
+  94 | 
+  95 |     @torch.no_grad()
+  96 |     def forward_with_features(self, normalized_rgb: torch.Tensor) -> dict[str, torch.Tensor]:
+  97 |         self._feature = None
+  98 |         logits = self.cnn(normalized_rgb)
+  99 |         feature = self._feature
+ 100 |         self._feature = None
+ 101 |         if feature is None or feature.shape[1:] != (32, 256, 256):
+ 102 |             raise RuntimeError('Expected the verified dec1 32x256x256 CNN feature')
+ 103 |         return {'logits': logits.detach(), 'probability': torch.sigmoid(logits).detach(), 'mask': segmentation_mask(logits), 'features': feature}
+
+[E32] 模型输入与标签分离：缓存构建
+文件：experiments/LocalContour_ISIC2017_Phase2_20261005/build_node_context.py；第13—43行
+SHA256：18a708c2586d221a0e2ecb0e23ef12ed27e406109ff8d1722efa3825b0aca989
+  13 | def main():
+  14 |     done=json.loads((CACHE/'COMPLETE.json').read_text())
+  15 |     candidates=json.loads((CACHE/'candidates_R32/COMPLETE.json').read_text())
+  16 |     if done['status']!='PASS' or candidates['status']!='PASS':raise RuntimeError('Cache incomplete')
+  17 |     n=len(done['records'])
+  18 |     maps={name:np.load(CACHE/(name+'.npy'),mmap_mode='r') for name in ('features','rgb','probability','boundary')}
+  19 |     source=np.load(CACHE/'candidates_R32/source_points.npy',mmap_mode='r')
+  20 |     normals=np.load(CACHE/'candidates_R32/normals.npy',mmap_mode='r')
+  21 |     has=np.load(CACHE/'candidates_R32/has_contour.npy',mmap_mode='r')
+  22 |     result=np.lib.format.open_memmap(CACHE/'node_context.npy',mode='w+',dtype=np.float16,shape=(n,256,44))
+  23 |     phase=np.arange(256)*2*np.pi/256
+  24 |     phase_features=np.stack((np.sin(phase),np.cos(phase)),axis=-1)
+  25 |     for i in range(n):
+  26 |         if not has[i]:result[i]=0;continue
+  27 |         p=np.asarray(source[i],np.float32);normal=np.asarray(normals[i],np.float32)
+  28 |         field=np.concatenate([np.asarray(maps[name][i],np.float32) for name in ('features','rgb','probability','boundary')],axis=0)
+  29 |         sampled=np.stack([ndimage.map_coordinates(channel,[p[:,1],p[:,0]],order=1,mode='nearest',prefilter=False)
+  30 |                           for channel in field],axis=-1)
+  31 |         curvature=np.linalg.norm(np.roll(normal,-1,axis=0)-np.roll(normal,1,axis=0),axis=-1,keepdims=True)
+  32 |         additional=np.concatenate((p/255.0,normal,curvature,phase_features),axis=-1)
+  33 |         token=np.concatenate((sampled,additional),axis=-1)
+  34 |         if token.shape!=(256,44) or not np.isfinite(token).all():raise RuntimeError(f'Invalid node features {i}')
+  35 |         result[i]=token.astype(np.float16)
+  36 |         if (i+1)%100==0:print(f'{i+1}/{n}',flush=True)
+  37 |     result.flush()
+  38 |     output={'status':'PASS','shape':[n,256,44],'GT_used_in_features':False,
+  39 |             'source_maps':'frozen CNN decoder32, normalized RGB3, CNN probability1, frozen boundary probability1',
+  40 |             'geometry':'source point xy2, normal2, curvature1, circular index sin/cos2',
+  41 |             'test_images_opened':0,'temporary_cache':True}
+  42 |     (CACHE/'node_context_COMPLETE.json').write_text(json.dumps(output,indent=2))
+  43 |     print(json.dumps(output,indent=2),flush=True)
+
+[T01] 原始源码合成测试输出
+{
+  "environment": {
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "device": "cpu"
+  },
+  "scope": "Synthetic source-function tests and archived CSV checks; no training or original-image inference",
+  "findings": {
+    "unreachable_keep_targets_negative32": {
+      "bug_reproduced": true,
+      "expected_target_index": 32,
+      "actual_target_index": 0,
+      "actual_target_offset": -32,
+      "loss_at_uniform_logits": 4.174387454986572,
+      "gradient_index0": -0.9846153855323792,
+      "gradient_index32": 0.0153846126049757
+    },
+    "target_on_invalid_candidate": {
+      "bug_reproduced": true,
+      "current_loss": 10004.1591796875,
+      "corrected_keep_loss": 4.158883094787598,
+      "invalid_target_logit_gradient": 0.0,
+      "valid_logit_gradient_sum": 1.0
+    },
+    "gated_keep_targets_negative32": {
+      "bug_reproduced": true,
+      "zero_candidate_gt_distance": 0.0,
+      "expected_candidate_label": 32,
+      "actual_candidate_label": 0,
+      "gate_gradient": 0.5,
+      "note": "positive gate gradient trains KEEP, but candidate gradient trains index 0 (-32px)"
+    },
+    "new_local_network_has_global_dependence": {
+      "bug_reproduced": true,
+      "perturbation": "add 10 to all input-map channels inside remote top-left 32x32 region",
+      "candidate_region": "x=96..160, y=128, unchanged across both inputs",
+      "max_candidate_logit_change_with_GroupNorm": 0.2508416175842285,
+      "max_candidate_logit_change_without_GroupNorm": 0.0,
+      "zero_candidate_logit_change": 0.13432250916957855
+    },
+    "wrong_move_metric_is_any_movement_on_near_correct_nodes": {
+      "bug_reproduced": true,
+      "distance_before": 1.5,
+      "distance_after": 0.5,
+      "metrics": {
+        "repair_precision": 1.0,
+        "repair_recall": null,
+        "keep_accuracy": 0.0,
+        "wrong_move_rate": 1.0,
+        "moved_fraction": 1.0,
+        "mean_abs_offset": 1.0,
+        "p95_abs_offset": 1.0,
+        "selection_within_2px": 1.0
+      }
+    },
+    "DP_prepenalty_pruning_changes_unary_optimum": {
+      "demonstrated": true,
+      "top8_raw_score_offsets": [
+        -32,
+        -31,
+        -30,
+        -29,
+        -28,
+        -27,
+        -26,
+        -25
+      ],
+      "near_candidate_offset": 1,
+      "near_candidate_score": 1.9,
+      "far_candidate_scores": 2.0,
+      "alpha": 0.1,
+      "lambda": 0.0,
+      "pruned_selected_offset": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_selected_offset": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "classification": "Disclosed candidate-pruning approximation, not an error in the cyclic-DP recurrence"
+    },
+    "fresh_cache_metadata_mismatch": {
+      "fresh_feature_manifest_keys": [
+        "status",
+        "records",
+        "cnn_sha256",
+        "cnn_state_hash",
+        "test_image_or_gt_opened",
+        "purpose"
+      ],
+      "training_requires": "gt_shape_verified_for_all == 2150",
+      "missing_required_key": true,
+      "note": "Historical repair_gt_cache writes this key but intentionally rejects already-correct fresh GT."
+    }
+  },
+  "checks": {
+    "dense_order": {
+      "index0_offset": -32.0,
+      "index32_offset": 0.0,
+      "index64_offset": 32.0,
+      "index32_equals_source": true
+    },
+    "attention_masks": {
+      "local8": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 17,
+        "reachable_in_two_layers": 33,
+        "wraparound_0_to255_allowed": true
+      },
+      "medium32": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 65,
+        "reachable_in_two_layers": 129,
+        "wraparound_0_to255_allowed": true
+      },
+      "global": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 256,
+        "reachable_in_two_layers": 256,
+        "wraparound_0_to255_allowed": true
+      }
+    },
+    "total_additional_parameters": {
+      "local_small": 137217,
+      "local_large": 291841,
+      "refiner_only": 287425,
+      "local_small_plus_refiner": 424642
+    },
+    "zero_reconstruction": {
+      "changed_pixels": 166,
+      "original_area": 13317,
+      "rebuilt_area": 13289,
+      "note": "Expected approximation effect of polygon resampling, not a mislabeled offset."
+    },
+    "cyclic_dp_vs_bruteforce": {
+      "trials": 20,
+      "max_objective_error": 0.0,
+      "passed": true
+    },
+    "segmentation_metrics_sanity": {
+      "identical": {
+        "dice": 1.0,
+        "iou": 1.0,
+        "bf1": 1.0,
+        "boundary_precision": 1.0,
+        "boundary_recall": 1.0,
+        "pixel_precision": 1.0,
+        "pixel_recall": 1.0,
+        "specificity": 1.0,
+        "hd95": 0.0,
+        "assd": 0.0
+      },
+      "empty_vs_nonempty": {
+        "dice": 0.0,
+        "iou": 0.0,
+        "bf1": 0.0,
+        "boundary_precision": 0.0,
+        "boundary_recall": 0.0,
+        "pixel_precision": 1.0,
+        "pixel_recall": 0.0,
+        "specificity": 1.0,
+        "hd95": 362.03867196751236,
+        "assd": 362.03867196751236
+      },
+      "passed": true
+    },
+    "source_files": {
+      "parsed": 27,
+      "sha256": {
+        "analyse_candidates.py": "29bcdbe5b66e17531d55b5aa4ff34e7978d54e4e4dedae49ae6b2658976687ac",
+        "audit_phase2.py": "103c27738d6eb1084c362cea519d2f55fa0c4521fc38715dd37ab8229dff773f",
+        "build_candidate_cache.py": "71a7114f96e8fe23d5bd18b03d328fd4e817c20e12bb60293f15c793b509d801",
+        "build_feature_cache.py": "badd2d3966894a7c8aea32988a365893c070863d3147212f83da31d69d269525",
+        "build_node_context.py": "18a708c2586d221a0e2ecb0e23ef12ed27e406109ff8d1722efa3825b0aca989",
+        "calibrate_keep.py": "7c56e25801605b9b198c5a474ca8f305340f8b551a9ca002a24119562946cd4f",
+        "case_analysis.py": "87a6ab6bc42971f9081ee5cb4e35309f93a95eee5acaf184101e1d47cc3f1dab",
+        "cleanup_temporary.py": "4d2d21de27cc505b9354e42dc8ae4246ddf5340ea9462dc51d5dd0e64fb68725",
+        "compile_training_records.py": "438a73ff083ad114527bbf77dd65a91fc46715dc87e0fb882a235c1c014b1a71",
+        "evaluate_chosen_keep.py": "67708a4ada52f290c579144d7f4df9fdbf95c7efdb56eb18531ea7e31a35ffad",
+        "evaluate_gated.py": "2971aee84b3bf8311a9abeba0b61fc3e68225c8a625ee97267ae27529588dc67",
+        "evaluate_local.py": "305a606f2fd6e735c51fb65c26e39a56acd2a0a7ba94162ba6e0708cdf25fe0f",
+        "evaluation.py": "84f1fb6127deaee0c69bf3d880cd2aa49bec0833b9ec6164fa95897d01c10a12",
+        "local_model.py": "98760f75346a2efbd32a2ad66c2eeaa6827467f21fcf0a37517e9a517037d583",
+        "phase2_candidates.py": "00b2f8257a95f32d9bfe8d15c80f415644ab5c80035909aee4f3e1a08ea54df3",
+        "prepare_protocol.py": "bd3f076b6ef1ac4970c6099630148d87dc8f829352527f22faa3b2a8433f1a56",
+        "project_paths.py": "12c416944aeeb60606866f623c907e595f1b73e23a81b5c0a7c1fdb13c1a37ac",
+        "quick_attention_readout.py": "0e3def644ff3634d1bd0f65fbee26df8ea963531b0e3ad46135658c32af78e70",
+        "radius32_oracle.py": "c6f4299556e62bc402a5a7afcf9c66a996022aa27e2bbeb4adf0640195b867e7",
+        "radius_sensitivity.py": "15cea0684c1430d8bde459418c313e82adaf3e2c308619aa6670121ee5befd28",
+        "refiner_model.py": "a8f31cb817af6d0649b99aca296d12ce796dad07b3cffeebcfd7272399b81602",
+        "repair_gt_cache.py": "35a7ad8f3ec4e71174816b3687781aec2faa7435e6ef91b34fdcf6a0f147c81e",
+        "summarize_controls.py": "242e5172f37ed6025d0a49664603121b624c2759e71f694a0606d157bde8ce00",
+        "summarize_phase2.py": "0230edde70ca16069d26769a2d77b75ade6ab00186181e415a71c293344b915a",
+        "train_gated_refiner.py": "249f93e5a54dc03c0407053f862c783c409fd9176706f19b185aa3477c4a7f02",
+        "train_local.py": "a7c1df08cdebd913066e1449f4bb6f05aef54f28d0d378bc02f84c170a2172db",
+        "train_refiner.py": "acee13192ba69f46c41770667fb1a4e287647427bbce9a26b99f18d0a04fa1a1"
+      }
+    }
+  }
+}
+[T02] 存档CSV/JSON/日志一致性检查
+{
+  "scope": "Archive consistency checks, NOT replay of training or image inference",
+  "split_counts": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "split_hash_matches": {
+    "train": true,
+    "val": true,
+    "test": true
+  },
+  "split_overlap_counts": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "archived_feature_records": {
+    "count": 2150,
+    "splits": [
+      "train",
+      "val"
+    ],
+    "gt_shape_verified_for_all": 2150
+  },
+  "maximum_per_seed_summary_absolute_difference": 0.0,
+  "recomputed_main_table": {
+    "CNN": {
+      "dice": 0.8530507408537265,
+      "iou": 0.7801278692964201,
+      "bf1": 0.5137836627358982,
+      "hd95": 16.178161313798118,
+      "assd": 8.56432871315472,
+      "delta_dice_percentage_points_vs_CNN": 1.1102230246251565e-14
+    },
+    "local": {
+      "dice": 0.8531181638916194,
+      "iou": 0.7809781187239024,
+      "bf1": 0.5328366793231738,
+      "hd95": 16.254383451177066,
+      "assd": 8.517948513429824,
+      "delta_dice_percentage_points_vs_CNN": 0.0067423037893088456
+    },
+    "local_large": {
+      "dice": 0.8556354324573857,
+      "iou": 0.7842771150401607,
+      "bf1": 0.5448951101326194,
+      "hd95": 16.122995354047344,
+      "assd": 8.467269710175467,
+      "delta_dice_percentage_points_vs_CNN": 0.25846916036593726
+    },
+    "local8": {
+      "dice": 0.8539325251820183,
+      "iou": 0.7815354238937822,
+      "bf1": 0.5216216968943916,
+      "hd95": 16.169094207216908,
+      "assd": 8.53955209047291,
+      "delta_dice_percentage_points_vs_CNN": 0.08817843282920013
+    },
+    "medium32": {
+      "dice": 0.8536226910126501,
+      "iou": 0.7811773161324481,
+      "bf1": 0.5201173911146837,
+      "hd95": 16.175677814965663,
+      "assd": 8.552500325162498,
+      "delta_dice_percentage_points_vs_CNN": 0.05719501589237508
+    },
+    "global": {
+      "dice": 0.8536029529825074,
+      "iou": 0.781145299952538,
+      "bf1": 0.5196720189914382,
+      "hd95": 16.184433962202213,
+      "assd": 8.555549633189456,
+      "delta_dice_percentage_points_vs_CNN": 0.05522121287810933
+    }
+  },
+  "training_logs": {
+    "count": 21,
+    "hash_or_best_epoch_errors": [],
+    "checkpoints_not_present": "Actual checkpoint tensors cannot be hash-verified from this ZIP"
+  },
+  "zero_motion_vs_original_CNN_on_val100": {
+    "moved_nodes_fraction": 0.0,
+    "number_of_images_with_nonzero_Dice_difference": 29,
+    "mean_Dice_difference": 2.473529915398398e-05,
+    "maximum_absolute_Dice_difference": 0.0005018609734617208,
+    "CNN_mean_Dice": 0.8530507408537263,
+    "zero_motion_mean_Dice": 0.8530754761528805
+  },
+  "candidate_table_consistency_errors": [],
+  "errors": [],
+  "status": "PASS_ARCHIVE_ARITHMETIC_ONLY"
+}
+[T03] 最小补丁后的核心合成测试
+{
+  "local_keep_with_index0_valid": {
+    "target_index": 32,
+    "loss": 4.174387454986572
+  },
+  "local_keep_with_index0_invalid": {
+    "target_index": 32,
+    "loss": 4.158883094787598
+  },
+  "gate_keep": {
+    "candidate_target_index": 32,
+    "total_loss": 4.852030277252197
+  },
+  "scope": "Only core synthetic tests, not retraining or end-to-end re-evaluation. GroupNorm and DP design unchanged."
+}

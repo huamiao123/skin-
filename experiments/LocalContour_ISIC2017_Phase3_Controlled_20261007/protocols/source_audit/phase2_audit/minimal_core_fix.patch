@@ -1,0 +1,54 @@
+--- a/experiments/LocalContour_ISIC2017_Phase2_20261005/train_local.py
++++ b/experiments/LocalContour_ISIC2017_Phase2_20261005/train_local.py
+@@ -57,7 +57,7 @@
+     target=F.softmax((-distance/1.5).masked_fill(~valid,-1e4),dim=-1)
+     # No nearby candidate is evidence to preserve the CNN boundary here.
+     fixable=distance.masked_fill(~valid,1e4).min(dim=-1).values<=4.0
+-    keep=F.one_hot(torch.zeros_like(fixable,dtype=torch.long),masked.shape[-1]).float()
++    keep=F.one_hot(torch.full_like(fixable,RADIUS,dtype=torch.long),masked.shape[-1]).float()
+     target=torch.where(fixable[...,None],target,keep)
+     per_node=-(target*F.log_softmax(masked,dim=-1)).sum(dim=-1)
+     mask=has[:,None].expand_as(per_node)
+--- a/experiments/LocalContour_ISIC2017_Phase2_20261005/train_gated_refiner.py
++++ b/experiments/LocalContour_ISIC2017_Phase2_20261005/train_gated_refiner.py
+@@ -15,7 +15,7 @@
+ 
+ from refiner_model import GatedNodeRefiner,parameter_count
+ from train_refiner import NodeCases,RANGES
+-from train_local import CACHE,ROOT,to_device
++from train_local import CACHE,ROOT,RADIUS,to_device
+ 
+ SEEDS=(17,23,42)
+ 
+@@ -28,7 +28,7 @@
+     repair=(zero_distance>2)&(closest_nonzero+0.5<zero_distance)&(closest_nonzero<=4)
+     repair=repair&has[:,None]
+     soft=F.softmax((-distance/1.5).masked_fill(~other,-1e4),dim=-1)
+-    zero=F.one_hot(torch.zeros_like(repair,dtype=torch.long),65).float()
++    zero=F.one_hot(torch.full_like(repair,RADIUS,dtype=torch.long),scores.shape[-1]).float()
+     target=torch.where(repair[...,None],soft,zero)
+     masked=scores.float().masked_fill(~valid,-1e4)
+     candidate_loss=-(target*F.log_softmax(masked,dim=-1)).sum(dim=-1)
+--- a/experiments/LocalContour_ISIC2017_Phase2_20261005/build_feature_cache.py
++++ b/experiments/LocalContour_ISIC2017_Phase2_20261005/build_feature_cache.py
+@@ -63,7 +63,8 @@
+     if cnn.state_hash()!=before:raise RuntimeError('Frozen CNN state changed')
+     complete={'status':'PASS','records':[{'index':i,'split':s,'image_id':name} for i,(s,name) in enumerate(ids)],
+               'cnn_sha256':cnn.architecture_audit()['weight_sha256'],'cnn_state_hash':before,
+-              'test_image_or_gt_opened':False,'purpose':'temporary frozen features, remove after models trained'}
++              'test_image_or_gt_opened':False,'purpose':'temporary frozen features, remove after models trained',
++              'gt_shape_verified_for_all':n}
+     (CACHE/'COMPLETE.json').write_text(json.dumps(complete,indent=2))
+     print('COMPLETE',flush=True)
+ 
+--- a/experiments/LocalContour_ISIC2017_Phase2_20261005/audit_phase2.py
++++ b/experiments/LocalContour_ISIC2017_Phase2_20261005/audit_phase2.py
+@@ -41,7 +41,7 @@
+     source=np.load(CACHE/'candidates_R32/source_points.npy',mmap_mode='r')
+     valid=np.load(CACHE/'candidates_R32/valid.npy',mmap_mode='r')
+     distance=np.load(CACHE/'candidates_R32/gt_distance.npy',mmap_mode='r')
+-    if candidate['status']!='PASS' or candidate.get('gt_distance_label_source')!='repaired complete 2D official GT mask':
++    if candidate['status']!='PASS' or candidate.get('gt_distance_label_source') not in ('complete 2D official GT mask','repaired complete 2D official GT mask'):
+         errors.append('candidate label repair incomplete')
+     if not np.array_equal(points[:,:,32,:],source):errors.append('mandatory zero candidate differs from source')
+     if not np.all(valid[:,:,32]):

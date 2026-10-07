@@ -1,0 +1,23 @@
+{
+  "split": "official ISIC2017 Task1, fixed before phase-2 training",
+  "counts": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "sha256": {
+    "train.txt": "08db813d9845271635715430a30a3661b7dd6299f23161b41d9932b047f43c80",
+    "val.txt": "935f4b2717349177a2f70cce2946b37bd99b5eca4ed4047254e057249c6ebb09",
+    "test.txt": "4a1d4d2f422216d1c175ee1667b7ff182210f1080d216d10dafc80087859fbfc"
+  },
+  "test_image_bytes_opened": false,
+  "test_gt_bytes_opened": false,
+  "cnn": "public MSGU-Net checkpoint 3a7fb064383cc68faf33b76561379b69a84141cf51e94679dc31e3a3e66a515d",
+  "cnn_source_training": "author script combined official train+val and shuffled 70/30; therefore val was potentially used for checkpoint selection; official test is absent from source training script",
+  "cnn_model_frozen": true,
+  "development_2017_val_exposure": "all 150 previously used in prior contour probe; phase-2 candidate diagnostics are development only",
+  "phase2_repairer_training": "official train only; val for tuning; official test stays locked until method frozen",
+  "phase2_primary_independent_test_claim": "only official test, and only if no earlier test access is found",
+  "historical_test_scoring_known": false,
+  "weights_publication": "excluded from GitHub"
+}

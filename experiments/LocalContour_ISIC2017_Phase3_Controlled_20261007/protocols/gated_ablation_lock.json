@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-05T14:34:36.777410+00:00",
+  "reason": "direct candidate selection moved about 83 percent of nodes; taskbook section 10 asks explicit keep/repair decision",
+  "models": [
+    "local8_gate",
+    "global_gate"
+  ],
+  "seeds": [
+    17,
+    23,
+    42
+  ],
+  "same_architecture_except_attention_mask": true,
+  "node_context": "unchanged 44 features plus selected local-seed candidate scores65",
+  "candidate_interface": "unchanged R32 dense 65,256 nodes",
+  "training": {
+    "epochs": 8,
+    "batch_size": 16,
+    "optimizer": "AdamW lr3e-4 weight_decay1e-4",
+    "repair_label": "d0>2 and nearest nonzero is at least0.5 closer and within4 pixels of GT EDT boundary",
+    "loss": "candidate soft CE or zero one-hot + gate BCEWithLogits positive_weight2",
+    "checkpoint_selection": "lowest official val150 combined loss"
+  },
+  "inference": {
+    "gate_threshold_grid": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "threshold_selection": "cal50 mean Dice; tie smaller threshold",
+    "val100": "previously exposed development verification only",
+    "official_test_unopened": true
+  },
+  "capacity_control": "original local_large width96 is retained as strong no-attention comparator",
+  "interpretation": "A GT EDT proxy supervises repair labels. GT is unavailable at inference."
+}

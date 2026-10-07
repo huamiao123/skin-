@@ -1,0 +1,8 @@
+{
+  "H1": {"question": "Does cross-node communication add value beyond matched single-node rescoring?", "primary_evidence": "TG_A versus N0_A with same seed S64, inputs, training budget, and postprocessing"},
+  "H2": {"question": "Does learned communication add value beyond simple cyclic smoothing?", "primary_evidence": "TG_D versus cal50-selected BestSimple_D under exact common 65-state DP"},
+  "H3": {"question": "Is whole-contour reach necessary beyond a long local window?", "evidence": "TG versus T32 under matched initialization and training"},
+  "H4": {"question": "Is any TG advantage more than moving less?", "evidence": "cal50-matched movement budgets on dev100 and separated-peak correction diagnostics"},
+  "H5": {"question": "Was the old local baseline suppressed by its eight-epoch budget?", "evidence": "S64/S96 minimum 12 epochs, common stop200 rule, epoch8 snapshot, training-budget edge reporting"},
+  "interpretation_limit": "These development hypotheses cannot establish independent test validity or publication novelty by themselves"
+}

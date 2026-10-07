@@ -1,0 +1,205 @@
+{
+  "environment": {
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "device": "cpu"
+  },
+  "scope": "Synthetic source-function tests and archived CSV checks; no training or original-image inference",
+  "findings": {
+    "unreachable_keep_targets_negative32": {
+      "bug_reproduced": true,
+      "expected_target_index": 32,
+      "actual_target_index": 0,
+      "actual_target_offset": -32,
+      "loss_at_uniform_logits": 4.174387454986572,
+      "gradient_index0": -0.9846153855323792,
+      "gradient_index32": 0.0153846126049757
+    },
+    "target_on_invalid_candidate": {
+      "bug_reproduced": true,
+      "current_loss": 10004.1591796875,
+      "corrected_keep_loss": 4.158883094787598,
+      "invalid_target_logit_gradient": 0.0,
+      "valid_logit_gradient_sum": 1.0
+    },
+    "gated_keep_targets_negative32": {
+      "bug_reproduced": true,
+      "zero_candidate_gt_distance": 0.0,
+      "expected_candidate_label": 32,
+      "actual_candidate_label": 0,
+      "gate_gradient": 0.5,
+      "note": "positive gate gradient trains KEEP, but candidate gradient trains index 0 (-32px)"
+    },
+    "new_local_network_has_global_dependence": {
+      "bug_reproduced": true,
+      "perturbation": "add 10 to all input-map channels inside remote top-left 32x32 region",
+      "candidate_region": "x=96..160, y=128, unchanged across both inputs",
+      "max_candidate_logit_change_with_GroupNorm": 0.2508416175842285,
+      "max_candidate_logit_change_without_GroupNorm": 0.0,
+      "zero_candidate_logit_change": 0.13432250916957855
+    },
+    "wrong_move_metric_is_any_movement_on_near_correct_nodes": {
+      "bug_reproduced": true,
+      "distance_before": 1.5,
+      "distance_after": 0.5,
+      "metrics": {
+        "repair_precision": 1.0,
+        "repair_recall": null,
+        "keep_accuracy": 0.0,
+        "wrong_move_rate": 1.0,
+        "moved_fraction": 1.0,
+        "mean_abs_offset": 1.0,
+        "p95_abs_offset": 1.0,
+        "selection_within_2px": 1.0
+      }
+    },
+    "DP_prepenalty_pruning_changes_unary_optimum": {
+      "demonstrated": true,
+      "top8_raw_score_offsets": [
+        -32,
+        -31,
+        -30,
+        -29,
+        -28,
+        -27,
+        -26,
+        -25
+      ],
+      "near_candidate_offset": 1,
+      "near_candidate_score": 1.9,
+      "far_candidate_scores": 2.0,
+      "alpha": 0.1,
+      "lambda": 0.0,
+      "pruned_selected_offset": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_selected_offset": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "classification": "Disclosed candidate-pruning approximation, not an error in the cyclic-DP recurrence"
+    },
+    "fresh_cache_metadata_mismatch": {
+      "fresh_feature_manifest_keys": [
+        "status",
+        "records",
+        "cnn_sha256",
+        "cnn_state_hash",
+        "test_image_or_gt_opened",
+        "purpose"
+      ],
+      "training_requires": "gt_shape_verified_for_all == 2150",
+      "missing_required_key": true,
+      "note": "Historical repair_gt_cache writes this key but intentionally rejects already-correct fresh GT."
+    }
+  },
+  "checks": {
+    "dense_order": {
+      "index0_offset": -32.0,
+      "index32_offset": 0.0,
+      "index64_offset": 32.0,
+      "index32_equals_source": true
+    },
+    "attention_masks": {
+      "local8": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 17,
+        "reachable_in_two_layers": 33,
+        "wraparound_0_to255_allowed": true
+      },
+      "medium32": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 65,
+        "reachable_in_two_layers": 129,
+        "wraparound_0_to255_allowed": true
+      },
+      "global": {
+        "parameters": 287425,
+        "allowed_in_one_layer": 256,
+        "reachable_in_two_layers": 256,
+        "wraparound_0_to255_allowed": true
+      }
+    },
+    "total_additional_parameters": {
+      "local_small": 137217,
+      "local_large": 291841,
+      "refiner_only": 287425,
+      "local_small_plus_refiner": 424642
+    },
+    "zero_reconstruction": {
+      "changed_pixels": 166,
+      "original_area": 13317,
+      "rebuilt_area": 13289,
+      "note": "Expected approximation effect of polygon resampling, not a mislabeled offset."
+    },
+    "cyclic_dp_vs_bruteforce": {
+      "trials": 20,
+      "max_objective_error": 0.0,
+      "passed": true
+    },
+    "segmentation_metrics_sanity": {
+      "identical": {
+        "dice": 1.0,
+        "iou": 1.0,
+        "bf1": 1.0,
+        "boundary_precision": 1.0,
+        "boundary_recall": 1.0,
+        "pixel_precision": 1.0,
+        "pixel_recall": 1.0,
+        "specificity": 1.0,
+        "hd95": 0.0,
+        "assd": 0.0
+      },
+      "empty_vs_nonempty": {
+        "dice": 0.0,
+        "iou": 0.0,
+        "bf1": 0.0,
+        "boundary_precision": 0.0,
+        "boundary_recall": 0.0,
+        "pixel_precision": 1.0,
+        "pixel_recall": 0.0,
+        "specificity": 1.0,
+        "hd95": 362.03867196751236,
+        "assd": 362.03867196751236
+      },
+      "passed": true
+    },
+    "source_files": {
+      "parsed": 27,
+      "sha256": {
+        "analyse_candidates.py": "29bcdbe5b66e17531d55b5aa4ff34e7978d54e4e4dedae49ae6b2658976687ac",
+        "audit_phase2.py": "103c27738d6eb1084c362cea519d2f55fa0c4521fc38715dd37ab8229dff773f",
+        "build_candidate_cache.py": "71a7114f96e8fe23d5bd18b03d328fd4e817c20e12bb60293f15c793b509d801",
+        "build_feature_cache.py": "badd2d3966894a7c8aea32988a365893c070863d3147212f83da31d69d269525",
+        "build_node_context.py": "18a708c2586d221a0e2ecb0e23ef12ed27e406109ff8d1722efa3825b0aca989",
+        "calibrate_keep.py": "7c56e25801605b9b198c5a474ca8f305340f8b551a9ca002a24119562946cd4f",
+        "case_analysis.py": "87a6ab6bc42971f9081ee5cb4e35309f93a95eee5acaf184101e1d47cc3f1dab",
+        "cleanup_temporary.py": "4d2d21de27cc505b9354e42dc8ae4246ddf5340ea9462dc51d5dd0e64fb68725",
+        "compile_training_records.py": "438a73ff083ad114527bbf77dd65a91fc46715dc87e0fb882a235c1c014b1a71",
+        "evaluate_chosen_keep.py": "67708a4ada52f290c579144d7f4df9fdbf95c7efdb56eb18531ea7e31a35ffad",
+        "evaluate_gated.py": "2971aee84b3bf8311a9abeba0b61fc3e68225c8a625ee97267ae27529588dc67",
+        "evaluate_local.py": "305a606f2fd6e735c51fb65c26e39a56acd2a0a7ba94162ba6e0708cdf25fe0f",
+        "evaluation.py": "84f1fb6127deaee0c69bf3d880cd2aa49bec0833b9ec6164fa95897d01c10a12",
+        "local_model.py": "98760f75346a2efbd32a2ad66c2eeaa6827467f21fcf0a37517e9a517037d583",
+        "phase2_candidates.py": "00b2f8257a95f32d9bfe8d15c80f415644ab5c80035909aee4f3e1a08ea54df3",
+        "prepare_protocol.py": "bd3f076b6ef1ac4970c6099630148d87dc8f829352527f22faa3b2a8433f1a56",
+        "project_paths.py": "12c416944aeeb60606866f623c907e595f1b73e23a81b5c0a7c1fdb13c1a37ac",
+        "quick_attention_readout.py": "0e3def644ff3634d1bd0f65fbee26df8ea963531b0e3ad46135658c32af78e70",
+        "radius32_oracle.py": "c6f4299556e62bc402a5a7afcf9c66a996022aa27e2bbeb4adf0640195b867e7",
+        "radius_sensitivity.py": "15cea0684c1430d8bde459418c313e82adaf3e2c308619aa6670121ee5befd28",
+        "refiner_model.py": "a8f31cb817af6d0649b99aca296d12ce796dad07b3cffeebcfd7272399b81602",
+        "repair_gt_cache.py": "35a7ad8f3ec4e71174816b3687781aec2faa7435e6ef91b34fdcf6a0f147c81e",
+        "summarize_controls.py": "242e5172f37ed6025d0a49664603121b624c2759e71f694a0606d157bde8ce00",
+        "summarize_phase2.py": "0230edde70ca16069d26769a2d77b75ade6ab00186181e415a71c293344b915a",
+        "train_gated_refiner.py": "249f93e5a54dc03c0407053f862c783c409fd9176706f19b185aa3477c4a7f02",
+        "train_local.py": "a7c1df08cdebd913066e1449f4bb6f05aef54f28d0d378bc02f84c170a2172db",
+        "train_refiner.py": "acee13192ba69f46c41770667fb1a4e287647427bbce9a26b99f18d0a04fa1a1"
+      }
+    }
+  }
+}
