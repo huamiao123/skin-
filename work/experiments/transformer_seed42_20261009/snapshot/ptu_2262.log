@@ -39,3 +39,892 @@ Traceback (most recent call last):
     gotit = waiter.acquire(True, timeout)
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {'model': 'ptu_2262', 'seed': 42, 'epochs': 300, 'train_batch': 64, 'val_batch': 8, 'final_batch': 1, 'accumulation': 1, 'workers': 4, 'amp': False, 'lr': 0.0001, 'optimizer': 'AdamW', 'weight_decay': 0.01, 'eta_min': 1e-05, 'loss': 'final output BCE+Dice, equal weights, no deep supervision', 'selection': 'minimum validation loss (mean batch losses, legacy EGE convention)', 'split': 'legacy 1886/808 development split, no independent test', 'depths': [2, 2, 6, 2], 'params': 15764801, 'torch': '2.2.2+cu121', 'device': 'NVIDIA GeForce RTX 4090', 'augmentation': 'HFlip .5, VFlip .5, resampled rotation .5 [0,360]; nearest mask interpolation'} epoch 6
+train epoch=6 iter=0 loss=0.637961
+train epoch=6 iter=20 loss=0.548295
+EPOCH {"epoch": 6, "train_loss": 0.5728420555591583, "val": {"loss": 0.5874009628107052, "dice": 0.798452636315073, "iou": 0.6645203180891381, "sensitivity": 0.7762949964820451, "specificity": 0.945884030043608, "tp": 10006125, "fp": 2168075, "fn": 2883466, "tn": 37895422}, "best_epoch": 6, "best_loss": 0.5874009628107052, "seconds": 11.855690541000513}
+train epoch=7 iter=0 loss=0.503557
+train epoch=7 iter=20 loss=0.562159
+EPOCH {"epoch": 7, "train_loss": 0.5449390093485514, "val": {"loss": 0.7134459685571123, "dice": 0.7054139318442633, "iou": 0.5448953524188576, "sensitivity": 0.5720319597417792, "specificity": 0.9839774096604698, "tp": 7373258, "fp": 641921, "fn": 5516333, "tn": 39421576}, "best_epoch": 6, "best_loss": 0.5874009628107052, "seconds": 10.649185223000131}
+train epoch=8 iter=0 loss=0.757979
+train epoch=8 iter=20 loss=0.420531
+EPOCH {"epoch": 8, "train_loss": 0.5305823385715485, "val": {"loss": 0.8987009275962811, "dice": 0.6477265306822972, "iou": 0.4789907850585217, "sensitivity": 0.4948238466216655, "specificity": 0.9893652318967563, "tp": 6378077, "fp": 426066, "fn": 6511514, "tn": 39637431}, "best_epoch": 6, "best_loss": 0.5874009628107052, "seconds": 10.917457386999558}
+train epoch=9 iter=0 loss=0.755474
+train epoch=9 iter=20 loss=0.523767
+EPOCH {"epoch": 9, "train_loss": 0.5451107819875082, "val": {"loss": 0.5446880566011562, "dice": 0.8082665486264908, "iou": 0.6782276252252036, "sensitivity": 0.7910424000265021, "specificity": 0.9464843520774036, "tp": 10196213, "fp": 2144024, "fn": 2693378, "tn": 37919473}, "best_epoch": 9, "best_loss": 0.5446880566011562, "seconds": 10.73381393100044}
+train epoch=10 iter=0 loss=0.554680
+train epoch=10 iter=20 loss=0.450989
+EPOCH {"epoch": 10, "train_loss": 0.5186847746372223, "val": {"loss": 0.6286821905339118, "dice": 0.7641044188256954, "iou": 0.6182596899486201, "sensitivity": 0.6614503128920072, "specificity": 0.9775245281259397, "tp": 8525824, "fp": 900446, "fn": 4363767, "tn": 39163051}, "best_epoch": 9, "best_loss": 0.5446880566011562, "seconds": 10.712600256999394}
+train epoch=11 iter=0 loss=0.545638
+train epoch=11 iter=20 loss=0.505758
+EPOCH {"epoch": 11, "train_loss": 0.5260296354691187, "val": {"loss": 0.5721324059632745, "dice": 0.7922987548936, "iou": 0.6560387000543313, "sensitivity": 0.7239484945643349, "specificity": 0.9666962422176976, "tp": 9331400, "fp": 1334265, "fn": 3558191, "tn": 38729232}, "best_epoch": 9, "best_loss": 0.5446880566011562, "seconds": 10.679367453999475}
+train epoch=12 iter=0 loss=0.428719
+train epoch=12 iter=20 loss=0.474119
+EPOCH {"epoch": 12, "train_loss": 0.49851083060105644, "val": {"loss": 0.5746098796624949, "dice": 0.790227996387435, "iou": 0.6532040698806824, "sensitivity": 0.717585530836471, "specificity": 0.9682895629405491, "tp": 9249384, "fp": 1270431, "fn": 3640207, "tn": 38793066}, "best_epoch": 9, "best_loss": 0.5446880566011562, "seconds": 10.759299979999923}
+train epoch=13 iter=0 loss=0.424499
+train epoch=13 iter=20 loss=0.429478
+EPOCH {"epoch": 13, "train_loss": 0.47556049227714536, "val": {"loss": 0.5590805439370694, "dice": 0.7932815123144439, "iou": 0.6573873860472048, "sensitivity": 0.7336840245745578, "specificity": 0.9626599994503725, "tp": 9456887, "fp": 1495971, "fn": 3432704, "tn": 38567526}, "best_epoch": 9, "best_loss": 0.5446880566011562, "seconds": 10.77490028899956}
+train epoch=14 iter=0 loss=0.475080
+train epoch=14 iter=20 loss=0.470536
+EPOCH {"epoch": 14, "train_loss": 0.44345970849196115, "val": {"loss": 0.5410072793169777, "dice": 0.7936909208762903, "iou": 0.6579498858226661, "sensitivity": 0.7253905108393276, "specificity": 0.9670223994675252, "tp": 9349987, "fp": 1321198, "fn": 3539604, "tn": 38742299}, "best_epoch": 14, "best_loss": 0.5410072793169777, "seconds": 10.85580563700023}
+train epoch=15 iter=0 loss=0.479284
+train epoch=15 iter=20 loss=0.545373
+EPOCH {"epoch": 15, "train_loss": 0.4526980330546697, "val": {"loss": 0.538617877972008, "dice": 0.7850556609044151, "iou": 0.6461659482185147, "sensitivity": 0.6932998106766926, "specificity": 0.9765318289614109, "tp": 8936351, "fp": 940217, "fn": 3953240, "tn": 39123280}, "best_epoch": 15, "best_loss": 0.538617877972008, "seconds": 10.911497498999779}
+train epoch=16 iter=0 loss=0.398282
+train epoch=16 iter=20 loss=0.398978
+EPOCH {"epoch": 16, "train_loss": 0.4290598452091217, "val": {"loss": 0.5331047599268431, "dice": 0.8058460698087297, "iou": 0.6748259578894119, "sensitivity": 0.8635472607315469, "specificity": 0.9100255027662713, "tp": 11130771, "fp": 3604693, "fn": 1758820, "tn": 36458804}, "best_epoch": 16, "best_loss": 0.5331047599268431, "seconds": 11.186951924000823}
+train epoch=17 iter=0 loss=0.471932
+train epoch=17 iter=20 loss=0.285566
+EPOCH {"epoch": 17, "train_loss": 0.42396736045678457, "val": {"loss": 0.5248221694537909, "dice": 0.7992667718920669, "iou": 0.6656489161639335, "sensitivity": 0.7342996375912936, "specificity": 0.9668189474323722, "tp": 9464822, "fp": 1329349, "fn": 3424769, "tn": 38734148}, "best_epoch": 17, "best_loss": 0.5248221694537909, "seconds": 10.941516027000034}
+train epoch=18 iter=0 loss=0.487510
+train epoch=18 iter=20 loss=0.375937
+EPOCH {"epoch": 18, "train_loss": 0.41791556775569916, "val": {"loss": 0.5906141966876417, "dice": 0.7656243832825717, "iou": 0.620252355047805, "sensitivity": 0.6561406021339234, "specificity": 0.9813845256693393, "tp": 8457384, "fp": 745801, "fn": 4432207, "tn": 39317696}, "best_epoch": 17, "best_loss": 0.5248221694537909, "seconds": 10.705012897000415}
+train epoch=19 iter=0 loss=0.445132
+train epoch=19 iter=20 loss=0.400303
+EPOCH {"epoch": 19, "train_loss": 0.4220892379681269, "val": {"loss": 0.5087862857202492, "dice": 0.8007612543045977, "iou": 0.6677246354646925, "sensitivity": 0.7285986033226345, "specificity": 0.9706691605078808, "tp": 9391338, "fp": 1175096, "fn": 3498253, "tn": 38888401}, "best_epoch": 19, "best_loss": 0.5087862857202492, "seconds": 10.946710865000568}
+train epoch=20 iter=0 loss=0.409498
+train epoch=20 iter=20 loss=0.450214
+EPOCH {"epoch": 20, "train_loss": 0.4204769303401311, "val": {"loss": 0.48511428349088914, "dice": 0.8194200507656901, "iou": 0.6940826424310715, "sensitivity": 0.7843077410291762, "specificity": 0.9581778395430633, "tp": 10109406, "fp": 1675542, "fn": 2780185, "tn": 38387955}, "best_epoch": 20, "best_loss": 0.48511428349088914, "seconds": 11.062538877000407}
+train epoch=21 iter=0 loss=0.455555
+train epoch=21 iter=20 loss=0.502765
+EPOCH {"epoch": 21, "train_loss": 0.4184852033853531, "val": {"loss": 0.49784410132630036, "dice": 0.8121368099270908, "iou": 0.6836955776676968, "sensitivity": 0.7862071806622879, "specificity": 0.951760751189543, "tp": 10133889, "fp": 1932633, "fn": 2755702, "tn": 38130864}, "best_epoch": 20, "best_loss": 0.48511428349088914, "seconds": 10.708622039999682}
+train epoch=22 iter=0 loss=0.421835
+train epoch=22 iter=20 loss=0.327332
+EPOCH {"epoch": 22, "train_loss": 0.41048348546028135, "val": {"loss": 0.7748476470460987, "dice": 0.6668762143271902, "iou": 0.5002357781731624, "sensitivity": 0.5165173976427957, "specificity": 0.9895283978829906, "tp": 6657698, "fp": 419529, "fn": 6231893, "tn": 39643968}, "best_epoch": 20, "best_loss": 0.48511428349088914, "seconds": 10.666249408999647}
+train epoch=23 iter=0 loss=0.360638
+train epoch=23 iter=20 loss=0.426246
+EPOCH {"epoch": 23, "train_loss": 0.4051099340120951, "val": {"loss": 0.5944071167176312, "dice": 0.7769076222285087, "iou": 0.6351994635466998, "sensitivity": 0.6975683712539832, "specificity": 0.968410096602401, "tp": 8991371, "fp": 1265602, "fn": 3898220, "tn": 38797895}, "best_epoch": 20, "best_loss": 0.48511428349088914, "seconds": 10.620106991000284}
+train epoch=24 iter=0 loss=0.415978
+train epoch=24 iter=20 loss=0.409607
+EPOCH {"epoch": 24, "train_loss": 0.4080640415350596, "val": {"loss": 0.5111382249558326, "dice": 0.8036860669840273, "iou": 0.6718019783970006, "sensitivity": 0.7461109510767254, "specificity": 0.9644130915481491, "tp": 9617065, "fp": 1425736, "fn": 3272526, "tn": 38637761}, "best_epoch": 20, "best_loss": 0.48511428349088914, "seconds": 10.769714461999683}
+train epoch=25 iter=0 loss=0.398152
+train epoch=25 iter=20 loss=0.363156
+EPOCH {"epoch": 25, "train_loss": 0.4037513146797816, "val": {"loss": 0.4812156662787541, "dice": 0.8219036134676624, "iou": 0.6976539635155751, "sensitivity": 0.8402776317728002, "specificity": 0.9342278833023487, "tp": 10830835, "fp": 2635061, "fn": 2058756, "tn": 37428436}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 11.02585619599995}
+train epoch=26 iter=0 loss=0.392681
+train epoch=26 iter=20 loss=0.375442
+EPOCH {"epoch": 26, "train_loss": 0.39858016073703767, "val": {"loss": 0.5147647266045655, "dice": 0.7959919769816485, "iou": 0.6611184990164438, "sensitivity": 0.7121125100090453, "specificity": 0.9751840933905495, "tp": 9178839, "fp": 994212, "fn": 3710752, "tn": 39069285}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.627363357999457}
+train epoch=27 iter=0 loss=0.402373
+train epoch=27 iter=20 loss=0.462232
+EPOCH {"epoch": 27, "train_loss": 0.38863713045914966, "val": {"loss": 0.4905076969673138, "dice": 0.8178873307362472, "iou": 0.6918861052776353, "sensitivity": 0.8117944161300386, "specificity": 0.9442422861888466, "tp": 10463698, "fp": 2233849, "fn": 2425893, "tn": 37829648}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.857496260000516}
+train epoch=28 iter=0 loss=0.337420
+train epoch=28 iter=20 loss=0.384715
+EPOCH {"epoch": 28, "train_loss": 0.38234860201676685, "val": {"loss": 0.5345913247011675, "dice": 0.7987926793853195, "iou": 0.6649915178476953, "sensitivity": 0.721609165100739, "specificity": 0.9726078579710603, "tp": 9301247, "fp": 1097425, "fn": 3588344, "tn": 38966072}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.926219457000116}
+train epoch=29 iter=0 loss=0.441220
+train epoch=29 iter=20 loss=0.439141
+EPOCH {"epoch": 29, "train_loss": 0.3818287735184034, "val": {"loss": 0.5658921587585223, "dice": 0.7840596917443415, "iou": 0.6448175839068314, "sensitivity": 0.6916173678435569, "specificity": 0.9766494422591218, "tp": 8914665, "fp": 935505, "fn": 3974926, "tn": 39127992}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.924119160999908}
+train epoch=30 iter=0 loss=0.414187
+train epoch=30 iter=20 loss=0.416120
+EPOCH {"epoch": 30, "train_loss": 0.38933877646923065, "val": {"loss": 0.5250217488201538, "dice": 0.7900909059804949, "iou": 0.6530167513293835, "sensitivity": 0.7022845022778458, "specificity": 0.9757267070320896, "tp": 9052160, "fp": 972473, "fn": 3837431, "tn": 39091024}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.790758978000667}
+train epoch=31 iter=0 loss=0.360971
+train epoch=31 iter=20 loss=0.371873
+EPOCH {"epoch": 31, "train_loss": 0.3724089165528615, "val": {"loss": 0.5119438701041854, "dice": 0.8024254549369372, "iou": 0.6700421767019793, "sensitivity": 0.7870068181372085, "specificity": 0.9438379779977769, "tp": 10144196, "fp": 2250047, "fn": 2745395, "tn": 37813450}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.79007044700029}
+train epoch=32 iter=0 loss=0.335906
+train epoch=32 iter=20 loss=0.301193
+EPOCH {"epoch": 32, "train_loss": 0.3740804821252823, "val": {"loss": 0.4868277970812108, "dice": 0.8184740860014363, "iou": 0.6927263095157399, "sensitivity": 0.7642998912843705, "specificity": 0.9667584434778621, "tp": 9851513, "fp": 1331773, "fn": 3038078, "tn": 38731724}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.881498675999865}
+train epoch=33 iter=0 loss=0.318504
+train epoch=33 iter=20 loss=0.371650
+EPOCH {"epoch": 33, "train_loss": 0.366518830259641, "val": {"loss": 0.557668558736839, "dice": 0.7746773187816103, "iou": 0.6322231120469557, "sensitivity": 0.6773909272994, "specificity": 0.977014762340891, "tp": 8731292, "fp": 920869, "fn": 4158299, "tn": 39142628}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.968795472000238}
+train epoch=34 iter=0 loss=0.306486
+train epoch=34 iter=20 loss=0.353449
+EPOCH {"epoch": 34, "train_loss": 0.35891066690286, "val": {"loss": 0.4854051265681144, "dice": 0.8188774501032868, "iou": 0.6933043909583269, "sensitivity": 0.8013632084990129, "specificity": 0.9498551262262503, "tp": 10329244, "fp": 2008979, "fn": 2560347, "tn": 38054518}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.742894447000253}
+train epoch=35 iter=0 loss=0.341314
+train epoch=35 iter=20 loss=0.378642
+EPOCH {"epoch": 35, "train_loss": 0.36872483094533287, "val": {"loss": 0.502341108747048, "dice": 0.8067958739306975, "iou": 0.6761591384941608, "sensitivity": 0.7483038833427686, "specificity": 0.9656721928193138, "tp": 9645331, "fp": 1375292, "fn": 3244260, "tn": 38688205}, "best_epoch": 25, "best_loss": 0.4812156662787541, "seconds": 10.76333991499996}
+train epoch=36 iter=0 loss=0.390215
+train epoch=36 iter=20 loss=0.318990
+EPOCH {"epoch": 36, "train_loss": 0.3688192397356033, "val": {"loss": 0.4728188349468873, "dice": 0.8208409957914045, "iou": 0.6961240959545741, "sensitivity": 0.7774048067157445, "specificity": 0.9624343326794463, "tp": 10020430, "fp": 1505012, "fn": 2869161, "tn": 38558485}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.976412199999686}
+train epoch=37 iter=0 loss=0.408712
+train epoch=37 iter=20 loss=0.324400
+EPOCH {"epoch": 37, "train_loss": 0.3543958793083827, "val": {"loss": 0.558123316062559, "dice": 0.7948383250085492, "iou": 0.6595283782270853, "sensitivity": 0.7221056897771233, "specificity": 0.9694737331591399, "tp": 9307647, "fp": 1222989, "fn": 3581944, "tn": 38840508}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.78223166600037}
+train epoch=38 iter=0 loss=0.351122
+train epoch=38 iter=20 loss=0.258762
+EPOCH {"epoch": 38, "train_loss": 0.3610075324773788, "val": {"loss": 0.5482202585380856, "dice": 0.799931992046148, "iou": 0.666572216528006, "sensitivity": 0.7539445588304547, "specificity": 0.9578286937857672, "tp": 9718037, "fp": 1689530, "fn": 3171554, "tn": 38373967}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.644191860999854}
+train epoch=39 iter=0 loss=0.384964
+train epoch=39 iter=20 loss=0.342222
+EPOCH {"epoch": 39, "train_loss": 0.36440033515294395, "val": {"loss": 0.4807819350816236, "dice": 0.8170918628490916, "iou": 0.690748365986472, "sensitivity": 0.8229825911466081, "specificity": 0.9384094204257806, "tp": 10607909, "fp": 2467534, "fn": 2281682, "tn": 37595963}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.710776848999558}
+train epoch=40 iter=0 loss=0.370986
+train epoch=40 iter=20 loss=0.291814
+EPOCH {"epoch": 40, "train_loss": 0.3561750700076421, "val": {"loss": 0.5224107540775054, "dice": 0.7956569189294105, "iou": 0.6606563623233662, "sensitivity": 0.7440386587906475, "specificity": 0.9593941587275818, "tp": 9590354, "fp": 1626812, "fn": 3299237, "tn": 38436685}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.688356243000271}
+train epoch=41 iter=0 loss=0.364827
+train epoch=41 iter=20 loss=0.336351
+EPOCH {"epoch": 41, "train_loss": 0.3746955116589864, "val": {"loss": 0.5153509939070975, "dice": 0.7954500400152955, "iou": 0.6603711480970006, "sensitivity": 0.713818848092232, "specificity": 0.9739605856173763, "tp": 9200833, "fp": 1043230, "fn": 3688758, "tn": 39020267}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.743697081999926}
+train epoch=42 iter=0 loss=0.295988
+train epoch=42 iter=20 loss=0.379783
+EPOCH {"epoch": 42, "train_loss": 0.354960106809934, "val": {"loss": 0.4873348502534451, "dice": 0.8151208393135598, "iou": 0.687935838825398, "sensitivity": 0.8128146191760468, "specificity": 0.94159755949412, "tp": 10476848, "fp": 2339806, "fn": 2412743, "tn": 37723691}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 11.03553969800032}
+train epoch=43 iter=0 loss=0.386372
+train epoch=43 iter=20 loss=0.406004
+EPOCH {"epoch": 43, "train_loss": 0.35049018015464145, "val": {"loss": 0.5044950006326826, "dice": 0.8049998353958343, "iou": 0.6736399368300372, "sensitivity": 0.7256334200208525, "specificity": 0.9751680189075856, "tp": 9353118, "fp": 994856, "fn": 3536473, "tn": 39068641}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.736537605999729}
+train epoch=44 iter=0 loss=0.344449
+train epoch=44 iter=20 loss=0.361575
+EPOCH {"epoch": 44, "train_loss": 0.34196224212646487, "val": {"loss": 0.4877982633833838, "dice": 0.8226210196579895, "iou": 0.6986883861465156, "sensitivity": 0.8535477968230334, "specificity": 0.9286909976929872, "tp": 11001882, "fp": 2856888, "fn": 1887709, "tn": 37206609}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.741577306999716}
+train epoch=45 iter=0 loss=0.356737
+train epoch=45 iter=20 loss=0.315037
+EPOCH {"epoch": 45, "train_loss": 0.34325712025165556, "val": {"loss": 0.47407868238958983, "dice": 0.8221810484289486, "iou": 0.6980538454847156, "sensitivity": 0.7869418820193752, "specificity": 0.9590320086137264, "tp": 10143359, "fp": 1641321, "fn": 2746232, "tn": 38422176}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.585753840000507}
+train epoch=46 iter=0 loss=0.342246
+train epoch=46 iter=20 loss=0.390834
+EPOCH {"epoch": 46, "train_loss": 0.3552164206902186, "val": {"loss": 0.47474371073859756, "dice": 0.8147249702574513, "iou": 0.6873720864890034, "sensitivity": 0.7751292496402717, "specificity": 0.958924678991452, "tp": 9991099, "fp": 1645621, "fn": 2898492, "tn": 38417876}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.624066728000798}
+train epoch=47 iter=0 loss=0.289304
+train epoch=47 iter=20 loss=0.385480
+EPOCH {"epoch": 47, "train_loss": 0.34610403577486676, "val": {"loss": 0.5053363145873098, "dice": 0.8103138249159498, "iou": 0.6811156100546448, "sensitivity": 0.7471045435033586, "specificity": 0.9688297304651164, "tp": 9629872, "fp": 1248790, "fn": 3259719, "tn": 38814707}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.614425439000115}
+train epoch=48 iter=0 loss=0.344868
+train epoch=48 iter=20 loss=0.348821
+EPOCH {"epoch": 48, "train_loss": 0.3348610391219457, "val": {"loss": 0.5302065354172546, "dice": 0.809955916224679, "iou": 0.6806100103915124, "sensitivity": 0.7490949092178332, "specificity": 0.9676267151616844, "tp": 9655527, "fp": 1296987, "fn": 3234064, "tn": 38766510}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.76829374099998}
+train epoch=49 iter=0 loss=0.363695
+train epoch=49 iter=20 loss=0.288475
+EPOCH {"epoch": 49, "train_loss": 0.3329131523768107, "val": {"loss": 0.4954049292177257, "dice": 0.8223528635869723, "iou": 0.6983015864087785, "sensitivity": 0.7753552459500073, "specificity": 0.9644990051667233, "tp": 9994012, "fp": 1422294, "fn": 2895579, "tn": 38641203}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.7572651699993}
+train epoch=50 iter=0 loss=0.332673
+train epoch=50 iter=20 loss=0.491082
+EPOCH {"epoch": 50, "train_loss": 0.3348758260409037, "val": {"loss": 0.51965665728739, "dice": 0.8045139618534052, "iou": 0.6729597303375222, "sensitivity": 0.7300828241951199, "specificity": 0.9726905517009661, "tp": 9410469, "fp": 1094112, "fn": 3479122, "tn": 38969385}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.74832590799997}
+train epoch=51 iter=0 loss=0.275082
+train epoch=51 iter=20 loss=0.328007
+EPOCH {"epoch": 51, "train_loss": 0.33134658833344777, "val": {"loss": 0.4908296536691118, "dice": 0.8156036134637813, "iou": 0.6886238616862246, "sensitivity": 0.7529682671855142, "specificity": 0.9699379212952878, "tp": 9705453, "fp": 1204392, "fn": 3184138, "tn": 38859105}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.710514471999886}
+train epoch=52 iter=0 loss=0.298327
+train epoch=52 iter=20 loss=0.298512
+EPOCH {"epoch": 52, "train_loss": 0.32566013038158415, "val": {"loss": 0.48113176757746406, "dice": 0.8221336548077786, "iou": 0.6979855211616652, "sensitivity": 0.8152937513688371, "specificity": 0.9459280102283633, "tp": 10508803, "fp": 2166313, "fn": 2380788, "tn": 37897184}, "best_epoch": 36, "best_loss": 0.4728188349468873, "seconds": 10.677061377999962}
+train epoch=53 iter=0 loss=0.301694
+train epoch=53 iter=20 loss=0.238993
+EPOCH {"epoch": 53, "train_loss": 0.3348053534825643, "val": {"loss": 0.457233399300292, "dice": 0.8280865280074271, "iou": 0.7066106396058865, "sensitivity": 0.8536478775781171, "specificity": 0.93305202488939, "tp": 11003172, "fp": 2682170, "fn": 1886419, "tn": 37381327}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.921554225999898}
+train epoch=54 iter=0 loss=0.353782
+train epoch=54 iter=20 loss=0.281785
+EPOCH {"epoch": 54, "train_loss": 0.3424080421527227, "val": {"loss": 0.467359196431566, "dice": 0.8235417103256815, "iou": 0.7000177716063901, "sensitivity": 0.7859849082876252, "specificity": 0.9604893951219485, "tp": 10131024, "fp": 1582933, "fn": 2758567, "tn": 38480564}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.78747742700034}
+train epoch=55 iter=0 loss=0.323072
+train epoch=55 iter=20 loss=0.390901
+EPOCH {"epoch": 55, "train_loss": 0.330413943529129, "val": {"loss": 0.49520922179269317, "dice": 0.8065153035152739, "iou": 0.6757650985310271, "sensitivity": 0.750047460776684, "specificity": 0.9646344651341844, "tp": 9667805, "fp": 1416867, "fn": 3221786, "tn": 38646630}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.818871538000167}
+train epoch=56 iter=0 loss=0.348860
+train epoch=56 iter=20 loss=0.538639
+EPOCH {"epoch": 56, "train_loss": 0.33506208956241607, "val": {"loss": 0.4942145521687989, "dice": 0.8106586544090999, "iou": 0.6816030212136791, "sensitivity": 0.7345072469716067, "specificity": 0.9750282407948562, "tp": 9467498, "fp": 1000456, "fn": 3422093, "tn": 39063041}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.697231924999869}
+train epoch=57 iter=0 loss=0.410571
+train epoch=57 iter=20 loss=0.426328
+EPOCH {"epoch": 57, "train_loss": 0.3287198190887769, "val": {"loss": 0.4641002086129519, "dice": 0.8195074956696415, "iou": 0.6942081314904341, "sensitivity": 0.8164932463722084, "specificity": 0.9433272637183918, "tp": 10524264, "fp": 2270508, "fn": 2365327, "tn": 37792989}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.773642640000617}
+train epoch=58 iter=0 loss=0.373989
+train epoch=58 iter=20 loss=0.282690
+EPOCH {"epoch": 58, "train_loss": 0.31571427583694456, "val": {"loss": 0.4635999334035533, "dice": 0.8303818187710715, "iou": 0.7099597390821865, "sensitivity": 0.814006511145311, "specificity": 0.952849622687705, "tp": 10492211, "fp": 1889009, "fn": 2397380, "tn": 38174488}, "best_epoch": 53, "best_loss": 0.457233399300292, "seconds": 10.750502302000314}
+train epoch=59 iter=0 loss=0.278253
+train epoch=59 iter=20 loss=0.312039
+EPOCH {"epoch": 59, "train_loss": 0.31927845378716785, "val": {"loss": 0.4408134620378513, "dice": 0.8343882881200757, "iou": 0.7158372549074304, "sensitivity": 0.7963583949250213, "specificity": 0.9638102235558719, "tp": 10264734, "fp": 1449889, "fn": 2624857, "tn": 38613608}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.773712915999567}
+train epoch=60 iter=0 loss=0.270441
+train epoch=60 iter=20 loss=0.428464
+EPOCH {"epoch": 60, "train_loss": 0.32072565803925196, "val": {"loss": 0.47716302933669325, "dice": 0.8258998812802547, "iou": 0.7034322440754261, "sensitivity": 0.7681508280596335, "specificity": 0.9703996383540857, "tp": 9901150, "fp": 1185894, "fn": 2988441, "tn": 38877603}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.572441733000232}
+train epoch=61 iter=0 loss=0.373062
+train epoch=61 iter=20 loss=0.286589
+EPOCH {"epoch": 61, "train_loss": 0.3158780058224996, "val": {"loss": 0.4882454740824086, "dice": 0.8175659302127251, "iou": 0.6914262292525187, "sensitivity": 0.7601087575238035, "specificity": 0.9680411822263044, "tp": 9797491, "fp": 1280382, "fn": 3092100, "tn": 38783115}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.872283609999613}
+train epoch=62 iter=0 loss=0.391409
+train epoch=62 iter=20 loss=0.233852
+EPOCH {"epoch": 62, "train_loss": 0.31614079028368, "val": {"loss": 0.5133554441208886, "dice": 0.8020326220409455, "iou": 0.6694945428375081, "sensitivity": 0.7199099645597754, "specificity": 0.9757726091658948, "tp": 9279345, "fp": 970634, "fn": 3610246, "tn": 39092863}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.843975922999562}
+train epoch=63 iter=0 loss=0.429654
+train epoch=63 iter=20 loss=0.246665
+EPOCH {"epoch": 63, "train_loss": 0.3152030770977338, "val": {"loss": 0.4798767169808397, "dice": 0.8203586654174346, "iou": 0.6954305867111137, "sensitivity": 0.7547678588094844, "specificity": 0.9725486269957913, "tp": 9728649, "fp": 1099798, "fn": 3160942, "tn": 38963699}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.772877856999912}
+train epoch=64 iter=0 loss=0.253082
+train epoch=64 iter=20 loss=0.293893
+EPOCH {"epoch": 64, "train_loss": 0.30987060964107516, "val": {"loss": 0.48857884094266607, "dice": 0.8192188751395801, "iou": 0.6937940130406641, "sensitivity": 0.8079749776389337, "specificity": 0.9470515267301803, "tp": 10414467, "fp": 2121301, "fn": 2475124, "tn": 37942196}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.61308146400006}
+train epoch=65 iter=0 loss=0.235155
+train epoch=65 iter=20 loss=0.386334
+EPOCH {"epoch": 65, "train_loss": 0.3118230849504471, "val": {"loss": 0.47696928296348834, "dice": 0.8293180076447343, "iou": 0.7084058805553591, "sensitivity": 0.7898920144169043, "specificity": 0.9629923219133867, "tp": 10181385, "fp": 1482657, "fn": 2708206, "tn": 38580840}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.683881177999865}
+train epoch=66 iter=0 loss=0.314915
+train epoch=66 iter=20 loss=0.290383
+EPOCH {"epoch": 66, "train_loss": 0.3051828091343244, "val": {"loss": 0.49583851509165056, "dice": 0.8181648927838769, "iou": 0.6922834562861387, "sensitivity": 0.7497135479318157, "specificity": 0.9733101681063937, "tp": 9663501, "fp": 1069288, "fn": 3226090, "tn": 38994209}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.784688880999965}
+train epoch=67 iter=0 loss=0.367529
+train epoch=67 iter=20 loss=0.258073
+EPOCH {"epoch": 67, "train_loss": 0.30541747907797495, "val": {"loss": 0.4700133624938455, "dice": 0.8217341247253169, "iou": 0.6974097629142916, "sensitivity": 0.8047647128601676, "specificity": 0.9504750171958279, "tp": 10373088, "fp": 1984144, "fn": 2516503, "tn": 38079353}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.748337466000521}
+train epoch=68 iter=0 loss=0.279082
+train epoch=68 iter=20 loss=0.316145
+EPOCH {"epoch": 68, "train_loss": 0.3017763212323189, "val": {"loss": 0.4640517845602319, "dice": 0.8285621003159398, "iou": 0.7073034776657005, "sensitivity": 0.8281075016267002, "specificity": 0.9450502286407999, "tp": 10673967, "fp": 2201480, "fn": 2215624, "tn": 37862017}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.691568674999871}
+train epoch=69 iter=0 loss=0.266367
+train epoch=69 iter=20 loss=0.316365
+EPOCH {"epoch": 69, "train_loss": 0.3003068432211876, "val": {"loss": 0.4550617728197929, "dice": 0.8225308056576021, "iou": 0.6985582379647524, "sensitivity": 0.7662565864192278, "specificity": 0.9688207447292981, "tp": 9876734, "fp": 1249150, "fn": 3012857, "tn": 38814347}, "best_epoch": 59, "best_loss": 0.4408134620378513, "seconds": 10.713973822999833}
+train epoch=70 iter=0 loss=0.240976
+train epoch=70 iter=20 loss=0.368700
+EPOCH {"epoch": 70, "train_loss": 0.30812786320845287, "val": {"loss": 0.43895303539120323, "dice": 0.8345880757540445, "iou": 0.7161314024601553, "sensitivity": 0.8080191993679241, "specificity": 0.9587185062751761, "tp": 10415037, "fp": 1653881, "fn": 2474554, "tn": 38409616}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.951168249999682}
+train epoch=71 iter=0 loss=0.359340
+train epoch=71 iter=20 loss=0.253669
+EPOCH {"epoch": 71, "train_loss": 0.29595693697532016, "val": {"loss": 0.46230335135271056, "dice": 0.8245510953821489, "iou": 0.7014776160348866, "sensitivity": 0.7693030756367677, "specificity": 0.968892206289431, "tp": 9916002, "fp": 1246287, "fn": 2973589, "tn": 38817210}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.812553081999795}
+train epoch=72 iter=0 loss=0.289625
+train epoch=72 iter=20 loss=0.288874
+EPOCH {"epoch": 72, "train_loss": 0.30203611304362615, "val": {"loss": 0.4804076739762089, "dice": 0.8190645401769632, "iou": 0.6935726532419477, "sensitivity": 0.8392655748347639, "specificity": 0.9324171077726939, "tp": 10817790, "fp": 2707607, "fn": 2071801, "tn": 37355890}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.715951539999878}
+train epoch=73 iter=0 loss=0.283478
+train epoch=73 iter=20 loss=0.283307
+EPOCH {"epoch": 73, "train_loss": 0.2981936052441597, "val": {"loss": 0.47788185028746577, "dice": 0.8223683848343215, "iou": 0.6983239701140532, "sensitivity": 0.7880693033626901, "specificity": 0.9586528854433252, "tp": 10157891, "fp": 1656510, "fn": 2731700, "tn": 38406987}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.7689880909993}
+train epoch=74 iter=0 loss=0.234929
+train epoch=74 iter=20 loss=0.244723
+EPOCH {"epoch": 74, "train_loss": 0.2933229312300682, "val": {"loss": 0.4604602866243608, "dice": 0.8311596448958163, "iou": 0.7110976629667544, "sensitivity": 0.8245629360931623, "specificity": 0.9486637674190049, "tp": 10628279, "fp": 2056709, "fn": 2261312, "tn": 38006788}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.780090340000243}
+train epoch=75 iter=0 loss=0.404137
+train epoch=75 iter=20 loss=0.273552
+EPOCH {"epoch": 75, "train_loss": 0.2877216309309006, "val": {"loss": 0.4724303011847015, "dice": 0.8187599058557292, "iou": 0.6931358916062411, "sensitivity": 0.821417529850249, "specificity": 0.9404562212829299, "tp": 10587736, "fp": 2385532, "fn": 2301855, "tn": 37677965}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.660448620999887}
+train epoch=76 iter=0 loss=0.337291
+train epoch=76 iter=20 loss=0.282265
+EPOCH {"epoch": 76, "train_loss": 0.29022744099299114, "val": {"loss": 0.5283709552028392, "dice": 0.7997227953998904, "iou": 0.6662817491950371, "sensitivity": 0.7260737753432207, "specificity": 0.9711280820044241, "tp": 9358794, "fp": 1156710, "fn": 3530797, "tn": 38906787}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.85167819399976}
+train epoch=77 iter=0 loss=0.344073
+train epoch=77 iter=20 loss=0.315815
+EPOCH {"epoch": 77, "train_loss": 0.29016096343596776, "val": {"loss": 0.5081335589437201, "dice": 0.8053684185989148, "iou": 0.6741563098929332, "sensitivity": 0.7465048347926633, "specificity": 0.9654729590879199, "tp": 9622142, "fp": 1383274, "fn": 3267449, "tn": 38680223}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.718740496999999}
+train epoch=78 iter=0 loss=0.284960
+train epoch=78 iter=20 loss=0.278479
+EPOCH {"epoch": 78, "train_loss": 0.2851039295395215, "val": {"loss": 0.4560579209044428, "dice": 0.8261042775326626, "iou": 0.7037288421124205, "sensitivity": 0.8607737825040376, "specificity": 0.928202573030507, "tp": 11095022, "fp": 2876456, "fn": 1794569, "tn": 37187041}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.622840890000589}
+train epoch=79 iter=0 loss=0.315365
+train epoch=79 iter=20 loss=0.284038
+EPOCH {"epoch": 79, "train_loss": 0.2956230595707893, "val": {"loss": 0.49111207611490004, "dice": 0.8171163371154269, "iou": 0.6907833481466907, "sensitivity": 0.7605300276789233, "specificity": 0.96751581620546, "tp": 9802921, "fp": 1301430, "fn": 3086670, "tn": 38762067}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.652963390999503}
+train epoch=80 iter=0 loss=0.266897
+train epoch=80 iter=20 loss=0.307145
+EPOCH {"epoch": 80, "train_loss": 0.2877030402421951, "val": {"loss": 0.46230442718704146, "dice": 0.8304306279275906, "iou": 0.7100311001271481, "sensitivity": 0.8605011594239104, "specificity": 0.9318190571332303, "tp": 11091508, "fp": 2731567, "fn": 1798083, "tn": 37331930}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.837447360000624}
+train epoch=81 iter=0 loss=0.329016
+train epoch=81 iter=20 loss=0.232165
+EPOCH {"epoch": 81, "train_loss": 0.2778938765327136, "val": {"loss": 0.47339983446763295, "dice": 0.820477167524125, "iou": 0.6956009200787612, "sensitivity": 0.7952279478844596, "specificity": 0.9539205476746077, "tp": 10250163, "fp": 1846104, "fn": 2639428, "tn": 38217393}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.76609081100014}
+train epoch=82 iter=0 loss=0.292634
+train epoch=82 iter=20 loss=0.223837
+EPOCH {"epoch": 82, "train_loss": 0.2786893680691719, "val": {"loss": 0.44737814425831973, "dice": 0.8241012129933235, "iou": 0.7008266545551292, "sensitivity": 0.7745424195383701, "specificity": 0.966159244661044, "tp": 9983535, "fp": 1355779, "fn": 2906056, "tn": 38707718}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.823889794000024}
+train epoch=83 iter=0 loss=0.306157
+train epoch=83 iter=20 loss=0.295850
+EPOCH {"epoch": 83, "train_loss": 0.2881439790129662, "val": {"loss": 0.4517081483165816, "dice": 0.8265834130472066, "iou": 0.7044245174629188, "sensitivity": 0.8332705824412893, "specificity": 0.9411526407692269, "tp": 10740517, "fp": 2357631, "fn": 2149074, "tn": 37705866}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.835169781000332}
+train epoch=84 iter=0 loss=0.287088
+train epoch=84 iter=20 loss=0.401684
+EPOCH {"epoch": 84, "train_loss": 0.2916415343681971, "val": {"loss": 0.443621894658202, "dice": 0.8294651409601891, "iou": 0.708620622918141, "sensitivity": 0.7996283202469341, "specificity": 0.9586805415413437, "tp": 10306882, "fp": 1655402, "fn": 2582709, "tn": 38408095}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.963358041999527}
+train epoch=85 iter=0 loss=0.216245
+train epoch=85 iter=20 loss=0.312240
+EPOCH {"epoch": 85, "train_loss": 0.27874427338441216, "val": {"loss": 0.45203919723482416, "dice": 0.8315779326837065, "iou": 0.7117102252217197, "sensitivity": 0.7967801305720251, "specificity": 0.9615440958636237, "tp": 10270170, "fp": 1540678, "fn": 2619421, "tn": 38522819}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.8170147740002}
+train epoch=86 iter=0 loss=0.374947
+train epoch=86 iter=20 loss=0.204875
+EPOCH {"epoch": 86, "train_loss": 0.2796360939741135, "val": {"loss": 0.4611549463012431, "dice": 0.8238980459112429, "iou": 0.7005328433023468, "sensitivity": 0.8310762536995937, "specificity": 0.9400461971654646, "tp": 10712233, "fp": 2401959, "fn": 2177358, "tn": 37661538}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.804977106000479}
+train epoch=87 iter=0 loss=0.239682
+train epoch=87 iter=20 loss=0.352113
+EPOCH {"epoch": 87, "train_loss": 0.2802235946059227, "val": {"loss": 0.5246247090030425, "dice": 0.8058533479100751, "iou": 0.6748361656415636, "sensitivity": 0.7253562971858455, "specificity": 0.9759144589899379, "tp": 9349546, "fp": 964951, "fn": 3540045, "tn": 39098546}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.855687090999709}
+train epoch=88 iter=0 loss=0.266953
+train epoch=88 iter=20 loss=0.315036
+EPOCH {"epoch": 88, "train_loss": 0.2768432706594467, "val": {"loss": 0.4875583750481653, "dice": 0.8151089300832562, "iou": 0.6879188735387548, "sensitivity": 0.8068454615821402, "specificity": 0.944379867788376, "tp": 10399908, "fp": 2228337, "fn": 2489683, "tn": 37835160}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.64936383300028}
+train epoch=89 iter=0 loss=0.255575
+train epoch=89 iter=20 loss=0.329531
+EPOCH {"epoch": 89, "train_loss": 0.2785048286120097, "val": {"loss": 0.466814734705604, "dice": 0.8261385908017121, "iou": 0.7037786439933655, "sensitivity": 0.8332879608049627, "specificity": 0.9407954328100715, "tp": 10740741, "fp": 2371942, "fn": 2148850, "tn": 37691555}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.805971813000724}
+train epoch=90 iter=0 loss=0.278360
+train epoch=90 iter=20 loss=0.236132
+EPOCH {"epoch": 90, "train_loss": 0.2712821816404661, "val": {"loss": 0.470900426111599, "dice": 0.824084101415081, "iou": 0.7008019046317618, "sensitivity": 0.7909751364492481, "specificity": 0.9586026402038743, "tp": 10195346, "fp": 1658523, "fn": 2694245, "tn": 38404974}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.724110866000046}
+train epoch=91 iter=0 loss=0.261518
+train epoch=91 iter=20 loss=0.332173
+EPOCH {"epoch": 91, "train_loss": 0.2663066729903221, "val": {"loss": 0.45391915074669487, "dice": 0.8295336052020286, "iou": 0.7087205654846761, "sensitivity": 0.8257674739252782, "specificity": 0.9468656717610048, "tp": 10643805, "fp": 2128747, "fn": 2245786, "tn": 37934750}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.865199515000313}
+train epoch=92 iter=0 loss=0.284207
+train epoch=92 iter=20 loss=0.321590
+EPOCH {"epoch": 92, "train_loss": 0.2750603313247363, "val": {"loss": 0.602669351171739, "dice": 0.7871786505533754, "iou": 0.6490474882492318, "sensitivity": 0.6865425753229873, "specificity": 0.9814139040333898, "tp": 8849253, "fp": 744624, "fn": 4040338, "tn": 39318873}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.887443910000002}
+train epoch=93 iter=0 loss=0.350769
+train epoch=93 iter=20 loss=0.278727
+EPOCH {"epoch": 93, "train_loss": 0.2808909018834432, "val": {"loss": 0.4589135747144718, "dice": 0.828670223289659, "iou": 0.707461075237893, "sensitivity": 0.792389999031001, "specificity": 0.961377235741553, "tp": 10213583, "fp": 1547363, "fn": 2676008, "tn": 38516134}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.796595519999755}
+train epoch=94 iter=0 loss=0.282020
+train epoch=94 iter=20 loss=0.251662
+EPOCH {"epoch": 94, "train_loss": 0.27410916090011594, "val": {"loss": 0.4654044926461607, "dice": 0.8253711705765551, "iou": 0.7026655143324555, "sensitivity": 0.7756556433792197, "specificity": 0.9665800516614913, "tp": 9997884, "fp": 1338920, "fn": 2891707, "tn": 38724577}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.791995656999461}
+train epoch=95 iter=0 loss=0.294243
+train epoch=95 iter=20 loss=0.269146
+EPOCH {"epoch": 95, "train_loss": 0.271655942996343, "val": {"loss": 0.5422008643941124, "dice": 0.8073047750096541, "iou": 0.676874324717942, "sensitivity": 0.7319622476772149, "specificity": 0.9738158403895696, "tp": 9434694, "fp": 1049029, "fn": 3454897, "tn": 39014468}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.921638476000226}
+train epoch=96 iter=0 loss=0.219175
+train epoch=96 iter=20 loss=0.272721
+EPOCH {"epoch": 96, "train_loss": 0.2721883590022723, "val": {"loss": 0.44403758468014176, "dice": 0.8295918699800232, "iou": 0.7088056283117784, "sensitivity": 0.814877989534346, "specificity": 0.951853429070358, "tp": 10503444, "fp": 1928920, "fn": 2386147, "tn": 38134577}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.808241359000021}
+train epoch=97 iter=0 loss=0.246841
+train epoch=97 iter=20 loss=0.269776
+EPOCH {"epoch": 97, "train_loss": 0.26947466333707176, "val": {"loss": 0.46217198551881433, "dice": 0.8282143769072289, "iou": 0.7067968411502337, "sensitivity": 0.8213618259881171, "specificity": 0.9478508079312198, "tp": 10587018, "fp": 2089279, "fn": 2302573, "tn": 37974218}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 10.947898402000646}
+train epoch=98 iter=0 loss=0.282315
+train epoch=98 iter=20 loss=0.262104
+EPOCH {"epoch": 98, "train_loss": 0.2668867096304893, "val": {"loss": 0.4559535114186825, "dice": 0.8332726515311428, "iou": 0.7141965538261187, "sensitivity": 0.826439954533856, "specificity": 0.9494369400654167, "tp": 10652473, "fp": 2025733, "fn": 2237118, "tn": 38037764}, "best_epoch": 70, "best_loss": 0.43895303539120323, "seconds": 11.049801936000222}
+train epoch=99 iter=0 loss=0.244342
+train epoch=99 iter=20 loss=0.227961
+EPOCH {"epoch": 99, "train_loss": 0.26593614916006725, "val": {"loss": 0.42114686405304635, "dice": 0.8393357963267402, "iou": 0.7231512729266721, "sensitivity": 0.851453936746325, "specificity": 0.9429183128971492, "tp": 10974893, "fp": 2286892, "fn": 1914698, "tn": 37776605}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.978492350000124}
+train epoch=100 iter=0 loss=0.266806
+train epoch=100 iter=20 loss=0.290127
+EPOCH {"epoch": 100, "train_loss": 0.27084023505449295, "val": {"loss": 0.47846068604157704, "dice": 0.8223905102725352, "iou": 0.6983558789619313, "sensitivity": 0.7642880212413257, "specificity": 0.9696253924114513, "tp": 9851360, "fp": 1216913, "fn": 3038231, "tn": 38846584}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.778742847000103}
+train epoch=101 iter=0 loss=0.238897
+train epoch=101 iter=20 loss=0.252737
+EPOCH {"epoch": 101, "train_loss": 0.2671866009632746, "val": {"loss": 0.4447238333154433, "dice": 0.8351022043707597, "iou": 0.7168888184904362, "sensitivity": 0.8528930049060517, "specificity": 0.9389633411182254, "tp": 10993442, "fp": 2445342, "fn": 1896149, "tn": 37618155}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.850503179000043}
+train epoch=102 iter=0 loss=0.309286
+train epoch=102 iter=20 loss=0.325477
+EPOCH {"epoch": 102, "train_loss": 0.26221460352341336, "val": {"loss": 0.47987201145969993, "dice": 0.8320638484267684, "iou": 0.7124223762625748, "sensitivity": 0.7974660328632616, "specificity": 0.961594391023829, "tp": 10279011, "fp": 1538663, "fn": 2610580, "tn": 38524834}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.792816742000468}
+train epoch=103 iter=0 loss=0.352799
+train epoch=103 iter=20 loss=0.200377
+EPOCH {"epoch": 103, "train_loss": 0.2676461880405744, "val": {"loss": 0.478945319162737, "dice": 0.8271880723394672, "iou": 0.7053032569250052, "sensitivity": 0.8019205574482542, "specificity": 0.9559273370469882, "tp": 10336428, "fp": 1765705, "fn": 2553163, "tn": 38297792}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.643663322000066}
+train epoch=104 iter=0 loss=0.200422
+train epoch=104 iter=20 loss=0.333743
+EPOCH {"epoch": 104, "train_loss": 0.2624944806098938, "val": {"loss": 0.45772356901428485, "dice": 0.828450747143775, "iou": 0.7071412022362872, "sensitivity": 0.8147983904221632, "specificity": 0.9510190535788725, "tp": 10502418, "fp": 1962348, "fn": 2387173, "tn": 38101149}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.60876629699942}
+train epoch=105 iter=0 loss=0.259386
+train epoch=105 iter=20 loss=0.266564
+EPOCH {"epoch": 105, "train_loss": 0.25916586369276046, "val": {"loss": 0.46811128297064564, "dice": 0.8272327197894087, "iou": 0.7053681781102081, "sensitivity": 0.7730732495701377, "specificity": 0.9691186967528072, "tp": 9964598, "fp": 1237213, "fn": 2924993, "tn": 38826284}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.67956297299952}
+train epoch=106 iter=0 loss=0.202604
+train epoch=106 iter=20 loss=0.244103
+EPOCH {"epoch": 106, "train_loss": 0.25873151471217476, "val": {"loss": 0.4536654038889573, "dice": 0.8245717553689984, "iou": 0.701507522160873, "sensitivity": 0.8348625646849461, "specificity": 0.938840011894119, "tp": 10761037, "fp": 2450283, "fn": 2128554, "tn": 37613214}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.749890443000368}
+train epoch=107 iter=0 loss=0.290451
+train epoch=107 iter=20 loss=0.198978
+EPOCH {"epoch": 107, "train_loss": 0.2579018851121267, "val": {"loss": 0.4548387896306444, "dice": 0.8285805608517112, "iou": 0.7073303832606297, "sensitivity": 0.8637966092174686, "specificity": 0.9288313748547712, "tp": 11133985, "fp": 2851264, "fn": 1755606, "tn": 37212233}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.786678671000118}
+train epoch=108 iter=0 loss=0.261262
+train epoch=108 iter=20 loss=0.171192
+EPOCH {"epoch": 108, "train_loss": 0.2526744812726974, "val": {"loss": 0.4732583433684736, "dice": 0.8225658304000123, "iou": 0.6986087644114019, "sensitivity": 0.7952412919851375, "specificity": 0.9554979935975134, "tp": 10250335, "fp": 1782906, "fn": 2639256, "tn": 38280591}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.739972393999778}
+train epoch=109 iter=0 loss=0.211892
+train epoch=109 iter=20 loss=0.258806
+EPOCH {"epoch": 109, "train_loss": 0.25050511260827385, "val": {"loss": 0.4489526078842654, "dice": 0.8385701394353632, "iou": 0.7220153088088219, "sensitivity": 0.8473652887822429, "specificity": 0.9441442168665406, "tp": 10922192, "fp": 2237778, "fn": 1967399, "tn": 37825719}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.74884826500056}
+train epoch=110 iter=0 loss=0.260911
+train epoch=110 iter=20 loss=0.207328
+EPOCH {"epoch": 110, "train_loss": 0.25662643561760584, "val": {"loss": 0.46726817231957274, "dice": 0.8259061214157088, "iou": 0.703441297566066, "sensitivity": 0.875258493461895, "specificity": 0.9214169197461719, "tp": 11281724, "fp": 3148313, "fn": 1607867, "tn": 36915184}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.686554493000585}
+train epoch=111 iter=0 loss=0.230855
+train epoch=111 iter=20 loss=0.209070
+EPOCH {"epoch": 111, "train_loss": 0.263064931333065, "val": {"loss": 0.4526198622908923, "dice": 0.830644631315925, "iou": 0.7103440524249566, "sensitivity": 0.7874356913264354, "specificity": 0.9650836520835913, "tp": 10149724, "fp": 1398871, "fn": 2739867, "tn": 38664626}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.697309272999519}
+train epoch=112 iter=0 loss=0.246796
+train epoch=112 iter=20 loss=0.296509
+EPOCH {"epoch": 112, "train_loss": 0.2509622797369957, "val": {"loss": 0.4863175296842462, "dice": 0.8238232286053238, "iou": 0.7004246713939589, "sensitivity": 0.7560046707455652, "specificity": 0.9744702016401614, "tp": 9744591, "fp": 1022813, "fn": 3145000, "tn": 39040684}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.616307788000086}
+train epoch=113 iter=0 loss=0.271030
+train epoch=113 iter=20 loss=0.298489
+EPOCH {"epoch": 113, "train_loss": 0.25125202039877575, "val": {"loss": 0.45435664397065, "dice": 0.8324463207501017, "iou": 0.7129833390486265, "sensitivity": 0.8039490159152451, "specificity": 0.9589523350894706, "tp": 10362574, "fp": 1644513, "fn": 2527017, "tn": 38418984}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.66035391999958}
+train epoch=114 iter=0 loss=0.274932
+train epoch=114 iter=20 loss=0.206271
+EPOCH {"epoch": 114, "train_loss": 0.2510610292355219, "val": {"loss": 0.4790032668278949, "dice": 0.819969145601293, "iou": 0.6948709370986016, "sensitivity": 0.7857631014048467, "specificity": 0.957916429511882, "tp": 10128165, "fp": 1686015, "fn": 2761426, "tn": 38377482}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.646330261000003}
+train epoch=115 iter=0 loss=0.303611
+train epoch=115 iter=20 loss=0.327070
+EPOCH {"epoch": 115, "train_loss": 0.25229809284210203, "val": {"loss": 0.476818649633096, "dice": 0.8242039775288974, "iou": 0.7009753067515193, "sensitivity": 0.77316184819208, "specificity": 0.9668682940982412, "tp": 9965740, "fp": 1327372, "fn": 2923851, "tn": 38736125}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.750420618000135}
+train epoch=116 iter=0 loss=0.237596
+train epoch=116 iter=20 loss=0.289285
+EPOCH {"epoch": 116, "train_loss": 0.24917028993368148, "val": {"loss": 0.5004474547239813, "dice": 0.8269682364589679, "iou": 0.7049836689524911, "sensitivity": 0.7820778021583462, "specificity": 0.9648170253335598, "tp": 10080663, "fp": 1409553, "fn": 2808928, "tn": 38653944}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.776666277000004}
+train epoch=117 iter=0 loss=0.264999
+train epoch=117 iter=20 loss=0.313335
+EPOCH {"epoch": 117, "train_loss": 0.2509577249487241, "val": {"loss": 0.4868593717565631, "dice": 0.8204600894134267, "iou": 0.6955763701165654, "sensitivity": 0.7835465842166753, "specificity": 0.9593106163448488, "tp": 10099595, "fp": 1630159, "fn": 2789996, "tn": 38433338}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.600371764000556}
+train epoch=118 iter=0 loss=0.242274
+train epoch=118 iter=20 loss=0.191535
+EPOCH {"epoch": 118, "train_loss": 0.24426405082146327, "val": {"loss": 0.48538716609525207, "dice": 0.8218696519297111, "iou": 0.6976050258580362, "sensitivity": 0.7673980501010467, "specificity": 0.9678120958836919, "tp": 9891447, "fp": 1289560, "fn": 2998144, "tn": 38773937}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.774636417999318}
+train epoch=119 iter=0 loss=0.215406
+train epoch=119 iter=20 loss=0.208672
+EPOCH {"epoch": 119, "train_loss": 0.24615728308757145, "val": {"loss": 0.47525391144917745, "dice": 0.8182539946517838, "iou": 0.6924110519084641, "sensitivity": 0.8579068955717835, "specificity": 0.9231022943404067, "tp": 11058069, "fp": 3080791, "fn": 1831522, "tn": 36982706}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.535098200000903}
+train epoch=120 iter=0 loss=0.237467
+train epoch=120 iter=20 loss=0.249889
+EPOCH {"epoch": 120, "train_loss": 0.24491221606731414, "val": {"loss": 0.4480620969345074, "dice": 0.8271667347285869, "iou": 0.7052722319716664, "sensitivity": 0.8165214862131778, "specificity": 0.9492506358094502, "tp": 10524628, "fp": 2033197, "fn": 2364963, "tn": 38030300}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.863870990999203}
+train epoch=121 iter=0 loss=0.272316
+train epoch=121 iter=20 loss=0.295913
+EPOCH {"epoch": 121, "train_loss": 0.24946701824665068, "val": {"loss": 0.45073136657771495, "dice": 0.8284326800891535, "iou": 0.707114875952835, "sensitivity": 0.7900858917866362, "specificity": 0.9622491516404571, "tp": 10183884, "fp": 1512431, "fn": 2705707, "tn": 38551066}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.860686173000431}
+train epoch=122 iter=0 loss=0.230890
+train epoch=122 iter=20 loss=0.252244
+EPOCH {"epoch": 122, "train_loss": 0.24527824819087982, "val": {"loss": 0.44040604673399786, "dice": 0.8333506378294905, "iou": 0.7143111416776257, "sensitivity": 0.7870920031520007, "specificity": 0.9672191621215692, "tp": 10145294, "fp": 1313315, "fn": 2744297, "tn": 38750182}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.858667274000254}
+train epoch=123 iter=0 loss=0.264400
+train epoch=123 iter=20 loss=0.172112
+EPOCH {"epoch": 123, "train_loss": 0.24491434097290038, "val": {"loss": 0.4608873521337415, "dice": 0.8277060446561844, "iou": 0.7060567367793269, "sensitivity": 0.7785901817986312, "specificity": 0.9669486665130606, "tp": 10035709, "fp": 1324152, "fn": 2853882, "tn": 38739345}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.798466271999132}
+train epoch=124 iter=0 loss=0.269870
+train epoch=124 iter=20 loss=0.232319
+EPOCH {"epoch": 124, "train_loss": 0.24151844630638758, "val": {"loss": 0.43256312446428996, "dice": 0.8366429382605387, "iou": 0.7191626421294792, "sensitivity": 0.8342691401146863, "specificity": 0.9485052440629433, "tp": 10753388, "fp": 2063060, "fn": 2136203, "tn": 38000437}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.731390823000766}
+train epoch=125 iter=0 loss=0.214811
+train epoch=125 iter=20 loss=0.214835
+EPOCH {"epoch": 125, "train_loss": 0.24231288184722263, "val": {"loss": 0.44673343533926674, "dice": 0.831062961207238, "iou": 0.7109561367526956, "sensitivity": 0.8705394143227664, "specificity": 0.9277837628602416, "tp": 11220897, "fp": 2893235, "fn": 1668694, "tn": 37170262}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.678143132001424}
+train epoch=126 iter=0 loss=0.218626
+train epoch=126 iter=20 loss=0.268989
+EPOCH {"epoch": 126, "train_loss": 0.2414893036087354, "val": {"loss": 0.5231524694083941, "dice": 0.8148317549742033, "iou": 0.687524120220136, "sensitivity": 0.7422015174880258, "specificity": 0.9744135415837514, "tp": 9566674, "fp": 1025083, "fn": 3322917, "tn": 39038414}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.637492675999965}
+train epoch=127 iter=0 loss=0.265330
+train epoch=127 iter=20 loss=0.256607
+EPOCH {"epoch": 127, "train_loss": 0.24854375819365185, "val": {"loss": 0.4473076148493455, "dice": 0.8344208471447062, "iou": 0.7158851847175233, "sensitivity": 0.8326434872914121, "specificity": 0.9475271467191194, "tp": 10732434, "fp": 2102246, "fn": 2157157, "tn": 37961251}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.831131873999766}
+train epoch=128 iter=0 loss=0.221695
+train epoch=128 iter=20 loss=0.221974
+EPOCH {"epoch": 128, "train_loss": 0.23291444132725397, "val": {"loss": 0.43980575522573867, "dice": 0.8412188784828795, "iou": 0.7259514871812233, "sensitivity": 0.8351403081757987, "specificity": 0.9516094164221361, "tp": 10764617, "fp": 1938696, "fn": 2124974, "tn": 38124801}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 11.028505981001217}
+train epoch=129 iter=0 loss=0.236026
+train epoch=129 iter=20 loss=0.237630
+EPOCH {"epoch": 129, "train_loss": 0.2404619907339414, "val": {"loss": 0.4614576070320488, "dice": 0.8296459816389649, "iou": 0.7088846354377472, "sensitivity": 0.8213930915263331, "specificity": 0.9489377574803318, "tp": 10587421, "fp": 2045732, "fn": 2302170, "tn": 38017765}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.612203234000845}
+train epoch=130 iter=0 loss=0.221645
+train epoch=130 iter=20 loss=0.276198
+EPOCH {"epoch": 130, "train_loss": 0.24175104399522146, "val": {"loss": 0.4368368183622266, "dice": 0.8351834158692713, "iou": 0.7170085206955962, "sensitivity": 0.8593530236917525, "specificity": 0.9361285661109413, "tp": 11076709, "fp": 2558913, "fn": 1812882, "tn": 37504584}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.71030412500113}
+train epoch=131 iter=0 loss=0.236932
+train epoch=131 iter=20 loss=0.202711
+EPOCH {"epoch": 131, "train_loss": 0.23298466155926387, "val": {"loss": 0.4560277883959289, "dice": 0.8336362612910783, "iou": 0.7147309485237013, "sensitivity": 0.7999671207565857, "specificity": 0.9616317816689841, "tp": 10311249, "fp": 1537165, "fn": 2578342, "tn": 38526332}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.715086054000494}
+train epoch=132 iter=0 loss=0.209902
+train epoch=132 iter=20 loss=0.255371
+EPOCH {"epoch": 132, "train_loss": 0.23783205052216846, "val": {"loss": 0.45141640305519104, "dice": 0.8302342273163708, "iou": 0.709743990381665, "sensitivity": 0.852404471173678, "specificity": 0.935331581264611, "tp": 10987145, "fp": 2590843, "fn": 1902446, "tn": 37472654}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.68477979400086}
+train epoch=133 iter=0 loss=0.270122
+train epoch=133 iter=20 loss=0.215369
+EPOCH {"epoch": 133, "train_loss": 0.2320906658967336, "val": {"loss": 0.424538200296978, "dice": 0.8388578215012509, "iou": 0.722441951584101, "sensitivity": 0.8449936852146821, "specificity": 0.9454233613206555, "tp": 10891623, "fp": 2186531, "fn": 1997968, "tn": 37876966}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.781074009000804}
+train epoch=134 iter=0 loss=0.202621
+train epoch=134 iter=20 loss=0.204427
+EPOCH {"epoch": 134, "train_loss": 0.23617731382449467, "val": {"loss": 0.4447186339904766, "dice": 0.8323651346120772, "iou": 0.7128642346043177, "sensitivity": 0.7950632413394653, "specificity": 0.9629020402287898, "tp": 10248040, "fp": 1486274, "fn": 2641551, "tn": 38577223}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.743431208999027}
+train epoch=135 iter=0 loss=0.317570
+train epoch=135 iter=20 loss=0.157112
+EPOCH {"epoch": 135, "train_loss": 0.2388638640443484, "val": {"loss": 0.4398954419216307, "dice": 0.8344964076366242, "iou": 0.7159964268702559, "sensitivity": 0.8326519437273068, "specificity": 0.947581485460443, "tp": 10732543, "fp": 2100069, "fn": 2157048, "tn": 37963428}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.837911349000933}
+train epoch=136 iter=0 loss=0.221491
+train epoch=136 iter=20 loss=0.240660
+EPOCH {"epoch": 136, "train_loss": 0.22964797914028168, "val": {"loss": 0.4480209220754038, "dice": 0.8362187458931547, "iou": 0.7185360160616425, "sensitivity": 0.8295851280308274, "specificity": 0.9502770564436749, "tp": 10693013, "fp": 1992075, "fn": 2196578, "tn": 38071422}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.820916782000495}
+train epoch=137 iter=0 loss=0.269361
+train epoch=137 iter=20 loss=0.243606
+EPOCH {"epoch": 137, "train_loss": 0.2288303275903066, "val": {"loss": 0.45613002260722735, "dice": 0.8281501926097763, "iou": 0.7067033568526276, "sensitivity": 0.8424067140687397, "specificity": 0.9382205951717095, "tp": 10858278, "fp": 2475099, "fn": 2031313, "tn": 37588398}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.712217645001147}
+train epoch=138 iter=0 loss=0.204749
+train epoch=138 iter=20 loss=0.194960
+EPOCH {"epoch": 138, "train_loss": 0.22989548196395238, "val": {"loss": 0.4426229349752464, "dice": 0.8354158831373001, "iou": 0.717351259596298, "sensitivity": 0.8167696709693891, "specificity": 0.9554112562864894, "tp": 10527827, "fp": 1786381, "fn": 2361764, "tn": 38277116}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.770497999001236}
+train epoch=139 iter=0 loss=0.244938
+train epoch=139 iter=20 loss=0.214855
+EPOCH {"epoch": 139, "train_loss": 0.22965033849080405, "val": {"loss": 0.4341870279300331, "dice": 0.8387636257426133, "iou": 0.7223022326345957, "sensitivity": 0.8305720484071217, "specificity": 0.951774279714025, "tp": 10705734, "fp": 1932091, "fn": 2183857, "tn": 38131406}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.726718654999786}
+train epoch=140 iter=0 loss=0.261270
+train epoch=140 iter=20 loss=0.223073
+EPOCH {"epoch": 140, "train_loss": 0.22582606275876363, "val": {"loss": 0.4601753441118958, "dice": 0.8323097706169238, "iou": 0.7127830221347802, "sensitivity": 0.8224123635885732, "specificity": 0.9505165762239877, "tp": 10600559, "fp": 1982479, "fn": 2289032, "tn": 38081018}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.796660999998494}
+train epoch=141 iter=0 loss=0.255345
+train epoch=141 iter=20 loss=0.228609
+EPOCH {"epoch": 141, "train_loss": 0.22752148658037186, "val": {"loss": 0.4961007541359061, "dice": 0.8265153454426404, "iou": 0.7043256528602867, "sensitivity": 0.7983264946110392, "specificity": 0.95706133690726, "tp": 10290102, "fp": 1720273, "fn": 2599489, "tn": 38343224}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.727096096001333}
+train epoch=142 iter=0 loss=0.222488
+train epoch=142 iter=20 loss=0.230252
+EPOCH {"epoch": 142, "train_loss": 0.2298652688662211, "val": {"loss": 0.4410510437175779, "dice": 0.837108208842041, "iou": 0.7198504755188646, "sensitivity": 0.8189515090121944, "specificity": 0.9557079103703803, "tp": 10555950, "fp": 1774496, "fn": 2333641, "tn": 38289001}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.708256678999533}
+train epoch=143 iter=0 loss=0.149062
+train epoch=143 iter=20 loss=0.171213
+EPOCH {"epoch": 143, "train_loss": 0.22152162889639537, "val": {"loss": 0.4708079862417561, "dice": 0.8307341960054455, "iou": 0.7104750632126708, "sensitivity": 0.8340470229039851, "specificity": 0.9440421039631164, "tp": 10750525, "fp": 2241869, "fn": 2139066, "tn": 37821628}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.900666575000287}
+train epoch=144 iter=0 loss=0.256362
+train epoch=144 iter=20 loss=0.251426
+EPOCH {"epoch": 144, "train_loss": 0.221343931555748, "val": {"loss": 0.470751627099396, "dice": 0.8285341118551511, "iou": 0.7072626870657158, "sensitivity": 0.8262750152429197, "specificity": 0.945862089871985, "tp": 10650347, "fp": 2168954, "fn": 2239244, "tn": 37894543}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.87070981800025}
+train epoch=145 iter=0 loss=0.267836
+train epoch=145 iter=20 loss=0.218879
+EPOCH {"epoch": 145, "train_loss": 0.2296588733792305, "val": {"loss": 0.45563198847345787, "dice": 0.8301615126656237, "iou": 0.7096377163630945, "sensitivity": 0.8630926303247326, "specificity": 0.9304280153078001, "tp": 11124911, "fp": 2787297, "fn": 1764680, "tn": 37276200}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.786231097999917}
+train epoch=146 iter=0 loss=0.250081
+train epoch=146 iter=20 loss=0.190847
+EPOCH {"epoch": 146, "train_loss": 0.23118840207656224, "val": {"loss": 0.4795022454887333, "dice": 0.8305626470718371, "iou": 0.7102241475288824, "sensitivity": 0.7966038643119088, "specificity": 0.9608702904791362, "tp": 10267898, "fp": 1567673, "fn": 2621693, "tn": 38495824}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.870701474999805}
+train epoch=147 iter=0 loss=0.236326
+train epoch=147 iter=20 loss=0.246780
+EPOCH {"epoch": 147, "train_loss": 0.22643509606520335, "val": {"loss": 0.4502749420923762, "dice": 0.8346620448194056, "iou": 0.7162403327797356, "sensitivity": 0.8373279648671552, "specificity": 0.9456084674785129, "tp": 10792815, "fp": 2179115, "fn": 2096776, "tn": 37884382}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.81542510700092}
+train epoch=148 iter=0 loss=0.202391
+train epoch=148 iter=20 loss=0.178767
+EPOCH {"epoch": 148, "train_loss": 0.22425603369871774, "val": {"loss": 0.44984325073143044, "dice": 0.8291245216755927, "iou": 0.7081235682398263, "sensitivity": 0.8129070968970233, "specificity": 0.9523926231402117, "tp": 10478040, "fp": 1907318, "fn": 2411551, "tn": 38156179}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.762577577001139}
+train epoch=149 iter=0 loss=0.173094
+train epoch=149 iter=20 loss=0.310189
+EPOCH {"epoch": 149, "train_loss": 0.21851603190104166, "val": {"loss": 0.4487109057383962, "dice": 0.8354369198145553, "iou": 0.7173822818438659, "sensitivity": 0.8306112273073676, "specificity": 0.9492194852586133, "tp": 10706239, "fp": 2034445, "fn": 2183352, "tn": 38029052}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.575072163001096}
+train epoch=150 iter=0 loss=0.157866
+train epoch=150 iter=20 loss=0.235685
+EPOCH {"epoch": 150, "train_loss": 0.21835572769244513, "val": {"loss": 0.4565808342234923, "dice": 0.8255123271904755, "iou": 0.7028701503658565, "sensitivity": 0.8217667263453122, "specificity": 0.9455767428389988, "tp": 10592237, "fp": 2180386, "fn": 2297354, "tn": 37883111}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.670296763000806}
+train epoch=151 iter=0 loss=0.262683
+train epoch=151 iter=20 loss=0.251620
+EPOCH {"epoch": 151, "train_loss": 0.22293323824803035, "val": {"loss": 0.4302384581896338, "dice": 0.8339871493524161, "iou": 0.7152469622347932, "sensitivity": 0.830308657582696, "specificity": 0.9482434845864803, "tp": 10702339, "fp": 2073547, "fn": 2187252, "tn": 37989950}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.827514278998933}
+train epoch=152 iter=0 loss=0.217192
+train epoch=152 iter=20 loss=0.217323
+EPOCH {"epoch": 152, "train_loss": 0.22064098914464314, "val": {"loss": 0.46248036792667785, "dice": 0.8293633846783872, "iou": 0.7084721029766642, "sensitivity": 0.8196993217240175, "specificity": 0.9494898560652356, "tp": 10565589, "fp": 2023613, "fn": 2324002, "tn": 38039884}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.86760090200005}
+train epoch=153 iter=0 loss=0.220483
+train epoch=153 iter=20 loss=0.249300
+EPOCH {"epoch": 153, "train_loss": 0.22444731990496317, "val": {"loss": 0.45064056716342965, "dice": 0.8353635299328788, "iou": 0.7172740605355888, "sensitivity": 0.8235259753393261, "specificity": 0.9523413295649155, "tp": 10614913, "fp": 1909373, "fn": 2274678, "tn": 38154124}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.652590751000389}
+train epoch=154 iter=0 loss=0.189177
+train epoch=154 iter=20 loss=0.216205
+EPOCH {"epoch": 154, "train_loss": 0.21424370060364406, "val": {"loss": 0.46909776853747887, "dice": 0.8381482119839619, "iou": 0.721389957504969, "sensitivity": 0.8009465156807536, "specificity": 0.9645189734685417, "tp": 10323873, "fp": 1421494, "fn": 2565718, "tn": 38642003}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.806895122999777}
+train epoch=155 iter=0 loss=0.303463
+train epoch=155 iter=20 loss=0.212490
+EPOCH {"epoch": 155, "train_loss": 0.21855280299981436, "val": {"loss": 0.43837408942751366, "dice": 0.8337586536975904, "iou": 0.7149109027398473, "sensitivity": 0.8419146115652545, "specificity": 0.9428449293879663, "tp": 10851935, "fp": 2289832, "fn": 2037656, "tn": 37773665}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.813437400000112}
+train epoch=156 iter=0 loss=0.214106
+train epoch=156 iter=20 loss=0.190992
+EPOCH {"epoch": 156, "train_loss": 0.21589633872111638, "val": {"loss": 0.4629597655764901, "dice": 0.8325765862351229, "iou": 0.7131744801572109, "sensitivity": 0.8025175507896255, "specificity": 0.9596953306397592, "tp": 10344123, "fp": 1614746, "fn": 2545468, "tn": 38448751}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.919960040999285}
+train epoch=157 iter=0 loss=0.236496
+train epoch=157 iter=20 loss=0.259066
+EPOCH {"epoch": 157, "train_loss": 0.21823700964450837, "val": {"loss": 0.4427977883727244, "dice": 0.8294793178342041, "iou": 0.7086413170414313, "sensitivity": 0.8087935451171414, "specificity": 0.9545300551272397, "tp": 10425018, "fp": 1821685, "fn": 2464573, "tn": 38241812}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.714091232999635}
+train epoch=158 iter=0 loss=0.188554
+train epoch=158 iter=20 loss=0.234894
+EPOCH {"epoch": 158, "train_loss": 0.21235732634862264, "val": {"loss": 0.4656977114258426, "dice": 0.8266453986432811, "iou": 0.7045145582481656, "sensitivity": 0.8213297846300942, "specificity": 0.9466542573655016, "tp": 10586605, "fp": 2137217, "fn": 2302986, "tn": 37926280}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.881221454001206}
+train epoch=159 iter=0 loss=0.197423
+train epoch=159 iter=20 loss=0.223019
+EPOCH {"epoch": 159, "train_loss": 0.21272471447785696, "val": {"loss": 0.47678127899618433, "dice": 0.8292195478993762, "iou": 0.7082622078388684, "sensitivity": 0.8209688732559474, "specificity": 0.9488028466411706, "tp": 10581953, "fp": 2051137, "fn": 2307638, "tn": 38012360}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.879575781000312}
+train epoch=160 iter=0 loss=0.182034
+train epoch=160 iter=20 loss=0.229203
+EPOCH {"epoch": 160, "train_loss": 0.21282796313365301, "val": {"loss": 0.4431189198305111, "dice": 0.8409181419747584, "iou": 0.7255036701268476, "sensitivity": 0.8231046276022257, "specificity": 0.9567182565216411, "tp": 10609482, "fp": 1734018, "fn": 2280109, "tn": 38329479}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.679689713000698}
+train epoch=161 iter=0 loss=0.226308
+train epoch=161 iter=20 loss=0.196718
+EPOCH {"epoch": 161, "train_loss": 0.21210282742977143, "val": {"loss": 0.4497683232668603, "dice": 0.8361945938068662, "iou": 0.7185003518260848, "sensitivity": 0.8351275847309663, "specificity": 0.9477768253729822, "tp": 10764453, "fp": 2092243, "fn": 2125138, "tn": 37971254}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.834281207999084}
+train epoch=162 iter=0 loss=0.172634
+train epoch=162 iter=20 loss=0.157438
+EPOCH {"epoch": 162, "train_loss": 0.21710678488016127, "val": {"loss": 0.457904755257734, "dice": 0.8360490306217337, "iou": 0.7182854369444066, "sensitivity": 0.8178398368109585, "specificity": 0.9554083359223484, "tp": 10541621, "fp": 1786498, "fn": 2347970, "tn": 38276999}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.823854275000485}
+train epoch=163 iter=0 loss=0.228299
+train epoch=163 iter=20 loss=0.233378
+EPOCH {"epoch": 163, "train_loss": 0.21088856408993403, "val": {"loss": 0.44493550312991187, "dice": 0.8388990590039705, "iou": 0.7225031255976212, "sensitivity": 0.8189379321655745, "specificity": 0.9570577925336872, "tp": 10555775, "fp": 1720415, "fn": 2333816, "tn": 38343082}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.854537824001454}
+train epoch=164 iter=0 loss=0.203196
+train epoch=164 iter=20 loss=0.264880
+EPOCH {"epoch": 164, "train_loss": 0.20704955706993738, "val": {"loss": 0.4876812935465633, "dice": 0.8186357087354785, "iou": 0.6929578918110165, "sensitivity": 0.796106253487795, "specificity": 0.9521098969468391, "tp": 10261484, "fp": 1918645, "fn": 2628107, "tn": 38144852}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.82018823800172}
+train epoch=165 iter=0 loss=0.188709
+train epoch=165 iter=20 loss=0.236662
+EPOCH {"epoch": 165, "train_loss": 0.21131127228339514, "val": {"loss": 0.444014365277668, "dice": 0.8304291110189072, "iou": 0.7100288822530121, "sensitivity": 0.8415896206481649, "specificity": 0.9403870560775062, "tp": 10847746, "fp": 2388303, "fn": 2041845, "tn": 37675194}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 11.06611818499914}
+train epoch=166 iter=0 loss=0.234466
+train epoch=166 iter=20 loss=0.160727
+EPOCH {"epoch": 166, "train_loss": 0.20758913308382035, "val": {"loss": 0.48866821855011555, "dice": 0.8267331205264883, "iou": 0.704642000034531, "sensitivity": 0.7915720522086387, "specificity": 0.9603090314357731, "tp": 10203040, "fp": 1590159, "fn": 2686551, "tn": 38473338}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.732710846999908}
+train epoch=167 iter=0 loss=0.207880
+train epoch=167 iter=20 loss=0.214650
+EPOCH {"epoch": 167, "train_loss": 0.2128120059768359, "val": {"loss": 0.45080131867734513, "dice": 0.8284277070918933, "iou": 0.7071076297268424, "sensitivity": 0.8272472726248645, "specificity": 0.9453372979398179, "tp": 10662879, "fp": 2189979, "fn": 2226712, "tn": 37873518}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.803962095000315}
+train epoch=168 iter=0 loss=0.245758
+train epoch=168 iter=20 loss=0.187794
+EPOCH {"epoch": 168, "train_loss": 0.20549123932917912, "val": {"loss": 0.45338201574464837, "dice": 0.8332021376384136, "iou": 0.7140929586141178, "sensitivity": 0.828820867939099, "specificity": 0.9483102286353086, "tp": 10683162, "fp": 2070873, "fn": 2206429, "tn": 37992624}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.780869726999299}
+train epoch=169 iter=0 loss=0.174010
+train epoch=169 iter=20 loss=0.187846
+EPOCH {"epoch": 169, "train_loss": 0.20639738390843074, "val": {"loss": 0.42761600865881044, "dice": 0.8397082038332077, "iou": 0.7237043359328375, "sensitivity": 0.8307078944553011, "specificity": 0.9524306377947986, "tp": 10707485, "fp": 1905795, "fn": 2182106, "tn": 38157702}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.706497306000529}
+train epoch=170 iter=0 loss=0.217676
+train epoch=170 iter=20 loss=0.175237
+EPOCH {"epoch": 170, "train_loss": 0.20461101730664571, "val": {"loss": 0.44786735867509747, "dice": 0.8346040512709054, "iou": 0.716154927585831, "sensitivity": 0.8200162441151159, "specificity": 0.9533408179520625, "tp": 10569674, "fp": 1869330, "fn": 2319917, "tn": 38194167}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.744097475999297}
+train epoch=171 iter=0 loss=0.203913
+train epoch=171 iter=20 loss=0.191218
+EPOCH {"epoch": 171, "train_loss": 0.20480730682611464, "val": {"loss": 0.4400690341054803, "dice": 0.8360371798278673, "iou": 0.7182679423593873, "sensitivity": 0.8580692746573573, "specificity": 0.9373797050217558, "tp": 11060162, "fp": 2508788, "fn": 1829429, "tn": 37554709}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.683641563999117}
+train epoch=172 iter=0 loss=0.179301
+train epoch=172 iter=20 loss=0.250343
+EPOCH {"epoch": 172, "train_loss": 0.20978133430083593, "val": {"loss": 0.4665092644420001, "dice": 0.8282277598513177, "iou": 0.70681633467117, "sensitivity": 0.8168641658218635, "specificity": 0.9499083667109738, "tp": 10529045, "fp": 2006846, "fn": 2360546, "tn": 38056651}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.781545420999464}
+train epoch=173 iter=0 loss=0.218620
+train epoch=173 iter=20 loss=0.205441
+EPOCH {"epoch": 173, "train_loss": 0.20227041294177373, "val": {"loss": 0.43978486099455616, "dice": 0.8314443141714181, "iou": 0.7115144996978643, "sensitivity": 0.8322973940755761, "specificity": 0.9453849972207868, "tp": 10727973, "fp": 2188068, "fn": 2161618, "tn": 37875429}, "best_epoch": 99, "best_loss": 0.42114686405304635, "seconds": 10.948894033001125}
+train epoch=174 iter=0 loss=0.224805
+train epoch=174 iter=20 loss=0.174286
+EPOCH {"epoch": 174, "train_loss": 0.20636461277802784, "val": {"loss": 0.4202911927558408, "dice": 0.838269229903132, "iou": 0.7215692753263608, "sensitivity": 0.844752560418713, "specificity": 0.9450757631067502, "tp": 10888515, "fp": 2200457, "fn": 2001076, "tn": 37863040}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.019246644000305}
+train epoch=175 iter=0 loss=0.251636
+train epoch=175 iter=20 loss=0.199189
+EPOCH {"epoch": 175, "train_loss": 0.20579490661621094, "val": {"loss": 0.46341731008326653, "dice": 0.835939287029678, "iou": 0.718123442974568, "sensitivity": 0.8113114683002742, "specificity": 0.9582504992013053, "tp": 10457473, "fp": 1672631, "fn": 2432118, "tn": 38390866}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.688694634000058}
+train epoch=176 iter=0 loss=0.221446
+train epoch=176 iter=20 loss=0.191870
+EPOCH {"epoch": 176, "train_loss": 0.20277588069438934, "val": {"loss": 0.43893024738472286, "dice": 0.8368867188149925, "iou": 0.7195229668105522, "sensitivity": 0.8175378877421324, "specificity": 0.9561733964461465, "tp": 10537729, "fp": 1755847, "fn": 2351862, "tn": 38307650}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.773838937000619}
+train epoch=177 iter=0 loss=0.217871
+train epoch=177 iter=20 loss=0.169943
+EPOCH {"epoch": 177, "train_loss": 0.19987661391496658, "val": {"loss": 0.47273959485020967, "dice": 0.8249100354662642, "iou": 0.701997345193549, "sensitivity": 0.8203796381126446, "specificity": 0.9457447760988014, "tp": 10574358, "fp": 2173654, "fn": 2315233, "tn": 37889843}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.718350364999424}
+train epoch=178 iter=0 loss=0.235652
+train epoch=178 iter=20 loss=0.203683
+EPOCH {"epoch": 178, "train_loss": 0.20537335226933162, "val": {"loss": 0.4346687296534529, "dice": 0.8381288263236535, "iou": 0.7213612363509112, "sensitivity": 0.8389668842091266, "specificity": 0.9475475643077288, "tp": 10813940, "fp": 2101428, "fn": 2075651, "tn": 37962069}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.742085702000622}
+train epoch=179 iter=0 loss=0.163638
+train epoch=179 iter=20 loss=0.224637
+EPOCH {"epoch": 179, "train_loss": 0.20165243943532307, "val": {"loss": 0.4670812621860221, "dice": 0.8246376866254755, "iou": 0.7016029672228465, "sensitivity": 0.7802948906602234, "specificity": 0.9639148075366462, "tp": 10057682, "fp": 1445699, "fn": 2831909, "tn": 38617798}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.1397223139993}
+train epoch=180 iter=0 loss=0.190468
+train epoch=180 iter=20 loss=0.222301
+EPOCH {"epoch": 180, "train_loss": 0.20561118920644125, "val": {"loss": 0.42247740112908994, "dice": 0.839779732747619, "iou": 0.7238106042884207, "sensitivity": 0.8389767371206736, "specificity": 0.9488094112203934, "tp": 10814067, "fp": 2050874, "fn": 2075524, "tn": 38012623}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.009925349999321}
+train epoch=181 iter=0 loss=0.173234
+train epoch=181 iter=20 loss=0.171036
+EPOCH {"epoch": 181, "train_loss": 0.2028976395726204, "val": {"loss": 0.5092580327303102, "dice": 0.8232685578549315, "iou": 0.6996231496578282, "sensitivity": 0.7763273481679908, "specificity": 0.9647267686093404, "tp": 10006542, "fp": 1413169, "fn": 2883049, "tn": 38650328}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.869685137000488}
+train epoch=182 iter=0 loss=0.247350
+train epoch=182 iter=20 loss=0.211546
+EPOCH {"epoch": 182, "train_loss": 0.19946223696072896, "val": {"loss": 0.43211418648462485, "dice": 0.8395387753370127, "iou": 0.7234526733806427, "sensitivity": 0.8250643484343296, "specificity": 0.9548119326677849, "tp": 10634742, "fp": 1810392, "fn": 2254849, "tn": 38253105}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.701601564000157}
+train epoch=183 iter=0 loss=0.178793
+train epoch=183 iter=20 loss=0.224742
+EPOCH {"epoch": 183, "train_loss": 0.20235481709241868, "val": {"loss": 0.4432153273927103, "dice": 0.8384987904974884, "iou": 0.7219095284942751, "sensitivity": 0.8277557449262742, "specificity": 0.9528281567632501, "tp": 10669433, "fp": 1889869, "fn": 2220158, "tn": 38173628}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.014666373999717}
+train epoch=184 iter=0 loss=0.230822
+train epoch=184 iter=20 loss=0.134205
+EPOCH {"epoch": 184, "train_loss": 0.1997966652115186, "val": {"loss": 0.45263418997868454, "dice": 0.8334477372655699, "iou": 0.7144538345088336, "sensitivity": 0.8333799730340552, "specificity": 0.9464458132548939, "tp": 10741927, "fp": 2145568, "fn": 2147664, "tn": 37917929}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.779804874000547}
+train epoch=185 iter=0 loss=0.212334
+train epoch=185 iter=20 loss=0.244492
+EPOCH {"epoch": 185, "train_loss": 0.2000324954589208, "val": {"loss": 0.44075790364848505, "dice": 0.8380328749988343, "iou": 0.7212190921477175, "sensitivity": 0.8539921864083972, "specificity": 0.940771171323362, "tp": 11007610, "fp": 2372914, "fn": 1881981, "tn": 37690583}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.740938742001163}
+train epoch=186 iter=0 loss=0.171847
+train epoch=186 iter=20 loss=0.161342
+EPOCH {"epoch": 186, "train_loss": 0.1984522670507431, "val": {"loss": 0.4535493675877552, "dice": 0.8402356260273972, "iou": 0.7244882192313713, "sensitivity": 0.836295193540276, "specificity": 0.9503490172113532, "tp": 10779503, "fp": 1989192, "fn": 2110088, "tn": 38074305}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.692061457999444}
+train epoch=187 iter=0 loss=0.168782
+train epoch=187 iter=20 loss=0.220081
+EPOCH {"epoch": 187, "train_loss": 0.1975400651494662, "val": {"loss": 0.44316772792008846, "dice": 0.8382102750239171, "iou": 0.7214819145015013, "sensitivity": 0.8106302985098596, "specificity": 0.9602462311265539, "tp": 10448693, "fp": 1592675, "fn": 2440898, "tn": 38470822}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.886818605998997}
+train epoch=188 iter=0 loss=0.169542
+train epoch=188 iter=20 loss=0.199696
+EPOCH {"epoch": 188, "train_loss": 0.19881162991126378, "val": {"loss": 0.4362414803835425, "dice": 0.8381495252049393, "iou": 0.7213919031644591, "sensitivity": 0.8259826087577178, "specificity": 0.9533542466350354, "tp": 10646578, "fp": 1868792, "fn": 2243013, "tn": 38194705}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.93497980400025}
+train epoch=189 iter=0 loss=0.199567
+train epoch=189 iter=20 loss=0.191691
+EPOCH {"epoch": 189, "train_loss": 0.19689259032408396, "val": {"loss": 0.4591741514678049, "dice": 0.8278610042539317, "iou": 0.7062822815881122, "sensitivity": 0.7926753455559606, "specificity": 0.9606458218063191, "tp": 10217261, "fp": 1576666, "fn": 2672330, "tn": 38486831}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.934120318999703}
+train epoch=190 iter=0 loss=0.221236
+train epoch=190 iter=20 loss=0.169487
+EPOCH {"epoch": 190, "train_loss": 0.19636563062667847, "val": {"loss": 0.457300201796069, "dice": 0.8386503872096172, "iou": 0.7221342978662437, "sensitivity": 0.8336936369819647, "specificity": 0.9502974989926616, "tp": 10745970, "fp": 1991256, "fn": 2143621, "tn": 38072241}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.757978912000908}
+train epoch=191 iter=0 loss=0.186227
+train epoch=191 iter=20 loss=0.212369
+EPOCH {"epoch": 191, "train_loss": 0.19260256141424179, "val": {"loss": 0.4531422600445181, "dice": 0.8283491830246147, "iou": 0.70699321933048, "sensitivity": 0.8047502826117602, "specificity": 0.9555140181597228, "tp": 10372902, "fp": 1782264, "fn": 2516689, "tn": 38281233}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.776768584999445}
+train epoch=192 iter=0 loss=0.243792
+train epoch=192 iter=20 loss=0.210487
+EPOCH {"epoch": 192, "train_loss": 0.19294900000095366, "val": {"loss": 0.44703927001740673, "dice": 0.8393265878853978, "iou": 0.7231376019514821, "sensitivity": 0.8562033504399015, "specificity": 0.9407981035704397, "tp": 11036111, "fp": 2371835, "fn": 1853480, "tn": 37691662}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.708670019001147}
+train epoch=193 iter=0 loss=0.247271
+train epoch=193 iter=20 loss=0.162491
+EPOCH {"epoch": 193, "train_loss": 0.19407868285973867, "val": {"loss": 0.45147101094227027, "dice": 0.8386850942368017, "iou": 0.7221857655272501, "sensitivity": 0.831437785729586, "specificity": 0.9513289366627182, "tp": 10716893, "fp": 1949933, "fn": 2172698, "tn": 38113564}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.8296647749994}
+train epoch=194 iter=0 loss=0.235377
+train epoch=194 iter=20 loss=0.224925
+EPOCH {"epoch": 194, "train_loss": 0.19071372995773953, "val": {"loss": 0.47283968196647, "dice": 0.8293747912579156, "iou": 0.7084887503397732, "sensitivity": 0.8027959925183041, "specificity": 0.9571745072578163, "tp": 10347712, "fp": 1715739, "fn": 2541879, "tn": 38347758}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.658878772999742}
+train epoch=195 iter=0 loss=0.174292
+train epoch=195 iter=20 loss=0.190253
+EPOCH {"epoch": 195, "train_loss": 0.1949789509177208, "val": {"loss": 0.4412146072724078, "dice": 0.8362444586503421, "iou": 0.7185739864924837, "sensitivity": 0.8447826622272189, "specificity": 0.9434922518121671, "tp": 10888903, "fp": 2263898, "fn": 2000688, "tn": 37799599}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.024846531998264}
+train epoch=196 iter=0 loss=0.208877
+train epoch=196 iter=20 loss=0.176473
+EPOCH {"epoch": 196, "train_loss": 0.19057673762242, "val": {"loss": 0.4565009268203584, "dice": 0.8320053829128722, "iou": 0.7123366586978096, "sensitivity": 0.811193776435575, "specificity": 0.9553508771338658, "tp": 10455956, "fp": 1788800, "fn": 2433635, "tn": 38274697}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.939578912000798}
+train epoch=197 iter=0 loss=0.185036
+train epoch=197 iter=20 loss=0.208535
+EPOCH {"epoch": 197, "train_loss": 0.1923720896244049, "val": {"loss": 0.4581987056696769, "dice": 0.8308512229502619, "iou": 0.7106462746741733, "sensitivity": 0.8229053194938458, "specificity": 0.9491772523002673, "tp": 10606913, "fp": 2036137, "fn": 2282678, "tn": 38027360}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.691467458000261}
+train epoch=198 iter=0 loss=0.204501
+train epoch=198 iter=20 loss=0.198154
+EPOCH {"epoch": 198, "train_loss": 0.1956454465786616, "val": {"loss": 0.45000579304034166, "dice": 0.8322911473991531, "iou": 0.7127557057954854, "sensitivity": 0.8179883287219897, "specificity": 0.9524993037926769, "tp": 10543535, "fp": 1903044, "fn": 2346056, "tn": 38160453}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.751212746999954}
+train epoch=199 iter=0 loss=0.181858
+train epoch=199 iter=20 loss=0.201045
+EPOCH {"epoch": 199, "train_loss": 0.19397460122903187, "val": {"loss": 0.45685154155339347, "dice": 0.8317188483322845, "iou": 0.7119166881576493, "sensitivity": 0.8202595412065441, "specificity": 0.9510377489014501, "tp": 10572810, "fp": 1961599, "fn": 2316781, "tn": 38101898}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.607746482999573}
+train epoch=200 iter=0 loss=0.159638
+train epoch=200 iter=20 loss=0.242032
+EPOCH {"epoch": 200, "train_loss": 0.18875138213237128, "val": {"loss": 0.48365925621278216, "dice": 0.8269811091898989, "iou": 0.7050023794747037, "sensitivity": 0.7921102384086508, "specificity": 0.9602481780359813, "tp": 10209977, "fp": 1592597, "fn": 2679614, "tn": 38470900}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.736226167000495}
+train epoch=201 iter=0 loss=0.223862
+train epoch=201 iter=20 loss=0.158938
+EPOCH {"epoch": 201, "train_loss": 0.190146475036939, "val": {"loss": 0.44073738275778174, "dice": 0.8366228891194771, "iou": 0.7191330148194717, "sensitivity": 0.8365072250934882, "specificity": 0.9474885829362325, "tp": 10782236, "fp": 2103791, "fn": 2107355, "tn": 37959706}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.703369082999416}
+train epoch=202 iter=0 loss=0.190261
+train epoch=202 iter=20 loss=0.164107
+EPOCH {"epoch": 202, "train_loss": 0.18872337142626444, "val": {"loss": 0.43636309289106046, "dice": 0.8407986868860415, "iou": 0.7253258578765813, "sensitivity": 0.825205159729273, "specificity": 0.9556970526062665, "tp": 10636557, "fp": 1774931, "fn": 2253034, "tn": 38288566}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.68576325200047}
+train epoch=203 iter=0 loss=0.172358
+train epoch=203 iter=20 loss=0.188521
+EPOCH {"epoch": 203, "train_loss": 0.19302037705977756, "val": {"loss": 0.44768708959074305, "dice": 0.8413661482221878, "iou": 0.7261708666039685, "sensitivity": 0.8288863471307972, "specificity": 0.9544920404726527, "tp": 10684006, "fp": 1823208, "fn": 2205585, "tn": 38240289}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.664473909999288}
+train epoch=204 iter=0 loss=0.162537
+train epoch=204 iter=20 loss=0.199364
+EPOCH {"epoch": 204, "train_loss": 0.18743662983179094, "val": {"loss": 0.4576790590982626, "dice": 0.834840855789193, "iou": 0.7165037153398068, "sensitivity": 0.8076621670928116, "specificity": 0.9590674523494541, "tp": 10410435, "fp": 1639901, "fn": 2479156, "tn": 38423596}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.560852086000523}
+train epoch=205 iter=0 loss=0.186647
+train epoch=205 iter=20 loss=0.207384
+EPOCH {"epoch": 205, "train_loss": 0.18830433438221614, "val": {"loss": 0.4496240379049046, "dice": 0.8393270996194676, "iou": 0.7231383616730347, "sensitivity": 0.8332682549818687, "specificity": 0.9510024798883632, "tp": 10740487, "fp": 1963012, "fn": 2149104, "tn": 38100485}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.680118374999438}
+train epoch=206 iter=0 loss=0.217648
+train epoch=206 iter=20 loss=0.157026
+EPOCH {"epoch": 206, "train_loss": 0.18975993941227595, "val": {"loss": 0.4379244775760292, "dice": 0.8450086499864506, "iou": 0.7316146999512488, "sensitivity": 0.8326945362347029, "specificity": 0.9555499361426188, "tp": 10733092, "fp": 1780825, "fn": 2156499, "tn": 38282672}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.789483139000367}
+train epoch=207 iter=0 loss=0.164160
+train epoch=207 iter=20 loss=0.196460
+EPOCH {"epoch": 207, "train_loss": 0.18516934166351953, "val": {"loss": 0.45578833086655873, "dice": 0.8368166132451781, "iou": 0.7194193304117091, "sensitivity": 0.8227220708554678, "specificity": 0.9538023353278422, "tp": 10604551, "fp": 1850840, "fn": 2285040, "tn": 38212657}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.86656373599908}
+train epoch=208 iter=0 loss=0.203810
+train epoch=208 iter=20 loss=0.157544
+EPOCH {"epoch": 208, "train_loss": 0.18659647355477016, "val": {"loss": 0.4699774107868128, "dice": 0.8285514022836192, "iou": 0.7072878860402372, "sensitivity": 0.8262061224440713, "specificity": 0.9459068188680584, "tp": 10649459, "fp": 2167162, "fn": 2240132, "tn": 37896335}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.92600706399935}
+train epoch=209 iter=0 loss=0.173366
+train epoch=209 iter=20 loss=0.179131
+EPOCH {"epoch": 209, "train_loss": 0.18733115543921788, "val": {"loss": 0.4643104458504384, "dice": 0.8356475811716881, "iou": 0.7176930005544203, "sensitivity": 0.8200053050558392, "specificity": 0.9541352069191563, "tp": 10569533, "fp": 1837504, "fn": 2320058, "tn": 38225993}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.716254220000337}
+train epoch=210 iter=0 loss=0.180765
+train epoch=210 iter=20 loss=0.132335
+EPOCH {"epoch": 210, "train_loss": 0.1843301311135292, "val": {"loss": 0.45870176311766747, "dice": 0.833807235048056, "iou": 0.7149823426339085, "sensitivity": 0.8032218400102843, "specificity": 0.9602938305660137, "tp": 10353201, "fp": 1590768, "fn": 2536390, "tn": 38472729}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.740134366000348}
+train epoch=211 iter=0 loss=0.179313
+train epoch=211 iter=20 loss=0.181149
+EPOCH {"epoch": 211, "train_loss": 0.1830810099840164, "val": {"loss": 0.45263882114155457, "dice": 0.8384400429716903, "iou": 0.7218224405021012, "sensitivity": 0.8404570788941247, "specificity": 0.9471224391620132, "tp": 10833148, "fp": 2118460, "fn": 2056443, "tn": 37945037}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.579036032999284}
+train epoch=212 iter=0 loss=0.173110
+train epoch=212 iter=20 loss=0.160052
+EPOCH {"epoch": 212, "train_loss": 0.18518424679835638, "val": {"loss": 0.478102779772022, "dice": 0.8307502621539119, "iou": 0.7104985661012533, "sensitivity": 0.832979727595701, "specificity": 0.9445378919368921, "tp": 10736768, "fp": 2222006, "fn": 2152823, "tn": 37841491}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.772850109000501}
+train epoch=213 iter=0 loss=0.188182
+train epoch=213 iter=20 loss=0.167184
+EPOCH {"epoch": 213, "train_loss": 0.18546964824199677, "val": {"loss": 0.4572146201487815, "dice": 0.834337530285429, "iou": 0.715762540154294, "sensitivity": 0.8277828210375333, "specificity": 0.9496478552533744, "tp": 10669782, "fp": 2017283, "fn": 2219809, "tn": 38046214}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.88373081499958}
+train epoch=214 iter=0 loss=0.240532
+train epoch=214 iter=20 loss=0.221973
+EPOCH {"epoch": 214, "train_loss": 0.1848579669992129, "val": {"loss": 0.4470273343348267, "dice": 0.8400112339442687, "iou": 0.72415462849742, "sensitivity": 0.8206299175823345, "specificity": 0.957137740622093, "tp": 10577584, "fp": 1717212, "fn": 2312007, "tn": 38346285}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.77370697600054}
+train epoch=215 iter=0 loss=0.181986
+train epoch=215 iter=20 loss=0.208127
+EPOCH {"epoch": 215, "train_loss": 0.1826389193534851, "val": {"loss": 0.45530548632735074, "dice": 0.8308176807488669, "iou": 0.7105971986310993, "sensitivity": 0.8095004721251434, "specificity": 0.9552206838060092, "tp": 10434130, "fp": 1794016, "fn": 2455461, "tn": 38269481}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.797498464000455}
+train epoch=216 iter=0 loss=0.146798
+train epoch=216 iter=20 loss=0.208794
+EPOCH {"epoch": 216, "train_loss": 0.1836861620346705, "val": {"loss": 0.4764953201064969, "dice": 0.8310762890798421, "iou": 0.7109756447883432, "sensitivity": 0.8026201141680911, "specificity": 0.9585292566946915, "tp": 10345445, "fp": 1661463, "fn": 2544146, "tn": 38402034}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.847124857999006}
+train epoch=217 iter=0 loss=0.186529
+train epoch=217 iter=20 loss=0.190384
+EPOCH {"epoch": 217, "train_loss": 0.18229849288860958, "val": {"loss": 0.465548606275922, "dice": 0.8297154721228495, "iou": 0.7089861075305509, "sensitivity": 0.8207998997020154, "specificity": 0.9492602954754549, "tp": 10579775, "fp": 2032810, "fn": 2309816, "tn": 38030687}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.7694900030001}
+train epoch=218 iter=0 loss=0.137180
+train epoch=218 iter=20 loss=0.202308
+EPOCH {"epoch": 218, "train_loss": 0.1796153207619985, "val": {"loss": 0.4518171393930322, "dice": 0.8375354517778966, "iou": 0.7204825756267923, "sensitivity": 0.8327766179702676, "specificity": 0.9498554756715322, "tp": 10734150, "fp": 2008965, "fn": 2155441, "tn": 38054532}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.760247709000396}
+train epoch=219 iter=0 loss=0.181524
+train epoch=219 iter=20 loss=0.178123
+EPOCH {"epoch": 219, "train_loss": 0.18233638256788254, "val": {"loss": 0.43688850311359556, "dice": 0.8393931883805502, "iou": 0.7232364828268627, "sensitivity": 0.8278357319483605, "specificity": 0.9534694138157735, "tp": 10670464, "fp": 1864178, "fn": 2219127, "tn": 38199319}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.673536316000536}
+train epoch=220 iter=0 loss=0.181560
+train epoch=220 iter=20 loss=0.196986
+EPOCH {"epoch": 220, "train_loss": 0.18061617364486057, "val": {"loss": 0.44875517561294065, "dice": 0.835190704516994, "iou": 0.7170192646605462, "sensitivity": 0.8309373819541676, "specificity": 0.9488845419559855, "tp": 10710443, "fp": 2047864, "fn": 2179148, "tn": 38015633}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.809822846000316}
+train epoch=221 iter=0 loss=0.171840
+train epoch=221 iter=20 loss=0.228871
+EPOCH {"epoch": 221, "train_loss": 0.18238890568415325, "val": {"loss": 0.474025824282429, "dice": 0.8293370368266816, "iou": 0.7084336507739136, "sensitivity": 0.800928671825196, "specificity": 0.9579941810870878, "tp": 10323643, "fp": 1682900, "fn": 2565948, "tn": 38380597}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.943799726999714}
+train epoch=222 iter=0 loss=0.179720
+train epoch=222 iter=20 loss=0.182651
+EPOCH {"epoch": 222, "train_loss": 0.18123981257279714, "val": {"loss": 0.4657422165469368, "dice": 0.8353851101788825, "iou": 0.7173058815238023, "sensitivity": 0.8322611632905963, "specificity": 0.948439772993356, "tp": 10727506, "fp": 2065683, "fn": 2162085, "tn": 37997814}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.845683730000019}
+train epoch=223 iter=0 loss=0.181750
+train epoch=223 iter=20 loss=0.196690
+EPOCH {"epoch": 223, "train_loss": 0.17891085843245189, "val": {"loss": 0.47352069276984377, "dice": 0.8318072278793428, "iou": 0.7120462031016823, "sensitivity": 0.8402908982914974, "specificity": 0.9420542595170861, "tp": 10831006, "fp": 2321509, "fn": 2058585, "tn": 37741988}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.561389066999254}
+train epoch=224 iter=0 loss=0.152342
+train epoch=224 iter=20 loss=0.193267
+EPOCH {"epoch": 224, "train_loss": 0.18173069953918458, "val": {"loss": 0.46809531519613645, "dice": 0.8341769604125683, "iou": 0.7155262266113488, "sensitivity": 0.8308521193573947, "specificity": 0.9481448910962516, "tp": 10709344, "fp": 2077497, "fn": 2180247, "tn": 37986000}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.714473519999956}
+train epoch=225 iter=0 loss=0.185809
+train epoch=225 iter=20 loss=0.208999
+EPOCH {"epoch": 225, "train_loss": 0.18031488160292308, "val": {"loss": 0.4579698273746094, "dice": 0.8321605118017201, "iou": 0.7125641153696226, "sensitivity": 0.8246682148409519, "specificity": 0.9493839991052204, "tp": 10629636, "fp": 2027854, "fn": 2259955, "tn": 38035643}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.553993523000827}
+train epoch=226 iter=0 loss=0.157753
+train epoch=226 iter=20 loss=0.168348
+EPOCH {"epoch": 226, "train_loss": 0.17775527089834214, "val": {"loss": 0.46811861448948927, "dice": 0.8310653261400655, "iou": 0.7109595982774708, "sensitivity": 0.8088456802081617, "specificity": 0.9557038168685075, "tp": 10425690, "fp": 1774660, "fn": 2463901, "tn": 38288837}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.027657519000059}
+train epoch=227 iter=0 loss=0.148043
+train epoch=227 iter=20 loss=0.188860
+EPOCH {"epoch": 227, "train_loss": 0.17692304799954098, "val": {"loss": 0.45130154697021635, "dice": 0.8331113677546242, "iou": 0.7139596228232308, "sensitivity": 0.8173495186930291, "specificity": 0.953409783474468, "tp": 10535301, "fp": 1866567, "fn": 2354290, "tn": 38196930}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.943339809999088}
+train epoch=228 iter=0 loss=0.153957
+train epoch=228 iter=20 loss=0.189296
+EPOCH {"epoch": 228, "train_loss": 0.18107675711313884, "val": {"loss": 0.46605216320788506, "dice": 0.8320083640591837, "iou": 0.7123410292137936, "sensitivity": 0.8200208990339569, "specificity": 0.9513663522682506, "tp": 10569734, "fp": 1948434, "fn": 2319857, "tn": 38115063}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.705019053000797}
+train epoch=229 iter=0 loss=0.168159
+train epoch=229 iter=20 loss=0.177325
+EPOCH {"epoch": 229, "train_loss": 0.17432463963826497, "val": {"loss": 0.4631350043386516, "dice": 0.8385913005290966, "iou": 0.7220466842646598, "sensitivity": 0.8379225531671253, "specificity": 0.948368111750205, "tp": 10800479, "fp": 2068554, "fn": 2089112, "tn": 37994943}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.829811380001047}
+train epoch=230 iter=0 loss=0.165125
+train epoch=230 iter=20 loss=0.162205
+EPOCH {"epoch": 230, "train_loss": 0.1757070889075597, "val": {"loss": 0.4586633069090324, "dice": 0.8326578506132641, "iou": 0.7132937425849839, "sensitivity": 0.8217766568388399, "specificity": 0.9510690991353051, "tp": 10592365, "fp": 1960343, "fn": 2297226, "tn": 38103154}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.920947126998726}
+train epoch=231 iter=0 loss=0.175799
+train epoch=231 iter=20 loss=0.167905
+EPOCH {"epoch": 231, "train_loss": 0.17656833877166112, "val": {"loss": 0.44719138652971474, "dice": 0.840940567165531, "iou": 0.7255370547384431, "sensitivity": 0.8290691302772912, "specificity": 0.9540901783985557, "tp": 10686362, "fp": 1839308, "fn": 2203229, "tn": 38224189}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.076014157000827}
+train epoch=232 iter=0 loss=0.144063
+train epoch=232 iter=20 loss=0.220588
+EPOCH {"epoch": 232, "train_loss": 0.17654439955949783, "val": {"loss": 0.4404317171561836, "dice": 0.8365597746129505, "iou": 0.7190397549944146, "sensitivity": 0.8184337268731025, "specificity": 0.9555268977143957, "tp": 10549276, "fp": 1781748, "fn": 2340315, "tn": 38281749}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.755362149000575}
+train epoch=233 iter=0 loss=0.150747
+train epoch=233 iter=20 loss=0.183312
+EPOCH {"epoch": 233, "train_loss": 0.1773782009879748, "val": {"loss": 0.43894099436774114, "dice": 0.8429617601722666, "iou": 0.7285513400989856, "sensitivity": 0.84470577848436, "specificity": 0.9487060752584828, "tp": 10887912, "fp": 2055014, "fn": 2001679, "tn": 38008483}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.704109422000329}
+train epoch=234 iter=0 loss=0.187613
+train epoch=234 iter=20 loss=0.226320
+EPOCH {"epoch": 234, "train_loss": 0.17682732542355856, "val": {"loss": 0.45639676563810594, "dice": 0.8398197984083153, "iou": 0.7238701343602849, "sensitivity": 0.8322974716575569, "specificity": 0.9518087250346619, "tp": 10727974, "fp": 1930711, "fn": 2161617, "tn": 38132786}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.654083409999657}
+train epoch=235 iter=0 loss=0.197050
+train epoch=235 iter=20 loss=0.186085
+EPOCH {"epoch": 235, "train_loss": 0.17853402743736904, "val": {"loss": 0.46030923679913627, "dice": 0.8340823239887986, "iou": 0.715386978986658, "sensitivity": 0.8075861367517402, "specificity": 0.9585355217493869, "tp": 10409455, "fp": 1661212, "fn": 2480136, "tn": 38402285}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.656433561000085}
+train epoch=236 iter=0 loss=0.195605
+train epoch=236 iter=20 loss=0.182296
+EPOCH {"epoch": 236, "train_loss": 0.17639983619252841, "val": {"loss": 0.4499958296223442, "dice": 0.8381133800881889, "iou": 0.7213383524046459, "sensitivity": 0.8438649449776956, "specificity": 0.9453510760680727, "tp": 10877074, "fp": 2189427, "fn": 2012517, "tn": 37874070}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.714067479999358}
+train epoch=237 iter=0 loss=0.166569
+train epoch=237 iter=20 loss=0.227446
+EPOCH {"epoch": 237, "train_loss": 0.1733742281794548, "val": {"loss": 0.4687782334219111, "dice": 0.8325375296702288, "iou": 0.7131171672140032, "sensitivity": 0.810143238835119, "specificity": 0.9562258381987973, "tp": 10442415, "fp": 1753746, "fn": 2447176, "tn": 38309751}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.85979356399912}
+train epoch=238 iter=0 loss=0.161865
+train epoch=238 iter=20 loss=0.113795
+EPOCH {"epoch": 238, "train_loss": 0.17400230318307877, "val": {"loss": 0.460137198024457, "dice": 0.8379856650205603, "iou": 0.7211491629622515, "sensitivity": 0.8324707122204266, "specificity": 0.9503356883698895, "tp": 10730207, "fp": 1989726, "fn": 2159384, "tn": 38073771}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.781123791999562}
+train epoch=239 iter=0 loss=0.148999
+train epoch=239 iter=20 loss=0.156722
+EPOCH {"epoch": 239, "train_loss": 0.17467825710773469, "val": {"loss": 0.45288996398448944, "dice": 0.8368174293615487, "iou": 0.7194205367969309, "sensitivity": 0.8436810756834721, "specificity": 0.9444299632655632, "tp": 10874704, "fp": 2226330, "fn": 2014887, "tn": 37837167}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.902711065000403}
+train epoch=240 iter=0 loss=0.168090
+train epoch=240 iter=20 loss=0.199259
+EPOCH {"epoch": 240, "train_loss": 0.17172513157129288, "val": {"loss": 0.4639112114316166, "dice": 0.8351952875474083, "iou": 0.7170260204294987, "sensitivity": 0.838066467741296, "specificity": 0.9456892392593687, "tp": 10802334, "fp": 2175879, "fn": 2087257, "tn": 37887618}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.964250249000543}
+train epoch=241 iter=0 loss=0.180733
+train epoch=241 iter=20 loss=0.157721
+EPOCH {"epoch": 241, "train_loss": 0.17246736536423365, "val": {"loss": 0.45455903655821733, "dice": 0.8386219268911589, "iou": 0.7220920958549607, "sensitivity": 0.8266602873590015, "specificity": 0.9534095089103181, "tp": 10655313, "fp": 1866578, "fn": 2234278, "tn": 38196919}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.929782860999694}
+train epoch=242 iter=0 loss=0.146144
+train epoch=242 iter=20 loss=0.189768
+EPOCH {"epoch": 242, "train_loss": 0.1712960367401441, "val": {"loss": 0.4635358502959261, "dice": 0.8387890461589924, "iou": 0.7223399360680153, "sensitivity": 0.8287399499332446, "specificity": 0.9526096036998468, "tp": 10682119, "fp": 1898625, "fn": 2207472, "tn": 38164872}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.909486300000935}
+train epoch=243 iter=0 loss=0.175401
+train epoch=243 iter=20 loss=0.134146
+EPOCH {"epoch": 243, "train_loss": 0.17141856054464977, "val": {"loss": 0.45069236330466694, "dice": 0.8410715716653234, "iou": 0.7257321083010296, "sensitivity": 0.8309936288901641, "specificity": 0.9533358258766078, "tp": 10711168, "fp": 1869530, "fn": 2178423, "tn": 38193967}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 11.021484480999789}
+train epoch=244 iter=0 loss=0.187780
+train epoch=244 iter=20 loss=0.180027
+EPOCH {"epoch": 244, "train_loss": 0.17481645320852598, "val": {"loss": 0.45594254947534885, "dice": 0.8371471321113917, "iou": 0.719908042735793, "sensitivity": 0.8239553140204371, "specificity": 0.9535009637326467, "tp": 10620447, "fp": 1862914, "fn": 2269144, "tn": 38200583}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.679847817000336}
+train epoch=245 iter=0 loss=0.153213
+train epoch=245 iter=20 loss=0.217891
+EPOCH {"epoch": 245, "train_loss": 0.17164458334445953, "val": {"loss": 0.4495622460352312, "dice": 0.8386300242882335, "iou": 0.7221041027638622, "sensitivity": 0.8417765156396351, "specificity": 0.9466806904050338, "tp": 10850155, "fp": 2136158, "fn": 2039436, "tn": 37927339}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.838321431001532}
+train epoch=246 iter=0 loss=0.185313
+train epoch=246 iter=20 loss=0.199692
+EPOCH {"epoch": 246, "train_loss": 0.1738500361641248, "val": {"loss": 0.4605146190612623, "dice": 0.8379421568997858, "iou": 0.7210847221376422, "sensitivity": 0.8267786774615269, "specificity": 0.952842134574523, "tp": 10656839, "fp": 1889309, "fn": 2232752, "tn": 38174188}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.868721933000415}
+train epoch=247 iter=0 loss=0.214910
+train epoch=247 iter=20 loss=0.129774
+EPOCH {"epoch": 247, "train_loss": 0.16961358189582826, "val": {"loss": 0.4614991799439534, "dice": 0.8395825621088121, "iou": 0.7235177055203298, "sensitivity": 0.8288371601550429, "specificity": 0.9531672434885052, "tp": 10683372, "fp": 1876284, "fn": 2206219, "tn": 38187213}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.735741812000924}
+train epoch=248 iter=0 loss=0.185322
+train epoch=248 iter=20 loss=0.156848
+EPOCH {"epoch": 248, "train_loss": 0.169765837987264, "val": {"loss": 0.46686753807681625, "dice": 0.8354146349516692, "iou": 0.717349418964233, "sensitivity": 0.8244336069313604, "specificity": 0.951973064158628, "tp": 10626612, "fp": 1924127, "fn": 2262979, "tn": 38139370}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.602175115000136}
+train epoch=249 iter=0 loss=0.147333
+train epoch=249 iter=20 loss=0.139537
+EPOCH {"epoch": 249, "train_loss": 0.17055657307306926, "val": {"loss": 0.47335457314949225, "dice": 0.8353141232877498, "iou": 0.7172012127817056, "sensitivity": 0.8076087131081195, "specificity": 0.9594441294028826, "tp": 10409746, "fp": 1624810, "fn": 2479845, "tn": 38438687}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.766192910999962}
+train epoch=250 iter=0 loss=0.192139
+train epoch=250 iter=20 loss=0.174476
+EPOCH {"epoch": 250, "train_loss": 0.17083480656147004, "val": {"loss": 0.47835254713450326, "dice": 0.8341472169995819, "iou": 0.7154824598461184, "sensitivity": 0.8087324880983423, "specificity": 0.9580685130906071, "tp": 10424231, "fp": 1679922, "fn": 2465360, "tn": 38383575}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.827604576999875}
+train epoch=251 iter=0 loss=0.179406
+train epoch=251 iter=20 loss=0.171675
+EPOCH {"epoch": 251, "train_loss": 0.17032418598731358, "val": {"loss": 0.4706055220991078, "dice": 0.8325509873553495, "iou": 0.7131369150498071, "sensitivity": 0.8165656303601876, "specificity": 0.9533385215973533, "tp": 10525197, "fp": 1869422, "fn": 2364394, "tn": 38194075}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.861556005000239}
+train epoch=252 iter=0 loss=0.161072
+train epoch=252 iter=20 loss=0.169437
+EPOCH {"epoch": 252, "train_loss": 0.1707196593284607, "val": {"loss": 0.4644129375124922, "dice": 0.8351586032729863, "iou": 0.7169719462406003, "sensitivity": 0.8311923163426985, "specificity": 0.9487455376149516, "tp": 10713729, "fp": 2053433, "fn": 2175862, "tn": 38010064}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.767069172999982}
+train epoch=253 iter=0 loss=0.190948
+train epoch=253 iter=20 loss=0.127183
+EPOCH {"epoch": 253, "train_loss": 0.16954549998044968, "val": {"loss": 0.46019214406462, "dice": 0.8362010484851217, "iou": 0.7185098829971162, "sensitivity": 0.8203275806036049, "specificity": 0.9544088225748242, "tp": 10573687, "fp": 1826542, "fn": 2315904, "tn": 38236955}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.653187882999191}
+train epoch=254 iter=0 loss=0.184075
+train epoch=254 iter=20 loss=0.159022
+EPOCH {"epoch": 254, "train_loss": 0.17382125308116278, "val": {"loss": 0.46540543658308464, "dice": 0.8365766317157947, "iou": 0.7190646625480472, "sensitivity": 0.8305306972114166, "specificity": 0.9501270695366408, "tp": 10705201, "fp": 1998084, "fn": 2184390, "tn": 38065413}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.658160437000333}
+train epoch=255 iter=0 loss=0.167991
+train epoch=255 iter=20 loss=0.176169
+EPOCH {"epoch": 255, "train_loss": 0.16741018493970236, "val": {"loss": 0.47270625298566155, "dice": 0.8351311066179498, "iou": 0.7169314172286391, "sensitivity": 0.8242599008766066, "specificity": 0.951835432638344, "tp": 10624373, "fp": 1929641, "fn": 2265218, "tn": 38133856}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.684899862000748}
+train epoch=256 iter=0 loss=0.167898
+train epoch=256 iter=20 loss=0.147839
+EPOCH {"epoch": 256, "train_loss": 0.16739049504200618, "val": {"loss": 0.4867175447173638, "dice": 0.8270704133953917, "iou": 0.7051321944990676, "sensitivity": 0.8029035987255142, "specificity": 0.9553900649261845, "tp": 10349099, "fp": 1787230, "fn": 2540492, "tn": 38276267}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.71057297399966}
+train epoch=257 iter=0 loss=0.172280
+train epoch=257 iter=20 loss=0.169445
+EPOCH {"epoch": 257, "train_loss": 0.16964961687723795, "val": {"loss": 0.47775102886233, "dice": 0.8302064902679374, "iou": 0.7097034505329862, "sensitivity": 0.8081971724316156, "specificity": 0.9553499535999067, "tp": 10417331, "fp": 1788837, "fn": 2472260, "tn": 38274660}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.687083541000902}
+train epoch=258 iter=0 loss=0.182713
+train epoch=258 iter=20 loss=0.184606
+EPOCH {"epoch": 258, "train_loss": 0.16735222786664963, "val": {"loss": 0.4756541647533379, "dice": 0.8315061853716981, "iou": 0.7116051235891226, "sensitivity": 0.8248766000410719, "specificity": 0.9487879952166931, "tp": 10632322, "fp": 2051732, "fn": 2257269, "tn": 38011765}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.744810867001434}
+train epoch=259 iter=0 loss=0.179464
+train epoch=259 iter=20 loss=0.186982
+EPOCH {"epoch": 259, "train_loss": 0.1698794310291608, "val": {"loss": 0.4666116739263629, "dice": 0.8368401532143289, "iou": 0.7194541279316777, "sensitivity": 0.8199284988949611, "specificity": 0.9550693739989796, "tp": 10568543, "fp": 1800078, "fn": 2321048, "tn": 38263419}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.707263807000345}
+train epoch=260 iter=0 loss=0.179388
+train epoch=260 iter=20 loss=0.151805
+EPOCH {"epoch": 260, "train_loss": 0.17165525754292807, "val": {"loss": 0.46510997385081676, "dice": 0.8347971303080728, "iou": 0.7164393017061383, "sensitivity": 0.8265199415559423, "specificity": 0.9505664470577793, "tp": 10653504, "fp": 1980481, "fn": 2236087, "tn": 38083016}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.647932134999792}
+train epoch=261 iter=0 loss=0.189456
+train epoch=261 iter=20 loss=0.145555
+EPOCH {"epoch": 261, "train_loss": 0.16757129778464636, "val": {"loss": 0.49580802377497796, "dice": 0.8301125156453758, "iou": 0.7095661136193048, "sensitivity": 0.8058775487911137, "specificity": 0.9563307965852307, "tp": 10387432, "fp": 1749541, "fn": 2502159, "tn": 38313956}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.695711798000048}
+train epoch=262 iter=0 loss=0.171372
+train epoch=262 iter=20 loss=0.169381
+EPOCH {"epoch": 262, "train_loss": 0.16637298911809922, "val": {"loss": 0.4679568184189277, "dice": 0.8355824078461818, "iou": 0.717596859989558, "sensitivity": 0.8229870133195072, "specificity": 0.9527491322088034, "tp": 10607966, "fp": 1893035, "fn": 2281625, "tn": 38170462}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.481198482000764}
+train epoch=263 iter=0 loss=0.178430
+train epoch=263 iter=20 loss=0.166349
+EPOCH {"epoch": 263, "train_loss": 0.16775943289200465, "val": {"loss": 0.47050564433678543, "dice": 0.8336919816317391, "iou": 0.714812869758134, "sensitivity": 0.8279967921402627, "specificity": 0.9490572178459609, "tp": 10672540, "fp": 2040946, "fn": 2217051, "tn": 38022551}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.583857777999583}
+train epoch=264 iter=0 loss=0.172416
+train epoch=264 iter=20 loss=0.141784
+EPOCH {"epoch": 264, "train_loss": 0.16424461255470912, "val": {"loss": 0.48461708669910336, "dice": 0.8347729522089676, "iou": 0.7164036861240736, "sensitivity": 0.8196193347019312, "specificity": 0.9536469819396943, "tp": 10564558, "fp": 1857064, "fn": 2325033, "tn": 38206433}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.935732695999832}
+train epoch=265 iter=0 loss=0.146868
+train epoch=265 iter=20 loss=0.162295
+EPOCH {"epoch": 265, "train_loss": 0.16636363913615546, "val": {"loss": 0.47380720890394534, "dice": 0.8376912399156875, "iou": 0.7207131776714153, "sensitivity": 0.8235442071047872, "specificity": 0.9540958444041967, "tp": 10615148, "fp": 1839081, "fn": 2274443, "tn": 38224416}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.866681152001547}
+train epoch=266 iter=0 loss=0.164557
+train epoch=266 iter=20 loss=0.153579
+EPOCH {"epoch": 266, "train_loss": 0.16421518276135127, "val": {"loss": 0.4728093505790918, "dice": 0.8354982291993028, "iou": 0.7174726996119761, "sensitivity": 0.8264148955540948, "specificity": 0.9511481486501291, "tp": 10652150, "fp": 1957176, "fn": 2237441, "tn": 38106321}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.71780440099974}
+train epoch=267 iter=0 loss=0.173032
+train epoch=267 iter=20 loss=0.166469
+EPOCH {"epoch": 267, "train_loss": 0.1701828752954801, "val": {"loss": 0.4688161492052645, "dice": 0.8354279421863819, "iou": 0.7173690426291222, "sensitivity": 0.829737421458912, "specificity": 0.949604499078051, "tp": 10694976, "fp": 2019020, "fn": 2194615, "tn": 38044477}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.594571982999696}
+train epoch=268 iter=0 loss=0.204797
+train epoch=268 iter=20 loss=0.232483
+EPOCH {"epoch": 268, "train_loss": 0.16735461552937825, "val": {"loss": 0.48786146319148566, "dice": 0.8322922139051903, "iou": 0.7127572701117658, "sensitivity": 0.8123151463843965, "specificity": 0.955060912431084, "tp": 10470410, "fp": 1800417, "fn": 2419181, "tn": 38263080}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.885164473000259}
+train epoch=269 iter=0 loss=0.172599
+train epoch=269 iter=20 loss=0.175298
+EPOCH {"epoch": 269, "train_loss": 0.16664082805315653, "val": {"loss": 0.48385894003480967, "dice": 0.8334723145229275, "iou": 0.7144899558745269, "sensitivity": 0.8080796357308777, "specificity": 0.9578573233384994, "tp": 10415816, "fp": 1688383, "fn": 2473775, "tn": 38375114}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.69488512099997}
+train epoch=270 iter=0 loss=0.190509
+train epoch=270 iter=20 loss=0.162226
+EPOCH {"epoch": 270, "train_loss": 0.1644776369134585, "val": {"loss": 0.4753073366856811, "dice": 0.8339936833492492, "iou": 0.7152565740336825, "sensitivity": 0.824548971336639, "specificity": 0.9508392639813744, "tp": 10628099, "fp": 1969551, "fn": 2261492, "tn": 38093946}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.756108675999712}
+train epoch=271 iter=0 loss=0.181396
+train epoch=271 iter=20 loss=0.158643
+EPOCH {"epoch": 271, "train_loss": 0.168130790690581, "val": {"loss": 0.47407836356375477, "dice": 0.835452347276068, "iou": 0.7174050330374249, "sensitivity": 0.8121452418466963, "specificity": 0.9575125955679805, "tp": 10468220, "fp": 1702194, "fn": 2421371, "tn": 38361303}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.834554287999708}
+train epoch=272 iter=0 loss=0.174004
+train epoch=272 iter=20 loss=0.206535
+EPOCH {"epoch": 272, "train_loss": 0.16546277304490406, "val": {"loss": 0.4777804182307555, "dice": 0.8347315194942363, "iou": 0.7163426570432387, "sensitivity": 0.806043496647799, "specificity": 0.9597129027453595, "tp": 10389571, "fp": 1614042, "fn": 2500020, "tn": 38449455}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.746447047000402}
+train epoch=273 iter=0 loss=0.164397
+train epoch=273 iter=20 loss=0.182093
+EPOCH {"epoch": 273, "train_loss": 0.16643604040145873, "val": {"loss": 0.48373611227120505, "dice": 0.8322666003525924, "iou": 0.7127197017777277, "sensitivity": 0.8137393963858124, "specificity": 0.954398663701274, "tp": 10488768, "fp": 1826949, "fn": 2400823, "tn": 38236548}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.807741959999476}
+train epoch=274 iter=0 loss=0.153380
+train epoch=274 iter=20 loss=0.185990
+EPOCH {"epoch": 274, "train_loss": 0.16645243614912034, "val": {"loss": 0.4755764464930733, "dice": 0.8362885515943856, "iou": 0.7186391031386461, "sensitivity": 0.816749499654411, "specificity": 0.956076749865345, "tp": 10527567, "fp": 1759719, "fn": 2362024, "tn": 38303778}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.760357717999796}
+train epoch=275 iter=0 loss=0.181596
+train epoch=275 iter=20 loss=0.141420
+EPOCH {"epoch": 275, "train_loss": 0.1645811527967453, "val": {"loss": 0.4801421951834518, "dice": 0.8350867617336543, "iou": 0.7168660586057483, "sensitivity": 0.8161789617684533, "specificity": 0.9554284290260533, "tp": 10520213, "fp": 1785693, "fn": 2369378, "tn": 38277804}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.683433362999494}
+train epoch=276 iter=0 loss=0.159190
+train epoch=276 iter=20 loss=0.165276
+EPOCH {"epoch": 276, "train_loss": 0.16644061505794525, "val": {"loss": 0.46574568586184245, "dice": 0.8391186038081428, "iou": 0.7228288837781176, "sensitivity": 0.8189224157694375, "specificity": 0.957229045682158, "tp": 10555575, "fp": 1713554, "fn": 2334016, "tn": 38349943}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.612777374999496}
+train epoch=277 iter=0 loss=0.138491
+train epoch=277 iter=20 loss=0.176152
+EPOCH {"epoch": 277, "train_loss": 0.16452583571275076, "val": {"loss": 0.48071993725134593, "dice": 0.833952594327085, "iou": 0.7151961320524691, "sensitivity": 0.8105819649358929, "specificity": 0.957090939914706, "tp": 10448070, "fp": 1719087, "fn": 2441521, "tn": 38344410}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.630281374998958}
+train epoch=278 iter=0 loss=0.213849
+train epoch=278 iter=20 loss=0.140784
+EPOCH {"epoch": 278, "train_loss": 0.165192981561025, "val": {"loss": 0.47186056177804964, "dice": 0.8373795850089237, "iou": 0.7202519190370066, "sensitivity": 0.8198689935157757, "specificity": 0.9555020870993862, "tp": 10567776, "fp": 1782742, "fn": 2321815, "tn": 38280755}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.70930795500135}
+train epoch=279 iter=0 loss=0.152251
+train epoch=279 iter=20 loss=0.131028
+EPOCH {"epoch": 279, "train_loss": 0.1633304973443349, "val": {"loss": 0.4822783023118973, "dice": 0.834254632889587, "iou": 0.7156405304509101, "sensitivity": 0.8178736625545372, "specificity": 0.9540392592289185, "tp": 10542057, "fp": 1841348, "fn": 2347534, "tn": 38222149}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.958875745000114}
+train epoch=280 iter=0 loss=0.142623
+train epoch=280 iter=20 loss=0.142159
+EPOCH {"epoch": 280, "train_loss": 0.16265085339546204, "val": {"loss": 0.4855828631927471, "dice": 0.8360178576460404, "iou": 0.7182394189960112, "sensitivity": 0.8182798042234234, "specificity": 0.9551877860287633, "tp": 10547292, "fp": 1795334, "fn": 2342299, "tn": 38268163}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.706765253000412}
+train epoch=281 iter=0 loss=0.192700
+train epoch=281 iter=20 loss=0.140630
+EPOCH {"epoch": 281, "train_loss": 0.16356647809346517, "val": {"loss": 0.4921564936342806, "dice": 0.8337309219898509, "iou": 0.7148701253507774, "sensitivity": 0.8207829092482454, "specificity": 0.9523336916894698, "tp": 10579556, "fp": 1909679, "fn": 2310035, "tn": 38153818}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.745654600001217}
+train epoch=282 iter=0 loss=0.141691
+train epoch=282 iter=20 loss=0.141883
+EPOCH {"epoch": 282, "train_loss": 0.16466473738352458, "val": {"loss": 0.48432804304774446, "dice": 0.8351684394953063, "iou": 0.7169864449186523, "sensitivity": 0.8200147700574828, "specificity": 0.9537687136996553, "tp": 10569655, "fp": 1852187, "fn": 2319936, "tn": 38211310}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.54605605100005}
+train epoch=283 iter=0 loss=0.169011
+train epoch=283 iter=20 loss=0.185767
+EPOCH {"epoch": 283, "train_loss": 0.16379021356503168, "val": {"loss": 0.4775352793754918, "dice": 0.8336218263249967, "iou": 0.7147097272048877, "sensitivity": 0.8391201862029602, "specificity": 0.9439962018293111, "tp": 10815916, "fp": 2243708, "fn": 2073675, "tn": 37819789}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.88967258699995}
+train epoch=284 iter=0 loss=0.142826
+train epoch=284 iter=20 loss=0.157329
+EPOCH {"epoch": 284, "train_loss": 0.16352924952904382, "val": {"loss": 0.4784804365717539, "dice": 0.8357750921371186, "iou": 0.7178811297477872, "sensitivity": 0.8159577755415203, "specificity": 0.9560454994729991, "tp": 10517362, "fp": 1760971, "fn": 2372229, "tn": 38302526}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.74015941200014}
+train epoch=285 iter=0 loss=0.135945
+train epoch=285 iter=20 loss=0.147108
+EPOCH {"epoch": 285, "train_loss": 0.16354419539372125, "val": {"loss": 0.48729889168597684, "dice": 0.8336820801135837, "iou": 0.7147983117628622, "sensitivity": 0.8255922938128913, "specificity": 0.9501318868894545, "tp": 10641547, "fp": 1997891, "fn": 2248044, "tn": 38065606}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.81020344299941}
+train epoch=286 iter=0 loss=0.165017
+train epoch=286 iter=20 loss=0.168804
+EPOCH {"epoch": 286, "train_loss": 0.1614465097586314, "val": {"loss": 0.48345997103370064, "dice": 0.8329264109209386, "iou": 0.7136879959542237, "sensitivity": 0.8290256843681075, "specificity": 0.948006011557104, "tp": 10685802, "fp": 2083061, "fn": 2203789, "tn": 37980436}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.812916228998802}
+train epoch=287 iter=0 loss=0.185901
+train epoch=287 iter=20 loss=0.143833
+EPOCH {"epoch": 287, "train_loss": 0.1615523114800453, "val": {"loss": 0.47240024642779094, "dice": 0.8384753288088009, "iou": 0.7218747475668376, "sensitivity": 0.8354363610140927, "specificity": 0.9493872439542659, "tp": 10768433, "fp": 2027724, "fn": 2121158, "tn": 38035773}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.838680261000263}
+train epoch=288 iter=0 loss=0.186200
+train epoch=288 iter=20 loss=0.150782
+EPOCH {"epoch": 288, "train_loss": 0.16388948460419972, "val": {"loss": 0.467285827539935, "dice": 0.8377972838419243, "iou": 0.7208701822789169, "sensitivity": 0.8321745042181711, "specificity": 0.9503241566755892, "tp": 10726389, "fp": 1990188, "fn": 2163202, "tn": 38073309}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.584006737999516}
+train epoch=289 iter=0 loss=0.185774
+train epoch=289 iter=20 loss=0.152466
+EPOCH {"epoch": 289, "train_loss": 0.16164379318555197, "val": {"loss": 0.4654948151495197, "dice": 0.8382706096447428, "iou": 0.7215713199684131, "sensitivity": 0.8211339677108451, "specificity": 0.9556077194160061, "tp": 10584081, "fp": 1778510, "fn": 2305510, "tn": 38284987}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.541101336000793}
+train epoch=290 iter=0 loss=0.168498
+train epoch=290 iter=20 loss=0.165291
+EPOCH {"epoch": 290, "train_loss": 0.16253868093093235, "val": {"loss": 0.4685900515258902, "dice": 0.8386707992554072, "iou": 0.7221645668753431, "sensitivity": 0.8307978119709152, "specificity": 0.9516031763278178, "tp": 10708644, "fp": 1938946, "fn": 2180947, "tn": 38124551}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.826410493998992}
+train epoch=291 iter=0 loss=0.190731
+train epoch=291 iter=20 loss=0.139958
+EPOCH {"epoch": 291, "train_loss": 0.1627832735578219, "val": {"loss": 0.47591305413458607, "dice": 0.8361890475125932, "iou": 0.7184921620864719, "sensitivity": 0.8228336337436929, "specificity": 0.9532775933164297, "tp": 10605989, "fp": 1871863, "fn": 2283602, "tn": 38191634}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.800434164000762}
+train epoch=292 iter=0 loss=0.150229
+train epoch=292 iter=20 loss=0.174358
+EPOCH {"epoch": 292, "train_loss": 0.1621302455663681, "val": {"loss": 0.49149334799535205, "dice": 0.8351672786754868, "iou": 0.7169847338473039, "sensitivity": 0.809488989992002, "specificity": 0.958491017396709, "tp": 10433982, "fp": 1662995, "fn": 2455609, "tn": 38400502}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.71381404100066}
+train epoch=293 iter=0 loss=0.167477
+train epoch=293 iter=20 loss=0.202520
+EPOCH {"epoch": 293, "train_loss": 0.16366863946119944, "val": {"loss": 0.47452515673519363, "dice": 0.8344343284541738, "iou": 0.7159050312004377, "sensitivity": 0.828640101924103, "specificity": 0.9493366492695333, "tp": 10680832, "fp": 2029751, "fn": 2208759, "tn": 38033746}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.874684772999899}
+train epoch=294 iter=0 loss=0.146842
+train epoch=294 iter=20 loss=0.188229
+EPOCH {"epoch": 294, "train_loss": 0.16129839917023978, "val": {"loss": 0.48023621900246877, "dice": 0.8363849562420902, "iou": 0.7187814911200995, "sensitivity": 0.819659289421984, "specificity": 0.9548467523940808, "tp": 10565073, "fp": 1808997, "fn": 2324518, "tn": 38254500}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.715393167000002}
+train epoch=295 iter=0 loss=0.220531
+train epoch=295 iter=20 loss=0.161757
+EPOCH {"epoch": 295, "train_loss": 0.16518202697237333, "val": {"loss": 0.4848862336118623, "dice": 0.8335383614758516, "iou": 0.7145870330810673, "sensitivity": 0.8215595048749026, "specificity": 0.951837704032676, "tp": 10589566, "fp": 1929550, "fn": 2300025, "tn": 38133947}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.868937998000547}
+train epoch=296 iter=0 loss=0.187476
+train epoch=296 iter=20 loss=0.154932
+EPOCH {"epoch": 296, "train_loss": 0.1640686554213365, "val": {"loss": 0.47677467778177546, "dice": 0.8352918816746963, "iou": 0.7171684205959992, "sensitivity": 0.8259952546205694, "specificity": 0.9511791743990795, "tp": 10646741, "fp": 1955933, "fn": 2242850, "tn": 38107564}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.776031398001578}
+train epoch=297 iter=0 loss=0.127115
+train epoch=297 iter=20 loss=0.156584
+EPOCH {"epoch": 297, "train_loss": 0.16087263375520705, "val": {"loss": 0.47310558728652424, "dice": 0.8370726828215092, "iou": 0.719797936170616, "sensitivity": 0.8367886925194136, "specificity": 0.9477084838600085, "tp": 10785864, "fp": 2094981, "fn": 2103727, "tn": 37968516}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.798392672000773}
+train epoch=298 iter=0 loss=0.166655
+train epoch=298 iter=20 loss=0.132769
+EPOCH {"epoch": 298, "train_loss": 0.16264267414808273, "val": {"loss": 0.4658757935066034, "dice": 0.837427193871424, "iou": 0.7203223655816423, "sensitivity": 0.8290858879851192, "specificity": 0.9514212151774969, "tp": 10686578, "fp": 1946236, "fn": 2203013, "tn": 38117261}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.605231802999697}
+train epoch=299 iter=0 loss=0.156630
+train epoch=299 iter=20 loss=0.158510
+EPOCH {"epoch": 299, "train_loss": 0.16106528167923292, "val": {"loss": 0.48694149205590237, "dice": 0.8330730545099166, "iou": 0.7139033490738742, "sensitivity": 0.814001313152605, "specificity": 0.9548896592826133, "tp": 10492144, "fp": 1807278, "fn": 2397447, "tn": 38256219}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.706935550000708}
+train epoch=300 iter=0 loss=0.164438
+train epoch=300 iter=20 loss=0.163150
+EPOCH {"epoch": 300, "train_loss": 0.16030132869879404, "val": {"loss": 0.46952873792978794, "dice": 0.8373839325666805, "iou": 0.7202583518524336, "sensitivity": 0.83249375406869, "specificity": 0.9498660588714959, "tp": 10730504, "fp": 2008541, "fn": 2159087, "tn": 38054956}, "best_epoch": 174, "best_loss": 0.4202911927558408, "seconds": 10.955812596999749}
+DONE {'loss': 0.4202911614643244, 'dice': 0.8382691976354043, 'iou': 0.721569227508804, 'sensitivity': 0.844752560418713, 'specificity': 0.945075738146373, 'tp': 10888515, 'fp': 2200458, 'fn': 2001076, 'tn': 37863039}

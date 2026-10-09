@@ -41,11 +41,14 @@ RSI 的结论是工程通过、相对 D0 降低部分退化风险，但超出 Fi
 和跨来源稳定性尚未成立；没有完成正式 test，详见
 [最终可行性报告](RSI_TailProbe_20261004/FEASIBILITY_REPORT_2026-10-04.md)。
 
-10 月 9 日预训练 Swin 和 PTU `[2,2,6,2]` 的 seed42 重训在本次快照时仍在进行。
-[训练代码与说明](experiments/transformer_seed42_20261009/README.md) 和
-[快照](experiments/transformer_seed42_20261009/snapshot/)记录配置、进度、日志、
-预训练加载验收和数据校验，不能标为完整300轮结果。Swin 用激活重算维持物理
-batch64/FP32，PTU 在修复启动流程时暂停后从第5轮断点恢复。
+10 月 9 日预训练 Swin 和 PTU `[2,2,6,2]` 的 seed42 重训均已完成300轮。
+按最低验证loss选中的模型，在808张开发验证图上最终 pooled DSC 分别为
+**0.89719584（Swin，第16轮）**与 **0.83826920（PTU，第174轮）**。
+[完整最终报告](experiments/transformer_seed42_20261009/FINAL_RESULTS.md)、
+[结果CSV](experiments/transformer_seed42_20261009/final_results.csv)以及
+[完整日志和逐epoch记录](experiments/transformer_seed42_20261009/snapshot/)已更新。
+训练期间最高 DSC 单独报告，不改变选模型规则。Swin 用激活重算维持物理
+batch64/FP32，PTU 从第5轮断点恢复完成预算；失败和恢复记录保留。
 
 ## 存档范围与使用
 

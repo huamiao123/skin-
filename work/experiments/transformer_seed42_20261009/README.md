@@ -16,14 +16,14 @@ mask geometry, normalization and resize256. The legacy source masks already
 contain gray edge pixels; these source labels are preserved, not binarized for
 training. Hard metrics use target>=0.5.
 
-Swin uses historical embed96, depths2262, decoder[2,2,2,1], window8,
+Swin uses historical embed96, depths2262, window8,
 drop_path0.2; official Swin-T ImageNet weights and decoder reverse mapping,
 relative position bias interpolation. Load audit confirms 301/354 keys loaded.
 PTU uses embed[64,128,256,512], encoder2262, decoder222, heads[2,4,8,16],
 SR[4,2,1,1], drop_path0.1, random initialization. Both retain their architectural
 single final BCE+Dice loss (no EGE five-head deep supervision).
 
-Both passed one real train batch64 forward/backward/optimizer update and
+Both passed a real train batch64 forward/backward/optimizer update and
 eight-image validation before launch. Preflight weights are never saved as
 training initialization; each real job reinitializes using seed42.
 
@@ -39,3 +39,10 @@ Re-launching run_queue.py resumes committed epochs and skips completed runs.
 DONE.json is only written after 300 epochs and final best checkpoint evaluation.
 
 Initial Swin continuous run ran out of memory on its second batch before any epoch commit. The failed attempt is retained in swin_pretrained.log. Built-in activation checkpointing was enabled, then two real batch64 updates and validation passed. PTU was paused after committed epochs and resumes its complete RNG/optimizer checkpoint when queued again. Initial launcher was renamed from queue.py to run_queue.py to avoid a stdlib module name collision. No completed legacy results are overwritten.
+
+
+## Completed results
+
+Both 300-epoch jobs completed on 2026-10-09. The snapshot directory now contains the final logs, 300-row histories, DONE files and complete queue status. [Final report](FINAL_RESULTS.md) and [CSV](final_results.csv): Swin DSC 0.89719584 (epoch16 selected by val loss), PTU DSC 0.83826920 (epoch174). Highest observed Dice epochs are reported separately and do not change checkpoint selection. Frozen model/data-processing source is included in source/. Checkpoints remain local; checkpoint_manifest.json records current hashes and sizes.
+
+Decoder implementation detail: depths_decoder=[2,2,2,1] was passed to the historical Swin constructor, but this upstream implementation builds its decoder block depths from encoder depths. After its first PatchExpand, the three Swin decoder stages actually use depths [6,2,2]. The frozen source records the architecture that was trained; no architecture was changed during this archive update.
