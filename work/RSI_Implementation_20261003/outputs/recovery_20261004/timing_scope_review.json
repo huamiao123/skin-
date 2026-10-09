@@ -1,0 +1,111 @@
+{
+  "status": "timing_scope_verified",
+  "reviewed_utc": "2026-10-04T04:18:27.958540+00:00",
+  "run": "MeanHinge-0.3",
+  "seed": 17,
+  "GPU_used": false,
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "source_or_training_mutations": false,
+  "inputs": [
+    {
+      "path": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/latest.pth",
+      "sha256": "dc39e2a0432b4105d79a0b04bd34976a955b154f2e6a96c0c9286cb97d56057f"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/epoch_diagnostics.csv",
+      "sha256": "38d61faa3b978f08685bb19056c1ca6224871f46e9bc8b080f6a2699bb41b18f"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/recovery_20261004/weight_grid_console_seed17.log",
+      "sha256": "83f8decb8a0d01ec7d6101a85cab6dcbd089d65f483b4f88cf94cd6f957dea3f"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/latest.pth",
+      "sha256": "764fe666fac5e95603cfe7eb014711d5b527b8e3b179af7180137a91f7cef5a8"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/DONE.json",
+      "sha256": "a4fe1ea7b355bc988fab1b21963fc6d01752cea41f62df585c73aac2fac6adbd"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/epoch_diagnostics.csv",
+      "sha256": "f6b780d8df6014d74bfe06b2a504187731afb41d2eab431b474dcf1e3de95f9b"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_console_seed17.log",
+      "sha256": "14ae571e5e4bf6958b8842b30d0c324d285a58ab1a9ced4ee70f06a7e82c644e"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/recovery_20261004/recovery_review.json",
+      "sha256": "bf2f97590b018dd3fa736f68d4972f17110819acb4a926dad1f4a2fbd4739d4c"
+    }
+  ],
+  "protocol": {
+    "registered_epochs": 40,
+    "committed_epochs": 40,
+    "committed_epoch_log_exact_1_to_40": true,
+    "retained_optimizer_steps": 7360,
+    "retained_optimizer_step_attempts": 7360,
+    "retained_AMP_skips": 0,
+    "completed_prior_epochs": 25,
+    "completed_resumed_epochs": 15,
+    "resumed_steps": 2760,
+    "rollback_to_atomic_epoch25": true,
+    "extra_uncommitted_training_phase_observed": true,
+    "additional_inference_or_training_budget_revision": false
+  },
+  "measured": {
+    "saved_prior_checkpoint_loop_wall_seconds": 746.5746564909969,
+    "resumed_loop_wall_through_latest40_seconds": 453.5471824430001,
+    "resumed_loop_wall_through_DONE_clock_read_seconds": 453.9249781849999,
+    "latest40_cumulative_loop_wall_seconds": 1200.121838933997,
+    "DONE_cumulative_loop_wall_seconds": 1200.4996346759967,
+    "epoch1_to_25_timed_body_seconds": 741.0550873470202,
+    "epoch26_to_40_timed_body_seconds": 449.53322172700007,
+    "all40_epoch_timed_body_seconds": 1190.5883090740203,
+    "prior_loop_accounting_minus_prior_epoch_bodies_seconds": 5.519569143976696,
+    "resumed_DONE_loop_accounting_minus_resumed_epoch_bodies_seconds": 4.391756457999804,
+    "DONE_after_latest40_payload_clock_read_seconds": 0.37779574199976196
+  },
+  "field_meanings": {
+    "epoch_seconds": "Per-epoch monotonic duration from epoch-loop tick to immediately before epoch diagnostic CSV append; includes augmentation/train, canonical train and validation evaluation, frozen-state and optional gradient diagnostics; excludes that epoch CSV append, scheduler/checkpoint serialization and console printing.",
+    "checkpoint_wall_seconds": "elapsed_before plus current-call monotonic elapsed since wall_start. Prior saved latest25 duration is restored as elapsed_before. A checkpoint payload clock read occurs before saving that checkpoint.",
+    "DONE_wall_seconds": "Restored latest25 wall_seconds plus resumed-loop monotonic elapsed at report construction; includes successful checkpoint saving and checkpoint hashing through that report clock read, excludes DONE writing, final workspace mirroring and initial setup. This is cumulative loop accounting across committed epochs, not full process elapsed, GPU utilization time, or only the resumed call."
+  },
+  "unmeasured_costs": [
+    {
+      "item": "Interrupted original epoch26",
+      "evidence": "Reviewer read 22 canonical-train diagnostic rows tagged26, last partial, before resume; original code evaluates canonical train only after augmented training loop. No epoch26 atomic checkpoint or timing row existed.",
+      "known": "A failed/discarded epoch26 training phase and partial canonical inference were physically performed and rerun after restoring25.",
+      "unknown": "Exact duration, actual optimizer updates versus AMP skips, interrupted-phase final state and CPU/GPU utilization are not measured or retained; do not charge a guessed epoch duration."
+    },
+    {
+      "item": "Prior epoch25 checkpoint save/printing after snapshot clock read and other post-snapshot/pre-resume work",
+      "known": "Checkpoint25 payload wall clock is read before saving25. Such work is outside saved elapsed_before.",
+      "unknown": "This individual overhead cannot be isolated from existing records."
+    },
+    {
+      "item": "Per-call setup and checkpoint/model loading",
+      "known": "train_stage defines wall_start after loader/model construction, initialization/restoration and fixed-batch preparation.",
+      "unknown": "Separate setup durations were not instrumented."
+    },
+    {
+      "item": "Process absence/recovery interval",
+      "known": "Previous PID observed absent; recovery launched2026-10-04T04:06:47.432560+00:00; cause unknown.",
+      "unknown": "No exact stop instant or active-compute duration during gap measured; gap is not training time."
+    },
+    {
+      "item": "DONE write and workspace mirror",
+      "known": "Occurs after report wall_seconds read.",
+      "unknown": "Separate duration not instrumented."
+    }
+  ],
+  "accounting_instruction": "Report 40 committed epochs and7360 retained updates plus an interrupted epoch26 training phase with unmeasured physical cost. Use DONE1200.499635s only as cumulative measured loop-accounting seconds; do not label it end-to-end full40 wall time or GPU hours. Full physical compute cost exceeds the committed-loop accounting by unmeasured interrupted/setup/finalization work.",
+  "checks": {
+    "snapshot_first25_CSV_exact_live_prefix": true,
+    "snapshot_console25_exact_live_prefix": true,
+    "all40_console_epoch_seconds_exact_CSV": true,
+    "latest40_and_DONE_hash_bound": true,
+    "cumulative_resume_semantics_verified_from_frozen_source": true
+  }
+}

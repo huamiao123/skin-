@@ -1,0 +1,116 @@
+protocol:
+  id: medseg_research_v1
+  source_commit: 223af12b2474961ee9cc6d9a39c2589eed73044b
+  source_state: local_export_without_git_metadata
+  stage: P0
+  status: implementation
+  main_metric: macro_dice
+
+data:
+  manifest: research/data/manifest_v1.csv
+  split_hash: ffdf0e80852f0e5dd60dcfc1986b69978cf3a55d050dd44433545622f4d44ef9
+  train_split: S_seg
+  checkpoint_validation_split: V_dev
+  router_train_split: R_fit
+  router_validation_split: R_val
+  final_test_split: T_external
+  image_size: [256, 256]
+  image_normalization: rgb_float_0_1
+  image_interpolation: bilinear
+  mask_interpolation: nearest
+  group_key: group_id
+  missing_group_policy: disclose_and_use_image_id
+  horizontal_flip_p: 0.5
+  vertical_flip_p: 0.5
+  rotation_p: 0.5
+  rotation_degrees: [0.0, 360.0]
+  scale_crop: false
+  color_jitter: false
+
+model:
+  name: ege_dual
+  c_list: [8, 16, 24, 32, 48, 64]
+  bridge: true
+  deep_supervision: true
+  fusion_type: scalar
+  gamma_init: 0.1
+  t_embed: 48
+  t_depths: [2, 2, 2, 2]
+  t_head_dim: 16
+  t_sr_ratios: [4, 2, 1, 1]
+  t_mlp_ratio: 4.0
+  t_drop_path_rate: 0.1
+  output_contract: probability
+  pretrained: null
+
+train:
+  seed: 42
+  epochs: 300
+  micro_batch_size: 32
+  gradient_accumulation_steps: 2
+  accumulation_weighting: actual_samples_in_window
+  optimizer: AdamW
+  cnn_lr: 0.001
+  transformer_lr: 0.0001
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  eps: 0.00000001
+  scheduler: cosine_per_epoch
+  eta_min: 0.00001
+  grad_clip_norm: 1.0
+  precision: fp32
+  amp: false
+  loss: probability_bce_plus_soft_dice
+  dice_smooth: 1.0
+  ds_weights_deep_to_shallow: [0.1, 0.2, 0.3, 0.4, 0.5]
+  selection: min_val_final_bce_dice
+  validate_every_epoch: true
+  persistent_workers: false
+  resume_granularity: epoch_boundary
+
+policies:
+  order: [none, deep, full]
+  masks:
+    none: [0, 0, 0, 0]
+    deep: [0, 0, 1, 1]
+    full: [1, 1, 1, 1]
+  multiroute_loss_weights: [1.0, 1.0, 1.0]
+
+router:
+  enabled: false
+  target: delta_dice_vs_none
+  descriptor: pre_fuse2_channel_mean_std
+  input_dim: 32
+  hidden_dim: 32
+  output_dim: 2
+  dropout: 0.1
+  feature_scaler_fit_split: R_fit
+  utility_scaler_fit_split: R_fit
+  utility_std_floor: 0.001
+  loss: huber_normalized_utility
+  huber_delta: 1.0
+  optimizer: AdamW
+  lr: 0.001
+  weight_decay: 0.0001
+  batch_size: 64
+  max_epochs: 100
+  frozen_segmentation: true
+  margin_dice: 0.002
+  fixed_policy: null
+  checkpoint_selection: max_R_val_routed_macro_dice
+
+eval:
+  threshold: 0.5
+  tta: false
+  postprocessing: none
+  probability_dtype: float32
+  boundary_tolerance_px: 2.0
+  surface_spacing: [1.0, 1.0]
+  surface_unit: resized_grid_pixel
+  assd_definition: mean_of_two_area_weighted_directed_means
+  surface_implementation_version: surface-distance==0.1
+  report_empty_cases: true
+  report_per_image: true
+  bootstrap_unit: group
+  bootstrap_repeats: 10000
+  bootstrap_seed: 20260912

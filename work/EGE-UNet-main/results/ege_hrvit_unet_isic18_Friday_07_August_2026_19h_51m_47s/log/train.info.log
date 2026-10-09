@@ -1,0 +1,62 @@
+2026-08-07 19:51:47 - #----------Config info----------#
+2026-08-07 19:51:47 - network: ege_hrvit_unet,
+2026-08-07 19:51:47 - model_config: {'num_classes': 1, 'input_channels': 3, 'c_list': [8, 16, 24, 32, 48, 64], 'bridge': True, 'gt_ds': True},
+2026-08-07 19:51:47 - datasets: isic18,
+2026-08-07 19:51:47 - data_path: ./data/isic2018/,
+2026-08-07 19:51:47 - criterion: GT_BceDiceLoss(
+  (bcedice): BceDiceLoss(
+    (bce): BCELoss(
+      (bceloss): BCELoss()
+    )
+    (dice): DiceLoss()
+  )
+),
+2026-08-07 19:51:47 - num_classes: 1,
+2026-08-07 19:51:47 - input_size_h: 256,
+2026-08-07 19:51:47 - input_size_w: 256,
+2026-08-07 19:51:47 - input_channels: 3,
+2026-08-07 19:51:47 - distributed: False,
+2026-08-07 19:51:47 - local_rank: -1,
+2026-08-07 19:51:47 - num_workers: 8,
+2026-08-07 19:51:47 - seed: 42,
+2026-08-07 19:51:47 - world_size: None,
+2026-08-07 19:51:47 - rank: None,
+2026-08-07 19:51:47 - amp: False,
+2026-08-07 19:51:47 - gpu_id: 0,
+2026-08-07 19:51:47 - batch_size: 64,
+2026-08-07 19:51:47 - epochs: 300,
+2026-08-07 19:51:47 - gradient_accumulation_steps: 1,
+2026-08-07 19:51:47 - work_dir: results/ege_hrvit_unet_isic18_Friday_07_August_2026_19h_51m_47s/,
+2026-08-07 19:51:47 - print_interval: 20,
+2026-08-07 19:51:47 - val_interval: 30,
+2026-08-07 19:51:47 - save_interval: 100,
+2026-08-07 19:51:47 - threshold: 0.5,
+2026-08-07 19:51:47 - lambda_edge: 0.2,
+2026-08-07 19:51:47 - edge_warmup_epochs: 20,
+2026-08-07 19:51:47 - lambda_router: 0.2,
+2026-08-07 19:51:47 - lambda_aux: 0.2,
+2026-08-07 19:51:47 - token_size: 8,
+2026-08-07 19:51:47 - halting_schedule: {'warmup_epochs': 20, 'transition_end_epoch': 40, 'warmup_keep_ratio': 1.0, 'transition_keep_ratio': 0.4, 'final_min_keep_ratio': 0.15, 'threshold': 0.5},
+2026-08-07 19:51:47 - train_transformer: Compose(
+    <utils.myNormalize object at 0x7fb3491c2bc0>
+    <utils.myToTensor object at 0x7fb3491c2c20>
+    <utils.myRandomHorizontalFlip object at 0x7fb3491c2c50>
+    <utils.myRandomVerticalFlip object at 0x7fb3491c2cb0>
+    <utils.myRandomRotation object at 0x7fb3491c2d10>
+    <utils.myResize object at 0x7fb3491c2d70>
+),
+2026-08-07 19:51:47 - test_transformer: Compose(
+    <utils.myNormalize object at 0x7fb3491c2e60>
+    <utils.myToTensor object at 0x7fb3491c2ec0>
+    <utils.myResize object at 0x7fb3491c2ef0>
+),
+2026-08-07 19:51:47 - opt: AdamW,
+2026-08-07 19:51:47 - lr: 0.001,
+2026-08-07 19:51:47 - betas: (0.9, 0.999),
+2026-08-07 19:51:47 - eps: 1e-08,
+2026-08-07 19:51:47 - weight_decay: 0.01,
+2026-08-07 19:51:47 - amsgrad: False,
+2026-08-07 19:51:47 - sch: CosineAnnealingLR,
+2026-08-07 19:51:47 - T_max: 300,
+2026-08-07 19:51:47 - eta_min: 1e-05,
+2026-08-07 19:51:47 - last_epoch: -1,

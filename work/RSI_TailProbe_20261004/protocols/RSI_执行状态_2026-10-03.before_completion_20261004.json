@@ -1,0 +1,821 @@
+{
+  "phase": "T2_full_registered_matrix_exported_final_scientific_readout_running",
+  "complete": false,
+  "project": "/home/featurize/work/RSI_Implementation_20261003",
+  "data_links": "/home/featurize/work/RSI_datasets",
+  "source": {
+    "commit": "5b81bb1f812360049a89684dd43ce235b4487753",
+    "source_sha256": {
+      "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+      "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+      "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+      "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+      "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+      "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+      "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+      "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+      "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+      "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+      "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+      "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+      "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+      "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+      "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+      "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+      "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+      "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+      "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+      "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+      "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+    },
+    "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+  },
+  "verification": {
+    "tests_passed": 64,
+    "test_log": "outputs/pytest_full.log",
+    "T0": "/home/featurize/work/RSI_Implementation_20261003/outputs/T0/feasibility_report.json",
+    "T0_engineering_passed": true,
+    "full_IMA_file_audit_complete": true
+  },
+  "IMA_actual_counts": {
+    "M": {
+      "train": 1471,
+      "val": 223,
+      "test": 451
+    },
+    "H": {
+      "train": 299,
+      "val": 47,
+      "test": 87
+    },
+    "T1": {
+      "train": 113,
+      "val": 20,
+      "test": 35
+    }
+  },
+  "remaining": [
+    "完整科学读出与图形发布",
+    "根代理核对完整风险/尾部/来源及简单对照后记录seed29决策"
+  ],
+  "test_scoring_locked": true,
+  "current_progress": {
+    "seed": 17,
+    "active": "full extra-weight original-coordinate exports",
+    "completed": [
+      "A_CNN",
+      "A_T",
+      "B",
+      "D0",
+      "RSI-0.3",
+      "RSI-1",
+      "RSI-3",
+      "MeanHinge-0.3",
+      "MeanHinge-1",
+      "MeanHinge-3",
+      "AbsHard-0.3",
+      "AbsHard-1",
+      "AbsHard-3"
+    ],
+    "test_scoring_locked": true,
+    "q": 0.1325787454843521
+  },
+  "last_training_record": {
+    "run": "RSI-1",
+    "epoch": 17,
+    "budget": 40,
+    "best_epoch": 11,
+    "best_val_dice": 0.8583795894208186
+  },
+  "dataset_downloads_complete": true,
+  "failure_record": "/home/featurize/work/RSI_Implementation_20261003/outputs/failed/amp_logging_failure.json",
+  "completed_A_CNN": {
+    "epochs": 100,
+    "best_epoch": 36,
+    "best_val_dice": 0.8552520003612387,
+    "wall_seconds": 2267.047232076,
+    "best_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+    "latest_sha256": "906b5038b167f4f2816bebfba12fce4c5951f52d46e5dfea1d00230d3e0a0f25"
+  },
+  "last_checked_utc": "2026-10-04T06:12:44.773682+00:00",
+  "completed_A_T": {
+    "epochs": 100,
+    "best_epoch": 40,
+    "best_val_dice": 0.8538206972870787,
+    "wall_seconds": 2986.3830472399995,
+    "best_sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+    "latest_sha256": "cf5b125d2ee5637ca37b2e00bf8e09713511afe34c005f68d4376e8ec8b401f9"
+  },
+  "completed_B": {
+    "epochs": 40,
+    "best_epoch": 22,
+    "best_val_dice": 0.8583737524417797,
+    "wall_seconds": 1222.9892093220005,
+    "best_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+    "latest_sha256": "7e475e36de9b6f27a0fc83f6ed02bbf2d5e8c3267358120a2be5abe9f6f74f99"
+  },
+  "runner_handoff_record": "/home/featurize/work/RSI_Implementation_20261003/outputs/runner_handoff/handoff.json",
+  "exact_metric_verification": "/home/featurize/work/RSI_Implementation_20261003/outputs/exact_boundary_native_verification.json",
+  "T1_summary": "/home/featurize/work/RSI_Implementation_20261003/outputs/T1_summary_seed17",
+  "deferred_export_pid": 103068,
+  "auto_resume_guard": "/home/featurize/work/RSI_Implementation_20261003/outputs/training_first_schedule/resume_guard_process.json",
+  "completed_D0": {
+    "epochs": 40,
+    "best_epoch": 7,
+    "best_val_dice": 0.858316915574831,
+    "wall_seconds": 1320.231838832,
+    "best_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+    "latest_sha256": "a0305829a9007e9bcac4100090f8d22305acc606e79eb3bcb3b7d59cb76674ca"
+  },
+  "active_training_progress": {
+    "started_utc": "2026-10-03T13:36:06.717782+00:00",
+    "status": "complete",
+    "active": "three_lambda1_objectives_complete",
+    "seed": 17,
+    "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/train_remaining_pilot.py",
+    "tool_sha256": "9b8f348e412d7c339c567c40997a424c1f0b423415d0d60bd1594107f0a8912e",
+    "invocation": [
+      "tools/train_remaining_pilot.py",
+      "--config",
+      "configs/p2_ima_m_v2.yaml",
+      "--audit-file",
+      "outputs/remaining_training_seed17.json"
+    ],
+    "scientific_config": {
+      "abs_hard_quantile": 0.75,
+      "abs_hard_quantile_source": "B_canonical_train_image_then_rater_weighted",
+      "align_corners": false,
+      "amp": true,
+      "audit": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/file_audit.json",
+      "audit_input_manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/selected_references.csv",
+      "audited_counts": {
+        "H": {
+          "images": {
+            "test": 87,
+            "train": 299,
+            "val": 47
+          },
+          "references": {
+            "test": 183,
+            "train": 643,
+            "val": 104
+          }
+        },
+        "M": {
+          "images": {
+            "test": 451,
+            "train": 1471,
+            "val": 223
+          },
+          "references": {
+            "test": 948,
+            "train": 3102,
+            "val": 471
+          }
+        },
+        "T1": {
+          "images": {
+            "test": 35,
+            "train": 113,
+            "val": 20
+          },
+          "references": {
+            "test": 79,
+            "train": 268,
+            "val": 49
+          }
+        }
+      },
+      "augmentation": {
+        "brightness": [
+          0.9,
+          1.1
+        ],
+        "contrast": [
+          0.9,
+          1.1
+        ],
+        "horizontal_flip_p": 0.5,
+        "hue": [
+          -0.02,
+          0.02
+        ],
+        "rng": "sha256(seed:epoch:image_id)",
+        "rot90_uniform": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "same_D_sequence": true,
+        "saturation": [
+          0.9,
+          1.1
+        ],
+        "vertical_flip_p": 0.5
+      },
+      "bootstrap_repeats": 2000,
+      "cache_dir": "/home/featurize/rsi_data/ima/cache256",
+      "checkpoint_metric": "val_macro_mean_rater_hard_dice",
+      "checkpoint_tie": "earlier_epoch",
+      "cnn": "resnet34_through_layer3",
+      "conditional_weight_grid": [
+        0.3,
+        1.0,
+        3.0
+      ],
+      "data_root": "/home/featurize/rsi_data",
+      "decoder_activation": "GELU",
+      "development_seeds": [
+        17,
+        29
+      ],
+      "effective_batch": 8,
+      "epochs": {
+        "A_CNN": 100,
+        "A_T": 100,
+        "B": 40,
+        "D": 40
+      },
+      "eval_batch": 4,
+      "file_audit_complete": true,
+      "fixed_shrink": {
+        "alphas": [
+          0.0,
+          0.3333333333333333,
+          0.6666666666666666,
+          1.0
+        ],
+        "message_source": "selected_D0"
+      },
+      "formal_seeds": [
+        101,
+        202,
+        303
+      ],
+      "freeze_all_except_message_in_B_D": true,
+      "gradient_clip": 1.0,
+      "gradient_diagnostic_every_epochs": 5,
+      "harm_dice_epsilon": 0.005,
+      "image_normalization": "ImageNet_mean_std_inside_model",
+      "image_resize": "PIL_BILINEAR_antialias",
+      "input_size": [
+        256,
+        256
+      ],
+      "local_six_action_policy": "deferred",
+      "loss": {
+        "bce": 0.5,
+        "epsilon_L": 0.0,
+        "soft_dice": 0.5
+      },
+      "lr": {
+        "B": 0.0003,
+        "D": 0.0001,
+        "decoder": 0.0003,
+        "encoder": 0.0001
+      },
+      "manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/final_references.csv",
+      "mask_resize": "PIL_NEAREST",
+      "message": {
+        "context_stride": 16,
+        "heads": 4,
+        "query_stride": 8,
+        "width": 128
+      },
+      "metadata_counts": {
+        "test": 451,
+        "train": 1486,
+        "val": 224
+      },
+      "microbatch_start": 4,
+      "optimizer": "AdamW",
+      "pilot_objectives": [
+        "d0",
+        "rsi",
+        "mean_hinge",
+        "abs_hard"
+      ],
+      "pilot_weight": 1.0,
+      "postprocess": "none",
+      "protocol_id": "P2-IMA-M-v2",
+      "reference_selection": "source_filter_then_one_per_annotator",
+      "run_root": "/home/featurize/rsi_runs/P2-IMA-M-v2",
+      "scheduler": {
+        "A_warmup_epochs": 5,
+        "BD_warmup_epochs": 2,
+        "name": "cosine"
+      },
+      "split_rule": "shared_M_known_group_test_val_train",
+      "strict_test_scoring_lock": true,
+      "test_scoring_locked": true,
+      "threshold": 0.5,
+      "transformer": "deit_small_patch16_non_distilled",
+      "tta": false,
+      "version": 2,
+      "weight_decay": 0.0001,
+      "workers": 4,
+      "workpoint_dice_tolerance": 0.002
+    },
+    "frozen_sources_before": {
+      "commit": "5b81bb1f812360049a89684dd43ce235b4487753",
+      "source_sha256": {
+        "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+        "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+        "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+        "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+        "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+        "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+        "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+        "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+        "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+        "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+        "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+        "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+        "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+        "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+        "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+        "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+        "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+        "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+        "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+        "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+        "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+        "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+      },
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+    },
+    "original_training_authority": "unmodified rsi.train.train_stage",
+    "original_rng_reset": "train_stage calls set_seed(seed) unconditionally before DONE branch, loaders and optimizer; every call is seed17",
+    "plan": [
+      {
+        "method": "rsi",
+        "run_name": "RSI-1",
+        "stage": "D",
+        "weight": 1.0,
+        "epochs": 40
+      },
+      {
+        "method": "mean_hinge",
+        "run_name": "MeanHinge-1",
+        "stage": "D",
+        "weight": 1.0,
+        "epochs": 40
+      },
+      {
+        "method": "abs_hard",
+        "run_name": "AbsHard-1",
+        "stage": "D",
+        "weight": 1.0,
+        "epochs": 40
+      }
+    ],
+    "completed": [
+      {
+        "run_name": "RSI-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 11,
+        "best_val_dice": 0.8583795894208186,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/best.pth",
+        "selected_checkpoint_sha256": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json",
+        "DONE_sha256": "42f43c66f0691cd89d304a8dd62b319cce04bd18bceab04c095002a435ad7ec9",
+        "signature_verified": true
+      },
+      {
+        "run_name": "MeanHinge-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 7,
+        "best_val_dice": 0.8583835437676297,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/best.pth",
+        "selected_checkpoint_sha256": "620b3af2bc45c68dd76fd4f887746abb38776e96ef14bddddde8eb98d5e2fd3f",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json",
+        "DONE_sha256": "0d5c3cfeccd594d38de013b255c3e7f327b586e3d88f936257267b2d967a15ba",
+        "signature_verified": true
+      },
+      {
+        "run_name": "AbsHard-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 11,
+        "best_val_dice": 0.8581613524392527,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/best.pth",
+        "selected_checkpoint_sha256": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json",
+        "DONE_sha256": "657cf20276323c96d2922d538c9eac37cb3d96a7c56e58c1c4654792f7d757ea",
+        "signature_verified": true
+      }
+    ],
+    "test_scoring_locked": true,
+    "exports_performed": false,
+    "training_budget_or_weights_migrated": false,
+    "preflight": {
+      "B": {
+        "run_name": "B",
+        "stage": "B",
+        "epochs": 40,
+        "best_epoch": 22,
+        "best_val_dice": 0.8583737524417797,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+        "selected_checkpoint_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json",
+        "DONE_sha256": "c6ece14a867de7999f300fe152a3ca9a2d281dac9fb34b174aaa43aa924d6133",
+        "signature_verified": true
+      },
+      "q": 0.1325787454843521,
+      "q_file": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/abs_hard_q.json",
+      "q_file_sha256": "0bdf981e53e8e96c8bcb77536aa60fb52a189afc47d969e95b1f1323136868aa",
+      "q_source": {
+        "q": 0.1325787454843521,
+        "quantile": 0.75,
+        "source": "B_canonical_M_train",
+        "checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+        "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+        "fixed": true,
+        "gradient": false
+      },
+      "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+      "D0": {
+        "run_name": "D0",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 7,
+        "best_val_dice": 0.858316915574831,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+        "selected_checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+        "DONE_sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab",
+        "signature_verified": true
+      },
+      "ready": true
+    },
+    "updated_utc": "2026-10-03T14:13:39.622542+00:00",
+    "finished_utc": "2026-10-03T14:33:43.361930+00:00",
+    "seconds": 3456.4304308419996,
+    "frozen_sources_after": {
+      "commit": "5b81bb1f812360049a89684dd43ce235b4487753",
+      "source_sha256": {
+        "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+        "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+        "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+        "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+        "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+        "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+        "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+        "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+        "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+        "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+        "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+        "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+        "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+        "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+        "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+        "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+        "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+        "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+        "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+        "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+        "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+        "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+      },
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+    },
+    "source_bundle_unchanged": true,
+    "scientific_config_unchanged": true
+  },
+  "completed_RSI_1": {
+    "epochs": 40,
+    "best_epoch": 11,
+    "best_val_dice": 0.8583795894208186,
+    "wall_seconds": 1131.8752597409984,
+    "best_sha256": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+    "latest_sha256": "0874af908ee78b43f6a4e830a8632f6183e7f342a3677c3c6520ac1958b0dad5"
+  },
+  "RSI_1_preliminary_comparison": {
+    "scope": "selected_development_val_only",
+    "Dice": 0.8583795894208186,
+    "D0_Dice": 0.858316915574831,
+    "H_epsilon": 0.0038679211496023703,
+    "D0_H_epsilon": 0.0074222018819997725,
+    "G_plus": 0.008773162467152143,
+    "D0_G_plus": 0.012552872267370662,
+    "simple_control_comparison_pending": false,
+    "original_boundary_tail_export_pending": true,
+    "full_simple_control_boundary_tail_comparison_pending": true
+  },
+  "completed_MeanHinge_1": {
+    "epochs": 40,
+    "best_epoch": 7,
+    "best_val_dice": 0.8583835437676297,
+    "wall_seconds": 1110.1356308569993,
+    "best_sha256": "620b3af2bc45c68dd76fd4f887746abb38776e96ef14bddddde8eb98d5e2fd3f",
+    "latest_sha256": "6f6ecca5ac4b3057e146d38d33dba127759b1f5b1faaeb192ebdc3ebeac4d833"
+  },
+  "export_resume": {
+    "state": "exporter_resumed_after_all_three_DONE",
+    "export_pid": 103068,
+    "time_utc": "2026-10-03T14:33:53.216425+00:00",
+    "signal": "SIGCONT",
+    "completed_stages": [
+      "RSI-1",
+      "MeanHinge-1",
+      "AbsHard-1"
+    ]
+  },
+  "lambda1_selected_epoch_table": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_selected_epoch_comparison_seed17.csv",
+  "completed_AbsHard_1": {
+    "epochs": 40,
+    "best_epoch": 11,
+    "best_val_dice": 0.8581613524392527,
+    "wall_seconds": 1201.7862626769966,
+    "best_sha256": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+    "latest_sha256": "4b5af874862e92245ffa73dcba2e5615c2d723b10a5661064681c6f5a7fed655"
+  },
+  "active_weight_grid": {
+    "pid": 6270,
+    "started_utc": "2026-10-04T04:06:47.432560+00:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "/home/featurize/work/RSI_Implementation_20261003/tools/train_weight_grid.py",
+      "--config",
+      "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml"
+    ],
+    "uid": 1000,
+    "process_start_ticks": 53699,
+    "log": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_console_seed17.log",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_training_seed17.json",
+    "tool_sha256": "67e1433c034d8c5efedb7d881fbb9c8e4d72fbf3b06a4d96b04e3ced6ded0e24",
+    "test_scoring_locked": true,
+    "resumed_from_previous_process": 176069,
+    "recovery_evidence": "/home/featurize/work/RSI_Implementation_20261003/outputs/recovery_20261004/interruption_record.json",
+    "same_scientific_budget": true
+  },
+  "scientific_interpretation": "λ1 RSI preserves overall Dice and improves harm/tail vsD0, with heterogeneous H/T1 source-cohort regressions; registered FixedShrink alpha2/3 nearly reproduces aggregate Dice/G+/harm AND worst-tail, so unique benefit currently unsupported. Full symmetric weight grid running.",
+  "previous_lambda1_training_process": {
+    "pid": 127745,
+    "started_utc": "2026-10-03T13:36:00.774755+00:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "tools/train_remaining_pilot.py",
+      "--config",
+      "configs/p2_ima_m_v2.yaml",
+      "--audit-file",
+      "outputs/remaining_training_seed17.json"
+    ],
+    "log": "/home/featurize/work/RSI_Implementation_20261003/outputs/remaining_training_console_seed17.log",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/outputs/remaining_training_seed17.json",
+    "deferred_export_pid": 103068,
+    "test_scoring_locked": true
+  },
+  "active_weight_grid_progress": {
+    "status": "complete",
+    "active": "symmetric_registered_weight_grid_complete",
+    "seed": 17,
+    "plan": [
+      {
+        "method": "rsi",
+        "run_name": "RSI-0.3",
+        "weight": 0.3,
+        "stage": "D",
+        "epochs": 40
+      },
+      {
+        "method": "mean_hinge",
+        "run_name": "MeanHinge-0.3",
+        "weight": 0.3,
+        "stage": "D",
+        "epochs": 40
+      },
+      {
+        "method": "abs_hard",
+        "run_name": "AbsHard-0.3",
+        "weight": 0.3,
+        "stage": "D",
+        "epochs": 40
+      },
+      {
+        "method": "rsi",
+        "run_name": "RSI-3",
+        "weight": 3.0,
+        "stage": "D",
+        "epochs": 40
+      },
+      {
+        "method": "mean_hinge",
+        "run_name": "MeanHinge-3",
+        "weight": 3.0,
+        "stage": "D",
+        "epochs": 40
+      },
+      {
+        "method": "abs_hard",
+        "run_name": "AbsHard-3",
+        "weight": 3.0,
+        "stage": "D",
+        "epochs": 40
+      }
+    ],
+    "completed": [
+      {
+        "run_name": "RSI-0.3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 7,
+        "best_val_dice": 0.8584882671218835,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/best.pth",
+        "selected_checkpoint_sha256": "3aad4f5915d66103446b1b42b5d8e352d8ddf8857903bf29236f1a23cb6d3c29",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/DONE.json",
+        "DONE_sha256": "8559c3d044b82832531cd2df985f79c6b7ac7a5174a8faa0692b25a4a7f23962",
+        "signature_verified": true
+      },
+      {
+        "run_name": "MeanHinge-0.3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 7,
+        "best_val_dice": 0.8583505660391136,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/best.pth",
+        "selected_checkpoint_sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/DONE.json",
+        "DONE_sha256": "a4fe1ea7b355bc988fab1b21963fc6d01752cea41f62df585c73aac2fac6adbd",
+        "signature_verified": true
+      },
+      {
+        "run_name": "AbsHard-0.3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 15,
+        "best_val_dice": 0.8582183435384786,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/best.pth",
+        "selected_checkpoint_sha256": "1bb49232e61e2f2ffbd03fe40aca323ab467cbf9f13bb0fa6ee1cb26a38b7a47",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/DONE.json",
+        "DONE_sha256": "213e9517d44935a503823dca0a1641745e90b844ef01daf998d82fe8201c46e1",
+        "signature_verified": true
+      },
+      {
+        "run_name": "RSI-3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 1,
+        "best_val_dice": 0.8580102222798561,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/best.pth",
+        "selected_checkpoint_sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/DONE.json",
+        "DONE_sha256": "151e4f12e15b4460d177a66d60beb40fbd80d2ddad4e2375db966b65ef366d48",
+        "signature_verified": true
+      },
+      {
+        "run_name": "MeanHinge-3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 15,
+        "best_val_dice": 0.8586199376315766,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/best.pth",
+        "selected_checkpoint_sha256": "0df5ad8bc3e2976f7e9d2e569fc8ba34993ec7e46fa8153ee61792bdda7498d7",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/DONE.json",
+        "DONE_sha256": "50e7292882940b8215ec281a23cf8861c0851653252806bdc80181c3158052c0",
+        "signature_verified": true
+      },
+      {
+        "run_name": "AbsHard-3",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 11,
+        "best_val_dice": 0.8581067332797172,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/best.pth",
+        "selected_checkpoint_sha256": "167735cb85f00b7056ab69523f26cde7226084830c6d5529c7f927a17e785c34",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/DONE.json",
+        "DONE_sha256": "ac408d2eec8e1c87a7c41e87b856417ae0c0319920321f467bf6917f6b8ce62c",
+        "signature_verified": true
+      }
+    ],
+    "test_scoring_locked": true
+  },
+  "lambda1_learning_curves": "/home/featurize/work/RSI_Implementation_20261003/outputs/pilot_learning_curves_seed17.png",
+  "partial_original_coordinate_analysis": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/partial_scientific_review.json",
+    "scope": "PARTIAL: only selected B, D0, RSI-lambda1 checkpoints plus CNN Anchor; full Mean-Hinge/Abs-Hard/FixedShrink and conditional grid are absent",
+    "interpretation_zh": "在checkpoint-selected M开发验证集上，RSI相对D0的Dice差很小且病例配对区间跨0；Hε及最差10%参考收益尾部改善，G+也同步下降。BF1三个容差宏均值均提高，其中0.5%和1%容差的配对区间在0以上，0.25%区间跨0；像素HD95基本相同，归一化HD95略升且配对区间跨0。H与严格T1小来源队列Dice分别低约0.00420/0.00267，且同一批图像改用M参考也低约0.00398/0.00295，因此不能把下降仅归因于参考来源改变；H/T1均出现像素HD95宏均值升高，严格T1 BF1宏均值下降，需要保留为敏感性风险，不能据此重选工作点。尚无完整simplecontrol工作点，FixedShrink核心已基本复现Dice/G+/Hε，不能认定RSI独有机制。",
+    "source_cohort_regression_description": [
+      {
+        "subset": "H",
+        "native_source_Dice_RSI_minus_D0": -0.004199757410319194,
+        "native_source_Dice_case_bootstrap_CI": [
+          -0.007564311792853096,
+          -0.0013072430866871644
+        ],
+        "same_images_M_references_Dice_RSI_minus_D0": -0.003975898829491675,
+        "native_BF1_RSI_minus_D0": 0.0008345842385732993,
+        "native_HD95_pixels_RSI_minus_D0": 4.039243543694681,
+        "native_worst_tail_10pct_RSI_minus_D0": 0.015389819900876268,
+        "selection_used": false,
+        "scope": "Same preselected checkpoints and same source images; descriptive small-cohort sensitivity, exploratory intervals after M checkpoint selection."
+      },
+      {
+        "subset": "T1",
+        "native_source_Dice_RSI_minus_D0": -0.0026714312815556696,
+        "native_source_Dice_case_bootstrap_CI": [
+          -0.0063979878884885795,
+          0.0007754329318629641
+        ],
+        "same_images_M_references_Dice_RSI_minus_D0": -0.0029455266179333472,
+        "native_BF1_RSI_minus_D0": -0.008794108227476283,
+        "native_HD95_pixels_RSI_minus_D0": 2.6160778070698143,
+        "native_worst_tail_10pct_RSI_minus_D0": 0.02060447059109155,
+        "selection_used": false,
+        "scope": "Same preselected checkpoints and same source images; descriptive small-cohort sensitivity, exploratory intervals after M checkpoint selection."
+      }
+    ],
+    "complete_simple_control_comparison_pending": true
+  },
+  "lambda1_export_complete": true,
+  "completed_lambda1_export_runner": {
+    "pid": 103068,
+    "started_utc": "2026-10-03T12:57:19.337087+00:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "tools/cached_pilot_runner.py",
+      "--config",
+      "configs/p2_ima_m_v2.yaml",
+      "--seed",
+      "17",
+      "--fast-exact-boundaries"
+    ],
+    "log": "/home/featurize/work/RSI_Implementation_20261003/outputs/pilot_console_seed17_cached.log",
+    "runner_handoff_record": "/home/featurize/work/RSI_Implementation_20261003/outputs/runner_handoff/handoff.json",
+    "test_scoring_locked": true,
+    "tools_sha256": {
+      "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02",
+      "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296"
+    },
+    "original_frozen_source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+    "status": "completed"
+  },
+  "lambda1_summary": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17",
+  "independent_lambda1_control_analysis": "complete: outputs/lambda1_review_seed17/lambda1_scientific_decision.md",
+  "recovery_20261004": "/home/featurize/work/RSI_Implementation_20261003/outputs/recovery_20261004/interruption_record.json",
+  "active_completion_supervisor": {
+    "pid": 8007,
+    "started_utc": "2026-10-04T04:10:06.418913+00:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "/home/featurize/work/RSI_Implementation_20261003/tools/finish_weight_grid.py",
+      "--config",
+      "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml"
+    ],
+    "tool_sha256": "c48d6c3dbf021d139597a1ae0f9ae6a4d179c732ceb735340274e3fdbd817ca1",
+    "console": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_completion_supervisor_console_seed17.log",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_completion_seed17.json",
+    "registered_training_pid": 6270,
+    "root_scientific_decision_pending": true,
+    "test_scoring_locked": true
+  },
+  "selected_epoch_progress": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_selected_epochs_progress_seed17.csv",
+  "prepared_full_analysis": {
+    "scientific_readout": "tools/full_scientific_readout.py",
+    "sha256": "9c196bc8666a31db89d31485d00b67e8cd9f85cc8f7cdf12a36dc9f46e826dc8",
+    "learning_curves": "tools/plot_weight_grid_learning_curves.py",
+    "learning_curves_sha256": "a2f5a565a3859c3e1c5e97bea6c4346b5bdd510918abcf34f6aa9d7091b5b5f5",
+    "status": "prepared and peer-reviewed; actual full-matrix publication pending"
+  },
+  "completed_weight_grid_process": {
+    "pid": 6270,
+    "started_utc": "2026-10-04T04:06:47.432560+00:00",
+    "command": [
+      "/environment/miniconda3/bin/python",
+      "-u",
+      "/home/featurize/work/RSI_Implementation_20261003/tools/train_weight_grid.py",
+      "--config",
+      "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml"
+    ],
+    "uid": 1000,
+    "process_start_ticks": 53699,
+    "log": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_console_seed17.log",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_training_seed17.json",
+    "tool_sha256": "67e1433c034d8c5efedb7d881fbb9c8e4d72fbf3b06a4d96b04e3ced6ded0e24",
+    "test_scoring_locked": true,
+    "resumed_from_previous_process": 176069,
+    "recovery_evidence": "/home/featurize/work/RSI_Implementation_20261003/outputs/recovery_20261004/interruption_record.json",
+    "same_scientific_budget": true
+  },
+  "full_grid_selected_epoch_core": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_selected_epoch_core_seed17.csv",
+  "active_full_export_pid": 49657,
+  "full_grid_export_progress": {
+    "status": "complete",
+    "active": "six_registered_grid_exports_complete",
+    "completed_points": 6,
+    "total": 6
+  },
+  "completion_progress": {
+    "status": "complete",
+    "active": "seed17_artifacts_complete_root_decision_pending",
+    "completed_commands": 4
+  }
+}

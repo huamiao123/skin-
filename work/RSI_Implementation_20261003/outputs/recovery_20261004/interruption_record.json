@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-10-04T04:06:20.683222+00:00",
+  "previous_pid": 176069,
+  "previous_process_present": false,
+  "training_audit_status_at_interruption": "running",
+  "last_console_epoch": 25,
+  "last_console_run": "MeanHinge-0.3",
+  "cause": "unknown; process absent while prior audit still running",
+  "preserved_files": [
+    {
+      "source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/latest.pth",
+      "preserved": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/latest.pth",
+      "sha256": "dc39e2a0432b4105d79a0b04bd34976a955b154f2e6a96c0c9286cb97d56057f"
+    },
+    {
+      "source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/best.pth",
+      "preserved": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/best.pth",
+      "sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab"
+    },
+    {
+      "source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/epoch_diagnostics.csv",
+      "preserved": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3/epoch_diagnostics.csv",
+      "sha256": "38d61faa3b978f08685bb19056c1ca6224871f46e9bc8b080f6a2699bb41b18f"
+    }
+  ],
+  "resume_plan": "same frozen driver, strict checkpoint resume, no budget changes",
+  "test_scoring_locked": true
+}

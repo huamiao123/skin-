@@ -1,0 +1,75 @@
+{
+  "status": "compatible_resume_from_committed_epoch25",
+  "reviewed_utc": "2026-10-04T04:08:09.412073+00:00",
+  "GPU_used": false,
+  "training_or_source_mutations": false,
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "frozen_grid_tool_sha256": "67e1433c034d8c5efedb7d881fbb9c8e4d72fbf3b06a4d96b04e3ced6ded0e24",
+  "frozen_helper_sha256": "9b8f348e412d7c339c567c40997a424c1f0b423415d0d60bd1594107f0a8912e",
+  "grid_tool_matches_original_audit": true,
+  "prior_audit_status": "running",
+  "prior_audit_active": "MeanHinge-0.3",
+  "preflight_complete": true,
+  "completed_RSI03": {
+    "epochs": 40,
+    "best_epoch": 7,
+    "best_val_dice": 0.8584882671218835
+  },
+  "MH03": {
+    "snapshot_folder": "/home/featurize/rsi_runs/recovery_20261004/MeanHinge-0.3",
+    "latest_checkpoint_sha256": "dc39e2a0432b4105d79a0b04bd34976a955b154f2e6a96c0c9286cb97d56057f",
+    "best_checkpoint_sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab",
+    "latest_epoch": 25,
+    "best_epoch": 7,
+    "best_val_dice": 0.8583505660391136,
+    "next_epoch": 26,
+    "remaining_epochs": 15,
+    "fixed_total_budget": 40,
+    "optimizer_steps": 4600,
+    "optimizer_step_attempts": 4600,
+    "skipped_optimizer_steps": 0,
+    "scheduler_last_epoch": 25,
+    "scaler": {
+      "scale": 262144.0,
+      "growth_factor": 2.0,
+      "backoff_factor": 0.5,
+      "growth_interval": 2000,
+      "_growth_tracker": 600
+    },
+    "optimizer_state_entries": 8,
+    "optimizer_param_groups": 1,
+    "rng_fields": [
+      "python",
+      "numpy",
+      "torch",
+      "cuda"
+    ],
+    "CUDA_rng_devices": 1,
+    "model_weights_finite": true,
+    "epoch_log_contiguous": true,
+    "prelaunch_read_observation": {
+      "per_image_committed_rows": 42350,
+      "per_image_uncommitted_epoch26_rows": 22,
+      "last_uncommitted_row_partially_written": true,
+      "uncommitted_rows_parseable_and_discarded_by_original_resume": true,
+      "prelaunch_read_performed_by_this_reviewer": true,
+      "raw_per_image_snapshot_not_preserved": true
+    },
+    "frozen_hash_matches_selected": true,
+    "anchor_error_all_epochs_zero": true
+  },
+  "resume_semantics": "Original train_stage restores model, optimizer, scheduler, GradScaler, Python/NumPy/Torch/CUDA RNG; uses seed/epoch loaders and image augmentations; truncates diagnostics with epoch >= 26 before continuing; keeps original 40 epoch budget and selected best history.",
+  "cause": "Previous process absent according to root observation; no cause inferred. Console ends committed epoch25 and partial epoch26 diagnostics existed; prior audit has no failure status. No evidence supplied of host restart.",
+  "blockers": [],
+  "actual_resume_observed": {
+    "observed_utc": "2026-10-04T04:08:46.728659+00:00",
+    "PID": 6270,
+    "first_resumed_epoch": 26,
+    "next_observed_epoch": 27,
+    "first_resumed_actual_optimizer_steps": 4784,
+    "first_resumed_optimizer_step_attempts": 4784,
+    "increment_from_committed_epoch25": 184,
+    "duplicated_epoch_rows": false,
+    "original_selected_epoch7_preserved": true
+  }
+}

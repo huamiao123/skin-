@@ -1,0 +1,28 @@
+{
+  "model": "ptu_2262",
+  "seed": 42,
+  "epochs": 300,
+  "train_batch": 64,
+  "val_batch": 8,
+  "final_batch": 1,
+  "accumulation": 1,
+  "workers": 4,
+  "amp": false,
+  "lr": 0.0001,
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "eta_min": 1e-05,
+  "loss": "final output BCE+Dice, equal weights, no deep supervision",
+  "selection": "minimum validation loss (mean batch losses, legacy EGE convention)",
+  "split": "legacy 1886/808 development split, no independent test",
+  "depths": [
+    2,
+    2,
+    6,
+    2
+  ],
+  "params": 15764801,
+  "torch": "2.2.2+cu121",
+  "device": "NVIDIA GeForce RTX 4090",
+  "augmentation": "HFlip .5, VFlip .5, resampled rotation .5 [0,360]; nearest mask interpolation"
+}

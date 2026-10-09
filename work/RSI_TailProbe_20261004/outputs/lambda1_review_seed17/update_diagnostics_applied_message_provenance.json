@@ -1,0 +1,300 @@
+{
+  "generated_at_utc": "2026-10-03T15:37:18.030568+00:00",
+  "rows": 2900,
+  "input": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/update_diagnostics.csv",
+    "bytes": 574897,
+    "sha256": "9de5027922d84d60b42389aa1d8482ae2c0072c7cac01498259a534927f0acdc"
+  },
+  "output": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/update_diagnostics_applied_message.csv",
+    "bytes": 693109,
+    "sha256": "cc026bde1b4abfa3a24bed14b0db40fe27376c75e18b8f9b8411266069350b8c"
+  },
+  "definition": "applied_message_rms = abs(alpha) * raw_message_rms; whole feature tensor",
+  "model_contract": "message is returned before scaling; tail receives f8 + alpha * message",
+  "ordinary_action1": "applied_message_rms equals raw_message_rms",
+  "Anchor_action0": "applied_message_rms is zero",
+  "FixedShrink_alpha0": "raw module message may be nonzero; applied message is exactly zero",
+  "original_update_and_per_reference_csvs_modified": false,
+  "metric_score_columns_modified": false,
+  "models_constructed": false,
+  "GPU_compute": false,
+  "test_scoring_locked": true,
+  "contract_source_files": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/models.py",
+      "bytes": 20188,
+      "sha256": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+      "lines": [
+        376,
+        383
+      ]
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/export.py",
+      "bytes": 8103,
+      "sha256": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+      "lines": [
+        37,
+        63
+      ]
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/metrics.py",
+      "bytes": 13295,
+      "sha256": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "lines": [
+        129,
+        155
+      ]
+    }
+  ],
+  "derivation_script": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/lambda1_review_seed17/scientific_review.py",
+    "bytes": 20535,
+    "sha256": "014d18bfae971bd83d5bc95b44cbf952a689a786986a9b8f108a6dd0099bf18a"
+  },
+  "per_run_source_summary": [
+    {
+      "run_id": "AbsHard-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5722945728914727,
+      "applied_message_rms_mean": 0.5722945728914727
+    },
+    {
+      "run_id": "AbsHard-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5726872168179094,
+      "applied_message_rms_mean": 0.5726872168179094
+    },
+    {
+      "run_id": "AbsHard-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.561926927045998,
+      "applied_message_rms_mean": 0.561926927045998
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.0,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.0,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.0,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "B",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5377559301057929,
+      "applied_message_rms_mean": 0.5377559301057929
+    },
+    {
+      "run_id": "B",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5448845091851863,
+      "applied_message_rms_mean": 0.5448845091851863
+    },
+    {
+      "run_id": "B",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5267752342620232,
+      "applied_message_rms_mean": 0.5267752342620232
+    },
+    {
+      "run_id": "D0",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5511957602828149,
+      "applied_message_rms_mean": 0.5511957602828149
+    },
+    {
+      "run_id": "D0",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5537203169380424,
+      "applied_message_rms_mean": 0.5537203169380424
+    },
+    {
+      "run_id": "D0",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5435935532872397,
+      "applied_message_rms_mean": 0.5435935532872397
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5365866418890604,
+      "applied_message_rms_mean": 0.5365866418890604
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5354349130449584,
+      "applied_message_rms_mean": 0.5354349130449584
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5298880039492595,
+      "applied_message_rms_mean": 0.5298880039492595
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5025790056827808,
+      "applied_message_rms_mean": 0.5025790056827808
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.4970903751251149,
+      "applied_message_rms_mean": 0.4970903751251149
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.49016217308195564,
+      "applied_message_rms_mean": 0.49016217308195564
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.5511957602828149,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.5537203169380424,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.0,
+      "raw_message_rms_mean": 0.5435935532872397,
+      "applied_message_rms_mean": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms_mean": 0.5511957602828149,
+      "applied_message_rms_mean": 0.18373192009427158
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms_mean": 0.5537203169380424,
+      "applied_message_rms_mean": 0.18457343897934744
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms_mean": 0.5435935532872397,
+      "applied_message_rms_mean": 0.18119785109574654
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms_mean": 0.5511957602828149,
+      "applied_message_rms_mean": 0.36746384018854317
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms_mean": 0.5537203169380424,
+      "applied_message_rms_mean": 0.3691468779586949
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms_mean": 0.5435935532872397,
+      "applied_message_rms_mean": 0.3623957021914931
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5511957602828149,
+      "applied_message_rms_mean": 0.5511957602828149
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5537203169380424,
+      "applied_message_rms_mean": 0.5537203169380424
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms_mean": 0.5435935532872397,
+      "applied_message_rms_mean": 0.5435935532872397
+    }
+  ]
+}

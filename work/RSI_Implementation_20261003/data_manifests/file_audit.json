@@ -1,0 +1,734 @@
+{
+  "protocol_id": "P2-IMA-M-v2",
+  "scope": "all_selected_M_H_T1",
+  "file_audit_complete": true,
+  "input_manifest_sha256": "7f84dbf3fa6b519550364ba0e70c18d9172bc44a18dad40b7b8d0f0833ba4729",
+  "final_references_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "unique_images_requested": 2145,
+  "unique_references_requested": 4533,
+  "decoded_image_count": 2145,
+  "valid_md5_binary_mask_count": 4533,
+  "validated_reference_rows": 5847,
+  "image_counts_by_subset_split": {
+    "M": {
+      "train": 1471,
+      "val": 223,
+      "test": 451
+    },
+    "H": {
+      "train": 299,
+      "test": 87,
+      "val": 47
+    },
+    "T1": {
+      "train": 113,
+      "test": 35,
+      "val": 20
+    }
+  },
+  "file_errors": [],
+  "exact_file_duplicate_groups": [],
+  "exact_pixel_duplicate_groups": [
+    [
+      "ISIC_0000477",
+      "ISIC_0000512"
+    ],
+    [
+      "ISIC_0001205",
+      "ISIC_0001505"
+    ],
+    [
+      "ISIC_0001209",
+      "ISIC_0001509"
+    ],
+    [
+      "ISIC_0001211",
+      "ISIC_0001511"
+    ],
+    [
+      "ISIC_0001275",
+      "ISIC_0001575"
+    ]
+  ],
+  "cross_split_exact_duplicate_pairs": [],
+  "known_group_cross_split": {},
+  "near_duplicate_detector": "64-bit grayscale difference hash, Hamming <=4; candidates require review",
+  "near_duplicate_candidate_count": 204,
+  "cross_split_near_duplicate_candidates": [
+    {
+      "image_a": "ISIC_0000048",
+      "image_b": "ISIC_0020626",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000048",
+      "group_b": "ISIC_0020619"
+    },
+    {
+      "image_a": "ISIC_0000071",
+      "image_b": "ISIC_0000283",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000071",
+      "group_b": "ISIC_0000283"
+    },
+    {
+      "image_a": "ISIC_0000078",
+      "image_b": "ISIC_0009954",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0000078",
+      "group_b": "ISIC_0009954"
+    },
+    {
+      "image_a": "ISIC_0000078",
+      "image_b": "ISIC_0017422",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "test",
+      "group_a": "ISIC_0000078",
+      "group_b": "ISIC_0017422"
+    },
+    {
+      "image_a": "ISIC_0000078",
+      "image_b": "ISIC_0022650",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0000078",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0000078",
+      "image_b": "ISIC_0036125",
+      "dhash_distance": 3,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0000078",
+      "group_b": "ISIC_0036125"
+    },
+    {
+      "image_a": "ISIC_0000384",
+      "image_b": "ISIC_0010244",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0000384",
+      "group_b": "ISIC_0010244"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0010227",
+      "dhash_distance": 2,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0010227"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0010584",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0010584"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0011972",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0011970"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0018603",
+      "dhash_distance": 1,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0018602"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0021987",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "val",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0021987"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0022649",
+      "dhash_distance": 2,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0022650",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0000388",
+      "image_b": "ISIC_0036258",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000388",
+      "group_b": "ISIC_0036258"
+    },
+    {
+      "image_a": "ISIC_0000442",
+      "image_b": "ISIC_0001105",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000442",
+      "group_b": "ISIC_0001105"
+    },
+    {
+      "image_a": "ISIC_0000442",
+      "image_b": "ISIC_0009945",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000442",
+      "group_b": "ISIC_0009945"
+    },
+    {
+      "image_a": "ISIC_0000442",
+      "image_b": "ISIC_0036287",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000442",
+      "group_b": "ISIC_0001105"
+    },
+    {
+      "image_a": "ISIC_0000451",
+      "image_b": "ISIC_0009909",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000451",
+      "group_b": "ISIC_0009909"
+    },
+    {
+      "image_a": "ISIC_0000451",
+      "image_b": "ISIC_0023381",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "val",
+      "group_a": "ISIC_0000451",
+      "group_b": "ISIC_0023380"
+    },
+    {
+      "image_a": "ISIC_0000451",
+      "image_b": "ISIC_0036148",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0000451",
+      "group_b": "ISIC_0036148"
+    },
+    {
+      "image_a": "ISIC_0002122",
+      "image_b": "ISIC_0003442",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0002122",
+      "group_b": "ISIC_0003442"
+    },
+    {
+      "image_a": "ISIC_0005913",
+      "image_b": "ISIC_0009870",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "test",
+      "group_a": "ISIC_0005913",
+      "group_b": "ISIC_0009870"
+    },
+    {
+      "image_a": "ISIC_0009869",
+      "image_b": "ISIC_0010220",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009869",
+      "group_b": "ISIC_0010220"
+    },
+    {
+      "image_a": "ISIC_0009870",
+      "image_b": "ISIC_0011227",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0009870",
+      "group_b": "ISIC_0011227"
+    },
+    {
+      "image_a": "ISIC_0009898",
+      "image_b": "ISIC_0020972",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009898",
+      "group_b": "ISIC_0020972"
+    },
+    {
+      "image_a": "ISIC_0009911",
+      "image_b": "ISIC_0009954",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0009911",
+      "group_b": "ISIC_0009954"
+    },
+    {
+      "image_a": "ISIC_0009911",
+      "image_b": "ISIC_0010268",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "val",
+      "group_a": "ISIC_0009911",
+      "group_b": "ISIC_0010268"
+    },
+    {
+      "image_a": "ISIC_0009911",
+      "image_b": "ISIC_0022650",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0009911",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0009936",
+      "image_b": "ISIC_0010352",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0009936",
+      "group_b": "ISIC_0010352"
+    },
+    {
+      "image_a": "ISIC_0009936",
+      "image_b": "ISIC_0011005",
+      "dhash_distance": 3,
+      "split_a": "test",
+      "split_b": "val",
+      "group_a": "ISIC_0009936",
+      "group_b": "ISIC_0011005"
+    },
+    {
+      "image_a": "ISIC_0009936",
+      "image_b": "ISIC_0022787",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0009936",
+      "group_b": "ISIC_0022787"
+    },
+    {
+      "image_a": "ISIC_0009945",
+      "image_b": "ISIC_0010268",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009945",
+      "group_b": "ISIC_0010268"
+    },
+    {
+      "image_a": "ISIC_0009945",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009945",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0009954",
+      "image_b": "ISIC_0010268",
+      "dhash_distance": 3,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009954",
+      "group_b": "ISIC_0010268"
+    },
+    {
+      "image_a": "ISIC_0009954",
+      "image_b": "ISIC_0021987",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009954",
+      "group_b": "ISIC_0021987"
+    },
+    {
+      "image_a": "ISIC_0009954",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 1,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0009954",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0010121",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0010121",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0010183",
+      "image_b": "ISIC_0010268",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0010183",
+      "group_b": "ISIC_0010268"
+    },
+    {
+      "image_a": "ISIC_0010219",
+      "image_b": "ISIC_0018405",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0010219",
+      "group_b": "ISIC_0018405"
+    },
+    {
+      "image_a": "ISIC_0010219",
+      "image_b": "ISIC_0020663",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0010219",
+      "group_b": "ISIC_0020661"
+    },
+    {
+      "image_a": "ISIC_0010219",
+      "image_b": "ISIC_0021494",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0010219",
+      "group_b": "ISIC_0021494"
+    },
+    {
+      "image_a": "ISIC_0010220",
+      "image_b": "ISIC_0010352",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010220",
+      "group_b": "ISIC_0010352"
+    },
+    {
+      "image_a": "ISIC_0010220",
+      "image_b": "ISIC_0018179",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "test",
+      "group_a": "ISIC_0010220",
+      "group_b": "ISIC_0018179"
+    },
+    {
+      "image_a": "ISIC_0010227",
+      "image_b": "ISIC_0011343",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "test",
+      "group_a": "ISIC_0010227",
+      "group_b": "ISIC_0011343"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0011217",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0011217"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0012558",
+      "dhash_distance": 2,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0012558"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0022191",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0022186"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0022650",
+      "dhash_distance": 3,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0036125",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0036125"
+    },
+    {
+      "image_a": "ISIC_0010268",
+      "image_b": "ISIC_0036165",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010268",
+      "group_b": "ISIC_0036165"
+    },
+    {
+      "image_a": "ISIC_0010347",
+      "image_b": "ISIC_0011343",
+      "dhash_distance": 3,
+      "split_a": "train",
+      "split_b": "test",
+      "group_a": "ISIC_0010347",
+      "group_b": "ISIC_0011343"
+    },
+    {
+      "image_a": "ISIC_0010444",
+      "image_b": "ISIC_0012558",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010444",
+      "group_b": "ISIC_0012558"
+    },
+    {
+      "image_a": "ISIC_0010444",
+      "image_b": "ISIC_0022787",
+      "dhash_distance": 3,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010444",
+      "group_b": "ISIC_0022787"
+    },
+    {
+      "image_a": "ISIC_0010444",
+      "image_b": "ISIC_0023936",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010444",
+      "group_b": "ISIC_0000449"
+    },
+    {
+      "image_a": "ISIC_0010444",
+      "image_b": "ISIC_0036165",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0010444",
+      "group_b": "ISIC_0036165"
+    },
+    {
+      "image_a": "ISIC_0010513",
+      "image_b": "ISIC_0017422",
+      "dhash_distance": 2,
+      "split_a": "train",
+      "split_b": "test",
+      "group_a": "ISIC_0010513",
+      "group_b": "ISIC_0017422"
+    },
+    {
+      "image_a": "ISIC_0010907",
+      "image_b": "ISIC_0021932",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "val",
+      "group_a": "ISIC_0010907",
+      "group_b": "ISIC_0021930"
+    },
+    {
+      "image_a": "ISIC_0010907",
+      "image_b": "ISIC_0036166",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0010907",
+      "group_b": "ISIC_0036166"
+    },
+    {
+      "image_a": "ISIC_0011163",
+      "image_b": "ISIC_0018603",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0011163",
+      "group_b": "ISIC_0018602"
+    },
+    {
+      "image_a": "ISIC_0011217",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0011217",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0011343",
+      "image_b": "ISIC_0036148",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0011343",
+      "group_b": "ISIC_0036148"
+    },
+    {
+      "image_a": "ISIC_0011343",
+      "image_b": "ISIC_0036258",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0011343",
+      "group_b": "ISIC_0036258"
+    },
+    {
+      "image_a": "ISIC_0011392",
+      "image_b": "ISIC_0021494",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0011392",
+      "group_b": "ISIC_0021494"
+    },
+    {
+      "image_a": "ISIC_0012558",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0012558",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0017422",
+      "image_b": "ISIC_0036196",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0017422",
+      "group_b": "ISIC_0036196"
+    },
+    {
+      "image_a": "ISIC_0018179",
+      "image_b": "ISIC_0022787",
+      "dhash_distance": 4,
+      "split_a": "test",
+      "split_b": "train",
+      "group_a": "ISIC_0018179",
+      "group_b": "ISIC_0022787"
+    },
+    {
+      "image_a": "ISIC_0018603",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0018602",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0019794",
+      "image_b": "ISIC_0036209",
+      "dhash_distance": 4,
+      "split_a": "train",
+      "split_b": "test",
+      "group_a": "ISIC_0019794",
+      "group_b": "ISIC_0036209"
+    },
+    {
+      "image_a": "ISIC_0021932",
+      "image_b": "ISIC_0022039",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "test",
+      "group_a": "ISIC_0021930",
+      "group_b": "ISIC_0022039"
+    },
+    {
+      "image_a": "ISIC_0021932",
+      "image_b": "ISIC_0036166",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0021930",
+      "group_b": "ISIC_0036166"
+    },
+    {
+      "image_a": "ISIC_0021987",
+      "image_b": "ISIC_0022650",
+      "dhash_distance": 4,
+      "split_a": "val",
+      "split_b": "train",
+      "group_a": "ISIC_0021987",
+      "group_b": "ISIC_0022649"
+    },
+    {
+      "image_a": "ISIC_0022650",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 1,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0022649",
+      "group_b": "ISIC_0036303"
+    },
+    {
+      "image_a": "ISIC_0036125",
+      "image_b": "ISIC_0036303",
+      "dhash_distance": 2,
+      "split_a": "train",
+      "split_b": "val",
+      "group_a": "ISIC_0036125",
+      "group_b": "ISIC_0036303"
+    }
+  ],
+  "near_duplicate_review_sha256": "d92c2e162115193a33c3bdd399c920fe8cc7ecb87780654362852fc7deb166d2",
+  "near_duplicate_distinct_pairs_reviewed": 181,
+  "near_duplicate_unresolved_candidates": [],
+  "near_duplicate_confirmed_or_conservative_linked_pairs_reviewed": 23,
+  "original_segmentation_archive_md5": "c5143aed98283ab57de2c86ce50973c8",
+  "original_segmentation_archive_verified": true,
+  "spatial_alignment_check": "exact original image/mask dimensions; visual overlays additionally required",
+  "metadata_dimension_differences": [],
+  "models_evaluated_on_test": false
+}

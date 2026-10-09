@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-10-03T15:03:49.891034+00:00",
+  "status": "complete",
+  "subset": "M",
+  "split": "val",
+  "test_scoring_locked": true,
+  "input_files": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/per_reference_gains.csv",
+      "sha256": "6a426492b0dee361299118d2fc7dce344f863f69a1ddafcad1309dc1e950080d"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/partial_RSI_D0_seed17/pilot_main_table.csv",
+      "sha256": "c8d758690403cb53095b41d21142f810b905a6cc2c18de1c1d057463aa968e3c"
+    }
+  ],
+  "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/paired_control_comparison.py",
+  "tool_sha256": "738f854195ee119fee387dc655c91a2a509387349dc0210d9169abaf02914ddb",
+  "existing_point_count": 4,
+  "comparison_count": 3,
+  "selected_rsi_from_existing_main_table": [
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "RSI-1",
+      "checkpoint_hash": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+      "action": "1.0",
+      "lambda": "1.0",
+      "alpha": "1.0"
+    }
+  ],
+  "selected_simple_controls_from_existing_main_table": [
+    {
+      "protocol_id": "P2-IMA-M-v2",
+      "seed": "17",
+      "run_id": "D0",
+      "checkpoint_hash": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "action": "1.0",
+      "lambda": "0.0",
+      "alpha": "1.0"
+    }
+  ],
+  "workpoints_reselected": false,
+  "new_lambda_or_alpha": false,
+  "epsilon_d": 0.005,
+  "bootstrap_seed": 17,
+  "bootstrap_repeats": 2000,
+  "worst_tail_definition": "Each resampled cohort: per-image minimum reference Dice gain versus the shared CNN anchor; independently sort each method and mean the first max(1, ceil(0.1 * resampled_image_count)) images",
+  "difference_orientation": "RSI minus control; positive Dice/G+/tail and negative H_epsilon are favorable",
+  "interval_scope": "exploratory M validation used for checkpoint and workpoint selection",
+  "final_continue_or_stop_decision_pending": true,
+  "GPU_compute": false,
+  "prior_output_backups": [],
+  "output_csv_sha256": "e4255cc99766932f7457824ac7fcb174890457414de036a16d004deac8fc37b6"
+}

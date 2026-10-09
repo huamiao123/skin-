@@ -1,0 +1,50 @@
+{
+  "time_utc": "2026-10-03T12:57:19.337087+00:00",
+  "previous_pid": 38282,
+  "previous_progress": {
+    "seed": 17,
+    "active": "B",
+    "completed": [
+      "A_CNN",
+      "A_T"
+    ],
+    "test_scoring_locked": true
+  },
+  "reason": "full-resolution metric export cost; exact cache/KD verified against original metrics",
+  "boundary": "B selected checkpoint evaluation complete; B full original-coordinate export unfinished; no optimizer active",
+  "tools_sha256": {
+    "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02",
+    "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296"
+  },
+  "completed_training": {
+    "A_CNN": {
+      "epochs": 100,
+      "best_epoch": 36,
+      "best_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691"
+    },
+    "A_T": {
+      "epochs": 100,
+      "best_epoch": 40,
+      "best_sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380"
+    },
+    "B": {
+      "epochs": 40,
+      "best_epoch": 22,
+      "best_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491"
+    }
+  },
+  "signal": "SIGTERM to owned process group only",
+  "old_process_stopped": true,
+  "new_pid": 103068,
+  "new_command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "tools/cached_pilot_runner.py",
+    "--config",
+    "configs/p2_ima_m_v2.yaml",
+    "--seed",
+    "17",
+    "--fast-exact-boundaries"
+  ],
+  "new_log": "/home/featurize/work/RSI_Implementation_20261003/outputs/pilot_console_seed17_cached.log"
+}

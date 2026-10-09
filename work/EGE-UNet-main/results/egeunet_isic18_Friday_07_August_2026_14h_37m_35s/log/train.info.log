@@ -1,0 +1,58 @@
+2026-08-07 14:37:35 - #----------Config info----------#
+2026-08-07 14:37:35 - network: egeunet,
+2026-08-07 14:37:35 - model_config: {'num_classes': 1, 'input_channels': 3, 'c_list': [8, 16, 24, 32, 48, 64], 'bridge': True, 'gt_ds': True},
+2026-08-07 14:37:35 - datasets: isic18,
+2026-08-07 14:37:35 - data_path: ./data/isic2018/,
+2026-08-07 14:37:35 - criterion: GT_BceDiceLoss(
+  (bcedice): BceDiceLoss(
+    (bce): BCELoss(
+      (bceloss): BCELoss()
+    )
+    (dice): DiceLoss()
+  )
+),
+2026-08-07 14:37:35 - num_classes: 1,
+2026-08-07 14:37:35 - input_size_h: 256,
+2026-08-07 14:37:35 - input_size_w: 256,
+2026-08-07 14:37:35 - input_channels: 3,
+2026-08-07 14:37:35 - distributed: False,
+2026-08-07 14:37:35 - local_rank: -1,
+2026-08-07 14:37:35 - num_workers: 8,
+2026-08-07 14:37:35 - seed: 42,
+2026-08-07 14:37:35 - world_size: None,
+2026-08-07 14:37:35 - rank: None,
+2026-08-07 14:37:35 - amp: False,
+2026-08-07 14:37:35 - gpu_id: 0,
+2026-08-07 14:37:35 - batch_size: 64,
+2026-08-07 14:37:35 - epochs: 300,
+2026-08-07 14:37:35 - gradient_accumulation_steps: 1,
+2026-08-07 14:37:35 - work_dir: results/egeunet_isic18_Friday_07_August_2026_14h_37m_35s/,
+2026-08-07 14:37:35 - print_interval: 20,
+2026-08-07 14:37:35 - val_interval: 30,
+2026-08-07 14:37:35 - save_interval: 100,
+2026-08-07 14:37:35 - threshold: 0.5,
+2026-08-07 14:37:35 - train_transformer: Compose(
+    <utils.myNormalize object at 0x7fc03210efe0>
+    <utils.myToTensor object at 0x7fc03210f040>
+    <utils.myRandomHorizontalFlip object at 0x7fc03210f070>
+    <utils.myRandomVerticalFlip object at 0x7fc03210f0d0>
+    <utils.myRandomRotation object at 0x7fc03210f130>
+    <utils.myResize object at 0x7fc03210f190>
+),
+2026-08-07 14:37:35 - test_transformer: Compose(
+    <utils.myNormalize object at 0x7fc03210f280>
+    <utils.myToTensor object at 0x7fc03210f2e0>
+    <utils.myResize object at 0x7fc03210f310>
+),
+2026-08-07 14:37:35 - opt: AdamW,
+2026-08-07 14:37:35 - lr: 0.001,
+2026-08-07 14:37:35 - betas: (0.9, 0.999),
+2026-08-07 14:37:35 - eps: 1e-08,
+2026-08-07 14:37:35 - weight_decay: 0.01,
+2026-08-07 14:37:35 - amsgrad: False,
+2026-08-07 14:37:35 - sch: CosineAnnealingLR,
+2026-08-07 14:37:35 - T_max: 300,
+2026-08-07 14:37:35 - eta_min: 1e-05,
+2026-08-07 14:37:35 - last_epoch: -1,
+2026-08-07 14:37:40 - train: epoch 1, iter:0, loss: 5.6464, lr: 0.001
+2026-08-07 14:37:41 - train: epoch 1, iter:20, loss: 3.0601, lr: 0.001

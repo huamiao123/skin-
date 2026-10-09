@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-03T14:45:16.856280+00:00",
+  "seed": 17,
+  "protocol_id": "P2-IMA-M-v2",
+  "run_root": "/home/featurize/rsi_runs/P2-IMA-M-v2",
+  "scope": "development train/validation learning curves and DONE elapsed wall times only",
+  "checkpoint_selection_scope": "M validation original-image macro mean-rater hard Dice; earlier epoch on tie",
+  "test_scoring_locked": true,
+  "test_inputs_read": false,
+  "model_inference_run": false,
+  "gpu_used": false,
+  "smoothing": "none",
+  "independent_y_axis_ranges": true,
+  "training_view": "augmented training images; letterbox valid region for segmentation loss",
+  "training_composite_field": "augmented_train_seg",
+  "training_total_objective_field": "augmented_train_loss",
+  "training_loss_definition": {
+    "bce_weight": 0.5,
+    "one_minus_soft_dice_weight": 0.5,
+    "total": "segmentation composite + weighted risk"
+  },
+  "validation_field": "val_dice",
+  "validation_coordinate_system": "original image",
+  "validation_reduction": "mean over references within each image, then mean over images",
+  "probability_threshold": 0.5,
+  "wall_time_definition": "individual stage elapsed wall_seconds from DONE.json only; no inferred ongoing total",
+  "uniform_gpu_hours_claimed": false,
+  "stage_epoch_budgets_aggregated": false,
+  "all_seven_stages_done": true,
+  "inputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml",
+      "bytes": 2688,
+      "sha256": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/DONE.json",
+      "bytes": 5095,
+      "sha256": "934bb964eebfe600244f5f6669c5e8ae108aa19b9b9eb17d4e590069fc8f198b"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/epoch_diagnostics.csv",
+      "bytes": 42130,
+      "sha256": "6f6b0a5237726df4bd0b98cf835e4125240a74183eeaf64322c8a7d1285561ae"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/DONE.json",
+      "bytes": 5155,
+      "sha256": "25166551b5773c1bc4bd0afb3cf6bd3548262b17559c9fcb137e0b2d409648ef"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/epoch_diagnostics.csv",
+      "bytes": 64626,
+      "sha256": "4ec068fa3b0acd3ead98b18a8308a04fae20f898e118a926086baca89aca102c"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json",
+      "bytes": 5148,
+      "sha256": "c6ece14a867de7999f300fe152a3ca9a2d281dac9fb34b174aaa43aa924d6133"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/epoch_diagnostics.csv",
+      "bytes": 31673,
+      "sha256": "347abcbe14f2ffbe284100fa01e8fbe0d3d233da298ca167822f27f939732d62"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+      "bytes": 5157,
+      "sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/epoch_diagnostics.csv",
+      "bytes": 32303,
+      "sha256": "7c5154a26e47c6af550054e2e6fd825a4beec39fcb61555b22fcc5e8e61bbb8d"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json",
+      "bytes": 5167,
+      "sha256": "42f43c66f0691cd89d304a8dd62b319cce04bd18bceab04c095002a435ad7ec9"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/epoch_diagnostics.csv",
+      "bytes": 40784,
+      "sha256": "60d5a24767d12b431c46177c0ce8d0a4b30f57004c05017af770785299934dd8"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json",
+      "bytes": 5179,
+      "sha256": "0d5c3cfeccd594d38de013b255c3e7f327b586e3d88f936257267b2d967a15ba"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/epoch_diagnostics.csv",
+      "bytes": 41037,
+      "sha256": "a294cae1f45ad1d39bea245b091fa02e33b181ec5cbf74516edf53fe47f30511"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json",
+      "bytes": 5176,
+      "sha256": "657cf20276323c96d2922d538c9eac37cb3d96a7c56e58c1c4654792f7d757ea"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/epoch_diagnostics.csv",
+      "bytes": 40738,
+      "sha256": "68a21a1b09b33280350db1eb59db409b0cd7d26e170b29ee69a0d0adf55bdeae"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/tools/plot_pilot_learning_curves.py",
+      "bytes": 16135,
+      "sha256": "03681e45baefaea9cd09b136051fc7194667c6fec82c912a3f2ed83f20742dce"
+    }
+  ],
+  "stages": [
+    {
+      "name": "A_CNN",
+      "title": "A: CNN",
+      "budget_epochs": 100,
+      "status": "DONE",
+      "logged_epochs": 100,
+      "best_epoch": 36,
+      "best_val_dice": 0.8552520003612387,
+      "measured_done_wall_seconds": 2267.047232076,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/DONE.json"
+    },
+    {
+      "name": "A_T",
+      "title": "A: Transformer",
+      "budget_epochs": 100,
+      "status": "DONE",
+      "logged_epochs": 100,
+      "best_epoch": 40,
+      "best_val_dice": 0.8538206972870787,
+      "measured_done_wall_seconds": 2986.3830472399995,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/DONE.json"
+    },
+    {
+      "name": "B",
+      "title": "B: interaction",
+      "budget_epochs": 40,
+      "status": "DONE",
+      "logged_epochs": 40,
+      "best_epoch": 22,
+      "best_val_dice": 0.8583737524417797,
+      "measured_done_wall_seconds": 1222.9892093220005,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json"
+    },
+    {
+      "name": "D0",
+      "title": "D0",
+      "budget_epochs": 40,
+      "status": "DONE",
+      "logged_epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.858316915574831,
+      "measured_done_wall_seconds": 1320.231838832,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json"
+    },
+    {
+      "name": "RSI-1",
+      "title": "RSI",
+      "budget_epochs": 40,
+      "status": "DONE",
+      "logged_epochs": 40,
+      "best_epoch": 11,
+      "best_val_dice": 0.8583795894208186,
+      "measured_done_wall_seconds": 1131.8752597409984,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json"
+    },
+    {
+      "name": "MeanHinge-1",
+      "title": "Mean-Hinge",
+      "budget_epochs": 40,
+      "status": "DONE",
+      "logged_epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.8583835437676297,
+      "measured_done_wall_seconds": 1110.1356308569993,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json"
+    },
+    {
+      "name": "AbsHard-1",
+      "title": "Abs-Hard",
+      "budget_epochs": 40,
+      "status": "DONE",
+      "logged_epochs": 40,
+      "best_epoch": 11,
+      "best_val_dice": 0.8581613524392527,
+      "measured_done_wall_seconds": 1201.7862626769966,
+      "wall_source": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json",
+      "discarded_incomplete_trailing_csv_fragment": false,
+      "csv_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/epoch_diagnostics.csv",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/pilot_learning_curves_seed17.png",
+      "bytes": 1532792,
+      "sha256": "770c0e3da2d84d368816c3fc16ee16b2382e9ec366d891c0e0290bddae2e08ab"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/pilot_learning_curves_seed17.pdf",
+      "bytes": 48925,
+      "sha256": "e27cc31d55c4fd5a8c1208bc470ad1b9fb319b76292b5b1cb44b128e16682573"
+    }
+  ]
+}

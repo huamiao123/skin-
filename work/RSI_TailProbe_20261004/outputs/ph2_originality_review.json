@@ -1,0 +1,297 @@
+{
+  "reviewed_utc": "2026-10-03T10:37:51.605948+00:00",
+  "reviewer": "review_ege",
+  "scope": "source provenance, independently downloaded IMD002 raw input samples, and review_data full historical RAR comparison; no model scoring",
+  "state": "full_historical_distribution_bytes_confirmed_creator_original_equivalence_unresolved",
+  "official_raw_authenticity_verified": false,
+  "official_archive_downloaded": false,
+  "conclusion_zh": "已确认当前 Kaggle/Zenodo 镜像全部200张RGB BMP及200份lesion BMP，与2017年公开Kaggle发布的原目录RAR逐字节一致；该RAR同时保留200例临床记录及50份ROI。独立下载的两个GitHub IMD002原目录BMP也逐字节相同，实际均为765×572。原作者章节及官方网页明确写768×560，但未取得作者控制的官方RAR或作者校验值，尺寸差异原因及官方原包等价仍未确认。",
+  "official_description": [
+    {
+      "source_kind": "official_dataset_creator_page",
+      "url": "https://www.fc.up.pt/addi/ph2%20database.html",
+      "local_snapshot": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_official_page.html",
+      "snapshot_sha256": "7a6eeb048576ea6d67e08c75e77bbe42000010df034e6c6a8a928aafb5745717",
+      "width_claim": 768,
+      "height_claim": 560,
+      "official_archive_link": "https://www.dropbox.com/s/k88qukc20ljnbuo/PH2Dataset.rar"
+    },
+    {
+      "source_kind": "dataset_creator_authored_chapter",
+      "title": "PH2: A Public Database for the Analysis of Dermoscopic Images",
+      "year": 2015,
+      "doi": "10.1201/b19107-14",
+      "author_uploaded_by": "Catarina Barata",
+      "upload_date": "2016-04-14",
+      "url": "https://www.researchgate.net/publication/300467916_PH2_A_Public_Database_for_the_Analysis_of_Dermoscopic_Images",
+      "pdf_url": "https://www.researchgate.net/profile/Catarina-Barata-2/publication/300467916_PH2_A_Public_Database_for_the_Analysis_of_Dermoscopic_Images/links/570fa8cf08ae170055bde6db/PH2-A-Public-Database-for-the-Analysis-of-Dermoscopic-Images.pdf",
+      "section": "1.2 PH2 Database",
+      "pdf_page_zero_based": 3,
+      "width_claim": 768,
+      "height_claim": 560,
+      "short_quote": "a resolution of 768 × 560 pixels"
+    },
+    {
+      "source_kind": "official_browser_tutorial",
+      "url": "https://www.fc.up.pt/addi/PH2BrowserTutorial.pdf",
+      "year": 2013,
+      "note": "Provides original-image/browser descriptions and screenshots; no downloadable full-resolution IMD002 BMP or exact IMD002 dimension evidence located."
+    }
+  ],
+  "official_archive_access_attempts": [
+    {
+      "url": "https://www.dropbox.com/s/k88qukc20ljnbuo/PH2Dataset.rar?dl=1",
+      "result": "SSL_UNEXPECTED_EOF_WHILE_READING; no bytes obtained"
+    },
+    {
+      "url": "https://dl.dropboxusercontent.com/s/k88qukc20ljnbuo/PH2Dataset.rar",
+      "result": "SSL_UNEXPECTED_EOF_WHILE_READING; no bytes obtained"
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/epzcoqeyr1v9qlv/PH2Dataset.rar?rlkey=6mt2jlvwfkditkyg12xdei6ux&dl=1",
+      "result": "SSL_UNEXPECTED_EOF_WHILE_READING; no bytes obtained",
+      "provenance": "Located through a later research-paper data-availability reference; not independently verified as official replacement."
+    }
+  ],
+  "zenodo_probe": {
+    "source_kind": "nonofficial_kaggle_mirror",
+    "record_url": "https://zenodo.org/records/17498821",
+    "archive_member": "ph2_dataset/trainx/IMD002.bmp",
+    "local_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_IMD002_first_member_probe.bmp",
+    "size_bytes": 1313366,
+    "sha256": "5ee4896451a1baba95f866973c6a78fc31d7806b1261d1c40ba75567cc9898a0",
+    "width": 765,
+    "height": 572,
+    "local_crc32": "1b53322b",
+    "prior_crc_evidence": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/external_ph2_first_member_probe.json"
+  },
+  "independent_downloaded_samples": [
+    {
+      "source_kind": "third_party_original_layout_BMP",
+      "repository": "pranavm0610/MENAS",
+      "source_commit": "89e4e7e9d4e986c0d89120e7d1396ce38cb3ab82",
+      "member": "PH2Dataset/PH2_Dataset_images/IMD002/IMD002_Dermoscopic_Image/IMD002.bmp",
+      "pinned_url": "https://raw.githubusercontent.com/pranavm0610/MENAS/89e4e7e9d4e986c0d89120e7d1396ce38cb3ab82/PH2Dataset/PH2_Dataset_images/IMD002/IMD002_Dermoscopic_Image/IMD002.bmp",
+      "local_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_originality_samples/pranavm0610_IMD002.bmp",
+      "file_size_bytes": 1313366,
+      "sha256": "5ee4896451a1baba95f866973c6a78fc31d7806b1261d1c40ba75567cc9898a0",
+      "git_blob_sha1": "8754b7a44f97a245805970d604c5b11d99c25fa0",
+      "format": "BMP",
+      "mode": "RGB",
+      "width": 765,
+      "height": 572,
+      "bytes_identical_to_zenodo_probe": true,
+      "pixels_identical_to_zenodo_probe": true,
+      "mean_absolute_pixel_difference_vs_probe": 0.0,
+      "official_creator_control_verified": false
+    },
+    {
+      "source_kind": "third_party_original_layout_BMP",
+      "repository": "wahyuhwwkwk/116UAS_KecerdasanBuatan",
+      "source_commit": "77db7eddd935e1e17718aae4a4ba18f0fea90ff4",
+      "member": "dataset/PH2 Dataset images/IMD002/IMD002_Dermoscopic_Image/IMD002.bmp",
+      "pinned_url": "https://raw.githubusercontent.com/wahyuhwwkwk/116UAS_KecerdasanBuatan/77db7eddd935e1e17718aae4a4ba18f0fea90ff4/dataset/PH2%20Dataset%20images/IMD002/IMD002_Dermoscopic_Image/IMD002.bmp",
+      "local_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_originality_samples/wahyuhwwkwk_IMD002.bmp",
+      "file_size_bytes": 1313366,
+      "sha256": "5ee4896451a1baba95f866973c6a78fc31d7806b1261d1c40ba75567cc9898a0",
+      "git_blob_sha1": "8754b7a44f97a245805970d604c5b11d99c25fa0",
+      "format": "BMP",
+      "mode": "RGB",
+      "width": 765,
+      "height": 572,
+      "bytes_identical_to_zenodo_probe": true,
+      "pixels_identical_to_zenodo_probe": true,
+      "mean_absolute_pixel_difference_vs_probe": 0.0,
+      "official_creator_control_verified": false
+    },
+    {
+      "source_kind": "segmentation_paper_author_example_JPEG",
+      "repository": "popleyi/SPCA",
+      "source_commit": "fe2b85d545f72e5163a78c4f0b2d64de83951e63",
+      "member": "input/IMD002.jpg",
+      "pinned_url": "https://raw.githubusercontent.com/popleyi/SPCA/fe2b85d545f72e5163a78c4f0b2d64de83951e63/input/IMD002.jpg",
+      "local_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_originality_samples/popleyi_IMD002.jpg",
+      "file_size_bytes": 49337,
+      "sha256": "08d979e7acc9d9594951e46b7cf80f79830b079fc0c79c8d40ee04b3a8f83af4",
+      "git_blob_sha1": "fd89a7b10031607c186fff2cf591c87f10af7ec7",
+      "format": "JPEG",
+      "mode": "RGB",
+      "width": 765,
+      "height": 572,
+      "bytes_identical_to_zenodo_probe": false,
+      "pixels_identical_to_zenodo_probe": false,
+      "mean_absolute_pixel_difference_vs_probe": 3.6210734798970092,
+      "official_creator_control_verified": false
+    }
+  ],
+  "reference_mask_sample": {
+    "repository": "pranavm0610/MENAS",
+    "source_commit": "89e4e7e9d4e986c0d89120e7d1396ce38cb3ab82",
+    "member": "PH2Dataset/PH2_Dataset_images/IMD002/IMD002_lesion/IMD002_lesion.bmp",
+    "local_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_originality_samples/pranavm0610_IMD002_lesion.bmp",
+    "size_bytes": 54974,
+    "sha256": "fad83531e3fb3616ce186039c7434f08e3cacfa7d72c3937e1c0b5b64a79220d",
+    "git_blob_sha1": "e056cc681768329ae1560cc62c47967bb6cc2af1",
+    "width": 765,
+    "height": 572,
+    "mode": "1"
+  },
+  "local_full_kaggle_checks": {
+    "kaggle_image": {
+      "path": "/home/featurize/rsi_data/ph2_kaggle_mirror/raw/ph2_dataset/trainx/IMD002.bmp",
+      "sha256": "5ee4896451a1baba95f866973c6a78fc31d7806b1261d1c40ba75567cc9898a0",
+      "size_bytes": 1313366,
+      "width": 765,
+      "height": 572,
+      "mode": "RGB",
+      "bytes_equal_to_comparison": true,
+      "decoded_L_pixels_equal": true,
+      "comparison_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_IMD002_first_member_probe.bmp"
+    },
+    "kaggle_mask": {
+      "path": "/home/featurize/rsi_data/ph2_kaggle_mirror/raw/ph2_dataset/trainy/IMD002_lesion.bmp",
+      "sha256": "fad83531e3fb3616ce186039c7434f08e3cacfa7d72c3937e1c0b5b64a79220d",
+      "size_bytes": 54974,
+      "width": 765,
+      "height": 572,
+      "mode": "1",
+      "bytes_equal_to_comparison": true,
+      "decoded_L_pixels_equal": true,
+      "comparison_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_originality_samples/pranavm0610_IMD002_lesion.bmp"
+    }
+  },
+  "source_qualifications": [
+    "The two BMP repositories are third-party research/student projects; original folder layout and matching pixels do not establish creator-authorized distribution or independent upstream acquisition.",
+    "The wahyuhwwkwk README names Kaggle spacesurfer/ph2-dataset as its source, distinct from athina123 but still third-party.",
+    "popleyi/SPCA is code for the 2016 ISBI segmentation paper by Lei Bi et al.; README explicitly says visible hair was preprocessed elsewhere and JPEG examples are used. Its 765×572 sample predates the Zenodo 2025 mirror record but cannot prove raw-pixel identity.",
+    "Dataset Ninja actual-image statistics show variable widths/heights despite repeating the nominal768×560 description; this is corroborating conversion-tool evidence, not creator-original-file verification.",
+    "The2017 lakshyak/p2hdata RAR is a historical public third-party distribution. Its original layout, metadata and full byte equality strengthen distribution-history evidence, while uploader creator control and independent upstream acquisition remain unverified."
+  ],
+  "supplementary_primary_code": {
+    "repository": "dataset-ninja/ph2",
+    "source_commit": "a43947d01296bc8cfca93eb4a078b0e0b198eb0b",
+    "conversion_url": "https://github.com/dataset-ninja/ph2/blob/a43947d01296bc8cfca93eb4a078b0e0b198eb0b/src/convert.py",
+    "observation": "Converter enumerates PH2Dataset/PH2 Dataset images and uploads original image paths; no explicit image resize found in reviewed converter. It was not executed and original source archive was not obtained."
+  },
+  "supported_inferences": [
+    "765×572 is a longstanding publicly used IMD002 representation and is consistent across the checked raw-layout BMP and derivative paper-author JPEG examples.",
+    "Cross-mirror equality materially reduces concern about current ZIP/network corruption or new Zenodo-only alteration of IMD002.",
+    "The full current200 RGB/200 lesion BMP mirror representation is identical to an original-layout RAR from a public2017 Kaggle release; this removes an IMD002-only limitation for historical mirror comparison, but does not establish equivalence to the unseen creator-controlled archive."
+  ],
+  "unresolved": [
+    "No byte/pixel reference was obtained directly from creator-controlled PH2Dataset.rar, so original archive equivalence remains unverified.",
+    "Whether768×560 is a nominal/typographical description, an acquisition frame size, a different release, or whether checked files were changed before public mirrors remains unresolved.",
+    "Only the IMD002 samples were directly acquired and compared by review_ege; all200 RGB/200 lesion historical comparison is supported by review_data evidence_report, not an additional independent extraction by this reviewer."
+  ],
+  "handling": "Keep original mirror bytes and measured per-file sizes; identify source as nonofficial PH2 mirror with unresolved creator-original equivalence. Do not resize files to768×560 to match prose and do not claim all mirrors are official.",
+  "changes": "Only this review JSON and small downloaded evidence samples under outputs/ph2_originality_samples were written; rsi/config/manifest files and GPU were untouched.",
+  "historical_full_archive_comparison": {
+    "evidence_report": "/home/featurize/work/RSI_Implementation_20261003/outputs/ph2_historical_rar_comparison.json",
+    "evidence_report_sha256": "c00af6152dfbe4b42a3220c04f81da6a3e7e03784b3ead16c1e7bf093ea959bf",
+    "comparison_executed_by": "review_data",
+    "reviewed_by": "review_ege",
+    "review_scope": "Report, count/CRC/error consistency and provenance reviewed; this reviewer did not independently re-extract all400 BMPs.",
+    "source_type": "public_historical_Kaggle_RAR_mirror",
+    "source_page": "https://www.kaggle.com/datasets/lakshyak/p2hdata",
+    "source_release_date": "2017-06-03T06:18:19.503Z",
+    "archive": "/home/featurize/rsi_data/ph2_originality_candidates/lakshyak_2017_PH2Dataset.rar",
+    "archive_bytes": 116457882,
+    "archive_sha256": "40e5dce4df57f63133bf0c2218562a321e8e3f2bd7c4bd77ad0d3d94e69618a2",
+    "archive_md5": "f3121a3a260d44b6f80e7db5e9a5f16c",
+    "archive_format": "RAR4",
+    "archive_entries": 1255,
+    "files": 453,
+    "header_crc_failures": [],
+    "archive_bytes_consumed": 116457882,
+    "all_member_crc_and_size_passed": true,
+    "errors": [],
+    "original_layout_preserved": true,
+    "original_layout": "PH2Dataset/PH2 Dataset images/IMDxxx/{IMDxxx_Dermoscopic_Image,IMDxxx_lesion,IMDxxx_roi}",
+    "image_files": 200,
+    "lesion_mask_files": 200,
+    "roi_mask_files": 50,
+    "mirror_compared_images": 200,
+    "byte_identical_images": 200,
+    "byte_identical_lesion_masks": 200,
+    "clinical_metadata_files": [
+      {
+        "name": "PH2Dataset/PH2_dataset.txt",
+        "packed_bytes": 1607,
+        "bytes": 36280,
+        "crc32": "340a4d22",
+        "compression_method": 51,
+        "dos_modified_time": 1122726140,
+        "attributes": 32,
+        "sha256": "2cc2fdc28eb230d86b56d72a5aa710593d0861cf6564fa64f43a97a89070ccf4",
+        "computed_crc32": "340a4d22",
+        "crc_and_size_passed": true
+      },
+      {
+        "name": "PH2Dataset/PH2_dataset.xlsx",
+        "packed_bytes": 22759,
+        "bytes": 26731,
+        "crc32": "4b970148",
+        "compression_method": 51,
+        "dos_modified_time": 1122726189,
+        "attributes": 32,
+        "sha256": "a6108e99953c43eb2407023e716796ba3b772492ffc48c14bf9f89af5631199b",
+        "computed_crc32": "4b970148",
+        "crc_and_size_passed": true
+      },
+      {
+        "name": "PH2Dataset/Readme.txt",
+        "packed_bytes": 311,
+        "bytes": 1004,
+        "crc32": "ef54b153",
+        "compression_method": 51,
+        "dos_modified_time": 1122726231,
+        "attributes": 32,
+        "sha256": "b20e91591ba41f52d7d6f2059dea178d95b2acc7dd1896573c11fe9fe6ee983c",
+        "computed_crc32": "ef54b153",
+        "crc_and_size_passed": true
+      }
+    ],
+    "clinical_rows": 200,
+    "clinical_image_ids_match_all_200": true,
+    "clinical_diagnosis_counts": {
+      "0": 80,
+      "1": 80,
+      "2": 40
+    },
+    "histological_diagnosis_counts": {
+      "": 159,
+      "Dysplastic Nevus": 5,
+      "Blue Nevus": 1,
+      "Intradermal Nevus": 2,
+      "Melanoma": 26,
+      "Nodular Melanoma": 2,
+      "Lentigo Maligna": 5
+    },
+    "clinical_xlsx_crc_passed": true,
+    "clinical_xlsx_members": [
+      "[Content_Types].xml",
+      "_rels/.rels",
+      "xl/_rels/workbook.xml.rels",
+      "xl/workbook.xml",
+      "xl/sharedStrings.xml",
+      "xl/worksheets/_rels/sheet1.xml.rels",
+      "xl/theme/theme1.xml",
+      "xl/styles.xml",
+      "xl/worksheets/sheet1.xml",
+      "docProps/core.xml",
+      "xl/tables/table1.xml",
+      "xl/printerSettings/printerSettings1.bin",
+      "docProps/app.xml"
+    ],
+    "mirror_dimensions_equivalent_by_byte_identity": true,
+    "official_creator_control_verified": false,
+    "official_archive_byte_equivalence_verified": false,
+    "conclusion": "Every one of the 200 mirror image BMPs and 200 lesion BMPs is byte-identical to this preserved original-layout RAR distributed in a public 2017 Kaggle release, including original clinical XLSX/TXT and 50 ROI masks. This establishes historical distribution equality for the full segmentation data. Direct creator-controlled archive acquisition or creator checksum remains unavailable.",
+    "does_not_establish": [
+      "Independent upstream acquisition among mirrors",
+      "Equivalence to an unseen creator-controlled RAR",
+      "Explanation of creator prose nominal768x560 versus measured stored dimensions"
+    ],
+    "no_RSI_source_changes": true
+  }
+}

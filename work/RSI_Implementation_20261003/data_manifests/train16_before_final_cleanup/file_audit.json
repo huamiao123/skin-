@@ -1,0 +1,37 @@
+{
+  "protocol_id": "P2-IMA-M-v2",
+  "scope": "T0_training_subset",
+  "file_audit_complete": true,
+  "input_manifest_sha256": "8e8f11d936f0387b0ed25bba9ee51db0c739ffc8ccdaa8dac3adc81ad6f341ee",
+  "final_references_sha256": "857bfdc99e59c36ea54e3c293c25d7f40bb76ce20c87694591fdbb7bb351e562",
+  "unique_images_requested": 16,
+  "unique_references_requested": 38,
+  "decoded_image_count": 16,
+  "valid_md5_binary_mask_count": 38,
+  "validated_reference_rows": 38,
+  "image_counts_by_subset_split": {
+    "M": {
+      "train": 16
+    },
+    "H": {},
+    "T1": {}
+  },
+  "file_errors": [],
+  "exact_file_duplicate_groups": [],
+  "exact_pixel_duplicate_groups": [],
+  "cross_split_exact_duplicate_pairs": [],
+  "known_group_cross_split": {},
+  "near_duplicate_detector": "64-bit grayscale difference hash, Hamming <=4; candidates require review",
+  "near_duplicate_candidate_count": 0,
+  "cross_split_near_duplicate_candidates": [],
+  "spatial_alignment_check": "exact original image/mask dimensions; visual overlays additionally required",
+  "metadata_dimension_differences": [],
+  "models_evaluated_on_test": false,
+  "visual_alignment_review": {
+    "artifact": "alignment_train16.jpg",
+    "image_count": 16,
+    "reference_count": 38,
+    "finding": "No obvious RGB/reference displacement or mismatched image; inter-reference contour differences retained",
+    "scope": "T0 train16 only"
+  }
+}

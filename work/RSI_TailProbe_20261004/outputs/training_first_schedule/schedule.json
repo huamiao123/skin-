@@ -1,0 +1,36 @@
+{
+  "started_utc": "2026-10-03T13:36:00.774755+00:00",
+  "temporarily_stopped_export_pid": 103068,
+  "safe_boundary": "D0 completed and returned; second B with D0 original-coordinate export active; no optimizer active",
+  "original_export_call": {
+    "run_id": "B",
+    "checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+    "method": "B",
+    "alpha": 1.0,
+    "weight": 0.0,
+    "include_anchor": true,
+    "d0_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth"
+  },
+  "remaining_driver_sha256": "9b8f348e412d7c339c567c40997a424c1f0b423415d0d60bd1594107f0a8912e",
+  "signal": "SIGSTOP to owned exporter group; retain in-memory export/cache progress",
+  "remaining_stages": [
+    "RSI-1",
+    "MeanHinge-1",
+    "AbsHard-1"
+  ],
+  "budget_each": 40,
+  "seed": 17,
+  "scientific_config_changed": false,
+  "resume_export_with_SIGCONT_required": true,
+  "training_pid": 127745,
+  "training_command": [
+    "/environment/miniconda3/bin/python",
+    "-u",
+    "tools/train_remaining_pilot.py",
+    "--config",
+    "configs/p2_ima_m_v2.yaml",
+    "--audit-file",
+    "outputs/remaining_training_seed17.json"
+  ],
+  "training_log": "/home/featurize/work/RSI_Implementation_20261003/outputs/remaining_training_console_seed17.log"
+}

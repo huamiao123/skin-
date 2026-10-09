@@ -1,0 +1,209 @@
+{
+  "prepared_utc": "2026-10-03T15:20:41.692869+00:00",
+  "status": "prepared_not_started_pending_six_DONE",
+  "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/export_weight_grid.py",
+  "tool_sha256": "f289d8b28b8c7c8a3216b084fa427aa81c87117a4eb0f8f8361998272d24f61a",
+  "CLI_when_root_decides": [
+    "python",
+    "-u",
+    "tools/export_weight_grid.py",
+    "--config",
+    "configs/p2_ima_m_v2.yaml"
+  ],
+  "default_audit": "outputs/weight_grid_exports_seed17.json",
+  "default_CSV_directory": "outputs/per_reference/seed17",
+  "validated_common_sources": {
+    "B": {
+      "run_name": "B",
+      "stage": "B",
+      "epochs": 40,
+      "best_epoch": 22,
+      "best_val_dice": 0.8583737524417797,
+      "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+      "selected_checkpoint_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+      "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json",
+      "DONE_sha256": "c6ece14a867de7999f300fe152a3ca9a2d281dac9fb34b174aaa43aa924d6133",
+      "signature_verified": true
+    },
+    "q": 0.1325787454843521,
+    "q_file": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/abs_hard_q.json",
+    "q_file_sha256": "0bdf981e53e8e96c8bcb77536aa60fb52a189afc47d969e95b1f1323136868aa",
+    "q_source": {
+      "q": 0.1325787454843521,
+      "quantile": 0.75,
+      "source": "B_canonical_M_train",
+      "checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+      "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+      "fixed": true,
+      "gradient": false
+    },
+    "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+    "D0": {
+      "run_name": "D0",
+      "stage": "D",
+      "epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.858316915574831,
+      "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+      "selected_checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+      "DONE_sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab",
+      "signature_verified": true
+    },
+    "ready": true,
+    "lambda1": [
+      {
+        "run_name": "RSI-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 11,
+        "best_val_dice": 0.8583795894208186,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/best.pth",
+        "selected_checkpoint_sha256": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json",
+        "DONE_sha256": "42f43c66f0691cd89d304a8dd62b319cce04bd18bceab04c095002a435ad7ec9",
+        "signature_verified": true
+      },
+      {
+        "run_name": "MeanHinge-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 7,
+        "best_val_dice": 0.8583835437676297,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/best.pth",
+        "selected_checkpoint_sha256": "620b3af2bc45c68dd76fd4f887746abb38776e96ef14bddddde8eb98d5e2fd3f",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json",
+        "DONE_sha256": "0d5c3cfeccd594d38de013b255c3e7f327b586e3d88f936257267b2d967a15ba",
+        "signature_verified": true
+      },
+      {
+        "run_name": "AbsHard-1",
+        "stage": "D",
+        "epochs": 40,
+        "best_epoch": 11,
+        "best_val_dice": 0.8581613524392527,
+        "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/best.pth",
+        "selected_checkpoint_sha256": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+        "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json",
+        "DONE_sha256": "657cf20276323c96d2922d538c9eac37cb3d96a7c56e58c1c4654792f7d757ea",
+        "signature_verified": true
+      }
+    ],
+    "A_CNN": {
+      "run_name": "A_CNN",
+      "stage": "A_CNN",
+      "epochs": 100,
+      "best_epoch": 36,
+      "best_val_dice": 0.8552520003612387,
+      "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/best.pth",
+      "selected_checkpoint_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/DONE.json",
+      "DONE_sha256": "934bb964eebfe600244f5f6669c5e8ae108aa19b9b9eb17d4e590069fc8f198b",
+      "signature_verified": true
+    },
+    "A_T": {
+      "run_name": "A_T",
+      "stage": "A_T",
+      "epochs": 100,
+      "best_epoch": 40,
+      "best_val_dice": 0.8538206972870787,
+      "selected_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/best.pth",
+      "selected_checkpoint_sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+      "DONE_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/DONE.json",
+      "DONE_sha256": "25166551b5773c1bc4bd0afb3cf6bd3548262b17559c9fcb137e0b2d409648ef",
+      "signature_verified": true
+    },
+    "FixedShrink_core": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/fixed_shrink_core_seed17.json",
+      "sha256": "9c253887632747bd672be6d0e5323ef3e1e32a76c0ec5f6af0c293e937c725c2",
+      "CSV_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/fixed_shrink_core_seed17.csv",
+      "CSV_sha256": "6f2530d04d502855aebaacdd517594423ab0b9c35e652b7ad15607fe4e8b00c0",
+      "registered_alphas": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ],
+      "endpoint_consistency_passed": true,
+      "scope": "M val core only; full tail, boundary, source and paired intervals remain pending"
+    }
+  },
+  "pending_full_budget_DONE": [
+    "RSI-0.3",
+    "MeanHinge-0.3",
+    "AbsHard-0.3",
+    "RSI-3",
+    "MeanHinge-3",
+    "AbsHard-3"
+  ],
+  "all_six_full_budget_preflight_passed": false,
+  "plan": [
+    {
+      "method": "rsi",
+      "run_name": "RSI-0.3",
+      "weight": 0.3,
+      "alpha": 1.0,
+      "include_anchor": false
+    },
+    {
+      "method": "mean_hinge",
+      "run_name": "MeanHinge-0.3",
+      "weight": 0.3,
+      "alpha": 1.0,
+      "include_anchor": false
+    },
+    {
+      "method": "abs_hard",
+      "run_name": "AbsHard-0.3",
+      "weight": 0.3,
+      "alpha": 1.0,
+      "include_anchor": false
+    },
+    {
+      "method": "rsi",
+      "run_name": "RSI-3",
+      "weight": 3.0,
+      "alpha": 1.0,
+      "include_anchor": false
+    },
+    {
+      "method": "mean_hinge",
+      "run_name": "MeanHinge-3",
+      "weight": 3.0,
+      "alpha": 1.0,
+      "include_anchor": false
+    },
+    {
+      "method": "abs_hard",
+      "run_name": "AbsHard-3",
+      "weight": 3.0,
+      "alpha": 1.0,
+      "include_anchor": false
+    }
+  ],
+  "borrowed_frozen_tool_hashes": {
+    "tools/train_weight_grid.py": "67e1433c034d8c5efedb7d881fbb9c8e4d72fbf3b06a4d96b04e3ced6ded0e24",
+    "tools/train_remaining_pilot.py": "9b8f348e412d7c339c567c40997a424c1f0b423415d0d60bd1594107f0a8912e",
+    "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02",
+    "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296"
+  },
+  "frozen_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "scientific_source_and_cfg_unchanged": true,
+  "preflight_report": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_export_preflight_only_seed17.json",
+  "preflight_report_sha256": "f592e09075d42c1bb1afaa61010f574c30ddf7d045227a34b834cdff4a5d9d90",
+  "new_row_guard_CPU_check_report": "/home/featurize/work/RSI_Implementation_20261003/outputs/weight_grid_export_guard_cpu_checks.json",
+  "new_row_guard_CPU_check_report_sha256": "0ffc61c06e259343339d53ec4ea082dd5528388f5425a017cbb883a5ed5fa872",
+  "CPU_guard_evidence": "3 pure-read checks on actual D0 CSV: complete624 refs and provenance/loss views pass; missing reference and wrong objective rejected. No metric recomputation.",
+  "numeric_authority": "Original rsi.export.export_checkpoint with the previously verified content cache and exact KD boundary context; no numeric algorithm edits.",
+  "backend_alignment": "At actual inference only, reset original set_seed(17) and torch.set_num_threads(4), recording TF32/cuDNN flags; pending/validate-only do not initialize CUDA.",
+  "inference_contract": "Exactly six selected registered0.3/3 checkpoints; own actual method/weight, alpha1, include_anchorFalse, same selectedD0 comparison; canonical and original D0 losses; all M471/H104/T149 identities and original metadata verified.",
+  "GPU_used": false,
+  "model_inference_started": false,
+  "CSV_written": false,
+  "training_performed": false,
+  "signals_sent": false,
+  "old_tools_rsi_config_modified": false,
+  "commit_created": false,
+  "new_test_files_added": false,
+  "independent_read_only_review": "EGE approved final same tool SHA; no remaining material blocker."
+}

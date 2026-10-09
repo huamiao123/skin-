@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "created_utc": "2026-10-03T13:10:11.687810+00:00",
+  "inputs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/B.csv",
+      "bytes": 984509,
+      "sha256": "6db9707c82ebad8d4b51a19a004025bbe5ad04f378a25ab1e42ed0048101053e",
+      "reference_rows": 1248
+    }
+  ],
+  "input_reference_rows": 1248,
+  "summary_rows": 96,
+  "configuration": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml",
+    "sha256": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980",
+    "threshold": 0.5,
+    "epsilon_D": [
+      0.0,
+      0.002,
+      0.005,
+      0.01
+    ],
+    "epsilon_L": 0.0,
+    "fixed_two_seed": 17,
+    "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596"
+  },
+  "tool_sha256": "dfa049b96ef44dad15fda75627bad246128f46fcc07cde38ad98913307c4e99c",
+  "output_csv": "/home/featurize/work/RSI_Implementation_20261003/outputs/T1_source_review_seed17/source_threshold_sensitivity.csv",
+  "output_sha256": "fdfd93fde33dd4de2c6feb5be8ba4c47197013e83035d858186cf81def973301",
+  "scope": "CPU descriptive validation sidecar; no model scoring, training, checkpoint/workpoint selection",
+  "source_strata_use": "M/H/T1 and T1/T2/T3 tool strata describe already selected outputs; H/T1 never select parameters",
+  "metric_definitions": {
+    "gain_dice": "original-coordinate dice-current minus dice-anchor at frozen probability threshold0.5",
+    "gain_loss": "canonical_letterbox_valid loss-anchor minus loss-current; positive is improvement",
+    "H_epsilon": "image average of reference mean max(-gain_dice-epsilon_D,0)",
+    "G_plus": "image average of reference mean max(gain_dice,0)",
+    "any_harm": "image min reference gain < -epsilon_D; denominator all stratum images",
+    "sign_flip": "min gain < -epsilon_D and max gain > epsilon_D; primary denominator all eligible multi-reference images",
+    "additional_sign_flip_denominators": "all stratum images, eligible images with actual original-mask change, eligible images with at least one abs gain exceeding tolerance; zero denominator is missing, not0",
+    "tool_single_reference_images": "reported explicitly; cannot exhibit reference sign conflict and are excluded from the eligible multi-reference denominator",
+    "soft_harm": "canonical gain_loss <0 (epsilon_L0); hard harm uses gain_dice < -epsilon_D",
+    "canonical_rho_J_kappa": "d=-canonical gain_loss; rho=Eir I(d>0), J=Ei[Er relu(d)-relu(Er d)], kappa=Ei I(min d<-1e-6 and max d>1e-6); diagnostic, not an added objective",
+    "worst_tail_10pct": "sort each image minimum reference Dice gain; average first max(1,ceil0.1N) images",
+    "disagreement_counts": "raw reference/image descriptive counts, plus image-then-reference macro rates; references are not independent samples",
+    "correlations": "weighted reference Pearson and Pearson of average tie ranks (weights1/N/m); unweighted per-image mean counterparts; undefined constant-vector correlation is missing",
+    "fixed_two": "same sha256(seed17:image_id), first8bytes big-endian NumPy RNG, sorted reference_id and choice2 without replacement as frozen rsi.summarize",
+    "native_source_sensitivity": "existing original summarizer separately compares independently selected M/H/T1 references on the same source-image intersection; this tool does not overwrite those tables"
+  },
+  "test_scoring_locked": true
+}

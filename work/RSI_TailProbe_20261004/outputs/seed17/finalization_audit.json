@@ -1,0 +1,396 @@
+{
+  "reviewed_utc": "2026-10-04T06:10:19.012723+00:00",
+  "scope": "T2",
+  "seed": 17,
+  "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/finalize_pilot.py",
+  "tool_sha256": "95de6989fc16e1de9ae477ab49c5252137907856a8f1f894c3c09d032bf766d8",
+  "source_bundle_scope": "rsi/*.py and configs/*.yaml; this tools script is excluded",
+  "original_training_source": {
+    "source_sha256": {
+      "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+      "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+      "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+      "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+      "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+      "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+      "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+      "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+      "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+      "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+      "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+      "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+      "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+      "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+      "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+      "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+      "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+      "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+      "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+      "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+      "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+    },
+    "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+  },
+  "original_csvs": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/AbsHard-0.3.csv",
+      "sha256": "e8da1c6abea00c8127dd52eb2d4ea6f0f9fc4970be1f99ac809d5c8ab45ad6f2",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/AbsHard-1.csv",
+      "sha256": "07ec5185b332a305af6d439efa31b2e373be3b65ded6ff9628625731a812bee8",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/AbsHard-3.csv",
+      "sha256": "a1d93464ba33350c91ee15cc91621626c4bd206e47ec58f5f520e2dd8d725755",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/B.csv",
+      "sha256": "fdff281788033ea78f18cba3a4938a72b94702c956153d56d7bb133bd545024a",
+      "rows": 1248,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/D0.csv",
+      "sha256": "73e39378863b5cb493cde81241c4950ad410b478b9d74463579339db0e24f4b8",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/MeanHinge-0.3.csv",
+      "sha256": "8cf957b8dbb3b62af335f67eb9679046abcc0bce3c0262b1ddff13fad5aaf3e9",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/MeanHinge-1.csv",
+      "sha256": "2ccf2bec13c40c0b0303d98cede12e2d730241b0f5af1c7f186b80896918e4bf",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/MeanHinge-3.csv",
+      "sha256": "27c95f6518fd8bdd55a7d446bc2335f2a889afe241ec71fdd41ef2ebac0ebfd4",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/RSI-0.3.csv",
+      "sha256": "376c467effcfa643e1cbe2c4d37881e72fee9ff71790011af4c0399dc8223953",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/RSI-1.csv",
+      "sha256": "6cb931c41e1f8562772fe20dc2f77971037b0cc60fc44df281e463a02659f576",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/RSI-3.csv",
+      "sha256": "f8259e7a253d3b1da8e2df27905159ef1de723a991516bbf134021fd6e271930",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/Shrink-D0-0.000000.csv",
+      "sha256": "6d3439bb2ffea845f8fa966f1e6f435e3e4ada57f53e0ad95cb93a4615a72ab6",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/Shrink-D0-0.333333.csv",
+      "sha256": "72de57b663442b662d38cc784097443bca33c4cd50d8cb99241577868f86b6ad",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/Shrink-D0-0.666667.csv",
+      "sha256": "503e7e74061eaf35b8b9e367bb8238f1d603ca8efcf457eeff7a466479089382",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/Shrink-D0-1.000000.csv",
+      "sha256": "c674b63fa4e3a941bc83e8b3063a2b337b57ed4f01fecf1e25fadb8ecd682ddc",
+      "rows": 624,
+      "correction": {
+        "field": "method",
+        "predicate": "run_id == B",
+        "new_value": "B",
+        "rows_corrected": 0,
+        "old_value_counts": {}
+      }
+    }
+  ],
+  "original_csv_bytes_unchanged": true,
+  "training_completion_evidence": [
+    {
+      "run_id": "A_CNN",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/DONE.json",
+      "done_sha256": "934bb964eebfe600244f5f6669c5e8ae108aa19b9b9eb17d4e590069fc8f198b",
+      "epochs": 100,
+      "best_epoch": 36,
+      "best_checkpoint_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_CNN/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "6f6b0a5237726df4bd0b98cf835e4125240a74183eeaf64322c8a7d1285561ae"
+    },
+    {
+      "run_id": "A_T",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/DONE.json",
+      "done_sha256": "25166551b5773c1bc4bd0afb3cf6bd3548262b17559c9fcb137e0b2d409648ef",
+      "epochs": 100,
+      "best_epoch": 40,
+      "best_checkpoint_sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/A_T/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "4ec068fa3b0acd3ead98b18a8308a04fae20f898e118a926086baca89aca102c"
+    },
+    {
+      "run_id": "AbsHard-0.3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/DONE.json",
+      "done_sha256": "213e9517d44935a503823dca0a1641745e90b844ef01daf998d82fe8201c46e1",
+      "epochs": 40,
+      "best_epoch": 15,
+      "best_checkpoint_sha256": "1bb49232e61e2f2ffbd03fe40aca323ab467cbf9f13bb0fa6ee1cb26a38b7a47",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "670d665c5493122cac060e9a93dcbcbab5ba97cd12f895ca0c6a23ea43968e70"
+    },
+    {
+      "run_id": "AbsHard-1",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/DONE.json",
+      "done_sha256": "657cf20276323c96d2922d538c9eac37cb3d96a7c56e58c1c4654792f7d757ea",
+      "epochs": 40,
+      "best_epoch": 11,
+      "best_checkpoint_sha256": "cdfa7966292d334f35a671cfb33ac823ef2f659d99670c319a635c2b862fa168",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-1/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "68a21a1b09b33280350db1eb59db409b0cd7d26e170b29ee69a0d0adf55bdeae"
+    },
+    {
+      "run_id": "AbsHard-3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/DONE.json",
+      "done_sha256": "ac408d2eec8e1c87a7c41e87b856417ae0c0319920321f467bf6917f6b8ce62c",
+      "epochs": 40,
+      "best_epoch": 11,
+      "best_checkpoint_sha256": "167735cb85f00b7056ab69523f26cde7226084830c6d5529c7f927a17e785c34",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "ace95ec91cb5a74bc8a7e15c6e15f4cd442f28f0d976689aad12363817baf392"
+    },
+    {
+      "run_id": "B",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/DONE.json",
+      "done_sha256": "c6ece14a867de7999f300fe152a3ca9a2d281dac9fb34b174aaa43aa924d6133",
+      "epochs": 40,
+      "best_epoch": 22,
+      "best_checkpoint_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "347abcbe14f2ffbe284100fa01e8fbe0d3d233da298ca167822f27f939732d62"
+    },
+    {
+      "run_id": "D0",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+      "done_sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab",
+      "epochs": 40,
+      "best_epoch": 7,
+      "best_checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "7c5154a26e47c6af550054e2e6fd825a4beec39fcb61555b22fcc5e8e61bbb8d"
+    },
+    {
+      "run_id": "MeanHinge-0.3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/DONE.json",
+      "done_sha256": "a4fe1ea7b355bc988fab1b21963fc6d01752cea41f62df585c73aac2fac6adbd",
+      "epochs": 40,
+      "best_epoch": 7,
+      "best_checkpoint_sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "f6b780d8df6014d74bfe06b2a504187731afb41d2eab431b474dcf1e3de95f9b"
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/DONE.json",
+      "done_sha256": "0d5c3cfeccd594d38de013b255c3e7f327b586e3d88f936257267b2d967a15ba",
+      "epochs": 40,
+      "best_epoch": 7,
+      "best_checkpoint_sha256": "620b3af2bc45c68dd76fd4f887746abb38776e96ef14bddddde8eb98d5e2fd3f",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-1/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "a294cae1f45ad1d39bea245b091fa02e33b181ec5cbf74516edf53fe47f30511"
+    },
+    {
+      "run_id": "MeanHinge-3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/DONE.json",
+      "done_sha256": "50e7292882940b8215ec281a23cf8861c0851653252806bdc80181c3158052c0",
+      "epochs": 40,
+      "best_epoch": 15,
+      "best_checkpoint_sha256": "0df5ad8bc3e2976f7e9d2e569fc8ba34993ec7e46fa8153ee61792bdda7498d7",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "b94a314ba791ef978cb35a2455aa9aeb809c0d8e5a0c62d96bd253b1d5b8cb20"
+    },
+    {
+      "run_id": "RSI-0.3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/DONE.json",
+      "done_sha256": "8559c3d044b82832531cd2df985f79c6b7ac7a5174a8faa0692b25a4a7f23962",
+      "epochs": 40,
+      "best_epoch": 7,
+      "best_checkpoint_sha256": "3aad4f5915d66103446b1b42b5d8e352d8ddf8857903bf29236f1a23cb6d3c29",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "119d8a5a9b0b0f2e9a7711f24c9fe46bd94a49e80446854533c6a275e988f1b8"
+    },
+    {
+      "run_id": "RSI-1",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/DONE.json",
+      "done_sha256": "42f43c66f0691cd89d304a8dd62b319cce04bd18bceab04c095002a435ad7ec9",
+      "epochs": 40,
+      "best_epoch": 11,
+      "best_checkpoint_sha256": "1e4601988e0929a2a1e1f936c88503f6bfbcf754a6b56807b3bdae26349b1a94",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-1/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "60d5a24767d12b431c46177c0ce8d0a4b30f57004c05017af770785299934dd8"
+    },
+    {
+      "run_id": "RSI-3",
+      "done_path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/DONE.json",
+      "done_sha256": "151e4f12e15b4460d177a66d60beb40fbd80d2ddad4e2375db966b65ef366d48",
+      "epochs": 40,
+      "best_epoch": 1,
+      "best_checkpoint_sha256": "40c40abc702c65bb2f4b3381335796730c89eb4e152188b699dd6f3d0bb4b784",
+      "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+      "epoch_csv": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/epoch_diagnostics.csv",
+      "epoch_csv_sha256": "232cc2af47a5085b6b59a0e629515fd5347cbdd2c97fbec8981fa3d1fd052e40"
+    }
+  ],
+  "method_correction_only": true,
+  "test_scoring_locked": true,
+  "models_constructed": false,
+  "GPU_compute": false,
+  "prior_output_backup": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17.before_finalize.20261004T061019012665Z",
+  "generated": [
+    "corrected_inputs/AbsHard-0.3.csv",
+    "corrected_inputs/AbsHard-1.csv",
+    "corrected_inputs/AbsHard-3.csv",
+    "corrected_inputs/B.csv",
+    "corrected_inputs/D0.csv",
+    "corrected_inputs/MeanHinge-0.3.csv",
+    "corrected_inputs/MeanHinge-1.csv",
+    "corrected_inputs/MeanHinge-3.csv",
+    "corrected_inputs/RSI-0.3.csv",
+    "corrected_inputs/RSI-1.csv",
+    "corrected_inputs/RSI-3.csv",
+    "corrected_inputs/Shrink-D0-0.000000.csv",
+    "corrected_inputs/Shrink-D0-0.333333.csv",
+    "corrected_inputs/Shrink-D0-0.666667.csv",
+    "corrected_inputs/Shrink-D0-1.000000.csv",
+    "decision_inputs.json",
+    "decision_log.md",
+    "epoch_diagnostics.csv",
+    "finalization_audit.json",
+    "gain_harm_tradeoff.png",
+    "per_reference_gains.csv",
+    "per_reference_gains_vs_D0.csv",
+    "per_reference_gains_vs_anchor.csv",
+    "pilot_main_table.csv",
+    "source_sensitivity.csv",
+    "update_diagnostics.csv"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "reviewer": "review_data",
+  "reviewed_utc": "2026-10-03T11:52:36.922521+00:00",
+  "scope": "read-only independent data/original-coordinate metric/reference reduction/risk-objective review; no GPU/model scoring",
+  "conclusion": "No blocking implementation defect found in original-coordinate metrics, effective valid pixels, all-reference weighting, or frozen risk formulas. B mechanism outputs are not yet produced because T1 is in progress; no claim about B benefit/conflict is possible yet.",
+  "blocking_findings": [],
+  "nonblocking_findings": [
+    {
+      "severity": "low_reporting_completeness",
+      "blocking": false,
+      "file": "rsi/metrics.py",
+      "line": 200,
+      "description": "Sensitivity loop reports H_epsilon and any-harm at 0/0.002/0.01 but no sign-flip sensitivity for those same tolerances. The main epsilon0.005 sign-flip is correct; a supplemental postprocessing calculation from complete B per-reference gains would help answer the T1 threshold-last-digit question.",
+      "requirement": "full v2 line209 and T1 threshold sensitivity question"
+    },
+    {
+      "severity": "medium_review_timing",
+      "blocking": false,
+      "file": "rsi/run_pilot.py",
+      "line": 44,
+      "description": "After positive-average-gain T1, B reference rows are exported but the dedicated T1 summary is produced only in the failing branch or after all T2 tasks. Human review of harm tails/source sensitivity/soft-hard cross-table before expansion should summarize saved B rows separately. This is delegated to the stage/gate reviewer and does not invalidate the metric/objective implementation.",
+      "requirement": "full v2 lines431-438; short v2 T1 questions and T2 gate"
+    }
+  ],
+  "requirements_checked": [
+    {
+      "requirement": "Original-coordinate hard threshold and mask comparison",
+      "evidence": [
+        "rsi/datasets.py:27-37 crops padding then interpolates logits",
+        "rsi/train.py:119-126 restores before z>=0 and reads original mask",
+        "rsi/metrics.py:49-85 empty and original boundary rules",
+        "rsi/export.py:53-62 original logits and masks"
+      ],
+      "status": "verified_in_source"
+    },
+    {
+      "requirement": "Every reference; image-average before cohort-average; padded references and pixels excluded",
+      "evidence": [
+        "rsi/datasets.py:91-101 uses all independent selected annotators",
+        "rsi/datasets.py:175-187 pads only with rater_present=false",
+        "rsi/objectives.py:79-101 combines valid/presence before loss",
+        "rsi/objectives.py:32-44 image-then-reference mean",
+        "rsi/train.py:114-126 weighted batch totals and image-level Dice"
+      ],
+      "status": "verified_in_source_and_A_CNN_outputs"
+    },
+    {
+      "requirement": "Synchronized augmentation of RGB/all masks/valid; only RGB color augmentation",
+      "evidence": [
+        "rsi/datasets.py:154-169 deterministic common flips/rot90; colors on image only"
+      ],
+      "status": "verified_in_source"
+    },
+    {
+      "requirement": "Risk differences and SoftDice in FP32; fixed anchor and image weighting",
+      "evidence": [
+        "rsi/objectives.py:88-101 loss FP32 and documented nonsquared Dice",
+        "rsi/objectives.py:131-162 detached anchor, per-reference RSI, within-image Mean-Hinge, Abs-Hard",
+        "rsi/objectives.py:164-180 rho/J/kappa and absolute activation",
+        "rsi/train.py:370-385 q from selected completed B M-train canonical views only",
+        "rsi/objectives.py:218-224 1/N/m_i weighted quantile"
+      ],
+      "status": "verified_in_source"
+    },
+    {
+      "requirement": "All-reference original metrics and paired H/T1 on same images/outputs",
+      "evidence": [
+        "rsi/export.py:31-51 independent subset masks and reused exact M outputs",
+        "rsi/export.py:63-71 explicit canonical loss vs *_orig descriptive loss",
+        "rsi/export.py:76-92 full reference ID/path/subset/source/action keys",
+        "rsi/summarize.py:103-123 image-macro metrics and gain cross-table",
+        "rsi/summarize.py:302-328 M reference comparison on same H/T1 images"
+      ],
+      "status": "verified_in_source_pending_B_output"
+    },
+    {
+      "requirement": "Per-image any-harm/sign-flip/tail and case-group paired uncertainty",
+      "evidence": [
+        "rsi/metrics.py:171-203 min/max reference gains, all multi-image denominator, ceil10percent tail",
+        "rsi/summarize.py:250-276 known-case-group paired bootstrap",
+        "rsi/summarize.py:281-290 reference-count/fixed-two/tool sensitivity"
+      ],
+      "status": "verified_in_source_pending_B_output"
+    }
+  ],
+  "source_sha256": {
+    "datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+    "metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+    "objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+    "train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+    "train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+    "export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+    "summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+    "run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82"
+  },
+  "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "actual_A_CNN_diagnostics": {
+    "complete_epochs": 100,
+    "per_image_rows": 22300,
+    "every_epoch_exactly_223_val_images": true,
+    "every_image_reference_count_matches_final_M_manifest": true,
+    "sum_references_per_complete_epoch": 471,
+    "errors": []
+  },
+  "current_stage_observation": "A_CNN100 complete; A_T67 observed during review; B not yet available. These snapshot counts will change as authorized training progresses.",
+  "pending_not_defects": [
+    "B all-reference original-coordinate export and paired H/T1 sensitivity",
+    "B training/val rho/J/kappa interpretation and gradients",
+    "Formal and additional seeds withheld until protocol gates permit"
+  ],
+  "inherent_data_limits": [
+    "Known patient/lesion groups do not establish complete patient independence when identities are absent",
+    "Source masks passing MD5/binary/alignment integrity does not establish anatomical annotation correctness"
+  ],
+  "changes": "Only outputs/independent_data_metric_review.json written; no RSI source/config/checkpoint/log/GPU changes."
+}

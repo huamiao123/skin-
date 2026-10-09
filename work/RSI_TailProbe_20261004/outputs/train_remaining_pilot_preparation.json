@@ -1,0 +1,53 @@
+{
+  "prepared_utc": "2026-10-03T13:28:34.454371+00:00",
+  "status": "prepared_not_started",
+  "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/train_remaining_pilot.py",
+  "tool_sha256": "9b8f348e412d7c339c567c40997a424c1f0b423415d0d60bd1594107f0a8912e",
+  "invocation_when_root_decides": [
+    "python",
+    "-u",
+    "tools/train_remaining_pilot.py",
+    "--config",
+    "configs/p2_ima_m_v2.yaml"
+  ],
+  "preflight_only_status": "blocked_preflight",
+  "preflight_audit": "/home/featurize/work/RSI_Implementation_20261003/outputs/train_remaining_pilot_preflight_only.json",
+  "preflight_audit_sha256": "954cae0b0ec12cae3c9190a06e56c6c0af3d9c2efccc63dc0bacb833b140bc23",
+  "original_train_stage_seed_reset_evidence": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/train.py",
+    "line": 208,
+    "unconditional_reset_before_DONE_branch_line": 219,
+    "before_loaders_line": 224,
+    "before_optimizer_line": 241
+  },
+  "training_contract": {
+    "seed": 17,
+    "methods": [
+      "rsi",
+      "mean_hinge",
+      "abs_hard"
+    ],
+    "run_names": [
+      "RSI-1",
+      "MeanHinge-1",
+      "AbsHard-1"
+    ],
+    "weight": 1.0,
+    "epochs_each": 40,
+    "init": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+    "init_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+    "q": 0.1325787454843521,
+    "q_source_file": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/abs_hard_q.json",
+    "q_source_file_sha256": "0bdf981e53e8e96c8bcb77536aa60fb52a189afc47d969e95b1f1323136868aa"
+  },
+  "scheduling_only": true,
+  "uses_original_train_stage": true,
+  "requires_full_D0_DONE_before_any_training": true,
+  "frozen_source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "frozen_source_and_config_unchanged": true,
+  "frozen_cached_tools_modified": false,
+  "GPU_used": false,
+  "signals_sent": false,
+  "driver_started_training": false,
+  "new_tests_added": false
+}

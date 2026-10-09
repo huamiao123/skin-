@@ -1,0 +1,58 @@
+{
+  "recorded_utc": "2026-10-03T13:13:56.237238+00:00",
+  "scope": "Read-only actual completed B export audit and basic /proc resource snapshot; no retrospective stack claim.",
+  "pid": 103068,
+  "B_export_complete": true,
+  "B_export_wall_seconds": 700.6483870789998,
+  "B_export_reference_rows_including_anchor": 1248,
+  "cache_statistics": {
+    "calls": 2196,
+    "hits": 774,
+    "misses": 1422,
+    "errors": 0,
+    "evictions": 0,
+    "entries": 1422,
+    "max_entries": 50000,
+    "hashing_seconds": 91.83872089104807,
+    "calculation_seconds_including_recursion": 775.6393909359958,
+    "key": "SHA256 of each raw dtype/shape/strides/C-order content; explicit None slots",
+    "cache_payload": "numeric scalar dictionaries only; no input arrays retained",
+    "returns_independent_dictionary_copy": true
+  },
+  "cache_hit_fraction": 0.3524590163934426,
+  "hash_and_validation_accumulated_seconds": 91.83872089104807,
+  "hash_and_validation_accumulated_fraction_of_export_wall": 0.1310767605901775,
+  "calculation_timer_caveat": "calculation_seconds_including_recursion contains nested evaluations and double-counts their elapsed time; do not sum it with hashing_seconds or use it as exclusive wall.",
+  "observed_process_resource_snapshot": {
+    "elapsed_at_observation": "12:34",
+    "cpu_time": "11:59",
+    "CPU_percent": 95.3,
+    "RSS_KiB": 6228584,
+    "NLWP": 8,
+    "main_thread_CPU_percent": 94.3,
+    "main_thread_state": "D",
+    "main_thread_wchan": "rpc_wait_bit_killable"
+  },
+  "storage_observation": "/home/featurize/work is an NFSv3 mount. rpc_wait was one instantaneous snapshot near CSV publication, not evidence NFS dominated B wall.",
+  "thread_setting_evidence": "Unmodified train_stage sets torch.set_num_threads(4) before every reused stage. B process snapshot had main CPU thread plus three waiting Python workers and CUDA event threads; no remote thread-setting injection was performed.",
+  "actual_python_stack_obtained": false,
+  "profiler_note": "py-spy0.4.2 installed as authorized; installation completed after B export. No py-spy attachment, target pause, signals, hot patch or profile benchmark was run.",
+  "actual_bottleneck_conclusion": "Exclusive historical stack breakdown is unavailable. Actual counters confirm content hash/validation overhead and nested numeric evaluations; remaining wall cannot defensibly be assigned to KD, BCE, CUDA restore or NFS from these records.",
+  "current_progress_at_snapshot": {
+    "active": "D0",
+    "q": 0.1325787454843521,
+    "epoch1_val_dice": 0.8580874190287289,
+    "epoch1_seconds": 40.51756747900072,
+    "epoch2_val_dice": 0.8572609857439223,
+    "epoch2_seconds": 28.45728630799931
+  },
+  "action": "No further profiling or native benchmarks; leave current D0/pilot scientific flow running under root management.",
+  "frozen_bundle": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "frozen_tools": {
+    "cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02",
+    "fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296"
+  },
+  "training_or_frozen_tools_modified": false,
+  "GPU_experiments_run": false,
+  "signals_sent": false
+}

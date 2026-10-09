@@ -1,0 +1,136 @@
+2026-08-07 14:38:37 - #----------Config info----------#
+2026-08-07 14:38:37 - network: egeunet,
+2026-08-07 14:38:37 - model_config: {'num_classes': 1, 'input_channels': 3, 'c_list': [8, 16, 24, 32, 48, 64], 'bridge': True, 'gt_ds': True},
+2026-08-07 14:38:37 - datasets: isic18,
+2026-08-07 14:38:37 - data_path: ./data/isic2018/,
+2026-08-07 14:38:37 - criterion: GT_BceDiceLoss(
+  (bcedice): BceDiceLoss(
+    (bce): BCELoss(
+      (bceloss): BCELoss()
+    )
+    (dice): DiceLoss()
+  )
+),
+2026-08-07 14:38:37 - num_classes: 1,
+2026-08-07 14:38:37 - input_size_h: 256,
+2026-08-07 14:38:37 - input_size_w: 256,
+2026-08-07 14:38:37 - input_channels: 3,
+2026-08-07 14:38:37 - distributed: False,
+2026-08-07 14:38:37 - local_rank: -1,
+2026-08-07 14:38:37 - num_workers: 8,
+2026-08-07 14:38:37 - seed: 42,
+2026-08-07 14:38:37 - world_size: None,
+2026-08-07 14:38:37 - rank: None,
+2026-08-07 14:38:37 - amp: False,
+2026-08-07 14:38:37 - gpu_id: 0,
+2026-08-07 14:38:37 - batch_size: 64,
+2026-08-07 14:38:37 - epochs: 300,
+2026-08-07 14:38:37 - gradient_accumulation_steps: 1,
+2026-08-07 14:38:37 - work_dir: results/egeunet_isic18_Friday_07_August_2026_14h_38m_37s/,
+2026-08-07 14:38:37 - print_interval: 20,
+2026-08-07 14:38:37 - val_interval: 30,
+2026-08-07 14:38:37 - save_interval: 100,
+2026-08-07 14:38:37 - threshold: 0.5,
+2026-08-07 14:38:37 - train_transformer: Compose(
+    <utils.myNormalize object at 0x7faf2e802f50>
+    <utils.myToTensor object at 0x7faf2e802fb0>
+    <utils.myRandomHorizontalFlip object at 0x7faf2e802fe0>
+    <utils.myRandomVerticalFlip object at 0x7faf2e803040>
+    <utils.myRandomRotation object at 0x7faf2e8030a0>
+    <utils.myResize object at 0x7faf2e803100>
+),
+2026-08-07 14:38:37 - test_transformer: Compose(
+    <utils.myNormalize object at 0x7faf2e8031f0>
+    <utils.myToTensor object at 0x7faf2e803250>
+    <utils.myResize object at 0x7faf2e803280>
+),
+2026-08-07 14:38:37 - opt: AdamW,
+2026-08-07 14:38:37 - lr: 0.001,
+2026-08-07 14:38:37 - betas: (0.9, 0.999),
+2026-08-07 14:38:37 - eps: 1e-08,
+2026-08-07 14:38:37 - weight_decay: 0.01,
+2026-08-07 14:38:37 - amsgrad: False,
+2026-08-07 14:38:37 - sch: CosineAnnealingLR,
+2026-08-07 14:38:37 - T_max: 300,
+2026-08-07 14:38:37 - eta_min: 1e-05,
+2026-08-07 14:38:37 - last_epoch: -1,
+2026-08-07 14:38:41 - train: epoch 1, iter:0, loss: 5.6452, lr: 0.001
+2026-08-07 14:38:43 - train: epoch 1, iter:20, loss: 3.0522, lr: 0.001
+2026-08-07 14:38:57 - val epoch: 1, loss: 1.8308
+2026-08-07 14:38:59 - train: epoch 2, iter:0, loss: 1.7657, lr: 0.0009999728588359286
+2026-08-07 14:39:01 - train: epoch 2, iter:20, loss: 1.6568, lr: 0.0009999728588359286
+2026-08-07 14:39:16 - val epoch: 2, loss: 1.5516
+2026-08-07 14:39:18 - train: epoch 3, iter:0, loss: 1.5688, lr: 0.0009998914383200486
+2026-08-07 14:39:20 - train: epoch 3, iter:20, loss: 1.4498, lr: 0.0009998914383200486
+2026-08-07 14:39:34 - val epoch: 3, loss: 1.3807
+2026-08-07 14:39:36 - train: epoch 4, iter:0, loss: 1.4807, lr: 0.0009997557473810372
+2026-08-07 14:39:38 - train: epoch 4, iter:20, loss: 1.3224, lr: 0.0009997557473810372
+2026-08-07 14:39:52 - val epoch: 4, loss: 1.3560
+2026-08-07 14:39:54 - train: epoch 5, iter:0, loss: 1.4776, lr: 0.000999565800898935
+2026-08-07 14:39:56 - train: epoch 5, iter:20, loss: 1.2864, lr: 0.000999565800898935
+2026-08-07 14:40:11 - val epoch: 5, loss: 1.4164
+2026-08-07 14:40:12 - train: epoch 6, iter:0, loss: 1.3464, lr: 0.0009993216197035143
+2026-08-07 14:40:14 - train: epoch 6, iter:20, loss: 1.2366, lr: 0.0009993216197035143
+2026-08-07 14:40:29 - val epoch: 6, loss: 1.2117
+2026-08-07 14:40:31 - train: epoch 7, iter:0, loss: 1.0247, lr: 0.0009990232305719946
+2026-08-07 14:40:33 - train: epoch 7, iter:20, loss: 1.1273, lr: 0.0009990232305719946
+2026-08-07 14:40:47 - val epoch: 7, loss: 1.2101
+2026-08-07 14:40:49 - train: epoch 8, iter:0, loss: 0.9124, lr: 0.0009986706662261067
+2026-08-07 14:40:51 - train: epoch 8, iter:20, loss: 1.0802, lr: 0.0009986706662261067
+2026-08-07 14:41:06 - val epoch: 8, loss: 1.2070
+2026-08-07 14:41:07 - train: epoch 9, iter:0, loss: 1.1000, lr: 0.0009982639653285047
+2026-08-07 14:41:09 - train: epoch 9, iter:20, loss: 1.0725, lr: 0.0009982639653285047
+2026-08-07 14:41:24 - val epoch: 9, loss: 1.1248
+2026-08-07 14:41:26 - train: epoch 10, iter:0, loss: 0.8910, lr: 0.0009978031724785245
+2026-08-07 14:41:27 - train: epoch 10, iter:20, loss: 1.0280, lr: 0.0009978031724785245
+2026-08-07 14:41:42 - val epoch: 10, loss: 1.1061
+2026-08-07 14:41:44 - train: epoch 11, iter:0, loss: 0.8457, lr: 0.0009972883382072953
+2026-08-07 14:41:45 - train: epoch 11, iter:20, loss: 0.9678, lr: 0.0009972883382072953
+2026-08-07 14:42:00 - val epoch: 11, loss: 1.0765
+2026-08-07 14:42:02 - train: epoch 12, iter:0, loss: 0.9258, lr: 0.0009967195189721962
+2026-08-07 14:42:04 - train: epoch 12, iter:20, loss: 0.9697, lr: 0.0009967195189721962
+2026-08-07 14:42:18 - val epoch: 12, loss: 1.1113
+2026-08-07 14:42:20 - train: epoch 13, iter:0, loss: 1.0739, lr: 0.0009960967771506667
+2026-08-07 14:42:22 - train: epoch 13, iter:20, loss: 0.9497, lr: 0.0009960967771506667
+2026-08-07 14:42:36 - val epoch: 13, loss: 1.0744
+2026-08-07 14:42:39 - train: epoch 14, iter:0, loss: 0.9545, lr: 0.0009954201810333646
+2026-08-07 14:42:40 - train: epoch 14, iter:20, loss: 0.9321, lr: 0.0009954201810333646
+2026-08-07 14:42:55 - val epoch: 14, loss: 1.0942
+2026-08-07 14:42:57 - train: epoch 15, iter:0, loss: 0.8614, lr: 0.0009946898048166792
+2026-08-07 14:42:58 - train: epoch 15, iter:20, loss: 0.9679, lr: 0.0009946898048166792
+2026-08-07 14:43:13 - val epoch: 15, loss: 1.1257
+2026-08-07 14:43:15 - train: epoch 16, iter:0, loss: 0.7966, lr: 0.000993905728594593
+2026-08-07 14:43:16 - train: epoch 16, iter:20, loss: 0.9147, lr: 0.000993905728594593
+2026-08-07 14:43:31 - val epoch: 16, loss: 1.0121
+2026-08-07 14:43:33 - train: epoch 17, iter:0, loss: 0.8198, lr: 0.0009930680383498998
+2026-08-07 14:43:35 - train: epoch 17, iter:20, loss: 0.8995, lr: 0.0009930680383498998
+2026-08-07 14:43:49 - val epoch: 17, loss: 1.0466
+2026-08-07 14:43:51 - train: epoch 18, iter:0, loss: 0.8664, lr: 0.0009921768259447744
+2026-08-07 14:43:53 - train: epoch 18, iter:20, loss: 0.8992, lr: 0.0009921768259447744
+2026-08-07 14:44:07 - val epoch: 18, loss: 1.0637
+2026-08-07 14:44:09 - train: epoch 19, iter:0, loss: 0.8837, lr: 0.0009912321891107007
+2026-08-07 14:44:11 - train: epoch 19, iter:20, loss: 0.8992, lr: 0.0009912321891107007
+2026-08-07 14:44:25 - val epoch: 19, loss: 1.0803
+2026-08-07 14:44:27 - train: epoch 20, iter:0, loss: 0.8744, lr: 0.0009902342314377522
+2026-08-07 14:44:29 - train: epoch 20, iter:20, loss: 0.9322, lr: 0.0009902342314377522
+2026-08-07 14:44:43 - val epoch: 20, loss: 1.0540
+2026-08-07 14:44:45 - train: epoch 21, iter:0, loss: 0.8121, lr: 0.0009891830623632338
+2026-08-07 14:44:47 - train: epoch 21, iter:20, loss: 0.8831, lr: 0.0009891830623632338
+2026-08-07 14:45:01 - val epoch: 21, loss: 1.0695
+2026-08-07 14:45:03 - train: epoch 22, iter:0, loss: 0.8602, lr: 0.00098807879715968
+2026-08-07 14:45:05 - train: epoch 22, iter:20, loss: 0.8455, lr: 0.00098807879715968
+2026-08-07 14:45:20 - val epoch: 22, loss: 1.0030
+2026-08-07 14:45:22 - train: epoch 23, iter:0, loss: 0.8748, lr: 0.0009869215569222143
+2026-08-07 14:45:23 - train: epoch 23, iter:20, loss: 0.8339, lr: 0.0009869215569222143
+2026-08-07 14:45:38 - val epoch: 23, loss: 0.9652
+2026-08-07 14:45:40 - train: epoch 24, iter:0, loss: 0.7475, lr: 0.0009857114685552697
+2026-08-07 14:45:41 - train: epoch 24, iter:20, loss: 0.9027, lr: 0.0009857114685552697
+2026-08-07 14:45:56 - val epoch: 24, loss: 0.9901
+2026-08-07 14:45:57 - train: epoch 25, iter:0, loss: 0.6364, lr: 0.0009844486647586721
+2026-08-07 14:45:59 - train: epoch 25, iter:20, loss: 0.8411, lr: 0.0009844486647586721
+2026-08-07 14:46:14 - val epoch: 25, loss: 0.9910
+2026-08-07 14:46:16 - train: epoch 26, iter:0, loss: 0.9149, lr: 0.0009831332840130884
+2026-08-07 14:46:18 - train: epoch 26, iter:20, loss: 0.8209, lr: 0.0009831332840130884
+2026-08-07 14:46:32 - val epoch: 26, loss: 0.9461
+2026-08-07 14:46:34 - train: epoch 27, iter:0, loss: 0.6983, lr: 0.0009817654705648405
+2026-08-07 14:46:36 - train: epoch 27, iter:20, loss: 0.7903, lr: 0.0009817654705648405

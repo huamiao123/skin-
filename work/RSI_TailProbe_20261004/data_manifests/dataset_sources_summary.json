@@ -1,0 +1,85 @@
+{
+  "protocol_id": "P2-IMA-M-v2",
+  "file_audit_complete": true,
+  "final_manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "M": {
+    "train": {
+      "images": 1471,
+      "references": 3102,
+      "rater_count_distribution": {
+        "2": 1339,
+        "3": 105,
+        "4": 26,
+        "5": 1
+      },
+      "tool_reference_counts": {
+        "T1": 1282,
+        "T3": 1212,
+        "T2": 608
+      },
+      "skill_reference_counts": {
+        "S2": 1013,
+        "S1": 2089
+      },
+      "T3_containing_images": 1024,
+      "known_or_conservative_group_count": 1419
+    },
+    "val": {
+      "images": 223,
+      "references": 471,
+      "rater_count_distribution": {
+        "2": 203,
+        "3": 15,
+        "4": 5
+      },
+      "tool_reference_counts": {
+        "T3": 176,
+        "T1": 209,
+        "T2": 86
+      },
+      "skill_reference_counts": {
+        "S2": 148,
+        "S1": 323
+      },
+      "T3_containing_images": 147,
+      "known_or_conservative_group_count": 222
+    },
+    "test": {
+      "images": 451,
+      "references": 948,
+      "rater_count_distribution": {
+        "2": 411,
+        "3": 35,
+        "4": 4,
+        "5": 1
+      },
+      "tool_reference_counts": {
+        "T3": 389,
+        "T1": 363,
+        "T2": 196
+      },
+      "skill_reference_counts": {
+        "S2": 316,
+        "S1": 632
+      },
+      "T3_containing_images": 316,
+      "known_or_conservative_group_count": 442
+    }
+  },
+  "raw_downloaded_RGB": 2161,
+  "selected_usable_RGB_IDs": 2145,
+  "raw_segmentation_archive_masks": 22472,
+  "unique_selected_original_masks": 4533,
+  "selected_reference_rows_including_overlapping_subsets": 5847,
+  "source_versions": {
+    "IMA": "Zenodo14201693 v1.1; eight CSVs and ZIP validated against official MD5",
+    "RGB": "official ISIC S3 full image objects, 2026-10-03; frozen Zenodo14967 metadata defines clinical identities"
+  },
+  "known_or_conservative_case_grouping": "all14967 image metadata patient/lesion transitive links, exact decoded RGB duplicates, confirmed same photos, uncertain same-lesion pairs conservatively linked",
+  "unknown_patient_identity_limit": "Does not guarantee complete patient independence where identities are unavailable",
+  "same_split_duplicate_policy": "Preserved with shared group; use group-level resampling/bootstrap",
+  "original_files_modified_or_deleted": false,
+  "model_test_performance_accessed": false,
+  "spatial_review": "spatial_alignment_review.json: fixed48 input/reference overlays; extreme original reference differences preserved",
+  "artifact_storage": "/home/featurize/rsi_data"
+}

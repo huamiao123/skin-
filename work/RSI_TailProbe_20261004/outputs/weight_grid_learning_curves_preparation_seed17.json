@@ -1,0 +1,111 @@
+{
+  "status": "prepared_and_actual_pending_gate_verified",
+  "reviewed_utc": "2026-10-04T04:27:05.644027+00:00",
+  "tool": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/tools/plot_weight_grid_learning_curves.py",
+    "bytes": 22147,
+    "sha256": "a2f5a565a3859c3e1c5e97bea6c4346b5bdd510918abcf34f6aa9d7091b5b5f5"
+  },
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "actual_completed_reader_runs": [
+    {
+      "run_id": "D0",
+      "method": "d0",
+      "weight": 0.0,
+      "committed_epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.858316915574831,
+      "selected_checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+      "done_cumulative_loop_accounting_seconds": 1320.231838832,
+      "sum_committed_epoch_body_seconds": 1309.818204039997
+    },
+    {
+      "run_id": "MeanHinge-0.3",
+      "method": "mean_hinge",
+      "weight": 0.3,
+      "committed_epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.8583505660391136,
+      "selected_checkpoint_sha256": "e5de11536b6fb3180d4dba34150e15fe67b211f2258af0f0228b90027fe97eab",
+      "done_cumulative_loop_accounting_seconds": 1200.4996346759967,
+      "sum_committed_epoch_body_seconds": 1190.5883090740203
+    },
+    {
+      "run_id": "RSI-0.3",
+      "method": "rsi",
+      "weight": 0.3,
+      "committed_epochs": 40,
+      "best_epoch": 7,
+      "best_val_dice": 0.8584882671218835,
+      "selected_checkpoint_sha256": "3aad4f5915d66103446b1b42b5d8e352d8ddf8857903bf29236f1a23cb6d3c29",
+      "done_cumulative_loop_accounting_seconds": 1257.2522275640003,
+      "sum_committed_epoch_body_seconds": 1242.7797577479942
+    }
+  ],
+  "actual_reader_inputs": [
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/DONE.json",
+      "bytes": 5157,
+      "sha256": "f86423bf7e8180b4e442f332513121ff7a2f24cd98231e7716faa32c816c15ab"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/epoch_diagnostics.csv",
+      "bytes": 32303,
+      "sha256": "7c5154a26e47c6af550054e2e6fd825a4beec39fcb61555b22fcc5e8e61bbb8d"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/DONE.json",
+      "bytes": 5181,
+      "sha256": "a4fe1ea7b355bc988fab1b21963fc6d01752cea41f62df585c73aac2fac6adbd"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-0.3/epoch_diagnostics.csv",
+      "bytes": 41042,
+      "sha256": "f6b780d8df6014d74bfe06b2a504187731afb41d2eab431b474dcf1e3de95f9b"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/DONE.json",
+      "bytes": 5168,
+      "sha256": "8559c3d044b82832531cd2df985f79c6b7ac7a5174a8faa0692b25a4a7f23962"
+    },
+    {
+      "path": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-0.3/epoch_diagnostics.csv",
+      "bytes": 40760,
+      "sha256": "119d8a5a9b0b0f2e9a7711f24c9fe46bd94a49e80446854533c6a275e988f1b8"
+    }
+  ],
+  "checks": [
+    "Actual D0/MH0.3/RSI0.3 each exactly40 completed epochs, scientific signature and segmentation+risk objective invariant",
+    "Actual original-val hard-Dice best epoch and earlier-tie verified",
+    "MH0.3 exact cumulative DONE accounting and committed epoch-body sum match separate recovery ledger",
+    "Actual incomplete full-grid preflight emits not_ready, no figure/metadata output created"
+  ],
+  "actual_pending_gate": {
+    "status": "not_ready",
+    "missing_complete_inputs": [
+      "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-0.3/DONE.json",
+      "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/AbsHard-3/DONE.json",
+      "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/MeanHinge-3/DONE.json",
+      "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/RSI-3/DONE.json",
+      "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/finalization_audit.json",
+      "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/paired_controls/paired_control_comparison.csv",
+      "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/paired_controls/paired_control_comparison.json"
+    ],
+    "outputs_written": false,
+    "test_scoring_locked": true
+  },
+  "publication_complete": false,
+  "full_ready_branch_exercised": false,
+  "reason": "Full13stage/16Mpoint paired artifacts are not yet complete; no fake matrix or plotted curve created",
+  "GPU_used": false,
+  "training_or_inference_performed": false,
+  "existing_tools_or_source_modified": false,
+  "independent_peer_review": {
+    "agent": "/root/finish_review",
+    "status": "passed_no_blockers",
+    "reviewed_utc": "2026-10-04T04:49:47.800014+00:00",
+    "scope": "read-only own namespace,10 actual D40/signatures/objectives/selectedepochs,13DONE/16Mpairedhashguards,D0 reference and recovery cost semantics; actualpending validateonly writesnofigures",
+    "actual_full_publication_exercised": false
+  },
+  "frozen_tool_sha256": "a2f5a565a3859c3e1c5e97bea6c4346b5bdd510918abcf34f6aa9d7091b5b5f5"
+}

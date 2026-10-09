@@ -1,0 +1,41 @@
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {'model': 'ptu_2262', 'seed': 42, 'epochs': 300, 'train_batch': 64, 'val_batch': 8, 'final_batch': 1, 'accumulation': 1, 'workers': 4, 'amp': False, 'lr': 0.0001, 'optimizer': 'AdamW', 'weight_decay': 0.01, 'eta_min': 1e-05, 'loss': 'final output BCE+Dice, equal weights, no deep supervision', 'selection': 'minimum validation loss (mean batch losses, legacy EGE convention)', 'split': 'legacy 1886/808 development split, no independent test', 'depths': [2, 2, 6, 2], 'params': 15764801, 'torch': '2.2.2+cu121', 'device': 'NVIDIA GeForce RTX 4090', 'augmentation': 'HFlip .5, VFlip .5, resampled rotation .5 [0,360]; nearest mask interpolation'} epoch 1
+train epoch=1 iter=0 loss=12.937119
+train epoch=1 iter=20 loss=1.154221
+EPOCH {"epoch": 1, "train_loss": 1.9406090140342713, "val": {"loss": 0.9753671170461296, "dice": 0.5941028758266838, "iou": 0.42257919559798746, "sensitivity": 0.5250753107682005, "specificity": 0.9219649747499575, "tp": 6768006, "fp": 3126356, "fn": 6121585, "tn": 36937141}, "best_epoch": 1, "best_loss": 0.9753671170461296, "seconds": 11.53511215399999}
+train epoch=2 iter=0 loss=1.013056
+train epoch=2 iter=20 loss=0.822703
+EPOCH {"epoch": 2, "train_loss": 0.9346541225910187, "val": {"loss": 0.9078784133538161, "dice": 0.681744465586991, "iou": 0.5171565358840365, "sensitivity": 0.8038888122982335, "specificity": 0.8216205390158527, "tp": 10361798, "fp": 7146505, "fn": 2527793, "tn": 32916992}, "best_epoch": 2, "best_loss": 0.9078784133538161, "seconds": 10.697813020000012}
+train epoch=3 iter=0 loss=1.104008
+train epoch=3 iter=20 loss=0.751810
+EPOCH {"epoch": 3, "train_loss": 0.763700258731842, "val": {"loss": 0.6821302750913223, "dice": 0.7635806181947159, "iou": 0.6175741252776378, "sensitivity": 0.7417379651534327, "specificity": 0.9353160808703245, "tp": 9560699, "fp": 2591464, "fn": 3328892, "tn": 37472033}, "best_epoch": 3, "best_loss": 0.6821302750913223, "seconds": 10.66759892999994}
+train epoch=4 iter=0 loss=0.838306
+train epoch=4 iter=20 loss=0.607973
+EPOCH {"epoch": 4, "train_loss": 0.6072155872980753, "val": {"loss": 0.6924352232772525, "dice": 0.7560470071549812, "iou": 0.607777795064299, "sensitivity": 0.6455578768946199, "specificity": 0.9800009969174683, "tp": 8320977, "fp": 801230, "fn": 4568614, "tn": 39262267}, "best_epoch": 3, "best_loss": 0.6821302750913223, "seconds": 10.476563315000021}
+train epoch=5 iter=0 loss=0.562672
+train epoch=5 iter=20 loss=0.536255
+EPOCH {"epoch": 5, "train_loss": 0.5808064152797063, "val": {"loss": 0.7046994867891369, "dice": 0.7081899957555282, "iou": 0.5482152897319605, "sensitivity": 0.5719549984169396, "specificity": 0.9860679660589788, "tp": 7372266, "fp": 558166, "fn": 5517325, "tn": 39505331}, "best_epoch": 3, "best_loss": 0.6821302750913223, "seconds": 10.551881776000073}
+Traceback (most recent call last):
+  File "/home/featurize/medseg_transformer_seed42_20261009/train.py", line 210, in <module>
+    main()
+  File "/home/featurize/medseg_transformer_seed42_20261009/train.py", line 174, in main
+    for step, (images, masks) in enumerate(train_loader):
+  File "/environment/miniconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/environment/miniconda3/lib/python3.11/threading.py", line 331, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

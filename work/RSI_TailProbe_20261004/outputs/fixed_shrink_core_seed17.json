@@ -1,0 +1,548 @@
+{
+  "created_utc": "2026-10-03T14:45:19.582928+00:00",
+  "status": "complete",
+  "scope": "Read-only seed17 selected-D0 FixedShrink core verification on M val only",
+  "test_scoring_locked": true,
+  "training_performed": false,
+  "additional_weights_or_alphas": false,
+  "model_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/D0/best.pth",
+  "model_checkpoint_sha256": "6e0811712543811a10b6cde1ec29db65b7bb4f25142c6991f2738d3d5c073f0a",
+  "selected_D0_epoch": 7,
+  "shared_B_checkpoint": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/best.pth",
+  "shared_B_checkpoint_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+  "fixed_abs_hard_q_file": "/home/featurize/rsi_runs/P2-IMA-M-v2/seed17/B/abs_hard_q.json",
+  "fixed_abs_hard_q_file_sha256": "0bdf981e53e8e96c8bcb77536aa60fb52a189afc47d969e95b1f1323136868aa",
+  "fixed_q_record": {
+    "q": 0.1325787454843521,
+    "quantile": 0.75,
+    "source": "B_canonical_M_train",
+    "checkpoint_hash": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+    "manifest_hash": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+    "fixed": true,
+    "gradient": false
+  },
+  "seed": 17,
+  "config_path": "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml",
+  "config_sha256": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980",
+  "config": {
+    "version": 2,
+    "protocol_id": "P2-IMA-M-v2",
+    "development_seeds": [
+      17,
+      29
+    ],
+    "formal_seeds": [
+      101,
+      202,
+      303
+    ],
+    "metadata_counts": {
+      "train": 1486,
+      "val": 224,
+      "test": 451
+    },
+    "audited_counts": {
+      "M": {
+        "images": {
+          "train": 1471,
+          "val": 223,
+          "test": 451
+        },
+        "references": {
+          "train": 3102,
+          "val": 471,
+          "test": 948
+        }
+      },
+      "H": {
+        "images": {
+          "train": 299,
+          "val": 47,
+          "test": 87
+        },
+        "references": {
+          "train": 643,
+          "val": 104,
+          "test": 183
+        }
+      },
+      "T1": {
+        "images": {
+          "train": 113,
+          "val": 20,
+          "test": 35
+        },
+        "references": {
+          "train": 268,
+          "val": 49,
+          "test": 79
+        }
+      }
+    },
+    "file_audit_complete": true,
+    "test_scoring_locked": true,
+    "reference_selection": "source_filter_then_one_per_annotator",
+    "split_rule": "shared_M_known_group_test_val_train",
+    "input_size": [
+      256,
+      256
+    ],
+    "threshold": 0.5,
+    "cnn": "resnet34_through_layer3",
+    "transformer": "deit_small_patch16_non_distilled",
+    "message": {
+      "query_stride": 8,
+      "context_stride": 16,
+      "width": 128,
+      "heads": 4
+    },
+    "freeze_all_except_message_in_B_D": true,
+    "epochs": {
+      "A_CNN": 100,
+      "A_T": 100,
+      "B": 40,
+      "D": 40
+    },
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "effective_batch": 8,
+    "microbatch_start": 4,
+    "lr": {
+      "encoder": 0.0001,
+      "decoder": 0.0003,
+      "B": 0.0003,
+      "D": 0.0001
+    },
+    "loss": {
+      "bce": 0.5,
+      "soft_dice": 0.5,
+      "epsilon_L": 0.0
+    },
+    "pilot_objectives": [
+      "d0",
+      "rsi",
+      "mean_hinge",
+      "abs_hard"
+    ],
+    "pilot_weight": 1.0,
+    "conditional_weight_grid": [
+      0.3,
+      1.0,
+      3.0
+    ],
+    "abs_hard_quantile": 0.75,
+    "abs_hard_quantile_source": "B_canonical_train_image_then_rater_weighted",
+    "fixed_shrink": {
+      "message_source": "selected_D0",
+      "alphas": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ]
+    },
+    "checkpoint_metric": "val_macro_mean_rater_hard_dice",
+    "checkpoint_tie": "earlier_epoch",
+    "workpoint_dice_tolerance": 0.002,
+    "harm_dice_epsilon": 0.005,
+    "gradient_diagnostic_every_epochs": 5,
+    "tta": false,
+    "postprocess": "none",
+    "local_six_action_policy": "deferred",
+    "manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/final_references.csv",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/file_audit.json",
+    "audit_input_manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/selected_references.csv",
+    "data_root": "/home/featurize/rsi_data",
+    "cache_dir": "/home/featurize/rsi_data/ima/cache256",
+    "run_root": "/home/featurize/rsi_runs/P2-IMA-M-v2",
+    "workers": 4,
+    "amp": true,
+    "decoder_activation": "GELU",
+    "image_normalization": "ImageNet_mean_std_inside_model",
+    "augmentation": {
+      "brightness": [
+        0.9,
+        1.1
+      ],
+      "contrast": [
+        0.9,
+        1.1
+      ],
+      "saturation": [
+        0.9,
+        1.1
+      ],
+      "hue": [
+        -0.02,
+        0.02
+      ],
+      "horizontal_flip_p": 0.5,
+      "vertical_flip_p": 0.5,
+      "rot90_uniform": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rng": "sha256(seed:epoch:image_id)",
+      "same_D_sequence": true
+    },
+    "scheduler": {
+      "name": "cosine",
+      "A_warmup_epochs": 5,
+      "BD_warmup_epochs": 2
+    },
+    "image_resize": "PIL_BILINEAR_antialias",
+    "mask_resize": "PIL_NEAREST",
+    "align_corners": false,
+    "gradient_clip": 1.0,
+    "eval_batch": 4,
+    "bootstrap_repeats": 2000,
+    "strict_test_scoring_lock": true
+  },
+  "manifest_path": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/final_references.csv",
+  "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "M_val_image_reference_group_keys_sha256": "69b1fdd1383605307b925854692a4251de8967c86e3fbecd7af93f0cbca65b3a",
+  "M_val_images": 223,
+  "M_val_references": 471,
+  "source": {
+    "commit": "5b81bb1f812360049a89684dd43ce235b4487753",
+    "source_sha256": {
+      "rsi/__init__.py": "0ad337bcf49feeafb87447daad40e244d065031a294464e6e846525fd340d11d",
+      "rsi/acquire_data.py": "9334cea0741211d645081ea5826d4e1f71a2d54ea3e36a8dfcb22135421f1c6b",
+      "rsi/acquire_external.py": "c3db6e8258a8da72c2c014c07d5f0e9e7c006d4a8b9cb949bc90864efc11c2f7",
+      "rsi/audit_files.py": "a55887f4d3f4e9caa73da21f679fc38f1ce8d185f961d7b7ddbff822afafd599",
+      "rsi/datasets.py": "b58bdfaf07862c78c9fa34f47e8b63635be65e2228973ce9039f1df1405b9fe4",
+      "rsi/export.py": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b",
+      "rsi/export_actions.py": "9357c298de58bc7cf6e937c8c3cc37037519c69e971ae41ad13b6f6fbdbc3a1d",
+      "rsi/feasibility.py": "f2181fead0e229415b349490ee57295d992c313c9d23a9a782b06a9e2128f533",
+      "rsi/metadata_protocol.py": "38c32912b00c971cfec6d79ada9515c9949ad1433377a640ea47180ed82e388d",
+      "rsi/metrics.py": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb",
+      "rsi/models.py": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd",
+      "rsi/objectives.py": "a32d7bfae7758b5debdba7200fedf2f295b36564b27f62cde736b06801a85b31",
+      "rsi/prepare_abs_threshold.py": "4cf7ade540c0a060f5efe85de6106bb4ed579bcafe6ab6fd97c4b004594a3c0b",
+      "rsi/run_pilot.py": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82",
+      "rsi/runtime.py": "3d759973cdcbb1f2cef81be3a881d85388c0c653ec13a8e9e6861714cbeaab98",
+      "rsi/summarize.py": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175",
+      "rsi/summarize_pilot.py": "9a2317bc7de52d2d500ba6a04517310f0ac0c2b173fe95e45c5b49dd686ead06",
+      "rsi/train.py": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058",
+      "rsi/train_anchor.py": "b390399f640f4cacde88e190bd183edeace5cf963e045b59145081b62fb2ceaa",
+      "rsi/train_message.py": "b5baaf6728837a81a712edad6d3fef7c6a13e4defd9f9e54f48d4bbbce9894a8",
+      "rsi/train_objective.py": "6221f651f451380a74a49b82a28476ded35832e2006c2835b6c40294cfe89fbd",
+      "configs/p2_ima_m_v2.yaml": "e207c3b3c808bf3f7517b43cbcc18b9a8d8117d8e9944287b0b7a7e141e83980"
+    },
+    "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb"
+  },
+  "unmodified_evaluate_function_source_sha256": "159f393732a56b828a94d38dc4861fc506a346c26902e0d7b7f379fffde65c7f",
+  "state_sha256_before_inference": "c18119ec04b6e02a92dda7f7c623241dff71839a8ba14c003056507478162b5e",
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.2.2+cu121",
+    "torchvision": "0.17.2+cu121",
+    "timm": "1.0.22",
+    "scipy": "1.13.1",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cpu_threads": 4
+  },
+  "calculation": {
+    "function": "rsi.train.evaluate (unmodified)",
+    "stage": "D",
+    "method": "d0",
+    "weight": 0.0,
+    "q": 0.1325787454843521,
+    "original_metrics": true,
+    "model_eval": true,
+    "no_grad": true,
+    "shared_original_mask_cache": true,
+    "alphas": [
+      0.0,
+      0.3333333333333333,
+      0.6666666666666666,
+      1.0
+    ],
+    "eval_batch": 4,
+    "workers": 4,
+    "metric_coordinates": "original image coordinates",
+    "hard_logit_threshold": 0.0,
+    "aggregation": "reference mean within image, then mean across images",
+    "damage_epsilon": 0.005
+  },
+  "limitations": [
+    "Core verification is limited to the metrics returned by frozen rsi.train.evaluate; no full boundary metrics, worst-tail statistic, confidence intervals, per-reference export or canonical message/logit RMS here.",
+    "The same M val was used for checkpoint selection; comparisons are descriptive and exploratory.",
+    "All four FixedShrink alphas are the predeclared grid; no H/T1/test scoring or choice was performed.",
+    "Recorded wall times include sharing hardware with the independent full exporter; they do not establish total pipeline speed."
+  ],
+  "rows": [
+    {
+      "alpha": 0.0,
+      "wall_seconds": 27.830710823000118,
+      "images": 223,
+      "references": 471,
+      "loss": 0.15955121982257997,
+      "seg": 0.15955121982257997,
+      "risk": 0.0,
+      "weighted_risk": 0.0,
+      "rho": 0.0,
+      "J": 0.0,
+      "kappa_pm": 0.0,
+      "activation_rate": 0.0,
+      "mean_weight": 1.0,
+      "J_p50": 0.0,
+      "J_p90": 0.0,
+      "J_p99": 0.0,
+      "dice": 0.8552520003612387,
+      "iou": 0.7712988339685611,
+      "G_plus": 0.0,
+      "H_epsilon": 0.0,
+      "mean_gain": 0.0,
+      "H_minus": 0.0,
+      "any_harm": 0.0,
+      "sign_flip": 0.0
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "wall_seconds": 10.378839126002276,
+      "images": 223,
+      "references": 471,
+      "loss": 0.15511659629676375,
+      "seg": 0.15511659629676375,
+      "risk": 0.0,
+      "weighted_risk": 0.0,
+      "rho": 0.3606128576357803,
+      "J": 0.0014272024291538791,
+      "kappa_pm": 0.5246636773973302,
+      "activation_rate": 0.0,
+      "mean_weight": 1.0,
+      "J_p50": 0.00013785064220428467,
+      "J_p90": 0.0044757287018001085,
+      "J_p99": 0.01009350761771202,
+      "dice": 0.8574917796083505,
+      "iou": 0.7745711388287568,
+      "G_plus": 0.004892064791755145,
+      "H_epsilon": 0.001216368681239338,
+      "mean_gain": 0.0022397792471117095,
+      "H_minus": 0.002652285544643436,
+      "any_harm": 0.3452914798206278,
+      "sign_flip": 0.242152466367713
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "wall_seconds": 10.478733485000703,
+      "images": 223,
+      "references": 471,
+      "loss": 0.15351314154441045,
+      "seg": 0.15351314154441045,
+      "risk": 0.0,
+      "weighted_risk": 0.0,
+      "rho": 0.40246637038585853,
+      "J": 0.0028823334474436055,
+      "kappa_pm": 0.5739910315237773,
+      "activation_rate": 0.0,
+      "mean_weight": 1.0,
+      "J_p50": 0.0005722921341657639,
+      "J_p90": 0.010329285264015206,
+      "J_p99": 0.02034991178661585,
+      "dice": 0.8584540270090811,
+      "iou": 0.775821774367011,
+      "G_plus": 0.008927142350336393,
+      "H_epsilon": 0.0038657405316973766,
+      "mean_gain": 0.0032020266478423897,
+      "H_minus": 0.0057251157024940024,
+      "any_harm": 0.5381165919282511,
+      "sign_flip": 0.38565022421524664
+    },
+    {
+      "alpha": 1.0,
+      "wall_seconds": 10.512012576000416,
+      "images": 223,
+      "references": 471,
+      "loss": 0.15398512626977245,
+      "seg": 0.15398512626977245,
+      "risk": 0.0,
+      "weighted_risk": 0.0,
+      "rho": 0.41928251548732876,
+      "J": 0.004395856680789641,
+      "kappa_pm": 0.5739910315237773,
+      "activation_rate": 0.0,
+      "mean_weight": 1.0,
+      "J_p50": 0.0006117075681686401,
+      "J_p90": 0.013630697131156921,
+      "J_p99": 0.035637740716338163,
+      "dice": 0.858316915574831,
+      "iou": 0.7752951481186273,
+      "G_plus": 0.012552872267370662,
+      "H_epsilon": 0.0074222018819997725,
+      "mean_gain": 0.0030649152135921896,
+      "H_minus": 0.009487957053778473,
+      "any_harm": 0.6233183856502242,
+      "sign_flip": 0.42152466367713004
+    }
+  ],
+  "endpoint_checks": {
+    "alpha0_vs_selected_A_CNN": {
+      "expected_Dice": 0.8552520003612387,
+      "observed_Dice": 0.8552520003612387,
+      "difference": 0.0,
+      "exact_match": true,
+      "within_absolute_1e_minus12": true,
+      "G_plus_exactly_zero": true,
+      "H_epsilon_exactly_zero": true
+    },
+    "alpha1_vs_D0_selected_validation": {
+      "dice": {
+        "expected": 0.858316915574831,
+        "observed": 0.858316915574831,
+        "difference": 0.0,
+        "exact_match": true,
+        "within_absolute_1e_minus12": true
+      },
+      "G_plus": {
+        "expected": 0.012552872267370662,
+        "observed": 0.012552872267370662,
+        "difference": 0.0,
+        "exact_match": true,
+        "within_absolute_1e_minus12": true
+      },
+      "H_epsilon": {
+        "expected": 0.0074222018819997725,
+        "observed": 0.0074222018819997725,
+        "difference": 0.0,
+        "exact_match": true,
+        "within_absolute_1e_minus12": true
+      }
+    }
+  },
+  "shared_mask_cache_entries": 471,
+  "shared_mask_cache_bytes": 4052210804,
+  "state_sha256_after_inference": "c18119ec04b6e02a92dda7f7c623241dff71839a8ba14c003056507478162b5e",
+  "weights_unchanged_after_inference": true,
+  "frozen_source_unchanged_after_inference": true,
+  "core_workpoint_screen_only": {
+    "rule": "M val Dice>=D0-.002; smallest H_epsilon, then larger Dice, then larger alpha",
+    "Dice_floor": 0.856316915574831,
+    "feasible_alphas": [
+      0.3333333333333333,
+      0.6666666666666666,
+      1.0
+    ],
+    "selected_alpha": 0.3333333333333333,
+    "scientific_success": null,
+    "warning": "Only the declared core working-point screen; scientific decision requires complete boundary/tail/source metrics, paired uncertainty and objective controls."
+  },
+  "reference_RSI_training_review_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/D0_RSI1_training_review.json",
+  "reference_RSI_training_review_sha256": "896fe526af9f8488af0cfeebb4a8c60a87efe282e0d9e53a720a5d5dc2e9ed6e",
+  "reference_RSI_selected_val_metrics": {
+    "augmented_train_loss": 0.1253347841200984,
+    "augmented_train_seg": 0.122438918021688,
+    "augmented_train_risk": 0.0028958662249359036,
+    "augmented_train_weighted_risk": 0.0028958662249359036,
+    "canonical_train_loss": 0.12497867637248691,
+    "canonical_train_seg": 0.12225321413889619,
+    "canonical_train_risk": 0.002725462460426492,
+    "canonical_train_weighted_risk": 0.002725462460426492,
+    "canonical_train_rho": 0.2597099500173294,
+    "canonical_train_J": 0.0026415656955653447,
+    "canonical_train_kappa_pm": 0.51393609791285,
+    "canonical_train_activation_rate": 0.2597099500173294,
+    "canonical_train_mean_weight": 1.2597099562067309,
+    "val_loss": 0.1619879655506579,
+    "val_seg": 0.15456934593985433,
+    "val_rho": 0.3938714546473037,
+    "val_J": 0.003223227195007384,
+    "val_kappa_pm": 0.5426008969946292,
+    "val_G_plus": 0.008773162467152143,
+    "val_H_epsilon": 0.0038679211496023703,
+    "val_H_minus": 0.005645573407572198,
+    "val_mean_gain": 0.0031275890595799443,
+    "val_dice": 0.8583795894208186,
+    "val_any_harm": 0.5112107623318386,
+    "val_sign_flip": 0.3542600896860987,
+    "augmented_message_rms": 0.5368378738184338,
+    "augmented_logit_delta_rms": 1.1734774007421473,
+    "anchor_max_absolute_error": 0.0,
+    "optimizer_steps": 2024.0,
+    "optimizer_step_attempts": 2024.0,
+    "skipped_optimizer_steps": 0.0,
+    "epoch_seconds": 29.94783499300138,
+    "peak_cuda_bytes": 543750656.0
+  },
+  "selected_development_RSI_vs_D0_descriptive_comparison": {
+    "D0_epoch": 7,
+    "RSI_epoch": 11,
+    "Dice_difference_RSI_minus_D0": 6.267384598757086e-05,
+    "H_epsilon_difference_RSI_minus_D0": -0.003554280732397402,
+    "G_plus_difference_RSI_minus_D0": -0.003779709800218519,
+    "G_plus_retention_vs_D0": 0.6988968166239279,
+    "H_epsilon_relative_reduction_vs_D0": 0.47887147087944315,
+    "any_harm_difference_RSI_minus_D0": -0.11210762331838564,
+    "within_Dice_noninferiority_0p002": true,
+    "positive_gain_remains": true,
+    "not_global_hard_mask_noop": true,
+    "warning": "No simple-control dominance or independent significance claim; current best values use the same val selected for checkpoints. Positive gain proves some hard outputs differ from anchor, not that every image benefits."
+  },
+  "endpoint_consistency_passed": true,
+  "finished_utc": "2026-10-03T14:46:22.204095+00:00",
+  "output_csv_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/fixed_shrink_core_seed17.csv",
+  "output_csv_sha256": "6f2530d04d502855aebaacdd517594423ab0b9c35e652b7ad15607fe4e8b00c0",
+  "exploratory_same_M_val_core_comparisons": [
+    {
+      "alpha": 0.0,
+      "FixedShrink_minus_selected_RSI": {
+        "dice": -0.0031275890595798828,
+        "G_plus": -0.008773162467152143,
+        "H_epsilon": -0.0038679211496023703,
+        "any_harm": -0.5112107623318386,
+        "sign_flip": -0.3542600896860987
+      },
+      "G_plus_retention_vs_D0": 0.0,
+      "H_epsilon_relative_reduction_vs_D0": 1.0,
+      "numerically_no_worse_on_Dice_G_plus_H_epsilon": false,
+      "numerically_no_worse_on_all_five_coordinates": false
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "FixedShrink_minus_selected_RSI": {
+        "dice": -0.0008878098124680545,
+        "G_plus": -0.003881097675396998,
+        "H_epsilon": -0.002651552468363032,
+        "any_harm": -0.1659192825112108,
+        "sign_flip": -0.11210762331838567
+      },
+      "G_plus_retention_vs_D0": 0.389716766613753,
+      "H_epsilon_relative_reduction_vs_D0": 0.8361175429370549,
+      "numerically_no_worse_on_Dice_G_plus_H_epsilon": false,
+      "numerically_no_worse_on_all_five_coordinates": false
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "FixedShrink_minus_selected_RSI": {
+        "dice": 7.443758826253255e-05,
+        "G_plus": 0.00015397988318424996,
+        "H_epsilon": -2.1806179049937285e-06,
+        "any_harm": 0.026905829596412523,
+        "sign_flip": 0.03139013452914796
+      },
+      "G_plus_retention_vs_D0": 0.7111633226398059,
+      "H_epsilon_relative_reduction_vs_D0": 0.479165267510101,
+      "numerically_no_worse_on_Dice_G_plus_H_epsilon": true,
+      "numerically_no_worse_on_all_five_coordinates": false
+    },
+    {
+      "alpha": 1.0,
+      "FixedShrink_minus_selected_RSI": {
+        "dice": -6.267384598757086e-05,
+        "G_plus": 0.003779709800218519,
+        "H_epsilon": 0.003554280732397402,
+        "any_harm": 0.11210762331838564,
+        "sign_flip": 0.06726457399103136
+      },
+      "G_plus_retention_vs_D0": 1.0,
+      "H_epsilon_relative_reduction_vs_D0": 0.0,
+      "numerically_no_worse_on_Dice_G_plus_H_epsilon": false,
+      "numerically_no_worse_on_all_five_coordinates": false
+    }
+  ],
+  "interpretation_zh": "预设FixedShrink α=2/3的Dice、G+、Hε三个聚合坐标略优于RSI-1所选点，且差异很小；RSI的any-harm和sign-flip发生率较低，因此不能称全部指标支配或显著胜负。α=1/3按预设Dice容差及最小Hε规则入选shrink工作点，但只保留D0约38.97%的G+。完整边界、最差尾部、病例配对区间、来源敏感性与其他目标对照仍未在本核心验证中计算。"
+}

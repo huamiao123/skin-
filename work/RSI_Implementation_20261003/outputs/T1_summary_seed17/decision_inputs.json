@@ -1,0 +1,39 @@
+{
+  "seed": 17,
+  "scope": "T1",
+  "exploratory_validation_only": true,
+  "T1_average_gain_gate": true,
+  "T1_mean_gain": 0.0031217520805409188,
+  "T1_G_plus": 0.011903312882738803,
+  "T1_full_mechanism_review_pending": false,
+  "q": null,
+  "test_scoring_locked": true,
+  "conditional_weight_grid": [
+    0.3,
+    1.0,
+    3.0
+  ],
+  "exported_positive_weights": [],
+  "extra_grid_has_not_run": true,
+  "seed29_has_not_run": true,
+  "formal_seeds_have_not_run": true,
+  "workpoint_comparison_available": false,
+  "final_continue_or_stop_decision_pending": false,
+  "decision": "continue_T2",
+  "decided_utc": "2026-10-03T13:17:42.289684+00:00",
+  "RSI_effectiveness": "not_yet_established",
+  "source_review": "../T1_source_review_seed17/T1_source_mechanism_review.json",
+  "reasons": [
+    "Full-budget B has positive average hard-Dice gain and visible positive gains",
+    "Nontrivial harm, worst-reference tail and within-image reference conflicts remain",
+    "Conflicts persist at epsilon_D=0.01 and in H/T1 or no-T3 evaluation references",
+    "Canonical train risk signal is nonzero",
+    "No engineering, source cohort or frozen-state blocker found"
+  ],
+  "limitations": [
+    "checkpoint-selected development validation; bootstrap intervals are exploratory",
+    "BF1 worsens slightly while normalized HD95 improves slightly",
+    "Risk uses soft composite loss; hard-Dice harm is not equivalent",
+    "Evaluation references without T3 do not exclude T3 influence during training"
+  ]
+}

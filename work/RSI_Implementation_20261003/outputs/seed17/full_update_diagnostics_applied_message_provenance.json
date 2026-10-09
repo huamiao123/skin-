@@ -1,0 +1,419 @@
+{
+  "definition": "applied_message_rms=abs(alpha)*raw_message_rms",
+  "model_contract": "forward_pair returns message before alpha; tail receives f8 + alpha*message",
+  "raw_update_input": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/update_diagnostics.csv",
+    "bytes": 923307,
+    "sha256": "f2f074d8299f619ec4f9574a78b0bfbb026a9769daf37638b765fd778e4ad9ca"
+  },
+  "contract_sources": [
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/models.py",
+      "bytes": 20188,
+      "sha256": "29dd02dce5daf1e1dbdb315b14061af1a26e2dcd33ef614abdf7463b0a1e71bd"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/export.py",
+      "bytes": 8103,
+      "sha256": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b"
+    },
+    {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/metrics.py",
+      "bytes": 13295,
+      "sha256": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb"
+    }
+  ],
+  "original_rows_modified": false,
+  "metric_scores_modified": false,
+  "GPU_compute": false,
+  "test_scoring_locked": true,
+  "summary": [
+    {
+      "run_id": "AbsHard-0.3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5796672178335618,
+      "applied_message_rms": 0.5796672178335618
+    },
+    {
+      "run_id": "AbsHard-0.3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5883356696711792,
+      "applied_message_rms": 0.5883356696711792
+    },
+    {
+      "run_id": "AbsHard-0.3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5698417028394093,
+      "applied_message_rms": 0.5698417028394093
+    },
+    {
+      "run_id": "AbsHard-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5722945728914727,
+      "applied_message_rms": 0.5722945728914727
+    },
+    {
+      "run_id": "AbsHard-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5726872168179094,
+      "applied_message_rms": 0.5726872168179094
+    },
+    {
+      "run_id": "AbsHard-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.561926927045998,
+      "applied_message_rms": 0.561926927045998
+    },
+    {
+      "run_id": "AbsHard-3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5747720665350741,
+      "applied_message_rms": 0.5747720665350741
+    },
+    {
+      "run_id": "AbsHard-3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5730006677995627,
+      "applied_message_rms": 0.5730006677995627
+    },
+    {
+      "run_id": "AbsHard-3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5661951692756009,
+      "applied_message_rms": 0.5661951692756009
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.0,
+      "raw_message_rms": 0.0,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.0,
+      "raw_message_rms": 0.0,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "Anchor",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.0,
+      "raw_message_rms": 0.0,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "B",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5377559301057929,
+      "applied_message_rms": 0.5377559301057929
+    },
+    {
+      "run_id": "B",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5448845091851863,
+      "applied_message_rms": 0.5448845091851863
+    },
+    {
+      "run_id": "B",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5267752342620232,
+      "applied_message_rms": 0.5267752342620232
+    },
+    {
+      "run_id": "D0",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5511957602828149,
+      "applied_message_rms": 0.5511957602828149
+    },
+    {
+      "run_id": "D0",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5537203169380424,
+      "applied_message_rms": 0.5537203169380424
+    },
+    {
+      "run_id": "D0",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5435935532872397,
+      "applied_message_rms": 0.5435935532872397
+    },
+    {
+      "run_id": "MeanHinge-0.3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5461321411804487,
+      "applied_message_rms": 0.5461321411804487
+    },
+    {
+      "run_id": "MeanHinge-0.3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5470416175014153,
+      "applied_message_rms": 0.5470416175014153
+    },
+    {
+      "run_id": "MeanHinge-0.3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5388236311733304,
+      "applied_message_rms": 0.5388236311733304
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5365866418890604,
+      "applied_message_rms": 0.5365866418890604
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5354349130449584,
+      "applied_message_rms": 0.5354349130449584
+    },
+    {
+      "run_id": "MeanHinge-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5298880039492595,
+      "applied_message_rms": 0.5298880039492595
+    },
+    {
+      "run_id": "MeanHinge-3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5331313061305502,
+      "applied_message_rms": 0.5331313061305502
+    },
+    {
+      "run_id": "MeanHinge-3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5275580781090695,
+      "applied_message_rms": 0.5275580781090695
+    },
+    {
+      "run_id": "MeanHinge-3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5283862082234271,
+      "applied_message_rms": 0.5283862082234271
+    },
+    {
+      "run_id": "RSI-0.3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5340336253374788,
+      "applied_message_rms": 0.5340336253374788
+    },
+    {
+      "run_id": "RSI-0.3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.534350016799755,
+      "applied_message_rms": 0.534350016799755
+    },
+    {
+      "run_id": "RSI-0.3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5274269559456151,
+      "applied_message_rms": 0.5274269559456151
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5025790056827808,
+      "applied_message_rms": 0.5025790056827808
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.4970903751251149,
+      "applied_message_rms": 0.4970903751251149
+    },
+    {
+      "run_id": "RSI-1",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.49016217308195564,
+      "applied_message_rms": 0.49016217308195564
+    },
+    {
+      "run_id": "RSI-3",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.524181879643337,
+      "applied_message_rms": 0.524181879643337
+    },
+    {
+      "run_id": "RSI-3",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5385163862658628,
+      "applied_message_rms": 0.5385163862658628
+    },
+    {
+      "run_id": "RSI-3",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5101916462431186,
+      "applied_message_rms": 0.5101916462431186
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.0,
+      "raw_message_rms": 0.5511957602828149,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.0,
+      "raw_message_rms": 0.5537203169380424,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.000000",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.0,
+      "raw_message_rms": 0.5435935532872397,
+      "applied_message_rms": 0.0
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms": 0.5511957602828149,
+      "applied_message_rms": 0.18373192009427158
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms": 0.5537203169380424,
+      "applied_message_rms": 0.18457343897934744
+    },
+    {
+      "run_id": "Shrink-D0-0.333333",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.3333333333333333,
+      "raw_message_rms": 0.5435935532872397,
+      "applied_message_rms": 0.18119785109574654
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms": 0.5511957602828149,
+      "applied_message_rms": 0.36746384018854317
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms": 0.5537203169380424,
+      "applied_message_rms": 0.3691468779586949
+    },
+    {
+      "run_id": "Shrink-D0-0.666667",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 0.6666666666666666,
+      "raw_message_rms": 0.5435935532872397,
+      "applied_message_rms": 0.3623957021914931
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "H",
+      "n_images": 47,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5511957602828149,
+      "applied_message_rms": 0.5511957602828149
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "M",
+      "n_images": 223,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5537203169380424,
+      "applied_message_rms": 0.5537203169380424
+    },
+    {
+      "run_id": "Shrink-D0-1.000000",
+      "subset": "T1",
+      "n_images": 20,
+      "alpha": 1.0,
+      "raw_message_rms": 0.5435935532872397,
+      "applied_message_rms": 0.5435935532872397
+    }
+  ],
+  "rows": 4640,
+  "output_sha256": "3a5587ee782cc247a90d52f55d59ab24debd5b772c654c45938b6cc18adf45fb",
+  "output_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/full_update_diagnostics_applied_message.csv"
+}

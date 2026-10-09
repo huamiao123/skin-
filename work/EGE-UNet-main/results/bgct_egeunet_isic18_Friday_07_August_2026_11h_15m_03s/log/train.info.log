@@ -1,0 +1,60 @@
+2026-08-07 11:15:03 - #----------Config info----------#
+2026-08-07 11:15:03 - network: bgct_egeunet,
+2026-08-07 11:15:03 - model_config: {'num_classes': 1, 'input_channels': 3, 'c_list': [8, 16, 24, 32, 48, 64], 'bridge': True, 'gt_ds': True, 'window_size': 8, 'num_heads': 4},
+2026-08-07 11:15:03 - datasets: isic18,
+2026-08-07 11:15:03 - data_path: ./data/isic2018/,
+2026-08-07 11:15:03 - criterion: GT_BceDiceLoss(
+  (bcedice): BceDiceLoss(
+    (bce): BCELoss(
+      (bceloss): BCELoss()
+    )
+    (dice): DiceLoss()
+  )
+),
+2026-08-07 11:15:03 - num_classes: 1,
+2026-08-07 11:15:03 - input_size_h: 256,
+2026-08-07 11:15:03 - input_size_w: 256,
+2026-08-07 11:15:03 - input_channels: 3,
+2026-08-07 11:15:03 - distributed: False,
+2026-08-07 11:15:03 - local_rank: -1,
+2026-08-07 11:15:03 - num_workers: 8,
+2026-08-07 11:15:03 - seed: 42,
+2026-08-07 11:15:03 - world_size: None,
+2026-08-07 11:15:03 - rank: None,
+2026-08-07 11:15:03 - amp: False,
+2026-08-07 11:15:03 - gpu_id: 0,
+2026-08-07 11:15:03 - batch_size: 64,
+2026-08-07 11:15:03 - epochs: 300,
+2026-08-07 11:15:03 - gradient_accumulation_steps: 1,
+2026-08-07 11:15:03 - lambda_edge: 0.2,
+2026-08-07 11:15:03 - edge_warmup_epochs: 20,
+2026-08-07 11:15:03 - work_dir: results/bgct_egeunet_isic18_Friday_07_August_2026_11h_15m_03s/,
+2026-08-07 11:15:03 - print_interval: 20,
+2026-08-07 11:15:03 - val_interval: 30,
+2026-08-07 11:15:03 - save_interval: 100,
+2026-08-07 11:15:03 - threshold: 0.5,
+2026-08-07 11:15:03 - train_transformer: Compose(
+    <utils.myNormalize object at 0x7fa55f1a6fe0>
+    <utils.myToTensor object at 0x7fa55f1a7040>
+    <utils.myRandomHorizontalFlip object at 0x7fa55f1a7070>
+    <utils.myRandomVerticalFlip object at 0x7fa55f1a70d0>
+    <utils.myRandomRotation object at 0x7fa55f1a7130>
+    <utils.myResize object at 0x7fa55f1a7190>
+),
+2026-08-07 11:15:03 - test_transformer: Compose(
+    <utils.myNormalize object at 0x7fa55f1a7280>
+    <utils.myToTensor object at 0x7fa55f1a72e0>
+    <utils.myResize object at 0x7fa55f1a7310>
+),
+2026-08-07 11:15:03 - opt: AdamW,
+2026-08-07 11:15:03 - lr: 0.001,
+2026-08-07 11:15:03 - betas: (0.9, 0.999),
+2026-08-07 11:15:03 - eps: 1e-08,
+2026-08-07 11:15:03 - weight_decay: 0.01,
+2026-08-07 11:15:03 - amsgrad: False,
+2026-08-07 11:15:03 - sch: CosineAnnealingLR,
+2026-08-07 11:15:03 - T_max: 300,
+2026-08-07 11:15:03 - eta_min: 1e-05,
+2026-08-07 11:15:03 - last_epoch: -1,
+2026-08-07 11:15:09 - train: epoch 1, iter:0, loss: 6.4709, lr: 0.001
+2026-08-07 11:15:10 - train: epoch 1, iter:20, loss: 3.3558, lr: 0.001

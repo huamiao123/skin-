@@ -1,0 +1,104 @@
+{
+  "prepared_utc": "2026-10-03T12:55:35.726124+00:00",
+  "status": "prepared_and_verified_not_started",
+  "GPU_used": false,
+  "models_started": false,
+  "signals_sent": false,
+  "instruction": "Root alone decides a safe export/no-optimizer boundary before invoking the original pilot through this runner.",
+  "command": [
+    "python",
+    "-u",
+    "tools/cached_pilot_runner.py",
+    "--config",
+    "configs/p2_ima_m_v2.yaml",
+    "--seed",
+    "17",
+    "--fast-exact-boundaries"
+  ],
+  "tools": {
+    "tools/cached_pilot_runner.py": "e058aee110988bd85ee24d4a3b1c08f7b288276bfdf7f6f14087d2e5fed6bf02",
+    "tools/fast_exact_metrics.py": "3f1a75687a1ca21d12144c4ddb9198cbf7ef018eb4f1e84d66d5cbde48db6296"
+  },
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "scientific_config_same": true,
+  "completed_stages_independently_verified": [
+    {
+      "stage": "A_CNN",
+      "epochs": 100,
+      "best_epoch": 36,
+      "best_val_dice": 0.8552520003612387,
+      "best_checkpoint_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "DONE_sha256": "934bb964eebfe600244f5f6669c5e8ae108aa19b9b9eb17d4e590069fc8f198b",
+      "signature_matches_original_stage_call": true
+    },
+    {
+      "stage": "A_T",
+      "epochs": 100,
+      "best_epoch": 40,
+      "best_val_dice": 0.8538206972870787,
+      "best_checkpoint_sha256": "4a9ad8e48f466c42513a30a1ba09a355e0ca615617fb5ca988dd57f25a9cd380",
+      "DONE_sha256": "25166551b5773c1bc4bd0afb3cf6bd3548262b17559c9fcb137e0b2d409648ef",
+      "signature_matches_original_stage_call": true
+    },
+    {
+      "stage": "B",
+      "epochs": 40,
+      "best_epoch": 22,
+      "best_val_dice": 0.8583737524417797,
+      "best_checkpoint_sha256": "1703ca22a1c39afeca05ffd0c12fe01606f41d5af81442d20102f130cc2ca491",
+      "DONE_sha256": "c6ece14a867de7999f300fe152a3ca9a2d281dac9fb34b174aaa43aa924d6133",
+      "signature_matches_original_stage_call": true
+    }
+  ],
+  "cpu_regression": {
+    "command": "python -m pytest -q tests/test_cached_pilot_runner.py tests/test_fast_exact_metrics.py tests/test_export.py",
+    "passed": 70,
+    "seconds": 35.25,
+    "full_export_reference_rows": 34,
+    "full_export_all_fields_exact_equal": true,
+    "full_export_csv_bytes_equal": true,
+    "cache_only_and_cache_KD_both_tested": true
+  },
+  "native_verification_file": "/home/featurize/work/RSI_Implementation_20261003/outputs/exact_boundary_native_verification.json",
+  "native_verification_sha256": "7fac761bee5a3c6e87e212723e381266427eb7bef641cd9ffac94477c962995e",
+  "native_cases": [
+    {
+      "image_id": "ISIC_0001208",
+      "shape": [
+        2016,
+        3024
+      ],
+      "megapixels": 6.096384,
+      "variant": "shift",
+      "original_EDT_seconds": 0.5142649260014878,
+      "exact_KD_seconds": 0.12569969200012565,
+      "speedup": 4.091218664250774,
+      "every_field_exact_equal": true
+    },
+    {
+      "image_id": "ISIC_0011881",
+      "shape": [
+        4459,
+        6708
+      ],
+      "megapixels": 29.910972,
+      "variant": "shift",
+      "original_EDT_seconds": 5.467049247001341,
+      "exact_KD_seconds": 0.6376028690010571,
+      "speedup": 8.574379935847304,
+      "every_field_exact_equal": true
+    }
+  ],
+  "cache_content": "SHA256 dtype/shape/strides/all four original argument byte contents; explicit None; scalar dict-only payload; independent copies",
+  "patches": "Only process-local metrics/export evaluate_reference, optional metrics.binary_mask_metrics and original pilot export B method metadata; train_stage wrapper delegates unmodified authority and verifies DONE reuse.",
+  "budget_and_weights": "Same original run/load_config/train_stage, same scientific cfg, all existing DONE strictly reused; no extra epoch or weight migration.",
+  "configuration_validation": [
+    "outputs/cached_runner_validation_only.json",
+    "outputs/cached_runner_fast_validation_only.json"
+  ],
+  "limitations": [
+    "Numeric cache is process-local; initial cache cold.",
+    "KD acceleration changes only exact nearest-boundary computation and is optional.",
+    "Checkpoint/val-selected intervals remain exploratory; formal seeds and test scoring remain gated."
+  ]
+}

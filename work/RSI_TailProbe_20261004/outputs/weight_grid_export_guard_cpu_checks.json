@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-03T15:16:22.120918+00:00",
+  "GPU_used": false,
+  "model_inference": false,
+  "test_scoring": false,
+  "CSV_writes": false,
+  "source": "Already completed actual D0 validation CSV; no numeric scores recomputed",
+  "input_path": "/home/featurize/work/RSI_Implementation_20261003/outputs/per_reference/seed17/D0.csv",
+  "input_sha256": "73e39378863b5cb493cde81241c4950ad410b478b9d74463579339db0e24f4b8",
+  "tool_sha256": "38a66f4a84a09bb04a55e9c89beb79fa436680f200afbc7519faaba6382a47dd",
+  "checks": [
+    {
+      "case": "Existing complete actual D0 export matches original contract",
+      "passed": true,
+      "details": {
+        "reference_rows": 624,
+        "rows_by_subset": {
+          "M": 471,
+          "H": 104,
+          "T1": 49
+        },
+        "images_by_subset": {
+          "M": 223,
+          "H": 47,
+          "T1": 20
+        },
+        "includes_Anchor_duplicate": false,
+        "complete_reference_identity_and_provenance_match": true
+      }
+    },
+    {
+      "case": "Missing reference row",
+      "passed": true,
+      "rejection": "Export is not exactly the complete M/H/T1 reference cohort"
+    },
+    {
+      "case": "Wrong objective metadata",
+      "passed": true,
+      "rejection": "Export metadata or canonical-loss view differs from the selected grid checkpoint"
+    }
+  ],
+  "all_passed": true,
+  "numeric_delegate": "Original exporter/cache/KD unchanged; prior 70CPU regression and native exact proofs apply.",
+  "guard_function_source_sha256": "dac4f2e668edf068134fe850756cd5e6706dd5534d832835a3c18b0c4a7c5715",
+  "prepared_final_tool_sha256": "f289d8b28b8c7c8a3216b084fa427aa81c87117a4eb0f8f8361998272d24f61a",
+  "backend_alignment_note": "The subsequent change is only actual inference set_seed(17)/threads4 before original exporter; tested row guard is unchanged."
+}

@@ -1,0 +1,531 @@
+{
+  "reviewed_utc": "2026-10-03T12:08:46.369044+00:00",
+  "reviewer": "review_ege",
+  "scope": "Read-only decision contract review; no GPU computation and no test evaluation read. Independent tools/finalize_pilot.py added with parent authorization.",
+  "source_documents": {
+    "full": {
+      "path": "/home/featurize/task/皮肤病灶分割_参考稳定交互_可执行研究方案_v2_2026-10-03.md",
+      "sha256": "b64ce886f8e88182206f394b210379c9525ee9e3c97d83e3f487a43a7687a494"
+    },
+    "short": {
+      "path": "/home/featurize/task/皮肤病灶分割_RSI_首轮测试方案_v2_2026-10-03.md",
+      "sha256": "e148c40cc939762a50264332f5dbc0ebc8e7320d500ef0168e29a7c538ab91dd"
+    }
+  },
+  "implementation_sources": {
+    "rsi/run_pilot.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/run_pilot.py",
+      "sha256": "ed755186b667d8852646a4a31b5251430565ac08f8b9f40e982aab451cab7d82"
+    },
+    "rsi/summarize.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/summarize.py",
+      "sha256": "ac694684f8fcc8744c38bbec74baa9e731384997d197f41c98f80262bd024175"
+    },
+    "rsi/metrics.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/metrics.py",
+      "sha256": "596fe5c3533462782d36225932f6a254a7864693109a96cdb09386328ceec5bb"
+    },
+    "rsi/train.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/train.py",
+      "sha256": "300a7194cbf00c7a1ebeb04a0d47ae5ac02f34cda59f16efe251696128939058"
+    },
+    "rsi/export.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/rsi/export.py",
+      "sha256": "c3182f0a9ab198d5adcbc3e9cbcfba72fe4ba123b9548ff37c1e95289383bf1b"
+    },
+    "tools/finalize_pilot.py": {
+      "path": "/home/featurize/work/RSI_Implementation_20261003/tools/finalize_pilot.py",
+      "sha256": "95de6989fc16e1de9ae477ab49c5252137907856a8f1f894c3c09d032bf766d8"
+    }
+  },
+  "run_state_at_review": {
+    "seed": 17,
+    "active": "A_T",
+    "completed": [
+      "A_CNN"
+    ],
+    "test_scoring_locked": true
+  },
+  "test_scoring_locked": true,
+  "no_final_method_success_claim": true,
+  "thresholds": {
+    "hard_prediction_threshold": 0.5,
+    "harm_dice_epsilon_default": 0.005,
+    "harm_dice_epsilon_sensitivity": [
+      0.0,
+      0.002,
+      0.005,
+      0.01
+    ],
+    "workpoint_mean_dice_noninferiority_tolerance": 0.002,
+    "loss_sign_numerical_tolerance_for_kappa_pm": 1e-06,
+    "small_gain_numeric_cutoff": null,
+    "visible_G_plus_numeric_cutoff": null,
+    "positive_gain_retention_numeric_cutoff": null,
+    "substantive_dominance_numeric_margin": null,
+    "note": "原文未给小增益/可见G+/正收益保留/实际幅度优势的额外数值阈值；不得把0.002非劣容差或0.005损害容差冒充这些阈值。末位正差及宽区间须记未定。"
+  },
+  "criteria": [
+    {
+      "name": "T1_to_T2",
+      "original_lines": {
+        "full": [
+          429,
+          442,
+          446,
+          481
+        ],
+        "short": [
+          88,
+          105,
+          140
+        ]
+      },
+      "rule": "T0通过，完整A_CNN100/A_T100/B40后，B对固定CNN anchor有平均正收益及可见G+，并审阅新增损害/比例/幅度/尾部、同输出跨参考得失、T3来源与阈值末位变化、soft loss与hard Dice一致性。B明显弱于anchor先检查工程及Transformer收敛；仅允许一次有记录且有曲线上升或工程错误依据的普通预算修订，统一重建共享起点。J/翻转几乎无则收缩跨参考解释，不能单因J小否定所有内容方法。",
+      "implementation": {
+        "file": "rsi/run_pilot.py",
+        "lines": [
+          38,
+          42
+        ],
+        "automatic_gate": "mean_gain > 0 and G_plus > 0",
+        "reference_conflict_flag": "J > 0 and kappa_pm > 0; descriptive only",
+        "scope": "此布尔只代表严格正平均收益筛查，不是完整机制通过。"
+      },
+      "required_inputs": {
+        "T1_decision_seed17.json": [
+          "metrics.mean_gain",
+          "metrics.G_plus",
+          "metrics.H_epsilon",
+          "metrics.H_minus",
+          "metrics.any_harm",
+          "metrics.sign_flip",
+          "metrics.rho",
+          "metrics.J",
+          "metrics.kappa_pm",
+          "metrics.J_p50",
+          "metrics.J_p90",
+          "metrics.J_p99",
+          "decision"
+        ],
+        "B/epoch_diagnostics.csv": [
+          "val_dice",
+          "val_loss",
+          "canonical_train_rho",
+          "canonical_train_J",
+          "canonical_train_kappa_pm",
+          "val_rho",
+          "val_J",
+          "val_kappa_pm"
+        ],
+        "pilot_main_table.csv_M_B": [
+          "mean_gain",
+          "G_plus",
+          "H_epsilon",
+          "H_minus",
+          "any_harm",
+          "worst_reference_mean",
+          "worst_tail_10pct",
+          "worst_tail_n",
+          "sign_flip",
+          "dice_vs_anchor_difference",
+          "dice_vs_anchor_ci_low",
+          "dice_vs_anchor_ci_high"
+        ],
+        "source_sensitivity.csv": [
+          "report",
+          "image_subset",
+          "reference_subset",
+          "source_tool",
+          "G_plus",
+          "H_epsilon",
+          "mean_gain"
+        ],
+        "per_reference_gains.csv": [
+          "gain_dice",
+          "gain_loss",
+          "gain_loss_orig",
+          "tool",
+          "reference_id",
+          "fp_added",
+          "fn_added",
+          "fp_removed",
+          "fn_removed"
+        ]
+      },
+      "limitations_or_risks": [
+        "严格>0无法判定可见收益或实际幅度；G_plus>0在mean_gain>0时数学上基本冗余。",
+        "T1_decision标志未包含损害尾部/来源/边界审阅，不能直接作完整方法通过结论。",
+        "epoch val sign_flip是train.evaluate的快指标；最终多参考主分母及敏感性用summarizer的sign_flip_n等。"
+      ]
+    },
+    {
+      "name": "symmetric_lambda_grid",
+      "original_lines": {
+        "full": [
+          228,
+          460,
+          462,
+          482,
+          486
+        ],
+        "short": [
+          54,
+          119,
+          121,
+          141,
+          145
+        ]
+      },
+      "rule": "先lambda1作为流水线/机制筛查，不以一次失败宣布方向失败。仅在T0/T1成立、风险有训练侧信号且仍需分辨权重选择影响时，三个加权方法同步追加0.3和3；共享D0 lambda0，最多10个D训练。每次仍同B起点、40轮、新optimizer、相同增强与选择规则。风险缺信号或普通消息无价值时先处理问题，不盲目网格。",
+      "implementation": {
+        "file": "rsi/run_pilot.py",
+        "lines": [
+          59,
+          63,
+          79,
+          89
+        ],
+        "status": "只训练lambda1，写extra_grid_has_not_run=true，没有自动补搜。"
+      },
+      "required_inputs": {
+        "pilot_main_table.csv": [
+          "method",
+          "lambda",
+          "alpha",
+          "dice",
+          "G_plus",
+          "H_epsilon",
+          "workpoint_status",
+          "workpoint_selected",
+          "worst_tail_10pct"
+        ],
+        "epoch_diagnostics.csv": [
+          "canonical_train_rho",
+          "canonical_train_risk",
+          "canonical_train_weighted_risk",
+          "canonical_train_J",
+          "canonical_train_kappa_pm",
+          "canonical_train_activation_rate",
+          "canonical_train_mean_weight",
+          "val_rho",
+          "val_H_epsilon",
+          "weighted_risk_gradient_norm",
+          "risk_seg_gradient_ratio",
+          "risk_seg_gradient_cosine",
+          "gradient_clip_fraction"
+        ]
+      },
+      "limitations_or_risks": [
+        "不能只救RSI或仅补0.3而不补3；独立finalizer拒绝不完整/不对称输入矩阵。",
+        "rho≈0且val有损害时，单纯提高lambda不能制造缺失信号。",
+        "触发密度/权重均值显著不同，不能把优化尺度变化直接归因相对信息。"
+      ]
+    },
+    {
+      "name": "workpoint_selection",
+      "original_lines": {
+        "full": [
+          310,
+          321
+        ],
+        "short": [
+          52,
+          58
+        ]
+      },
+      "rule": "仅完整M val选择：各训练先按最大平均hard Dice选epoch，精确相等取早。以选定D0 Dice为基准，Dice>=D0-0.002，选最小H_epsilon；并列选Dice高、lambda小；Shrink并列alpha大。无合格正lambda RSI则保留D0，记录无有效工作点。选择不等于战胜任何简单对照。",
+      "implementation": {
+        "file": "rsi/summarize.py",
+        "lines": [
+          179,
+          210
+        ],
+        "status": "M选择、0.002非劣与上述排序已实现；RSI限制正lambda；D0独立标selected。"
+      },
+      "required_inputs": {
+        "pilot_main_table.csv": [
+          "subset",
+          "method",
+          "lambda",
+          "alpha",
+          "checkpoint_hash",
+          "dice",
+          "H_epsilon",
+          "G_plus",
+          "worst_tail_10pct",
+          "workpoint_status",
+          "workpoint_selected"
+        ]
+      },
+      "limitations_or_risks": [
+        "H/T1只能敏感性报告，不可用来选lambda/epoch/alpha。",
+        "一个合格候选即使H比D0更高仍会被标selected，selected只是排序结果，不是科学成功。",
+        "Mean-Hinge/Abs-Hard族排序未把共享D0 lambda0再复制进族内；如正lambda点都差，应把全表D0作为该族零权重基线共同比较。",
+        "暂无合格RSI仍不能将一次lambda1失败扩展为整个方向失败；只能按预登记条件决定是否补网格。"
+      ]
+    },
+    {
+      "name": "small_gain_and_simple_control_dominance",
+      "original_lines": {
+        "full": [
+          483,
+          493,
+          335,
+          337
+        ],
+        "short": [
+          142,
+          152
+        ]
+      },
+      "rule": "继续价值需同等绝对Dice内H_epsilon降低、正收益保留、尾部无明显反向恶化，并排除Abs-Hard/Mean-Hinge/Fixed-Shrink解释。简单点Dice不低、H不高且至少一项有实际幅度优势为支配筛查，结合G+和尾部。小差异/宽配对区间/方向不稳记未定，不用末位判胜；soft-only改善无hard及边界支持不称纠错成功。",
+      "implementation": {
+        "file": "rsi/summarize.py",
+        "lines": [
+          254,
+          277,
+          329,
+          359
+        ],
+        "status": "输出Dice/G+/H/anyharm/mean-worst-reference对D0配对区间、完整点与曲线；不自动给支配/成功/未定决策。"
+      },
+      "required_inputs": {
+        "pilot_main_table.csv": [
+          "dice",
+          "iou",
+          "G_plus",
+          "H_epsilon",
+          "H_minus",
+          "any_harm",
+          "worst_tail_10pct",
+          "worst_tail_n",
+          "worst_reference_mean",
+          "bf1",
+          "bf1_025",
+          "bf1_1pct",
+          "hd95",
+          "hd95_normalized",
+          "empty_prediction_count",
+          "mean_gain",
+          "dice_vs_D0_difference",
+          "dice_vs_D0_ci_low",
+          "dice_vs_D0_ci_high",
+          "G_plus_vs_D0_difference",
+          "G_plus_vs_D0_ci_low",
+          "G_plus_vs_D0_ci_high",
+          "H_epsilon_vs_D0_difference",
+          "H_epsilon_vs_D0_ci_low",
+          "H_epsilon_vs_D0_ci_high",
+          "any_harm_vs_D0_difference",
+          "worst_reference_vs_D0_difference"
+        ],
+        "update_diagnostics.csv": [
+          "message_rms",
+          "logit_delta_rms",
+          "changed_pixel_fraction"
+        ],
+        "pilot_main_table.csv_cross_table": [
+          "loss_positive_dice_negative",
+          "loss_negative_dice_positive",
+          "zero_loss_positive_dice_negative",
+          "zero_loss_negative_dice_positive"
+        ],
+        "pilot_main_table.csv_epsilon_sensitivity": [
+          "H_epsilon_0p0",
+          "H_epsilon_0p002",
+          "H_epsilon_0p005",
+          "H_epsilon_0p01",
+          "any_harm_0p0",
+          "any_harm_0p002",
+          "any_harm_0p005",
+          "any_harm_0p01"
+        ]
+      },
+      "limitations_or_risks": [
+        "现有配对区间主要对D0/anchor，不能由两个各自对D0的区间直接推出RSI对最强简单对照区间；需从同图参考行直接配对。",
+        "worst_reference_vs_D0_*是每图最差参考收益的总体均值差区间，不是最低10%尾部区间。",
+        "最低10%尾部每报告集合取ceil(0.1*N)，数值越负越差；M当前N223时tail_n应23。",
+        "输出几乎回到anchor/G+趋零，即使H与翻转为零也不是成功；应对比四个Shrink点完整曲线。",
+        "配对bootstrap保留同图全部参考并按病例组抽样；val选参后的区间仅探索性。"
+      ]
+    },
+    {
+      "name": "seed29_trigger_and_execution",
+      "original_lines": {
+        "full": [
+          321,
+          489,
+          493,
+          497,
+          501
+        ],
+        "short": [
+          20,
+          148,
+          152,
+          156,
+          160
+        ]
+      },
+      "rule": "差异小、区间宽或方向不稳允许一个预登记seed29复核；有合格且不能被简单对照解释的RSI收益/损害权衡也可据此继续验证。沿用seed17锁定清单、配置、lambda及alpha，不重新搜索。seed29完整重训自己的A_CNN100/A_T100/B40，先重复D0、选定RSI及seed17最有竞争力简单对照；必要按预定矩阵补齐。Abs-Hard q在seed29自身B规范train重新算。两个开发seed仍非正式验证。",
+      "implementation": {
+        "file": "rsi/run_pilot.py",
+        "lines": [
+          23,
+          31,
+          54,
+          67,
+          79,
+          89,
+          94
+        ],
+        "status": "--seed参数虽然可改29，但流程仍硬编码三法lambda1、全部Shrink，并在summarizer重新选工作点；不是锁定seed17选择的专用seed29复核执行器。"
+      },
+      "required_inputs": {
+        "decision_inputs.json": [
+          "T1",
+          "q",
+          "extra_grid_has_not_run",
+          "seed29_has_not_run",
+          "formal_seeds_have_not_run",
+          "test_scoring_locked"
+        ],
+        "decision_log.md": [
+          "T1证据",
+          "对称网格是否触发及理由",
+          "seed17固定lambda/alpha",
+          "最强简单对照",
+          "seed29进入/不进入原因",
+          "支持范围与失败记录"
+        ]
+      },
+      "limitations_or_risks": [
+        "直接run_pilot --seed29可能重复lambda1而不是已选lambda，并重新选alpha；需单独冻结并执行选定对比，不靠改seed参数宣称协议复核完成。",
+        "不能对seed29重新搜索lambda/alpha，也不能只重训消息层或复用seed17 B；每个seed用自己的共享B起点。",
+        "seed29仅开发证据；正式101/202/303完整训练及统一test释放另属后续阶段，不在当前可行性任务中偷跑。"
+      ]
+    }
+  ],
+  "output_read_order": [
+    {
+      "step": 1,
+      "artifact": "各训练目录DONE.json + epoch_diagnostics.csv + finalization_audit.json",
+      "check": "满预算/唯一epoch、manifest及冻结bundle、共享起点、原CSV SHA、B元数据校正、test locked；progress只是状态提示，不替代完成证据。"
+    },
+    {
+      "step": 2,
+      "artifact": "T1_decision_seed17.json + B逐参考汇总/源敏感性/epoch诊断",
+      "check": "普通消息可研究性及训练侧风险信号；完整T1门槛不能只读mean_gain>0布尔。"
+    },
+    {
+      "step": 3,
+      "artifact": "pilot_main_table.csv",
+      "filter": "seed17, subset=M, split=val",
+      "check": "先D0基准及各族工作点，后完整候选Dice/G/H/尾部/边界和简单支配；同表H/T1不得参与选择。"
+    },
+    {
+      "step": 4,
+      "artifact": "per_reference_gains.csv 与 vs_anchor/vs_D0 表",
+      "check": "保留reference_id与subset，loss_view为canonical_letterbox_valid；hard Dice原图。必要直接配对RSI与最强简单对照。"
+    },
+    {
+      "step": 5,
+      "artifact": "source_sensitivity.csv",
+      "check": "native_source_subset 与 paired_M_references_on_source_images 配对读；M/H/T1总数不相加，m=2/m>=3及fixed_two仅敏感性。"
+    },
+    {
+      "step": 6,
+      "artifact": "update_diagnostics.csv + gain_harm_tradeoff.png",
+      "filter": "同一M输出，避免M/H/T1重复当独立样本",
+      "check": "确认非不更新退化解，完整Fixed-Shrink能否解释H下降；不能只看RSI一条线。"
+    },
+    {
+      "step": 7,
+      "artifact": "decision_log.md",
+      "check": "将模板pending改成有证据的完成结论：工程/统计/机制支持范围，补网格或seed29触发理由，或者停止与限制；lambda1执行完成不是方法可行性最终判断。"
+    }
+  ],
+  "export_metadata_blocker": {
+    "affected_lines": {
+      "rsi/run_pilot.py": [
+        44,
+        57
+      ],
+      "rsi/export.py": [
+        21,
+        22,
+        82
+      ],
+      "rsi/summarize.py": [
+        83,
+        93,
+        153,
+        158,
+        187,
+        190
+      ]
+    },
+    "bug": "B导出不显式method，默认d0，真实汇总会把B与D0混淆，在_attach_d0或_select_workpoints拒绝。",
+    "CPU_reproduction": "B metadata method d0; ValueError: pilot selection requires one selected D0 checkpoint per seed",
+    "authorized_fix": "不改运行rsi/config，不中断PID38282。tools/finalize_pilot.py读原始CSV，仅B行method修为B，Anchor不改，原始字节校验保留，生成corrected_inputs及完整汇总审计。",
+    "regression": "tests/test_finalize_pilot.py: 9 passed (1.33 s)，覆盖B/D0/Anchor、原始字节、备份、T1无D0、testlock、sourcebundle、输出目录保护、alpha与训练签名、D q一致；真实训练原bundle未变。",
+    "CLI": "/environment/miniconda3/bin/python tools/finalize_pilot.py --seed 17 --scope auto",
+    "postprocess_only": true
+  },
+  "additional_metric_cautions": [
+    "epoch表没有canonical_train_J_p50/p90/p99；需从该run的per_image_canonical_diagnostics.csv中split=train、相应epoch的J列计算，不把val分位数当train。",
+    "T1_decision metrics来自evaluate AMP视图；最终导出也是AMP，H/T1使用M缓存的同一输出。数值微小差异不能自动算可见机制。",
+    "正收益保留比例可描述为G_plus(RSI)/G_plus(D0)（D0分母>0时），原文没有预定硬通过比例；需报告绝对值及简单对照。",
+    "主损害H_epsilon相对同一CNN anchor；dice_vs_D0是方法相对D0收益，不能将H_epsilon误解释为相对D0损害。",
+    "成本用各DONE.wall_seconds、epoch_seconds、peak_cuda_bytes与下载/解码日志实测分列，不把400阶段epoch当统一GPU成本。"
+  ],
+  "finalizer_limitations": [
+    "只完成冻结seed17已有完整导出的后处理，不训练模型、不运行补网格或seed29、不解除test lock。",
+    "T1只有B/Anchor时无D0候选且不标工作点通过；T2缺任一方法/alpha或来源参考数则拒绝，不把部分矩阵称已完成。",
+    "summary最终方法胜出/未定/停止判断仍待根代理；finalizer写的decision_log只是经过科学口径修正的待决策记录。",
+    "训练selected SHA与各DONE绑定，本工具未再次逐字节读取各大best.pth；检查点文件的真实hash/finite核验沿用已有训练完成及独立监督证据。"
+  ],
+  "supplementary_sensitivity_postprocess": {
+    "implemented_by": "review_data",
+    "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/source_threshold_sensitivity.py",
+    "tool_sha256": "dfa049b96ef44dad15fda75627bad246128f46fcc07cde38ad98913307c4e99c",
+    "scope": "Pure CPU source/epsilon/fixed-two-reference/soft-hard/canonical rho-J-kappa support; only final validation exports, not test.",
+    "run_after_finalizer": true,
+    "CLI": "/environment/miniconda3/bin/python tools/source_threshold_sensitivity.py --config configs/p2_ima_m_v2.yaml --inputs 'outputs/seed17/corrected_inputs/*.csv' --output-dir outputs/seed17/sensitivity",
+    "input_caution": "Use corrected_inputs to preserve B method meaning; original B rows remain intentionally unchanged. Rerun after each finalizer since existing output directory is backed up as a whole.",
+    "formal_method_decision_pending": true
+  },
+  "supplementary_paired_controls_postprocess": {
+    "tool_path": "/home/featurize/work/RSI_Implementation_20261003/tools/paired_control_comparison.py",
+    "tool_sha256": "738f854195ee119fee387dc655c91a2a509387349dc0210d9169abaf02914ddb",
+    "CLI": "/environment/miniconda3/bin/python tools/paired_control_comparison.py",
+    "run_after_finalizer": true,
+    "input_reference_table": "outputs/seed17/per_reference_gains.csv",
+    "input_main_table": "outputs/seed17/pilot_main_table.csv",
+    "output_dir": "outputs/seed17/paired_controls",
+    "output_files": [
+      "paired_control_comparison.csv",
+      "paired_control_comparison.json"
+    ],
+    "scope": "Existing M val RSI candidates directly paired with all existing non-RSI candidates; D0/MeanHinge/AbsHard/Shrink classified simple controls, Anchor/B baseline context.",
+    "workpoints_read_from_main_table_without_reselection": true,
+    "no_new_lambda_alpha_or_H_T1_selection": true,
+    "metrics": [
+      "Dice macro",
+      "G_plus versus common anchor",
+      "H_epsilon0.005 versus common anchor",
+      "worst_tail_10pct versus common anchor"
+    ],
+    "group_bootstrap": "Same sampled complete case groups for each method; missing group IDs remain independent image units; keep all references of each image.",
+    "worst_tail_scope": "Each bootstrap sample separately reranks the per-image min-reference gains for each method, takes first max(1,ceil(0.1*N_resampled_images)), then subtracts RSI minus control.",
+    "difference_orientation": "Positive Dice/G+/worst-tail and negative H_epsilon favor RSI.",
+    "tests": "tests/test_paired_control_comparison.py: 8 CPU tests; together with test_finalize_pilot.py 17 passed (2.94s). Includes hand-derived tail CI[-0.38125,0.08125], reference-order/rng invariance, M-only existing flags, original bytes and interrupted-publish rollback.",
+    "peer_read_only_review": "review_other_models: no material statistical blocker",
+    "real_T2_intervals_computed": false,
+    "real_T2_inputs_pending": true,
+    "test_scoring_locked": true,
+    "coordinate_dominance_flag": "Only Dice/H coordinate screen; substantive margin not prescribed, inspect intervals/G+/tail and selection bias.",
+    "final_continue_or_stop_decision_pending": true
+  }
+}

@@ -1,0 +1,26 @@
+{"stage": "export_weight_grid", "args": ["/environment/miniconda3/bin/python", "-u", "/home/featurize/work/RSI_Implementation_20261003/tools/export_weight_grid.py", "--config", "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml"]}
+Exported RSI-0.3 M: 223 validation images
+Exported RSI-0.3 H: 47 validation images
+Exported RSI-0.3 T1: 20 validation images
+Exported MeanHinge-0.3 M: 223 validation images
+Exported MeanHinge-0.3 H: 47 validation images
+Exported MeanHinge-0.3 T1: 20 validation images
+Exported AbsHard-0.3 M: 223 validation images
+Exported AbsHard-0.3 H: 47 validation images
+Exported AbsHard-0.3 T1: 20 validation images
+Exported RSI-3 M: 223 validation images
+Exported RSI-3 H: 47 validation images
+Exported RSI-3 T1: 20 validation images
+Exported MeanHinge-3 M: 223 validation images
+Exported MeanHinge-3 H: 47 validation images
+Exported MeanHinge-3 T1: 20 validation images
+Exported AbsHard-3 M: 223 validation images
+Exported AbsHard-3 H: 47 validation images
+Exported AbsHard-3 T1: 20 validation images
+{"status": "complete", "active": "six_registered_grid_exports_complete", "completed": 6, "pending": []}
+{"stage": "finalize_full_T2", "args": ["/environment/miniconda3/bin/python", "-u", "/home/featurize/work/RSI_Implementation_20261003/tools/finalize_pilot.py", "--scope", "T2"]}
+{"output_dir": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17", "scope": "T2", "corrected_B_rows": 0, "test_scoring_locked": true}
+{"stage": "source_threshold_sensitivity", "args": ["/environment/miniconda3/bin/python", "-u", "/home/featurize/work/RSI_Implementation_20261003/tools/source_threshold_sensitivity.py", "--inputs", "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/corrected_inputs/*.csv", "--config", "/home/featurize/work/RSI_Implementation_20261003/configs/p2_ima_m_v2.yaml"]}
+{"status": "complete", "inputs": 15, "reference_rows": 9984, "summary_rows": 768, "output": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/sensitivity/source_threshold_sensitivity.csv"}
+{"stage": "paired_control_comparison", "args": ["/environment/miniconda3/bin/python", "-u", "/home/featurize/work/RSI_Implementation_20261003/tools/paired_control_comparison.py"]}
+{"status": "complete", "comparisons": 39, "output_dir": "/home/featurize/work/RSI_Implementation_20261003/outputs/seed17/paired_controls", "test_scoring_locked": true}

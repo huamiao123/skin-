@@ -1,0 +1,76 @@
+{
+  "manifest_role": "post-exact-RGB-cleanup intermediate metadata summary; replaced after all near-duplicate review cleanup",
+  "selected_manifest_sha256": "ee9f8b965abb6c24820d8d0f5198c3459dad8b121e8c153d83e8093217c99d3f",
+  "M": {
+    "train": {
+      "images": 1483,
+      "references": 3128,
+      "rater_count_distribution": {
+        "2": 1349,
+        "3": 107,
+        "4": 26,
+        "5": 1
+      },
+      "tool_reference_counts": {
+        "T1": 1291,
+        "T3": 1220,
+        "T2": 617
+      },
+      "skill_reference_counts": {
+        "S2": 1019,
+        "S1": 2109
+      },
+      "T3_containing_images": 1032,
+      "known_group_count": 1441
+    },
+    "val": {
+      "images": 224,
+      "references": 473,
+      "rater_count_distribution": {
+        "2": 204,
+        "3": 15,
+        "4": 5
+      },
+      "tool_reference_counts": {
+        "T3": 177,
+        "T1": 210,
+        "T2": 86
+      },
+      "skill_reference_counts": {
+        "S2": 149,
+        "S1": 324
+      },
+      "T3_containing_images": 148,
+      "known_group_count": 223
+    },
+    "test": {
+      "images": 451,
+      "references": 948,
+      "rater_count_distribution": {
+        "2": 411,
+        "3": 35,
+        "4": 4,
+        "5": 1
+      },
+      "tool_reference_counts": {
+        "T3": 389,
+        "T1": 363,
+        "T2": 196
+      },
+      "skill_reference_counts": {
+        "S2": 316,
+        "S1": 632
+      },
+      "T3_containing_images": 316,
+      "known_group_count": 442
+    }
+  },
+  "source_versions": {
+    "IMA": "Zenodo 14201693 v1.1",
+    "ISIC_images": "official S3 full image objects as retrieved 2026-10-03; frozen Zenodo metadata defines identity groups"
+  },
+  "original_files_modified": false,
+  "dataset_size_semantics": "M/H/T1 image sets overlap; selected reference sets can differ, so do not sum image counts",
+  "data_storage": "/home/featurize/rsi_data",
+  "image_id_not_patient_id": true
+}

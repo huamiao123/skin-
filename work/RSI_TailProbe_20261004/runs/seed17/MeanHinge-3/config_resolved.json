@@ -1,0 +1,183 @@
+{
+  "config": {
+    "version": 2,
+    "protocol_id": "P2-IMA-M-v2",
+    "development_seeds": [
+      17,
+      29
+    ],
+    "formal_seeds": [
+      101,
+      202,
+      303
+    ],
+    "metadata_counts": {
+      "train": 1486,
+      "val": 224,
+      "test": 451
+    },
+    "audited_counts": {
+      "M": {
+        "images": {
+          "train": 1471,
+          "val": 223,
+          "test": 451
+        },
+        "references": {
+          "train": 3102,
+          "val": 471,
+          "test": 948
+        }
+      },
+      "H": {
+        "images": {
+          "train": 299,
+          "val": 47,
+          "test": 87
+        },
+        "references": {
+          "train": 643,
+          "val": 104,
+          "test": 183
+        }
+      },
+      "T1": {
+        "images": {
+          "train": 113,
+          "val": 20,
+          "test": 35
+        },
+        "references": {
+          "train": 268,
+          "val": 49,
+          "test": 79
+        }
+      }
+    },
+    "file_audit_complete": true,
+    "test_scoring_locked": true,
+    "reference_selection": "source_filter_then_one_per_annotator",
+    "split_rule": "shared_M_known_group_test_val_train",
+    "input_size": [
+      256,
+      256
+    ],
+    "threshold": 0.5,
+    "cnn": "resnet34_through_layer3",
+    "transformer": "deit_small_patch16_non_distilled",
+    "message": {
+      "query_stride": 8,
+      "context_stride": 16,
+      "width": 128,
+      "heads": 4
+    },
+    "freeze_all_except_message_in_B_D": true,
+    "epochs": {
+      "A_CNN": 100,
+      "A_T": 100,
+      "B": 40,
+      "D": 40
+    },
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "effective_batch": 8,
+    "microbatch_start": 4,
+    "lr": {
+      "encoder": 0.0001,
+      "decoder": 0.0003,
+      "B": 0.0003,
+      "D": 0.0001
+    },
+    "loss": {
+      "bce": 0.5,
+      "soft_dice": 0.5,
+      "epsilon_L": 0.0
+    },
+    "pilot_objectives": [
+      "d0",
+      "rsi",
+      "mean_hinge",
+      "abs_hard"
+    ],
+    "pilot_weight": 1.0,
+    "conditional_weight_grid": [
+      0.3,
+      1.0,
+      3.0
+    ],
+    "abs_hard_quantile": 0.75,
+    "abs_hard_quantile_source": "B_canonical_train_image_then_rater_weighted",
+    "fixed_shrink": {
+      "message_source": "selected_D0",
+      "alphas": [
+        0.0,
+        0.3333333333333333,
+        0.6666666666666666,
+        1.0
+      ]
+    },
+    "checkpoint_metric": "val_macro_mean_rater_hard_dice",
+    "checkpoint_tie": "earlier_epoch",
+    "workpoint_dice_tolerance": 0.002,
+    "harm_dice_epsilon": 0.005,
+    "gradient_diagnostic_every_epochs": 5,
+    "tta": false,
+    "postprocess": "none",
+    "local_six_action_policy": "deferred",
+    "manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/final_references.csv",
+    "audit": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/file_audit.json",
+    "audit_input_manifest": "/home/featurize/work/RSI_Implementation_20261003/data_manifests/selected_references.csv",
+    "data_root": "/home/featurize/rsi_data",
+    "cache_dir": "/home/featurize/rsi_data/ima/cache256",
+    "run_root": "/home/featurize/rsi_runs/P2-IMA-M-v2",
+    "workers": 4,
+    "amp": true,
+    "decoder_activation": "GELU",
+    "image_normalization": "ImageNet_mean_std_inside_model",
+    "augmentation": {
+      "brightness": [
+        0.9,
+        1.1
+      ],
+      "contrast": [
+        0.9,
+        1.1
+      ],
+      "saturation": [
+        0.9,
+        1.1
+      ],
+      "hue": [
+        -0.02,
+        0.02
+      ],
+      "horizontal_flip_p": 0.5,
+      "vertical_flip_p": 0.5,
+      "rot90_uniform": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rng": "sha256(seed:epoch:image_id)",
+      "same_D_sequence": true
+    },
+    "scheduler": {
+      "name": "cosine",
+      "A_warmup_epochs": 5,
+      "BD_warmup_epochs": 2
+    },
+    "image_resize": "PIL_BILINEAR_antialias",
+    "mask_resize": "PIL_NEAREST",
+    "align_corners": false,
+    "gradient_clip": 1.0,
+    "eval_batch": 4,
+    "bootstrap_repeats": 2000,
+    "strict_test_scoring_lock": true
+  },
+  "seed": 17,
+  "stage": "D",
+  "method": "mean_hinge",
+  "weight": 3.0,
+  "q": 0.1325787454843521
+}

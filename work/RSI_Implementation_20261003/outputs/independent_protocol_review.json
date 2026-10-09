@@ -1,0 +1,290 @@
+{
+  "reviewed_utc": "2026-10-03T11:58:25.574993+00:00",
+  "reviewer": "review_other_models with independent data/metric review by review_data",
+  "scope": "Read-only comparison of both RSI v2 documents with frozen sources, config, T0 outputs and actual seed17 A-stage checkpoint tensors; CPU only; no training or model scoring",
+  "conclusion": "No blocking defect found in the actual pretraining/A-stage chain, fixed epoch budget, val selection, original-coordinate metric/reference weighting, or risk objectives. T1 is still in progress and no B mechanism conclusion exists. One reporting blocker (B metadata defaults to d0) has already been assigned an independent postprocessing correction by root/EGE; it does not affect trained weights or checkpoint selection.",
+  "source_bundle_hash": "36825cbb7a90064f3db3cfd97eb16ec62b29aa1947e17e88c7ad4759024268fb",
+  "manifest_sha256": "3d99874f14ae5f316eec36e21141043d75bd4fd17ccfb31e3174198dee269596",
+  "source_documents": [
+    {
+      "path": "/home/featurize/task/皮肤病灶分割_RSI_首轮测试方案_v2_2026-10-03.md",
+      "sha256": "e148c40cc939762a50264332f5dbc0ebc8e7320d500ef0168e29a7c538ab91dd"
+    },
+    {
+      "path": "/home/featurize/task/皮肤病灶分割_参考稳定交互_可执行研究方案_v2_2026-10-03.md",
+      "sha256": "b64ce886f8e88182206f394b210379c9525ee9e3c97d83e3f487a43a7687a494"
+    }
+  ],
+  "actual_stage_snapshot": {
+    "A_CNN": {
+      "complete_epochs": 100,
+      "selected_epoch": 36,
+      "selected_val_macro_mean_rater_hard_dice": 0.8552520003612387,
+      "last_epoch_val_dice": 0.8534468432740713,
+      "selected_checkpoint_sha256": "734b2b491b7cc973c28c36151636c22b65368854ab16d5d97e4249c1a1504691",
+      "last_checkpoint_sha256": "906b5038b167f4f2816bebfba12fce4c5951f52d46e5dfea1d00230d3e0a0f25",
+      "optimizer_step_attempts": 18400,
+      "successful_optimizer_steps": 18396,
+      "amp_skipped_steps": 4,
+      "selected_and_last_checkpoints_preserved": true
+    },
+    "A_T": {
+      "latest_csv_epoch_at_report": 84,
+      "latest_tensor_snapshot_checked_epoch": 72,
+      "selected_epoch_in_checked_snapshot": 40,
+      "stage_in_progress": true,
+      "observed_successful_optimizer_steps": 15453,
+      "observed_attempted_optimizer_steps": 15456,
+      "observed_amp_skipped_steps": 3
+    },
+    "B": {
+      "state": "not_yet_run",
+      "not_a_missing_implementation": true
+    },
+    "val_images": 223,
+    "M_val_references": 471,
+    "audited_M_train_images": 1471
+  },
+  "cpu_checkpoint_tensor_verification": {
+    "selected_A_CNN_to_A_T_epoch72_CNN_parameters_and_buffers": {
+      "tensors_compared": 208,
+      "mismatches": 0
+    },
+    "selected_A_CNN_to_A_T_epoch72_message_state": {
+      "tensors_compared": 8,
+      "mismatches": 0
+    },
+    "actual_A_CNN_unused_DeiT_matches_official_initialization": {
+      "tensors_compared": 150,
+      "mismatches": 0,
+      "CLS_shape": [
+        1,
+        1,
+        384
+      ],
+      "pos_shape": [
+        1,
+        257,
+        384
+      ],
+      "source_patch_position_interpolation": "bicubic14x14to16x16,CLS unchanged"
+    },
+    "A_T_Transformer_updated": {
+      "tensors_compared": 152,
+      "changed_tensors": 150,
+      "unchanged_tensors_are_ImageNet_normalization_buffers": true
+    },
+    "A_T_auxiliary_head_updated": {
+      "tensors_compared": 11,
+      "changed_tensors": 11
+    },
+    "A_T_initialization_hash_is_selected_A_CNN_hash": true,
+    "A_CNN_A_T_current_source_bundle_hash_equal": true,
+    "A_CNN_A_T_configured_final_manifest_hash_equal": true
+  },
+  "pretraining": {
+    "ResNet34": {
+      "source_url": "https://download.pytorch.org/models/resnet34-b627a593.pth",
+      "sha256": "b627a593bcbe140c234610266fe4f8ae95ea42fc881d091c9b6052e6b1d0590f",
+      "loaded": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "initialization": "ImageNet1K classification"
+    },
+    "DeiT_Small": {
+      "source_url": "https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth",
+      "sha256": "cd65a15597004d0ce19d7a9daef969903972db5b398e3a5febcd3c4df1d8f59f",
+      "loaded": true,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "initialization": "ImageNet1K classification",
+      "distilled": false,
+      "source_position_shape": [
+        1,
+        197,
+        384
+      ],
+      "target_position_shape": [
+        1,
+        257,
+        384
+      ],
+      "cls_shape": [
+        1,
+        1,
+        384
+      ]
+    },
+    "P2_extra_ISIC_segmentation_pretraining_detected": false,
+    "evidence": [
+      "rsi/models.py:51-69 hashes and strict cache load",
+      "rsi/models.py:100-105 strict ImageNet ResNet34 loading",
+      "rsi/models.py:183-205 non-distilled DeiT strict load and CLS interpolation",
+      "rsi/train.py:225 constructs pretrained=True;238 loads selected stage state",
+      "outputs/pretrained_audit.json actual GPU FP32 pretrained acceptance"
+    ]
+  },
+  "requirements_checked": [
+    {
+      "requirement": "A_CNN100 -> selected A_T100 -> selected B40; no partial stage initialization",
+      "status": "source_verified_and_actual_A_stage_chain_verified",
+      "evidence": [
+        "rsi/run_pilot.py:28-33",
+        "rsi/train.py:227-240 validates prior stage, same seed/manifest,DONE budget and selected checkpoint hash",
+        "rsi/train_anchor.py:12",
+        "rsi/train_message.py:11"
+      ]
+    },
+    {
+      "requirement": "Only stage-authorized components train; B/D freeze encoder/prefix/tail parameters and buffers",
+      "status": "source_and_T0_verified;actual_B_pending",
+      "evidence": [
+        "rsi/models.py:306-332 stage trainability and train override",
+        "rsi/models.py:356-383 no_grad features/anchor, differentiable final tail",
+        "rsi/train.py:311-317 each epoch frozen-state hash and fixed FP32 z0",
+        "outputs/T0/feasibility_report.json invariants passed"
+      ]
+    },
+    {
+      "requirement": "Fixed complete budget; selected/last checkpoint; max M val hardDice and earlier exact tie",
+      "status": "verified_actual_A_CNN100_and_source",
+      "evidence": [
+        "rsi/train.py:284 full epoch loop to fixed budget",
+        "rsi/train.py:329 strict > improvement",
+        "rsi/train.py:354-362 best/latest/DONE",
+        "A_CNN/DONE.json100epochs selected36"
+      ]
+    },
+    {
+      "requirement": "Common D initialization/new optimizer/data/augmentation/effectivebatch8",
+      "status": "source_verified;D pending by gate",
+      "evidence": [
+        "rsi/run_pilot.py:54-63 all D init=base",
+        "rsi/train.py:208 resets seed",
+        "rsi/train.py:241 new optimizer/scheduler/scaler after prior model load",
+        "rsi/train.py:287-309 effectivebatch8 accumulation weighted by actual final window samples",
+        "rsi/datasets.py:154-169 stateless seed/epoch/image augmentation"
+      ]
+    },
+    {
+      "requirement": "Original-space threshold0.5, all references, image-macro loss/metrics, valid/present exclusion and immutable q",
+      "status": "independent_data_metric_review_verified",
+      "evidence": [
+        "outputs/independent_data_metric_review.json",
+        "rsi/train.py:119-130",
+        "rsi/objectives.py:79-101,131-185,218-224",
+        "rsi/train.py:370-385"
+      ]
+    },
+    {
+      "requirement": "No Transformer decoder bypass, correct feature scales and zero final Wo",
+      "status": "source_and_actual_pretrained_T0_FP32_verified",
+      "evidence": [
+        "rsi/models.py:94-141",
+        "rsi/models.py:230-260",
+        "rsi/models.py:365-383",
+        "outputs/pretrained_audit.json actual shapes and11model unit tests"
+      ]
+    },
+    {
+      "requirement": "No test/H/T1 model selection or extra training labels",
+      "status": "source_verified_and_actual_A_CNN_val223/471_verified",
+      "evidence": [
+        "rsi/train.py:25-31 M train/val only",
+        "rsi/train.py:103 rejects test scoring",
+        "rsi/export.py:31-48 val sources share exact M model outputs",
+        "rsi/run_pilot.py:23-90 no formal/test execution",
+        "outputs/independent_data_metric_review.json actual22300per-image val rows"
+      ]
+    }
+  ],
+  "blocking_training_findings": [],
+  "blocking_reporting_findings": [
+    {
+      "id": "B_method_metadata_is_D0",
+      "severity": "reporting_blocker_recoverable_without_retraining",
+      "evidence": [
+        "rsi/export.py:21 method defaults d0",
+        "rsi/run_pilot.py:44,57 B export does not override method",
+        "rsi/summarize.py:83-87 explicit method takes priority over B run_id",
+        "rsi/summarize.py:149-158 duplicate D0 outputs raise",
+        "rsi/summarize.py:187-189 requires one selected D0"
+      ],
+      "effect": "Ordinary B rows are mislabeled as D0, so the original final summary can confuse the comparator or fail when actual D0 rows are included. T1 training/evaluate/val epoch selection are unaffected.",
+      "status": "Root has assigned EGE independent tools/finalize_pilot.py correction from raw CSV with original hashes retained; frozen rsi/config and raw exports remain unchanged."
+    }
+  ],
+  "nonblocking_findings": [
+    {
+      "id": "T1_review_gate_is_minimal_and_summary_delayed",
+      "severity": "review_timing_and_interpretation",
+      "evidence": [
+        "rsi/run_pilot.py:38 mean_gain>0 and G_plus>0 only",
+        "rsi/run_pilot.py:44-54 successful B exports then immediately starts D0; dedicated summary only failure branch46 or final70"
+      ],
+      "effect": "Automatic continue_T2 does not itself answer visible gain magnitude, added-harm tails, source/threshold robustness or soft-hard agreement. These must be assessed from completed B exports; the binary flag is not a mechanism-support conclusion.",
+      "status": "Root plans immediate independent T1 interpretation after B; additional exports/postprocessing do not require retraining."
+    },
+    {
+      "id": "Sign_flip_other_epsilon_tables_missing",
+      "severity": "supplemental_reporting",
+      "evidence": [
+        "rsi/metrics.py:200-203 sensitivity reports H/any-harm at0/0.002/0.01; main signflip only0.005"
+      ],
+      "effect": "The main metric is correct. Supplemental sign-flip tolerances should be computed from saved full-reference B gains to answer the threshold-last-digit T1 question.",
+      "status": "Root/EGE independent postprocessing already planned; no GPU needed."
+    },
+    {
+      "id": "ImageNet_weight_hashes_not_embedded_per_training_checkpoint",
+      "severity": "low_provenance_completeness",
+      "evidence": [
+        "rsi/train.py:347-353 checkpoint payload has source/data/init hashes but no pretrained-audit hashes",
+        "rsi/models.py:280-292 global outputs/pretrained_audit.json records current exact source weights"
+      ],
+      "effect": "Current pretraining is verified and no weight mismatch was found. Long-term checkpoint portability should bind the available global exact ImageNet weight hashes to each seed/stage in an immutable companion provenance record.",
+      "status": "Current review records both full ImageNet SHA256 plus selected A_CNN checkpoint and frozen source bundle; no training invalidation."
+    }
+  ],
+  "amp_observation": {
+    "nonfinite_gradient_norms_are_handled_by_GradScaler_and_successful_optimizer_steps_logged": true,
+    "A_CNN_skip_fraction": 0.0002173913043478261,
+    "note": "Fixed budget is epochs/attempted updates, not identical successful step counts. D-stage successful/attempted counts must be reported if overflow frequency differs materially; current small A-stage skip counts do not imply output contamination.",
+    "evidence": [
+      "rsi/train.py:179-201 scaler step hook and finite norm handling",
+      "rsi/train.py:306-309,332-350 skipped/actual update accounting",
+      "outputs/failed/amp_logging_failure.json preserves earlier logging failure and fresh100epoch restart"
+    ]
+  },
+  "data_metric_review": {
+    "path": "/home/featurize/work/RSI_Implementation_20261003/outputs/independent_data_metric_review.json",
+    "sha256": "1c1216781a5c99780ca30bc208a54dead3f5f4b2f303faead12b1f68afefae6f"
+  },
+  "pending_are_not_defects": [
+    "A_T finishing its fixed100epochs and B40 not yet completed",
+    "B original-coordinate per-reference gains/harm/source/threshold/soft-hard diagnostics",
+    "Conditional weight grid/seed29/formal101202303 and test release remain protocol-gated"
+  ],
+  "changes": "Only this new review JSON written; no rsi source/config/training checkpoint/log modifications; no GPU used.",
+  "independent_finalizer_read_only_review": {
+    "reviewed_utc": "2026-10-03T12:17:25.622489+00:00",
+    "path": "/home/featurize/work/RSI_Implementation_20261003/tools/finalize_pilot.py",
+    "sha256": "95de6989fc16e1de9ae477ab49c5252137907856a8f1f894c3c09d032bf766d8",
+    "result": "No remaining material blocker found in source/matrix/provenance/backup/frozen-boundary scope.",
+    "earlier_findings_fixed": [
+      "DONE/CSV objective, seed, shared q and initialization chain binding",
+      "Bidirectional output containment rejection for input/run/rsi/configs/tools/tests/.git"
+    ],
+    "verified": [
+      "B method correction only in memory and corrected copies",
+      "Explicit val-only input and seed17 restriction",
+      "M/H/T1 full reference cohort parity",
+      "Full epoch budget and selected checkpoint hash binding",
+      "Staged outputs, previous-output backup and rollback",
+      "Original CSV and frozen training source hashes rechecked before publication"
+    ],
+    "tests": "9 CPU tests passed as reported by EGE; independently read final regression tests, not redundantly rerun.",
+    "scope_limitation": "The helper binds to DONE selected checkpoint hashes and does not independently rehash checkpoint files; actual A_CNN/A_T checkpoint bodies and chain were independently reviewed on CPU, B/D remain pending until training completion.",
+    "training_source_or_config_changed": false,
+    "GPU_used": false
+  }
+}
