@@ -95,3 +95,7 @@ IMA 的原始参考可能存在很大分歧；来源筛选与选择顺序按方�
 [EGE / Wave / 双分支 / U-Net / Swin / PTU 及 RSI 工作目录存档](work/README.md)，包括修复后的 seed42/43 重训日志，以及已完成300轮的 Transformer seed42 重训完整结果。历史、修复后与进行中结果的口径说明见该入口。原始数据和权重保留本地。
 
 [2026-10-09 Swin/PTU最终重训报告](work/experiments/transformer_seed42_20261009/FINAL_RESULTS.md)：最低验证loss选中模型的DSC分别为0.89719584和0.83826920，完整日志、300轮曲线数据和本地权重哈希清单已存档。
+
+### 独立 CNN＋普通 Transformer（seed42，2026-10-10）
+
+源码及完整训练记录：[work/experiments/cnn_transformer_seed42_20261010](work/experiments/cnn_transformer_seed42_20261010)。普通 CNN U-Net＋标准全局 Transformer，四尺度残差融合，不基于 EGE、不使用 Swin。300轮完成，最佳第59轮，验证 Dice 89.22%、IoU 80.54%。

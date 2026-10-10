@@ -1,0 +1,43 @@
+{
+  "model": "cnn_transformer",
+  "seed": 42,
+  "epochs": 300,
+  "train_batch": 64,
+  "val_batch": 8,
+  "final_batch": 1,
+  "accumulation": 1,
+  "workers": 4,
+  "amp": false,
+  "cnn_lr": 0.001,
+  "transformer_lr": 0.0001,
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "eta_min": 1e-05,
+  "loss": "final BCE+Dice, equal weights, no deep supervision",
+  "selection": "minimum validation loss (mean batch losses, legacy EGE convention)",
+  "split": "legacy 1886/808 development split, no independent test",
+  "depths": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "params": 17421509,
+  "torch": "2.2.2+cu121",
+  "device": "NVIDIA GeForce RTX 4090",
+  "augmentation": "HFlip .5, VFlip .5, resampled rotation .5 [0,360]; nearest mask interpolation",
+  "activation_checkpointing": true,
+  "architecture": "independent plain convolution U-Net + global nn.TransformerEncoderLayer encoder",
+  "pretrained": false,
+  "patch_size": 8,
+  "attention": "global standard multihead self-attention; no windows or spatial reduction",
+  "transformer_dims": [
+    64,
+    128,
+    256,
+    512
+  ],
+  "fusion": "scalar protected residual at 32/16/8/4, gamma init0.1",
+  "transformer_encoder_params": 9206976,
+  "cnn_fusion_params": 8214533
+}
