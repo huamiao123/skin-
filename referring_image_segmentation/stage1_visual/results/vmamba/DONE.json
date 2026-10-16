@@ -1,0 +1,32 @@
+{
+  "model": "vmamba",
+  "epochs": 300,
+  "seed": 42,
+  "best_epoch": 20,
+  "best_val_loss": 0.3195050352870828,
+  "final": {
+    "loss": 0.3195050352870828,
+    "macro": {
+      "dice": 0.8755597969280979,
+      "iou": 0.7965994200179435,
+      "precision": 0.8873114819160693,
+      "recall": 0.9017773642575782
+    },
+    "pooled": {
+      "dice": 0.8793265211726482,
+      "iou": 0.7846411446202476,
+      "precision": 0.8690216267203072,
+      "recall": 0.8898787401400091,
+      "specificity": 0.9568490738589295
+    },
+    "counts": {
+      "tp": 11470173,
+      "fp": 1728777,
+      "fn": 1419418,
+      "tn": 38334720
+    }
+  },
+  "smoke_only": false,
+  "evaluation_split": "V_dev",
+  "encoder_unchanged": true
+}

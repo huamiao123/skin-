@@ -1,0 +1,46 @@
+{
+  "metric_version": "foreground_v1_20261016",
+  "n": 808,
+  "macro": {
+    "dice": 0.8826520174258943,
+    "iou": 0.8069789048445006,
+    "precision": 0.8939168243343477,
+    "recall": 0.9054463469426547,
+    "boundary_f1": 0.3258723556656944,
+    "hd95_pixels": 16.79164226258374,
+    "hd95_diagonal": 0.04638079730910775
+  },
+  "pooled": {
+    "dice": 0.8890941703495161,
+    "iou": 0.8003326174183866,
+    "precision": 0.8748184872457864,
+    "recall": 0.9038434966633154
+  },
+  "prec_at": {
+    "0.5": 0.9443069306930693,
+    "0.6": 0.9034653465346535,
+    "0.7": 0.8242574257425742,
+    "0.8": 0.6571782178217822,
+    "0.9": 0.3155940594059406
+  },
+  "threshold_jaccard_065": 0.7488535614361771,
+  "counts": {
+    "tp": 11650173,
+    "fp": 1667073,
+    "fn": 1239418,
+    "tn": 38396424
+  },
+  "seed": 44,
+  "decoder": "light",
+  "criterion": "last",
+  "selected_epoch": 300,
+  "checkpoint_sha256": "71629082023274fbfc0fd0ee17623b57cd9120e92dce9df679979d68db535114",
+  "probability_sha256": "cc5989d8bd420b55284d6539cb5ffed5638c7bba3185fcb6ac5c4eb8eb835840",
+  "parameters": {
+    "adapter_hash": "c73275b86953aa50d2aaac6139f8aa8a048a535067e314e90894da5964164ccf",
+    "decoder_hash": "508949250fa6acc08037d279751fec3010fd360abf074c7cc003e9465f942f57",
+    "trainable_params": 246849,
+    "decoder_params": 148033,
+    "total_params": 21833793
+  }
+}

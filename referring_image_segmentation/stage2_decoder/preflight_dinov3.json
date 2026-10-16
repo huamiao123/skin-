@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "model": "dinov3",
+  "encoder_batch": 64,
+  "decoder_initial_hash": "a4cc03043268767ff3b5add5ee9af1874959540d10f801662f24a703d4e4bf99",
+  "adapter_initial_hash": "33c93264c5cd12f8ce95b40c0ece32ca79d50285a2cf81547f252ed9901b3a08",
+  "encoder_initial_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "parameters": {
+    "encoder": 21586944,
+    "adapter": 98816,
+    "decoder": 407649,
+    "trainable": 506465
+  },
+  "decoder_spec": {
+    "channels": 64,
+    "resolutions": [
+      64,
+      32,
+      16,
+      8
+    ],
+    "blocks_per_level": 2,
+    "window_size": 8,
+    "shift_size": 4,
+    "num_heads": 4,
+    "mlp_ratio": 4.0,
+    "dropout": 0.0,
+    "drop_path": 0.0,
+    "norm": "LayerNorm",
+    "output_size": 256,
+    "fusion": "bilinear upsample and add; same topology as light FPN",
+    "implementation": "timm 1.0.22 SwinTransformerBlock"
+  },
+  "seconds_per_training_update": 0.266232782500083,
+  "training_peak_gib": 3.2671217918395996,
+  "frozen_encoder_verified": true,
+  "all_trainable_gradients_finite": true,
+  "adapter_readout_match_light": true,
+  "historical_metrics_match": true,
+  "inference": {
+    "light": {
+      "1": {
+        "seconds_per_batch": 0.014046575100019254,
+        "images_per_second": 71.1917312853458,
+        "peak_allocated_gib": 0.27954959869384766
+      },
+      "64": {
+        "seconds_per_batch": 0.022013579000031314,
+        "images_per_second": 2907.2964464301313,
+        "peak_allocated_gib": 0.6160478591918945
+      }
+    },
+    "swin": {
+      "1": {
+        "seconds_per_batch": 0.02367154589992424,
+        "images_per_second": 42.24481173420957,
+        "peak_allocated_gib": 0.28771305084228516
+      },
+      "64": {
+        "seconds_per_batch": 0.03502749250001216,
+        "images_per_second": 1827.1362130754233,
+        "peak_allocated_gib": 1.3977365493774414
+      }
+    }
+  },
+  "inference_note": "Synthetic normalized image; encoder+adapter+decoder; no data loading; BF16; 3 warmups, 10 repeats; both models resident",
+  "source_sha256": {
+    "/home/featurize/referring_image_segmentation/stage2_decoder/models.py": "50d34405ef9fee08dba57bf327715b1c8a86997a193b8b396d1b6fcbb7c2a5ac",
+    "/home/featurize/referring_image_segmentation/stage2_decoder/train.py": "9d2fe62826cffa08721f9a003caa8b401ec2cf8d95e0288fc8dc33d75edffe7c",
+    "/home/featurize/referring_image_segmentation/stage2_decoder/launch.py": "1e64eb9b98526898fd7117189c972eb89444ec9624790a3c24b1d54cb708fe30",
+    "/home/featurize/referring_image_segmentation/stage2_decoder/validate.py": "0b17f78e220f39c104f7f3e8173dfb54e32be0947761e5a015b5eddac17f1e22",
+    "/home/featurize/referring_image_segmentation/stage2_decoder/PROTOCOL.md": "3fb1e18659bcd90465270b3e0c75382fa9c93f7a235e96d269449bfff8bbdaef",
+    "/home/featurize/referring_image_segmentation/evaluation.py": "f40d036e8dd551d57bd093832b56132db29451a5c1548ab7e5073f049d7aa934",
+    "/home/featurize/referring_image_segmentation/evaluate_runs.py": "79c2b772576d351b9f539df73acf89317f449db1ed0111e6097f9756f126ebe7",
+    "/home/featurize/referring_image_segmentation/stage1_visual/models.py": "836f41b7734717b12fdb84c0b4aee3e2eeec6aebba7232eb1e8ab586c73ff2c6",
+    "/home/featurize/referring_image_segmentation/stage1_visual/data.py": "e514c1a78d185610ae97e42b95e452c24f719ca767d5e9d78c3114a4a0a4c562",
+    "/environment/miniconda3/lib/python3.11/site-packages/timm/models/swin_transformer.py": "f473ee032d14895f6e2013dfcdb49b1ae83d3501175def260fda8aba3e78b49b"
+  },
+  "torch_version": "2.2.2+cu121",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

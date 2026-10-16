@@ -1,0 +1,92 @@
+{
+  "model": "vmamba",
+  "encoder_batch": 64,
+  "optimizer_batch": 64,
+  "records": [
+    {
+      "batch": 64,
+      "seconds": 0.039516475333281655,
+      "images_per_second": 1619.5776435075365,
+      "peak_gib": 1.3977904319763184,
+      "passed": true
+    },
+    {
+      "batch": 128,
+      "seconds": 0.08167394200002794,
+      "images_per_second": 1567.2073229911716,
+      "peak_gib": 2.6856322288513184,
+      "passed": true
+    },
+    {
+      "batch": 256,
+      "seconds": 0.17107796466666514,
+      "images_per_second": 1496.3937670102646,
+      "peak_gib": 5.259850978851318,
+      "passed": true
+    },
+    {
+      "batch": 512,
+      "seconds": 0.34599016233331287,
+      "images_per_second": 1479.8108609422252,
+      "peak_gib": 10.408288478851318,
+      "passed": true
+    },
+    {
+      "batch": 1024,
+      "seconds": 0.6962603136666227,
+      "images_per_second": 1470.7143002413072,
+      "peak_gib": 20.70443105697632,
+      "passed": true
+    }
+  ],
+  "pretrained": {
+    "path": "/home/featurize/ris_visual_stage1_20261016/weights/vmamba_tiny_imagenet.pth",
+    "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+    "strict_load": true,
+    "missing": [],
+    "unexpected": [],
+    "channels": [
+      96,
+      192,
+      384,
+      768
+    ],
+    "params": 29478528
+  },
+  "frozen_hash": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a",
+  "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+  "feature_shapes": [
+    [
+      64,
+      96,
+      64,
+      64
+    ],
+    [
+      64,
+      192,
+      32,
+      32
+    ],
+    [
+      64,
+      384,
+      16,
+      16
+    ],
+    [
+      64,
+      768,
+      8,
+      8
+    ]
+  ],
+  "parameters": {
+    "encoder": 29478528,
+    "trainable": 240705,
+    "decoder": 148033
+  },
+  "frozen_and_backward_checks_passed": true,
+  "device": "NVIDIA GeForce RTX 4090",
+  "total_memory_bytes": 50866487296
+}

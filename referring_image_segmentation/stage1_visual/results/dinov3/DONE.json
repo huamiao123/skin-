@@ -1,0 +1,32 @@
+{
+  "model": "dinov3",
+  "epochs": 300,
+  "seed": 42,
+  "best_epoch": 12,
+  "best_val_loss": 0.2856580083913142,
+  "final": {
+    "loss": 0.2856580083913142,
+    "macro": {
+      "dice": 0.8821885439223329,
+      "iou": 0.8053376952238179,
+      "precision": 0.8834520835483869,
+      "recall": 0.9155937794502694
+    },
+    "pooled": {
+      "dice": 0.8961647589085805,
+      "iou": 0.8118646022050316,
+      "precision": 0.8894390437667336,
+      "recall": 0.9029929654090654,
+      "specificity": 0.963887276240514
+    },
+    "counts": {
+      "tp": 11639210,
+      "fp": 1446802,
+      "fn": 1250381,
+      "tn": 38616695
+    }
+  },
+  "smoke_only": false,
+  "evaluation_split": "V_dev",
+  "encoder_unchanged": true
+}

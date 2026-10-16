@@ -1,0 +1,20 @@
+{
+  "upstream_repositories": [
+    {
+      "name": "VMamba",
+      "restore_path": "stage1_visual/vendor/VMamba",
+      "url": "https://github.com/MzeroMiko/VMamba.git",
+      "commit": "2ed52ead062a51a64521ed3871d52914bf532876",
+      "working_tree_clean": true
+    },
+    {
+      "name": "VM-UNet",
+      "restore_path": "stage1_visual/vendor/VM-UNet",
+      "url": "https://github.com/JCruan519/VM-UNet.git",
+      "commit": "b87827eb5a5faff00bd4b7b6505e56d3ca813ca2",
+      "working_tree_clean": true
+    }
+  ],
+  "pretrained_weight_sources": "../stage1_visual/provenance.json",
+  "runtime_note": "See stage1_visual/provenance.json and dependencies.log; binary extensions are local only."
+}

@@ -1,0 +1,55 @@
+{
+  "python": "3.11.8 (main, Feb 26 2024, 21:39:34) [GCC 11.2.0]",
+  "torch": "2.2.2+cu121",
+  "torchvision": "0.17.2+cu121",
+  "timm": "1.0.22",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_bytes": 50866487296,
+  "git": {
+    "VMamba": "2ed52ead062a51a64521ed3871d52914bf532876",
+    "VM-UNet": "b87827eb5a5faff00bd4b7b6505e56d3ca813ca2"
+  },
+  "source_sha256": {
+    "models.py": "836f41b7734717b12fdb84c0b4aee3e2eeec6aebba7232eb1e8ab586c73ff2c6",
+    "data.py": "4e2a5bc4918f5e4c53ec9b7915dfead8177063ea57eafef67ee63f8b3c9ce6ee",
+    "train.py": "493272289e5d77988bcfc564b8c87965a211a53dd63af006c18feb1bfd9a36c9",
+    "launch.py": "f69625727fcfc4ab9f86ea8fcd6707574e45e62a5060355be1d7171c5426d44a",
+    "analyze.py": "c9ad552d3143764554c65744b6705da89e579dcfb91c026f273f0e0c16d568b0",
+    "validate.py": "f9d624f302d43bd07199529d26a4dd9306216078368a79e7b885803883fa0d43",
+    "benchmark.py": "d3fc39131c12e523d7b0b70a6f2dda22d506255afdc0097ccbb3cd1fd0c43dca"
+  },
+  "weights": {
+    "dinov3": {
+      "path": "/home/featurize/ris_visual_stage1_20261016/weights/dinov3_vits16/model.safetensors",
+      "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        384,
+        384,
+        384,
+        384
+      ],
+      "params": 21586944,
+      "source": "https://huggingface.co/timm/vit_small_patch16_dinov3.lvd1689m/tree/3bf4720a82ec2066db88137180ff1f83a675cef0"
+    },
+    "vmamba": {
+      "path": "/home/featurize/ris_visual_stage1_20261016/weights/vmamba_tiny_imagenet.pth",
+      "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        96,
+        192,
+        384,
+        768
+      ],
+      "params": 29478528,
+      "source": "https://github.com/MzeroMiko/VMamba/releases/download/%23v2cls/vssm1_tiny_0230s_ckpt_epoch_264.pth"
+    }
+  },
+  "selective_scan_extension": "official mamba_ssm 2.2.4 cu12 torch2.2 cxx11abiFALSE cp311 wheel, extension extracted into isolated runtime"
+}

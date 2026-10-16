@@ -1,0 +1,92 @@
+{
+  "model": "dinov3",
+  "encoder_batch": 64,
+  "optimizer_batch": 64,
+  "records": [
+    {
+      "batch": 64,
+      "seconds": 0.01754440799997307,
+      "images_per_second": 3647.885981681356,
+      "peak_gib": 0.37460851669311523,
+      "passed": true
+    },
+    {
+      "batch": 128,
+      "seconds": 0.03978600266661184,
+      "images_per_second": 3217.211869022891,
+      "peak_gib": 0.6608023643493652,
+      "passed": true
+    },
+    {
+      "batch": 256,
+      "seconds": 0.08481738866673065,
+      "images_per_second": 3018.2490173788524,
+      "peak_gib": 1.2333121299743652,
+      "passed": true
+    },
+    {
+      "batch": 512,
+      "seconds": 0.16772603499998695,
+      "images_per_second": 3052.5970520917626,
+      "peak_gib": 2.3778433799743652,
+      "passed": true
+    },
+    {
+      "batch": 1024,
+      "seconds": 0.3341419026666396,
+      "images_per_second": 3064.5662571138378,
+      "peak_gib": 4.666905879974365,
+      "passed": true
+    }
+  ],
+  "pretrained": {
+    "path": "/home/featurize/ris_visual_stage1_20261016/weights/dinov3_vits16/model.safetensors",
+    "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+    "strict_load": true,
+    "missing": [],
+    "unexpected": [],
+    "channels": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "params": 21586944
+  },
+  "frozen_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+  "feature_shapes": [
+    [
+      64,
+      384,
+      16,
+      16
+    ],
+    [
+      64,
+      384,
+      16,
+      16
+    ],
+    [
+      64,
+      384,
+      16,
+      16
+    ],
+    [
+      64,
+      384,
+      16,
+      16
+    ]
+  ],
+  "parameters": {
+    "encoder": 21586944,
+    "trainable": 246849,
+    "decoder": 148033
+  },
+  "frozen_and_backward_checks_passed": true,
+  "device": "NVIDIA GeForce RTX 4090",
+  "total_memory_bytes": 50866487296
+}

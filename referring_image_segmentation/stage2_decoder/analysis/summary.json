@@ -1,0 +1,765 @@
+{
+  "stage": "stage2_decoder",
+  "evaluation_split": "ISIC2018 legacy development validation; single seed 42; not independent test",
+  "samples": 808,
+  "resolution": [
+    256,
+    256
+  ],
+  "threshold": 0.5,
+  "models": {
+    "dinov3_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.882188543922333,
+        "iou": 0.8053376952238178,
+        "precision": 0.8834520835483868,
+        "recall": 0.9155937794502693,
+        "boundary_f1": 0.2762002565216151,
+        "hd95_pixels": 16.092271783877166,
+        "hd95_diagonal": 0.04444904102764251
+      },
+      "pooled": {
+        "dice": 0.8961647589085805,
+        "iou": 0.8118646022050316,
+        "precision": 0.8894390437667336,
+        "recall": 0.9029929654090654
+      },
+      "prec_at": {
+        "0.5": 0.9504950495049505,
+        "0.6": 0.9096534653465347,
+        "0.7": 0.8477722772277227,
+        "0.8": 0.6695544554455446,
+        "0.9": 0.24752475247524752
+      },
+      "threshold_jaccard_065": 0.7563129007178777,
+      "counts": {
+        "tp": 11639210,
+        "fp": 1446802,
+        "fn": 1250381,
+        "tn": 38616695
+      }
+    },
+    "vmamba_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8755597969280977,
+        "iou": 0.7965994200179435,
+        "precision": 0.8873114819160693,
+        "recall": 0.9017773642575782,
+        "boundary_f1": 0.30380111595834774,
+        "hd95_pixels": 18.065202216955342,
+        "hd95_diagonal": 0.04989854293404442
+      },
+      "pooled": {
+        "dice": 0.8793265211726482,
+        "iou": 0.7846411446202476,
+        "precision": 0.8690216267203072,
+        "recall": 0.8898787401400091
+      },
+      "prec_at": {
+        "0.5": 0.9368811881188119,
+        "0.6": 0.8935643564356436,
+        "0.7": 0.8118811881188119,
+        "0.8": 0.6262376237623762,
+        "0.9": 0.2747524752475248
+      },
+      "threshold_jaccard_065": 0.7310939631354035,
+      "counts": {
+        "tp": 11470173,
+        "fp": 1728777,
+        "fn": 1419418,
+        "tn": 38334720
+      }
+    },
+    "dinov3_swin": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8835759278084576,
+        "iou": 0.8088522686513288,
+        "precision": 0.9332206483231856,
+        "recall": 0.8694651434116477,
+        "boundary_f1": 0.34657675843326013,
+        "hd95_pixels": 15.938883103378348,
+        "hd95_diagonal": 0.044025360652103565
+      },
+      "pooled": {
+        "dice": 0.8906623712617955,
+        "iou": 0.8028776345348196,
+        "precision": 0.9293242016540025,
+        "recall": 0.8550888852873609
+      },
+      "prec_at": {
+        "0.5": 0.9381188118811881,
+        "0.6": 0.9071782178217822,
+        "0.7": 0.823019801980198,
+        "0.8": 0.6670792079207921,
+        "0.9": 0.3465346534653465
+      },
+      "threshold_jaccard_065": 0.7520311228751015,
+      "counts": {
+        "tp": 11021746,
+        "fp": 838212,
+        "fn": 1867845,
+        "tn": 39225285
+      }
+    },
+    "vmamba_swin": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8757419066095884,
+        "iou": 0.79717520643256,
+        "precision": 0.8899838446104976,
+        "recall": 0.8986364870406612,
+        "boundary_f1": 0.30947290564816593,
+        "hd95_pixels": 18.47643928649897,
+        "hd95_diagonal": 0.05103443559244124
+      },
+      "pooled": {
+        "dice": 0.8838189709383277,
+        "iou": 0.7918240392253559,
+        "precision": 0.8795073241905408,
+        "recall": 0.8881731002946486
+      },
+      "prec_at": {
+        "0.5": 0.9393564356435643,
+        "0.6": 0.8948019801980198,
+        "0.7": 0.8193069306930693,
+        "0.8": 0.6497524752475248,
+        "0.9": 0.26113861386138615
+      },
+      "threshold_jaccard_065": 0.735823794668305,
+      "counts": {
+        "tp": 11448188,
+        "fp": 1568404,
+        "fn": 1441403,
+        "tn": 38495093
+      }
+    },
+    "mean_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8870112245097292,
+        "iou": 0.8124233149562095,
+        "precision": 0.8939459367548049,
+        "recall": 0.9131007883407106,
+        "boundary_f1": 0.29960295611629856,
+        "hd95_pixels": 15.689983362861431,
+        "hd95_diagonal": 0.04333786575227901
+      },
+      "pooled": {
+        "dice": 0.8960470682445641,
+        "iou": 0.8116714422051735,
+        "precision": 0.8912233266921875,
+        "recall": 0.9009233109103306
+      },
+      "prec_at": {
+        "0.5": 0.9554455445544554,
+        "0.6": 0.9195544554455446,
+        "0.7": 0.8551980198019802,
+        "0.8": 0.6881188118811881,
+        "0.9": 0.27351485148514854
+      },
+      "threshold_jaccard_065": 0.7616190628064529,
+      "counts": {
+        "tp": 11612533,
+        "fp": 1417347,
+        "fn": 1277058,
+        "tn": 38646150
+      }
+    },
+    "mean_swin": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8877509027177033,
+        "iou": 0.8150050005640795,
+        "precision": 0.9175092562382552,
+        "recall": 0.8905058793826895,
+        "boundary_f1": 0.3428719663057501,
+        "hd95_pixels": 15.791767481812116,
+        "hd95_diagonal": 0.04361900731761936
+      },
+      "pooled": {
+        "dice": 0.8953155433080309,
+        "iou": 0.8104717486377028,
+        "precision": 0.9132405055263145,
+        "recall": 0.8780806931732744
+      },
+      "prec_at": {
+        "0.5": 0.9467821782178217,
+        "0.6": 0.9096534653465347,
+        "0.7": 0.8452970297029703,
+        "0.8": 0.6992574257425742,
+        "0.9": 0.33663366336633666
+      },
+      "threshold_jaccard_065": 0.759072345156749,
+      "counts": {
+        "tp": 11318101,
+        "fp": 1075240,
+        "fn": 1571490,
+        "tn": 38988257
+      }
+    }
+  },
+  "runs": {
+    "dinov3_light": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/results/dinov3",
+      "best_epoch": 12,
+      "trainable_params": 246849,
+      "total_params": 21833793,
+      "config": {
+        "model": "dinov3",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "shared 64-channel FPN pixel decoder",
+        "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+        "encoder_initial_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/ris_visual_stage1_20261016/weights/dinov3_vits16/model.safetensors",
+          "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            384,
+            384,
+            384,
+            384
+          ],
+          "params": 21586944
+        },
+        "trainable_params": 246849,
+        "total_params": 21833793
+      },
+      "probability_sha256": "050ed6992743e0514ba93e0e36b9c251af940495a0cbeb93c0bcbffd85955e9e",
+      "checkpoint_sha256": "416d283f6da10903a77785fd30030d5d19761c8a2dfa4fe26a465f9b49358016"
+    },
+    "vmamba_light": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/results/vmamba",
+      "best_epoch": 20,
+      "trainable_params": 240705,
+      "total_params": 29719233,
+      "config": {
+        "model": "vmamba",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "shared 64-channel FPN pixel decoder",
+        "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+        "encoder_initial_hash": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a",
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/ris_visual_stage1_20261016/weights/vmamba_tiny_imagenet.pth",
+          "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            96,
+            192,
+            384,
+            768
+          ],
+          "params": 29478528
+        },
+        "trainable_params": 240705,
+        "total_params": 29719233
+      },
+      "probability_sha256": "7ad79cd5aadb9b39d2af1c4d9239d6e13baa4eea27b10daba373f8f3cdc6f5a1",
+      "checkpoint_sha256": "193799f5b5b22dbcb7c132adbcc2d2e2a40c7f7831482d6589767f4205705ccc"
+    },
+    "dinov3_swin": {
+      "path": "/home/featurize/referring_image_segmentation/stage2_decoder/results/dinov3",
+      "best_epoch": 13,
+      "trainable_params": 506465,
+      "total_params": 22093409,
+      "config": {
+        "model": "dinov3",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "Swin pixel FPN, 64 channels, 2 blocks per level",
+        "decoder_spec": {
+          "channels": 64,
+          "resolutions": [
+            64,
+            32,
+            16,
+            8
+          ],
+          "blocks_per_level": 2,
+          "window_size": 8,
+          "shift_size": 4,
+          "num_heads": 4,
+          "mlp_ratio": 4.0,
+          "dropout": 0.0,
+          "drop_path": 0.0,
+          "norm": "LayerNorm",
+          "output_size": 256,
+          "fusion": "bilinear upsample and add; same topology as light FPN",
+          "implementation": "timm 1.0.22 SwinTransformerBlock"
+        },
+        "decoder_initial_hash": "a4cc03043268767ff3b5add5ee9af1874959540d10f801662f24a703d4e4bf99",
+        "encoder_initial_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+        "adapter_initial_hash": "33c93264c5cd12f8ce95b40c0ece32ca79d50285a2cf81547f252ed9901b3a08",
+        "decoder_params": 407649,
+        "adapter_params": 98816,
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/dinov3_vits16/model.safetensors",
+          "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            384,
+            384,
+            384,
+            384
+          ],
+          "params": 21586944
+        },
+        "trainable_params": 506465,
+        "total_params": 22093409
+      },
+      "probability_sha256": "3b36d82da524991add1df692c689dd7a61703decab00fe275f440dc3034c27f4",
+      "checkpoint_sha256": "f1b6781e8dae1913aa71f30eebdd4636c93dd8151867f25e01d76f8ce93ec502"
+    },
+    "vmamba_swin": {
+      "path": "/home/featurize/referring_image_segmentation/stage2_decoder/results/vmamba",
+      "best_epoch": 11,
+      "trainable_params": 500321,
+      "total_params": 29978849,
+      "config": {
+        "model": "vmamba",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "Swin pixel FPN, 64 channels, 2 blocks per level",
+        "decoder_spec": {
+          "channels": 64,
+          "resolutions": [
+            64,
+            32,
+            16,
+            8
+          ],
+          "blocks_per_level": 2,
+          "window_size": 8,
+          "shift_size": 4,
+          "num_heads": 4,
+          "mlp_ratio": 4.0,
+          "dropout": 0.0,
+          "drop_path": 0.0,
+          "norm": "LayerNorm",
+          "output_size": 256,
+          "fusion": "bilinear upsample and add; same topology as light FPN",
+          "implementation": "timm 1.0.22 SwinTransformerBlock"
+        },
+        "decoder_initial_hash": "a4cc03043268767ff3b5add5ee9af1874959540d10f801662f24a703d4e4bf99",
+        "encoder_initial_hash": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a",
+        "adapter_initial_hash": "f4a9874339481a9c737e53e510f6c1e413cc801e80d4b135ce1b89b08de3bf07",
+        "decoder_params": 407649,
+        "adapter_params": 92672,
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/vmamba_tiny_imagenet.pth",
+          "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            96,
+            192,
+            384,
+            768
+          ],
+          "params": 29478528
+        },
+        "trainable_params": 500321,
+        "total_params": 29978849
+      },
+      "probability_sha256": "7d4ef6c801cf7b14efe88f220e9a643ead3a68e601c5a888e9e9c76b72f99188",
+      "checkpoint_sha256": "1eeff693b44f6c0f82a8e95af76decb04ae0ed2321d684fdfea20bef9ce9943d"
+    }
+  },
+  "paired": {
+    "dinov3_light_minus_vmamba_light": {
+      "direction": "dinov3_light minus vmamba_light",
+      "dice": {
+        "mean_delta": 0.006628746994235099,
+        "bootstrap95": [
+          0.0012764254556006192,
+          0.011875611032059802
+        ],
+        "positive": 409,
+        "negative": 399,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.008738275205874219,
+        "bootstrap95": [
+          0.001685139547101773,
+          0.015619919728450036
+        ],
+        "positive": 409,
+        "negative": 399,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": -0.027600859436732645,
+        "bootstrap95": [
+          -0.04002515953111851,
+          -0.015240477722248921
+        ],
+        "positive": 354,
+        "negative": 428,
+        "ties": 26
+      },
+      "hd95_pixels": {
+        "mean_delta": -1.9729304330781776,
+        "bootstrap95": [
+          -2.889359433422297,
+          -1.0288891086838445
+        ],
+        "positive": 380,
+        "negative": 409,
+        "ties": 19
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "dinov3_swin_minus_dinov3_light": {
+      "direction": "dinov3_swin minus dinov3_light",
+      "dice": {
+        "mean_delta": 0.0013873838861246227,
+        "bootstrap95": [
+          -0.003191810493373104,
+          0.00566202262690942
+        ],
+        "positive": 443,
+        "negative": 365,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.0035145734275110266,
+        "bootstrap95": [
+          -0.002468411074960654,
+          0.00914086889893708
+        ],
+        "positive": 443,
+        "negative": 365,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": 0.07037650191164503,
+        "bootstrap95": [
+          0.05604962693905071,
+          0.08440199123724243
+        ],
+        "positive": 461,
+        "negative": 322,
+        "ties": 25
+      },
+      "hd95_pixels": {
+        "mean_delta": -0.15338868049881568,
+        "bootstrap95": [
+          -0.8723621331686975,
+          0.5754073584772698
+        ],
+        "positive": 370,
+        "negative": 423,
+        "ties": 15
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "vmamba_swin_minus_vmamba_light": {
+      "direction": "vmamba_swin minus vmamba_light",
+      "dice": {
+        "mean_delta": 0.00018210968149054196,
+        "bootstrap95": [
+          -0.004049177651935038,
+          0.0045173121492905356
+        ],
+        "positive": 401,
+        "negative": 406,
+        "ties": 1
+      },
+      "iou": {
+        "mean_delta": 0.0005757864146164542,
+        "bootstrap95": [
+          -0.00483833281579674,
+          0.0059636629898188265
+        ],
+        "positive": 401,
+        "negative": 406,
+        "ties": 1
+      },
+      "boundary_f1": {
+        "mean_delta": 0.005671789689818174,
+        "bootstrap95": [
+          -0.003994114975293806,
+          0.01531968420499848
+        ],
+        "positive": 420,
+        "negative": 366,
+        "ties": 22
+      },
+      "hd95_pixels": {
+        "mean_delta": 0.4112370695436283,
+        "bootstrap95": [
+          -0.46587246028541346,
+          1.3009039435795635
+        ],
+        "positive": 411,
+        "negative": 365,
+        "ties": 32
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "dinov3_swin_minus_vmamba_swin": {
+      "direction": "dinov3_swin minus vmamba_swin",
+      "dice": {
+        "mean_delta": 0.00783402119886918,
+        "bootstrap95": [
+          0.0026085156033034433,
+          0.013176413707068386
+        ],
+        "positive": 455,
+        "negative": 353,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.011677062218768791,
+        "bootstrap95": [
+          0.005002379196034197,
+          0.018473090257075435
+        ],
+        "positive": 455,
+        "negative": 353,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": 0.03710385278509421,
+        "bootstrap95": [
+          0.02409692732950129,
+          0.050662286627642404
+        ],
+        "positive": 433,
+        "negative": 354,
+        "ties": 21
+      },
+      "hd95_pixels": {
+        "mean_delta": -2.5375561831206213,
+        "bootstrap95": [
+          -3.4439029345532606,
+          -1.6011933612441462
+        ],
+        "positive": 333,
+        "negative": 455,
+        "ties": 20
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "mean_light_minus_dinov3_light": {
+      "direction": "mean_light minus dinov3_light",
+      "dice": {
+        "mean_delta": 0.004822680587396278,
+        "bootstrap95": [
+          0.0019901126952151602,
+          0.0077068837714013745
+        ],
+        "positive": 492,
+        "negative": 316,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.007085619732391718,
+        "bootstrap95": [
+          0.0032944989108723596,
+          0.010938329289029757
+        ],
+        "positive": 492,
+        "negative": 316,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": 0.02340269959468348,
+        "bootstrap95": [
+          0.015481393720665565,
+          0.031141395568753047
+        ],
+        "positive": 435,
+        "negative": 322,
+        "ties": 51
+      },
+      "hd95_pixels": {
+        "mean_delta": -0.4022884210157337,
+        "bootstrap95": [
+          -0.9527581059478996,
+          0.12994081262861443
+        ],
+        "positive": 304,
+        "negative": 472,
+        "ties": 32
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "mean_swin_minus_dinov3_swin": {
+      "direction": "mean_swin minus dinov3_swin",
+      "dice": {
+        "mean_delta": 0.004174974909245858,
+        "bootstrap95": [
+          0.0006307194126553775,
+          0.007584600635275166
+        ],
+        "positive": 456,
+        "negative": 352,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.006152731912750761,
+        "bootstrap95": [
+          0.0018493807815979746,
+          0.0104982169629608
+        ],
+        "positive": 456,
+        "negative": 352,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": -0.003704792127510069,
+        "bootstrap95": [
+          -0.012879139074250435,
+          0.005701374495472748
+        ],
+        "positive": 411,
+        "negative": 363,
+        "ties": 34
+      },
+      "hd95_pixels": {
+        "mean_delta": -0.14711562156623229,
+        "bootstrap95": [
+          -0.6946900407204317,
+          0.46281188501921
+        ],
+        "positive": 328,
+        "negative": 430,
+        "ties": 50
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    }
+  },
+  "error_counts": {
+    "dinov3_light_vs_vmamba_light": [
+      48945420,
+      1310485,
+      859473,
+      1837710
+    ],
+    "dinov3_swin_vs_dinov3_light": [
+      49515934,
+      731097,
+      739971,
+      1966086
+    ],
+    "vmamba_swin_vs_vmamba_light": [
+      49034110,
+      909171,
+      770783,
+      2239024
+    ],
+    "dinov3_swin_vs_vmamba_swin": [
+      49019173,
+      1227858,
+      924108,
+      1781949
+    ]
+  },
+  "error_order": [
+    "both_correct",
+    "first_correct_second_wrong",
+    "second_correct_first_wrong",
+    "both_wrong"
+  ],
+  "historical_metrics_match": true
+}

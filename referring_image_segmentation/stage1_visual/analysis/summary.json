@@ -1,0 +1,113 @@
+{
+  "evaluation_split": "development validation, exploratory; not independent test",
+  "models": {
+    "dinov3": {
+      "macro": {
+        "dice": 0.882188543922333,
+        "iou": 0.8053376952238178,
+        "precision": 0.8834520835483868,
+        "recall": 0.9155937794502693,
+        "boundary_f1": 0.2762002565216151,
+        "hd95_pixels": 16.092271783877166,
+        "hd95_diagonal": 0.04444904102764251
+      },
+      "pooled": {
+        "dice": 0.8961647589085805,
+        "iou": 0.8118646022050316
+      },
+      "counts": {
+        "tp": 11639210,
+        "fp": 1446802,
+        "fn": 1250381,
+        "tn": 38616695
+      }
+    },
+    "vmamba": {
+      "macro": {
+        "dice": 0.8755597969280977,
+        "iou": 0.7965994200179435,
+        "precision": 0.8873114819160693,
+        "recall": 0.9017773642575782,
+        "boundary_f1": 0.30380111595834774,
+        "hd95_pixels": 18.065202216955342,
+        "hd95_diagonal": 0.04989854293404442
+      },
+      "pooled": {
+        "dice": 0.8793265211726482,
+        "iou": 0.7846411446202476
+      },
+      "counts": {
+        "tp": 11470173,
+        "fp": 1728777,
+        "fn": 1419418,
+        "tn": 38334720
+      }
+    },
+    "mean_probability": {
+      "macro": {
+        "dice": 0.8870112245097292,
+        "iou": 0.8124233149562095,
+        "precision": 0.8939459367548049,
+        "recall": 0.9131007883407106,
+        "boundary_f1": 0.29960295611629856,
+        "hd95_pixels": 15.689983362861431,
+        "hd95_diagonal": 0.04333786575227901
+      },
+      "pooled": {
+        "dice": 0.8960470682445641,
+        "iou": 0.8116714422051735
+      },
+      "counts": {
+        "tp": 11612533,
+        "fp": 1417347,
+        "fn": 1277058,
+        "tn": 38646150
+      }
+    }
+  },
+  "paired_macro_dice_delta_dino_minus_vmamba": 0.006628746994235099,
+  "paired_bootstrap95": [
+    0.0012764254556006192,
+    0.011875611032059802
+  ],
+  "bootstrap_note": "2000 paired image resamples, seed42; selection on this validation set; no patient grouping available",
+  "wins": {
+    "dinov3": 409,
+    "vmamba": 399,
+    "ties": 0
+  },
+  "oracle_macro_dice": 0.9019431972161078,
+  "oracle_note": "Select better model per image using GT; diagnostic upper bound, not a deployable result",
+  "error_counts": {
+    "all": [
+      48945420,
+      1310485,
+      859473,
+      1837710
+    ],
+    "foreground": [
+      11069953,
+      569257,
+      400220,
+      850161
+    ],
+    "boundary_band_2px": [
+      890470,
+      170784,
+      170478,
+      569161
+    ]
+  },
+  "error_code_order": [
+    "both_correct",
+    "dino_correct_vmamba_wrong",
+    "vmamba_correct_dino_wrong",
+    "both_wrong"
+  ],
+  "boundary_definition": "256x256 grid, erosion boundary, F1 tolerance=.005*image diagonal; HD95 in pixels and divided by diagonal; one empty mask HD95=diagonal, both empty=0",
+  "historical_reference": {
+    "cnn_only_pooled_dice": 0.885923196227111,
+    "cnn_transformer_pooled_dice": 0.8922425556820504,
+    "note": "Different architecture/preprocessing/precision; historical context only, not a matched encoder control"
+  }
+}

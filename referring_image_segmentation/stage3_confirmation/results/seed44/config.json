@@ -1,0 +1,60 @@
+{
+  "seed": 44,
+  "epochs": 300,
+  "encoder": "dinov3",
+  "input_size": 256,
+  "batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR",
+  "T_max": 300,
+  "eta_min": 1e-05,
+  "clip": 1.0,
+  "precision": "BF16 autocast; FP32 loss",
+  "loss": "BCEWithLogits + per-image soft Dice; smooth=1",
+  "frozen_encoder": true,
+  "encoder_initial_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "augmentation_seed": "seed+epoch*100003",
+  "primary_selection": "maximum validation mean Dice, earliest on exact ties",
+  "secondary_selection": "minimum sample-weighted validation loss, earliest on exact ties",
+  "fixed_selection": "last epoch",
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "initial": {
+    "light": {
+      "adapter_hash": "c73275b86953aa50d2aaac6139f8aa8a048a535067e314e90894da5964164ccf",
+      "decoder_hash": "508949250fa6acc08037d279751fec3010fd360abf074c7cc003e9465f942f57",
+      "trainable_params": 246849,
+      "decoder_params": 148033,
+      "total_params": 21833793
+    },
+    "swin": {
+      "adapter_hash": "c73275b86953aa50d2aaac6139f8aa8a048a535067e314e90894da5964164ccf",
+      "decoder_hash": "494683db06b40784ffa449d6823a9d940a9122b5ae2d35af2383faf43ded3fa0",
+      "trainable_params": 506465,
+      "decoder_params": 407649,
+      "total_params": 22093409
+    }
+  },
+  "pretrained": {
+    "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/dinov3_vits16/model.safetensors",
+    "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+    "strict_load": true,
+    "missing": [],
+    "unexpected": [],
+    "channels": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "params": 21586944
+  }
+}

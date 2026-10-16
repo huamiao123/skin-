@@ -1,0 +1,322 @@
+{
+  "stage": "stage1_visual",
+  "evaluation_split": "ISIC2018 legacy development validation; single seed 42; not independent test",
+  "samples": 808,
+  "resolution": [
+    256,
+    256
+  ],
+  "threshold": 0.5,
+  "models": {
+    "dinov3_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.882188543922333,
+        "iou": 0.8053376952238178,
+        "precision": 0.8834520835483868,
+        "recall": 0.9155937794502693,
+        "boundary_f1": 0.2762002565216151,
+        "hd95_pixels": 16.092271783877166,
+        "hd95_diagonal": 0.04444904102764251
+      },
+      "pooled": {
+        "dice": 0.8961647589085805,
+        "iou": 0.8118646022050316,
+        "precision": 0.8894390437667336,
+        "recall": 0.9029929654090654
+      },
+      "prec_at": {
+        "0.5": 0.9504950495049505,
+        "0.6": 0.9096534653465347,
+        "0.7": 0.8477722772277227,
+        "0.8": 0.6695544554455446,
+        "0.9": 0.24752475247524752
+      },
+      "threshold_jaccard_065": 0.7563129007178777,
+      "counts": {
+        "tp": 11639210,
+        "fp": 1446802,
+        "fn": 1250381,
+        "tn": 38616695
+      }
+    },
+    "vmamba_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8755597969280977,
+        "iou": 0.7965994200179435,
+        "precision": 0.8873114819160693,
+        "recall": 0.9017773642575782,
+        "boundary_f1": 0.30380111595834774,
+        "hd95_pixels": 18.065202216955342,
+        "hd95_diagonal": 0.04989854293404442
+      },
+      "pooled": {
+        "dice": 0.8793265211726482,
+        "iou": 0.7846411446202476,
+        "precision": 0.8690216267203072,
+        "recall": 0.8898787401400091
+      },
+      "prec_at": {
+        "0.5": 0.9368811881188119,
+        "0.6": 0.8935643564356436,
+        "0.7": 0.8118811881188119,
+        "0.8": 0.6262376237623762,
+        "0.9": 0.2747524752475248
+      },
+      "threshold_jaccard_065": 0.7310939631354035,
+      "counts": {
+        "tp": 11470173,
+        "fp": 1728777,
+        "fn": 1419418,
+        "tn": 38334720
+      }
+    },
+    "mean_light": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8870112245097292,
+        "iou": 0.8124233149562095,
+        "precision": 0.8939459367548049,
+        "recall": 0.9131007883407106,
+        "boundary_f1": 0.29960295611629856,
+        "hd95_pixels": 15.689983362861431,
+        "hd95_diagonal": 0.04333786575227901
+      },
+      "pooled": {
+        "dice": 0.8960470682445641,
+        "iou": 0.8116714422051735,
+        "precision": 0.8912233266921875,
+        "recall": 0.9009233109103306
+      },
+      "prec_at": {
+        "0.5": 0.9554455445544554,
+        "0.6": 0.9195544554455446,
+        "0.7": 0.8551980198019802,
+        "0.8": 0.6881188118811881,
+        "0.9": 0.27351485148514854
+      },
+      "threshold_jaccard_065": 0.7616190628064529,
+      "counts": {
+        "tp": 11612533,
+        "fp": 1417347,
+        "fn": 1277058,
+        "tn": 38646150
+      }
+    }
+  },
+  "runs": {
+    "dinov3_light": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/results/dinov3",
+      "best_epoch": 12,
+      "trainable_params": 246849,
+      "total_params": 21833793,
+      "config": {
+        "model": "dinov3",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "shared 64-channel FPN pixel decoder",
+        "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+        "encoder_initial_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/ris_visual_stage1_20261016/weights/dinov3_vits16/model.safetensors",
+          "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            384,
+            384,
+            384,
+            384
+          ],
+          "params": 21586944
+        },
+        "trainable_params": 246849,
+        "total_params": 21833793
+      },
+      "probability_sha256": "050ed6992743e0514ba93e0e36b9c251af940495a0cbeb93c0bcbffd85955e9e",
+      "checkpoint_sha256": "416d283f6da10903a77785fd30030d5d19761c8a2dfa4fe26a465f9b49358016"
+    },
+    "vmamba_light": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/results/vmamba",
+      "best_epoch": 20,
+      "trainable_params": 240705,
+      "total_params": 29719233,
+      "config": {
+        "model": "vmamba",
+        "seed": 42,
+        "epochs": 300,
+        "input_size": 256,
+        "optimizer_batch": 64,
+        "encoder_batch": 64,
+        "evaluation_batch": 64,
+        "optimizer": "AdamW",
+        "lr": 0.001,
+        "weight_decay": 0.01,
+        "scheduler": "CosineAnnealingLR",
+        "T_max": 300,
+        "eta_min": 1e-05,
+        "grad_clip": 1.0,
+        "precision": "BF16 autocast; FP32 loss/optimizer",
+        "frozen_encoder": true,
+        "backbone_state": "eval",
+        "decoder": "shared 64-channel FPN pixel decoder",
+        "decoder_initial_hash": "545cd104200c91774a39469da00dcdbdca10b52c6a5b663ca5af6feef34be88b",
+        "encoder_initial_hash": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a",
+        "loss": "BCEWithLogits + per-image soft Dice, equal weights, smooth=1; no deep supervision",
+        "augmentation": "H/V flip independently .5; uniform rotation [0,360) with p=.5; GPU bilinear image/nearest mask",
+        "normalization": "ImageNet mean .485/.456/.406 and std .229/.224/.225",
+        "selection": "minimum sample-weighted validation loss; earliest epoch on exact ties",
+        "early_stopping": false,
+        "split": "legacy ISIC2018 1886 train / 808 development validation; no independent test",
+        "pretrained": {
+          "path": "/home/featurize/ris_visual_stage1_20261016/weights/vmamba_tiny_imagenet.pth",
+          "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+          "strict_load": true,
+          "missing": [],
+          "unexpected": [],
+          "channels": [
+            96,
+            192,
+            384,
+            768
+          ],
+          "params": 29478528
+        },
+        "trainable_params": 240705,
+        "total_params": 29719233
+      },
+      "probability_sha256": "7ad79cd5aadb9b39d2af1c4d9239d6e13baa4eea27b10daba373f8f3cdc6f5a1",
+      "checkpoint_sha256": "193799f5b5b22dbcb7c132adbcc2d2e2a40c7f7831482d6589767f4205705ccc"
+    }
+  },
+  "paired": {
+    "dinov3_light_minus_vmamba_light": {
+      "direction": "dinov3_light minus vmamba_light",
+      "dice": {
+        "mean_delta": 0.006628746994235099,
+        "bootstrap95": [
+          0.0012764254556006192,
+          0.011875611032059802
+        ],
+        "positive": 409,
+        "negative": 399,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.008738275205874219,
+        "bootstrap95": [
+          0.001685139547101773,
+          0.015619919728450036
+        ],
+        "positive": 409,
+        "negative": 399,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": -0.027600859436732645,
+        "bootstrap95": [
+          -0.04002515953111851,
+          -0.015240477722248921
+        ],
+        "positive": 354,
+        "negative": 428,
+        "ties": 26
+      },
+      "hd95_pixels": {
+        "mean_delta": -1.9729304330781776,
+        "bootstrap95": [
+          -2.889359433422297,
+          -1.0288891086838445
+        ],
+        "positive": 380,
+        "negative": 409,
+        "ties": 19
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    },
+    "mean_light_minus_dinov3_light": {
+      "direction": "mean_light minus dinov3_light",
+      "dice": {
+        "mean_delta": 0.004822680587396278,
+        "bootstrap95": [
+          0.0019901126952151602,
+          0.0077068837714013745
+        ],
+        "positive": 492,
+        "negative": 316,
+        "ties": 0
+      },
+      "iou": {
+        "mean_delta": 0.007085619732391718,
+        "bootstrap95": [
+          0.0032944989108723596,
+          0.010938329289029757
+        ],
+        "positive": 492,
+        "negative": 316,
+        "ties": 0
+      },
+      "boundary_f1": {
+        "mean_delta": 0.02340269959468348,
+        "bootstrap95": [
+          0.015481393720665565,
+          0.031141395568753047
+        ],
+        "positive": 435,
+        "negative": 322,
+        "ties": 51
+      },
+      "hd95_pixels": {
+        "mean_delta": -0.4022884210157337,
+        "bootstrap95": [
+          -0.9527581059478996,
+          0.12994081262861443
+        ],
+        "positive": 304,
+        "negative": 472,
+        "ties": 32
+      },
+      "note": "Exploratory development-set image bootstrap; single seed; not patient-level or independent-test inference. Negative HD95 delta is better."
+    }
+  },
+  "error_counts": {
+    "dinov3_light_vs_vmamba_light": [
+      48945420,
+      1310485,
+      859473,
+      1837710
+    ]
+  },
+  "error_order": [
+    "both_correct",
+    "first_correct_second_wrong",
+    "second_correct_first_wrong",
+    "both_wrong"
+  ],
+  "historical_metrics_match": true
+}
