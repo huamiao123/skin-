@@ -1,6 +1,6 @@
-# 2026-10-16 实验发布说明
+# 2026-10-17 实验发布说明
 
-本目录存档独立图文指代分割项目截至第三轮确认实验的源码与结果。当前完成的实验均为纯图像分割；图文指代能力尚未验证。
+本目录存档独立图文指代分割项目截至第四轮双编码器融合实验的源码与结果。当前完成的实验均为纯图像分割；图文指代能力尚未验证。
 
 ## 阅读入口
 
@@ -10,8 +10,12 @@
 - [第二轮：Swin Decoder 对照](stage2_decoder/analysis/REPORT.md)及[结果解读](stage2_decoder/analysis/FINDINGS.md)。
 - [第三轮：三个新 seeds 的完整结果](stage3_confirmation/analysis/REPORT.md)及[结果解读](stage3_confirmation/analysis/FINDINGS.md)。
 - [第三轮逐 seed、逐 checkpoint 表格](stage3_confirmation/analysis/all_runs.csv)。
+- [第四轮：DINOv3 + VMamba、Light/Swin完整结果](stage4_fusion/analysis/REPORT.md)及[全部指标表](stage4_fusion/analysis/all_runs.csv)。
+- [第四轮冻结协议](stage4_fusion/PROTOCOL.md)及[逐图纠错与汇总](stage4_fusion/analysis/summary.json)。
 
 第三轮完成 seeds 43/44/45 × Light/Swin 共六次 300 轮训练，三种选模规则共导出 18 组结果。主结果按预先规定的最高验证 mean Dice 选模，并同时报告逐图平均与 pooled 指标。所有结果均来自 1886/808 开发划分，不是独立测试成绩。
+
+第四轮完成 seed42、DINOv3/VMamba/双编码器拼接 × Light/Swin 六组300轮训练，统一主选模为最高mean Dice，另保存最低loss和最后一轮。全部18组的完整指标与逐图记录已存档；开发验证集单seed筛选尚不能替代容量匹配和跨seed确认。`smoke/`及`smoke_analysis/`仅为两轮恢复与导出预检，非正式结果。
 
 ## 发布内容与本地完整实验的区别
 
@@ -25,7 +29,7 @@ Git 保存自研源码、协议、数据成员清单、配置、日志、状态�
 - 上游 VMamba / VM-UNet 源码副本、安装包和 CUDA 扩展；固定来源与 Git SHA 见 [third_party.json](publication/third_party.json)。
 - 原始数据目录链接不提交，数据划分和成员 SHA 见 `stage1_visual/data_manifest.json`。
 
-缓存、嵌套 Git 元数据和运行锁文件不属于发布快照。源代码和历史协议/结果保持原字节；项目 README 仅追加发布说明链接，清单同时记录源文件与发布文件的 SHA256。
+缓存、嵌套 Git 元数据、运行锁和PID文件不属于发布快照。源代码和历史协议/结果保持原字节；项目README同步第四轮完成结果并追加发布说明链接，清单同时记录源文件与发布文件的SHA256。
 
 ## 校验与复现
 
@@ -39,6 +43,6 @@ python referring_image_segmentation/publication/verify_archive.py
 
 复现训练需要另行恢复合法取得的数据、预训练权重、固定版本上游实现和运行环境。DINOv3 与 VMamba 权重的来源和 SHA 记录在 `stage1_visual/provenance.json`；Python/PyTorch/timm/CUDA 版本也在该文件中。VMamba 使用的 selective-scan 扩展依赖记录在同文件与 `dependencies.log`。
 
-历史代码和 provenance 中保留原绝对路径，尤其第一轮迁移前路径 `/home/featurize/ris_visual_stage1_20261016`。原机器通过兼容链接继续访问。跨机器复现应恢复这些路径映射，或在新的实验目录中显式记录路径调整；不能修改历史证据后声称字节级一致。阶段三的启动器会校验历史权重及源码，在未恢复依赖时不能直接复跑。
+历史代码和 provenance 中保留原绝对路径，尤其第一轮迁移前路径 `/home/featurize/ris_visual_stage1_20261016`。原机器通过兼容链接继续访问。跨机器复现应恢复这些路径映射，或在新的实验目录中显式记录路径调整；不能修改历史证据后声称字节级一致。阶段三、四启动器会校验历史权重及源码，在未恢复依赖时不能直接复跑。第四轮硬件与软件实测信息见 `stage4_fusion/preflight.json`；当前实验使用24GB RTX4090，与早期48GB实例不同。
 
 本轮不改变其他历史实验的结论或文件。完整指标及选模敏感性的解释以各阶段报告为准。

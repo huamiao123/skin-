@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "initial_probe_hashes": {
+    "dinov3_light": "ebe4af027f6c621f4ec9da7e037a233e59669ec06fe66aaee5f873432523d55f",
+    "dinov3_swin": "8e9af9ed781048fcd7a112d6208e0679628a90ce586f9587acd442f299c05627",
+    "vmamba_light": "ef71a85dcf4452920d025d768c08d67929b00d67581383b952134d92112bbc50",
+    "vmamba_swin": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+    "fusion_light": "e409025f8b72c5bd6e52cebe5afe8dad78fe4092babbb848ba500452e56107b5",
+    "fusion_swin": "ecf89a3f1bbff3ea32f9f0ff391c99e6ed25a79c8a790bd4eb3a77fb622a2ae7"
+  },
+  "parameters": {
+    "dinov3_light": {
+      "encoder": 21586944,
+      "trainable": 246849,
+      "total": 21833793,
+      "decoder": 148033
+    },
+    "dinov3_swin": {
+      "encoder": 21586944,
+      "trainable": 506465,
+      "total": 22093409,
+      "decoder": 407649
+    },
+    "vmamba_light": {
+      "encoder": 29478528,
+      "trainable": 240705,
+      "total": 29719233,
+      "decoder": 148033
+    },
+    "vmamba_swin": {
+      "encoder": 29478528,
+      "trainable": 500321,
+      "total": 29978849,
+      "decoder": 407649
+    },
+    "fusion_light": {
+      "encoder": 51065472,
+      "trainable": 372545,
+      "total": 51438017,
+      "decoder": 148033
+    },
+    "fusion_swin": {
+      "encoder": 51065472,
+      "trainable": 632161,
+      "total": 51697633,
+      "decoder": 407649
+    }
+  },
+  "inference": {
+    "dinov3_light": {
+      "1": {
+        "seconds_per_batch": 0.0074550023000028885,
+        "images_per_second": 134.13812092313003,
+        "incremental_peak_gib": 0.12981510162353516,
+        "process_peak_gib": 0.385495662689209
+      },
+      "64": {
+        "seconds_per_batch": 0.021857274999996436,
+        "images_per_second": 2928.0868726778813,
+        "incremental_peak_gib": 0.46619129180908203,
+        "process_peak_gib": 0.7219939231872559
+      }
+    },
+    "dinov3_swin": {
+      "1": {
+        "seconds_per_batch": 0.010871654499999295,
+        "images_per_second": 91.98231971040515,
+        "incremental_peak_gib": 0.13016605377197266,
+        "process_peak_gib": 0.39616918563842773
+      },
+      "64": {
+        "seconds_per_batch": 0.03442081700000017,
+        "images_per_second": 1859.339945359219,
+        "incremental_peak_gib": 1.247879981994629,
+        "process_peak_gib": 1.506192684173584
+      }
+    },
+    "vmamba_light": {
+      "1": {
+        "seconds_per_batch": 0.016361748000002764,
+        "images_per_second": 61.11816414724338,
+        "incremental_peak_gib": 0.13626909255981445,
+        "process_peak_gib": 0.39973926544189453
+      },
+      "64": {
+        "seconds_per_batch": 0.04260797939999748,
+        "images_per_second": 1502.06606605719,
+        "incremental_peak_gib": 1.2483735084533691,
+        "process_peak_gib": 1.5041532516479492
+      }
+    },
+    "vmamba_swin": {
+      "1": {
+        "seconds_per_batch": 0.020035361300000432,
+        "images_per_second": 49.911752776825566,
+        "incremental_peak_gib": 0.13578081130981445,
+        "process_peak_gib": 0.4017610549926758
+      },
+      "64": {
+        "seconds_per_batch": 0.055830454400000916,
+        "images_per_second": 1146.327764797826,
+        "incremental_peak_gib": 1.329899787902832,
+        "process_peak_gib": 1.5881896018981934
+      }
+    },
+    "fusion_light": {
+      "1": {
+        "seconds_per_batch": 0.024191203300000554,
+        "images_per_second": 41.33734017273862,
+        "incremental_peak_gib": 0.13724565505981445,
+        "process_peak_gib": 0.40120983123779297
+      },
+      "64": {
+        "seconds_per_batch": 0.06324901070000237,
+        "images_per_second": 1011.8735343317805,
+        "incremental_peak_gib": 1.342369556427002,
+        "process_peak_gib": 1.5986433029174805
+      }
+    },
+    "fusion_swin": {
+      "1": {
+        "seconds_per_batch": 0.027594511499995634,
+        "images_per_second": 36.23909051624843,
+        "incremental_peak_gib": 0.13724565505981445,
+        "process_peak_gib": 0.4037199020385742
+      },
+      "64": {
+        "seconds_per_batch": 0.07629348070000219,
+        "images_per_second": 838.8659084995471,
+        "incremental_peak_gib": 1.3843450546264648,
+        "process_peak_gib": 1.6431288719177246
+      }
+    }
+  },
+  "inference_note": "Full encoder+adapter+decoder, no cache, synthetic normalized images, BF16, 3 warmups/10 repeats. Incremental peak excludes resident models/input; process peak includes both encoders.",
+  "initialization_matched": true,
+  "independent_parameters": true,
+  "both_branches_affect_predictions": true,
+  "finite_nonzero_gradients": true,
+  "frozen_encoder_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "torch_version": "2.2.2+cu121",
+  "timm_version": "1.0.22",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_gpu_gib": 23.5184326171875
+}

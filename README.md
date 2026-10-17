@@ -1,5 +1,11 @@
 # 皮肤病灶分割：实验结果与源码存档
 
+## 2026-10-17：DINOv3 + VMamba 双编码器融合
+
+[第四轮完整结果](referring_image_segmentation/stage4_fusion/analysis/REPORT.md) · [全部指标](referring_image_segmentation/stage4_fusion/analysis/all_runs.csv) · [冻结协议](referring_image_segmentation/stage4_fusion/PROTOCOL.md) · [模型源码](referring_image_segmentation/stage4_fusion/models.py)。
+
+Seed42下统一重跑DINOv3、VMamba及双编码器拼接 × Light/Swin，共六组300轮，按最高验证mean Dice选模。融合Light/Swin的mean Dice为88.911%/89.549%，pooled Dice为89.530%/90.381%；相对DINO单分支的mean Dice分别提升0.216/0.365个百分点。与概率平均比较，Light略低，Swin仅高0.101个百分点。逐图纠错、新增错误、边界、参数量和完整推理开销已保存；仍是无容量匹配的单seed开发集筛选，不宣称稳定显著提升。
+
 ## 2026-10-16：图文指代分割项目的视觉阶段实验
 
 [项目目录](referring_image_segmentation/README.md) · [第三轮完整结果](referring_image_segmentation/stage3_confirmation/analysis/REPORT.md) · [结果解读](referring_image_segmentation/stage3_confirmation/analysis/FINDINGS.md) · [发布范围与校验](referring_image_segmentation/PUBLISHING.md)。

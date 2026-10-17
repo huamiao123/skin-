@@ -1,5 +1,22 @@
 # 图文指代分割项目
 
+## 第四轮：双编码器特征融合（2026-10-17）
+
+根据第一阶段的错误互补与概率平均结果，新增 `stage4_fusion/`：seed42 下重新训练 DINOv3、VMamba、DINOv3+VMamba × Light/Swin 六组。双编码器冻结，四尺度各自 Adapter 后拼接，用 1×1 卷积融合；全部统一按最高验证 mean Dice 选模，同时保存最低 loss 与最后一轮。完整设置见 `stage4_fusion/PROTOCOL.md`。
+
+后台入口 `python stage4_fusion/launch.py` 先完成真实数据恢复/导出/分析预检，再执行300轮和最终完整分析。六组各300轮/9000次更新及18组checkpoint导出已完成，原有实验文件、数据和独立指标重算均通过校验。完整结果见 [第四轮报告](stage4_fusion/analysis/REPORT.md)、[全部指标表](stage4_fusion/analysis/all_runs.csv)和[机器可读汇总](stage4_fusion/analysis/summary.json)。
+
+| Encoder / 融合方式 | Light Mean Dice | Light Pooled Dice | Swin Mean Dice | Swin Pooled Dice |
+|---|---:|---:|---:|---:|
+| DINOv3 | 88.695% | 89.467% | 89.185% | 90.113% |
+| VMamba | 87.872% | 88.492% | 88.516% | 88.961% |
+| DINOv3 + VMamba 特征拼接 | 88.911% | 89.530% | 89.549% | 90.381% |
+| 两单模型概率平均 | 88.978% | 89.623% | 89.449% | 89.957% |
+
+Mean Dice为逐图平均，Pooled Dice为汇总像素后计算。相对同Decoder的DINOv3，拼接的Mean Dice分别提高0.216/0.365个百分点；相对概率平均，Light略低，Swin只高0.101个百分点。Swin融合纠正679485个DINO错误像素，同时新增614397个错误，净减少65088个。两种Decoder下融合对DINO的Mean Dice开发集bootstrap区间均包含零；单seed且无容量匹配，不能据此宣称稳定提升或证明收益来自VMamba特有信息。
+
+本轮不与旧seed42的最低loss结果或第三轮三个seed均值混合比较。后续依据结果设计容量匹配及多seed确认；文本编码器尚未加入。当前设备实测为24GB RTX4090，预检和正式训练峰值分配显存约10.41GiB，完整推理效率与各组参数量见 `stage4_fusion/preflight.json`。
+
 本目录用于后续的图文指代分割（Referring Image Segmentation, RSI）研究。当前已完成第一轮冻结视觉表征对照、第二轮 Swin Pixel Decoder 对照，以及第三轮 DINOv3＋Light/Swin 的三个新 seeds 确认；文本编码器、图文对齐和指代分割实验尚未在此目录开展。
 
 ## 目录
@@ -52,4 +69,4 @@
 
 ## GitHub 发布说明
 
-本页面描述本地完整实验。GitHub 保存源码和数值存档；权重、大型预测数组、数据及源图拼图保留本地。发布范围、文件校验清单与复现前提见 [PUBLISHING.md](PUBLISHING.md)。
+本页面描述本地完整实验。GitHub保存源码和数值存档；权重、大型预测数组、数据及源图拼图保留本地。发布范围、文件校验清单与复现前提见 [PUBLISHING.md](PUBLISHING.md)。
