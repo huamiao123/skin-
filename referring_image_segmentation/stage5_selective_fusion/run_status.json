@@ -1,0 +1,45 @@
+{
+  "state": "complete",
+  "stage": "capacity_and_selective_residual_fusion",
+  "seed": 42,
+  "epochs": 300,
+  "supervisor_pid": 8135,
+  "started_utc": "2026-10-17T13:04:00.956182+00:00",
+  "events": [
+    {
+      "phase": "smoke_resume_and_export",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:04:23.518409+00:00"
+    },
+    {
+      "phase": "smoke_analysis",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:05:08.725605+00:00"
+    },
+    {
+      "phase": "smoke_gate_audit",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:05:25.363900+00:00"
+    },
+    {
+      "phase": "training",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:45:57.426729+00:00"
+    },
+    {
+      "phase": "analyzing",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:46:45.601285+00:00"
+    },
+    {
+      "phase": "gate_audit",
+      "returncode": 0,
+      "ended_utc": "2026-10-17T13:47:02.967634+00:00"
+    }
+  ],
+  "command": [
+    "gate_audit.py"
+  ],
+  "child_pid": 10248,
+  "ended_utc": "2026-10-17T13:47:04.302475+00:00"
+}

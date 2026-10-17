@@ -1,0 +1,5472 @@
+{
+  "passed": true,
+  "seed": 42,
+  "split": "ISIC2018 legacy development validation",
+  "results": {
+    "best_dice": {
+      "fusion": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2589982,
+          "dino_correct": 50363106,
+          "corrected": 679485,
+          "introduced": 614397,
+          "candidate_wrong": 2524894,
+          "complementary": 828559,
+          "complementary_repaired": 465479,
+          "net_errors_removed": 65088,
+          "repair_rate": 0.26235124413992067,
+          "damage_rate": 0.012199346879042765,
+          "candidate_error_rate": 0.047681714048480046,
+          "complementary_repair_rate": 0.5617934269014035
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 38239227,
+            "dino_wrong": 692493,
+            "dino_correct": 37546734,
+            "corrected": 132084,
+            "introduced": 153396,
+            "candidate_wrong": 713805,
+            "complementary": 149321,
+            "complementary_repaired": 90892,
+            "net_errors_removed": -21312,
+            "repair_rate": 0.19073694607743327,
+            "damage_rate": 0.004085468525704526,
+            "candidate_error_rate": 0.018666826084115143,
+            "complementary_repair_rate": 0.6087020579824673
+          },
+          "[.1,.4)": {
+            "pixels": 1159040,
+            "dino_wrong": 308138,
+            "dino_correct": 850902,
+            "corrected": 117275,
+            "introduced": 165006,
+            "candidate_wrong": 355869,
+            "complementary": 122921,
+            "complementary_repaired": 75551,
+            "net_errors_removed": -47731,
+            "repair_rate": 0.3805924618190551,
+            "damage_rate": 0.19391892368333838,
+            "candidate_error_rate": 0.3070377208724462,
+            "complementary_repair_rate": 0.614630535059103
+          },
+          "[.4,.6)": {
+            "pixels": 495193,
+            "dino_wrong": 239825,
+            "dino_correct": 255368,
+            "corrected": 132984,
+            "introduced": 95593,
+            "candidate_wrong": 202434,
+            "complementary": 130932,
+            "complementary_repaired": 93134,
+            "net_errors_removed": 37391,
+            "repair_rate": 0.5545043260710935,
+            "damage_rate": 0.37433429403840734,
+            "candidate_error_rate": 0.40879818575787624,
+            "complementary_repair_rate": 0.7113157975132129
+          },
+          "[.6,.9)": {
+            "pixels": 1127619,
+            "dino_wrong": 581996,
+            "dino_correct": 545623,
+            "corrected": 218937,
+            "introduced": 120324,
+            "candidate_wrong": 483383,
+            "complementary": 263485,
+            "complementary_repaired": 153514,
+            "net_errors_removed": 98613,
+            "repair_rate": 0.3761829978212909,
+            "damage_rate": 0.22052589425299154,
+            "candidate_error_rate": 0.4286758204677289,
+            "complementary_repair_rate": 0.5826289921627417
+          },
+          "[.9,1]": {
+            "pixels": 11932009,
+            "dino_wrong": 767530,
+            "dino_correct": 11164479,
+            "corrected": 78205,
+            "introduced": 80078,
+            "candidate_wrong": 769403,
+            "complementary": 161900,
+            "complementary_repaired": 52388,
+            "net_errors_removed": -1873,
+            "repair_rate": 0.10189178273161961,
+            "damage_rate": 0.007172569360379468,
+            "candidate_error_rate": 0.06448226782262735,
+            "complementary_repair_rate": 0.3235824583075973
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 710116,
+            "dino_correct": 1090777,
+            "corrected": 120270,
+            "introduced": 116916,
+            "candidate_wrong": 706762,
+            "complementary": 157320,
+            "complementary_repaired": 76252,
+            "net_errors_removed": 3354,
+            "repair_rate": 0.169366695018842,
+            "damage_rate": 0.10718597843555557,
+            "candidate_error_rate": 0.3924508563251676,
+            "complementary_repair_rate": 0.4846936181032291
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 764584,
+            "dino_correct": 11051530,
+            "corrected": 233192,
+            "introduced": 174988,
+            "candidate_wrong": 706380,
+            "complementary": 240685,
+            "complementary_repaired": 157711,
+            "net_errors_removed": 58204,
+            "repair_rate": 0.3049919956473062,
+            "damage_rate": 0.01583382572367808,
+            "candidate_error_rate": 0.059781075233363526,
+            "complementary_repair_rate": 0.6552589484180568
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1115282,
+            "dino_correct": 38220799,
+            "corrected": 326023,
+            "introduced": 322493,
+            "candidate_wrong": 1111752,
+            "complementary": 430554,
+            "complementary_repaired": 231516,
+            "net_errors_removed": 3530,
+            "repair_rate": 0.29232337650925955,
+            "damage_rate": 0.008437631039581355,
+            "candidate_error_rate": 0.028262907024215248,
+            "complementary_repair_rate": 0.5377165233629231
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49249253,
+            "dino_wrong": 0,
+            "dino_correct": 49249253,
+            "corrected": 0,
+            "introduced": 286241,
+            "candidate_wrong": 286241,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -286241,
+            "repair_rate": null,
+            "damage_rate": 0.005812088154920847,
+            "candidate_error_rate": 0.005812088154920847,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1113853,
+            "dino_wrong": 0,
+            "dino_correct": 1113853,
+            "corrected": 0,
+            "introduced": 328156,
+            "candidate_wrong": 328156,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -328156,
+            "repair_rate": null,
+            "damage_rate": 0.2946133825558669,
+            "candidate_error_rate": 0.2946133825558669,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 828559,
+            "dino_wrong": 828559,
+            "dino_correct": 0,
+            "corrected": 465479,
+            "introduced": 0,
+            "candidate_wrong": 363080,
+            "complementary": 828559,
+            "complementary_repaired": 465479,
+            "net_errors_removed": 465479,
+            "repair_rate": 0.5617934269014035,
+            "damage_rate": null,
+            "candidate_error_rate": 0.43820657309859645,
+            "complementary_repair_rate": 0.5617934269014035
+          },
+          "both_wrong": {
+            "pixels": 1761423,
+            "dino_wrong": 1761423,
+            "dino_correct": 0,
+            "corrected": 214006,
+            "introduced": 0,
+            "candidate_wrong": 1547417,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 214006,
+            "repair_rate": 0.12149608583514579,
+            "damage_rate": null,
+            "candidate_error_rate": 0.8785039141648542,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1503843,
+            "dino_correct": 38559654,
+            "corrected": 383812,
+            "introduced": 377185,
+            "candidate_wrong": 1497216,
+            "complementary": 512934,
+            "complementary_repaired": 267746,
+            "net_errors_removed": 6627,
+            "repair_rate": 0.25522079100012435,
+            "damage_rate": 0.009781856445081172,
+            "candidate_error_rate": 0.03737107621933253,
+            "complementary_repair_rate": 0.5219891837936265
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1086139,
+            "dino_correct": 11803452,
+            "corrected": 295673,
+            "introduced": 237212,
+            "candidate_wrong": 1027678,
+            "complementary": 315625,
+            "complementary_repaired": 197733,
+            "net_errors_removed": 58461,
+            "repair_rate": 0.2722239050434613,
+            "damage_rate": 0.020096832689284458,
+            "candidate_error_rate": 0.07972929474643532,
+            "complementary_repair_rate": 0.6264807920792079
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                189533,
+                0,
+                189533,
+                0,
+                5335,
+                5335,
+                0,
+                0
+              ],
+              [
+                20860,
+                0,
+                20860,
+                0,
+                6364,
+                6364,
+                0,
+                0
+              ],
+              [
+                24318,
+                24318,
+                0,
+                9387,
+                0,
+                14931,
+                24318,
+                9387
+              ],
+              [
+                170474,
+                170474,
+                0,
+                6283,
+                0,
+                164191,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                125003,
+                125003,
+                0,
+                81505,
+                0,
+                43498,
+                125003,
+                81505
+              ],
+              [
+                372698,
+                372698,
+                0,
+                34909,
+                0,
+                337789,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                37059811,
+                0,
+                37059811,
+                0,
+                85575,
+                85575,
+                0,
+                0
+              ],
+              [
+                276530,
+                0,
+                276530,
+                0,
+                56122,
+                56122,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                65877,
+                0,
+                65877,
+                0,
+                11419,
+                11419,
+                0,
+                0
+              ],
+              [
+                36198,
+                0,
+                36198,
+                0,
+                18459,
+                18459,
+                0,
+                0
+              ],
+              [
+                36889,
+                36889,
+                0,
+                20563,
+                0,
+                16326,
+                36889,
+                20563
+              ],
+              [
+                62523,
+                62523,
+                0,
+                11681,
+                0,
+                50842,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                86032,
+                86032,
+                0,
+                54988,
+                0,
+                31044,
+                86032,
+                54988
+              ],
+              [
+                122694,
+                122694,
+                0,
+                30043,
+                0,
+                92651,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                564840,
+                0,
+                564840,
+                0,
+                67949,
+                67949,
+                0,
+                0
+              ],
+              [
+                183987,
+                0,
+                183987,
+                0,
+                67179,
+                67179,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                30081,
+                0,
+                30081,
+                0,
+                7766,
+                7766,
+                0,
+                0
+              ],
+              [
+                25796,
+                0,
+                25796,
+                0,
+                17060,
+                17060,
+                0,
+                0
+              ],
+              [
+                25821,
+                25821,
+                0,
+                17852,
+                0,
+                7969,
+                25821,
+                17852
+              ],
+              [
+                29163,
+                29163,
+                0,
+                8575,
+                0,
+                20588,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                35265,
+                0,
+                35265,
+                0,
+                8617,
+                8617,
+                0,
+                0
+              ],
+              [
+                28595,
+                0,
+                28595,
+                0,
+                16482,
+                16482,
+                0,
+                0
+              ],
+              [
+                29650,
+                29650,
+                0,
+                21218,
+                0,
+                8432,
+                29650,
+                21218
+              ],
+              [
+                28507,
+                28507,
+                0,
+                10529,
+                0,
+                17978,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                86354,
+                0,
+                86354,
+                0,
+                20419,
+                20419,
+                0,
+                0
+              ],
+              [
+                49277,
+                0,
+                49277,
+                0,
+                25249,
+                25249,
+                0,
+                0
+              ],
+              [
+                75461,
+                75461,
+                0,
+                54064,
+                0,
+                21397,
+                75461,
+                54064
+              ],
+              [
+                51223,
+                51223,
+                0,
+                20746,
+                0,
+                30477,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                119841,
+                0,
+                119841,
+                0,
+                12738,
+                12738,
+                0,
+                0
+              ],
+              [
+                44518,
+                0,
+                44518,
+                0,
+                21387,
+                21387,
+                0,
+                0
+              ],
+              [
+                41614,
+                41614,
+                0,
+                20825,
+                0,
+                20789,
+                41614,
+                20825
+              ],
+              [
+                90052,
+                90052,
+                0,
+                12578,
+                0,
+                77474,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                257004,
+                0,
+                257004,
+                0,
+                33031,
+                33031,
+                0,
+                0
+              ],
+              [
+                124260,
+                0,
+                124260,
+                0,
+                53168,
+                53168,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                221871,
+                221871,
+                0,
+                132689,
+                0,
+                89182,
+                221871,
+                132689
+              ],
+              [
+                228459,
+                228459,
+                0,
+                52845,
+                0,
+                175614,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                516904,
+                0,
+                516904,
+                0,
+                6084,
+                6084,
+                0,
+                0
+              ],
+              [
+                41169,
+                0,
+                41169,
+                0,
+                10304,
+                10304,
+                0,
+                0
+              ],
+              [
+                28678,
+                28678,
+                0,
+                7625,
+                0,
+                21053,
+                28678,
+                7625
+              ],
+              [
+                200584,
+                200584,
+                0,
+                4901,
+                0,
+                195683,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10323743,
+                0,
+                10323743,
+                0,
+                27308,
+                27308,
+                0,
+                0
+              ],
+              [
+                282663,
+                0,
+                282663,
+                0,
+                36382,
+                36382,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                133222,
+                133222,
+                0,
+                44763,
+                0,
+                88459,
+                133222,
+                44763
+              ],
+              [
+                405046,
+                405046,
+                0,
+                20916,
+                0,
+                384130,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      },
+      "mean": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2589982,
+          "dino_correct": 50363106,
+          "corrected": 523670,
+          "introduced": 544602,
+          "candidate_wrong": 2610914,
+          "complementary": 828559,
+          "complementary_repaired": 523670,
+          "net_errors_removed": -20932,
+          "repair_rate": 0.20219059437478715,
+          "damage_rate": 0.010813510985601245,
+          "candidate_error_rate": 0.04930617077515857,
+          "complementary_repair_rate": 0.6320249976163436
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 38239227,
+            "dino_wrong": 692493,
+            "dino_correct": 37546734,
+            "corrected": 52229,
+            "introduced": 51609,
+            "candidate_wrong": 691873,
+            "complementary": 149321,
+            "complementary_repaired": 52229,
+            "net_errors_removed": 620,
+            "repair_rate": 0.07542170101358425,
+            "damage_rate": 0.001374527009459731,
+            "candidate_error_rate": 0.01809327892532974,
+            "complementary_repair_rate": 0.34977665566129346
+          },
+          "[.1,.4)": {
+            "pixels": 1159040,
+            "dino_wrong": 308138,
+            "dino_correct": 850902,
+            "corrected": 89460,
+            "introduced": 140086,
+            "candidate_wrong": 358764,
+            "complementary": 122921,
+            "complementary_repaired": 89460,
+            "net_errors_removed": -50626,
+            "repair_rate": 0.2903244650124295,
+            "damage_rate": 0.16463235484227326,
+            "candidate_error_rate": 0.30953547763666484,
+            "complementary_repair_rate": 0.7277845120036446
+          },
+          "[.4,.6)": {
+            "pixels": 495193,
+            "dino_wrong": 239825,
+            "dino_correct": 255368,
+            "corrected": 125913,
+            "introduced": 98269,
+            "candidate_wrong": 212181,
+            "complementary": 130932,
+            "complementary_repaired": 125913,
+            "net_errors_removed": 27644,
+            "repair_rate": 0.5250203273220057,
+            "damage_rate": 0.38481328905736034,
+            "candidate_error_rate": 0.42848142037549,
+            "complementary_repair_rate": 0.9616671249198057
+          },
+          "[.6,.9)": {
+            "pixels": 1127619,
+            "dino_wrong": 581996,
+            "dino_correct": 545623,
+            "corrected": 197756,
+            "introduced": 119031,
+            "candidate_wrong": 503271,
+            "complementary": 263485,
+            "complementary_repaired": 197756,
+            "net_errors_removed": 78725,
+            "repair_rate": 0.33978927690224675,
+            "damage_rate": 0.21815612611638438,
+            "candidate_error_rate": 0.4463129833747037,
+            "complementary_repair_rate": 0.7505398789304895
+          },
+          "[.9,1]": {
+            "pixels": 11932009,
+            "dino_wrong": 767530,
+            "dino_correct": 11164479,
+            "corrected": 58312,
+            "introduced": 135607,
+            "candidate_wrong": 844825,
+            "complementary": 161900,
+            "complementary_repaired": 58312,
+            "net_errors_removed": -77295,
+            "repair_rate": 0.07597357758002944,
+            "damage_rate": 0.012146290032880173,
+            "candidate_error_rate": 0.07080324863985604,
+            "complementary_repair_rate": 0.3601729462631254
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 710116,
+            "dino_correct": 1090777,
+            "corrected": 89879,
+            "introduced": 91762,
+            "candidate_wrong": 711999,
+            "complementary": 157320,
+            "complementary_repaired": 89879,
+            "net_errors_removed": -1883,
+            "repair_rate": 0.12656946189073334,
+            "damage_rate": 0.08412535284480696,
+            "candidate_error_rate": 0.3953588580776315,
+            "complementary_repair_rate": 0.5713132468853293
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 764584,
+            "dino_correct": 11051530,
+            "corrected": 139596,
+            "introduced": 242347,
+            "candidate_wrong": 867335,
+            "complementary": 240685,
+            "complementary_repaired": 139596,
+            "net_errors_removed": -102751,
+            "repair_rate": 0.18257771546357235,
+            "damage_rate": 0.021928818905617594,
+            "candidate_error_rate": 0.07340272783421013,
+            "complementary_repair_rate": 0.5799945987494027
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1115282,
+            "dino_correct": 38220799,
+            "corrected": 294195,
+            "introduced": 210493,
+            "candidate_wrong": 1031580,
+            "complementary": 430554,
+            "complementary_repaired": 294195,
+            "net_errors_removed": 83702,
+            "repair_rate": 0.26378530273060985,
+            "damage_rate": 0.005507289368806759,
+            "candidate_error_rate": 0.026224778213162617,
+            "complementary_repair_rate": 0.6832940815786173
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49249253,
+            "dino_wrong": 0,
+            "dino_correct": 49249253,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 0,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": null,
+            "damage_rate": 0.0,
+            "candidate_error_rate": 0.0,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1113853,
+            "dino_wrong": 0,
+            "dino_correct": 1113853,
+            "corrected": 0,
+            "introduced": 544602,
+            "candidate_wrong": 544602,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -544602,
+            "repair_rate": null,
+            "damage_rate": 0.4889352544725381,
+            "candidate_error_rate": 0.4889352544725381,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 828559,
+            "dino_wrong": 828559,
+            "dino_correct": 0,
+            "corrected": 523670,
+            "introduced": 0,
+            "candidate_wrong": 304889,
+            "complementary": 828559,
+            "complementary_repaired": 523670,
+            "net_errors_removed": 523670,
+            "repair_rate": 0.6320249976163436,
+            "damage_rate": null,
+            "candidate_error_rate": 0.36797500238365644,
+            "complementary_repair_rate": 0.6320249976163436
+          },
+          "both_wrong": {
+            "pixels": 1761423,
+            "dino_wrong": 1761423,
+            "dino_correct": 0,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 1761423,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": 0.0,
+            "damage_rate": null,
+            "candidate_error_rate": 1.0,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1503843,
+            "dino_correct": 38559654,
+            "corrected": 340401,
+            "introduced": 250671,
+            "candidate_wrong": 1414113,
+            "complementary": 512934,
+            "complementary_repaired": 340401,
+            "net_errors_removed": 89730,
+            "repair_rate": 0.22635408084487543,
+            "damage_rate": 0.006500862274334723,
+            "candidate_error_rate": 0.0352967939868055,
+            "complementary_repair_rate": 0.663635087555124
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1086139,
+            "dino_correct": 11803452,
+            "corrected": 183269,
+            "introduced": 293931,
+            "candidate_wrong": 1196801,
+            "complementary": 315625,
+            "complementary_repaired": 183269,
+            "net_errors_removed": -110662,
+            "repair_rate": 0.16873438850828484,
+            "damage_rate": 0.024902121853844113,
+            "candidate_error_rate": 0.09285019206583048,
+            "complementary_repair_rate": 0.5806542574257426
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                189533,
+                0,
+                189533,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                20860,
+                0,
+                20860,
+                0,
+                4096,
+                4096,
+                0,
+                0
+              ],
+              [
+                24318,
+                24318,
+                0,
+                5301,
+                0,
+                19017,
+                24318,
+                5301
+              ],
+              [
+                170474,
+                170474,
+                0,
+                0,
+                0,
+                170474,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                125003,
+                125003,
+                0,
+                46928,
+                0,
+                78075,
+                125003,
+                46928
+              ],
+              [
+                372698,
+                372698,
+                0,
+                0,
+                0,
+                372698,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                37059811,
+                0,
+                37059811,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                276530,
+                0,
+                276530,
+                0,
+                47513,
+                47513,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                65877,
+                0,
+                65877,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                36198,
+                0,
+                36198,
+                0,
+                23556,
+                23556,
+                0,
+                0
+              ],
+              [
+                36889,
+                36889,
+                0,
+                25206,
+                0,
+                11683,
+                36889,
+                25206
+              ],
+              [
+                62523,
+                62523,
+                0,
+                0,
+                0,
+                62523,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                86032,
+                86032,
+                0,
+                64254,
+                0,
+                21778,
+                86032,
+                64254
+              ],
+              [
+                122694,
+                122694,
+                0,
+                0,
+                0,
+                122694,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                564840,
+                0,
+                564840,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                183987,
+                0,
+                183987,
+                0,
+                116530,
+                116530,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                30081,
+                0,
+                30081,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                25796,
+                0,
+                25796,
+                0,
+                24451,
+                24451,
+                0,
+                0
+              ],
+              [
+                25821,
+                25821,
+                0,
+                24602,
+                0,
+                1219,
+                25821,
+                24602
+              ],
+              [
+                29163,
+                29163,
+                0,
+                0,
+                0,
+                29163,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                35265,
+                0,
+                35265,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                28595,
+                0,
+                28595,
+                0,
+                27368,
+                27368,
+                0,
+                0
+              ],
+              [
+                29650,
+                29650,
+                0,
+                28414,
+                0,
+                1236,
+                29650,
+                28414
+              ],
+              [
+                28507,
+                28507,
+                0,
+                0,
+                0,
+                28507,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                86354,
+                0,
+                86354,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                49277,
+                0,
+                49277,
+                0,
+                46450,
+                46450,
+                0,
+                0
+              ],
+              [
+                75461,
+                75461,
+                0,
+                72897,
+                0,
+                2564,
+                75461,
+                72897
+              ],
+              [
+                51223,
+                51223,
+                0,
+                0,
+                0,
+                51223,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                119841,
+                0,
+                119841,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                44518,
+                0,
+                44518,
+                0,
+                28841,
+                28841,
+                0,
+                0
+              ],
+              [
+                41614,
+                41614,
+                0,
+                27337,
+                0,
+                14277,
+                41614,
+                27337
+              ],
+              [
+                90052,
+                90052,
+                0,
+                0,
+                0,
+                90052,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                257004,
+                0,
+                257004,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                124260,
+                0,
+                124260,
+                0,
+                90190,
+                90190,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                221871,
+                221871,
+                0,
+                170419,
+                0,
+                51452,
+                221871,
+                170419
+              ],
+              [
+                228459,
+                228459,
+                0,
+                0,
+                0,
+                228459,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                516904,
+                0,
+                516904,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                41169,
+                0,
+                41169,
+                0,
+                10818,
+                10818,
+                0,
+                0
+              ],
+              [
+                28678,
+                28678,
+                0,
+                7433,
+                0,
+                21245,
+                28678,
+                7433
+              ],
+              [
+                200584,
+                200584,
+                0,
+                0,
+                0,
+                200584,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10323743,
+                0,
+                10323743,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                282663,
+                0,
+                282663,
+                0,
+                124789,
+                124789,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                133222,
+                133222,
+                0,
+                50879,
+                0,
+                82343,
+                133222,
+                50879
+              ],
+              [
+                405046,
+                405046,
+                0,
+                0,
+                0,
+                405046,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      }
+    },
+    "best_loss": {
+      "fusion": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2609728,
+          "dino_correct": 50343360,
+          "corrected": 646831,
+          "introduced": 641485,
+          "candidate_wrong": 2604382,
+          "complementary": 866752,
+          "complementary_repaired": 501095,
+          "net_errors_removed": 5346,
+          "repair_rate": 0.24785379932314786,
+          "damage_rate": 0.012742196786229605,
+          "candidate_error_rate": 0.04918281630714341,
+          "complementary_repair_rate": 0.5781296149302223
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 37795150,
+            "dino_wrong": 577997,
+            "dino_correct": 37217153,
+            "corrected": 50829,
+            "introduced": 77056,
+            "candidate_wrong": 604224,
+            "complementary": 75130,
+            "complementary_repaired": 32188,
+            "net_errors_removed": -26227,
+            "repair_rate": 0.08793990280226369,
+            "damage_rate": 0.002070443163667033,
+            "candidate_error_rate": 0.015986813122847773,
+            "complementary_repair_rate": 0.4284307200851857
+          },
+          "[.1,.4)": {
+            "pixels": 1618367,
+            "dino_wrong": 444091,
+            "dino_correct": 1174276,
+            "corrected": 166302,
+            "introduced": 211428,
+            "candidate_wrong": 489217,
+            "complementary": 176701,
+            "complementary_repaired": 121382,
+            "net_errors_removed": -45126,
+            "repair_rate": 0.3744773030752706,
+            "damage_rate": 0.1800496646444277,
+            "candidate_error_rate": 0.3022905187760255,
+            "complementary_repair_rate": 0.686934425951183
+          },
+          "[.4,.6)": {
+            "pixels": 666431,
+            "dino_wrong": 317588,
+            "dino_correct": 348843,
+            "corrected": 171805,
+            "introduced": 132553,
+            "candidate_wrong": 278336,
+            "complementary": 182908,
+            "complementary_repaired": 136764,
+            "net_errors_removed": 39252,
+            "repair_rate": 0.5409681726009798,
+            "damage_rate": 0.379978959015947,
+            "candidate_error_rate": 0.4176516398546886,
+            "complementary_repair_rate": 0.7477201653290179
+          },
+          "[.6,.9)": {
+            "pixels": 1453513,
+            "dino_wrong": 666114,
+            "dino_correct": 787399,
+            "corrected": 216019,
+            "introduced": 141506,
+            "candidate_wrong": 591601,
+            "complementary": 309120,
+            "complementary_repaired": 175406,
+            "net_errors_removed": 74513,
+            "repair_rate": 0.32429734249692993,
+            "damage_rate": 0.17971320766218907,
+            "candidate_error_rate": 0.4070145915447609,
+            "complementary_repair_rate": 0.5674365942028986
+          },
+          "[.9,1]": {
+            "pixels": 11419627,
+            "dino_wrong": 603938,
+            "dino_correct": 10815689,
+            "corrected": 41876,
+            "introduced": 78942,
+            "candidate_wrong": 641004,
+            "complementary": 122893,
+            "complementary_repaired": 35355,
+            "net_errors_removed": -37066,
+            "repair_rate": 0.0693382433296133,
+            "damage_rate": 0.007298841525491349,
+            "candidate_error_rate": 0.056131780836624526,
+            "complementary_repair_rate": 0.28768929068376553
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 716746,
+            "dino_correct": 1084147,
+            "corrected": 122351,
+            "introduced": 124593,
+            "candidate_wrong": 718988,
+            "complementary": 166317,
+            "complementary_repaired": 92741,
+            "net_errors_removed": -2242,
+            "repair_rate": 0.17070342910877773,
+            "damage_rate": 0.1149226073585962,
+            "candidate_error_rate": 0.39923971052139134,
+            "complementary_repair_rate": 0.5576158781122795
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 779606,
+            "dino_correct": 11036508,
+            "corrected": 201145,
+            "introduced": 225158,
+            "candidate_wrong": 803619,
+            "complementary": 219966,
+            "complementary_repaired": 140251,
+            "net_errors_removed": -24013,
+            "repair_rate": 0.2580085325151423,
+            "damage_rate": 0.02040119936487157,
+            "candidate_error_rate": 0.06801043050193997,
+            "complementary_repair_rate": 0.6376030841129993
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1113376,
+            "dino_correct": 38222705,
+            "corrected": 323335,
+            "introduced": 291734,
+            "candidate_wrong": 1081775,
+            "complementary": 480469,
+            "complementary_repaired": 268103,
+            "net_errors_removed": 31601,
+            "repair_rate": 0.29040952921564683,
+            "damage_rate": 0.007632479176970861,
+            "candidate_error_rate": 0.027500833140952703,
+            "complementary_repair_rate": 0.5580027015270496
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49150862,
+            "dino_wrong": 0,
+            "dino_correct": 49150862,
+            "corrected": 0,
+            "introduced": 247581,
+            "candidate_wrong": 247581,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -247581,
+            "repair_rate": null,
+            "damage_rate": 0.005037164963658216,
+            "candidate_error_rate": 0.005037164963658216,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1192498,
+            "dino_wrong": 0,
+            "dino_correct": 1192498,
+            "corrected": 0,
+            "introduced": 393904,
+            "candidate_wrong": 393904,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -393904,
+            "repair_rate": null,
+            "damage_rate": 0.3303183736995785,
+            "candidate_error_rate": 0.3303183736995785,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 866752,
+            "dino_wrong": 866752,
+            "dino_correct": 0,
+            "corrected": 501095,
+            "introduced": 0,
+            "candidate_wrong": 365657,
+            "complementary": 866752,
+            "complementary_repaired": 501095,
+            "net_errors_removed": 501095,
+            "repair_rate": 0.5781296149302223,
+            "damage_rate": null,
+            "candidate_error_rate": 0.42187038506977775,
+            "complementary_repair_rate": 0.5781296149302223
+          },
+          "both_wrong": {
+            "pixels": 1742976,
+            "dino_wrong": 1742976,
+            "dino_correct": 0,
+            "corrected": 145736,
+            "introduced": 0,
+            "candidate_wrong": 1597240,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 145736,
+            "repair_rate": 0.0836133142395535,
+            "damage_rate": null,
+            "candidate_error_rate": 0.9163866857604465,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1462839,
+            "dino_correct": 38600658,
+            "corrected": 357341,
+            "introduced": 372056,
+            "candidate_wrong": 1477554,
+            "complementary": 548303,
+            "complementary_repaired": 294362,
+            "net_errors_removed": -14715,
+            "repair_rate": 0.24427910385216692,
+            "damage_rate": 0.009638592171148999,
+            "candidate_error_rate": 0.03688030528138869,
+            "complementary_repair_rate": 0.5368600937802638
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1146889,
+            "dino_correct": 11742702,
+            "corrected": 289490,
+            "introduced": 269429,
+            "candidate_wrong": 1126828,
+            "complementary": 318449,
+            "complementary_repaired": 206733,
+            "net_errors_removed": 20061,
+            "repair_rate": 0.25241326754376403,
+            "damage_rate": 0.022944378559551285,
+            "candidate_error_rate": 0.08742154813135654,
+            "complementary_repair_rate": 0.6491871539869807
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                194606,
+                0,
+                194606,
+                0,
+                4160,
+                4160,
+                0,
+                0
+              ],
+              [
+                19656,
+                0,
+                19656,
+                0,
+                7657,
+                7657,
+                0,
+                0
+              ],
+              [
+                22242,
+                22242,
+                0,
+                9102,
+                0,
+                13140,
+                22242,
+                9102
+              ],
+              [
+                174137,
+                174137,
+                0,
+                4213,
+                0,
+                169924,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                52888,
+                52888,
+                0,
+                23086,
+                0,
+                29802,
+                52888,
+                23086
+              ],
+              [
+                328730,
+                328730,
+                0,
+                14428,
+                0,
+                314302,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                36783344,
+                0,
+                36783344,
+                0,
+                33161,
+                33161,
+                0,
+                0
+              ],
+              [
+                219547,
+                0,
+                219547,
+                0,
+                32078,
+                32078,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                82116,
+                0,
+                82116,
+                0,
+                13835,
+                13835,
+                0,
+                0
+              ],
+              [
+                48438,
+                0,
+                48438,
+                0,
+                34233,
+                34233,
+                0,
+                0
+              ],
+              [
+                55226,
+                55226,
+                0,
+                39617,
+                0,
+                15609,
+                55226,
+                39617
+              ],
+              [
+                78855,
+                78855,
+                0,
+                12518,
+                0,
+                66337,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                121475,
+                121475,
+                0,
+                81765,
+                0,
+                39710,
+                121475,
+                81765
+              ],
+              [
+                188535,
+                188535,
+                0,
+                32402,
+                0,
+                156133,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                840116,
+                0,
+                840116,
+                0,
+                69590,
+                69590,
+                0,
+                0
+              ],
+              [
+                203606,
+                0,
+                203606,
+                0,
+                93770,
+                93770,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                40505,
+                0,
+                40505,
+                0,
+                7858,
+                7858,
+                0,
+                0
+              ],
+              [
+                32742,
+                0,
+                32742,
+                0,
+                24379,
+                24379,
+                0,
+                0
+              ],
+              [
+                33892,
+                33892,
+                0,
+                25407,
+                0,
+                8485,
+                33892,
+                25407
+              ],
+              [
+                36678,
+                36678,
+                0,
+                7288,
+                0,
+                29390,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                55847,
+                0,
+                55847,
+                0,
+                11928,
+                11928,
+                0,
+                0
+              ],
+              [
+                43657,
+                0,
+                43657,
+                0,
+                25253,
+                25253,
+                0,
+                0
+              ],
+              [
+                45603,
+                45603,
+                0,
+                35400,
+                0,
+                10203,
+                45603,
+                35400
+              ],
+              [
+                42375,
+                42375,
+                0,
+                14064,
+                0,
+                28311,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                121838,
+                0,
+                121838,
+                0,
+                24940,
+                24940,
+                0,
+                0
+              ],
+              [
+                54254,
+                0,
+                54254,
+                0,
+                38195,
+                38195,
+                0,
+                0
+              ],
+              [
+                103413,
+                103413,
+                0,
+                75957,
+                0,
+                27456,
+                103413,
+                75957
+              ],
+              [
+                55627,
+                55627,
+                0,
+                13689,
+                0,
+                41938,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                156507,
+                0,
+                156507,
+                0,
+                6603,
+                6603,
+                0,
+                0
+              ],
+              [
+                45063,
+                0,
+                45063,
+                0,
+                19539,
+                19539,
+                0,
+                0
+              ],
+              [
+                36415,
+                36415,
+                0,
+                15528,
+                0,
+                20887,
+                36415,
+                15528
+              ],
+              [
+                106953,
+                106953,
+                0,
+                4640,
+                0,
+                102313,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                403079,
+                0,
+                403079,
+                0,
+                44933,
+                44933,
+                0,
+                0
+              ],
+              [
+                182750,
+                0,
+                182750,
+                0,
+                70431,
+                70431,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                272705,
+                272705,
+                0,
+                159878,
+                0,
+                112827,
+                272705,
+                159878
+              ],
+              [
+                250041,
+                250041,
+                0,
+                35973,
+                0,
+                214068,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                434174,
+                0,
+                434174,
+                0,
+                1579,
+                1579,
+                0,
+                0
+              ],
+              [
+                30340,
+                0,
+                30340,
+                0,
+                4750,
+                4750,
+                0,
+                0
+              ],
+              [
+                18542,
+                18542,
+                0,
+                3087,
+                0,
+                15455,
+                18542,
+                3087
+              ],
+              [
+                153806,
+                153806,
+                0,
+                951,
+                0,
+                152855,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10038730,
+                0,
+                10038730,
+                0,
+                28994,
+                28994,
+                0,
+                0
+              ],
+              [
+                312445,
+                0,
+                312445,
+                0,
+                43619,
+                43619,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                104351,
+                104351,
+                0,
+                32268,
+                0,
+                72083,
+                104351,
+                32268
+              ],
+              [
+                327239,
+                327239,
+                0,
+                5570,
+                0,
+                321669,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      },
+      "mean": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2609728,
+          "dino_correct": 50343360,
+          "corrected": 540382,
+          "introduced": 481999,
+          "candidate_wrong": 2551345,
+          "complementary": 866752,
+          "complementary_repaired": 540382,
+          "net_errors_removed": 58383,
+          "repair_rate": 0.20706449101209015,
+          "damage_rate": 0.009574231835141715,
+          "candidate_error_rate": 0.048181231659237704,
+          "complementary_repair_rate": 0.6234563058406557
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 37795150,
+            "dino_wrong": 577997,
+            "dino_correct": 37217153,
+            "corrected": 12260,
+            "introduced": 14801,
+            "candidate_wrong": 580538,
+            "complementary": 75130,
+            "complementary_repaired": 12260,
+            "net_errors_removed": -2541,
+            "repair_rate": 0.02121118275700393,
+            "damage_rate": 0.0003976929670036824,
+            "candidate_error_rate": 0.015360118957061951,
+            "complementary_repair_rate": 0.16318381472115
+          },
+          "[.1,.4)": {
+            "pixels": 1618367,
+            "dino_wrong": 444091,
+            "dino_correct": 1174276,
+            "corrected": 111186,
+            "introduced": 120180,
+            "candidate_wrong": 453085,
+            "complementary": 176701,
+            "complementary_repaired": 111186,
+            "net_errors_removed": -8994,
+            "repair_rate": 0.2503676048377472,
+            "damage_rate": 0.10234391233406798,
+            "candidate_error_rate": 0.279964309702311,
+            "complementary_repair_rate": 0.629232432187707
+          },
+          "[.4,.6)": {
+            "pixels": 666431,
+            "dino_wrong": 317588,
+            "dino_correct": 348843,
+            "corrected": 172821,
+            "introduced": 119859,
+            "candidate_wrong": 264626,
+            "complementary": 182908,
+            "complementary_repaired": 172821,
+            "net_errors_removed": 52962,
+            "repair_rate": 0.544167285917604,
+            "damage_rate": 0.3435900964043997,
+            "candidate_error_rate": 0.3970793675564312,
+            "complementary_repair_rate": 0.9448520567717104
+          },
+          "[.6,.9)": {
+            "pixels": 1453513,
+            "dino_wrong": 666114,
+            "dino_correct": 787399,
+            "corrected": 210800,
+            "introduced": 144700,
+            "candidate_wrong": 600014,
+            "complementary": 309120,
+            "complementary_repaired": 210800,
+            "net_errors_removed": 66100,
+            "repair_rate": 0.3164623472859,
+            "damage_rate": 0.18376960092659503,
+            "candidate_error_rate": 0.41280263747211066,
+            "complementary_repair_rate": 0.681935817805383
+          },
+          "[.9,1]": {
+            "pixels": 11419627,
+            "dino_wrong": 603938,
+            "dino_correct": 10815689,
+            "corrected": 33315,
+            "introduced": 82459,
+            "candidate_wrong": 653082,
+            "complementary": 122893,
+            "complementary_repaired": 33315,
+            "net_errors_removed": -49144,
+            "repair_rate": 0.055162947189943336,
+            "damage_rate": 0.007624017295615656,
+            "candidate_error_rate": 0.057189433595335466,
+            "complementary_repair_rate": 0.2710894843481728
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 716746,
+            "dino_correct": 1084147,
+            "corrected": 87964,
+            "introduced": 86924,
+            "candidate_wrong": 715706,
+            "complementary": 166317,
+            "complementary_repaired": 87964,
+            "net_errors_removed": 1040,
+            "repair_rate": 0.12272687953612577,
+            "damage_rate": 0.08017731912738771,
+            "candidate_error_rate": 0.3974172813154363,
+            "complementary_repair_rate": 0.5288936188122682
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 779606,
+            "dino_correct": 11036508,
+            "corrected": 131501,
+            "introduced": 238004,
+            "candidate_wrong": 886109,
+            "complementary": 219966,
+            "complementary_repaired": 131501,
+            "net_errors_removed": -106503,
+            "repair_rate": 0.16867622876170785,
+            "damage_rate": 0.021565154485458624,
+            "candidate_error_rate": 0.07499157506435702,
+            "complementary_repair_rate": 0.5978242091959667
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1113376,
+            "dino_correct": 38222705,
+            "corrected": 320917,
+            "introduced": 157071,
+            "candidate_wrong": 949530,
+            "complementary": 480469,
+            "complementary_repaired": 320917,
+            "net_errors_removed": 163846,
+            "repair_rate": 0.28823775615784786,
+            "damage_rate": 0.0041093637930648816,
+            "candidate_error_rate": 0.02413890697448991,
+            "complementary_repair_rate": 0.6679244654701968
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49150862,
+            "dino_wrong": 0,
+            "dino_correct": 49150862,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 0,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": null,
+            "damage_rate": 0.0,
+            "candidate_error_rate": 0.0,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1192498,
+            "dino_wrong": 0,
+            "dino_correct": 1192498,
+            "corrected": 0,
+            "introduced": 481999,
+            "candidate_wrong": 481999,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -481999,
+            "repair_rate": null,
+            "damage_rate": 0.4041927114343169,
+            "candidate_error_rate": 0.4041927114343169,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 866752,
+            "dino_wrong": 866752,
+            "dino_correct": 0,
+            "corrected": 540382,
+            "introduced": 0,
+            "candidate_wrong": 326370,
+            "complementary": 866752,
+            "complementary_repaired": 540382,
+            "net_errors_removed": 540382,
+            "repair_rate": 0.6234563058406557,
+            "damage_rate": null,
+            "candidate_error_rate": 0.3765436941593443,
+            "complementary_repair_rate": 0.6234563058406557
+          },
+          "both_wrong": {
+            "pixels": 1742976,
+            "dino_wrong": 1742976,
+            "dino_correct": 0,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 1742976,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": 0.0,
+            "damage_rate": null,
+            "candidate_error_rate": 1.0,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1462839,
+            "dino_correct": 38600658,
+            "corrected": 353954,
+            "introduced": 200713,
+            "candidate_wrong": 1309598,
+            "complementary": 548303,
+            "complementary_repaired": 353954,
+            "net_errors_removed": 153241,
+            "repair_rate": 0.24196374310501703,
+            "damage_rate": 0.00519973001496503,
+            "candidate_error_rate": 0.032688060156106695,
+            "complementary_repair_rate": 0.6455445255634202
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1146889,
+            "dino_correct": 11742702,
+            "corrected": 186428,
+            "introduced": 281286,
+            "candidate_wrong": 1241747,
+            "complementary": 318449,
+            "complementary_repaired": 186428,
+            "net_errors_removed": -94858,
+            "repair_rate": 0.16255104024888198,
+            "damage_rate": 0.023954112094473658,
+            "candidate_error_rate": 0.09633719176970006,
+            "complementary_repair_rate": 0.585424981708217
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                194606,
+                0,
+                194606,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                19656,
+                0,
+                19656,
+                0,
+                1703,
+                1703,
+                0,
+                0
+              ],
+              [
+                22242,
+                22242,
+                0,
+                3230,
+                0,
+                19012,
+                22242,
+                3230
+              ],
+              [
+                174137,
+                174137,
+                0,
+                0,
+                0,
+                174137,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                52888,
+                52888,
+                0,
+                9030,
+                0,
+                43858,
+                52888,
+                9030
+              ],
+              [
+                328730,
+                328730,
+                0,
+                0,
+                0,
+                328730,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                36783344,
+                0,
+                36783344,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                219547,
+                0,
+                219547,
+                0,
+                13098,
+                13098,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                82116,
+                0,
+                82116,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                48438,
+                0,
+                48438,
+                0,
+                25142,
+                25142,
+                0,
+                0
+              ],
+              [
+                55226,
+                55226,
+                0,
+                31863,
+                0,
+                23363,
+                55226,
+                31863
+              ],
+              [
+                78855,
+                78855,
+                0,
+                0,
+                0,
+                78855,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                121475,
+                121475,
+                0,
+                79323,
+                0,
+                42152,
+                121475,
+                79323
+              ],
+              [
+                188535,
+                188535,
+                0,
+                0,
+                0,
+                188535,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                840116,
+                0,
+                840116,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                203606,
+                0,
+                203606,
+                0,
+                95038,
+                95038,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                40505,
+                0,
+                40505,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                32742,
+                0,
+                32742,
+                0,
+                30049,
+                30049,
+                0,
+                0
+              ],
+              [
+                33892,
+                33892,
+                0,
+                31535,
+                0,
+                2357,
+                33892,
+                31535
+              ],
+              [
+                36678,
+                36678,
+                0,
+                0,
+                0,
+                36678,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                55847,
+                0,
+                55847,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                43657,
+                0,
+                43657,
+                0,
+                40875,
+                40875,
+                0,
+                0
+              ],
+              [
+                45603,
+                45603,
+                0,
+                43148,
+                0,
+                2455,
+                45603,
+                43148
+              ],
+              [
+                42375,
+                42375,
+                0,
+                0,
+                0,
+                42375,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                121838,
+                0,
+                121838,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                54254,
+                0,
+                54254,
+                0,
+                48935,
+                48935,
+                0,
+                0
+              ],
+              [
+                103413,
+                103413,
+                0,
+                98138,
+                0,
+                5275,
+                103413,
+                98138
+              ],
+              [
+                55627,
+                55627,
+                0,
+                0,
+                0,
+                55627,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                156507,
+                0,
+                156507,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                45063,
+                0,
+                45063,
+                0,
+                24859,
+                24859,
+                0,
+                0
+              ],
+              [
+                36415,
+                36415,
+                0,
+                19077,
+                0,
+                17338,
+                36415,
+                19077
+              ],
+              [
+                106953,
+                106953,
+                0,
+                0,
+                0,
+                106953,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                403079,
+                0,
+                403079,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                182750,
+                0,
+                182750,
+                0,
+                119841,
+                119841,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                272705,
+                272705,
+                0,
+                191723,
+                0,
+                80982,
+                272705,
+                191723
+              ],
+              [
+                250041,
+                250041,
+                0,
+                0,
+                0,
+                250041,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                434174,
+                0,
+                434174,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                30340,
+                0,
+                30340,
+                0,
+                5171,
+                5171,
+                0,
+                0
+              ],
+              [
+                18542,
+                18542,
+                0,
+                2259,
+                0,
+                16283,
+                18542,
+                2259
+              ],
+              [
+                153806,
+                153806,
+                0,
+                0,
+                0,
+                153806,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10038730,
+                0,
+                10038730,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                312445,
+                0,
+                312445,
+                0,
+                77288,
+                77288,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                104351,
+                104351,
+                0,
+                31056,
+                0,
+                73295,
+                104351,
+                31056
+              ],
+              [
+                327239,
+                327239,
+                0,
+                0,
+                0,
+                327239,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      }
+    },
+    "last": {
+      "fusion": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2694196,
+          "dino_correct": 50258892,
+          "corrected": 718170,
+          "introduced": 759342,
+          "candidate_wrong": 2735368,
+          "complementary": 790200,
+          "complementary_repaired": 455595,
+          "net_errors_removed": -41172,
+          "repair_rate": 0.2665618982434834,
+          "damage_rate": 0.015108610034618351,
+          "candidate_error_rate": 0.05165643975286201,
+          "complementary_repair_rate": 0.5765565679574791
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 38880302,
+            "dino_wrong": 880943,
+            "dino_correct": 37999359,
+            "corrected": 209564,
+            "introduced": 340669,
+            "candidate_wrong": 1012048,
+            "complementary": 227556,
+            "complementary_repaired": 124975,
+            "net_errors_removed": -131105,
+            "repair_rate": 0.23788599262381335,
+            "damage_rate": 0.008965124911712327,
+            "candidate_error_rate": 0.026029838965757005,
+            "complementary_repair_rate": 0.5492054703018158
+          },
+          "[.1,.4)": {
+            "pixels": 550941,
+            "dino_wrong": 168481,
+            "dino_correct": 382460,
+            "corrected": 85209,
+            "introduced": 129436,
+            "candidate_wrong": 212708,
+            "complementary": 92153,
+            "complementary_repaired": 61085,
+            "net_errors_removed": -44227,
+            "repair_rate": 0.5057484226708057,
+            "damage_rate": 0.3384301626313863,
+            "candidate_error_rate": 0.38608126823017347,
+            "complementary_repair_rate": 0.6628650179592634
+          },
+          "[.4,.6)": {
+            "pixels": 243179,
+            "dino_wrong": 119581,
+            "dino_correct": 123598,
+            "corrected": 66499,
+            "introduced": 50657,
+            "candidate_wrong": 103739,
+            "complementary": 64010,
+            "complementary_repaired": 46382,
+            "net_errors_removed": 15842,
+            "repair_rate": 0.5561000493389419,
+            "damage_rate": 0.409852910241266,
+            "candidate_error_rate": 0.42659522409418577,
+            "complementary_repair_rate": 0.7246055303858772
+          },
+          "[.6,.9)": {
+            "pixels": 545169,
+            "dino_wrong": 319752,
+            "dino_correct": 225417,
+            "corrected": 143472,
+            "introduced": 67366,
+            "candidate_wrong": 243646,
+            "complementary": 136504,
+            "complementary_repaired": 91122,
+            "net_errors_removed": 76106,
+            "repair_rate": 0.44869774074908053,
+            "damage_rate": 0.2988505747126437,
+            "candidate_error_rate": 0.44691829506079767,
+            "complementary_repair_rate": 0.6675408779229912
+          },
+          "[.9,1]": {
+            "pixels": 12733497,
+            "dino_wrong": 1205439,
+            "dino_correct": 11528058,
+            "corrected": 213426,
+            "introduced": 171214,
+            "candidate_wrong": 1163227,
+            "complementary": 269977,
+            "complementary_repaired": 132031,
+            "net_errors_removed": 42212,
+            "repair_rate": 0.17705250950068813,
+            "damage_rate": 0.014851937767835659,
+            "candidate_error_rate": 0.09135173157852866,
+            "complementary_repair_rate": 0.4890453631235253
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 717359,
+            "dino_correct": 1083534,
+            "corrected": 142082,
+            "introduced": 132478,
+            "candidate_wrong": 707755,
+            "complementary": 160728,
+            "complementary_repaired": 84964,
+            "net_errors_removed": 9604,
+            "repair_rate": 0.19806261578930492,
+            "damage_rate": 0.12226473742402176,
+            "candidate_error_rate": 0.39300224943958356,
+            "complementary_repair_rate": 0.5286197800009955
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 764073,
+            "dino_correct": 11052041,
+            "corrected": 242067,
+            "introduced": 188547,
+            "candidate_wrong": 710553,
+            "complementary": 245969,
+            "complementary_repaired": 151818,
+            "net_errors_removed": 53520,
+            "repair_rate": 0.3168113517949201,
+            "damage_rate": 0.01705992585441911,
+            "candidate_error_rate": 0.06013423702581069,
+            "complementary_repair_rate": 0.6172241217389183
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1212764,
+            "dino_correct": 38123317,
+            "corrected": 334021,
+            "introduced": 438317,
+            "candidate_wrong": 1317060,
+            "complementary": 383503,
+            "complementary_repaired": 218813,
+            "net_errors_removed": -104296,
+            "repair_rate": 0.27542126910099574,
+            "damage_rate": 0.011497346886158935,
+            "candidate_error_rate": 0.03348223733828492,
+            "complementary_repair_rate": 0.5705639851578737
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49127085,
+            "dino_wrong": 0,
+            "dino_correct": 49127085,
+            "corrected": 0,
+            "introduced": 377042,
+            "candidate_wrong": 377042,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -377042,
+            "repair_rate": null,
+            "damage_rate": 0.007674829475430915,
+            "candidate_error_rate": 0.007674829475430915,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1131807,
+            "dino_wrong": 0,
+            "dino_correct": 1131807,
+            "corrected": 0,
+            "introduced": 382300,
+            "candidate_wrong": 382300,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -382300,
+            "repair_rate": null,
+            "damage_rate": 0.33777843748978403,
+            "candidate_error_rate": 0.33777843748978403,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 790200,
+            "dino_wrong": 790200,
+            "dino_correct": 0,
+            "corrected": 455595,
+            "introduced": 0,
+            "candidate_wrong": 334605,
+            "complementary": 790200,
+            "complementary_repaired": 455595,
+            "net_errors_removed": 455595,
+            "repair_rate": 0.5765565679574791,
+            "damage_rate": null,
+            "candidate_error_rate": 0.4234434320425209,
+            "complementary_repair_rate": 0.5765565679574791
+          },
+          "both_wrong": {
+            "pixels": 1903996,
+            "dino_wrong": 1903996,
+            "dino_correct": 0,
+            "corrected": 262575,
+            "introduced": 0,
+            "candidate_wrong": 1641421,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 262575,
+            "repair_rate": 0.1379073275364024,
+            "damage_rate": null,
+            "candidate_error_rate": 0.8620926724635977,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1602363,
+            "dino_correct": 38461134,
+            "corrected": 398727,
+            "introduced": 503573,
+            "candidate_wrong": 1707209,
+            "complementary": 444730,
+            "complementary_repaired": 250922,
+            "net_errors_removed": -104846,
+            "repair_rate": 0.24883687404164972,
+            "damage_rate": 0.013093035686363278,
+            "candidate_error_rate": 0.042612580724044134,
+            "complementary_repair_rate": 0.5642119937939873
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1091833,
+            "dino_correct": 11797758,
+            "corrected": 319443,
+            "introduced": 255769,
+            "candidate_wrong": 1028159,
+            "complementary": 345470,
+            "complementary_repaired": 204673,
+            "net_errors_removed": 63674,
+            "repair_rate": 0.29257496338725797,
+            "damage_rate": 0.021679458080086065,
+            "candidate_error_rate": 0.07976661167914482,
+            "complementary_repair_rate": 0.5924479694329464
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                216112,
+                0,
+                216112,
+                0,
+                13650,
+                13650,
+                0,
+                0
+              ],
+              [
+                51177,
+                0,
+                51177,
+                0,
+                19753,
+                19753,
+                0,
+                0
+              ],
+              [
+                56875,
+                56875,
+                0,
+                24636,
+                0,
+                32239,
+                56875,
+                24636
+              ],
+              [
+                196570,
+                196570,
+                0,
+                15876,
+                0,
+                180694,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                170681,
+                170681,
+                0,
+                100339,
+                0,
+                70342,
+                170681,
+                100339
+              ],
+              [
+                456817,
+                456817,
+                0,
+                68713,
+                0,
+                388104,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                37225825,
+                0,
+                37225825,
+                0,
+                177210,
+                177210,
+                0,
+                0
+              ],
+              [
+                506245,
+                0,
+                506245,
+                0,
+                130056,
+                130056,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                27117,
+                0,
+                27117,
+                0,
+                6721,
+                6721,
+                0,
+                0
+              ],
+              [
+                29600,
+                0,
+                29600,
+                0,
+                17879,
+                17879,
+                0,
+                0
+              ],
+              [
+                33010,
+                33010,
+                0,
+                21295,
+                0,
+                11715,
+                33010,
+                21295
+              ],
+              [
+                26059,
+                26059,
+                0,
+                6933,
+                0,
+                19126,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                59143,
+                59143,
+                0,
+                39790,
+                0,
+                19353,
+                59143,
+                39790
+              ],
+              [
+                50269,
+                50269,
+                0,
+                17191,
+                0,
+                33078,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                202167,
+                0,
+                202167,
+                0,
+                39883,
+                39883,
+                0,
+                0
+              ],
+              [
+                123576,
+                0,
+                123576,
+                0,
+                64953,
+                64953,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                16088,
+                0,
+                16088,
+                0,
+                4257,
+                4257,
+                0,
+                0
+              ],
+              [
+                13685,
+                0,
+                13685,
+                0,
+                9220,
+                9220,
+                0,
+                0
+              ],
+              [
+                14775,
+                14775,
+                0,
+                10397,
+                0,
+                4378,
+                14775,
+                10397
+              ],
+              [
+                14784,
+                14784,
+                0,
+                4464,
+                0,
+                10320,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                17607,
+                0,
+                17607,
+                0,
+                4687,
+                4687,
+                0,
+                0
+              ],
+              [
+                10714,
+                0,
+                10714,
+                0,
+                6278,
+                6278,
+                0,
+                0
+              ],
+              [
+                16145,
+                16145,
+                0,
+                11689,
+                0,
+                4456,
+                16145,
+                11689
+              ],
+              [
+                11018,
+                11018,
+                0,
+                4345,
+                0,
+                6673,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                36397,
+                0,
+                36397,
+                0,
+                8922,
+                8922,
+                0,
+                0
+              ],
+              [
+                29107,
+                0,
+                29107,
+                0,
+                17293,
+                17293,
+                0,
+                0
+              ],
+              [
+                33090,
+                33090,
+                0,
+                24296,
+                0,
+                8794,
+                33090,
+                24296
+              ],
+              [
+                29769,
+                29769,
+                0,
+                11308,
+                0,
+                18461,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                62057,
+                0,
+                62057,
+                0,
+                10735,
+                10735,
+                0,
+                0
+              ],
+              [
+                21116,
+                0,
+                21116,
+                0,
+                12269,
+                12269,
+                0,
+                0
+              ],
+              [
+                19921,
+                19921,
+                0,
+                12562,
+                0,
+                7359,
+                19921,
+                12562
+              ],
+              [
+                47988,
+                47988,
+                0,
+                10981,
+                0,
+                37007,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                96110,
+                0,
+                96110,
+                0,
+                19871,
+                19871,
+                0,
+                0
+              ],
+              [
+                46134,
+                0,
+                46134,
+                0,
+                24491,
+                24491,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                116583,
+                116583,
+                0,
+                78560,
+                0,
+                38023,
+                116583,
+                78560
+              ],
+              [
+                135260,
+                135260,
+                0,
+                41369,
+                0,
+                93891,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                601836,
+                0,
+                601836,
+                0,
+                21595,
+                21595,
+                0,
+                0
+              ],
+              [
+                44746,
+                0,
+                44746,
+                0,
+                16399,
+                16399,
+                0,
+                0
+              ],
+              [
+                36147,
+                36147,
+                0,
+                16074,
+                0,
+                20073,
+                36147,
+                16074
+              ],
+              [
+                271230,
+                271230,
+                0,
+                18864,
+                0,
+                252366,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10625769,
+                0,
+                10625769,
+                0,
+                69511,
+                69511,
+                0,
+                0
+              ],
+              [
+                255707,
+                0,
+                255707,
+                0,
+                63709,
+                63709,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                233830,
+                233830,
+                0,
+                115957,
+                0,
+                117873,
+                233830,
+                115957
+              ],
+              [
+                664232,
+                664232,
+                0,
+                62531,
+                0,
+                601701,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      },
+      "mean": {
+        "all": {
+          "pixels": 52953088,
+          "dino_wrong": 2694196,
+          "dino_correct": 50258892,
+          "corrected": 432254,
+          "introduced": 430273,
+          "candidate_wrong": 2692215,
+          "complementary": 790200,
+          "complementary_repaired": 432254,
+          "net_errors_removed": 1981,
+          "repair_rate": 0.1604389584128252,
+          "damage_rate": 0.008561131829169653,
+          "candidate_error_rate": 0.050841510886012915,
+          "complementary_repair_rate": 0.547018476335105
+        },
+        "probability": {
+          "[0,.1)": {
+            "pixels": 38880302,
+            "dino_wrong": 880943,
+            "dino_correct": 37999359,
+            "corrected": 84637,
+            "introduced": 117849,
+            "candidate_wrong": 914155,
+            "complementary": 227556,
+            "complementary_repaired": 84637,
+            "net_errors_removed": -33212,
+            "repair_rate": 0.09607545550620188,
+            "damage_rate": 0.003101341788423326,
+            "candidate_error_rate": 0.023512034448703614,
+            "complementary_repair_rate": 0.3719392149624708
+          },
+          "[.1,.4)": {
+            "pixels": 550941,
+            "dino_wrong": 168481,
+            "dino_correct": 382460,
+            "corrected": 76352,
+            "introduced": 114684,
+            "candidate_wrong": 206813,
+            "complementary": 92153,
+            "complementary_repaired": 76352,
+            "net_errors_removed": -38332,
+            "repair_rate": 0.4531786967076406,
+            "damage_rate": 0.2998588087643152,
+            "candidate_error_rate": 0.37538139292592126,
+            "complementary_repair_rate": 0.8285351534947316
+          },
+          "[.4,.6)": {
+            "pixels": 243179,
+            "dino_wrong": 119581,
+            "dino_correct": 123598,
+            "corrected": 62108,
+            "introduced": 51510,
+            "candidate_wrong": 108983,
+            "complementary": 64010,
+            "complementary_repaired": 62108,
+            "net_errors_removed": 10598,
+            "repair_rate": 0.5193801690904073,
+            "damage_rate": 0.41675431641288696,
+            "candidate_error_rate": 0.448159586148475,
+            "complementary_repair_rate": 0.9702858928292454
+          },
+          "[.6,.9)": {
+            "pixels": 545169,
+            "dino_wrong": 319752,
+            "dino_correct": 225417,
+            "corrected": 107940,
+            "introduced": 52161,
+            "candidate_wrong": 263973,
+            "complementary": 136504,
+            "complementary_repaired": 107940,
+            "net_errors_removed": 55779,
+            "repair_rate": 0.3375741199429558,
+            "damage_rate": 0.23139780939325783,
+            "candidate_error_rate": 0.4842039807839404,
+            "complementary_repair_rate": 0.7907460587235539
+          },
+          "[.9,1]": {
+            "pixels": 12733497,
+            "dino_wrong": 1205439,
+            "dino_correct": 11528058,
+            "corrected": 101217,
+            "introduced": 94069,
+            "candidate_wrong": 1198291,
+            "complementary": 269977,
+            "complementary_repaired": 101217,
+            "net_errors_removed": 7148,
+            "repair_rate": 0.08396691993539283,
+            "damage_rate": 0.008160004052720762,
+            "candidate_error_rate": 0.09410541346183221,
+            "complementary_repair_rate": 0.37490971453123784
+          }
+        },
+        "regions": {
+          "boundary_2px": {
+            "pixels": 1800893,
+            "dino_wrong": 717359,
+            "dino_correct": 1083534,
+            "corrected": 78959,
+            "introduced": 75523,
+            "candidate_wrong": 713923,
+            "complementary": 160728,
+            "complementary_repaired": 78959,
+            "net_errors_removed": 3436,
+            "repair_rate": 0.11006901704725248,
+            "damage_rate": 0.0697006277606425,
+            "candidate_error_rate": 0.3964272169418172,
+            "complementary_repair_rate": 0.4912585237170872
+          },
+          "foreground_interior": {
+            "pixels": 11816114,
+            "dino_wrong": 764073,
+            "dino_correct": 11052041,
+            "corrected": 135224,
+            "introduced": 129965,
+            "candidate_wrong": 758814,
+            "complementary": 245969,
+            "complementary_repaired": 135224,
+            "net_errors_removed": 5259,
+            "repair_rate": 0.17697785421026524,
+            "damage_rate": 0.011759366437384733,
+            "candidate_error_rate": 0.06421857473616115,
+            "complementary_repair_rate": 0.5497603356520537
+          },
+          "background_exterior": {
+            "pixels": 39336081,
+            "dino_wrong": 1212764,
+            "dino_correct": 38123317,
+            "corrected": 218071,
+            "introduced": 224785,
+            "candidate_wrong": 1219478,
+            "complementary": 383503,
+            "complementary_repaired": 218071,
+            "net_errors_removed": -6714,
+            "repair_rate": 0.1798132200494078,
+            "damage_rate": 0.005896260286060628,
+            "candidate_error_rate": 0.031001512326558407,
+            "complementary_repair_rate": 0.5686291893414133
+          }
+        },
+        "correctness": {
+          "both_correct": {
+            "pixels": 49127085,
+            "dino_wrong": 0,
+            "dino_correct": 49127085,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 0,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": null,
+            "damage_rate": 0.0,
+            "candidate_error_rate": 0.0,
+            "complementary_repair_rate": null
+          },
+          "dino_correct_vmamba_wrong": {
+            "pixels": 1131807,
+            "dino_wrong": 0,
+            "dino_correct": 1131807,
+            "corrected": 0,
+            "introduced": 430273,
+            "candidate_wrong": 430273,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": -430273,
+            "repair_rate": null,
+            "damage_rate": 0.38016463937756173,
+            "candidate_error_rate": 0.38016463937756173,
+            "complementary_repair_rate": null
+          },
+          "dino_wrong_vmamba_correct": {
+            "pixels": 790200,
+            "dino_wrong": 790200,
+            "dino_correct": 0,
+            "corrected": 432254,
+            "introduced": 0,
+            "candidate_wrong": 357946,
+            "complementary": 790200,
+            "complementary_repaired": 432254,
+            "net_errors_removed": 432254,
+            "repair_rate": 0.547018476335105,
+            "damage_rate": null,
+            "candidate_error_rate": 0.45298152366489497,
+            "complementary_repair_rate": 0.547018476335105
+          },
+          "both_wrong": {
+            "pixels": 1903996,
+            "dino_wrong": 1903996,
+            "dino_correct": 0,
+            "corrected": 0,
+            "introduced": 0,
+            "candidate_wrong": 1903996,
+            "complementary": 0,
+            "complementary_repaired": 0,
+            "net_errors_removed": 0,
+            "repair_rate": 0.0,
+            "damage_rate": null,
+            "candidate_error_rate": 1.0,
+            "complementary_repair_rate": null
+          }
+        },
+        "gt_class": {
+          "background": {
+            "pixels": 40063497,
+            "dino_wrong": 1602363,
+            "dino_correct": 38461134,
+            "corrected": 246092,
+            "introduced": 268534,
+            "candidate_wrong": 1624805,
+            "complementary": 444730,
+            "complementary_repaired": 246092,
+            "net_errors_removed": -22442,
+            "repair_rate": 0.15358068053243865,
+            "damage_rate": 0.006981957422264253,
+            "candidate_error_rate": 0.040555745795231,
+            "complementary_repair_rate": 0.553351471679446
+          },
+          "foreground": {
+            "pixels": 12889591,
+            "dino_wrong": 1091833,
+            "dino_correct": 11797758,
+            "corrected": 186162,
+            "introduced": 161739,
+            "candidate_wrong": 1067410,
+            "complementary": 345470,
+            "complementary_repaired": 186162,
+            "net_errors_removed": 24423,
+            "repair_rate": 0.17050409723831392,
+            "damage_rate": 0.013709299682193855,
+            "candidate_error_rate": 0.08281178200301313,
+            "complementary_repair_rate": 0.538865892841636
+          }
+        },
+        "joint_counts": [
+          [
+            [
+              [
+                216112,
+                0,
+                216112,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                51177,
+                0,
+                51177,
+                0,
+                12904,
+                12904,
+                0,
+                0
+              ],
+              [
+                56875,
+                56875,
+                0,
+                15174,
+                0,
+                41701,
+                56875,
+                15174
+              ],
+              [
+                196570,
+                196570,
+                0,
+                0,
+                0,
+                196570,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                170681,
+                170681,
+                0,
+                69463,
+                0,
+                101218,
+                170681,
+                69463
+              ],
+              [
+                456817,
+                456817,
+                0,
+                0,
+                0,
+                456817,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                37225825,
+                0,
+                37225825,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                506245,
+                0,
+                506245,
+                0,
+                104945,
+                104945,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                27117,
+                0,
+                27117,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                29600,
+                0,
+                29600,
+                0,
+                22786,
+                22786,
+                0,
+                0
+              ],
+              [
+                33010,
+                33010,
+                0,
+                26406,
+                0,
+                6604,
+                33010,
+                26406
+              ],
+              [
+                26059,
+                26059,
+                0,
+                0,
+                0,
+                26059,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                59143,
+                59143,
+                0,
+                49946,
+                0,
+                9197,
+                59143,
+                49946
+              ],
+              [
+                50269,
+                50269,
+                0,
+                0,
+                0,
+                50269,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                202167,
+                0,
+                202167,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                123576,
+                0,
+                123576,
+                0,
+                91898,
+                91898,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                16088,
+                0,
+                16088,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                13685,
+                0,
+                13685,
+                0,
+                13177,
+                13177,
+                0,
+                0
+              ],
+              [
+                14775,
+                14775,
+                0,
+                14244,
+                0,
+                531,
+                14775,
+                14244
+              ],
+              [
+                14784,
+                14784,
+                0,
+                0,
+                0,
+                14784,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                17607,
+                0,
+                17607,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                10714,
+                0,
+                10714,
+                0,
+                10391,
+                10391,
+                0,
+                0
+              ],
+              [
+                16145,
+                16145,
+                0,
+                15815,
+                0,
+                330,
+                16145,
+                15815
+              ],
+              [
+                11018,
+                11018,
+                0,
+                0,
+                0,
+                11018,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                36397,
+                0,
+                36397,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                29107,
+                0,
+                29107,
+                0,
+                27942,
+                27942,
+                0,
+                0
+              ],
+              [
+                33090,
+                33090,
+                0,
+                32049,
+                0,
+                1041,
+                33090,
+                32049
+              ],
+              [
+                29769,
+                29769,
+                0,
+                0,
+                0,
+                29769,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                62057,
+                0,
+                62057,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                21116,
+                0,
+                21116,
+                0,
+                15013,
+                15013,
+                0,
+                0
+              ],
+              [
+                19921,
+                19921,
+                0,
+                14219,
+                0,
+                5702,
+                19921,
+                14219
+              ],
+              [
+                47988,
+                47988,
+                0,
+                0,
+                0,
+                47988,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                96110,
+                0,
+                96110,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                46134,
+                0,
+                46134,
+                0,
+                37148,
+                37148,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                116583,
+                116583,
+                0,
+                93721,
+                0,
+                22862,
+                116583,
+                93721
+              ],
+              [
+                135260,
+                135260,
+                0,
+                0,
+                0,
+                135260,
+                0,
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                601836,
+                0,
+                601836,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                44746,
+                0,
+                44746,
+                0,
+                11643,
+                11643,
+                0,
+                0
+              ],
+              [
+                36147,
+                36147,
+                0,
+                8916,
+                0,
+                27231,
+                36147,
+                8916
+              ],
+              [
+                271230,
+                271230,
+                0,
+                0,
+                0,
+                271230,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                10625769,
+                0,
+                10625769,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                255707,
+                0,
+                255707,
+                0,
+                82426,
+                82426,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                233830,
+                233830,
+                0,
+                92301,
+                0,
+                141529,
+                233830,
+                92301
+              ],
+              [
+                664232,
+                664232,
+                0,
+                0,
+                0,
+                664232,
+                0,
+                0
+              ]
+            ]
+          ]
+        ],
+        "joint_axes": [
+          [
+            "[0,.1)",
+            "[.1,.4)",
+            "[.4,.6)",
+            "[.6,.9)",
+            "[.9,1]"
+          ],
+          [
+            "boundary_2px",
+            "foreground_interior",
+            "background_exterior"
+          ],
+          [
+            "both_correct",
+            "dino_correct_vmamba_wrong",
+            "dino_wrong_vmamba_correct",
+            "both_wrong"
+          ],
+          [
+            "pixels",
+            "dino_wrong",
+            "dino_correct",
+            "corrected",
+            "introduced",
+            "candidate_wrong",
+            "complementary",
+            "complementary_repaired"
+          ]
+        ]
+      }
+    }
+  },
+  "input_sha256": {
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/dinov3_swin/best_dice/probabilities.npy": "83513e12ea8eaffc62ff45cbe37fae9889a8a665eeaaea95535f0b2870782b85",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/vmamba_swin/best_dice/probabilities.npy": "0f9ada8189f454303ff2cafa3689feaf1db5e13ffe7209a91736349f067beab4",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/fusion_swin/best_dice/probabilities.npy": "22ed16cc307825c55d0f72feac5f54644491da14c63c9a5673b139be661d6796",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/dinov3_swin/best_loss/probabilities.npy": "1a4e9f2861d2043683879f46bfdca0041b92913849948c7edbc9ad2971d16ab4",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/vmamba_swin/best_loss/probabilities.npy": "f5bf1c2c2c71be84081c11212bbcb009fbff88b04ceca09e4058f8712ce01401",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/fusion_swin/best_loss/probabilities.npy": "0f8a474a654f889006c0e9b41c15b70cc1bdf797c41fb1f5b6f8fca07beb716c",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/dinov3_swin/last/probabilities.npy": "573b091f92f4515db56f920912fd6832af479a95d0955d2b8bb3dc93de2a9b8d",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/vmamba_swin/last/probabilities.npy": "c3d0c60b69bf1db489362b53da48d72298416579b38c08e1fe06412820a78127",
+    "/home/featurize/referring_image_segmentation/stage4_fusion/results/seed42/fusion_swin/last/probabilities.npy": "679ef4a018eb98112893ba68d1ceca4c13fcf092b3fe3e85eda1f39a0ad1c068"
+  },
+  "caveats": [
+    "Foreground probability is not calibrated confidence.",
+    "GT groups describe errors only; no GT enters inference.",
+    "No labels for blurred boundaries/hair/reflections.",
+    "Baseline performance strata are selected on baseline outcomes."
+  ]
+}

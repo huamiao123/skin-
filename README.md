@@ -1,5 +1,15 @@
 # 皮肤病灶分割：实验结果与源码存档
 
+## 2026-10-17：融合收益分析、动态门控与三seed容量复验
+
+[第五轮结果](referring_image_segmentation/stage5_selective_fusion/analysis/REPORT.md) · [门控诊断](referring_image_segmentation/stage5_selective_fusion/analysis/gate_audit/REPORT.md) · [第六轮三seed汇总](referring_image_segmentation/stage6_fusion_confirmation/analysis/REPORT.md) · [完整指标](referring_image_segmentation/stage6_fusion_confirmation/analysis/all_runs.csv) · [图文数据准备](referring_image_segmentation/text_stage_preparation/README.md)。
+
+第五轮seed42完成双Adapter容量、静态残差和动态门控三个300轮实验；动态门控没有超过原Concat或静态残差，也未减少新增错误。第六轮核验并复用第三轮DINO+Swin基线，新增容量与Concat各seeds43/44/45，共六个300轮训练，九个模型与seed组合的27组checkpoint已完整评估。
+
+第六轮主选模为最高验证mean Dice。DINO/容量/Concat的mean Dice均值分别为89.123%/89.229%/89.399%，pooled Dice为89.928%/90.020%/89.887%；mIoU为81.964%/82.114%/82.356%，pooled IoU为81.700%/81.851%/81.632%。Concat三个seed的mean Dice均领先，但pooled Dice均值略降、HD95变差，平均每seed净增加约3.38万个错误像素。不能据部分指标提升宣称稳定纠错或独立泛化；完整边界、Precision/Recall、种子方差和选模敏感性见报告。
+
+源码、协议、日志、逐图数值及纯数值曲线已发布；权重/预测数组/原始数据继续保留本地。[发布范围与SHA256核验](referring_image_segmentation/PUBLISHING.md)。图文目录目前为数据与评价准备，尚未启动文本训练。
+
 ## 2026-10-17：DINOv3 + VMamba 双编码器融合
 
 [第四轮完整结果](referring_image_segmentation/stage4_fusion/analysis/REPORT.md) · [全部指标](referring_image_segmentation/stage4_fusion/analysis/all_runs.csv) · [冻结协议](referring_image_segmentation/stage4_fusion/PROTOCOL.md) · [模型源码](referring_image_segmentation/stage4_fusion/models.py)。

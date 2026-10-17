@@ -1,0 +1,178 @@
+{
+  "passed": true,
+  "initial_probe_hashes": {
+    "43": {
+      "capacity_concat": "6b443f8ae41ddabeb0f19fbd546e575cbb2cdfff669835a46bae44faab806282",
+      "fusion_concat": "677bd42e11e6d16002d8225260e20cdf932837e2c8a097d5af420865fa60737c"
+    },
+    "44": {
+      "capacity_concat": "dc70344e3997257042202ff27476226ff80e4378b12a6395daada9e7b1990c6c",
+      "fusion_concat": "f215160c0b433db2627ef864780d9170006f10c8fc81d781762d65e5d27d35d7"
+    },
+    "45": {
+      "capacity_concat": "0a8b1b9f102c7ccbf185307d454c91172236b755f8eb68901dbcdd8dbeffac00",
+      "fusion_concat": "aae8f4e1940becfc92799016cc1ed3fcaf62e0aa3cda93aa765e43bbd50fe51d"
+    }
+  },
+  "parameters": {
+    "capacity_concat": {
+      "encoder": 21586944,
+      "trainable": 638305,
+      "total": 22225249,
+      "decoder": 407649
+    },
+    "fusion_concat": {
+      "encoder": 51065472,
+      "trainable": 632161,
+      "total": 51697633,
+      "decoder": 407649
+    },
+    "dinov3": {
+      "encoder": 21586944,
+      "trainable": 506465,
+      "total": 22093409,
+      "decoder": 407649
+    }
+  },
+  "reused_baselines": {
+    "43": {
+      "source": "/home/featurize/referring_image_segmentation/stage3_confirmation/results/seed43/swin",
+      "config_sha256": "c492ef70ebbb4d8b61009bde60b2219d113f066bb04627e0c6c61647a2cf3f1b",
+      "checkpoints": {
+        "best_dice": {
+          "selected_epoch": 63,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "1db0b3d67f6907c97b82b67a0c6de3abe1ce9977df81c30f37e90b52bd18549d",
+          "probabilities_sha256": "c585defcdb924ccd2d762dcfefa6ec138d1c51748ff55d62b74e79ccca72e0f6"
+        },
+        "best_loss": {
+          "selected_epoch": 27,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "588f50b0768a318fd134e8741749f11c380e595f3b82e0c070fd1aa1bdd03e47",
+          "probabilities_sha256": "b3c50e1fd9bddceb47b2b8afebe43c48e9fb1ab58135c131148ed61fb02661e1"
+        },
+        "last": {
+          "selected_epoch": 300,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "b63271ade4643dda547106a78ea30af3fdbfa52cf2dd644dcb587ee6def09515",
+          "probabilities_sha256": "7d9935464c2df1c8002152e30409d80ae1b10867c7e08025ced7ca65f12bb581"
+        }
+      }
+    },
+    "44": {
+      "source": "/home/featurize/referring_image_segmentation/stage3_confirmation/results/seed44/swin",
+      "config_sha256": "f5fc1ecbfa51f5c9237bff9ed45bfc871bd521b6b3ab6ea73ae728d944cf6bc0",
+      "checkpoints": {
+        "best_dice": {
+          "selected_epoch": 107,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "f6bad1265dc00448aec172b491f90b3e21cdbb52fd8596f558a792011b460d56",
+          "probabilities_sha256": "4fcdfec85fec024e449fcf3d194c3fe458de8e9204c4ddf7ba1e37f59c343df6"
+        },
+        "best_loss": {
+          "selected_epoch": 13,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "03a6a82c99cc83b40a53e89c8dc4263f7940e95c44e11da6ca727ed14704aa16",
+          "probabilities_sha256": "ff8fddcfc1f20bc31bf0177fa19504bb0d076e0cbf6787254c50e7e9418f5a23"
+        },
+        "last": {
+          "selected_epoch": 300,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "5ab904dbf2db0be7a032c5376f896b798af5c5e6765bf97d94fa4d0a0668a5c9",
+          "probabilities_sha256": "9959501b35cd1ec6378b5155d6596b4d9b81877a40922a79ef868f14dc4fadee"
+        }
+      }
+    },
+    "45": {
+      "source": "/home/featurize/referring_image_segmentation/stage3_confirmation/results/seed45/swin",
+      "config_sha256": "a3384864d249150d6be6524c40b0d599ab9887f4cbc25dbe2e620098a434b194",
+      "checkpoints": {
+        "best_dice": {
+          "selected_epoch": 64,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "5f1910c5c6528a126231aec44fd3a322b57dd29c5a41ff1b9f5f9060271f13da",
+          "probabilities_sha256": "7c91d5788f18d093707da5d288f2a560ad89c3b76498e3109514dfad28ac7e44"
+        },
+        "best_loss": {
+          "selected_epoch": 11,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "57ed49387499fd91babe01697701faad8a5bba501b715e4a519c852a04255491",
+          "probabilities_sha256": "e14e586f52d9c8866f9dcf0532d8830b49f6abc6b9dda1bbb5015517a9d2427d"
+        },
+        "last": {
+          "selected_epoch": 300,
+          "max_probability_abs_delta": 0.0,
+          "checkpoint_sha256": "386e4b24076bdd81e4ef78a4f7b7884e95a326ba5a3a9a975b8f9fd7b21e110f",
+          "probabilities_sha256": "773c8abe00aabcbf761dc3d342abaa886e249eed224a84e52fc3e8f93ca470b1"
+        }
+      }
+    }
+  },
+  "source_audit_passed": true,
+  "data_manifest_match": true,
+  "capacity_adapters_diverge": true,
+  "branch_ablation_passed": true,
+  "all_gradients_finite_nonzero": true,
+  "seed42_initial_hashes_match": true,
+  "frozen_encoder_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "inference": {
+    "dinov3": {
+      "1": {
+        "seconds_per_batch": 0.010999308999998902,
+        "images_per_second": 90.91480201166272,
+        "incremental_peak_gib": 0.13028812408447266
+      },
+      "64": {
+        "seconds_per_batch": 0.0344087540000146,
+        "images_per_second": 1859.9917916229354,
+        "incremental_peak_gib": 1.247879981994629
+      }
+    },
+    "capacity_concat": {
+      "1": {
+        "seconds_per_batch": 0.011713612099993043,
+        "images_per_second": 85.37076278977976,
+        "incremental_peak_gib": 0.12979412078857422
+      },
+      "64": {
+        "seconds_per_batch": 0.037839152099968486,
+        "images_per_second": 1691.3698232697266,
+        "incremental_peak_gib": 1.2085752487182617
+      }
+    },
+    "fusion_concat": {
+      "1": {
+        "seconds_per_batch": 0.02780730289996427,
+        "images_per_second": 35.96177607002961,
+        "incremental_peak_gib": 0.13724565505981445
+      },
+      "64": {
+        "seconds_per_batch": 0.07671209290001571,
+        "images_per_second": 834.2882794687367,
+        "incremental_peak_gib": 1.3843450546264648
+      }
+    }
+  },
+  "inference_note": "Full forward BF16; 3 warmups/10 repeats; no feature caching, disk or postprocessing; same device. Incremental memory excludes resident tensors.",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_gpu_gib": 23.5184326171875,
+  "torch_version": "2.2.2+cu121",
+  "timm_version": "1.0.22",
+  "model_spec": {
+    "decoder": "unchanged stage2 SwinPixelDecoder",
+    "channels": 64,
+    "resolutions": [
+      64,
+      32,
+      16,
+      8
+    ],
+    "fusion": "Concat followed by Conv2d(128,64,1,bias=True)",
+    "capacity": "one frozen DINO forward; two independently trainable DINO adapters",
+    "initialization": "per-run seed; decoder/DINO adapter/fusion initial tensors paired",
+    "baseline": "read-only stage3 DINO+Swin checkpoints after reuse audit"
+  }
+}

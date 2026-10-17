@@ -1,0 +1,117 @@
+{
+  "seed": 45,
+  "epochs": 300,
+  "input_size": 256,
+  "batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "T_max": 300,
+  "eta_min": 1e-05,
+  "precision": "BF16 autocast; FP32 loss",
+  "clip": 1.0,
+  "loss": "BCEWithLogits + per-image soft Dice; smooth=1",
+  "encoder_initial_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "pretrained": {
+    "dinov3": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/dinov3_vits16/model.safetensors",
+      "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        384,
+        384,
+        384,
+        384
+      ],
+      "params": 21586944
+    },
+    "vmamba": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/vmamba_tiny_imagenet.pth",
+      "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        96,
+        192,
+        384,
+        768
+      ],
+      "params": 29478528
+    }
+  },
+  "augmentation_seed": "seed+epoch*100003",
+  "primary_selection": "maximum validation mean Dice; earliest exact tie",
+  "secondary_selection": "minimum sample-weighted validation loss; earliest exact tie",
+  "fixed_selection": "epoch300",
+  "split": "ISIC2018 legacy 1886/808 development validation",
+  "frozen_encoders": true,
+  "model_spec": {
+    "decoder": "unchanged stage2 SwinPixelDecoder",
+    "channels": 64,
+    "resolutions": [
+      64,
+      32,
+      16,
+      8
+    ],
+    "fusion": "Concat followed by Conv2d(128,64,1,bias=True)",
+    "capacity": "one frozen DINO forward; two independently trainable DINO adapters",
+    "initialization": "per-run seed; decoder/DINO adapter/fusion initial tensors paired",
+    "baseline": "read-only stage3 DINO+Swin checkpoints after reuse audit"
+  },
+  "initial_probe_hashes": {
+    "capacity_concat": "0a8b1b9f102c7ccbf185307d454c91172236b755f8eb68901dbcdd8dbeffac00",
+    "fusion_concat": "aae8f4e1940becfc92799016cc1ed3fcaf62e0aa3cda93aa765e43bbd50fe51d"
+  },
+  "parameters": {
+    "capacity_concat": {
+      "encoder": 21586944,
+      "trainable": 638305,
+      "total": 22225249,
+      "decoder": 407649
+    },
+    "fusion_concat": {
+      "encoder": 51065472,
+      "trainable": 632161,
+      "total": 51697633,
+      "decoder": 407649
+    }
+  },
+  "baseline_reuse": {
+    "source": "/home/featurize/referring_image_segmentation/stage3_confirmation/results/seed45/swin",
+    "config_sha256": "a3384864d249150d6be6524c40b0d599ab9887f4cbc25dbe2e620098a434b194",
+    "checkpoints": {
+      "best_dice": {
+        "selected_epoch": 64,
+        "max_probability_abs_delta": 0.0,
+        "checkpoint_sha256": "5f1910c5c6528a126231aec44fd3a322b57dd29c5a41ff1b9f5f9060271f13da",
+        "probabilities_sha256": "7c91d5788f18d093707da5d288f2a560ad89c3b76498e3109514dfad28ac7e44"
+      },
+      "best_loss": {
+        "selected_epoch": 11,
+        "max_probability_abs_delta": 0.0,
+        "checkpoint_sha256": "57ed49387499fd91babe01697701faad8a5bba501b715e4a519c852a04255491",
+        "probabilities_sha256": "e14e586f52d9c8866f9dcf0532d8830b49f6abc6b9dda1bbb5015517a9d2427d"
+      },
+      "last": {
+        "selected_epoch": 300,
+        "max_probability_abs_delta": 0.0,
+        "checkpoint_sha256": "386e4b24076bdd81e4ef78a4f7b7884e95a326ba5a3a9a975b8f9fd7b21e110f",
+        "probabilities_sha256": "773c8abe00aabcbf761dc3d342abaa886e249eed224a84e52fc3e8f93ca470b1"
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "state": "complete",
+  "stage": "fusion_seed_confirmation",
+  "seeds": [
+    43,
+    44,
+    45
+  ],
+  "epochs": 300,
+  "new_training_runs": 6,
+  "reused_baseline_runs": 3,
+  "supervisor_pid": 14237,
+  "started_utc": "2026-10-17T14:29:48.947907+00:00",
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "seed": 43,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T14:30:04.475110+00:00"
+    },
+    {
+      "phase": "smoke_resume_and_export",
+      "seed": 43,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T14:30:23.375646+00:00"
+    },
+    {
+      "phase": "smoke_analysis",
+      "seed": 43,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T14:30:46.901424+00:00"
+    },
+    {
+      "phase": "training",
+      "seed": 43,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T15:01:19.005843+00:00"
+    },
+    {
+      "phase": "analyzing_seed",
+      "seed": 43,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T15:01:44.669761+00:00"
+    },
+    {
+      "phase": "training",
+      "seed": 44,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T15:31:54.049127+00:00"
+    },
+    {
+      "phase": "analyzing_seed",
+      "seed": 44,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T15:32:19.692531+00:00"
+    },
+    {
+      "phase": "training",
+      "seed": 45,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T16:02:25.649978+00:00"
+    },
+    {
+      "phase": "analyzing_seed",
+      "seed": 45,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T16:02:50.412175+00:00"
+    },
+    {
+      "phase": "aggregating",
+      "seed": 45,
+      "returncode": 0,
+      "ended_utc": "2026-10-17T16:02:53.207366+00:00"
+    }
+  ],
+  "completed_seeds": [
+    43,
+    44,
+    45
+  ],
+  "seed": 45,
+  "command": [
+    "analyze.py",
+    "--aggregate"
+  ],
+  "child_pid": 19333,
+  "ended_utc": "2026-10-17T16:02:54.831592+00:00"
+}

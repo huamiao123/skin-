@@ -1,5 +1,31 @@
 # 图文指代分割项目
 
+## 第六轮：融合与容量的配对种子复验（2026-10-17）
+
+`stage6_fusion_confirmation/` 已于2026-10-17 16:02 UTC全部完成，见 [完整结果](stage6_fusion_confirmation/analysis/REPORT.md)、[全部指标](stage6_fusion_confirmation/analysis/all_runs.csv)、[冻结协议](stage6_fusion_confirmation/PROTOCOL.md)、[完成校验](stage6_fusion_confirmation/validation.json) 和 [复用预检](stage6_fusion_confirmation/preflight.json)。矩阵为DINOv3单分支、DINO双Adapter容量对照、DINOv3+VMamba Concat，均使用原Swin Decoder，seeds43/44/45。
+
+第三轮三个DINO+Swin训练通过源文件、数据、初始化、配置、选模核验；当前GPU重算九个checkpoint，概率逐像素与历史一致，因此只读复用。新增六个训练：两个融合/容量组×三个seeds，每组300epochs/9000updates，batch64、冻结Encoder、最高验证mean Dice选模，另保存最低loss和最后一轮。seed42仅作探索背景，不混入主汇总；43/44/45及开发集此前已经使用过，不能称为全新独立测试。
+
+监督入口 `python stage6_fusion_confirmation/launch.py` 已完成两轮真实数据恢复、导出、全指标和汇总预检，以及三个seed的正式训练。同seed共享冻结前向、独立参数和优化器；当前24GB RTX4090峰值分配约10.39GiB，batch64。九个模型与seed组合、27组checkpoint完整评估通过，源文件及历史文件哈希未变。逐seed结果在 `analysis/seed{seed}/`，主汇总如下（均值±训练seed样本标准差）：
+
+| 模型 | Mean Dice | Pooled Dice | mIoU | Pooled IoU | Boundary F1 | HD95 px |
+|---|---:|---:|---:|---:|---:|---:|
+| DINOv3 | 0.891227 ± 0.001321 | 0.899283 ± 0.000930 | 0.819644 ± 0.001311 | 0.816999 ± 0.001536 | 0.340208 ± 0.009175 | 15.178963 ± 0.099409 |
+| 双Adapter容量对照 | 0.892293 ± 0.000931 | 0.900196 ± 0.002658 | 0.821139 ± 0.001137 | 0.818513 ± 0.004394 | 0.337193 ± 0.008722 | 15.080887 ± 0.219909 |
+| DINOv3+VMamba Concat | 0.893995 ± 0.000577 | 0.898871 ± 0.000941 | 0.823562 ± 0.001173 | 0.816318 ± 0.001553 | 0.365576 ± 0.015479 | 15.403120 ± 0.104561 |
+
+主选模规则下，Concat在三个seed的mean Dice均超过DINO和容量对照，平均差分别为+0.277/+0.170个百分点；Boundary F1优于DINO，但pooled Dice均值略低、HD95更高。Concat平均每seed纠正704230个错误像素，新增737999个，净增加33770个；误差净减少并不稳定。完整单图延迟DINO/容量/Concat约11.00/11.71/27.81ms。容量对照只近似匹配可训练参数。结论支持部分指标上的额外收益，不能宣称全面提升、稳定减少错误或独立测试泛化；最低loss和最后一轮也完整保留，不混用选模规则。
+
+图文阶段准备单独保存在 [text_stage_preparation](text_stage_preparation/README.md)：已整理样本接口、文本有效性检查、分组划分与评价草案，并生成本地数据清单审计。已检查的23份元数据表尚无验证过的指代表达字段；旧多标注者reference_id不能当作自然语言。当前未启动文本训练。
+
+## 第五轮：容量与选择性纠错（2026-10-17）
+
+`stage5_selective_fusion/` 已全部完成并通过校验：[冻结协议](stage5_selective_fusion/PROTOCOL.md)、[运行状态](stage5_selective_fusion/run_status.json)、[结果报告](stage5_selective_fusion/analysis/REPORT.md)。P0使用第四轮现有预测完成前景概率、单模型正确性、边界/内部/背景分层统计，见 [P0报告](stage5_selective_fusion/p0/REPORT.md)。
+
+本轮仅新增三组seed42训练：DINO双Adapter容量对照、DINO+VMamba静态残差融合、DINO+VMamba动态空间门控。均为冻结Encoder、原Swin Decoder、256输入、batch64、300epochs、最高验证mean Dice选模；最低loss和最后一轮同步保留。静态/动态初始输出完全相同，初始alpha=.1，动态门控只多512个参数。容量组638305个可训练参数，相比第四轮Concat的632161相差0.972%。
+
+监督入口为 `python stage5_selective_fusion/launch.py`。三个模型均完成300轮，结果在 `stage5_selective_fusion/analysis/`，包括全部指标、逐图纠错/新增错误、容量与动态对静态的比较，以及固定checkpoint的gate置零/空间均值/空间平移诊断。动态门控没有超过原Concat或静态残差，也没有减少相对原Concat的新增错误；这不证明VMamba无效。该轮属于seed42开发集机制探索，后续配对复验见第六轮。
+
 ## 第四轮：双编码器特征融合（2026-10-17）
 
 根据第一阶段的错误互补与概率平均结果，新增 `stage4_fusion/`：seed42 下重新训练 DINOv3、VMamba、DINOv3+VMamba × Light/Swin 六组。双编码器冻结，四尺度各自 Adapter 后拼接，用 1×1 卷积融合；全部统一按最高验证 mean Dice 选模，同时保存最低 loss 与最后一轮。完整设置见 `stage4_fusion/PROTOCOL.md`。

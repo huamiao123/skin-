@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "initial_probe_hashes": {
+    "capacity_concat": "b078b4a960276edda634dedb96352064b394e5ec47b63a3f5f3ae863ffc89c08",
+    "static_residual": "a4d74e8f50d0d10fb30c8b5e7a64f785c8395d7b461719ec5140897659fa91a5",
+    "dynamic_gate": "2b466e6f3f767e8bb94e69366bf47f88f0d5c3de4b46b0ce39d7c7e8bc37ed71"
+  },
+  "parameters": {
+    "capacity_concat": {
+      "encoder": 21586944,
+      "trainable": 638305,
+      "total": 22225249,
+      "decoder": 407649
+    },
+    "static_residual": {
+      "encoder": 51065472,
+      "trainable": 615781,
+      "total": 51681253,
+      "decoder": 407649
+    },
+    "dynamic_gate": {
+      "encoder": 51065472,
+      "trainable": 616293,
+      "total": 51681765,
+      "decoder": 407649
+    }
+  },
+  "inference": {
+    "dinov3_swin": {
+      "1": {
+        "seconds_per_batch": 0.011096400799999628,
+        "images_per_second": 90.11931147981186,
+        "incremental_peak_gib": 0.13028812408447266,
+        "process_peak_gib": 0.38847875595092773
+      },
+      "64": {
+        "seconds_per_batch": 0.034907973199995015,
+        "images_per_second": 1833.3920343450113,
+        "incremental_peak_gib": 1.247879981994629,
+        "process_peak_gib": 1.506192684173584
+      }
+    },
+    "concat_swin": {
+      "1": {
+        "seconds_per_batch": 0.027840459000003648,
+        "images_per_second": 35.91894803170698,
+        "incremental_peak_gib": 0.13773393630981445,
+        "process_peak_gib": 0.4042081832885742
+      },
+      "64": {
+        "seconds_per_batch": 0.0767486129999952,
+        "images_per_second": 833.891291299349,
+        "incremental_peak_gib": 1.3843450546264648,
+        "process_peak_gib": 1.6431288719177246
+      }
+    },
+    "capacity_concat": {
+      "1": {
+        "seconds_per_batch": 0.011834142999998676,
+        "images_per_second": 84.50126046306114,
+        "incremental_peak_gib": 0.12979412078857422,
+        "process_peak_gib": 0.39629125595092773
+      },
+      "64": {
+        "seconds_per_batch": 0.038002705899998546,
+        "images_per_second": 1684.090605769271,
+        "incremental_peak_gib": 1.2085752487182617,
+        "process_peak_gib": 1.4673819541931152
+      }
+    },
+    "static_residual": {
+      "1": {
+        "seconds_per_batch": 0.0282336268999984,
+        "images_per_second": 35.41875804840563,
+        "incremental_peak_gib": 0.13724565505981445,
+        "process_peak_gib": 0.40366077423095703
+      },
+      "64": {
+        "seconds_per_batch": 0.07660964159999821,
+        "images_per_second": 835.4039865394892,
+        "incremental_peak_gib": 1.4263086318969727,
+        "process_peak_gib": 1.6850333213806152
+      }
+    },
+    "dynamic_gate": {
+      "1": {
+        "seconds_per_batch": 0.02839378349999606,
+        "images_per_second": 35.21897671721484,
+        "incremental_peak_gib": 0.13773393630981445,
+        "process_peak_gib": 0.40415096282958984
+      },
+      "64": {
+        "seconds_per_batch": 0.07717195120000042,
+        "images_per_second": 829.3168567701014,
+        "incremental_peak_gib": 1.4276037216186523,
+        "process_peak_gib": 1.6863303184509277
+      }
+    }
+  },
+  "model_spec": {
+    "decoder": "stage2 SwinPixelDecoder",
+    "channels": 64,
+    "resolutions": [
+      64,
+      32,
+      16,
+      8
+    ],
+    "initial_alpha": 0.1,
+    "phi": "Conv2d(64,64,1,bias=True)",
+    "dynamic_gate": "Conv2d(128,1,1,bias=True), FP32 logits/sigmoid",
+    "static_gate": "one learned scalar logit per scale",
+    "adapter_initial_seed": 42,
+    "capacity_control": "same DINO features; independent adapter parameter storage; same seeded initial tensors"
+  },
+  "static_dynamic_initial_logits_identical": true,
+  "capacity_adapters_independent_and_diverge": true,
+  "all_gradients_finite_nonzero": true,
+  "both_branches_affect_output": true,
+  "encoders_unchanged": true,
+  "frozen_encoder_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "torch_version": "2.2.2+cu121",
+  "timm_version": "1.0.22",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "total_gpu_gib": 23.5184326171875,
+  "inference_note": "Full forward without feature cache; synthetic BF16; 3 warmups/10 repeats. Capacity uses one DINO forward. Process memory includes both encoders; incremental peak excludes resident tensors."
+}

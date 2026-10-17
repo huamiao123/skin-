@@ -1,0 +1,19 @@
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {"seed": 42, "start_epoch": 1, "resumed": false, "models": ["capacity_concat", "static_residual", "dynamic_gate"]}
+EPOCH {"epoch": 1, "seconds": 8.65357670100002, "peak_gpu_gib": 10.612492084503174, "macro_dice": {"capacity_concat": 0.8429302557314309, "static_residual": 0.8209502119114757, "dynamic_gate": 0.8175436569541057}}
+SMOKE_STOP_FOR_RESUME 1
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {"seed": 42, "start_epoch": 2, "resumed": true, "models": ["capacity_concat", "static_residual", "dynamic_gate"]}
+EPOCH {"epoch": 2, "seconds": 8.643233164000094, "peak_gpu_gib": 10.612492084503174, "macro_dice": {"capacity_concat": 0.8467663101095331, "static_residual": 0.8565795677024125, "dynamic_gate": 0.8602828752524595}}
+EXPORTED capacity_concat best_dice
+EXPORTED capacity_concat best_loss
+EXPORTED capacity_concat last
+EXPORTED static_residual best_dice
+EXPORTED static_residual best_loss
+EXPORTED static_residual last
+EXPORTED dynamic_gate best_dice
+EXPORTED dynamic_gate best_loss
+EXPORTED dynamic_gate last
+DONE 42
