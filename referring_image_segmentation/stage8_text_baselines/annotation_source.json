@@ -1,0 +1,157 @@
+{
+  "_id": "6443bc625298d19c9cfb55ec",
+  "id": "jxu124/refcoco",
+  "author": "jxu124",
+  "sha": "9fba8200c5326e996f789191f095bd464ef1d09e",
+  "lastModified": "2023-05-20T18:58:37.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:tabular",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "region:us"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset Card for \"refcoco\"\n\t\n\nMore Information needed\n",
+  "downloads": 8524,
+  "likes": 14,
+  "cardData": {
+    "dataset_info": {
+      "features": [
+        {
+          "name": "sent_ids",
+          "sequence": "int64"
+        },
+        {
+          "name": "file_name",
+          "dtype": "string"
+        },
+        {
+          "name": "ann_id",
+          "dtype": "int64"
+        },
+        {
+          "name": "ref_id",
+          "dtype": "int64"
+        },
+        {
+          "name": "image_id",
+          "dtype": "int64"
+        },
+        {
+          "name": "split",
+          "dtype": "string"
+        },
+        {
+          "name": "sentences",
+          "list": [
+            {
+              "name": "raw",
+              "dtype": "string"
+            },
+            {
+              "name": "sent",
+              "dtype": "string"
+            },
+            {
+              "name": "sent_id",
+              "dtype": "int64"
+            },
+            {
+              "name": "tokens",
+              "sequence": "string"
+            }
+          ]
+        },
+        {
+          "name": "category_id",
+          "dtype": "int64"
+        },
+        {
+          "name": "raw_anns",
+          "dtype": "string"
+        },
+        {
+          "name": "raw_image_info",
+          "dtype": "string"
+        },
+        {
+          "name": "raw_sentences",
+          "dtype": "string"
+        },
+        {
+          "name": "image_path",
+          "dtype": "string"
+        },
+        {
+          "name": "bbox",
+          "sequence": "float64"
+        },
+        {
+          "name": "captions",
+          "sequence": "string"
+        },
+        {
+          "name": "global_image_id",
+          "dtype": "string"
+        },
+        {
+          "name": "anns_id",
+          "dtype": "string"
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 81385755,
+          "num_examples": 42404
+        },
+        {
+          "name": "testB",
+          "num_bytes": 3284397,
+          "num_examples": 1810
+        },
+        {
+          "name": "test",
+          "num_bytes": 3943834,
+          "num_examples": 1975
+        },
+        {
+          "name": "validation",
+          "num_bytes": 7355626,
+          "num_examples": 3811
+        }
+      ],
+      "download_size": 38895129,
+      "dataset_size": 95969612
+    }
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "data/test-00000-of-00001-82af0c1b600890ac.parquet"
+    },
+    {
+      "rfilename": "data/testB-00000-of-00001-60990e4598892dc1.parquet"
+    },
+    {
+      "rfilename": "data/train-00000-of-00001-94431d5f4bd5b93f.parquet"
+    },
+    {
+      "rfilename": "data/validation-00000-of-00001-bfeafdc84ca37aa2.parquet"
+    }
+  ],
+  "createdAt": "2023-04-22T10:52:18.000Z",
+  "usedStorage": 575887277
+}

@@ -1,0 +1,16 @@
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {"seed": 42, "start_epoch": 1, "resumed": false, "models": ["local_conv", "window_cross_attention"]}
+EPOCH {"epoch": 1, "seconds": 7.073695389000022, "peak_gpu_gib": 10.936466693878174, "macro_dice": {"local_conv": 0.838647045167671, "window_cross_attention": 0.8495733706344643}}
+SMOKE_STOP_FOR_RESUME 1
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+START {"seed": 42, "start_epoch": 2, "resumed": true, "models": ["local_conv", "window_cross_attention"]}
+EPOCH {"epoch": 2, "seconds": 7.054314698999974, "peak_gpu_gib": 10.936466693878174, "macro_dice": {"local_conv": 0.8591103587999436, "window_cross_attention": 0.8551908470096572}}
+EXPORTED local_conv best_dice
+EXPORTED local_conv best_loss
+EXPORTED local_conv last
+EXPORTED window_cross_attention best_dice
+EXPORTED window_cross_attention best_loss
+EXPORTED window_cross_attention last
+DONE 42

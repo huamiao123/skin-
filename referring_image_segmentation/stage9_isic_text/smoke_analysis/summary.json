@@ -1,0 +1,198 @@
+{
+  "seed": 42,
+  "dataset": "ISIC2016; deduplicated MedVLSM split; normalized P3 color/shape text",
+  "single_seed_exploratory": true,
+  "models": {
+    "dinov3_text": {
+      "selected_epoch": 2,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.03535942060599374,
+            "iou": 0.021315692666513904,
+            "precision": 0.125,
+            "recall": 0.021315692666513904,
+            "boundary_f1": 0.0,
+            "hd95_pixels": 1343.6923904103764,
+            "hd95_diagonal": 0.7292936345221698
+          },
+          "pooled": {
+            "dice": 0.06087872822383034,
+            "iou": 0.03139500819774283,
+            "precision": 0.571771762919949,
+            "recall": 0.032150983238311344
+          },
+          "prec_at": {
+            "0.5": 0.0,
+            "0.6": 0.0,
+            "0.7": 0.0,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.0,
+          "counts": {
+            "tp": 155180,
+            "fp": 116222,
+            "fn": 4671422,
+            "tn": 40182726
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.4841313362121582
+        }
+      }
+    },
+    "vmamba_text": {
+      "selected_epoch": 2,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.040834178407794686,
+            "iou": 0.02315603466340018,
+            "precision": 0.4454579187789013,
+            "recall": 0.02527074539084722,
+            "boundary_f1": 0.041381345573956285,
+            "hd95_pixels": 777.52991687501,
+            "hd95_diagonal": 0.3196230726521361
+          },
+          "pooled": {
+            "dice": 0.05012226099181124,
+            "iou": 0.025705335257228016,
+            "precision": 0.24630033708954363,
+            "recall": 0.02789995943315815
+          },
+          "prec_at": {
+            "0.5": 0.0,
+            "0.6": 0.0,
+            "0.7": 0.0,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.0,
+          "counts": {
+            "tp": 134662,
+            "fp": 412077,
+            "fn": 4691940,
+            "tn": 39886871
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.3683689832687378
+        }
+      }
+    },
+    "fusion_text": {
+      "selected_epoch": 1,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.2947552586622667,
+            "iou": 0.20274623174126194,
+            "precision": 0.23266637396120338,
+            "recall": 0.7337941274853037,
+            "boundary_f1": 0.07881469689389259,
+            "hd95_pixels": 712.1943156718016,
+            "hd95_diagonal": 0.30604146408838967
+          },
+          "pooled": {
+            "dice": 0.18705381043364971,
+            "iou": 0.10317670293258525,
+            "precision": 0.10776157177039226,
+            "recall": 0.7080324833081327
+          },
+          "prec_at": {
+            "0.5": 0.125,
+            "0.6": 0.125,
+            "0.7": 0.0625,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.08917683322532054,
+          "counts": {
+            "tp": 3417391,
+            "fp": 28295129,
+            "fn": 1409211,
+            "tn": 12003819
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.5407156944274902
+        }
+      }
+    },
+    "dinov3_fixed_text": {
+      "selected_epoch": 2,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.04560514031994885,
+            "iou": 0.02987036580959149,
+            "precision": 0.1956039683025718,
+            "recall": 0.031683689701911905,
+            "boundary_f1": 0.0022231946248094407,
+            "hd95_pixels": 1175.864300760639,
+            "hd95_diagonal": 0.6012987453295422
+          },
+          "pooled": {
+            "dice": 0.06548437669747594,
+            "iou": 0.033850528736327164,
+            "precision": 0.30680093853888296,
+            "recall": 0.03665394412052206
+          },
+          "prec_at": {
+            "0.5": 0.0,
+            "0.6": 0.0,
+            "0.7": 0.0,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.0,
+          "counts": {
+            "tp": 176914,
+            "fp": 399727,
+            "fn": 4649688,
+            "tn": 39899221
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.43883216381073
+        }
+      }
+    }
+  },
+  "checkpoint_sha256": {
+    "dinov3_text": "e7c8efd61b1a466ee76e2f2997d65645f9d1e2e382154b023eb4c6ff4c3a7ecf",
+    "vmamba_text": "851b75f3725bd8ef6d425ed541cafd3e412e1139123f9fa7f61dfc8d39aeeb6c",
+    "fusion_text": "3563e315af65635e9266dd072b6ddf632a03ca01969cdee094a8aefecf926454",
+    "dinov3_fixed_text": "fd7c1570258d54bc1615f7ffdfcadee42f0883ed38a07b068fc78d3e79a79982"
+  },
+  "parameters": {
+    "dinov3_text": {
+      "trainable": 543394,
+      "batch16_step_seconds": 0.3276365720003014,
+      "total": 85296290
+    },
+    "vmamba_text": {
+      "trainable": 537250,
+      "batch16_step_seconds": 0.05159432999971614,
+      "total": 93181730
+    },
+    "fusion_text": {
+      "trainable": 669090,
+      "batch16_step_seconds": 0.07575412500045786,
+      "total": 114900514
+    },
+    "dinov3_fixed_text": {
+      "trainable": 543394,
+      "batch16_step_seconds": 0.038131401000100595,
+      "total": 85296290
+    }
+  },
+  "no_test_checkpoint_selection": true,
+  "patient_disjointness": "not established",
+  "prompt_limit": "Template attributes supplied at inference; color/shape may be imperfect; no GT-derived size/count/location; not multi-object natural-language RIS"
+}

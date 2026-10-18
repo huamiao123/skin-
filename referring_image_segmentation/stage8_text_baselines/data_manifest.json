@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "dataset": "RefCOCO",
+  "splitBy": "unc",
+  "statistics": {
+    "train": {
+      "images": 16994,
+      "references": 42404,
+      "expressions": 120624
+    },
+    "val": {
+      "images": 1500,
+      "references": 3811,
+      "expressions": 10834
+    },
+    "testA": {
+      "images": 750,
+      "references": 1975,
+      "expressions": 5657
+    },
+    "testB": {
+      "images": 750,
+      "references": 1810,
+      "expressions": 5095
+    }
+  },
+  "source": {
+    "repo": "jxu124/refcoco",
+    "revision": "9fba8200c5326e996f789191f095bd464ef1d09e",
+    "annotation_mirror": true,
+    "official_zip_byte_identity_unverified": true,
+    "official_definition": "https://github.com/lichengunc/refer",
+    "images": "https://s3.amazonaws.com/images.cocodataset.org/train2014/"
+  },
+  "annotation_sha256": {
+    "test-00000-of-00001-82af0c1b600890ac.parquet": "d7d13f7b67b783d345b016f49e81d0499cab1039870e3e65c870f4457745df99",
+    "testB-00000-of-00001-60990e4598892dc1.parquet": "d208cd210463ca7c50f12fdeeed315b8c726c079c22d164edd3bcc7041a35968",
+    "train-00000-of-00001-94431d5f4bd5b93f.parquet": "66ff9a728b7ee45b8a2d72061d244685a75ba4c90956e0640b0165e71cd5afaa",
+    "validation-00000-of-00001-bfeafdc84ca37aa2.parquet": "df03b1b16873f92727f3df010afb3c7260e8396a86592d3c4fee053daca08c05"
+  },
+  "manifest_sha256": {
+    "val.json": "fcd1f47c7f1b551552bf4b84ad3456eb261f45033ea90a39d31444c0fd399302",
+    "testA.json": "03d688b1e7566d090adead91b925be41815d48e82ed0bf4bab4de2be234e0d75",
+    "train.json": "a544742a4db65b96f71134501a48c1941cea671582ce5bbe2d9eaffcaa9a6d15",
+    "images.json": "9c68f627e889ba23121bc65dd520eb072ec90576b2b2bbf6b73fcc9a3bf71325",
+    "testB.json": "7eeb74dde56e4ad6f1caabf815296ab1b2a2e82b9c49f986791afc5ed88403ff",
+    "masks.json": "5f3761847125d20e86219a5389d81e58ae9b33d215a89d8c2f5938e4ed97d9e5"
+  },
+  "image_split_disjoint": true,
+  "image_sha256_in": "/home/featurize/referring_image_segmentation/stage8_text_baselines/assets/images.json",
+  "mask_sha256_in": "/home/featurize/referring_image_segmentation/stage8_text_baselines/assets/masks.json",
+  "native_masks": "official COCO polygon/RLE rasterization via pycocotools",
+  "transforms": "aspect-preserving bilinear resize; centered mean-color padding; nearest mask; padding loss excluded"
+}

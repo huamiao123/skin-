@@ -1,5 +1,13 @@
 # 皮肤病灶分割：实验结果与源码存档
 
+## 2026-10-18：ISIC文本引导分割完成，RefCOCO已停止
+
+[第九轮源码与配置](referring_image_segmentation/stage9_isic_text/README.md) · [完整结果](referring_image_segmentation/stage9_isic_text/analysis/summary.json) · [指标CSV](referring_image_segmentation/stage9_isic_text/analysis/all_models.csv) · [结果解释](referring_image_segmentation/stage9_isic_text/analysis/FINDINGS.md)。
+
+ISIC2016官方图像/Mask与MedVLSM颜色/形状文本配对，去重后806训练/90验证/379测试。仅seed42，四组各100epochs，冻结视觉与CLIP文本Encoder，统一Swin Decoder及文本像素匹配头。DINOv3、VMamba、Concat双编码器、DINO固定文本对照的测试macro Dice分别为90.120%、90.670%、90.415%、90.180%；pooled Dice为91.381%、91.664%、92.056%、91.573%。真实文本未超过固定文本对照，错配文本影响小，单seed图像配对区间均包含0，尚不能宣称稳定的图文增益。
+
+同步补齐[第七轮Cross-Attention与容量对照](referring_image_segmentation/stage7_cross_attention/analysis/REPORT.md)及其干预分析。[第八轮RefCOCO](referring_image_segmentation/stage8_text_baselines/README.md)按用户要求中止，保留源码、阶段日志和停止记录；没有完成正式测试，不能与第九轮完成结果混列。权重、数据、运行依赖和逐像素数组不进入Git；[发布说明与校验](referring_image_segmentation/PUBLISHING.md)记录复现条件及本地文件清理状态。
+
 ## 2026-10-17：融合收益分析、动态门控与三seed容量复验
 
 [第五轮结果](referring_image_segmentation/stage5_selective_fusion/analysis/REPORT.md) · [门控诊断](referring_image_segmentation/stage5_selective_fusion/analysis/gate_audit/REPORT.md) · [第六轮三seed汇总](referring_image_segmentation/stage6_fusion_confirmation/analysis/REPORT.md) · [完整指标](referring_image_segmentation/stage6_fusion_confirmation/analysis/all_runs.csv) · [图文数据准备](referring_image_segmentation/text_stage_preparation/README.md)。

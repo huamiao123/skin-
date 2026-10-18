@@ -1,5 +1,31 @@
 # 图文指代分割项目
 
+## 第九轮：ISIC2016 医学文本引导分割（2026-10-18）
+
+用户要求停止RefCOCO并先试小规模ISIC文本分割。新增 [stage9_isic_text](stage9_isic_text/README.md)：官方ISIC2016图像/Mask与MedVLSM P3颜色/形状文本，去重后806训练/90验证/379测试；统一类别词为skin lesion。保留DINOv3、VMamba、Concat三视觉分支与DINO固定文本训练对照，视觉/文本Encoder冻结，仅seed42，100epochs、batch16，验证原尺寸macro Dice选模。源码/协议/预检和运行状态分别保存在第九轮目录。
+
+四组训练和测试已完成，[完整结果](stage9_isic_text/analysis/summary.json)与[解释](stage9_isic_text/analysis/FINDINGS.md)已保存。测试macro Dice依次90.120%、90.670%、90.415%、90.180%；pooled Dice依次91.381%、91.664%、92.056%、91.573%。真实文本未超过DINO固定文本对照，错配属性文本影响较小；单seed图像配对区间均包含0，不能据验证集93.325%宣称稳定图文增益。完成后仅保留四组最佳权重。
+
+第八轮RefCOCO已按用户要求停止，四组已取得的最佳权重、日志与恢复记录保留，未完成正式30轮及最终测试。第九轮只读取其冻结CLIP权重资产，不使用RefCOCO训练出的分割参数。
+
+## 第八轮：RefCOCO 图文指代分割（2026-10-18）
+
+用户已确定进入RefCOCO UNC、只跑seed42。新增 [stage8_text_baselines](stage8_text_baselines/README.md)：DINOv3、VMamba、原Concat三种视觉分支，统一冻结CLIP ViT-B/32文本Encoder、Swin像素特征Decoder和可训练文本—像素余弦匹配头。额外从头训练一组DINO固定文本对照检验语言收益。所有历史分割权重不用于新任务初始化。
+
+数据已经落实19994图/50000目标/142210真实表达，标注使用固定镜像保留的COCO polygon/RLE和原文本字段；原站连接失败及镜像来源已披露。原尺寸mask、图像和数据成员哈希完成，详见 [数据清单](stage8_text_baselines/data_manifest.json)。训练256×256等比缩放填充，padding排除loss，关闭翻转/旋转；batch16，30epochs，每epoch全部120624表达。按原尺寸逐表达validation mean IoU选模，锁定后评估testA/testB。
+
+冻结配置见 [PROTOCOL.md](stage8_text_baselines/PROTOCOL.md)，当前流程见 [run_status.json](stage8_text_baselines/run_status.json)。CLIP句子缓存、初始化/梯度、padding排除、原尺寸几何、完整GPU缓存，以及短程中断恢复/指标重算预检均已通过。四组模型曾开始正式后台训练，现已按用户要求停止；当前没有已完成的RefCOCO正式结果。UNC原划分另发现一张验证图与训练图字节一致（9条表达），原计划的锁定checkpoint后敏感性分析随任务停止，见第八轮README。
+
+## 第七轮：DINOv3 / VMamba Cross-Attention（2026-10-18）
+
+已建立 `stage7_cross_attention/`，见 [冻结协议](stage7_cross_attention/PROTOCOL.md)、[模型源码](stage7_cross_attention/models.py)、[预检](stage7_cross_attention/preflight.json) 和 [后台状态](stage7_cross_attention/run_status.json)。本轮以seed42测试局部空间检索：DINO提供Query，VMamba提供Key/Value，四尺度64通道、8×8非重叠窗口、4heads和相对位置偏置。保留原Swin Pixel Decoder，使用固定残差 `D + 0.1 * message`。
+
+新增两组300epochs：window_cross_attention和近似容量匹配的local_conv。后者为两路归一化特征拼接后的1×1/深度7×7/1×1卷积；两组可训练参数670321/670401，只差80，但不声称精确匹配感受野或FLOPs。Encoder冻结、batch64、AdamW .001、Cosine T_max300和其余数据/增强/loss/选模规则与前几轮一致。
+
+当前机器是48GB RTX4090；旧六个模型的18组checkpoint在该机器重新前向与历史概率逐像素一致。注意力数学、梯度、窗口边界、分支参与和共同初始化预检通过。监督入口 `python stage7_cross_attention/launch.py` 先执行真实数据两轮恢复/完整指标/空间检索干预预检，再后台正式训练。只在正式训练、完整评估、干预及历史哈希核验全部通过后写complete。
+
+本轮两组300轮和全部评估已经完成，见 [完整结果](stage7_cross_attention/analysis/REPORT.md) 与 [空间检索诊断](stage7_cross_attention/analysis/attention_audit/REPORT.md)。该版本Cross未超过近似容量匹配局部卷积或原Concat，且新增错误超过纠正错误。固定权重的窗口均值V/同位置V干预仅用于诊断，不替代独立训练对照；原源码、权重和报告保持冻结。
+
 ## 第六轮：融合与容量的配对种子复验（2026-10-17）
 
 `stage6_fusion_confirmation/` 已于2026-10-17 16:02 UTC全部完成，见 [完整结果](stage6_fusion_confirmation/analysis/REPORT.md)、[全部指标](stage6_fusion_confirmation/analysis/all_runs.csv)、[冻结协议](stage6_fusion_confirmation/PROTOCOL.md)、[完成校验](stage6_fusion_confirmation/validation.json) 和 [复用预检](stage6_fusion_confirmation/preflight.json)。矩阵为DINOv3单分支、DINO双Adapter容量对照、DINOv3+VMamba Concat，均使用原Swin Decoder，seeds43/44/45。
@@ -92,7 +118,3 @@ Mean Dice为逐图平均，Pooled Dice为汇总像素后计算。相对同Decode
 | Swin | 0.891227 ± 0.001321 | 0.899283 ± 0.000930 | 0.819644 ± 0.001311 | 0.816999 ± 0.001536 | 0.340208 ± 0.009175 | 15.178963 ± 0.099409 |
 
 ± 为三个训练 seeds 的样本标准差。Mean Dice、mIoU、Boundary F1 和 HD95 在三个 seeds 上方向一致地改善；Pooled Dice 在 seed 43 略降。最后一轮的 Boundary F1 优势未保持，详见第三轮 FINDINGS.md。当前支持保留 DINOv3＋Swin 作为后续视觉候选、Light 作为对照；结论仍限于已有开发划分。
-
-## GitHub 发布说明
-
-本页面描述本地完整实验。GitHub保存源码和数值存档；权重、大型预测数组、数据及源图拼图保留本地。发布范围、文件校验清单与复现前提见 [PUBLISHING.md](PUBLISHING.md)。

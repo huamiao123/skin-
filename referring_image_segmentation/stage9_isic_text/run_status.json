@@ -1,0 +1,51 @@
+{
+  "state": "complete",
+  "stage": "isic2016_text_baselines",
+  "seed": 42,
+  "epochs": 100,
+  "models": [
+    "dinov3_text",
+    "vmamba_text",
+    "fusion_text",
+    "dinov3_fixed_text"
+  ],
+  "supervisor_pid": 23235,
+  "started_utc": "2026-10-18T10:04:55.718493+00:00",
+  "events": [
+    {
+      "phase": "preflight",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:05:04.444612+00:00"
+    },
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:05:11.924790+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:05:19.682430+00:00"
+    },
+    {
+      "phase": "smoke_evaluation",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:05:32.606707+00:00"
+    },
+    {
+      "phase": "training",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:19:28.393134+00:00"
+    },
+    {
+      "phase": "evaluating_locked_checkpoints",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T10:22:16.108762+00:00"
+    }
+  ],
+  "command": [
+    "evaluate.py"
+  ],
+  "child_pid": 26669,
+  "ended_utc": "2026-10-18T10:22:16.390234+00:00"
+}

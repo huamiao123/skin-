@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "train_expressions": 128,
+  "validation_expressions": 128,
+  "batch": 16,
+  "input_size": 256,
+  "loss": "masked BCE + masked per-image soft Dice smooth1",
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "eta_min": 1e-06,
+  "weight_decay": 0.01,
+  "warmup_steps": 15078,
+  "total_schedule_steps": 226170,
+  "primary_selection": "maximum native per-expression validation mean IoU; earliest exact tie",
+  "frozen_encoders": true,
+  "text": "CLIP ViT-B/32 EOS hidden512; frozen; common learned projection",
+  "initialization": {
+    "dinov3_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "vmamba_text": "6714e51ed1f0ca7416f034e83e04140aa8211a49595fc6ad6fee1dc6af84ac03",
+    "fusion_text": "e6a2f6fb0dbda235c1361564598b1811fa8a65aa5defa498f6f238fc79b620f9",
+    "dinov3_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "data_sha256": "b07a79c54b9d2f8234eaf6889573704876620e54c9794083735c55b0248a674c",
+  "text_sha256": "7e06556d96ab2363eea0bbf998eff8ac30ee1971b53693f84f92cfa1c5661e6c"
+}

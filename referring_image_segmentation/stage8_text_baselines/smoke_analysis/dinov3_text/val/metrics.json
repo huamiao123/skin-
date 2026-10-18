@@ -1,0 +1,39 @@
+{
+  "metric_version": "foreground_v1_20261016",
+  "n": 128,
+  "macro": {
+    "dice": 0.17022200125614945,
+    "iou": 0.10148547878454789,
+    "precision": 0.12691955695472973,
+    "recall": 0.4784101947134618,
+    "boundary_f1": 0.03827897860199172,
+    "hd95_pixels": 347.4126891902708,
+    "hd95_diagonal": 0.4629758481721286
+  },
+  "pooled": {
+    "dice": 0.21463952041091205,
+    "iou": 0.1202219511772282,
+    "precision": 0.13788345170627195,
+    "recall": 0.4841567967345387
+  },
+  "prec_at": {
+    "0.5": 0.0,
+    "0.6": 0.0,
+    "0.7": 0.0,
+    "0.8": 0.0,
+    "0.9": 0.0
+  },
+  "threshold_jaccard_065": 0.0,
+  "counts": {
+    "tp": 2149738,
+    "fp": 13441241,
+    "fn": 2290431,
+    "tn": 16247730
+  },
+  "image_balanced_mean_iou": 0.10535632831556577,
+  "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+  "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+  "selected_epoch": 1,
+  "loss": 1.6316600292921066,
+  "checkpoint_sha256": "de50086316a27c6573cfd7e528be8f51a8485f225eb2a19a1faead458b451245"
+}

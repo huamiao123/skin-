@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/launch.py", line 61, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/launch.py", line 25, in main
+    if not (ROOT/'preflight.json').exists():run('preflight.py',[],'preflight.log','preflight')
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/launch.py", line 19, in run
+    if code:raise RuntimeError(f'{phase} failed ({code}); inspect {logname}')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: preflight failed (1); inspect preflight.log

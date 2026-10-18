@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "initial_hashes": {
+    "dinov3_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "vmamba_text": "6714e51ed1f0ca7416f034e83e04140aa8211a49595fc6ad6fee1dc6af84ac03",
+    "fusion_text": "e6a2f6fb0dbda235c1361564598b1811fa8a65aa5defa498f6f238fc79b620f9",
+    "dinov3_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "frozen_visual_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "parameters": {
+    "dinov3_text": {
+      "trainable": 543394,
+      "batch16_step_seconds": 0.3276365720003014,
+      "total": 85296290
+    },
+    "vmamba_text": {
+      "trainable": 537250,
+      "batch16_step_seconds": 0.05159432999971614,
+      "total": 93181730
+    },
+    "fusion_text": {
+      "trainable": 669090,
+      "batch16_step_seconds": 0.07575412500045786,
+      "total": 114900514
+    },
+    "dinov3_fixed_text": {
+      "trainable": 543394,
+      "batch16_step_seconds": 0.038131401000100595,
+      "total": 85296290
+    }
+  },
+  "encoder_gradients_absent": true,
+  "independent_models": true,
+  "matched_decoder_and_head_initialization": true,
+  "text_changes_logits": true,
+  "padding_loss_invariant": true,
+  "native_geometry_and_full_metrics_passed": true,
+  "full_metrics_16_seconds": 1.629783843000041,
+  "cache_gib": 1.88671875,
+  "peak_gpu_gib": 3.358323574066162,
+  "torch_version": "2.2.2+cu121"
+}

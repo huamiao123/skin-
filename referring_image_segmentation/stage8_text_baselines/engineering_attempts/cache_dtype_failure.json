@@ -1,0 +1,38 @@
+{
+  "status": {
+    "state": "failed",
+    "stage": "refcoco_text_baselines",
+    "seed": 42,
+    "epochs": 30,
+    "models": [
+      "dinov3_text",
+      "vmamba_text",
+      "fusion_text",
+      "dinov3_fixed_text"
+    ],
+    "supervisor_pid": 10066,
+    "started_utc": "2026-10-18T09:16:38.910180+00:00",
+    "events": [
+      {
+        "phase": "preparing_text",
+        "returncode": 0,
+        "ended_utc": "2026-10-18T09:17:25.917262+00:00"
+      },
+      {
+        "phase": "preflight",
+        "returncode": 1,
+        "ended_utc": "2026-10-18T09:17:35.930522+00:00"
+      }
+    ],
+    "command": [
+      "preflight.py"
+    ],
+    "child_pid": 10414,
+    "error": "RuntimeError('preflight failed (1); inspect preflight.log')",
+    "ended_utc": "2026-10-18T09:17:35.930588+00:00"
+  },
+  "data_py_before_sha256": "f4966599ee13a8954dd04295cfaff46656f03a9101c11a16fbb2162c7948ce98",
+  "error": "Advanced index write into BF16 cache from FP32 frozen layer requires explicit cast",
+  "resolution": "Cast source features to destination cache dtype, preserving declared BF16 cache protocol",
+  "formal_training_started": false
+}

@@ -1,0 +1,56 @@
+CLIP_FILE config.json
+CLIP_FILE merges.txt
+CLIP_FILE vocab.json
+CLIP_FILE tokenizer_config.json
+CLIP_FILE special_tokens_map.json
+CLIP_FILE pytorch_model.bin
+Traceback (most recent call last):
+  File "/environment/miniconda3/lib/python3.11/importlib/metadata/__init__.py", line 563, in from_name
+    return next(cls.discover(name=name))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/utils/versions.py", line 102, in require_version
+    got_ver = importlib.metadata.version(pkg)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/importlib/metadata/__init__.py", line 1008, in version
+    return distribution(distribution_name).version
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/importlib/metadata/__init__.py", line 981, in distribution
+    return Distribution.from_name(distribution_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/environment/miniconda3/lib/python3.11/importlib/metadata/__init__.py", line 565, in from_name
+    raise PackageNotFoundError(name)
+importlib.metadata.PackageNotFoundError: No package metadata was found for regex
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/prepare_text.py", line 38, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/prepare_text.py", line 14, in main
+    from transformers import CLIPTextModel,CLIPTokenizer
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/dependency_versions_check.py", line 57, in <module>
+    require_version_core(deps[pkg])
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/utils/versions.py", line 117, in require_version_core
+    return require_version(requirement, hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/utils/versions.py", line 104, in require_version
+    raise importlib.metadata.PackageNotFoundError(
+importlib.metadata.PackageNotFoundError: No package metadata was found for The 'regex!=2019.12.17' distribution was not found and is required by this application. 
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
+CLIP_FILE config.json
+CLIP_FILE merges.txt
+CLIP_FILE vocab.json
+CLIP_FILE tokenizer_config.json
+CLIP_FILE special_tokens_map.json
+CLIP_FILE pytorch_model.bin
+/home/featurize/referring_image_segmentation/stage8_text_baselines/runtime/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+TEXT READY 142210 0

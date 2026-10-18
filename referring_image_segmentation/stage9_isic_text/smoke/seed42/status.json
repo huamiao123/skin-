@@ -1,0 +1,165 @@
+{
+  "phase": "epoch_complete",
+  "epochs": 2,
+  "epoch": 2,
+  "seconds": 1.3324784070000533,
+  "peak_gpu_gib": 3.3814964294433594,
+  "models": {
+    "dinov3_text": {
+      "train_loss": 1.547831416130066,
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 16,
+        "macro": {
+          "dice": 0.03535942060599374,
+          "iou": 0.021315692666513904,
+          "precision": 0.125,
+          "recall": 0.021315692666513904
+        },
+        "pooled": {
+          "dice": 0.06087872822383034,
+          "iou": 0.03139500819774283,
+          "precision": 0.571771762919949,
+          "recall": 0.032150983238311344
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 155180,
+          "fp": 116222,
+          "fn": 4671422,
+          "tn": 40182726
+        },
+        "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+        "loss": 1.4841313362121582
+      },
+      "best": {
+        "score": 0.03535942060599374,
+        "epoch": 2
+      }
+    },
+    "vmamba_text": {
+      "train_loss": 1.4802560806274414,
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 16,
+        "macro": {
+          "dice": 0.040834178407794686,
+          "iou": 0.02315603466340018,
+          "precision": 0.4454579187789013,
+          "recall": 0.02527074539084722
+        },
+        "pooled": {
+          "dice": 0.05012226099181124,
+          "iou": 0.025705335257228016,
+          "precision": 0.24630033708954363,
+          "recall": 0.02789995943315815
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 134662,
+          "fp": 412077,
+          "fn": 4691940,
+          "tn": 39886871
+        },
+        "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+        "loss": 1.3683689832687378
+      },
+      "best": {
+        "score": 0.040834178407794686,
+        "epoch": 2
+      }
+    },
+    "fusion_text": {
+      "train_loss": 1.4497675895690918,
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 16,
+        "macro": {
+          "dice": 0.2939252628848126,
+          "iou": 0.2016928522802583,
+          "precision": 0.23392344150512454,
+          "recall": 0.7236893052235451
+        },
+        "pooled": {
+          "dice": 0.18795407561130661,
+          "iou": 0.10372478593483454,
+          "precision": 0.10860615812791281,
+          "recall": 0.6976827590093403
+        },
+        "prec_at": {
+          "0.5": 0.125,
+          "0.6": 0.125,
+          "0.7": 0.0625,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.04769714673360189,
+        "counts": {
+          "tp": 3367437,
+          "fp": 27638512,
+          "fn": 1459165,
+          "tn": 12660436
+        },
+        "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+        "loss": 1.5287094116210938
+      },
+      "best": {
+        "score": 0.2947552586622667,
+        "epoch": 1
+      }
+    },
+    "dinov3_fixed_text": {
+      "train_loss": 1.459059715270996,
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 16,
+        "macro": {
+          "dice": 0.04560514031994885,
+          "iou": 0.02987036580959149,
+          "precision": 0.1956039683025718,
+          "recall": 0.031683689701911905
+        },
+        "pooled": {
+          "dice": 0.06548437669747594,
+          "iou": 0.033850528736327164,
+          "precision": 0.30680093853888296,
+          "recall": 0.03665394412052206
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 176914,
+          "fp": 399727,
+          "fn": 4649688,
+          "tn": 39899221
+        },
+        "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+        "loss": 1.43883216381073
+      },
+      "best": {
+        "score": 0.04560514031994885,
+        "epoch": 2
+      }
+    }
+  }
+}

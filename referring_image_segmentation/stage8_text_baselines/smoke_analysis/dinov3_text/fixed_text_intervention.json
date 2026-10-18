@@ -1,0 +1,39 @@
+{
+  "metrics": {
+    "metric_version": "foreground_v1_20261016",
+    "n": 128,
+    "macro": {
+      "dice": 0.033575778776478764,
+      "iou": 0.019222446042279538,
+      "precision": 0.04276485532180568,
+      "recall": 0.03969344978331833,
+      "boundary_f1": 0.009006559159289494,
+      "hd95_pixels": 448.08364803490247,
+      "hd95_diagonal": 0.590637914330951
+    },
+    "pooled": {
+      "dice": 0.036591267282674804,
+      "iou": 0.018636602085411475,
+      "precision": 0.05652412889575737,
+      "recall": 0.02705167303316608
+    },
+    "prec_at": {
+      "0.5": 0.0,
+      "0.6": 0.0,
+      "0.7": 0.0,
+      "0.8": 0.0,
+      "0.9": 0.0
+    },
+    "threshold_jaccard_065": 0.0,
+    "counts": {
+      "tp": 120114,
+      "fp": 2004890,
+      "fn": 4320055,
+      "tn": 27684081
+    },
+    "image_balanced_mean_iou": 0.013940481044144503,
+    "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+    "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported"
+  },
+  "note": "Posthoc fixed text on trained real-text model; not a trained capacity control."
+}

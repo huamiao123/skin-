@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "smoke_only": false,
+  "selected_epoch": 116,
+  "checkpoint_sha256": "52ff8988aa39e5e7dd5e2e64dbb63edb5a97124d3e3af98a92c6c5d4bc619825",
+  "interventions": {
+    "learned": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.893742084794091,
+        "iou": 0.8214940921171405,
+        "precision": 0.893432321755923,
+        "recall": 0.9230017800584945,
+        "boundary_f1": 0.33653585249428664,
+        "hd95_pixels": 15.297632128049589,
+        "hd95_diagonal": 0.042254138335316646
+      },
+      "pooled": {
+        "dice": 0.8984198570053077,
+        "iou": 0.8155737580408042,
+        "precision": 0.8811362251742231,
+        "recall": 0.9163950974084437
+      },
+      "prec_at": {
+        "0.5": 0.9616336633663366,
+        "0.6": 0.9183168316831684,
+        "0.7": 0.8613861386138614,
+        "0.8": 0.7029702970297029,
+        "0.9": 0.32673267326732675
+      },
+      "threshold_jaccard_065": 0.7695399826661184,
+      "counts": {
+        "tp": 11811958,
+        "fp": 1593413,
+        "fn": 1077633,
+        "tn": 38470084
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 535118,
+        "introduced": 616182,
+        "net_errors_removed": -81064,
+        "repair_rate": 0.20661070231376125,
+        "damage_rate": 0.012234789490544924
+      }
+    },
+    "uniform": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.872716249567422,
+        "iou": 0.7930332111580075,
+        "precision": 0.925011950655037,
+        "recall": 0.8602341084644116,
+        "boundary_f1": 0.30533823747598104,
+        "hd95_pixels": 16.559732706845097,
+        "hd95_diagonal": 0.04574023160799541
+      },
+      "pooled": {
+        "dice": 0.8865614058121518,
+        "iou": 0.7962373591502974,
+        "precision": 0.9041590800802327,
+        "recall": 0.8696356618297664
+      },
+      "prec_at": {
+        "0.5": 0.9282178217821783,
+        "0.6": 0.8948019801980198,
+        "0.7": 0.8168316831683168,
+        "0.8": 0.6089108910891089,
+        "0.9": 0.2834158415841584
+      },
+      "threshold_jaccard_065": 0.731729292343244,
+      "counts": {
+        "tp": 11209248,
+        "fp": 1188181,
+        "fn": 1680343,
+        "tn": 38875316
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 612518,
+        "introduced": 891060,
+        "net_errors_removed": -278542,
+        "repair_rate": 0.2364950798885861,
+        "damage_rate": 0.017692713392220092
+      }
+    },
+    "same_position": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8630647618411929,
+        "iou": 0.773076405860169,
+        "precision": 0.8446074113831714,
+        "recall": 0.9189560789000514,
+        "boundary_f1": 0.239302891120608,
+        "hd95_pixels": 24.39160472903057,
+        "hd95_diagonal": 0.06737292620281006
+      },
+      "pooled": {
+        "dice": 0.8801881962247723,
+        "iou": 0.7860143938985006,
+        "precision": 0.8661146290933249,
+        "recall": 0.8947266829490556
+      },
+      "prec_at": {
+        "0.5": 0.9405940594059405,
+        "0.6": 0.8910891089108911,
+        "0.7": 0.7871287128712872,
+        "0.8": 0.5371287128712872,
+        "0.9": 0.1349009900990099
+      },
+      "threshold_jaccard_065": 0.6989644005551587,
+      "counts": {
+        "tp": 11532661,
+        "fp": 1782737,
+        "fn": 1356930,
+        "tn": 38280760
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 752032,
+        "introduced": 1301717,
+        "net_errors_removed": -549685,
+        "repair_rate": 0.2903618635187426,
+        "damage_rate": 0.02584663860882607
+      }
+    }
+  },
+  "note": "Same trained Cross checkpoint; no refit or model selection. Uniform replaces content/position attention by mean V; same_position retrieves only colocated V. Distribution shifts mean this does not replace separately trained controls."
+}

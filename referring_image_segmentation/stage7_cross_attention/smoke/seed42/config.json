@@ -1,0 +1,141 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "input_size": 256,
+  "batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "T_max": 300,
+  "eta_min": 1e-05,
+  "precision": "BF16 autocast; FP32 loss",
+  "clip": 1.0,
+  "loss": "BCEWithLogits + per-image soft Dice; smooth=1",
+  "encoder_initial_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "pretrained": {
+    "dinov3": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/dinov3_vits16/model.safetensors",
+      "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        384,
+        384,
+        384,
+        384
+      ],
+      "params": 21586944
+    },
+    "vmamba": {
+      "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/vmamba_tiny_imagenet.pth",
+      "sha256": "d855b57224a652bc692804932f88dc3a39b9028e64be99f745a7fd6792ca672a",
+      "strict_load": true,
+      "missing": [],
+      "unexpected": [],
+      "channels": [
+        96,
+        192,
+        384,
+        768
+      ],
+      "params": 29478528
+    }
+  },
+  "augmentation_seed": "42+epoch*100003",
+  "primary_selection": "maximum validation mean Dice; earliest exact tie",
+  "secondary_selection": "minimum sample-weighted validation loss; earliest exact tie",
+  "fixed_selection": "epoch2",
+  "split": "ISIC2018 legacy 1886/808 development validation",
+  "frozen_encoders": true,
+  "model_spec": {
+    "channels": 64,
+    "resolutions": [
+      64,
+      32,
+      16,
+      8
+    ],
+    "decoder": "unchanged stage2 SwinPixelDecoder",
+    "direction": "Q from DINO; K and V from VMamba",
+    "heads": 4,
+    "head_dim": 16,
+    "window_size": 8,
+    "cross_blocks_per_scale": 1,
+    "shift_size": 0,
+    "relative_position_bias": "learned 225x4; trunc_normal std .02",
+    "qkv_bias": true,
+    "pre_norm": "separate LayerNorm(64) for each branch",
+    "residual": "D + 0.1 * message; scale fixed",
+    "dropout": 0.0,
+    "drop_path": 0.0,
+    "additional_ffn": false,
+    "local_control": "concat normalized branches -> 1x1 128-to-72 -> GELU -> depthwise7x7 -> GELU -> 1x1 72-to-64",
+    "local_control_note": "Approximate trainable-parameter matching; not identical receptive field or FLOPs",
+    "initialization": "seed42 adapters/decoder match stage4; messages random, not function-matched; no task warm start"
+  },
+  "initial_probe_hashes": {
+    "local_conv": "c85cc3791f0fea02597e8d4ae9f634d4da7233a07a5e466a926247760cc5b167",
+    "window_cross_attention": "7773e7d36c97edbe36d3eaab1f0790337888f2e50e3cbed37f87ec257d862575"
+  },
+  "parameters": {
+    "dinov3": {
+      "encoder": 21586944,
+      "trainable": 506465,
+      "total": 22093409,
+      "decoder": 407649
+    },
+    "vmamba": {
+      "encoder": 29478528,
+      "trainable": 500321,
+      "total": 29978849,
+      "decoder": 407649
+    },
+    "fusion": {
+      "encoder": 51065472,
+      "trainable": 632161,
+      "total": 51697633,
+      "decoder": 407649
+    },
+    "capacity_concat": {
+      "encoder": 21586944,
+      "trainable": 638305,
+      "total": 22225249,
+      "decoder": 407649
+    },
+    "static_residual": {
+      "encoder": 51065472,
+      "trainable": 615781,
+      "total": 51681253,
+      "decoder": 407649
+    },
+    "dynamic_gate": {
+      "encoder": 51065472,
+      "trainable": 616293,
+      "total": 51681765,
+      "decoder": 407649
+    },
+    "local_conv": {
+      "encoder": 51065472,
+      "trainable": 670401,
+      "total": 51735873,
+      "decoder": 407649
+    },
+    "window_cross_attention": {
+      "encoder": 51065472,
+      "trainable": 670321,
+      "total": 51735793,
+      "decoder": 407649
+    }
+  }
+}

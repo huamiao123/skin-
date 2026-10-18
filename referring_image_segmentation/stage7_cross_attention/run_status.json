@@ -1,0 +1,50 @@
+{
+  "state": "complete",
+  "stage": "window_cross_attention",
+  "seed": 42,
+  "epochs": 300,
+  "supervisor_pid": 7464,
+  "started_utc": "2026-10-18T07:16:05.346252+00:00",
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:16:21.264212+00:00"
+    },
+    {
+      "phase": "smoke_resume_and_export",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:16:40.696446+00:00"
+    },
+    {
+      "phase": "smoke_analysis",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:17:24.730868+00:00"
+    },
+    {
+      "phase": "smoke_attention_audit",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:17:38.730939+00:00"
+    },
+    {
+      "phase": "training",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:50:30.217632+00:00"
+    },
+    {
+      "phase": "analyzing",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:51:20.032370+00:00"
+    },
+    {
+      "phase": "attention_audit",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T07:51:34.573471+00:00"
+    }
+  ],
+  "command": [
+    "attention_audit.py"
+  ],
+  "child_pid": 10615,
+  "ended_utc": "2026-10-18T07:51:38.377230+00:00"
+}

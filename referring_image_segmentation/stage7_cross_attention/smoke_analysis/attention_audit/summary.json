@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "selected_epoch": 2,
+  "checkpoint_sha256": "f636a868fb20d6b29e75e04e9b372e5d5289b8b818ad43142398209fdd9a9ffb",
+  "interventions": {
+    "learned": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8551908470096572,
+        "iou": 0.7645002012518904,
+        "precision": 0.827594446432243,
+        "recall": 0.9295714296515676,
+        "boundary_f1": 0.2135339385748907,
+        "hd95_pixels": 21.943079638914096,
+        "hd95_diagonal": 0.060609767237471156
+      },
+      "pooled": {
+        "dice": 0.8689673855248994,
+        "iou": 0.7682956038612355,
+        "precision": 0.821883179243536,
+        "recall": 0.92177416645726
+      },
+      "prec_at": {
+        "0.5": 0.9356435643564357,
+        "0.6": 0.8762376237623762,
+        "0.7": 0.75,
+        "0.8": 0.5371287128712872,
+        "0.9": 0.15965346534653466
+      },
+      "threshold_jaccard_065": 0.6770037405506073,
+      "counts": {
+        "tp": 11881292,
+        "fp": 2574889,
+        "fn": 1008299,
+        "tn": 37488608
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 704130,
+        "introduced": 1697336,
+        "net_errors_removed": -993206,
+        "repair_rate": 0.27186675428632323,
+        "damage_rate": 0.03370197223340435
+      }
+    },
+    "uniform": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.855940787426258,
+        "iou": 0.76569550574645,
+        "precision": 0.8302490635566767,
+        "recall": 0.9281506465451923,
+        "boundary_f1": 0.21697563173282794,
+        "hd95_pixels": 21.59694588605907,
+        "hd95_diagonal": 0.059653698784965924
+      },
+      "pooled": {
+        "dice": 0.8687796187502895,
+        "iou": 0.7680020915027267,
+        "precision": 0.822190223585281,
+        "recall": 0.9209661501284253
+      },
+      "prec_at": {
+        "0.5": 0.9356435643564357,
+        "0.6": 0.8787128712871287,
+        "0.7": 0.7487623762376238,
+        "0.8": 0.5420792079207921,
+        "0.9": 0.15965346534653466
+      },
+      "threshold_jaccard_065": 0.6772457464843009,
+      "counts": {
+        "tp": 11870877,
+        "fp": 2567238,
+        "fn": 1018714,
+        "tn": 37496259
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 706098,
+        "introduced": 1702068,
+        "net_errors_removed": -995970,
+        "repair_rate": 0.27262660512698544,
+        "damage_rate": 0.033795929901543405
+      }
+    },
+    "same_position": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8543191512856745,
+        "iou": 0.7632491260228534,
+        "precision": 0.8239288870233217,
+        "recall": 0.9320473855464948,
+        "boundary_f1": 0.20986826723575314,
+        "hd95_pixels": 22.180495021000247,
+        "hd95_diagonal": 0.06126554077899894
+      },
+      "pooled": {
+        "dice": 0.8691749622869386,
+        "iou": 0.7686201961399137,
+        "precision": 0.8207463210279269,
+        "recall": 0.9236770972795025
+      },
+      "prec_at": {
+        "0.5": 0.9344059405940595,
+        "0.6": 0.870049504950495,
+        "0.7": 0.7512376237623762,
+        "0.8": 0.5334158415841584,
+        "0.9": 0.15594059405940594
+      },
+      "threshold_jaccard_065": 0.6760898605370556,
+      "counts": {
+        "tp": 11905820,
+        "fp": 2600270,
+        "fn": 983771,
+        "tn": 37463227
+      },
+      "repair_vs_archived_dino": {
+        "corrected": 704672,
+        "introduced": 1698731,
+        "net_errors_removed": -994059,
+        "repair_rate": 0.2720760221499609,
+        "damage_rate": 0.03372967108104889
+      }
+    }
+  },
+  "note": "Same trained Cross checkpoint; no refit or model selection. Uniform replaces content/position attention by mean V; same_position retrieves only colocated V. Distribution shifts mean this does not replace separately trained controls."
+}

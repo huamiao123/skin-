@@ -1,0 +1,344 @@
+[
+  {
+    "epoch": 1,
+    "seconds": 1013.8363631489999,
+    "peak_gpu_gib": 44.21807098388672,
+    "models": {
+      "dinov3_text": {
+        "train_loss": 0.9406043873144438,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.5193793488548647,
+            "iou": 0.4011158978259059,
+            "precision": 0.5133939739689479,
+            "recall": 0.6166525164986045
+          },
+          "pooled": {
+            "dice": 0.5915521489687333,
+            "iou": 0.4200028765961043,
+            "precision": 0.5426022006863133,
+            "recall": 0.6502097302060668
+          },
+          "prec_at": {
+            "0.5": 0.38019198818534244,
+            "0.6": 0.2687834594794167,
+            "0.7": 0.16226693741923573,
+            "0.8": 0.06424220047997047,
+            "0.9": 0.007291858962525383
+          },
+          "threshold_jaccard_065": 0.16490061230630784,
+          "counts": {
+            "tp": 224441805,
+            "fp": 189197883,
+            "fn": 120741902,
+            "tn": 2581393105
+          },
+          "image_balanced_mean_iou": 0.423751760218451,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.7683827466403116
+        },
+        "best": {
+          "score": 0.4011158978259059,
+          "epoch": 1
+        }
+      },
+      "vmamba_text": {
+        "train_loss": 1.0161424782599042,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.44261386083828924,
+            "iou": 0.32399425572203033,
+            "precision": 0.4643554059852184,
+            "recall": 0.5153153000208329
+          },
+          "pooled": {
+            "dice": 0.5220531435763028,
+            "iou": 0.35322863018197787,
+            "precision": 0.4939012462166897,
+            "recall": 0.5536082848777101
+          },
+          "prec_at": {
+            "0.5": 0.24783090271367916,
+            "0.6": 0.1457448772383238,
+            "0.7": 0.06313457633376407,
+            "0.8": 0.01661436219309581,
+            "0.9": 0.0010153221340225217
+          },
+          "threshold_jaccard_065": 0.0760239690631882,
+          "counts": {
+            "tp": 191096560,
+            "fp": 195815928,
+            "fn": 154087147,
+            "tn": 2574775060
+          },
+          "image_balanced_mean_iou": 0.34388048970088386,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.8582727031688397
+        },
+        "best": {
+          "score": 0.32399425572203033,
+          "epoch": 1
+        }
+      },
+      "fusion_text": {
+        "train_loss": 0.9380119234533015,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.5334287522112368,
+            "iou": 0.4122654446278367,
+            "precision": 0.5096234629926532,
+            "recall": 0.6559243866066726
+          },
+          "pooled": {
+            "dice": 0.5983797634765026,
+            "iou": 0.42692003717118926,
+            "precision": 0.530495449735801,
+            "recall": 0.6861869873829242
+          },
+          "prec_at": {
+            "0.5": 0.39283736385453205,
+            "0.6": 0.2730293520398745,
+            "0.7": 0.16789736016245155,
+            "0.8": 0.06793428096732508,
+            "0.9": 0.0085840871330995
+          },
+          "threshold_jaccard_065": 0.1680712505020934,
+          "counts": {
+            "tp": 236860568,
+            "fp": 209628781,
+            "fn": 108323139,
+            "tn": 2560962207
+          },
+          "image_balanced_mean_iou": 0.4350217917319856,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.7618953340142025
+        },
+        "best": {
+          "score": 0.4122654446278367,
+          "epoch": 1
+        }
+      },
+      "dinov3_fixed_text": {
+        "train_loss": 1.025788496558618,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.3103432488993926,
+            "iou": 0.21242985379494186,
+            "precision": 0.3076514774525132,
+            "recall": 0.39423328503159666
+          },
+          "pooled": {
+            "dice": 0.39000079876467963,
+            "iou": 0.2422366411520203,
+            "precision": 0.35891024829742507,
+            "recall": 0.42698862956472045
+          },
+          "prec_at": {
+            "0.5": 0.0904559719401883,
+            "0.6": 0.03950526121469448,
+            "0.7": 0.012553073657005722,
+            "0.8": 0.0029536643898836995,
+            "0.9": 0.0002769060365515968
+          },
+          "threshold_jaccard_065": 0.01722952672712868,
+          "counts": {
+            "tp": 147389518,
+            "fp": 263268909,
+            "fn": 197794189,
+            "tn": 2507322079
+          },
+          "image_balanced_mean_iou": 0.24156634590374945,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.9831040694151546
+        },
+        "best": {
+          "score": 0.21242985379494186,
+          "epoch": 1
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "seconds": 1000.4240148550002,
+    "peak_gpu_gib": 44.29946994781494,
+    "models": {
+      "dinov3_text": {
+        "train_loss": 0.6982038909227688,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.581265463386661,
+            "iou": 0.46497080239276495,
+            "precision": 0.5917288939927585,
+            "recall": 0.6464993092692594
+          },
+          "pooled": {
+            "dice": 0.6516301865755423,
+            "iou": 0.4832726008012563,
+            "precision": 0.624525688692071,
+            "recall": 0.6811941010877434
+          },
+          "prec_at": {
+            "0.5": 0.4916005168912682,
+            "0.6": 0.37853055196603286,
+            "0.7": 0.24940003692080487,
+            "0.8": 0.11777736754661251,
+            "0.9": 0.015599040059073288
+          },
+          "threshold_jaccard_065": 0.24325145507524193,
+          "counts": {
+            "tp": 235137105,
+            "fp": 141367992,
+            "fn": 110046602,
+            "tn": 2629222996
+          },
+          "image_balanced_mean_iou": 0.4872322813118896,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.6635628242828935
+        },
+        "best": {
+          "score": 0.46497080239276495,
+          "epoch": 2
+        }
+      },
+      "vmamba_text": {
+        "train_loss": 0.767920546335446,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.5438591796818809,
+            "iou": 0.4232991557095264,
+            "precision": 0.5439289383104378,
+            "recall": 0.6349248463365721
+          },
+          "pooled": {
+            "dice": 0.6081557936099155,
+            "iou": 0.4369424327937109,
+            "precision": 0.5667888546970022,
+            "recall": 0.6560364449646519
+          },
+          "prec_at": {
+            "0.5": 0.41563596086394683,
+            "0.6": 0.29342809673250875,
+            "0.7": 0.18045043381945727,
+            "0.8": 0.07319549566180543,
+            "0.9": 0.009322503230570427
+          },
+          "threshold_jaccard_065": 0.17916523317918645,
+          "counts": {
+            "tp": 226453092,
+            "fp": 173083861,
+            "fn": 118730615,
+            "tn": 2597507127
+          },
+          "image_balanced_mean_iou": 0.44476387842923243,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.7289296650063491
+        },
+        "best": {
+          "score": 0.4232991557095264,
+          "epoch": 2
+        }
+      },
+      "fusion_text": {
+        "train_loss": 0.6772722027981403,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.5999436090835776,
+            "iou": 0.4865967128282718,
+            "precision": 0.6069813129605844,
+            "recall": 0.6684936336412973
+          },
+          "pooled": {
+            "dice": 0.6625918774260227,
+            "iou": 0.4954298289670901,
+            "precision": 0.6337615973620123,
+            "recall": 0.6941701886294419
+          },
+          "prec_at": {
+            "0.5": 0.5239062211556212,
+            "0.6": 0.4136976186080857,
+            "0.7": 0.29425881484216354,
+            "0.8": 0.14768321949418498,
+            "0.9": 0.026582979508953296
+          },
+          "threshold_jaccard_065": 0.28123701921690597,
+          "counts": {
+            "tp": 239616239,
+            "fp": 138469527,
+            "fn": 105567468,
+            "tn": 2632121461
+          },
+          "image_balanced_mean_iou": 0.5108326858735788,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.6387965604346552
+        },
+        "best": {
+          "score": 0.4865967128282718,
+          "epoch": 2
+        }
+      },
+      "dinov3_fixed_text": {
+        "train_loss": 0.9637975367330908,
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 10834,
+          "macro": {
+            "dice": 0.3588133103726302,
+            "iou": 0.25098490782661426,
+            "precision": 0.3139584279548271,
+            "recall": 0.5105817276292293
+          },
+          "pooled": {
+            "dice": 0.4350126561703914,
+            "iou": 0.27796560648592333,
+            "precision": 0.35906998364796194,
+            "recall": 0.5516952310845888
+          },
+          "prec_at": {
+            "0.5": 0.13079195126453758,
+            "0.6": 0.0582425696880192,
+            "0.7": 0.02372161713125346,
+            "0.8": 0.0057227247553996675,
+            "0.9": 0.0013845301827579842
+          },
+          "threshold_jaccard_065": 0.026743767208032045,
+          "counts": {
+            "tp": 190436205,
+            "fp": 339923373,
+            "fn": 154747502,
+            "tn": 2430667615
+          },
+          "image_balanced_mean_iou": 0.2821275333751188,
+          "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+          "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+          "loss": 0.9630000176565309
+        },
+        "best": {
+          "score": 0.25098490782661426,
+          "epoch": 2
+        }
+      }
+    }
+  }
+]

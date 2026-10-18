@@ -1,0 +1,27 @@
+{
+  "cross_split_exact_file_duplicates": [
+    {
+      "sha256": "4c6108d066eed814e300ccbf82b3c91fa42a5d6ae9b2f1beaf7ee77ef4d4bc9b",
+      "members": [
+        {
+          "split": "train",
+          "image_id": 137715,
+          "image_index": 4773,
+          "file_name": "COCO_train2014_000000137715.jpg"
+        },
+        {
+          "split": "val",
+          "image_id": 242807,
+          "image_index": 8281,
+          "file_name": "COCO_train2014_000000242807.jpg"
+        }
+      ]
+    }
+  ],
+  "validation_image_ids_to_exclude_in_supplement": [
+    242807
+  ],
+  "affected_validation_expressions": 9,
+  "primary_split": "Official UNC unchanged",
+  "sensitivity_plan": "After checkpoint selection is locked, additionally recompute validation metrics excluding affected image IDs; never retune/select using these scores."
+}

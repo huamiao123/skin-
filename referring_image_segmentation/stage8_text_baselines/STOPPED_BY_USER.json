@@ -1,0 +1,68 @@
+{
+  "requested_utc": "2026-10-18T09:56:20.143738+00:00",
+  "reason": "User requested stopping RefCOCO and trying ISIC text-guided segmentation seed42",
+  "previous_status": {
+    "state": "training",
+    "stage": "refcoco_text_baselines",
+    "seed": 42,
+    "epochs": 30,
+    "models": [
+      "dinov3_text",
+      "vmamba_text",
+      "fusion_text",
+      "dinov3_fixed_text"
+    ],
+    "supervisor_pid": 10733,
+    "started_utc": "2026-10-18T09:18:20.555722+00:00",
+    "events": [
+      {
+        "phase": "preflight",
+        "returncode": 0,
+        "ended_utc": "2026-10-18T09:18:30.597443+00:00"
+      },
+      {
+        "phase": "smoke_first_epoch",
+        "returncode": 0,
+        "ended_utc": "2026-10-18T09:18:42.471474+00:00"
+      },
+      {
+        "phase": "smoke_resume",
+        "returncode": 0,
+        "ended_utc": "2026-10-18T09:18:53.744100+00:00"
+      },
+      {
+        "phase": "smoke_evaluation",
+        "returncode": 0,
+        "ended_utc": "2026-10-18T09:19:10.073860+00:00"
+      }
+    ],
+    "command": [
+      "train.py"
+    ],
+    "child_pid": 11305
+  },
+  "signalled": [
+    {
+      "pid": 10733,
+      "process_group": true,
+      "command": "/environment/miniconda3/bin/python -u /home/featurize/referring_image_segmentation/stage8_text_baselines/launch.py "
+    },
+    {
+      "pid": 11973,
+      "process_group": false,
+      "command": "/environment/miniconda3/bin/python -u /home/featurize/referring_image_segmentation/stage8_text_baselines/supplemental/overlap_sensitivity.py "
+    },
+    {
+      "pid": 14880,
+      "process_group": false,
+      "command": "/environment/miniconda3/bin/python -u /home/featurize/storage_cleanup_20261018/retain_stage8_best.py "
+    }
+  ],
+  "remaining_original_processes": [],
+  "retained_best": [
+    "/home/featurize/referring_image_segmentation/stage8_text_baselines/results/seed42/dinov3_text/best_miou.pth",
+    "/home/featurize/referring_image_segmentation/stage8_text_baselines/results/seed42/vmamba_text/best_miou.pth",
+    "/home/featurize/referring_image_segmentation/stage8_text_baselines/results/seed42/dinov3_fixed_text/best_miou.pth",
+    "/home/featurize/referring_image_segmentation/stage8_text_baselines/results/seed42/fusion_text/best_miou.pth"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "state": "stopped_by_user",
+  "stage": "refcoco_text_baselines",
+  "seed": 42,
+  "epochs": 30,
+  "models": [
+    "dinov3_text",
+    "vmamba_text",
+    "fusion_text",
+    "dinov3_fixed_text"
+  ],
+  "supervisor_pid": 10733,
+  "started_utc": "2026-10-18T09:18:20.555722+00:00",
+  "events": [
+    {
+      "phase": "preflight",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T09:18:30.597443+00:00"
+    },
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T09:18:42.471474+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T09:18:53.744100+00:00"
+    },
+    {
+      "phase": "smoke_evaluation",
+      "returncode": 0,
+      "ended_utc": "2026-10-18T09:19:10.073860+00:00"
+    }
+  ],
+  "command": [
+    "train.py"
+  ],
+  "child_pid": 11305,
+  "ended_utc": "2026-10-18T09:56:22.146262+00:00",
+  "reason": "User requested stopping RefCOCO and trying ISIC text-guided segmentation seed42",
+  "training_complete": false
+}

@@ -1,0 +1,249 @@
+{
+  "seed": 42,
+  "smoke_only": true,
+  "models": {
+    "dinov3_text": {
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 128,
+        "macro": {
+          "dice": 0.17022200125614945,
+          "iou": 0.10148547878454789,
+          "precision": 0.12691955695472973,
+          "recall": 0.4784101947134618,
+          "boundary_f1": 0.03827897860199172,
+          "hd95_pixels": 347.4126891902708,
+          "hd95_diagonal": 0.4629758481721286
+        },
+        "pooled": {
+          "dice": 0.21463952041091205,
+          "iou": 0.1202219511772282,
+          "precision": 0.13788345170627195,
+          "recall": 0.4841567967345387
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 2149738,
+          "fp": 13441241,
+          "fn": 2290431,
+          "tn": 16247730
+        },
+        "image_balanced_mean_iou": 0.10535632831556577,
+        "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+        "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+        "selected_epoch": 1,
+        "loss": 1.6316600292921066,
+        "checkpoint_sha256": "de50086316a27c6573cfd7e528be8f51a8485f225eb2a19a1faead458b451245"
+      }
+    },
+    "vmamba_text": {
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 128,
+        "macro": {
+          "dice": 0.13262660031338572,
+          "iou": 0.07681035138123163,
+          "precision": 0.1943767384006016,
+          "recall": 0.1776338167666233,
+          "boundary_f1": 0.061015358025614225,
+          "hd95_pixels": 307.13965026088147,
+          "hd95_diagonal": 0.4103390520672728
+        },
+        "pooled": {
+          "dice": 0.18833408775188473,
+          "iou": 0.10395630147844367,
+          "precision": 0.19057392074263144,
+          "recall": 0.1861462930802859
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 826521,
+          "fp": 3510489,
+          "fn": 3613648,
+          "tn": 26178482
+        },
+        "image_balanced_mean_iou": 0.07547673455462975,
+        "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+        "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+        "selected_epoch": 1,
+        "loss": 1.2986529171466827,
+        "checkpoint_sha256": "139c285cf43b6ab1887cf56a8139911740e517dfea99b47d72b32b7a572fb0b9"
+      }
+    },
+    "fusion_text": {
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 128,
+        "macro": {
+          "dice": 0.14298292648708938,
+          "iou": 0.08302542722103737,
+          "precision": 0.09585921064385451,
+          "recall": 0.49783989053418976,
+          "boundary_f1": 0.03998692349116673,
+          "hd95_pixels": 352.5714256287081,
+          "hd95_diagonal": 0.469050844388031
+        },
+        "pooled": {
+          "dice": 0.20096057462185202,
+          "iou": 0.11170437500535112,
+          "precision": 0.12635312067692206,
+          "recall": 0.49070767351422884
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 2178825,
+          "fp": 15065110,
+          "fn": 2261344,
+          "tn": 14623861
+        },
+        "image_balanced_mean_iou": 0.08441409809422958,
+        "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+        "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+        "selected_epoch": 1,
+        "loss": 1.6016139835119247,
+        "checkpoint_sha256": "505c869b32451415f71c11fe21e4f56d314c22dd141328e761b73c443728b740"
+      }
+    },
+    "dinov3_fixed_text": {
+      "val": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 128,
+        "macro": {
+          "dice": 0.033670164975004774,
+          "iou": 0.019279243882555,
+          "precision": 0.04290322959641112,
+          "recall": 0.03979334802164388,
+          "boundary_f1": 0.009176625356643296,
+          "hd95_pixels": 440.7610723109333,
+          "hd95_diagonal": 0.581114315026889
+        },
+        "pooled": {
+          "dice": 0.03673003592649119,
+          "iou": 0.018708601770834173,
+          "precision": 0.056725240834006825,
+          "recall": 0.027157299643324386
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 120583,
+          "fp": 2005155,
+          "fn": 4319586,
+          "tn": 27683816
+        },
+        "image_balanced_mean_iou": 0.013990462223235748,
+        "evaluation_resolution": "native image dimensions; logits upsample->unpad->resize using OpenCV INTER_LINEAR; threshold 0",
+        "aggregation": "macro and Prec@X over expressions; pooled sums expression-pixel counts; image-balanced score separately reported",
+        "selected_epoch": 1,
+        "loss": 1.3457936346530914,
+        "checkpoint_sha256": "8cb2c5f3f9758a9261f79222197255405164210c74ed3a605b4ccda88ce67746"
+      }
+    }
+  },
+  "comparisons": {
+    "val": {
+      "fusion_text_minus_dinov3_text": {
+        "mean_iou_delta": -0.01846005156351051,
+        "image_cluster_bootstrap95": [
+          -0.03965689894506499,
+          0.0011521735451054485
+        ],
+        "independent_images": 20,
+        "expressions": 128,
+        "note": "Exploratory paired image clusters, not independent expressions or training seeds."
+      },
+      "fusion_text_minus_vmamba_text": {
+        "mean_iou_delta": 0.006215075839805731,
+        "image_cluster_bootstrap95": [
+          -0.017230797169921513,
+          0.02922362538901052
+        ],
+        "independent_images": 20,
+        "expressions": 128,
+        "note": "Exploratory paired image clusters, not independent expressions or training seeds."
+      },
+      "dinov3_text_minus_vmamba_text": {
+        "mean_iou_delta": 0.02467512740331625,
+        "image_cluster_bootstrap95": [
+          0.0010543656888086924,
+          0.05028245387275275
+        ],
+        "independent_images": 20,
+        "expressions": 128,
+        "note": "Exploratory paired image clusters, not independent expressions or training seeds."
+      },
+      "dinov3_text_minus_dinov3_fixed_text": {
+        "mean_iou_delta": 0.08220623490199287,
+        "image_cluster_bootstrap95": [
+          0.05327097981634318,
+          0.11693388641866276
+        ],
+        "independent_images": 20,
+        "expressions": 128,
+        "note": "Exploratory paired image clusters, not independent expressions or training seeds."
+      }
+    }
+  },
+  "same_image_switching": {
+    "dinov3_text": {
+      "val": {
+        "images_with_two_targets": 18,
+        "mean_changed_pixel_fraction": 0.3333501613875279,
+        "both_targets_preferred_fraction": 0.1111111111111111,
+        "note": "Deterministic first expression per first two annotation IDs of each image, not selected by scores. Correct target IoU is compared to the other real target."
+      }
+    },
+    "vmamba_text": {
+      "val": {
+        "images_with_two_targets": 18,
+        "mean_changed_pixel_fraction": 0.14616025074566005,
+        "both_targets_preferred_fraction": 0.2222222222222222,
+        "note": "Deterministic first expression per first two annotation IDs of each image, not selected by scores. Correct target IoU is compared to the other real target."
+      }
+    },
+    "fusion_text": {
+      "val": {
+        "images_with_two_targets": 18,
+        "mean_changed_pixel_fraction": 0.3715932208761798,
+        "both_targets_preferred_fraction": 0.16666666666666666,
+        "note": "Deterministic first expression per first two annotation IDs of each image, not selected by scores. Correct target IoU is compared to the other real target."
+      }
+    },
+    "dinov3_fixed_text": {
+      "val": {
+        "images_with_two_targets": 18,
+        "mean_changed_pixel_fraction": 0.0,
+        "both_targets_preferred_fraction": 0.0,
+        "note": "Deterministic first expression per first two annotation IDs of each image, not selected by scores. Correct target IoU is compared to the other real target."
+      }
+    }
+  },
+  "caveat": "One exploratory seed. Frozen pretrained sources differ. CLIP text-only alignment baseline, not CRIS reproduction. Original images and multiple expressions share statistical clusters."
+}

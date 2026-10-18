@@ -1,0 +1,28 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "train_samples": 32,
+  "validation_samples": 16,
+  "batch": 16,
+  "input_size": 256,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "eta_min": 1e-06,
+  "warmup_steps": 255,
+  "total_schedule_steps": 5100,
+  "loss": "valid-pixel BCE + per-image soft Dice; equal weights; smooth1",
+  "selection": "maximum original-resolution validation macro Dice; earliest exact tie",
+  "frozen_encoders": true,
+  "pretrained_segmentation_decoder_loaded": false,
+  "prompt": "MedVLSM P3; skin melanoma -> skin lesion",
+  "initialization": {
+    "dinov3_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "vmamba_text": "6714e51ed1f0ca7416f034e83e04140aa8211a49595fc6ad6fee1dc6af84ac03",
+    "fusion_text": "e6a2f6fb0dbda235c1361564598b1811fa8a65aa5defa498f6f238fc79b620f9",
+    "dinov3_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "data_sha256": "849817502f58b111e9312584f3ca2bfae6ed645b9406d322dda1d68e7b232c32",
+  "text_sha256": "45a00534b29e5404a16726137e038fa6e34138a580de21bfcddf01b8d7f6abb7",
+  "protocol_sha256": "1f65df24a55252e3f83c5cc56cbb03242aedb17eb2f57a084e6d8641e0c28114"
+}

@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "seed": 42,
+  "batch": 16,
+  "initial_hashes": {
+    "dinov3_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "vmamba_text": "6714e51ed1f0ca7416f034e83e04140aa8211a49595fc6ad6fee1dc6af84ac03",
+    "fusion_text": "e6a2f6fb0dbda235c1361564598b1811fa8a65aa5defa498f6f238fc79b620f9",
+    "dinov3_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "trainable_parameters": {
+    "dinov3_text": 543394,
+    "vmamba_text": 537250,
+    "fusion_text": 669090,
+    "dinov3_fixed_text": 543394
+  },
+  "frozen_visual_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "independent_parameters": true,
+  "common_head_decoder_initialization": true,
+  "dino_fixed_and_real_initial_state_identical": true,
+  "finite_nonzero_gradients": true,
+  "text_affects_predictions": true,
+  "padding_loss_invariant": true,
+  "native_geometry_verified": true,
+  "official_image_ids_disjoint": true,
+  "cross_split_identical_image_content_groups": [
+    [
+      "train",
+      "val"
+    ]
+  ],
+  "full_train_val_cache_allocated": true,
+  "peak_allocated_gib": 43.41976594924927,
+  "total_gpu_gib": 47.37310791015625,
+  "first_training_step_seconds": {
+    "dinov3_text": 0.8578410089999124,
+    "vmamba_text": 0.10566039300010743,
+    "fusion_text": 0.226154865999888,
+    "dinov3_fixed_text": 0.0650578070001302
+  },
+  "native_128_validation_seconds": 0.30591402000004564,
+  "torch_version": "2.2.2+cu121",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}
