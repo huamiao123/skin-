@@ -1,0 +1,86 @@
+[
+  {
+    "epoch": 1,
+    "seconds": 0.5311632279999685,
+    "train_loss": 1.5002528429031372,
+    "val": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 16,
+      "macro": {
+        "dice": 0.35292337358081927,
+        "iou": 0.25031152229643494,
+        "precision": 0.25031152229643494,
+        "recall": 1.0
+      },
+      "pooled": {
+        "dice": 0.19324901157411598,
+        "iou": 0.10695940548093043,
+        "precision": 0.10695940548093043,
+        "recall": 1.0
+      },
+      "prec_at": {
+        "0.5": 0.1875,
+        "0.6": 0.125,
+        "0.7": 0.125,
+        "0.8": 0.0625,
+        "0.9": 0.0
+      },
+      "threshold_jaccard_065": 0.09832239588775549,
+      "counts": {
+        "tp": 4826602,
+        "fp": 40298948,
+        "fn": 0,
+        "tn": 0
+      },
+      "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+      "loss": 1.666535496711731
+    },
+    "best": {
+      "score": 0.35292337358081927,
+      "epoch": 1
+    },
+    "peak_gpu_gib": 1.9191503524780273
+  },
+  {
+    "epoch": 2,
+    "seconds": 0.5306289479999577,
+    "train_loss": 1.4973448514938354,
+    "val": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 16,
+      "macro": {
+        "dice": 0.35292337358081927,
+        "iou": 0.25031152229643494,
+        "precision": 0.25031152229643494,
+        "recall": 1.0
+      },
+      "pooled": {
+        "dice": 0.19324901157411598,
+        "iou": 0.10695940548093043,
+        "precision": 0.10695940548093043,
+        "recall": 1.0
+      },
+      "prec_at": {
+        "0.5": 0.1875,
+        "0.6": 0.125,
+        "0.7": 0.125,
+        "0.8": 0.0625,
+        "0.9": 0.0
+      },
+      "threshold_jaccard_065": 0.09832239588775549,
+      "counts": {
+        "tp": 4826602,
+        "fp": 40298948,
+        "fn": 0,
+        "tn": 0
+      },
+      "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+      "loss": 1.6613309383392334
+    },
+    "best": {
+      "score": 0.35292337358081927,
+      "epoch": 1
+    },
+    "peak_gpu_gib": 1.9191503524780273
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "initial_hashes": {
+    "E0_visual": "8e9af9ed781048fcd7a112d6208e0679628a90ce586f9587acd442f299c05627",
+    "E1_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "E2_image_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "predecoder_fixed_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0",
+    "predecoder_image_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0"
+  },
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409,
+      "batch": 16,
+      "training_step_seconds": 0.3005498889997398
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 16,
+      "training_step_seconds": 0.07844643799944606
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 16,
+      "training_step_seconds": 0.0327947010000571
+    },
+    "predecoder_fixed_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "batch": 16,
+      "training_step_seconds": 0.042753413999889744
+    },
+    "predecoder_image_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "batch": 16,
+      "training_step_seconds": 0.04036868300045171
+    }
+  },
+  "frozen_visual_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "exact_previous_initialization": true,
+  "all_models_independent": true,
+  "shared_visual_initialization": true,
+  "model_input_routes": {
+    "E0_visual": "none",
+    "E1_fixed_text": "sentence vector",
+    "E2_image_text": "sentence vector",
+    "predecoder_fixed_text": "word tokens",
+    "predecoder_image_text": "word tokens"
+  },
+  "fresh_300_epoch_schedule": {
+    "epochs": 300,
+    "updates": 15300,
+    "warmup_updates": 255,
+    "epoch100_end_lr": 7.67617756887018e-05,
+    "final_lr": 1e-06
+  },
+  "encoder_gradients_absent": true,
+  "padding_loss_invariant": true,
+  "native_geometry_and_metrics_passed": true,
+  "peak_gpu_gib": 1.9574780464172363
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "source": "/home/featurize/referring_image_segmentation/stage8_text_baselines/assets/clip-vit-base-patch32",
+  "source_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "source_file_hashes": {
+    "config.json": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770",
+    "merges.txt": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85",
+    "vocab.json": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363",
+    "tokenizer_config.json": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad",
+    "special_tokens_map.json": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf",
+    "pytorch_model.bin": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+  },
+  "frozen": true,
+  "parameters": 63165952,
+  "unique_texts": 50,
+  "max_token_length": 8,
+  "truncated": 0,
+  "token_features": "CLIP last_hidden_state 77x512; contextual word tokens; no CLIP image encoder",
+  "attention_mask": "Only real non-BOS/non-EOS tokens; PAD and special tokens ignored for cross-attention",
+  "sentence_cache_check_max_absolute_error": 0.0,
+  "fixed_sentence_cache_max_absolute_error": 0.0,
+  "historical_texts_sha256": "eef4ca2dd8d96a52f15097f88dbcb4bd449f52a93d30144c921e03719b88c4ad",
+  "files": {
+    "/home/featurize/referring_image_segmentation/stage12_predecoder_text/assets/row_word_index.npy": "eca71e341f01f85d415d7e038c3d20be3f6ff1b377a78b10b38ccea307e6e46d",
+    "/home/featurize/referring_image_segmentation/stage12_predecoder_text/assets/word_valid.npy": "c0b00394b60e69780be8b06c6f4765c9f3d0225e24d4b6eb9362f15f601cac8a",
+    "/home/featurize/referring_image_segmentation/stage12_predecoder_text/assets/text_vocabulary.json": "3b3e0f48fb6407d5ca62adab36f8890a399304af4123508406acf7e0f8b429e0",
+    "/home/featurize/referring_image_segmentation/stage12_predecoder_text/assets/word_features512.npy": "b40536dae8f2bfa1938f94454b2893b0c80f6f3e6a87b56902df3549aac415ae"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "seed": 42,
+  "dataset": "ISIC2016; unchanged 806/90/379 split and P3 color/shape text",
+  "models": {
+    "predecoder_fixed_text": {
+      "selected_epoch": 1,
+      "newly_trained": true,
+      "interaction": "word cross-attention before Swin; ordinary visual-only mask head",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.6610997915267944
+        }
+      }
+    },
+    "predecoder_image_text": {
+      "selected_epoch": 1,
+      "newly_trained": true,
+      "interaction": "word cross-attention before Swin; ordinary visual-only mask head",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.6594209671020508
+        }
+      }
+    }
+  },
+  "new_checkpoints": {
+    "predecoder_fixed_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage12_predecoder_text/smoke/seed42/predecoder_fixed_text/best_dice.pth",
+      "sha256": "eae40fc893827c0eaf0877c25c4ed3115ff1c5851258f4225176553127293159"
+    },
+    "predecoder_image_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage12_predecoder_text/smoke/seed42/predecoder_image_text/best_dice.pth",
+      "sha256": "a17d7423b942cc37779bd9b967331582910e32d39bd8b306f6251708c78fcb90"
+    }
+  },
+  "parameters": {
+    "predecoder_fixed_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.2534427320006216
+    },
+    "predecoder_image_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.04771045000052254
+    }
+  },
+  "no_postdecoder_text_fusion": true,
+  "patient_disjointness": "not established",
+  "test_set_status": "Previously used during development; this is another controlled exploratory experiment, not a new independent test",
+  "comparison_limit": "Relative to historical late fusion, interaction location, token granularity and output head all change. Only the new fixed/image-text pair has matched structure and capacity."
+}

@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "initial_hashes": {
+    "42": {
+      "E0_visual": "8e9af9ed781048fcd7a112d6208e0679628a90ce586f9587acd442f299c05627",
+      "E1_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+      "E2_image_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+    },
+    "43": {
+      "E0_visual": "786e4a02b4af52be8fefd7ed4972884a7a6050cd9a01efe0465fefb38d614806",
+      "E1_fixed_text": "20396e853f128f657c89b621b56904172995344c1dea09c0caa01914efb4b649",
+      "E2_image_text": "20396e853f128f657c89b621b56904172995344c1dea09c0caa01914efb4b649"
+    },
+    "44": {
+      "E0_visual": "f85faed88d0935ba3dfb82b392d13d69b92d8f48c01cf5fb7f637888fcf7b6c8",
+      "E1_fixed_text": "a10e5396bda08a12cb092a0a275460a04c105384165c5068f991b406d95f5c69",
+      "E2_image_text": "a10e5396bda08a12cb092a0a275460a04c105384165c5068f991b406d95f5c69"
+    }
+  },
+  "shared_initial_hashes": {
+    "42": {
+      "E0_visual": "e03e1b44cdb8c8b3eb46e51a417fd0e8d040d70c02986d418d85aa719fa3b51f",
+      "E1_fixed_text": "e03e1b44cdb8c8b3eb46e51a417fd0e8d040d70c02986d418d85aa719fa3b51f",
+      "E2_image_text": "e03e1b44cdb8c8b3eb46e51a417fd0e8d040d70c02986d418d85aa719fa3b51f"
+    },
+    "43": {
+      "E0_visual": "5176f5bfd2c7b8d3d55d1fd44504a5361112400bb83f76427441ba2371bc5e6a",
+      "E1_fixed_text": "5176f5bfd2c7b8d3d55d1fd44504a5361112400bb83f76427441ba2371bc5e6a",
+      "E2_image_text": "5176f5bfd2c7b8d3d55d1fd44504a5361112400bb83f76427441ba2371bc5e6a"
+    },
+    "44": {
+      "E0_visual": "794e3231422a7e6c7db0aad99c70073b8c213052cf87faf9a47edfcd65dca3f4",
+      "E1_fixed_text": "794e3231422a7e6c7db0aad99c70073b8c213052cf87faf9a47edfcd65dca3f4",
+      "E2_image_text": "794e3231422a7e6c7db0aad99c70073b8c213052cf87faf9a47edfcd65dca3f4"
+    }
+  },
+  "frozen_visual_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409,
+      "batch": 64,
+      "training_step_seconds": 0.34637810599997465
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 64,
+      "training_step_seconds": 0.12830156499990153
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 64,
+      "training_step_seconds": 0.06292018699991786
+    }
+  },
+  "batch": 64,
+  "independent_models": true,
+  "text_input_changes_logits": true,
+  "padding_loss_invariant": true,
+  "native_geometry_and_full_metrics_passed": true,
+  "encoder_gradients_absent": true,
+  "subset_peak_gpu_gib": 3.979555130004883,
+  "estimated_full_train_val_cache_gib": 1.6259765625,
+  "torch_version": "2.2.2+cu121",
+  "encoder_source": {
+    "path": "/home/featurize/referring_image_segmentation/stage1_visual/weights/dinov3_vits16/model.safetensors",
+    "sha256": "2a1ec16ae28ffa07bc0ead0241ee7df9fc26451fe6f9f839b7b3afa0a906b040",
+    "strict_load": true,
+    "missing": [],
+    "unexpected": [],
+    "channels": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "params": 21586944
+  }
+}

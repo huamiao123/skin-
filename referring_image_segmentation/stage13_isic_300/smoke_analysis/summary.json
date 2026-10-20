@@ -1,0 +1,275 @@
+{
+  "seed": 42,
+  "training_epochs": 2,
+  "models": {
+    "E0_visual": {
+      "selected_epoch": 1,
+      "training_epochs": 2,
+      "fresh_initialization": true,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.6665340662002563
+        }
+      }
+    },
+    "E1_fixed_text": {
+      "selected_epoch": 2,
+      "training_epochs": 2,
+      "fresh_initialization": true,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.04564815241313284,
+            "iou": 0.029891444308535145,
+            "precision": 0.1958121233926412,
+            "recall": 0.03171189328825994,
+            "boundary_f1": 0.0023181659916802584,
+            "hd95_pixels": 1175.7107039552466,
+            "hd95_diagonal": 0.6011815016903539
+          },
+          "pooled": {
+            "dice": 0.065537666298682,
+            "iou": 0.033879008733804096,
+            "precision": 0.3070211183226028,
+            "recall": 0.03668419314457666
+          },
+          "prec_at": {
+            "0.5": 0.0,
+            "0.6": 0.0,
+            "0.7": 0.0,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.0,
+          "counts": {
+            "tp": 177060,
+            "fp": 399643,
+            "fn": 4649542,
+            "tn": 39899305
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.4388577938079834
+        }
+      }
+    },
+    "E2_image_text": {
+      "selected_epoch": 2,
+      "training_epochs": 2,
+      "fresh_initialization": true,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.035371486091918834,
+            "iou": 0.02132366158793279,
+            "precision": 0.125,
+            "recall": 0.02132366158793279,
+            "boundary_f1": 0.0,
+            "hd95_pixels": 1343.777064450235,
+            "hd95_diagonal": 0.7293860252248208
+          },
+          "pooled": {
+            "dice": 0.060900579668360266,
+            "iou": 0.031406630846160834,
+            "precision": 0.5707804693330588,
+            "recall": 0.03216631493543491
+          },
+          "prec_at": {
+            "0.5": 0.0,
+            "0.6": 0.0,
+            "0.7": 0.0,
+            "0.8": 0.0,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.0,
+          "counts": {
+            "tp": 155254,
+            "fp": 116749,
+            "fn": 4671348,
+            "tn": 40182199
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.4841214418411255
+        }
+      }
+    },
+    "predecoder_fixed_text": {
+      "selected_epoch": 1,
+      "training_epochs": 2,
+      "fresh_initialization": true,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.6610981225967407
+        }
+      }
+    },
+    "predecoder_image_text": {
+      "selected_epoch": 1,
+      "training_epochs": 2,
+      "fresh_initialization": true,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.6593821048736572
+        }
+      }
+    }
+  },
+  "checkpoints": {
+    "E0_visual": {
+      "path": "/home/featurize/referring_image_segmentation/stage13_isic_300/smoke/seed42/E0_visual/best_dice.pth",
+      "sha256": "a7d72e77273eb379f9ff623d0b699a82e35f1faa79e8b5a870d435c013994692"
+    },
+    "E1_fixed_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage13_isic_300/smoke/seed42/E1_fixed_text/best_dice.pth",
+      "sha256": "926eb6b5fc12314637b41df146ba8a434f107e7fe1485d912b303e6b91f19d33"
+    },
+    "E2_image_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage13_isic_300/smoke/seed42/E2_image_text/best_dice.pth",
+      "sha256": "740207431be2af5e2087675ae18c3e8f5f3ec2198ce3eadd22915842eb9cb822"
+    },
+    "predecoder_fixed_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage13_isic_300/smoke/seed42/predecoder_fixed_text/best_dice.pth",
+      "sha256": "d9b890890d2a35ebaafb92b3d3936976a32570f2f00f2496e515b3a53c70ac5f"
+    },
+    "predecoder_image_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage13_isic_300/smoke/seed42/predecoder_image_text/best_dice.pth",
+      "sha256": "c6fd69bb41041f326428e35295613899c778572574fc2354e2d7b0d14969a5da"
+    }
+  },
+  "all_models_trained_fresh": true,
+  "training_updates_per_model": 4,
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409,
+      "batch": 16,
+      "training_step_seconds": 0.3005498889997398
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 16,
+      "training_step_seconds": 0.07844643799944606
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 16,
+      "training_step_seconds": 0.0327947010000571
+    },
+    "predecoder_fixed_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "batch": 16,
+      "training_step_seconds": 0.042753413999889744
+    },
+    "predecoder_image_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "batch": 16,
+      "training_step_seconds": 0.04036868300045171
+    }
+  },
+  "dataset": "ISIC2016;806/90/379 unchanged",
+  "patient_disjointness": "not established",
+  "test_set_status": "Already used in earlier development; budget comparison is exploratory, not an independent new test"
+}

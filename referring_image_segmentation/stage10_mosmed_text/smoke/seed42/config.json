@@ -1,0 +1,27 @@
+{
+  "phase": "smoke",
+  "seed": 42,
+  "epochs": 2,
+  "batch": 64,
+  "train_samples": 64,
+  "validation_samples": 16,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "eta_min": 1e-06,
+  "warmup_steps": 5,
+  "total_schedule_steps": 2,
+  "augmentation": "none; exactly cached frozen DINO features",
+  "loss": "valid BCE + per-image SoftDice; 1:1; smooth1",
+  "selection": "maximum original-resolution validation macro Dice; earliest exact tie",
+  "frozen_encoders": true,
+  "previous_segmentation_weights_loaded": false,
+  "initial_hashes": {
+    "E0_visual": "8e9af9ed781048fcd7a112d6208e0679628a90ce586f9587acd442f299c05627",
+    "E1_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "E2_image_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "data_sha256": "783c8017897f27b87e3ab35f9eeb0a5db95040f18afaee48217d42ab423460de",
+  "text_sha256": "d43d9fb5e2db94ef169be6f256360ee8ddcbee4993ad1b8a535f744f1297e1d7",
+  "protocol_sha256": "8f0bb7910528c51c448d7b8d569a447933778d760f7af4307546f2c3430af40a"
+}

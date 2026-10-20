@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "epochs": 100,
+  "train_samples": 806,
+  "validation_samples": 90,
+  "batch": 16,
+  "input_size": 256,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.01,
+  "eta_min": 1e-06,
+  "warmup_steps": 255,
+  "total_schedule_steps": 5100,
+  "loss": "valid-pixel BCE + per-image soft Dice; equal weights; smooth1",
+  "selection": "maximum original-resolution validation macro Dice; earliest exact tie",
+  "frozen_encoders": true,
+  "architecture": "four native16x16 word cross-attention blocks before Swin; ordinary binary head; no text after decoder",
+  "attention_heads": 4,
+  "attention_residual_scale": 0.1,
+  "previous_segmentation_weights_loaded": false,
+  "augmentation": "exact stage9 brightness/contrast .9-1.1",
+  "initial_hashes": {
+    "predecoder_fixed_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0",
+    "predecoder_image_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0"
+  },
+  "data_sha256": "849817502f58b111e9312584f3ca2bfae6ed645b9406d322dda1d68e7b232c32",
+  "token_sha256": "d1be7bfcb7da1b2717179cbac96556a056adf0f7a31f759a0425f0ab1e8211e1",
+  "protocol_sha256": "4a0ae319efecb8b3b6b54c44d3b11f9378eae153783071238d1c029b9911ac19"
+}

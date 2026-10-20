@@ -1,0 +1,44 @@
+{
+  "state": "complete",
+  "stage": "isic2016_predecoder_text",
+  "seed": 42,
+  "epochs": 100,
+  "new_models": [
+    "predecoder_fixed_text",
+    "predecoder_image_text"
+  ],
+  "supervisor_pid": 26317,
+  "started_utc": "2026-10-20T07:40:49.688984+00:00",
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:40:54.266915+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:40:58.799892+00:00"
+    },
+    {
+      "phase": "smoke_native_evaluation",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:41:05.627225+00:00"
+    },
+    {
+      "phase": "training_two_predecoder_models",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:48:31.161183+00:00"
+    },
+    {
+      "phase": "evaluating_locked_models",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:49:42.945532+00:00"
+    }
+  ],
+  "command": [
+    "evaluate.py"
+  ],
+  "child_pid": 30022,
+  "ended_utc": "2026-10-20T07:49:43.232215+00:00"
+}

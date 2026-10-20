@@ -1,0 +1,269 @@
+{
+  "models": {
+    "42": {
+      "E0_visual": {
+        "selected_epoch": 2,
+        "splits": {
+          "val": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 16,
+            "macro": {
+              "dice": 0.016091463823308963,
+              "iou": 0.008120394837161996,
+              "precision": 0.008120394837161996,
+              "recall": 1.0,
+              "boundary_f1": 0.0,
+              "hd95_pixels": 347.468949748838,
+              "hd95_diagonal": 0.47987822386556844
+            },
+            "pooled": {
+              "dice": 0.016025421081846573,
+              "iou": 0.008077432670828432,
+              "precision": 0.008077432670828432,
+              "recall": 1.0
+            },
+            "prec_at": {
+              "0.5": 0.0,
+              "0.6": 0.0,
+              "0.7": 0.0,
+              "0.8": 0.0,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 32811,
+              "fp": 4029247,
+              "fn": 0,
+              "tn": 132246
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+            "loss": 2.071746349334717,
+            "positive_gt_subset": {
+              "metric_version": "foreground_v1_20261016",
+              "n": 16,
+              "macro": {
+                "dice": 0.016091463823308963,
+                "iou": 0.008120394837161996,
+                "precision": 0.008120394837161996,
+                "recall": 1.0,
+                "boundary_f1": 0.0,
+                "hd95_pixels": 347.468949748838,
+                "hd95_diagonal": 0.47987822386556844
+              },
+              "pooled": {
+                "dice": 0.016025421081846573,
+                "iou": 0.008077432670828432,
+                "precision": 0.008077432670828432,
+                "recall": 1.0
+              },
+              "prec_at": {
+                "0.5": 0.0,
+                "0.6": 0.0,
+                "0.7": 0.0,
+                "0.8": 0.0,
+                "0.9": 0.0
+              },
+              "threshold_jaccard_065": 0.0,
+              "counts": {
+                "tp": 32811,
+                "fp": 4029247,
+                "fn": 0,
+                "tn": 132246
+              }
+            },
+            "negative_gt_subset": {
+              "n": 0,
+              "images_with_false_positive": 0,
+              "false_positive_pixels": 0
+            }
+          }
+        }
+      },
+      "E1_fixed_text": {
+        "selected_epoch": 2,
+        "splits": {
+          "val": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 16,
+            "macro": {
+              "dice": 0.023030241403599543,
+              "iou": 0.011668351806030498,
+              "precision": 0.011668351806030498,
+              "recall": 1.0,
+              "boundary_f1": 0.0,
+              "hd95_pixels": 337.5712031131902,
+              "hd95_diagonal": 0.46620876338796524
+            },
+            "pooled": {
+              "dice": 0.02292739135326183,
+              "iou": 0.011596635982405883,
+              "precision": 0.011596635982405883,
+              "recall": 1.0
+            },
+            "prec_at": {
+              "0.5": 0.0,
+              "0.6": 0.0,
+              "0.7": 0.0,
+              "0.8": 0.0,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 32811,
+              "fp": 2796544,
+              "fn": 0,
+              "tn": 1364949
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+            "loss": 2.082672357559204,
+            "positive_gt_subset": {
+              "metric_version": "foreground_v1_20261016",
+              "n": 16,
+              "macro": {
+                "dice": 0.023030241403599543,
+                "iou": 0.011668351806030498,
+                "precision": 0.011668351806030498,
+                "recall": 1.0,
+                "boundary_f1": 0.0,
+                "hd95_pixels": 337.5712031131902,
+                "hd95_diagonal": 0.46620876338796524
+              },
+              "pooled": {
+                "dice": 0.02292739135326183,
+                "iou": 0.011596635982405883,
+                "precision": 0.011596635982405883,
+                "recall": 1.0
+              },
+              "prec_at": {
+                "0.5": 0.0,
+                "0.6": 0.0,
+                "0.7": 0.0,
+                "0.8": 0.0,
+                "0.9": 0.0
+              },
+              "threshold_jaccard_065": 0.0,
+              "counts": {
+                "tp": 32811,
+                "fp": 2796544,
+                "fn": 0,
+                "tn": 1364949
+              }
+            },
+            "negative_gt_subset": {
+              "n": 0,
+              "images_with_false_positive": 0,
+              "false_positive_pixels": 0
+            }
+          }
+        }
+      },
+      "E2_image_text": {
+        "selected_epoch": 1,
+        "splits": {
+          "val": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 16,
+            "macro": {
+              "dice": 0.015103961841274997,
+              "iou": 0.007643425129674412,
+              "precision": 0.007695447531339523,
+              "recall": 0.4637334738810388,
+              "boundary_f1": 0.03609071223106837,
+              "hd95_pixels": 338.3604375039009,
+              "hd95_diagonal": 0.4672987496958112
+            },
+            "pooled": {
+              "dice": 0.01570836031701977,
+              "iou": 0.007916356649836719,
+              "precision": 0.007980349735155204,
+              "recall": 0.4967846149157295
+            },
+            "prec_at": {
+              "0.5": 0.0,
+              "0.6": 0.0,
+              "0.7": 0.0,
+              "0.8": 0.0,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 16300,
+              "fp": 2026217,
+              "fn": 16511,
+              "tn": 2135276
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+            "loss": 1.9488276243209839,
+            "positive_gt_subset": {
+              "metric_version": "foreground_v1_20261016",
+              "n": 16,
+              "macro": {
+                "dice": 0.015103961841274997,
+                "iou": 0.007643425129674412,
+                "precision": 0.007695447531339523,
+                "recall": 0.4637334738810388,
+                "boundary_f1": 0.03609071223106837,
+                "hd95_pixels": 338.3604375039009,
+                "hd95_diagonal": 0.4672987496958112
+              },
+              "pooled": {
+                "dice": 0.01570836031701977,
+                "iou": 0.007916356649836719,
+                "precision": 0.007980349735155204,
+                "recall": 0.4967846149157295
+              },
+              "prec_at": {
+                "0.5": 0.0,
+                "0.6": 0.0,
+                "0.7": 0.0,
+                "0.8": 0.0,
+                "0.9": 0.0
+              },
+              "threshold_jaccard_065": 0.0,
+              "counts": {
+                "tp": 16300,
+                "fp": 2026217,
+                "fn": 16511,
+                "tn": 2135276
+              }
+            },
+            "negative_gt_subset": {
+              "n": 0,
+              "images_with_false_positive": 0,
+              "false_positive_pixels": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "seeds": [
+    42
+  ],
+  "dataset": "MosMedData+; repaired traceable source-group split",
+  "checkpoint_sha256": {
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/smoke/seed42/E0_visual/best_dice.pth": "9c3d2369ab10a0f32763178f4f651c4c3f2eecfd7ae0bf70f39e5c1b9a8244f0",
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/smoke/seed42/E1_fixed_text/best_dice.pth": "0d325d68c54c1cb335bd6000c28753970bead3fe6f93517eabffc6bcb0b02a8e",
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/smoke/seed42/E2_image_text/best_dice.pth": "d71ed8ffa07e71d92296d89bed788b920ac605302ae4eeb8cd4397d17ba6dc9b"
+  },
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409,
+      "batch": 64,
+      "training_step_seconds": 0.34637810599997465
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 64,
+      "training_step_seconds": 0.12830156499990153
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290,
+      "batch": 64,
+      "training_step_seconds": 0.06292018699991786
+    }
+  },
+  "data_manifest_sha256": "783c8017897f27b87e3ab35f9eeb0a5db95040f18afaee48217d42ab423460de",
+  "no_test_checkpoint_selection": true,
+  "patient_disjointness": "Traceable source groups disjoint; complete cross-source patient identity and bjorke patient identity not established"
+}

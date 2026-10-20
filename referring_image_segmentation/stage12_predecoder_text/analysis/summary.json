@@ -1,0 +1,500 @@
+{
+  "seed": 42,
+  "dataset": "ISIC2016; unchanged 806/90/379 split and P3 color/shape text",
+  "models": {
+    "predecoder_fixed_text": {
+      "selected_epoch": 21,
+      "newly_trained": true,
+      "interaction": "word cross-attention before Swin; ordinary visual-only mask head",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9271750537877591,
+            "iou": 0.8667931150265508,
+            "precision": 0.9291357083645703,
+            "recall": 0.9346646357220365,
+            "boundary_f1": 0.38133373169278484,
+            "hd95_pixels": 47.708148448110435,
+            "hd95_diagonal": 0.026757626902761518
+          },
+          "pooled": {
+            "dice": 0.9384399470950848,
+            "iou": 0.884019650633125,
+            "precision": 0.9386057466542459,
+            "recall": 0.9382742061007449
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9888888888888889,
+            "0.8": 0.8,
+            "0.9": 0.3888888888888889
+          },
+          "threshold_jaccard_065": 0.8667931150265508,
+          "counts": {
+            "tp": 33849169,
+            "fp": 2214076,
+            "fn": 2226819,
+            "tn": 169938666
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.16887112259864806
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9036836505747916,
+            "iou": 0.8392894641634276,
+            "precision": 0.9159528239601739,
+            "recall": 0.9102744329112245,
+            "boundary_f1": 0.3404091157451654,
+            "hd95_pixels": 95.37630314421098,
+            "hd95_diagonal": 0.04720025749609977
+          },
+          "pooled": {
+            "dice": 0.9188389303867188,
+            "iou": 0.8498631297512192,
+            "precision": 0.9272466570398087,
+            "recall": 0.9105823062533309
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9604221635883905,
+            "0.7": 0.9076517150395779,
+            "0.8": 0.7440633245382586,
+            "0.9": 0.38786279683377306
+          },
+          "threshold_jaccard_065": 0.813856528598218,
+          "counts": {
+            "tp": 136999898,
+            "fp": 10749244,
+            "fn": 13453166,
+            "tn": 673371018
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.24615457644170066
+        }
+      }
+    },
+    "predecoder_image_text": {
+      "selected_epoch": 25,
+      "newly_trained": true,
+      "interaction": "word cross-attention before Swin; ordinary visual-only mask head",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9258229626246642,
+            "iou": 0.864817971623229,
+            "precision": 0.9378628959187468,
+            "recall": 0.9240838139505909,
+            "boundary_f1": 0.3766148914901249,
+            "hd95_pixels": 47.023368922993754,
+            "hd95_diagonal": 0.02630643930524921
+          },
+          "pooled": {
+            "dice": 0.9377823838134515,
+            "iou": 0.8828533527622804,
+            "precision": 0.9481432845276095,
+            "recall": 0.9276454743249166
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9666666666666667,
+            "0.8": 0.8,
+            "0.9": 0.3888888888888889
+          },
+          "threshold_jaccard_065": 0.864817971623229,
+          "counts": {
+            "tp": 33465727,
+            "fp": 1830338,
+            "fn": 2610261,
+            "tn": 170322404
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.17204959193865457
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.903096603288385,
+            "iou": 0.8375584201123014,
+            "precision": 0.9321325390541414,
+            "recall": 0.8978122761107844,
+            "boundary_f1": 0.3373754440831316,
+            "hd95_pixels": 84.7986100820352,
+            "hd95_diagonal": 0.0414302702610824
+          },
+          "pooled": {
+            "dice": 0.9162702637932368,
+            "iou": 0.8454785664554498,
+            "precision": 0.9378535933847745,
+            "recall": 0.8956580040137966
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9577836411609498,
+            "0.7": 0.9155672823218998,
+            "0.8": 0.7440633245382586,
+            "0.9": 0.3720316622691293
+          },
+          "threshold_jaccard_065": 0.8154660926947203,
+          "counts": {
+            "tp": 134754491,
+            "fp": 8929440,
+            "fn": 15698573,
+            "tn": 675190822
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.24990465564746656
+        }
+      }
+    },
+    "E0_visual": {
+      "selected_epoch": 21,
+      "newly_trained": false,
+      "source_checkpoint": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls/results/seed42/E0_visual/best_dice.pth",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9282826122757603,
+            "iou": 0.8687470724774976,
+            "precision": 0.9414649598164573,
+            "recall": 0.924085951667167,
+            "boundary_f1": 0.3877426338716031,
+            "hd95_pixels": 46.774728114960816,
+            "hd95_diagonal": 0.026076792216267217
+          },
+          "pooled": {
+            "dice": 0.9369724716921256,
+            "iou": 0.8814188219411372,
+            "precision": 0.9480785551559276,
+            "recall": 0.9261235756038061
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9777777777777777,
+            "0.8": 0.8333333333333334,
+            "0.9": 0.4222222222222222
+          },
+          "threshold_jaccard_065": 0.8687470724774976,
+          "counts": {
+            "tp": 33410823,
+            "fp": 1829741,
+            "fn": 2665165,
+            "tn": 170323001
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.1690932697719998
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.903061877690088,
+            "iou": 0.8381098844059264,
+            "precision": 0.9293862747629116,
+            "recall": 0.8957778650814642,
+            "boundary_f1": 0.33875032440790476,
+            "hd95_pixels": 94.48151480037237,
+            "hd95_diagonal": 0.04649912011246603
+          },
+          "pooled": {
+            "dice": 0.9172881911461188,
+            "iou": 0.8472136201387942,
+            "precision": 0.942418548314524,
+            "recall": 0.8934632663911717
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9551451187335093,
+            "0.7": 0.9129287598944591,
+            "0.8": 0.7467018469656992,
+            "0.9": 0.37730870712401055
+          },
+          "threshold_jaccard_065": 0.812786778739781,
+          "counts": {
+            "tp": 134424286,
+            "fp": 8213278,
+            "fn": 16028778,
+            "tn": 675906984
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.24950149291659407
+        }
+      },
+      "source_stage": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls"
+    },
+    "E1_fixed_text": {
+      "selected_epoch": 30,
+      "newly_trained": false,
+      "source_checkpoint": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_fixed_text/best_dice.pth",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9251962953476771,
+            "iou": 0.8640700793065785,
+            "precision": 0.9509845705013616,
+            "recall": 0.9099631179387515,
+            "boundary_f1": 0.38687948180050474,
+            "hd95_pixels": 48.71807336845232,
+            "hd95_diagonal": 0.027076466059013284
+          },
+          "pooled": {
+            "dice": 0.9344911399662682,
+            "iou": 0.8770374184750412,
+            "precision": 0.9544774451328352,
+            "recall": 0.9153246752382777
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9444444444444444,
+            "0.8": 0.8,
+            "0.9": 0.4444444444444444
+          },
+          "threshold_jaccard_065": 0.8500931320026874,
+          "counts": {
+            "tp": 33021242,
+            "fp": 1574905,
+            "fn": 3054746,
+            "tn": 170577837
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.17645758324199254
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9017998009977344,
+            "iou": 0.8345546228599693,
+            "precision": 0.9400730945994858,
+            "recall": 0.886841492587676,
+            "boundary_f1": 0.33444310320062054,
+            "hd95_pixels": 75.64488497086961,
+            "hd95_diagonal": 0.041618093889512486
+          },
+          "pooled": {
+            "dice": 0.9157311525166947,
+            "iou": 0.8445609727164962,
+            "precision": 0.9449954546420114,
+            "recall": 0.8882249018205438
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9551451187335093,
+            "0.7": 0.8944591029023746,
+            "0.8": 0.7361477572559367,
+            "0.9": 0.37994722955145116
+          },
+          "threshold_jaccard_065": 0.7981393258274819,
+          "counts": {
+            "tp": 133636158,
+            "fp": 7778446,
+            "fn": 16816906,
+            "tn": 676341816
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.2704760264949308
+        }
+      },
+      "source_stage": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls"
+    },
+    "E2_image_text": {
+      "selected_epoch": 31,
+      "newly_trained": false,
+      "source_checkpoint": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_text/best_dice.pth",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9247611623753532,
+            "iou": 0.8628571626215464,
+            "precision": 0.9306920181235998,
+            "recall": 0.9292358543571179,
+            "boundary_f1": 0.3643861494398413,
+            "hd95_pixels": 49.56723240980141,
+            "hd95_diagonal": 0.027077977237449705
+          },
+          "pooled": {
+            "dice": 0.9290639979422096,
+            "iou": 0.8675252266774341,
+            "precision": 0.9250543527067753,
+            "recall": 0.9331085540886642
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9555555555555556,
+            "0.8": 0.8333333333333334,
+            "0.9": 0.4222222222222222
+          },
+          "threshold_jaccard_065": 0.855943110750104,
+          "counts": {
+            "tp": 33662813,
+            "fp": 2727279,
+            "fn": 2413175,
+            "tn": 169425463
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.1751196460591422
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9012013838699895,
+            "iou": 0.8334182620669486,
+            "precision": 0.9186956073151551,
+            "recall": 0.9067932930012682,
+            "boundary_f1": 0.3267926042824987,
+            "hd95_pixels": 77.46180996781638,
+            "hd95_diagonal": 0.042619741836060904
+          },
+          "pooled": {
+            "dice": 0.9138112816384224,
+            "iou": 0.8413006563139674,
+            "precision": 0.9212966461113384,
+            "recall": 0.9064465712708915
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9551451187335093,
+            "0.7": 0.8786279683377308,
+            "0.8": 0.7387862796833773,
+            "0.9": 0.35883905013192613
+          },
+          "threshold_jaccard_065": 0.8052443143986251,
+          "counts": {
+            "tp": 136377664,
+            "fp": 11650297,
+            "fn": 14075400,
+            "tn": 672469965
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.2651017179078666
+        }
+      },
+      "source_stage": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls"
+    }
+  },
+  "new_checkpoints": {
+    "predecoder_fixed_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage12_predecoder_text/results/seed42/predecoder_fixed_text/best_dice.pth",
+      "sha256": "16547961b99226427ab859bb917039c9ecd90c1d9daa16ddb04b03cf4fee4165"
+    },
+    "predecoder_image_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage12_predecoder_text/results/seed42/predecoder_image_text/best_dice.pth",
+      "sha256": "cc23169d868759c85a32182ff90e7ffafd6cd839dd54fb6cceb523007b8f5207"
+    }
+  },
+  "parameters": {
+    "predecoder_fixed_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.2534427320006216
+    },
+    "predecoder_image_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.04771045000052254
+    }
+  },
+  "no_postdecoder_text_fusion": true,
+  "patient_disjointness": "not established",
+  "test_set_status": "Previously used during development; this is another controlled exploratory experiment, not a new independent test",
+  "comparison_limit": "Relative to historical late fusion, interaction location, token granularity and output head all change. Only the new fixed/image-text pair has matched structure and capacity.",
+  "paired_test_comparisons": {
+    "predecoder_image_minus_fixed": {
+      "macro_dice_delta": -0.0005870472864067018,
+      "paired_image_bootstrap95": [
+        -0.0037131351192013534,
+        0.002608732157979212
+      ],
+      "wins": 162,
+      "losses": 215,
+      "ties": 2,
+      "caveat": "Single exploratory seed; image resampling does not measure seed/patient uncertainty; test set used in past development"
+    },
+    "predecoder_image_minus_late_image": {
+      "macro_dice_delta": 0.0018952194183954288,
+      "paired_image_bootstrap95": [
+        -0.0032158791232564845,
+        0.006590592305228782
+      ],
+      "wins": 201,
+      "losses": 177,
+      "ties": 1,
+      "caveat": "Single exploratory seed; image resampling does not measure seed/patient uncertainty; test set used in past development"
+    },
+    "predecoder_image_minus_visual": {
+      "macro_dice_delta": 3.472559829690824e-05,
+      "paired_image_bootstrap95": [
+        -0.0034829713262823263,
+        0.003278088365023177
+      ],
+      "wins": 186,
+      "losses": 191,
+      "ties": 2,
+      "caveat": "Single exploratory seed; image resampling does not measure seed/patient uncertainty; test set used in past development"
+    },
+    "predecoder_fixed_minus_late_fixed": {
+      "macro_dice_delta": 0.0018838495770572285,
+      "paired_image_bootstrap95": [
+        -0.003032610456565165,
+        0.006341727556335461
+      ],
+      "wins": 221,
+      "losses": 156,
+      "ties": 2,
+      "caveat": "Single exploratory seed; image resampling does not measure seed/patient uncertainty; test set used in past development"
+    }
+  },
+  "historical_checkpoints": {
+    "E0_visual": {
+      "path": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls/results/seed42/E0_visual/best_dice.pth",
+      "sha256": "b6e9467b6b622d5e7055bf4575ef1252a9a4d97b8c34effded9b83277e2d171f"
+    },
+    "E1_fixed_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_fixed_text/best_dice.pth",
+      "sha256": "41b16ad5e4794cff6874f1f75bcfeb8fdd08ecfd9136feddbb43a27c575f433a"
+    },
+    "E2_image_text": {
+      "path": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_text/best_dice.pth",
+      "sha256": "cd4d4cf762748e9ee6ed24fb4f4bdbb695ea4f09ca5d1624c287fb696731c60e"
+    }
+  },
+  "inference_latency": {
+    "predecoder_fixed_text": {
+      "batch": 1,
+      "mean_ms": 17.74811005011543,
+      "median_ms": 17.74064500023087,
+      "additional_peak_mib": 133.53662109375,
+      "scope": "CLIP word forward + DINO + adapters/predecoder cross-attention/Swin/ordinary mask head +256 output; BF16; excludes tokenizer, I/O, native CPU restore; 5 warmups/20 timed"
+    },
+    "predecoder_image_text": {
+      "batch": 1,
+      "mean_ms": 17.70544605001305,
+      "median_ms": 17.679138000403327,
+      "additional_peak_mib": 133.53662109375,
+      "scope": "CLIP word forward + DINO + adapters/predecoder cross-attention/Swin/ordinary mask head +256 output; BF16; excludes tokenizer, I/O, native CPU restore; 5 warmups/20 timed"
+    }
+  }
+}

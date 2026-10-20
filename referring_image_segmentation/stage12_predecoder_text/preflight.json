@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "initial_hashes": {
+    "predecoder_fixed_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0",
+    "predecoder_image_text": "6f503da7e58965e114a2659d4973a9d232d3b9b5065c2501af0151455398aad0"
+  },
+  "frozen_visual_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "parameters": {
+    "predecoder_fixed_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.2534427320006216
+    },
+    "predecoder_image_text": {
+      "trainable": 607393,
+      "total": 85360289,
+      "added_vs_visual": 100928,
+      "batch": 16,
+      "training_step_seconds": 0.04771045000052254
+    }
+  },
+  "matching_visual_adapter_decoder_head_initialization": true,
+  "independent_models": true,
+  "predecoder_feature_changes": [
+    0.057722099125385284,
+    0.052825927734375,
+    0.04736328125,
+    0.04705810546875
+  ],
+  "text_changes_decoder_input_and_output": true,
+  "masked_token_padding_invariant": true,
+  "decoder_has_no_text_input": true,
+  "no_postdecoder_text_matching_head": true,
+  "gradient_checks": {
+    "predecoder_fixed_text": {
+      "attention_input_projection_norms": [
+        0.026360666379332542,
+        0.031820498406887054,
+        0.022892683744430542,
+        0.03711841255426407
+      ],
+      "word_projection_norm": 0.18080541491508484
+    },
+    "predecoder_image_text": {
+      "attention_input_projection_norms": [
+        0.02335967682301998,
+        0.02788778953254223,
+        0.02030360884964466,
+        0.03362333029508591
+      ],
+      "word_projection_norm": 0.16444794833660126
+    }
+  },
+  "padding_loss_invariant": true,
+  "native_geometry_and_metrics_passed": true,
+  "encoder_gradients_absent": true,
+  "peak_gpu_gib": 1.9930882453918457
+}

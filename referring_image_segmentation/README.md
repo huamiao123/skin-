@@ -1,5 +1,31 @@
 # 图文指代分割项目
 
+## 第十三轮：ISIC2016 五组统一 300 轮（2026-10-20）
+
+[源码与配置](stage13_isic_300/README.md) · [冻结协议](stage13_isic_300/PROTOCOL.md) · [完整结果](stage13_isic_300/analysis/REPORT.md) · [结果解释](stage13_isic_300/analysis/FINDINGS.md) · [完成校验](stage13_isic_300/validation.json)。
+
+五组均从头初始化可训练部分，完成 seed42、300 epochs / 15300 次更新，使用完整 300 轮 cosine 调度；没有续接旧 100 轮分割权重。ISIC2016 划分保持 806/90/379，输入 256、batch16、AdamW 1e-4、5 轮 warmup，DINOv3 与 CLIP 冻结，按原尺寸验证集 macro Dice 选模。
+
+| 模型 | 最佳轮 | 测试 macro Dice | 测试 pooled Dice | 测试 macro IoU | 测试 pooled IoU |
+|---|---:|---:|---:|---:|---:|
+| 无文本 | 21 | 90.248% | 91.667% | 83.712% | 84.615% |
+| 后置融合＋固定文本 | 157 | 90.771% | 91.724% | 84.159% | 84.713% |
+| 后置融合＋逐图文本 | 89 | 90.433% | 91.683% | 83.725% | 84.644% |
+| 前置交互＋固定文本 | 21 | 90.311% | 91.754% | 83.813% | 84.765% |
+| 前置交互＋逐图文本 | 30 | 90.415% | 91.690% | 83.707% | 84.655% |
+
+macro 为逐图平均，pooled 为先汇总像素计数再计算。前置逐图文本相对固定文本仅高 0.104 个百分点，图像配对区间跨 0；后置逐图文本低 0.338 个百分点。当前没有证明逐图属性文本的稳定额外收益，也没有证明前置交互优于后置融合。前后方案还同时改变词级/句子表示与输出头，不是单纯的融合位置消融。单 seed、测试集已用于开发、患者独立性未验证，不能据此宣称独立泛化。完整 Precision/Recall、Prec@X、边界指标、逐图数值和 100/300 轮对照均已保存。
+
+## 第十一、十二轮：100 轮文本对照与前置交互
+
+[stage11_isic_text_controls](stage11_isic_text_controls/README.md) 新增无文本对照，并核验复用第九轮固定/逐图文本结果；[stage12_predecoder_text](stage12_predecoder_text/README.md) 新训练固定/逐图文本两组，在 Adapter 之后、Swin 之前做词级 Cross-Attention，之后使用普通 Mask Head。两轮均仅 seed42，100 epochs，原始结果与历史文件保持不变。
+
+## 第十轮：MosMedData+ 暂停与低 Dice 核查
+
+[源码、协议与暂停状态](stage10_mosmed_text/README.md) · [低 Dice 只读核查](stage10_mosmed_text/diagnostics/low_dice_20261020/FINDINGS.md)。该任务分割肺部感染病灶；修复可追溯来源组跨集合问题后，划分为 2004/216/509。seed42 三组完成 100 轮；seed43 在第 60 轮部分更新后按用户要求停止，seed44 未启动，未进行正式测试集评估。
+
+验证 macro Dice 为无文本 47.570%、固定文本 45.467%、逐图文本 44.693%，对应 pooled Dice 为 67.298%/66.098%/65.758%。独立指标复算、掩码缩放和几何检查通过，但小病灶漏检及训练/验证差距明显。来源组不重叠不代表已验证所有患者身份；文本来源及 Mask 辅助质检限制见协议。保留暂停记录，不自动恢复其他 seed。
+
 ## 第九轮：ISIC2016 医学文本引导分割（2026-10-18）
 
 用户要求停止RefCOCO并先试小规模ISIC文本分割。新增 [stage9_isic_text](stage9_isic_text/README.md)：官方ISIC2016图像/Mask与MedVLSM P3颜色/形状文本，去重后806训练/90验证/379测试；统一类别词为skin lesion。保留DINOv3、VMamba、Concat三视觉分支与DINO固定文本训练对照，视觉/文本Encoder冻结，仅seed42，100epochs、batch16，验证原尺寸macro Dice选模。源码/协议/预检和运行状态分别保存在第九轮目录。
@@ -69,7 +95,7 @@ Mean Dice为逐图平均，Pooled Dice为汇总像素后计算。相对同Decode
 
 本轮不与旧seed42的最低loss结果或第三轮三个seed均值混合比较。后续依据结果设计容量匹配及多seed确认；文本编码器尚未加入。当前设备实测为24GB RTX4090，预检和正式训练峰值分配显存约10.41GiB，完整推理效率与各组参数量见 `stage4_fusion/preflight.json`。
 
-本目录用于后续的图文指代分割（Referring Image Segmentation, RSI）研究。当前已完成第一轮冻结视觉表征对照、第二轮 Swin Pixel Decoder 对照，以及第三轮 DINOv3＋Light/Swin 的三个新 seeds 确认；文本编码器、图文对齐和指代分割实验尚未在此目录开展。
+本目录用于图文指代分割（Referring Image Segmentation, RSI）研究。第一至七轮为视觉实验；第八轮 RefCOCO 已停止，第九至十三轮包含医学属性文本引导分割、对照及前置交互实验。ISIC 的属性提示结果不能等同于复杂多目标自然语言指代理解。
 
 ## 目录
 

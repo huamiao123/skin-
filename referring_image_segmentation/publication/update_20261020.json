@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-20T09:05:01.489202+00:00",
+  "stages": [
+    "stage10_mosmed_text",
+    "stage11_isic_text_controls",
+    "stage12_predecoder_text",
+    "stage13_isic_300"
+  ],
+  "states": {
+    "stage10_mosmed_text": "stopped_by_user",
+    "stage11_isic_text_controls": "complete",
+    "stage12_predecoder_text": "complete",
+    "stage13_isic_300": "complete"
+  },
+  "new_source_files_published": 247,
+  "new_source_bytes_published": 13489060,
+  "all_new_published_files_match_original_bytes": true,
+  "stage13_validation": {
+    "passed": true,
+    "seed": 42,
+    "epochs": 300,
+    "models": [
+      "E0_visual",
+      "E1_fixed_text",
+      "E2_image_text",
+      "predecoder_fixed_text",
+      "predecoder_image_text"
+    ],
+    "all_five_fresh_runs_complete": true,
+    "original_resolution_evaluation_passed": true,
+    "independent_report_check_passed": true,
+    "sources_and_data_unchanged": true
+  },
+  "stage13_test_macro_dice": {
+    "E0_visual": 0.9024834694838701,
+    "E1_fixed_text": 0.907709342554958,
+    "E2_image_text": 0.9043303339023958,
+    "predecoder_fixed_text": 0.9031124984471339,
+    "predecoder_image_text": 0.9041534632269866
+  },
+  "no_training_launched_for_publication": true,
+  "exclusions": [
+    "weights",
+    "original images/masks",
+    "third-party raw text tables",
+    "assets/runtime",
+    "dense arrays",
+    "source-image panels",
+    "PID/lock/cache files"
+  ],
+  "verification_command": "python referring_image_segmentation/publication/verify_archive.py"
+}

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "formal_epochs": 100,
+  "pilot_epochs": 50,
+  "checks": {
+    "E0_visual": {
+      "best_epoch": 26,
+      "first40_best": 0.46793358753890363,
+      "last10_best": 0.45662432000663483,
+      "late_gain": -0.011309267532268796,
+      "needs_longer": false
+    },
+    "E1_fixed_text": {
+      "best_epoch": 20,
+      "first40_best": 0.4475684591282999,
+      "last10_best": 0.4346944804946168,
+      "late_gain": -0.012873978633683114,
+      "needs_longer": false
+    },
+    "E2_image_text": {
+      "best_epoch": 23,
+      "first40_best": 0.4414598261954605,
+      "last10_best": 0.42907029144516573,
+      "late_gain": -0.01238953475029475,
+      "needs_longer": false
+    }
+  },
+  "rule": "150 if any best epoch >40 or last10 best minus first40 best >=.002; otherwise100",
+  "based_on_validation_only": true,
+  "formal_seed42_reinitialized": true,
+  "pilot_history_sha256": "541e3a42a90686e07fdddf7afc9297b57e2a462fe605565ee22468b103a07c4f"
+}

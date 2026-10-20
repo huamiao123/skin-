@@ -1,0 +1,288 @@
+{
+  "passed": true,
+  "created_utc": "2026-10-20T07:17:41.386027+00:00",
+  "source_stage": "/home/featurize/referring_image_segmentation/stage9_isic_text",
+  "reuse_reason": "E1 and E2 already trained independently under the requested architecture. Add only the missing, exactly matched visual control.",
+  "historical_protocol_sha256": "1f65df24a55252e3f83c5cc56cbb03242aedb17eb2f57a084e6d8641e0c28114",
+  "historical_training_config": {
+    "seed": 42,
+    "epochs": 100,
+    "train_samples": 806,
+    "validation_samples": 90,
+    "batch": 16,
+    "input_size": 256,
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "eta_min": 1e-06,
+    "warmup_steps": 255,
+    "total_schedule_steps": 5100,
+    "loss": "valid-pixel BCE + per-image soft Dice; equal weights; smooth1",
+    "selection": "maximum original-resolution validation macro Dice; earliest exact tie",
+    "frozen_encoders": true,
+    "pretrained_segmentation_decoder_loaded": false,
+    "prompt": "MedVLSM P3; skin melanoma -> skin lesion",
+    "initialization": {
+      "dinov3_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+      "vmamba_text": "6714e51ed1f0ca7416f034e83e04140aa8211a49595fc6ad6fee1dc6af84ac03",
+      "fusion_text": "e6a2f6fb0dbda235c1361564598b1811fa8a65aa5defa498f6f238fc79b620f9",
+      "dinov3_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+    },
+    "data_sha256": "849817502f58b111e9312584f3ca2bfae6ed645b9406d322dda1d68e7b232c32",
+    "text_sha256": "45a00534b29e5404a16726137e038fa6e34138a580de21bfcddf01b8d7f6abb7",
+    "protocol_sha256": "1f65df24a55252e3f83c5cc56cbb03242aedb17eb2f57a084e6d8641e0c28114"
+  },
+  "source_record_sha256": {
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/data_manifest.json": "849817502f58b111e9312584f3ca2bfae6ed645b9406d322dda1d68e7b232c32",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/text_provenance.json": "45a00534b29e5404a16726137e038fa6e34138a580de21bfcddf01b8d7f6abb7"
+  },
+  "historical_frozen_assets": {
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/val.json": "f7723aedbe9d2652d5d5bfee7d71942f2697acb9a83bd4bdebf29075ee86acb2",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/all_rows.json": "eef4ca2dd8d96a52f15097f88dbcb4bd449f52a93d30144c921e03719b88c4ad",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/text512.npy": "baeb37bc58de20b2e85373055f37d17d2f268da0aa829953e49d4ee5f42414bf",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/train.json": "e118670b3836c44e6014590e756ecc9764f0443487c05f13d014005b069a7a5a",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/images256.npy": "ff11b9e2aa47c1459fa6482ce0c15c675f606fc5b46a9301eb3ad42753070785",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/test.json": "bbe7d7fa7198310d592e43441ed1cf2ef49a298731aa7536b13f7df00582176e",
+    "/home/featurize/referring_image_segmentation/stage9_isic_text/assets/masks256.npy": "ec63d49f9fdbe50fc6fb5e32a81d2175c1e4991e025305decc5b6242386d3f20"
+  },
+  "reused_checkpoints": {
+    "E1_fixed_text": {
+      "source_name": "dinov3_fixed_text",
+      "path": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_fixed_text/best_dice.pth",
+      "sha256": "41b16ad5e4794cff6874f1f75bcfeb8fdd08ecfd9136feddbb43a27c575f433a"
+    },
+    "E2_image_text": {
+      "source_name": "dinov3_text",
+      "path": "/home/featurize/referring_image_segmentation/stage9_isic_text/results/seed42/dinov3_text/best_dice.pth",
+      "sha256": "cd4d4cf762748e9ee6ed24fb4f4bdbb695ea4f09ca5d1624c287fb696731c60e"
+    }
+  },
+  "reused_metrics": {
+    "E1_fixed_text": {
+      "selected_epoch": 30,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9251962953476771,
+            "iou": 0.8640700793065785,
+            "precision": 0.9509845705013616,
+            "recall": 0.9099631179387515,
+            "boundary_f1": 0.38687948180050474,
+            "hd95_pixels": 48.71807336845232,
+            "hd95_diagonal": 0.027076466059013284
+          },
+          "pooled": {
+            "dice": 0.9344911399662682,
+            "iou": 0.8770374184750412,
+            "precision": 0.9544774451328352,
+            "recall": 0.9153246752382777
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9444444444444444,
+            "0.8": 0.8,
+            "0.9": 0.4444444444444444
+          },
+          "threshold_jaccard_065": 0.8500931320026874,
+          "counts": {
+            "tp": 33021242,
+            "fp": 1574905,
+            "fn": 3054746,
+            "tn": 170577837
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.17645758324199254
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9017998009977344,
+            "iou": 0.8345546228599693,
+            "precision": 0.9400730945994858,
+            "recall": 0.886841492587676,
+            "boundary_f1": 0.33444310320062054,
+            "hd95_pixels": 75.64488497086961,
+            "hd95_diagonal": 0.041618093889512486
+          },
+          "pooled": {
+            "dice": 0.9157311525166947,
+            "iou": 0.8445609727164962,
+            "precision": 0.9449954546420114,
+            "recall": 0.8882249018205438
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9551451187335093,
+            "0.7": 0.8944591029023746,
+            "0.8": 0.7361477572559367,
+            "0.9": 0.37994722955145116
+          },
+          "threshold_jaccard_065": 0.7981393258274819,
+          "counts": {
+            "tp": 133636158,
+            "fp": 7778446,
+            "fn": 16816906,
+            "tn": 676341816
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.2704760264949308
+        }
+      },
+      "text_diagnostics": {}
+    },
+    "E2_image_text": {
+      "selected_epoch": 31,
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 90,
+          "macro": {
+            "dice": 0.9247611623753532,
+            "iou": 0.8628571626215464,
+            "precision": 0.9306920181235998,
+            "recall": 0.9292358543571179,
+            "boundary_f1": 0.3643861494398413,
+            "hd95_pixels": 49.56723240980141,
+            "hd95_diagonal": 0.027077977237449705
+          },
+          "pooled": {
+            "dice": 0.9290639979422096,
+            "iou": 0.8675252266774341,
+            "precision": 0.9250543527067753,
+            "recall": 0.9331085540886642
+          },
+          "prec_at": {
+            "0.5": 1.0,
+            "0.6": 1.0,
+            "0.7": 0.9555555555555556,
+            "0.8": 0.8333333333333334,
+            "0.9": 0.4222222222222222
+          },
+          "threshold_jaccard_065": 0.855943110750104,
+          "counts": {
+            "tp": 33662813,
+            "fp": 2727279,
+            "fn": 2413175,
+            "tn": 169425463
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.1751196460591422
+        },
+        "test": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9012013838699895,
+            "iou": 0.8334182620669486,
+            "precision": 0.9186956073151551,
+            "recall": 0.9067932930012682,
+            "boundary_f1": 0.3267926042824987,
+            "hd95_pixels": 77.46180996781638,
+            "hd95_diagonal": 0.042619741836060904
+          },
+          "pooled": {
+            "dice": 0.9138112816384224,
+            "iou": 0.8413006563139674,
+            "precision": 0.9212966461113384,
+            "recall": 0.9064465712708915
+          },
+          "prec_at": {
+            "0.5": 0.9683377308707124,
+            "0.6": 0.9551451187335093,
+            "0.7": 0.8786279683377308,
+            "0.8": 0.7387862796833773,
+            "0.9": 0.35883905013192613
+          },
+          "threshold_jaccard_065": 0.8052443143986251,
+          "counts": {
+            "tp": 136377664,
+            "fp": 11650297,
+            "fn": 14075400,
+            "tn": 672469965
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 0.2651017179078666
+        }
+      },
+      "text_diagnostics": {
+        "fixed": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.8993367893935512,
+            "iou": 0.8306315477587601,
+            "precision": 0.9250925929244054,
+            "recall": 0.8977250909818875
+          },
+          "pooled": {
+            "dice": 0.9102581144639681,
+            "iou": 0.8352969877965388,
+            "precision": 0.9255691663788516,
+            "recall": 0.8954453795636891
+          },
+          "prec_at": {
+            "0.5": 0.9709762532981531,
+            "0.6": 0.9525065963060686,
+            "0.7": 0.8759894459102903,
+            "0.8": 0.7308707124010554,
+            "0.9": 0.3482849604221636
+          },
+          "threshold_jaccard_065": 0.7961285821132174,
+          "counts": {
+            "tp": 134722501,
+            "fp": 10833883,
+            "fn": 15730563,
+            "tn": 673286379
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "changed_pixel_fraction_vs_correct_text": 0.00886840349364341,
+          "macro_dice_drop_vs_correct_text": 0.001864594476438275
+        },
+        "shuffle": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 379,
+          "macro": {
+            "dice": 0.9005544817733919,
+            "iou": 0.8324590591830608,
+            "precision": 0.9222091164935101,
+            "recall": 0.90247896337738
+          },
+          "pooled": {
+            "dice": 0.9119681932084855,
+            "iou": 0.8381815563809472,
+            "precision": 0.9258796317995479,
+            "recall": 0.8984686081235275
+          },
+          "prec_at": {
+            "0.5": 0.9709762532981531,
+            "0.6": 0.9525065963060686,
+            "0.7": 0.8812664907651715,
+            "0.8": 0.7308707124010554,
+            "0.9": 0.3482849604221636
+          },
+          "threshold_jaccard_065": 0.7994443190702601,
+          "counts": {
+            "tp": 135177355,
+            "fp": 10821488,
+            "fn": 15275709,
+            "tn": 673298774
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "changed_pixel_fraction_vs_correct_text": 0.00920142036746571,
+          "macro_dice_drop_vs_correct_text": 0.000646902096597568
+        }
+      }
+    }
+  },
+  "historical_artifacts_preserved": true,
+  "new_training_models": [
+    "E0_visual"
+  ],
+  "new_training_seed": 42,
+  "patient_disjointness": "not established",
+  "test_set_status": "Previously evaluated during stage9; this is a developmental control completion, not a new untouched external test"
+}

@@ -1,0 +1,64 @@
+{
+  "reason": "User requests no further seeds and an audit of unexpectedly low Dice",
+  "previous_state": {
+    "state": "formal_training_seed43",
+    "stage": "mosmed_text_gain",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "models": [
+      "E0_visual",
+      "E1_fixed_text",
+      "E2_image_text"
+    ],
+    "supervisor_pid": 11322,
+    "started_utc": "2026-10-20T06:48:31.337091+00:00",
+    "events": [
+      {
+        "phase": "smoke_first_epoch",
+        "returncode": 0,
+        "ended_utc": "2026-10-20T06:48:35.505785+00:00"
+      },
+      {
+        "phase": "smoke_resume",
+        "returncode": 0,
+        "ended_utc": "2026-10-20T06:48:40.322697+00:00"
+      },
+      {
+        "phase": "smoke_native_evaluation",
+        "returncode": 0,
+        "ended_utc": "2026-10-20T06:48:44.908119+00:00"
+      },
+      {
+        "phase": "pilot_training",
+        "returncode": 0,
+        "ended_utc": "2026-10-20T06:53:22.928923+00:00"
+      },
+      {
+        "phase": "formal_training_seed42",
+        "returncode": 0,
+        "ended_utc": "2026-10-20T07:02:26.475028+00:00"
+      }
+    ],
+    "command": [
+      "train.py",
+      "--phase",
+      "formal",
+      "--seed",
+      "43"
+    ],
+    "child_pid": 14435,
+    "formal_epochs": 100
+  },
+  "scope": "Pause supervisor and its current child gracefully; retain checkpoints; do not start new seeds",
+  "confirmed_stopped_utc": "2026-10-20T07:12:11.833136+00:00",
+  "seed42_complete_epochs": 100,
+  "seed43_complete_epochs": 59,
+  "seed43_partial_epoch": 60,
+  "seed44_started": false,
+  "training_processes_exited": true,
+  "read_only_audit": "diagnostics/low_dice_20261020/FINDINGS.md",
+  "automatic_resume_authorized": false
+}

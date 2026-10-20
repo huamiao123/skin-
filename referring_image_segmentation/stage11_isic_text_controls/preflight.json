@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "initial_hashes": {
+    "E0_visual": "8e9af9ed781048fcd7a112d6208e0679628a90ce586f9587acd442f299c05627",
+    "E1_fixed_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140",
+    "E2_image_text": "37a8953176f15ba541e78b8f49e22220db670cd65d97bb4e8d98e9e5272a4140"
+  },
+  "shared_adapter_decoder_initialization": true,
+  "frozen_visual_hash": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290
+    }
+  },
+  "historical_validation_replay": {
+    "E1_fixed_text": {
+      "actual_validation_macro_dice": 0.9251962953476771,
+      "historical_validation_macro_dice": 0.9251962953476771,
+      "matched": true
+    },
+    "E2_image_text": {
+      "actual_validation_macro_dice": 0.9247611623753532,
+      "historical_validation_macro_dice": 0.9247611623753532,
+      "matched": true
+    }
+  },
+  "encoder_gradients_absent": true,
+  "padding_loss_invariant": true,
+  "native_geometry_and_metrics_passed": true,
+  "exact_historical_augmentation_implementation": true,
+  "batch": 16,
+  "peak_gpu_gib": 1.9160232543945312
+}

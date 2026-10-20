@@ -1,0 +1,407 @@
+{
+  "passed": true,
+  "seed": 42,
+  "read_only": true,
+  "test_predictions_not_computed": true,
+  "checkpoint_sha256": {
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/results/seed42/E0_visual/best_dice.pth": "42a080a92a8a0552fd149beb53331dbef8ff2393e1e3fb8b8a7c8966d55e6dfd",
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/results/seed42/E1_fixed_text/best_dice.pth": "e35d4ad7c12590be18c20da0e9caff8ffef3110b02f88a06de70f77bc2aeb7ab",
+    "/home/featurize/referring_image_segmentation/stage10_mosmed_text/results/seed42/E2_image_text/best_dice.pth": "c02952c5e14244674f05f34e88c72b9fd52373dc30a3e72618020e874842ebae"
+  },
+  "models": {
+    "E0_visual": {
+      "selected_epoch": 45,
+      "splits": {
+        "train": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 2004,
+            "macro": {
+              "dice": 0.6951037553290942,
+              "iou": 0.5679705354377751,
+              "precision": 0.6594044125719506,
+              "recall": 0.7583899829164388
+            },
+            "pooled": {
+              "dice": 0.7852828502420013,
+              "iou": 0.6464738317051413,
+              "precision": 0.7553328363670234,
+              "recall": 0.8177060501459225
+            },
+            "prec_at": {
+              "0.5": 0.6836327345309381,
+              "0.6": 0.5419161676646707,
+              "0.7": 0.3283433133732535,
+              "0.8": 0.08832335329341318,
+              "0.9": 0.001996007984031936
+            },
+            "counts": {
+              "tp": 5206121,
+              "fp": 1686365,
+              "fn": 1160618,
+              "tn": 517283472
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.342859738244268
+        },
+        "val": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 216,
+            "macro": {
+              "dice": 0.47569767592690787,
+              "iou": 0.35584533442148875,
+              "precision": 0.521717551125296,
+              "recall": 0.4885962050043678
+            },
+            "pooled": {
+              "dice": 0.6729846556942283,
+              "iou": 0.5071415779644208,
+              "precision": 0.7099982091501891,
+              "recall": 0.6396390582411492
+            },
+            "prec_at": {
+              "0.5": 0.3287037037037037,
+              "0.6": 0.18518518518518517,
+              "0.7": 0.027777777777777776,
+              "0.8": 0.004629629629629629,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 336990,
+              "fp": 137645,
+              "fn": 189854,
+              "tn": 55958615
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.5524970889091492,
+          "diagnostics": {
+            "independent_macro_dice": 0.47569767592690787,
+            "zero_dice": 35,
+            "empty_predictions": 25,
+            "area_bins": {
+              "below_0.1pct": {
+                "n": 27,
+                "macro_dice": 0.05623746708081498,
+                "zero_dice": 20
+              },
+              "0.1_to_1pct": {
+                "n": 122,
+                "macro_dice": 0.4250979876139847,
+                "zero_dice": 15
+              },
+              "at_least_1pct": {
+                "n": 67,
+                "macro_dice": 0.7368706253749845,
+                "zero_dice": 0
+              }
+            },
+            "per_group": {
+              "Jun_coronacases_case9": {
+                "n": 111,
+                "macro_dice": 0.4922851575022725
+              },
+              "radiopaedia_patient_85703": {
+                "n": 41,
+                "macro_dice": 0.6892597932883426
+              },
+              "Morozov_study_0300": {
+                "n": 6,
+                "macro_dice": 0.11658279415288762
+              },
+              "Morozov_study_0301": {
+                "n": 4,
+                "macro_dice": 0.3074673864147548
+              },
+              "Morozov_study_0302": {
+                "n": 10,
+                "macro_dice": 0.43201810744122826
+              },
+              "Morozov_study_0303": {
+                "n": 22,
+                "macro_dice": 0.5291972912876448
+              },
+              "Morozov_study_0304": {
+                "n": 22,
+                "macro_dice": 0.08888664542368109
+              }
+            }
+          }
+        }
+      },
+      "saved_checkpoint_validation_match": true
+    },
+    "E1_fixed_text": {
+      "selected_epoch": 32,
+      "splits": {
+        "train": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 2004,
+            "macro": {
+              "dice": 0.6692120548425171,
+              "iou": 0.539923590099689,
+              "precision": 0.6230044248425859,
+              "recall": 0.7645337207136229
+            },
+            "pooled": {
+              "dice": 0.7665829363642795,
+              "iou": 0.6215115381204774,
+              "precision": 0.7247621874181853,
+              "recall": 0.8135255740811741
+            },
+            "prec_at": {
+              "0.5": 0.6372255489021956,
+              "0.6": 0.48502994011976047,
+              "0.7": 0.2749500998003992,
+              "0.8": 0.07584830339321358,
+              "0.9": 0.000499001996007984
+            },
+            "counts": {
+              "tp": 5179505,
+              "fp": 1966984,
+              "fn": 1187234,
+              "tn": 517002853
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.3647334161632789
+        },
+        "val": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 216,
+            "macro": {
+              "dice": 0.45467202822298564,
+              "iou": 0.33763141214401104,
+              "precision": 0.5157234543898647,
+              "recall": 0.4623476674006814
+            },
+            "pooled": {
+              "dice": 0.6609769365886319,
+              "iou": 0.49362625234003893,
+              "precision": 0.7149070613092886,
+              "recall": 0.6146126747196513
+            },
+            "prec_at": {
+              "0.5": 0.3194444444444444,
+              "0.6": 0.12962962962962962,
+              "0.7": 0.018518518518518517,
+              "0.8": 0.0,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 323805,
+              "fp": 129128,
+              "fn": 203039,
+              "tn": 55967132
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.5695123429651614,
+          "diagnostics": {
+            "independent_macro_dice": 0.45467202822298564,
+            "zero_dice": 39,
+            "empty_predictions": 22,
+            "area_bins": {
+              "below_0.1pct": {
+                "n": 27,
+                "macro_dice": 0.05111295332800975,
+                "zero_dice": 21
+              },
+              "0.1_to_1pct": {
+                "n": 122,
+                "macro_dice": 0.39585294868859255,
+                "zero_dice": 18
+              },
+              "at_least_1pct": {
+                "n": 67,
+                "macro_dice": 0.7244037106910498,
+                "zero_dice": 0
+              }
+            },
+            "per_group": {
+              "Jun_coronacases_case9": {
+                "n": 111,
+                "macro_dice": 0.4578739581890396
+              },
+              "radiopaedia_patient_85703": {
+                "n": 41,
+                "macro_dice": 0.6942475770993504
+              },
+              "Morozov_study_0300": {
+                "n": 6,
+                "macro_dice": 0.10095447870778268
+              },
+              "Morozov_study_0301": {
+                "n": 4,
+                "macro_dice": 0.2752781631970913
+              },
+              "Morozov_study_0302": {
+                "n": 10,
+                "macro_dice": 0.4205013218988588
+              },
+              "Morozov_study_0303": {
+                "n": 22,
+                "macro_dice": 0.5176797350437152
+              },
+              "Morozov_study_0304": {
+                "n": 22,
+                "macro_dice": 0.07364505277830674
+              }
+            }
+          }
+        }
+      },
+      "saved_checkpoint_validation_match": true
+    },
+    "E2_image_text": {
+      "selected_epoch": 36,
+      "splits": {
+        "train": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 2004,
+            "macro": {
+              "dice": 0.6733380571196043,
+              "iou": 0.5426595813878344,
+              "precision": 0.6278932326358788,
+              "recall": 0.757846654703142
+            },
+            "pooled": {
+              "dice": 0.7676219623491772,
+              "iou": 0.6228786451050602,
+              "precision": 0.7225046951773079,
+              "recall": 0.8187492843667692
+            },
+            "prec_at": {
+              "0.5": 0.6487025948103793,
+              "0.6": 0.4875249500998004,
+              "0.7": 0.25798403193612773,
+              "0.8": 0.07035928143712575,
+              "0.9": 0.000998003992015968
+            },
+            "counts": {
+              "tp": 5212763,
+              "fp": 2002087,
+              "fn": 1153976,
+              "tn": 516967750
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.3579514127767491
+        },
+        "val": {
+          "metrics": {
+            "metric_version": "foreground_v1_20261016",
+            "n": 216,
+            "macro": {
+              "dice": 0.4469254512343627,
+              "iou": 0.33277855525443784,
+              "precision": 0.5101053466261697,
+              "recall": 0.4521218577076539
+            },
+            "pooled": {
+              "dice": 0.6575829181265548,
+              "iou": 0.48984993338199173,
+              "precision": 0.6995263665918299,
+              "recall": 0.6203847818329524
+            },
+            "prec_at": {
+              "0.5": 0.3425925925925926,
+              "0.6": 0.16203703703703703,
+              "0.7": 0.018518518518518517,
+              "0.8": 0.004629629629629629,
+              "0.9": 0.0
+            },
+            "counts": {
+              "tp": 326846,
+              "fp": 140393,
+              "fn": 199998,
+              "tn": 55955867
+            },
+            "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0"
+          },
+          "loss": 0.5761850873629252,
+          "diagnostics": {
+            "independent_macro_dice": 0.4469254512343627,
+            "zero_dice": 39,
+            "empty_predictions": 24,
+            "area_bins": {
+              "below_0.1pct": {
+                "n": 27,
+                "macro_dice": 0.04567239783467435,
+                "zero_dice": 21
+              },
+              "0.1_to_1pct": {
+                "n": 122,
+                "macro_dice": 0.38235708144108976,
+                "zero_dice": 18
+              },
+              "at_least_1pct": {
+                "n": 67,
+                "macro_dice": 0.7261966983473609,
+                "zero_dice": 0
+              }
+            },
+            "per_group": {
+              "Jun_coronacases_case9": {
+                "n": 111,
+                "macro_dice": 0.4446691953023858
+              },
+              "radiopaedia_patient_85703": {
+                "n": 41,
+                "macro_dice": 0.7041266058531632
+              },
+              "Morozov_study_0300": {
+                "n": 6,
+                "macro_dice": 0.09865196078431372
+              },
+              "Morozov_study_0301": {
+                "n": 4,
+                "macro_dice": 0.27446740403737707
+              },
+              "Morozov_study_0302": {
+                "n": 10,
+                "macro_dice": 0.39938306736712276
+              },
+              "Morozov_study_0303": {
+                "n": 22,
+                "macro_dice": 0.5105615725720005
+              },
+              "Morozov_study_0304": {
+                "n": 22,
+                "macro_dice": 0.0632936044076004
+              }
+            }
+          }
+        }
+      },
+      "saved_checkpoint_validation_match": true
+    }
+  },
+  "independent_dice_matches_common_metrics": true,
+  "saved_best_validation_scores_reproduced": true,
+  "original_to_cached_mask_matches": true,
+  "mask_resolution_roundtrip": {
+    "256": {
+      "macro_dice": 0.9325843898655187,
+      "zero_dice": 0
+    },
+    "64": {
+      "macro_dice": 0.7902461740405599,
+      "zero_dice": 1
+    },
+    "16": {
+      "macro_dice": 0.4068416033476381,
+      "zero_dice": 49
+    }
+  },
+  "roundtrip_note": "Nearest sampled GT then upsampled GT diagnostic, not a formal architectural upper bound.",
+  "validation_image_count": 216,
+  "validation_source_group_count": 7,
+  "validation_below_1pct": 149,
+  "prediction_panel": "validation_prediction_panel.png"
+}

@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "model": "E0_visual",
+      "split": "val",
+      "n": 90,
+      "independent_macro_dice": 0.9283100523037322,
+      "independent_pooled_dice": 0.9367191691903627
+    },
+    {
+      "model": "E0_visual",
+      "split": "test",
+      "n": 379,
+      "independent_macro_dice": 0.9024834694838701,
+      "independent_pooled_dice": 0.916666077550657
+    },
+    {
+      "model": "E1_fixed_text",
+      "split": "val",
+      "n": 90,
+      "independent_macro_dice": 0.9270450360486181,
+      "independent_pooled_dice": 0.9380003349226035
+    },
+    {
+      "model": "E1_fixed_text",
+      "split": "test",
+      "n": 379,
+      "independent_macro_dice": 0.907709342554958,
+      "independent_pooled_dice": 0.9172413905281823
+    },
+    {
+      "model": "E2_image_text",
+      "split": "val",
+      "n": 90,
+      "independent_macro_dice": 0.9271266032755542,
+      "independent_pooled_dice": 0.935584859647706
+    },
+    {
+      "model": "E2_image_text",
+      "split": "test",
+      "n": 379,
+      "independent_macro_dice": 0.9043303339023958,
+      "independent_pooled_dice": 0.9168336434108548
+    },
+    {
+      "model": "predecoder_fixed_text",
+      "split": "val",
+      "n": 90,
+      "independent_macro_dice": 0.9284209218700908,
+      "independent_pooled_dice": 0.9377013520095853
+    },
+    {
+      "model": "predecoder_fixed_text",
+      "split": "test",
+      "n": 379,
+      "independent_macro_dice": 0.9031124984471339,
+      "independent_pooled_dice": 0.9175441955501267
+    },
+    {
+      "model": "predecoder_image_text",
+      "split": "val",
+      "n": 90,
+      "independent_macro_dice": 0.9250739795157169,
+      "independent_pooled_dice": 0.9334475596534346
+    },
+    {
+      "model": "predecoder_image_text",
+      "split": "test",
+      "n": 379,
+      "independent_macro_dice": 0.9041534632269866,
+      "independent_pooled_dice": 0.9168975275197313
+    }
+  ],
+  "all_selected_epochs_match_validation_history": true,
+  "all_five_trained_fresh_300": true,
+  "updates_per_model": 15300
+}

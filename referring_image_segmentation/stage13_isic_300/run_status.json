@@ -1,0 +1,52 @@
+{
+  "state": "complete",
+  "stage": "isic2016_five_300",
+  "seed": 42,
+  "epochs": 300,
+  "models": [
+    "E0_visual",
+    "E1_fixed_text",
+    "E2_image_text",
+    "predecoder_fixed_text",
+    "predecoder_image_text"
+  ],
+  "supervisor_pid": 33713,
+  "started_utc": "2026-10-20T08:00:54.723636+00:00",
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:00:59.893893+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:01:05.309940+00:00"
+    },
+    {
+      "phase": "smoke_native_evaluation",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:01:16.959278+00:00"
+    },
+    {
+      "phase": "training_five_models_300",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:47:45.241821+00:00"
+    },
+    {
+      "phase": "evaluating_locked_300_models",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:50:39.721584+00:00"
+    },
+    {
+      "phase": "independent_report_and_figures",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T08:50:44.143317+00:00"
+    }
+  ],
+  "command": [
+    "analysis/finalize_analysis.py"
+  ],
+  "child_pid": 44908,
+  "ended_utc": "2026-10-20T08:50:44.440915+00:00"
+}

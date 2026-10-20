@@ -1,9 +1,13 @@
-# 2026-10-18 实验发布说明
+# 2026-10-20 实验发布说明
 
-本目录存档截至第九轮的源码、冻结协议、日志和数值结果。第七轮Cross-Attention已完成；第八轮RefCOCO按用户要求停止，没有最终正式测试；第九轮ISIC2016文本引导分割的四组seed42实验、100轮训练与379张留出测试评估全部完成。第九轮文本为颜色/形状属性提示，不能视为复杂自然语言多目标指代理解的证明。
+本目录存档截至第十三轮的源码、冻结协议、日志和数值结果。第十三轮五组 seed42 实验均从头训练 300 轮并完成原尺寸评估；第十一、十二轮为 100 轮无文本/固定文本/逐图文本和 Decoder 前交互对照。第十轮 MosMed 按用户要求暂停，正式 seed42 完成、seed43 部分完成、seed44 未启动，没有正式测试集结果。第七至九轮的原始记录继续保留。ISIC 颜色/形状属性提示不能视为复杂自然语言多目标指代理解的证明。
 
 ## 阅读入口
 
+- [第十三轮：五组统一 300 轮](stage13_isic_300/analysis/REPORT.md)、[结果解释与预算对照](stage13_isic_300/analysis/FINDINGS.md)及[独立指标复核](stage13_isic_300/analysis/independent_report_check.json)。
+- [第十二轮：Decoder 前词级交互](stage12_predecoder_text/README.md)与[第十一轮：100 轮文本对照](stage11_isic_text_controls/README.md)。
+- [第十轮：MosMed 暂停说明](stage10_mosmed_text/README.md)、[暂停记录](stage10_mosmed_text/PAUSED_BY_USER.json)及[低 Dice 核查](stage10_mosmed_text/diagnostics/low_dice_20261020/FINDINGS.md)。
+- [第十至十三轮依赖恢复说明](publication/REPRODUCE_STAGE10_13.md)及[本次发布检查](publication/update_20261020.json)。
 - [项目总览](README.md)与[统一指标定义](EVALUATION.md)。
 - [第一轮：DINOv3 / VMamba 视觉表征](stage1_visual/analysis/REPORT.md)。
 - [第一轮补充完整指标](evaluations/stage1_visual/REPORT.md)。
@@ -41,6 +45,7 @@ Git 保存自研源码、协议、数据成员清单、配置、日志、状态�
 - 上游 VMamba / VM-UNet 源码副本、安装包和 CUDA 扩展；固定来源与 Git SHA 见 [third_party.json](publication/third_party.json)。
 - 原始数据目录链接不提交，数据划分和成员 SHA 见 `stage1_visual/data_manifest.json`。
 - 第八/九轮 `assets/` 中的原图、Mask、第三方文本、特征/句子缓存与CLIP权重，以及第八轮 `runtime/`。
+- 第十至十三轮 `assets/`、MosMed 原始文本表及转换出的第三方文本 JSON、上游加载器副本；来源 URL、版本、成员哈希与获取脚本已保存。含原图的诊断拼图继续只在本地保存，纯数值曲线可公开。
 
 2026-10-18用户要求清理不用的权重。旧清单不代表文件现在仍存在：已删除的次要checkpoint及数组在新清单标记`local_deleted`，保留原摘要供追溯。第九轮在完成评估后只保留四组最佳权重；第八轮中止，保留已产生的最佳权重和恢复副本。详见[存储保留说明](STORAGE_RETENTION.md)及第九轮retention.json。体量较大的资产/依赖目录在清单中按目录排除，数据成员哈希由各阶段data_manifest/text_provenance保存，不把未重新逐文件审计的目录写成已校验。
 
@@ -61,3 +66,11 @@ python referring_image_segmentation/publication/verify_archive.py
 历史代码和provenance保留原绝对路径，尤其第一轮迁移前路径 `/home/featurize/ris_visual_stage1_20261016`。原机器通过兼容链接继续访问。跨机器复现应恢复路径映射，或在新实验目录显式记录调整；不能改写历史证据后声称字节级一致。阶段三至七启动器校验历史权重及源码，恢复依赖前不能直接复跑。部分次要权重/预测已按用户要求删除，重算对应次要分析需要恢复原文件。各轮硬件/软件信息见preflight.json；第七至九轮使用48GB RTX4090。第八/九轮需要CLIP文本权重与附加依赖，详见第八轮requirements-local.txt及安装日志；第九轮使用其冻结CLIP资产，完全不使用第八轮已训练的分割权重。
 
 本轮不改变其他历史实验的结论或文件。完整指标及选模敏感性的解释以各阶段报告为准。
+
+## 2026-10-20 新增实验
+
+第十三轮保持 ISIC2016 的 806/90/379 数据划分、输入、增强、batch16、AdamW 1e-4 和 5 轮 warmup，仅将统一预算/调度长度改为 300 轮。五组没有加载旧分割权重，各完成 15300 次更新；原尺寸验证最佳权重统一用于测试，逐图计数独立复核通过。不能将不同总长度 cosine 下的前 100 轮理解为相同训练轨迹。
+
+后置逐图文本相对固定文本的测试 macro Dice 为 -0.338 个百分点；前置逐图为 +0.104 个百分点且图像配对区间跨 0。单 seed、开发过程中已经使用的测试集、未验证患者身份限制结论范围。前后方案还改变词级/句子表示及输出头，不能作为只改变融合位置的严格消融。
+
+第十一至十三轮分别保留 1、2、5 个新最佳权重，其组合恢复及 smoke 权重已按各自 retention.json 在评估通过后清理。第十一轮 E1/E2 只读复用第九轮结果。第十轮未完成整个计划，暂停恢复点保留，不在本次发布中恢复、重训或清理。

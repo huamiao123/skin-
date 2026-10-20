@@ -1,0 +1,79 @@
+{
+  "seed": 42,
+  "dataset": "ISIC2016; unchanged deduplicated stage9 split 806/90/379",
+  "models": {
+    "E0_visual": {
+      "selected_epoch": 1,
+      "newly_trained": true,
+      "source_checkpoint": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls/smoke/seed42/E0_visual/best_dice.pth",
+      "splits": {
+        "val": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 16,
+          "macro": {
+            "dice": 0.35292337358081927,
+            "iou": 0.25031152229643494,
+            "precision": 0.25031152229643494,
+            "recall": 1.0,
+            "boundary_f1": 0.06011920599772681,
+            "hd95_pixels": 765.9475485639006,
+            "hd95_diagonal": 0.32252003753428815
+          },
+          "pooled": {
+            "dice": 0.19324901157411598,
+            "iou": 0.10695940548093043,
+            "precision": 0.10695940548093043,
+            "recall": 1.0
+          },
+          "prec_at": {
+            "0.5": 0.1875,
+            "0.6": 0.125,
+            "0.7": 0.125,
+            "0.8": 0.0625,
+            "0.9": 0.0
+          },
+          "threshold_jaccard_065": 0.09832239588775549,
+          "counts": {
+            "tp": 4826602,
+            "fp": 40298948,
+            "fn": 0,
+            "tn": 0
+          },
+          "evaluation_resolution": "native image; 64 logits -> 256 -> unpad -> native; INTER_LINEAR; threshold 0",
+          "loss": 1.666535496711731
+        }
+      }
+    }
+  },
+  "checkpoints": {
+    "E0_visual": {
+      "path": "/home/featurize/referring_image_segmentation/stage11_isic_text_controls/smoke/seed42/E0_visual/best_dice.pth",
+      "sha256": "f427c0ccff898017e4c0120644bd599aa2da0500bb4eb8d35f9928a5ca16593c"
+    }
+  },
+  "newly_trained": [
+    "E0_visual"
+  ],
+  "historical_reused": [
+    "E1_fixed_text",
+    "E2_image_text"
+  ],
+  "historical_scores_reproduced": true,
+  "parameters": {
+    "E0_visual": {
+      "trainable": 506465,
+      "total": 22093409
+    },
+    "E1_fixed_text": {
+      "trainable": 543394,
+      "total": 85296290
+    },
+    "E2_image_text": {
+      "trainable": 543394,
+      "total": 85296290
+    }
+  },
+  "patient_disjointness": "not established",
+  "test_set_status": "Previously evaluated during stage9; this is a developmental control completion, not a new untouched external test",
+  "text_scope": "VQA-generated color/shape attributes; no GT size/count/location; not original clinical reports or multi-target RIS"
+}

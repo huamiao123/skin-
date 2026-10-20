@@ -1,0 +1,47 @@
+{
+  "state": "complete",
+  "stage": "isic2016_text_controls",
+  "seed": 42,
+  "newly_trained": [
+    "E0_visual"
+  ],
+  "reused": [
+    "E1_fixed_text",
+    "E2_image_text"
+  ],
+  "epochs": 100,
+  "supervisor_pid": 20054,
+  "started_utc": "2026-10-20T07:20:43.457108+00:00",
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:20:47.599988+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:20:51.840401+00:00"
+    },
+    {
+      "phase": "smoke_native_evaluation",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:20:57.096565+00:00"
+    },
+    {
+      "phase": "training_E0_seed42",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:24:21.955097+00:00"
+    },
+    {
+      "phase": "evaluating_three_locked_groups",
+      "returncode": 0,
+      "ended_utc": "2026-10-20T07:26:12.746554+00:00"
+    }
+  ],
+  "command": [
+    "evaluate.py"
+  ],
+  "child_pid": 21781,
+  "ended_utc": "2026-10-20T07:26:13.005188+00:00"
+}

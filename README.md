@@ -1,5 +1,23 @@
 # 皮肤病灶分割：实验结果与源码存档
 
+## 2026-10-20：ISIC2016 五组 300 轮与文本交互对照
+
+[第十三轮源码与配置](referring_image_segmentation/stage13_isic_300/README.md) · [完整结果](referring_image_segmentation/stage13_isic_300/analysis/REPORT.md) · [结果解释](referring_image_segmentation/stage13_isic_300/analysis/FINDINGS.md) · [指标 JSON](referring_image_segmentation/stage13_isic_300/analysis/summary.json)。
+
+seed42、806/90/379 划分，冻结 DINOv3/CLIP，五组均重新初始化可训练部分，完成 300 epochs / 15300 次更新及完整 300 轮学习率调度。原尺寸验证集 macro Dice 选模后，统一评估 379 张测试图。
+
+| 模型 | 测试 macro Dice | 测试 pooled Dice | 测试 macro IoU | 测试 pooled IoU |
+|---|---:|---:|---:|---:|
+| 无文本 | 90.248% | 91.667% | 83.712% | 84.615% |
+| 后置融合＋固定文本 | 90.771% | 91.724% | 84.159% | 84.713% |
+| 后置融合＋逐图文本 | 90.433% | 91.683% | 83.725% | 84.644% |
+| 前置交互＋固定文本 | 90.311% | 91.754% | 83.813% | 84.765% |
+| 前置交互＋逐图文本 | 90.415% | 91.690% | 83.707% | 84.655% |
+
+macro 为逐图平均，pooled 为汇总像素计数后计算。逐图文本的额外收益尚未确立；前置逐图相对固定文本 +0.104 个百分点，图像配对区间跨 0，后置逐图则 -0.338 个百分点。单 seed、既往开发测试集且患者独立性未验证，不宣称稳定提升。完整边界指标、Precision/Recall、逐图结果、学习曲线及 100/300 轮比较已保存。
+
+一并存档 [第十一轮 100 轮文本对照](referring_image_segmentation/stage11_isic_text_controls/README.md)、[第十二轮 Decoder 前词级交互](referring_image_segmentation/stage12_predecoder_text/README.md)，以及 [MosMed 暂停与低 Dice 核查](referring_image_segmentation/stage10_mosmed_text/diagnostics/low_dice_20261020/FINDINGS.md)。MosMed seed43 已停止、seed44 未开始，没有正式测试集结果。源码和数值结果已发布；权重、原始数据、文本表、缓存及含原图的病例拼图保留本地。[依赖恢复说明](referring_image_segmentation/publication/REPRODUCE_STAGE10_13.md)。
+
 ## 2026-10-18：ISIC文本引导分割完成，RefCOCO已停止
 
 [第九轮源码与配置](referring_image_segmentation/stage9_isic_text/README.md) · [完整结果](referring_image_segmentation/stage9_isic_text/analysis/summary.json) · [指标CSV](referring_image_segmentation/stage9_isic_text/analysis/all_models.csv) · [结果解释](referring_image_segmentation/stage9_isic_text/analysis/FINDINGS.md)。
