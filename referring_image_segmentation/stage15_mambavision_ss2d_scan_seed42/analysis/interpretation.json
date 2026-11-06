@@ -1,0 +1,37 @@
+{
+  "post_training_only": true,
+  "no_new_experiment": true,
+  "no_reselection": true,
+  "macro_dice_delta_percentage_points": 0.011433032751306804,
+  "pooled_dice_delta_percentage_points": -0.19737332514111472,
+  "boundary_f1_delta_percentage_points": -0.9599109553484975,
+  "hd95_pixels_delta": 0.1996462471872178,
+  "image_bootstrap95_percentage_points": [
+    -0.30107569735386885,
+    0.34094215085016005
+  ],
+  "pixel_errors": {
+    "reference_wrong": 2854911,
+    "corrected": 598677,
+    "introduced": 651215,
+    "net_errors_reduced": -52538,
+    "code_order": [
+      "both_correct",
+      "new_wrong_reference_correct",
+      "new_correct_reference_wrong",
+      "both_wrong"
+    ]
+  },
+  "fp_delta": 33553,
+  "fn_delta": 18985,
+  "area_dice_delta_percentage_points": {
+    "lt_0.1": 0.03400790786044494,
+    "0.1_to_0.3": 0.36403760231861204,
+    "ge_0.3": -0.3760624142894353
+  },
+  "latency_ms": 14.112978599769122,
+  "previous_baseline_latency_ms": 12.469787400027599,
+  "latency_caveat": "Two separately measured sessions, descriptive only",
+  "empty_predictions": 1,
+  "conclusion": "No clear benefit for this shared-weight, frozen-encoder, window-local four-route variant; does not evaluate full VMamba SS2D block replacement or fine-tuning"
+}

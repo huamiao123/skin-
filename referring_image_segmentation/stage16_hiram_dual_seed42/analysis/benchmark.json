@@ -1,0 +1,25 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "warmup": 5,
+  "repeats": 30,
+  "batch": 1,
+  "precision": "BF16",
+  "scope": "both encoders + adapters + fusion + Swin + head, no data loading",
+  "models": {
+    "paired_baseline": {
+      "mean_ms": 44.878300999941224,
+      "median_ms": 45.2073719998225,
+      "peak_allocated_gib": 1.0017499923706055
+    },
+    "region_only": {
+      "mean_ms": 45.401692033283325,
+      "median_ms": 45.68399250001676,
+      "peak_allocated_gib": 1.0017719268798828
+    },
+    "hiram": {
+      "mean_ms": 53.40890413326633,
+      "median_ms": 53.82236000014018,
+      "peak_allocated_gib": 1.0024909973144531
+    }
+  }
+}

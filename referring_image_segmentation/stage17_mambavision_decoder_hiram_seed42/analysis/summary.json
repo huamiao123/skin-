@@ -1,0 +1,396 @@
+{
+  "seed": 42,
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "selection": "best validation macro Dice",
+  "models": {
+    "paired_baseline": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8843978304519695,
+        "iou": 0.809268150110067,
+        "precision": 0.896135012777401,
+        "recall": 0.9080000284479404,
+        "boundary_f1": 0.3284093745720919,
+        "hd95_pixels": 16.53521494573039,
+        "hd95_diagonal": 0.045672510220715265
+      },
+      "pooled": {
+        "dice": 0.8908828581658285,
+        "iou": 0.8032360375321185,
+        "precision": 0.8886717598077859,
+        "recall": 0.8931049868067963
+      },
+      "prec_at": {
+        "0.5": 0.948019801980198,
+        "0.6": 0.9047029702970297,
+        "0.7": 0.8378712871287128,
+        "0.8": 0.6683168316831684,
+        "0.9": 0.3094059405940594
+      },
+      "threshold_jaccard_065": 0.7519312697967692,
+      "counts": {
+        "tp": 11511758,
+        "fp": 1442134,
+        "fn": 1377833,
+        "tn": 38621363
+      },
+      "selected_epoch": 123
+    },
+    "region_only": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8856145580478741,
+        "iou": 0.8112940885743991,
+        "precision": 0.9083942405704089,
+        "recall": 0.8971203092168639,
+        "boundary_f1": 0.3403423190967384,
+        "hd95_pixels": 16.38488007289676,
+        "hd95_diagonal": 0.045257264876850126
+      },
+      "pooled": {
+        "dice": 0.890371241538297,
+        "iou": 0.8024046193365011,
+        "precision": 0.8976024181202596,
+        "recall": 0.8832556440309084
+      },
+      "prec_at": {
+        "0.5": 0.9405940594059405,
+        "0.6": 0.9071782178217822,
+        "0.7": 0.8378712871287128,
+        "0.8": 0.6844059405940595,
+        "0.9": 0.32673267326732675
+      },
+      "threshold_jaccard_065": 0.7558212924491496,
+      "counts": {
+        "tp": 11384804,
+        "fp": 1298767,
+        "fn": 1504787,
+        "tn": 38764730
+      },
+      "selected_epoch": 155
+    },
+    "hiram": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8851148753234358,
+        "iou": 0.8106565351922143,
+        "precision": 0.8881583888337671,
+        "recall": 0.9174227677229254,
+        "boundary_f1": 0.33174412688401933,
+        "hd95_pixels": 16.39366336762749,
+        "hd95_diagonal": 0.045281525530230037
+      },
+      "pooled": {
+        "dice": 0.8902772374754886,
+        "iou": 0.8022519385384097,
+        "precision": 0.8735778162369111,
+        "recall": 0.9076275577712279
+      },
+      "prec_at": {
+        "0.5": 0.9455445544554455,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8341584158415841,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.33044554455445546
+      },
+      "threshold_jaccard_065": 0.7487204857266314,
+      "counts": {
+        "tp": 11698948,
+        "fp": 1693045,
+        "fn": 1190643,
+        "tn": 38370452
+      },
+      "selected_epoch": 164
+    }
+  },
+  "comparisons": {
+    "region_only": {
+      "macro_dice_delta": 0.0012167275959045491,
+      "bootstrap95": [
+        -0.0025142180699805356,
+        0.0051307847940037015
+      ],
+      "better": 412,
+      "worse": 396,
+      "ties": 0,
+      "corrected_pixels": 701526,
+      "introduced_errors": 685113,
+      "net_errors_removed": 16413,
+      "largest_regressions": [
+        {
+          "id": "305",
+          "delta_dice": -0.32347540860698754
+        },
+        {
+          "id": "97",
+          "delta_dice": -0.3186829392231033
+        },
+        {
+          "id": "210",
+          "delta_dice": -0.27996335291215335
+        },
+        {
+          "id": "130",
+          "delta_dice": -0.2733175574192729
+        },
+        {
+          "id": "581",
+          "delta_dice": -0.2556701259002008
+        },
+        {
+          "id": "433",
+          "delta_dice": -0.21231015549946441
+        },
+        {
+          "id": "272",
+          "delta_dice": -0.20462130133404544
+        },
+        {
+          "id": "390",
+          "delta_dice": -0.18944838513022233
+        },
+        {
+          "id": "329",
+          "delta_dice": -0.182841376962389
+        },
+        {
+          "id": "37",
+          "delta_dice": -0.1694786637717557
+        }
+      ],
+      "largest_improvements": [
+        {
+          "id": "45",
+          "delta_dice": 0.4327041097926521
+        },
+        {
+          "id": "67",
+          "delta_dice": 0.41660991689860055
+        },
+        {
+          "id": "156",
+          "delta_dice": 0.36061994888481586
+        },
+        {
+          "id": "712",
+          "delta_dice": 0.3069961368548704
+        },
+        {
+          "id": "670",
+          "delta_dice": 0.20658489771990507
+        },
+        {
+          "id": "93",
+          "delta_dice": 0.18917731818684524
+        },
+        {
+          "id": "101",
+          "delta_dice": 0.1772654147720294
+        },
+        {
+          "id": "757",
+          "delta_dice": 0.1703524759025098
+        },
+        {
+          "id": "274",
+          "delta_dice": 0.17021472686799188
+        },
+        {
+          "id": "95",
+          "delta_dice": 0.1588149655000154
+        }
+      ]
+    },
+    "hiram": {
+      "macro_dice_delta": 0.0007170448714662889,
+      "bootstrap95": [
+        -0.0032908647662133416,
+        0.004975666627894596
+      ],
+      "better": 432,
+      "worse": 376,
+      "ties": 0,
+      "corrected_pixels": 742932,
+      "introduced_errors": 806653,
+      "net_errors_removed": -63721,
+      "largest_regressions": [
+        {
+          "id": "329",
+          "delta_dice": -0.5862551746230578
+        },
+        {
+          "id": "433",
+          "delta_dice": -0.2537401994367918
+        },
+        {
+          "id": "142",
+          "delta_dice": -0.23837429771902796
+        },
+        {
+          "id": "305",
+          "delta_dice": -0.23774138964289493
+        },
+        {
+          "id": "390",
+          "delta_dice": -0.2234049131328848
+        },
+        {
+          "id": "113",
+          "delta_dice": -0.1921177494522439
+        },
+        {
+          "id": "37",
+          "delta_dice": -0.19029951889382757
+        },
+        {
+          "id": "210",
+          "delta_dice": -0.16834827889017867
+        },
+        {
+          "id": "8",
+          "delta_dice": -0.16546165042490701
+        },
+        {
+          "id": "540",
+          "delta_dice": -0.15537711136849192
+        }
+      ],
+      "largest_improvements": [
+        {
+          "id": "156",
+          "delta_dice": 0.4693310871183801
+        },
+        {
+          "id": "45",
+          "delta_dice": 0.43595795497664874
+        },
+        {
+          "id": "67",
+          "delta_dice": 0.37810097496027145
+        },
+        {
+          "id": "275",
+          "delta_dice": 0.3227716145087845
+        },
+        {
+          "id": "780",
+          "delta_dice": 0.24069226208945005
+        },
+        {
+          "id": "54",
+          "delta_dice": 0.23881702231920932
+        },
+        {
+          "id": "101",
+          "delta_dice": 0.1996937819794381
+        },
+        {
+          "id": "151",
+          "delta_dice": 0.18890625499368086
+        },
+        {
+          "id": "195",
+          "delta_dice": 0.18332091699473552
+        },
+        {
+          "id": "12",
+          "delta_dice": 0.17242566715088925
+        }
+      ]
+    },
+    "hiram_minus_region_only": {
+      "macro_dice_delta": -0.0004996827244382601,
+      "better": 418,
+      "worse": 390,
+      "ties": 0
+    }
+  },
+  "strata": [
+    {
+      "group": "lt10pct",
+      "n": 269,
+      "macro_dice": {
+        "paired_baseline": 0.8833584057957783,
+        "region_only": 0.8863939969392881,
+        "hiram": 0.8833824443871645
+      }
+    },
+    {
+      "group": "10to30pct",
+      "n": 274,
+      "macro_dice": {
+        "paired_baseline": 0.8752761146086799,
+        "region_only": 0.8811469906588142,
+        "hiram": 0.877963777872256
+      }
+    },
+    {
+      "group": "ge30pct",
+      "n": 265,
+      "macro_dice": {
+        "paired_baseline": 0.8948844545032028,
+        "region_only": 0.8894426501339571,
+        "hiram": 0.8942674210724179
+      }
+    }
+  ],
+  "parameters": {
+    "paired_baseline": {
+      "total": 500321,
+      "trainable": 500321,
+      "frozen_unused": 0,
+      "peak_allocated_gib": 1.2372431755065918,
+      "sample_loss": 1.5946242809295654
+    },
+    "region_only": {
+      "total": 503183,
+      "trainable": 503183,
+      "frozen_unused": 0,
+      "peak_allocated_gib": 1.2394495010375977,
+      "sample_loss": 5.85263729095459
+    },
+    "hiram": {
+      "total": 639375,
+      "trainable": 637327,
+      "frozen_unused": 2048,
+      "peak_allocated_gib": 1.3432321548461914,
+      "sample_loss": 5.874270915985107
+    }
+  },
+  "benchmark": {
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "warmup": 5,
+    "repeats": 30,
+    "batch": 1,
+    "precision": "BF16",
+    "scope": "MambaVision-S + adapter + decoder (including HiRAM where applicable) + head, no data loading",
+    "models": {
+      "paired_baseline": {
+        "mean_ms": 20.109341833449434,
+        "median_ms": 19.73718449971784,
+        "peak_allocated_gib": 0.9896183013916016
+      },
+      "region_only": {
+        "mean_ms": 20.009825200031628,
+        "median_ms": 19.873187499797496,
+        "peak_allocated_gib": 0.9896631240844727
+      },
+      "hiram": {
+        "mean_ms": 28.20859903337502,
+        "median_ms": 28.04295749956509,
+        "peak_allocated_gib": 0.990382194519043
+      }
+    }
+  },
+  "limitations": [
+    "single seed",
+    "development validation also used for checkpoint selection",
+    "paired baseline rerun due historical initialization hash mismatch",
+    "adapted rather than full SAM-based HiRAM",
+    "32x32 chosen using boundary sampling heuristic, not a validated optimum",
+    "added regional and interaction capacity"
+  ]
+}

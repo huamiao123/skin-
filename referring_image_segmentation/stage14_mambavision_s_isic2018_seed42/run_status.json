@@ -1,0 +1,55 @@
+{
+  "state": "complete",
+  "started_utc": "2026-10-31T03:05:09.052673+00:00",
+  "supervisor_pid": 6843,
+  "seed": 42,
+  "epochs": 300,
+  "events": [
+    {
+      "phase": "smoke_first_epoch",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:05:21.216336+00:00"
+    },
+    {
+      "phase": "smoke_resume",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:05:33.514344+00:00"
+    },
+    {
+      "phase": "smoke_export",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:05:43.706823+00:00"
+    },
+    {
+      "phase": "training_300",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:22:09.563349+00:00"
+    },
+    {
+      "phase": "evaluating_three_selectors",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:22:24.209429+00:00"
+    },
+    {
+      "phase": "benchmarking_full_model",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:22:28.900888+00:00"
+    },
+    {
+      "phase": "analyzing",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:22:36.865771+00:00"
+    },
+    {
+      "phase": "independent_completion_audit",
+      "returncode": 0,
+      "ended_utc": "2026-10-31T03:22:41.190128+00:00"
+    }
+  ],
+  "command": [
+    "validate.py"
+  ],
+  "child_pid": 10208,
+  "ended_utc": "2026-10-31T03:22:41.320261+00:00",
+  "validation_passed": true
+}

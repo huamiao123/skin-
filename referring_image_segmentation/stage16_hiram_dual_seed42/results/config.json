@@ -1,0 +1,35 @@
+{
+  "smoke_only": false,
+  "seed": 42,
+  "epochs": 300,
+  "models": [
+    "paired_baseline",
+    "region_only",
+    "hiram"
+  ],
+  "effective_batch": 64,
+  "micro_batch": 64,
+  "encoder_batch": 64,
+  "updates_per_epoch": 30,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR(T_max=300, eta_min=1e-5), epoch end",
+  "segmentation_loss": "stage1 BCEWithLogits + per-image Soft Dice smooth=1",
+  "auxiliary_loss": "mask >=0.5, official width2 morphology, bilinear 16x16, normalized KL for interior and boundary per branch, weight=1",
+  "route_training": "gumbel hard stochastic",
+  "route_evaluation": "argmax deterministic",
+  "augment_seed": "42+epoch*100003",
+  "precision": "BF16 autocast / FP32 loss",
+  "clip": 1.0,
+  "selection": "max val macro Dice; earliest exact tie",
+  "secondary": "min val segmentation loss; epoch 300",
+  "data": "ISIC2018 1886/808 legacy development split",
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "official_hiram_commit": "d8aac2de3c33f8f2e79e281fcea8e5239db29645"
+}

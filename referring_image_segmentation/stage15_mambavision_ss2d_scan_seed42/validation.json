@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "seed": 42,
+  "epochs": 300,
+  "optimizer_updates": 9000,
+  "validation_n": 808,
+  "official_weight_identity_verified": true,
+  "encoder_unchanged_including_bn_buffers": true,
+  "all_three_selectors_match_full_history": true,
+  "all_three_checkpoints_retained": true,
+  "complete_rng_optimizer_scheduler_smoke_resume_passed": true,
+  "checks": [
+    {
+      "criterion": "best_dice",
+      "epoch": 116,
+      "n": 808,
+      "pixel_counts_match_saved_predictions": true,
+      "independent_dice_iou_passed": true,
+      "all_aggregates_match": true,
+      "report_matches_json": true
+    },
+    {
+      "criterion": "best_loss",
+      "epoch": 5,
+      "n": 808,
+      "pixel_counts_match_saved_predictions": true,
+      "independent_dice_iou_passed": true,
+      "all_aggregates_match": true,
+      "report_matches_json": true
+    },
+    {
+      "criterion": "last",
+      "epoch": 300,
+      "n": 808,
+      "pixel_counts_match_saved_predictions": true,
+      "independent_dice_iou_passed": true,
+      "all_aggregates_match": true,
+      "report_matches_json": true
+    }
+  ],
+  "historical_and_new_frozen_sources_unchanged": true,
+  "report_and_json_consistent": true,
+  "evaluation_split": "development validation, not official independent test"
+}

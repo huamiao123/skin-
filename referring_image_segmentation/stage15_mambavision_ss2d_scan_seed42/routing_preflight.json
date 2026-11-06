@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "scope": "SS2D-style routing only, not full VMamba SS2D block",
+  "official_vmamba_commit": "2ed52ead062a51a64521ed3871d52914bf532876",
+  "operator_file": "/home/featurize/referring_image_segmentation/stage1_visual/vendor/VMamba/vmamba.py",
+  "operator_sha256": "572207a2b6553ff85d81b602eebda2041623073f01fc0c6d1280c5a2add040f6",
+  "directional_order_matches_independent_rectangular_oracle": true,
+  "scan_merge_roundtrip_exact": true,
+  "per_block_single_route_errors": [
+    {
+      "level": 2,
+      "block": 0,
+      "max_error": 0.0
+    },
+    {
+      "level": 2,
+      "block": 1,
+      "max_error": 0.0
+    },
+    {
+      "level": 2,
+      "block": 2,
+      "max_error": 0.0
+    },
+    {
+      "level": 2,
+      "block": 3,
+      "max_error": 0.0
+    },
+    {
+      "level": 3,
+      "block": 0,
+      "max_error": 0.0
+    },
+    {
+      "level": 3,
+      "block": 1,
+      "max_error": 0.0
+    },
+    {
+      "level": 3,
+      "block": 2,
+      "max_error": 0.0
+    }
+  ],
+  "whole_encoder_single_route_exact": true,
+  "four_route_changes_only_later_stages": true,
+  "feature_max_changes": [
+    0.0,
+    0.0,
+    13.375,
+    316.5
+  ],
+  "pretrained_state_hash_unchanged": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "added_parameters": 0,
+  "original_baseline_verified": true,
+  "parameter_sharing": "one NVIDIA pretrained SSM parameter set shared across four routes",
+  "merger": "FP32 aligned sum divided by4",
+  "formal_routes": 4,
+  "trainable_scope_unchanged": true
+}

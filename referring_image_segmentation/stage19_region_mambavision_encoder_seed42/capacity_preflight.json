@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "effective_batch": 64,
+  "train_micro_batch": 64,
+  "evaluation_batch": 64,
+  "attempts": [
+    {
+      "batch": 64,
+      "passed": true,
+      "train_peak_gib": 8.32892370223999,
+      "eval_peak_gib": 2.371300220489502,
+      "region_scan_forward_backward_step_seconds": 1.109902049000084
+    }
+  ],
+  "max_accepted_peak_gib": 8.6,
+  "semantics": "segmentation loss sample-weighted; class CE denominators over full effective batch; 30 optimizer updates per epoch"
+}

@@ -1,0 +1,75 @@
+{
+  "n": 808,
+  "seed": 42,
+  "n_bootstraps": 2000,
+  "models": {
+    "encoder": {
+      "original_macro_dice": 0.8855074414898458,
+      "counterfactual_macro_dice": 0.8861857388652737,
+      "original_minus_counterfactual": -0.0006782973754279266,
+      "image_bootstrap_95": [
+        -0.0022514015377993767,
+        0.0011527358766706558
+      ],
+      "better": 334,
+      "worse": 469,
+      "ties": 5,
+      "strata": {
+        "lt10pct": {
+          "n": 269,
+          "original_macro_dice": 0.8753071536895675,
+          "counterfactual_macro_dice": 0.8768036445849348,
+          "delta": -0.0014964908953673617
+        },
+        "10to30pct": {
+          "n": 274,
+          "original_macro_dice": 0.8807849829769886,
+          "counterfactual_macro_dice": 0.8846538845533688,
+          "delta": -0.0038689015763801755
+        },
+        "ge30pct": {
+          "n": 265,
+          "original_macro_dice": 0.9007445397947432,
+          "counterfactual_macro_dice": 0.8972933292157386,
+          "delta": 0.003451210579004617
+        }
+      }
+    },
+    "decoder": {
+      "original_macro_dice": 0.8851148753234358,
+      "counterfactual_macro_dice": 0.8752716832389696,
+      "original_minus_counterfactual": 0.009843192084466188,
+      "image_bootstrap_95": [
+        0.006497266847454867,
+        0.013045041190556224
+      ],
+      "better": 537,
+      "worse": 270,
+      "ties": 1,
+      "strata": {
+        "lt10pct": {
+          "n": 269,
+          "original_macro_dice": 0.8833824443871645,
+          "counterfactual_macro_dice": 0.8703680517425659,
+          "delta": 0.013014392644598466
+        },
+        "10to30pct": {
+          "n": 274,
+          "original_macro_dice": 0.877963777872256,
+          "counterfactual_macro_dice": 0.8715616932119081,
+          "delta": 0.006402084660347899
+        },
+        "ge30pct": {
+          "n": 265,
+          "original_macro_dice": 0.8942674210724179,
+          "counterfactual_macro_dice": 0.884085321502922,
+          "delta": 0.010182099569495727
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Inference-only interventions may be out of distribution.",
+    "Bootstrap is image-level and post-selection, not across seeds or patients."
+  ]
+}

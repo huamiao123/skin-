@@ -1,0 +1,459 @@
+{
+  "seed": 42,
+  "epochs": 300,
+  "optimizer_updates": 9000,
+  "encoder": "NVIDIA MambaVision-S-1K",
+  "decoder": "Historical SwinPixelDecoder",
+  "dataset": "ISIC2018 legacy 1886 train / 808 development validation",
+  "evaluation_resolution": "256x256",
+  "primary_criterion": "best_dice",
+  "models": {
+    "best_dice": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8835978441279395,
+        "iou": 0.8091209170031531,
+        "precision": 0.8975086696469926,
+        "recall": 0.9050809813996099,
+        "boundary_f1": 0.3330566760212871,
+        "hd95_pixels": 17.054988262412245,
+        "hd95_diagonal": 0.04710819473987762
+      },
+      "pooled": {
+        "dice": 0.8892881791339754,
+        "iou": 0.8006470827334812,
+        "precision": 0.8890232325027393,
+        "recall": 0.8895532837310354
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.9034653465346535,
+        "0.7": 0.8415841584158416,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.3032178217821782
+      },
+      "threshold_jaccard_065": 0.7558865210489848,
+      "counts": {
+        "tp": 11465978,
+        "fp": 1431298,
+        "fn": 1423613,
+        "tn": 38632199
+      },
+      "loss": 0.39842641412621677,
+      "selected_epoch": 159,
+      "checkpoint_sha256": "3c1083c8ad0da0048869dbe3d39d8d54b11c01d39d207116c43c94a6c46fc2f5",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "881a7d4a1135ff3f4d036ddbe76143c7bf419285b7272a4df3bb2820dacfe6be"
+    },
+    "best_loss": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8793666584909695,
+        "iou": 0.8019651431296557,
+        "precision": 0.8865476070463897,
+        "recall": 0.9093153190109413,
+        "boundary_f1": 0.30530544082988437,
+        "hd95_pixels": 17.56218398275092,
+        "hd95_diagonal": 0.048509138229097436
+      },
+      "pooled": {
+        "dice": 0.8868555829139448,
+        "iou": 0.7967120611676963,
+        "precision": 0.8742043533161925,
+        "recall": 0.8998783592124839
+      },
+      "prec_at": {
+        "0.5": 0.9418316831683168,
+        "0.6": 0.9047029702970297,
+        "0.7": 0.8353960396039604,
+        "0.8": 0.6584158415841584,
+        "0.9": 0.25
+      },
+      "threshold_jaccard_065": 0.7429241173818254,
+      "counts": {
+        "tp": 11599064,
+        "fp": 1669074,
+        "fn": 1290527,
+        "tn": 38394423
+      },
+      "loss": 0.3099236535553885,
+      "selected_epoch": 23,
+      "checkpoint_sha256": "dac6677290c87aecf53b4e20a381f6fc0e8af6ac5c79d9af2c59e5b02e49b727",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "42991339991fe1d08c01640678f6575594af9a77bfb5aec86fcf26fc4d0884b6"
+    },
+    "last": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.881386265314558,
+        "iou": 0.8050048649079381,
+        "precision": 0.8863732305031308,
+        "recall": 0.9136050417244361,
+        "boundary_f1": 0.31182107640196277,
+        "hd95_pixels": 16.615257032632815,
+        "hd95_diagonal": 0.045893597339578665
+      },
+      "pooled": {
+        "dice": 0.8892717398031824,
+        "iou": 0.8006204322609081,
+        "precision": 0.8765727608737235,
+        "recall": 0.9023440697226157
+      },
+      "prec_at": {
+        "0.5": 0.9492574257425742,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8391089108910891,
+        "0.8": 0.6547029702970297,
+        "0.9": 0.2933168316831683
+      },
+      "threshold_jaccard_065": 0.7498303093431259,
+      "counts": {
+        "tp": 11630846,
+        "fp": 1637700,
+        "fn": 1258745,
+        "tn": 38425797
+      },
+      "loss": 0.44775169025553335,
+      "selected_epoch": 300,
+      "checkpoint_sha256": "05d23fbf3c576bbe8477e70d931a8ecbc3e5adbd4bf755a837b8514677f21182",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "f2f47ad37ff83cb287ca72d3c79f672b9e82268e3e9cfaef4e0cd391b87a9b64"
+    }
+  },
+  "parameters": {
+    "encoder": 50140584,
+    "adapter": 92672,
+    "decoder_including_head": 407649,
+    "segmentation_head": 65,
+    "trainable": 500321,
+    "decoder_without_head": 407584,
+    "total": 50640905
+  },
+  "pretrained": {
+    "model": "nvidia/MambaVision-S-1K",
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "official_repository": "https://github.com/NVlabs/MambaVision",
+    "official_repository_revision": "7860a506b2eb844eaaae676f08461ce8c3c26f43",
+    "executed_implementation": "Unmodified pinned HF modeling_mambavision.py via AutoModel",
+    "weight_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/official/hf/model.safetensors",
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "loading_info": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    },
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "all_parameters_and_buffers_equal_pretrained": true,
+    "channels": [
+      96,
+      192,
+      384,
+      768
+    ],
+    "params": 50140584,
+    "classifier_params": 769000,
+    "classifier_note": "Pretrained classification head retained, frozen and counted; not executed by feature extraction",
+    "batchnorm_modules": 15
+  },
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.2.2+cu121",
+    "cuda_runtime": "12.1",
+    "cudnn": 8902,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_total_gib": 23.5184326171875,
+    "timm": "1.0.22",
+    "transformers": "4.44.2",
+    "mamba-ssm": "1.2.2",
+    "einops": "0.8.1",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "Pillow": "10.3.0",
+    "safetensors": "0.8.0",
+    "selective_scan_cuda_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so",
+    "selective_scan_cuda_sha256": "0829e6a7d729adf47a5fdf24925238ea859f6395985a0db9fee8a7a8954ba929",
+    "causal-conv1d": "not installed; official MambaVision uses torch conv1d and CUDA selective_scan_fn"
+  },
+  "training": {
+    "active_seconds": 983.2627789189999,
+    "epoch_seconds_sum": 961.9878327060002,
+    "mean_epoch_seconds": 3.2066261090200006,
+    "median_epoch_seconds": 3.1976730930000485,
+    "max_training_peak_gpu_gib": 8.32492446899414,
+    "resumed": false,
+    "encoder_unchanged": true
+  },
+  "inference": {
+    "batch": 1,
+    "warmup": 3,
+    "repetitions": 10,
+    "device": "NVIDIA GeForce RTX 4090",
+    "precision": "BF16 autocast, FP32 parameters",
+    "includes": "Encoder + Adapter + Swin Decoder + segmentation head",
+    "excludes": "disk I/O, CPU resize/normalization and postprocessing; no cached features",
+    "cuda_synchronized": true,
+    "mean_ms": 12.469787400027599,
+    "median_ms": 12.388589000124739,
+    "std_ms": 0.2695216603408357,
+    "times_seconds": [
+      0.013272086999904786,
+      0.012387822999926357,
+      0.012321151000151076,
+      0.01238876400020672,
+      0.012433141000201431,
+      0.012400952999996662,
+      0.012388414000042758,
+      0.01237655599993559,
+      0.012408024000023943,
+      0.012320960999886665
+    ],
+    "images_per_second": 80.19382912637201,
+    "peak_allocated_gib": 0.33080482482910156,
+    "peak_reserved_gib": 0.3671875,
+    "baseline_allocated_gib": 0.20061969757080078,
+    "incremental_peak_gib": 0.13018512725830078,
+    "flops": null,
+    "flops_note": "No complete operator accounting for selective_scan; no partial FLOPs presented as full-model FLOPs",
+    "historical_latency_note": "Stage4 timings recorded on its original device/session; only descriptive, not a new same-session benchmark"
+  },
+  "preflight_memory": {
+    "encoder_batch64_baseline_gib": 0.9131441116333008,
+    "encoder_batch64_peak_gib": 1.4357271194458008,
+    "decoder_train_batch64_peak_gib": 4.095383644104004
+  },
+  "comparisons": {
+    "dinov3_swin": {
+      "reference": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 808,
+        "macro": {
+          "dice": 0.8918466226384926,
+          "iou": 0.8197817984849926,
+          "precision": 0.8925493407749884,
+          "recall": 0.9203693987025439,
+          "boundary_f1": 0.32752219170987346,
+          "hd95_pixels": 15.134619447110605,
+          "hd95_diagonal": 0.04180387516300666
+        },
+        "pooled": {
+          "dice": 0.9011339744731492,
+          "iou": 0.8200580903764869,
+          "precision": 0.8869910827106485,
+          "recall": 0.9157351850807368
+        },
+        "prec_at": {
+          "0.5": 0.9566831683168316,
+          "0.6": 0.9245049504950495,
+          "0.7": 0.8650990099009901,
+          "0.8": 0.7128712871287128,
+          "0.9": 0.30816831683168316
+        },
+        "threshold_jaccard_065": 0.772638265406567,
+        "counts": {
+          "tp": 11803452,
+          "fp": 1503843,
+          "fn": 1086139,
+          "tn": 38559654
+        },
+        "selected_epoch": 56,
+        "probability_sha256": "83513e12ea8eaffc62ff45cbe37fae9889a8a665eeaaea95535f0b2870782b85",
+        "checkpoint_sha256": "9abd0f402a1a5c8e84380cc77d890e3f290ba8b1eba572b4d1c0e00f245e6f95"
+      },
+      "macro_delta": {
+        "dice": -0.008248778510553056,
+        "iou": -0.010660881481839413,
+        "precision": 0.004959328872004232,
+        "recall": -0.015288417302933954,
+        "boundary_f1": 0.005534484311413623,
+        "hd95_pixels": 1.9203688153016394,
+        "hd95_diagonal": 0.0053043195768709556
+      },
+      "pooled_delta": {
+        "dice": -0.011845795339173848,
+        "iou": -0.01941100764300574,
+        "precision": 0.002032149792090765,
+        "recall": -0.026181901349701442
+      },
+      "wins": 395,
+      "losses": 413,
+      "ties": 0,
+      "paired_image_bootstrap95": [
+        -0.01385506330987221,
+        -0.002512298235012421
+      ],
+      "interval_caveat": "Exploratory selected development images; not patient-level or training-seed uncertainty",
+      "pixel_errors": {
+        "reference_wrong": 2589982,
+        "corrected": 827728,
+        "introduced": 1092657,
+        "net_errors_reduced": -264929,
+        "code_order": [
+          "both_correct",
+          "new_wrong_reference_correct",
+          "new_correct_reference_wrong",
+          "both_wrong"
+        ]
+      }
+    },
+    "vmamba_swin": {
+      "reference": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 808,
+        "macro": {
+          "dice": 0.8851559179169967,
+          "iou": 0.810907451187523,
+          "precision": 0.8964791675511417,
+          "recall": 0.9086738096986705,
+          "boundary_f1": 0.34081546251159567,
+          "hd95_pixels": 16.67147409776732,
+          "hd95_diagonal": 0.04604887651135605
+        },
+        "pooled": {
+          "dice": 0.8896068384206578,
+          "iou": 0.801163830255714,
+          "precision": 0.8805933085941529,
+          "recall": 0.8988067968952622
+        },
+        "prec_at": {
+          "0.5": 0.948019801980198,
+          "0.6": 0.9121287128712872,
+          "0.7": 0.8366336633663366,
+          "0.8": 0.681930693069307,
+          "0.9": 0.3180693069306931
+        },
+        "threshold_jaccard_065": 0.7530376777988503,
+        "counts": {
+          "tp": 11585252,
+          "fp": 1570937,
+          "fn": 1304339,
+          "tn": 38492560
+        },
+        "selected_epoch": 112,
+        "probability_sha256": "0f9ada8189f454303ff2cafa3689feaf1db5e13ffe7209a91736349f067beab4",
+        "checkpoint_sha256": "fa3e84d17ea1eb66ae1136b62923645505408b79caeb1cbf97d5770b1f1aac2c"
+      },
+      "macro_delta": {
+        "dice": -0.001558073789057146,
+        "iou": -0.0017865341843699145,
+        "precision": 0.0010295020958509538,
+        "recall": -0.003592828299060602,
+        "boundary_f1": -0.007758786490308589,
+        "hd95_pixels": 0.38351416464492516,
+        "hd95_diagonal": 0.0010593182285215663
+      },
+      "pooled_delta": {
+        "dice": -0.00031865928668239896,
+        "iou": -0.0005167475222328521,
+        "precision": 0.008429923908586434,
+        "recall": -0.009253513164226845
+      },
+      "wins": 393,
+      "losses": 415,
+      "ties": 0,
+      "paired_image_bootstrap95": [
+        -0.006630799356077337,
+        0.0032549200315328567
+      ],
+      "interval_caveat": "Exploratory selected development images; not patient-level or training-seed uncertainty",
+      "pixel_errors": {
+        "reference_wrong": 2875276,
+        "corrected": 875062,
+        "introduced": 854697,
+        "net_errors_reduced": 20365,
+        "code_order": [
+          "both_correct",
+          "new_wrong_reference_correct",
+          "new_correct_reference_wrong",
+          "both_wrong"
+        ]
+      }
+    }
+  },
+  "lesion_area_groups": {
+    "lt_0.1": {
+      "n": 269,
+      "mambavision_macro": {
+        "dice": 0.8857995570373911,
+        "iou": 0.8111183876511572,
+        "boundary_f1": 0.5127922596694336,
+        "hd95_pixels": 9.801132286422597
+      },
+      "historical": {
+        "dinov3_swin": {
+          "dice": 0.8808968255108706,
+          "iou": 0.8057526992596575,
+          "boundary_f1": 0.4753411209959385,
+          "hd95_pixels": 9.424451617369288
+        },
+        "vmamba_swin": {
+          "dice": 0.8889353920668451,
+          "iou": 0.8156331453064566,
+          "boundary_f1": 0.5333194299167257,
+          "hd95_pixels": 8.391032627836909
+        }
+      }
+    },
+    "0.1_to_0.3": {
+      "n": 274,
+      "mambavision_macro": {
+        "dice": 0.8722715620841148,
+        "iou": 0.7945966136435049,
+        "boundary_f1": 0.26285109452881394,
+        "hd95_pixels": 18.340054465303282
+      },
+      "historical": {
+        "dinov3_swin": {
+          "dice": 0.8899751295189208,
+          "iou": 0.8157835429474899,
+          "boundary_f1": 0.2717041857460255,
+          "hd95_pixels": 15.316941976141546
+        },
+        "vmamba_swin": {
+          "dice": 0.8750595748578364,
+          "iou": 0.7981033082056683,
+          "boundary_f1": 0.2859817480793604,
+          "hd95_pixels": 17.79775266307779
+        }
+      }
+    },
+    "ge_0.3": {
+      "n": 265,
+      "mambavision_macro": {
+        "dice": 0.8930738460425262,
+        "iou": 0.8221108774417591,
+        "boundary_f1": 0.2231980244272727,
+        "hd95_pixels": 23.089626443352135
+      },
+      "historical": {
+        "dinov3_swin": {
+          "dice": 0.9048967529860132,
+          "iou": 0.8381567030468445,
+          "boundary_f1": 0.2351857451292804,
+          "hd95_pixels": 20.742463874453755
+        },
+        "vmamba_swin": {
+          "dice": 0.8917586328298299,
+          "iou": 0.8193494265046366,
+          "boundary_f1": 0.20210176636990707,
+          "hd95_pixels": 23.912373828017174
+        }
+      }
+    }
+  },
+  "caveat": "Single seed, selected development validation, unverified patient independence, different pretrained architectures/sizes/data. Not official challenge test or equal-capacity mechanism ablation.",
+  "artifacts": {
+    "history": "results/history.json",
+    "per_image": "analysis/per_image.csv",
+    "config": "config.json",
+    "learning_curves": "analysis/learning_curves.png",
+    "local_only_cases": "analysis/examples/",
+    "dense_outputs": "results/{best_dice,best_loss,last}/",
+    "full_resume": "results/latest.pth"
+  }
+}

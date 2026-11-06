@@ -1,0 +1,38 @@
+{
+  "scope": "post-hoc descriptive comparison, 808 development-validation images",
+  "split": "ISIC2018 legacy development validation",
+  "resolution": [
+    256,
+    256
+  ],
+  "thresholds": "prediction probability >= 0.5; GT gray >= 128",
+  "boundary": "square 5x5 binary dilation minus erosion, zero padding",
+  "checkpoints": "each model selected by highest validation macro Dice",
+  "inference_uses_ground_truth": false,
+  "zones": {
+    "boundary_5x5": {
+      "pixels": 1925765,
+      "baseline_errors": 785405,
+      "hiram_errors": 784637,
+      "corrected": 139458,
+      "introduced": 138690,
+      "net_new_errors": -768
+    },
+    "foreground_interior": {
+      "pixels": 11927075,
+      "baseline_errors": 1051436,
+      "hiram_errors": 897046,
+      "corrected": 349179,
+      "introduced": 194789,
+      "net_new_errors": -154390
+    },
+    "background_outside": {
+      "pixels": 39100248,
+      "baseline_errors": 983126,
+      "hiram_errors": 1202005,
+      "corrected": 254295,
+      "introduced": 473174,
+      "net_new_errors": 218879
+    }
+  }
+}

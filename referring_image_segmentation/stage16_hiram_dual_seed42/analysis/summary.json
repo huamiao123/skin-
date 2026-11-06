@@ -1,0 +1,228 @@
+{
+  "seed": 42,
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "selection": "best validation macro Dice",
+  "models": {
+    "paired_baseline": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8961135152455627,
+        "iou": 0.8259678634445717,
+        "precision": 0.9004986894175887,
+        "recall": 0.9205221161376088,
+        "boundary_f1": 0.3511632188695681,
+        "hd95_pixels": 14.761584816292071,
+        "hd95_diagonal": 0.040773502830705084
+      },
+      "pooled": {
+        "dice": 0.9025952086842856,
+        "iou": 0.8224815636189584,
+        "precision": 0.8900834577255063,
+        "recall": 0.9154637257303199
+      },
+      "prec_at": {
+        "0.5": 0.9603960396039604,
+        "0.6": 0.9344059405940595,
+        "0.7": 0.8712871287128713,
+        "0.8": 0.724009900990099,
+        "0.9": 0.32673267326732675
+      },
+      "threshold_jaccard_065": 0.7849599073151192,
+      "counts": {
+        "tp": 11799953,
+        "fp": 1457178,
+        "fn": 1089638,
+        "tn": 38606319
+      },
+      "selected_epoch": 38
+    },
+    "region_only": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8921503320432544,
+        "iou": 0.8213633040881606,
+        "precision": 0.9065706406525934,
+        "recall": 0.9086088971364936,
+        "boundary_f1": 0.3764333696871112,
+        "hd95_pixels": 15.618176210256717,
+        "hd95_diagonal": 0.043139524640777104
+      },
+      "pooled": {
+        "dice": 0.8980876620890407,
+        "iou": 0.8150264147070574,
+        "precision": 0.883582738118744,
+        "recall": 0.9130767609305834
+      },
+      "prec_at": {
+        "0.5": 0.9554455445544554,
+        "0.6": 0.9195544554455446,
+        "0.7": 0.849009900990099,
+        "0.8": 0.698019801980198,
+        "0.9": 0.3725247524752475
+      },
+      "threshold_jaccard_065": 0.7711128818938849,
+      "counts": {
+        "tp": 11769186,
+        "fp": 1550660,
+        "fn": 1120405,
+        "tn": 38512837
+      },
+      "selected_epoch": 132
+    },
+    "hiram": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8938456310412791,
+        "iou": 0.8231221162604891,
+        "precision": 0.9000531355733503,
+        "recall": 0.9180287342395652,
+        "boundary_f1": 0.35293244796340706,
+        "hd95_pixels": 15.212359183373787,
+        "hd95_diagonal": 0.042018602876597866
+      },
+      "pooled": {
+        "dice": 0.9002310707567333,
+        "iou": 0.8185638335647178,
+        "precision": 0.8886457818881984,
+        "recall": 0.9121224249861768
+      },
+      "prec_at": {
+        "0.5": 0.9603960396039604,
+        "0.6": 0.9232673267326733,
+        "0.7": 0.8601485148514851,
+        "0.8": 0.7091584158415841,
+        "0.9": 0.3564356435643564
+      },
+      "threshold_jaccard_065": 0.7732697627506068,
+      "counts": {
+        "tp": 11756885,
+        "fp": 1473229,
+        "fn": 1132706,
+        "tn": 38590268
+      },
+      "selected_epoch": 68
+    }
+  },
+  "comparisons": {
+    "region_only": {
+      "macro_dice_delta": -0.003963183202308119,
+      "bootstrap95": [
+        -0.008008339063052887,
+        3.924022420910198e-05
+      ],
+      "better": 398,
+      "worse": 410,
+      "ties": 0,
+      "corrected_pixels": 663879,
+      "introduced_errors": 788128,
+      "net_errors_removed": -124249
+    },
+    "hiram": {
+      "macro_dice_delta": -0.0022678842042835,
+      "bootstrap95": [
+        -0.005877197080881675,
+        0.0010670700342093342
+      ],
+      "better": 404,
+      "worse": 403,
+      "ties": 1,
+      "corrected_pixels": 556304,
+      "introduced_errors": 615423,
+      "net_errors_removed": -59119
+    },
+    "hiram_minus_region_only": {
+      "macro_dice_delta": 0.00169529899802462,
+      "better": 405,
+      "worse": 403,
+      "ties": 0
+    }
+  },
+  "strata": [
+    {
+      "group": "lt10pct",
+      "n": 269,
+      "macro_dice": {
+        "paired_baseline": 0.8890354265426035,
+        "region_only": 0.8824532937560098,
+        "hiram": 0.8883581811679
+      }
+    },
+    {
+      "group": "10to30pct",
+      "n": 274,
+      "macro_dice": {
+        "paired_baseline": 0.8925987658379346,
+        "region_only": 0.8903888885780011,
+        "hiram": 0.8897175024598346
+      }
+    },
+    {
+      "group": "ge30pct",
+      "n": 265,
+      "macro_dice": {
+        "paired_baseline": 0.9069325612787176,
+        "region_only": 0.9038150067932479,
+        "hiram": 0.9036842395214858
+      }
+    }
+  ],
+  "parameters": {
+    "paired_baseline": {
+      "total": 632161,
+      "trainable": 632161,
+      "frozen_unused": 0,
+      "peak_allocated_gib": 1.9157848358154297,
+      "sample_loss": 1.6170144081115723
+    },
+    "region_only": {
+      "total": 635023,
+      "trainable": 635023,
+      "frozen_unused": 0,
+      "peak_allocated_gib": 1.9194560050964355,
+      "sample_loss": 5.725447654724121
+    },
+    "hiram": {
+      "total": 771215,
+      "trainable": 769167,
+      "frozen_unused": 2048,
+      "peak_allocated_gib": 2.0270228385925293,
+      "sample_loss": 5.738935947418213
+    }
+  },
+  "benchmark": {
+    "gpu": "NVIDIA GeForce RTX 3080",
+    "warmup": 5,
+    "repeats": 30,
+    "batch": 1,
+    "precision": "BF16",
+    "scope": "both encoders + adapters + fusion + Swin + head, no data loading",
+    "models": {
+      "paired_baseline": {
+        "mean_ms": 44.878300999941224,
+        "median_ms": 45.2073719998225,
+        "peak_allocated_gib": 1.0017499923706055
+      },
+      "region_only": {
+        "mean_ms": 45.401692033283325,
+        "median_ms": 45.68399250001676,
+        "peak_allocated_gib": 1.0017719268798828
+      },
+      "hiram": {
+        "mean_ms": 53.40890413326633,
+        "median_ms": 53.82236000014018,
+        "peak_allocated_gib": 1.0024909973144531
+      }
+    }
+  },
+  "limitations": [
+    "single seed",
+    "development validation also used for checkpoint selection",
+    "paired baseline rerun due historical initialization hash mismatch",
+    "adapted rather than full SAM-based HiRAM",
+    "16x16 boundary targets can disappear",
+    "added regional and interaction capacity"
+  ]
+}

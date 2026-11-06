@@ -1,0 +1,299 @@
+{
+  "n": 808,
+  "classes": [
+    "background",
+    "boundary",
+    "interior"
+  ],
+  "area_definition": "256 GT mask morphology (5x5, width 2) area-pooled to 32x32",
+  "generated_without_changing_original_files": true,
+  "recovered_mask_format": "uint8 bit-packed along width, np.unpackbits(..., axis=-1), threshold >=0.5",
+  "models": {
+    "stage17_region_only": {
+      "all_808_per_image_counts_match": true,
+      "saved_probability_max_abs_difference": 0.9999963045120239,
+      "saved_binary_pixel_mismatch": 3201864,
+      "source_allocated_bytes": 134217728,
+      "source_logical_bytes": 211812480,
+      "coarse": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.10356096008396017,
+          "median": 0.08142369613051414,
+          "p05": 0.03905777279287577,
+          "p95": 0.24032340571284286
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 2.417233728296735e-06,
+            "fraction_true_area_in_assigned_patches": 3.2736361390561797e-06,
+            "fraction_assigned_patch_area_truly_class": 1.0,
+            "target_area_weighted_mean_probability": 3.2917436328716576e-05
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.7907170368823788,
+            "fraction_true_area_in_assigned_patches": 0.7362648248672485,
+            "fraction_assigned_patch_area_truly_class": 0.03386295959353447,
+            "target_area_weighted_mean_probability": 0.7013686299324036
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.20928047034533886,
+            "fraction_true_area_in_assigned_patches": 0.8362557291984558,
+            "fraction_assigned_patch_area_truly_class": 0.9000217914581299,
+            "target_area_weighted_mean_probability": 0.8396914601325989
+          }
+        }
+      },
+      "skip": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.397397201738809,
+          "median": 0.40200214087963104,
+          "p05": 0.2258358545601368,
+          "p95": 0.5446757227182388
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 0.0,
+            "fraction_true_area_in_assigned_patches": 0.0,
+            "fraction_assigned_patch_area_truly_class": null,
+            "target_area_weighted_mean_probability": 0.0003345237928442657
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.6531002948798533,
+            "fraction_true_area_in_assigned_patches": 0.7119799256324768,
+            "fraction_assigned_patch_area_truly_class": 0.03964604064822197,
+            "target_area_weighted_mean_probability": 0.6454705595970154
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.3468996295815927,
+            "fraction_true_area_in_assigned_patches": 0.8443499207496643,
+            "fraction_assigned_patch_area_truly_class": 0.5482280850410461,
+            "target_area_weighted_mean_probability": 0.8315139412879944
+          }
+        }
+      },
+      "recovered_binary_masks": "/home/featurize/referring_image_segmentation/diagnostics/feature_analysis_20261101/outputs/recovered_masks/stage17_region_only_bitpacked_masks.npy"
+    },
+    "stage17_hiram": {
+      "all_808_per_image_counts_match": true,
+      "saved_probability_max_abs_difference": 0.9999972581863403,
+      "saved_binary_pixel_mismatch": 13391951,
+      "source_allocated_bytes": 4096,
+      "source_logical_bytes": 211812480,
+      "coarse": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.11523740917979049,
+          "median": 0.09825017675757408,
+          "p05": 0.05617167074233294,
+          "p95": 0.23208691403269766
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 1.2086168641483675e-06,
+            "fraction_true_area_in_assigned_patches": 1.6368180695280898e-06,
+            "fraction_assigned_patch_area_truly_class": 1.0,
+            "target_area_weighted_mean_probability": 4.101111335330643e-05
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.7800231948683941,
+            "fraction_true_area_in_assigned_patches": 0.6861029267311096,
+            "fraction_assigned_patch_area_truly_class": 0.031988486647605896,
+            "target_area_weighted_mean_probability": 0.656048595905304
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.21997552097618775,
+            "fraction_true_area_in_assigned_patches": 0.8586119413375854,
+            "fraction_assigned_patch_area_truly_class": 0.8791545033454895,
+            "target_area_weighted_mean_probability": 0.8611614108085632
+          }
+        }
+      },
+      "skip": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.38764437523181783,
+          "median": 0.389141246676445,
+          "p05": 0.21542834416031836,
+          "p95": 0.542539656162262
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 4.83446745659347e-06,
+            "fraction_true_area_in_assigned_patches": 6.547272278112359e-06,
+            "fraction_assigned_patch_area_truly_class": 1.0,
+            "target_area_weighted_mean_probability": 0.0002923106076195836
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.6571503699916145,
+            "fraction_true_area_in_assigned_patches": 0.6997769474983215,
+            "fraction_assigned_patch_area_truly_class": 0.03872637450695038,
+            "target_area_weighted_mean_probability": 0.6363637447357178
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.3428447200023749,
+            "fraction_true_area_in_assigned_patches": 0.8467250466346741,
+            "fraction_assigned_patch_area_truly_class": 0.5562724471092224,
+            "target_area_weighted_mean_probability": 0.8355897665023804
+          }
+        }
+      },
+      "recovered_binary_masks": "/home/featurize/referring_image_segmentation/diagnostics/feature_analysis_20261101/outputs/recovered_masks/stage17_hiram_bitpacked_masks.npy"
+    },
+    "stage18_region_only": {
+      "all_808_per_image_counts_match": true,
+      "saved_probability_max_abs_difference": 0.0,
+      "saved_binary_pixel_mismatch": 0,
+      "source_allocated_bytes": 211820544,
+      "source_logical_bytes": 211812480,
+      "coarse": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.08841302975237665,
+          "median": 0.07667379081249237,
+          "p05": 0.04141570925712586,
+          "p95": 0.18206007331609725
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 0.0,
+            "fraction_true_area_in_assigned_patches": 0.0,
+            "fraction_assigned_patch_area_truly_class": null,
+            "target_area_weighted_mean_probability": 0.00017898090300150216
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.7876459414305779,
+            "fraction_true_area_in_assigned_patches": 0.7189677953720093,
+            "fraction_assigned_patch_area_truly_class": 0.033196352422237396,
+            "target_area_weighted_mean_probability": 0.6908870339393616
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.21235398303086814,
+            "fraction_true_area_in_assigned_patches": 0.8490380644798279,
+            "fraction_assigned_patch_area_truly_class": 0.9005532264709473,
+            "target_area_weighted_mean_probability": 0.8527078032493591
+          }
+        }
+      },
+      "skip": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.39831145498717185,
+          "median": 0.4017836004495621,
+          "p05": 0.23125221878290175,
+          "p95": 0.5405997693538666
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 0.0,
+            "fraction_true_area_in_assigned_patches": 0.0,
+            "fraction_assigned_patch_area_truly_class": null,
+            "target_area_weighted_mean_probability": 0.00015797873493283987
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.6724877179976573,
+            "fraction_true_area_in_assigned_patches": 0.7248537540435791,
+            "fraction_assigned_patch_area_truly_class": 0.03919927403330803,
+            "target_area_weighted_mean_probability": 0.6563696265220642
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.32751220646378876,
+            "fraction_true_area_in_assigned_patches": 0.8369097113609314,
+            "fraction_assigned_patch_area_truly_class": 0.5755641460418701,
+            "target_area_weighted_mean_probability": 0.8242674469947815
+          }
+        }
+      }
+    },
+    "stage18_hiram": {
+      "all_808_per_image_counts_match": true,
+      "saved_probability_max_abs_difference": 0.0,
+      "saved_binary_pixel_mismatch": 0,
+      "source_allocated_bytes": 211816448,
+      "source_logical_bytes": 211812480,
+      "coarse": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.19975669853536798,
+          "median": 0.18119092285633087,
+          "p05": 0.10093503929674626,
+          "p95": 0.3620206162333488
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 0.0,
+            "fraction_true_area_in_assigned_patches": 0.0,
+            "fraction_assigned_patch_area_truly_class": null,
+            "target_area_weighted_mean_probability": 0.0005980318528600037
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.7941676380295224,
+            "fraction_true_area_in_assigned_patches": 0.7768844962120056,
+            "fraction_assigned_patch_area_truly_class": 0.035575930029153824,
+            "target_area_weighted_mean_probability": 0.7117010354995728
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.20583228643192356,
+            "fraction_true_area_in_assigned_patches": 0.8330446481704712,
+            "fraction_assigned_patch_area_truly_class": 0.9115855097770691,
+            "target_area_weighted_mean_probability": 0.8340153098106384
+          }
+        }
+      },
+      "skip": {
+        "n": 808,
+        "mean_entropy_nats": {
+          "mean": 0.4214387726370651,
+          "median": 0.42952345311641693,
+          "p05": 0.2603236556053162,
+          "p95": 0.5563554883003234
+        },
+        "classes": {
+          "background": {
+            "target_area_fraction": 0.7383941243695458,
+            "predicted_hard_patch_fraction": 8.460318049038571e-06,
+            "fraction_true_area_in_assigned_patches": 1.145772694144398e-05,
+            "fraction_assigned_patch_area_truly_class": 1.0,
+            "target_area_weighted_mean_probability": 0.000999794458039105
+          },
+          "boundary": {
+            "target_area_fraction": 0.036367375865416884,
+            "predicted_hard_patch_fraction": 0.6695991236923426,
+            "fraction_true_area_in_assigned_patches": 0.7080811858177185,
+            "fraction_assigned_patch_area_truly_class": 0.038457419723272324,
+            "target_area_weighted_mean_probability": 0.6333550810813904
+          },
+          "interior": {
+            "target_area_fraction": 0.22523849976503732,
+            "predicted_hard_patch_fraction": 0.3303923404510543,
+            "fraction_true_area_in_assigned_patches": 0.8407983779907227,
+            "fraction_assigned_patch_area_truly_class": 0.5731977820396423,
+            "target_area_weighted_mean_probability": 0.8262498378753662
+          }
+        }
+      }
+    }
+  }
+}

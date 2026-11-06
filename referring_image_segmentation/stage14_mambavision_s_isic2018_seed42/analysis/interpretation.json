@@ -1,0 +1,32 @@
+{
+  "post_training_only": true,
+  "no_new_experiment": true,
+  "no_checkpoint_reselection": true,
+  "selected_epoch": 159,
+  "empty_predictions": 1,
+  "zero_dice_samples": 1,
+  "dice_below_0_8": 105,
+  "lesion_group_dice_deltas_percentage_points": {
+    "lt_0.1": {
+      "dinov3_swin": 0.4902731526520543,
+      "vmamba_swin": -0.3135835029454026
+    },
+    "0.1_to_0.3": {
+      "dinov3_swin": -1.7703567434805945,
+      "vmamba_swin": -0.27880127737215377
+    },
+    "ge_0.3": {
+      "dinov3_swin": -1.1822906943487088,
+      "vmamba_swin": 0.13152132126962313
+    }
+  },
+  "fp_delta_vs_dino": -72545,
+  "fn_delta_vs_dino": 337474,
+  "loss": {
+    "first_train": 0.7363439888109711,
+    "last_train": 0.0668962444884906,
+    "minimum_val": 0.3099236535553885,
+    "minimum_val_epoch": 23,
+    "last_val": 0.44775169025553335
+  }
+}

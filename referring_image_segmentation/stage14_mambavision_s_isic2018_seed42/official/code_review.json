@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "reviewed_hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+  "executed_entry": "AutoModel -> MambaVisionModel.forward -> original MambaVision.forward_features",
+  "interface": "pooled vector plus four pre-downsample stage tensors",
+  "original_s_depths": [
+    3,
+    3,
+    7,
+    5
+  ],
+  "original_s_dim": 96,
+  "architecture_modifications": false,
+  "pretrained_weight_modifications": false,
+  "remote_code_local_snapshot_only": true,
+  "unexpected_remote_execution_or_shell_calls": false,
+  "scan": "official mamba_ssm.ops.selective_scan_interface.selective_scan_fn with official wheel CUDA extension",
+  "license_file": "official/hf/LICENSE",
+  "public_upload_authorized": false,
+  "source_review_notes": [
+    "Inspected model/config imports, layer creation, stage downsampling/padding, Conv/SSM/Attention, feature forward, and weight loading.",
+    "Official model has built-in feature output; no hooks or rewritten feature blocks needed.",
+    "Source includes unused generic checkpoint-loading helpers; experiment instead strictly verifies pinned safetensors.",
+    "Historical runtime initially shadowed scan extension; provisional smoke archived and final preflight rerun using isolated official wheel."
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "encoder": {
+    "checkpoint_epoch": 86,
+    "region_prior_l2": 0.3700602948665619,
+    "reproduction": {
+      "max_abs_probability_error": 0.0,
+      "mean_abs_probability_error": 0.0,
+      "binary_pixel_differences": 0,
+      "total_pixels": 52953088,
+      "all_per_image_counts_match": true,
+      "saved_probability_consistent": true
+    },
+    "original": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8855074414898458,
+        "iou": 0.8100823801217509,
+        "precision": 0.886651484391614,
+        "recall": 0.9174578363145188
+      },
+      "pooled": {
+        "dice": 0.8926283950913781,
+        "iou": 0.8060784574343823,
+        "precision": 0.8885150080045406,
+        "recall": 0.8967800452318464
+      },
+      "prec_at": {
+        "0.5": 0.948019801980198,
+        "0.6": 0.9158415841584159,
+        "0.7": 0.8502475247524752,
+        "0.8": 0.6695544554455446,
+        "0.9": 0.2908415841584158
+      },
+      "threshold_jaccard_065": 0.7553554100897877,
+      "counts": {
+        "tp": 11559128,
+        "fp": 1450363,
+        "fn": 1330463,
+        "tn": 38613134
+      }
+    },
+    "counterfactual_ordered_scan": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8861857388652737,
+        "iou": 0.811255440161618,
+        "precision": 0.892576089292812,
+        "recall": 0.9127685621974669
+      },
+      "pooled": {
+        "dice": 0.8923142355303721,
+        "iou": 0.805566221172502,
+        "precision": 0.896100406787257,
+        "recall": 0.8885599240503442
+      },
+      "prec_at": {
+        "0.5": 0.9467821782178217,
+        "0.6": 0.9133663366336634,
+        "0.7": 0.844059405940594,
+        "0.8": 0.6732673267326733,
+        "0.9": 0.2995049504950495
+      },
+      "threshold_jaccard_065": 0.7542188102913379,
+      "counts": {
+        "tp": 11453174,
+        "fp": 1327954,
+        "fn": 1436417,
+        "tn": 38735543
+      }
+    },
+    "feature_change": {
+      "mixer_relative_l2": {
+        "mean": 0.6579044096098088,
+        "median": 0.6654383838176727,
+        "p05": 0.5599693149328232,
+        "p95": 0.7436174422502517
+      },
+      "mixer_cosine": {
+        "mean": 0.7817043730675584,
+        "median": 0.7786161303520203,
+        "p05": 0.725756612420082,
+        "p95": 0.8421588838100433
+      },
+      "encoder_16_relative_l2": {
+        "mean": 0.15720016736131492,
+        "median": 0.15598799288272858,
+        "p05": 0.13523861840367318,
+        "p95": 0.18132101520895957
+      },
+      "encoder_16_cosine": {
+        "mean": 0.9877906753727705,
+        "median": 0.9880451560020447,
+        "p05": 0.9838376700878143,
+        "p95": 0.9910478293895721
+      },
+      "encoder_8_relative_l2": {
+        "mean": 0.10407768799877255,
+        "median": 0.10238062962889671,
+        "p05": 0.07254239991307258,
+        "p95": 0.1403042584657669
+      },
+      "encoder_8_cosine": {
+        "mean": 0.9944390336623287,
+        "median": 0.9948042929172516,
+        "p05": 0.9903188526630402,
+        "p95": 0.9974003553390502
+      },
+      "decoder_64_relative_l2": {
+        "mean": 0.05725156233212588,
+        "median": 0.047800131142139435,
+        "p05": 0.01656623976305127,
+        "p95": 0.13331787660717964
+      },
+      "decoder_64_cosine": {
+        "mean": 0.9976556178661856,
+        "median": 0.9988592863082886,
+        "p05": 0.9911449879407883,
+        "p95": 0.9998627841472626
+      },
+      "mean_probability_abs_change": {
+        "mean": 0.008564911223087134,
+        "median": 0.0036734589375555515,
+        "p05": 0.00021736056514782832,
+        "p95": 0.035113618336617934
+      },
+      "binary_changed_fraction": {
+        "mean": 0.00862070593503442,
+        "median": 0.00360107421875,
+        "p05": 0.00020370483398437502,
+        "p95": 0.03766708374023437
+      },
+      "target_area": {
+        "mean": 0.24341528486497332,
+        "median": 0.18303680419921875,
+        "p05": 0.018056488037109374,
+        "p95": 0.6784019470214843
+      }
+    },
+    "route": {
+      "n": 808,
+      "mean_entropy_nats": {
+        "mean": 0.4339190737786933,
+        "median": 0.44139479100704193,
+        "p05": 0.14009476378560065,
+        "p95": 0.7035239666700364
+      },
+      "classes": {
+        "background": {
+          "target_area_fraction": 0.7383941243695458,
+          "predicted_hard_patch_fraction": 0.6000879419845776,
+          "fraction_true_area_in_assigned_patches": 0.7917737364768982,
+          "fraction_assigned_patch_area_truly_class": 0.9742589592933655,
+          "target_area_weighted_mean_probability": 0.7211282253265381
+        },
+        "boundary": {
+          "target_area_fraction": 0.036367375865416884,
+          "predicted_hard_patch_fraction": 0.13804338375556993,
+          "fraction_true_area_in_assigned_patches": 0.5754959583282471,
+          "fraction_assigned_patch_area_truly_class": 0.1516137719154358,
+          "target_area_weighted_mean_probability": 0.4966246783733368
+        },
+        "interior": {
+          "target_area_fraction": 0.22523849976503732,
+          "predicted_hard_patch_fraction": 0.2618685987212985,
+          "fraction_true_area_in_assigned_patches": 0.8063893914222717,
+          "fraction_assigned_patch_area_truly_class": 0.6935918927192688,
+          "target_area_weighted_mean_probability": 0.7768586277961731
+        }
+      }
+    },
+    "valid_window_counts": [
+      196,
+      28,
+      28,
+      4
+    ],
+    "window_class_group_size_histogram": {
+      "bins": [
+        "0",
+        "1",
+        "2-4",
+        "5-16",
+        "17+"
+      ],
+      "counts_by_window_and_class": [
+        [
+          [
+            1,
+            2,
+            2,
+            30,
+            773
+          ],
+          [
+            0,
+            0,
+            3,
+            138,
+            667
+          ],
+          [
+            16,
+            19,
+            48,
+            133,
+            592
+          ]
+        ],
+        [
+          [
+            4,
+            3,
+            10,
+            85,
+            706
+          ],
+          [
+            459,
+            106,
+            110,
+            129,
+            4
+          ],
+          [
+            511,
+            82,
+            90,
+            111,
+            14
+          ]
+        ],
+        [
+          [
+            3,
+            5,
+            29,
+            163,
+            608
+          ],
+          [
+            312,
+            80,
+            147,
+            265,
+            4
+          ],
+          [
+            451,
+            78,
+            94,
+            159,
+            26
+          ]
+        ],
+        [
+          [
+            17,
+            16,
+            775,
+            0,
+            0
+          ],
+          [
+            696,
+            68,
+            44,
+            0,
+            0
+          ],
+          [
+            748,
+            45,
+            15,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  },
+  "decoder": {
+    "checkpoint_epoch": 164,
+    "reproduction": {
+      "max_abs_probability_error": 0.9999972581863403,
+      "mean_abs_probability_error": 0.2537574437585208,
+      "binary_pixel_differences": 13391951,
+      "total_pixels": 52953088,
+      "all_per_image_counts_match": true,
+      "saved_probability_consistent": false,
+      "saved_probability_allocated_bytes": 4096,
+      "saved_probability_logical_bytes": 211812480,
+      "note": "Existing stage17 hiram probability artifact contains sparse zeroed areas. Metrics below were regenerated from the verified checkpoint; all 808 TP/FP/FN/TN records match the historical count file."
+    },
+    "original": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8851148753234358,
+        "iou": 0.8106565351922143,
+        "precision": 0.8881583888337671,
+        "recall": 0.9174227677229254
+      },
+      "pooled": {
+        "dice": 0.8902772374754886,
+        "iou": 0.8022519385384097,
+        "precision": 0.8735778162369111,
+        "recall": 0.9076275577712279
+      },
+      "prec_at": {
+        "0.5": 0.9455445544554455,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8341584158415841,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.33044554455445546
+      },
+      "threshold_jaccard_065": 0.7487204857266314,
+      "counts": {
+        "tp": 11698948,
+        "fp": 1693045,
+        "fn": 1190643,
+        "tn": 38370452
+      }
+    },
+    "counterfactual_hiram_bypassed": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8752716832389696,
+        "iou": 0.7957000737899751,
+        "precision": 0.872581625103125,
+        "recall": 0.9172582224495787
+      },
+      "pooled": {
+        "dice": 0.8836486107631408,
+        "iou": 0.791550598926746,
+        "precision": 0.8752837879268084,
+        "recall": 0.8921748564403634
+      },
+      "prec_at": {
+        "0.5": 0.943069306930693,
+        "0.6": 0.8960396039603961,
+        "0.7": 0.818069306930693,
+        "0.8": 0.6361386138613861,
+        "0.9": 0.2537128712871287
+      },
+      "threshold_jaccard_065": 0.7320263804629139,
+      "counts": {
+        "tp": 11499769,
+        "fp": 1638563,
+        "fn": 1389822,
+        "tn": 38424934
+      }
+    },
+    "feature_change": {
+      "branch_coarse_relative_l2": {
+        "mean": 0.5524357811796783,
+        "median": 0.5516534745693207,
+        "p05": 0.4302218720316887,
+        "p95": 0.6928879916667938
+      },
+      "branch_coarse_cosine": {
+        "mean": 0.8277160335000199,
+        "median": 0.8347975015640259,
+        "p05": 0.7215931862592697,
+        "p95": 0.9028301954269409
+      },
+      "branch_skip_relative_l2": {
+        "mean": 0.7231515502870673,
+        "median": 0.7259481251239777,
+        "p05": 0.606982073187828,
+        "p95": 0.847067129611969
+      },
+      "branch_skip_cosine": {
+        "mean": 0.6831313762998227,
+        "median": 0.6879086196422577,
+        "p05": 0.5334941118955612,
+        "p95": 0.7949270367622375
+      },
+      "branch_sum_relative_l2": {
+        "mean": 0.664539580740551,
+        "median": 0.663523405790329,
+        "p05": 0.5729420602321624,
+        "p95": 0.7539490759372711
+      },
+      "branch_sum_cosine": {
+        "mean": 0.7444851107083925,
+        "median": 0.7489229738712311,
+        "p05": 0.6584693968296051,
+        "p95": 0.8197004437446594
+      },
+      "decoder_64_relative_l2": {
+        "mean": 0.2446453987740644,
+        "median": 0.23726744949817657,
+        "p05": 0.18006812036037445,
+        "p95": 0.33344901353120804
+      },
+      "decoder_64_cosine": {
+        "mean": 0.9684382859285515,
+        "median": 0.9715482890605927,
+        "p05": 0.9436857402324677,
+        "p95": 0.983725368976593
+      },
+      "residual_cross_branch_cosine": {
+        "mean": 0.24695026264111003,
+        "median": 0.23842190206050873,
+        "p05": 0.13688637539744378,
+        "p95": 0.38365375995635986
+      },
+      "input_branch_spatial_linear_cka": {
+        "mean": 0.3612480515817014,
+        "median": 0.3621935546398163,
+        "p05": 0.2098558761179447,
+        "p95": 0.5151631027460097
+      },
+      "mean_probability_abs_change": {
+        "mean": 0.018347356595083988,
+        "median": 0.010099879465997219,
+        "p05": 0.0030405228142626585,
+        "p95": 0.06571023501455782
+      },
+      "binary_changed_fraction": {
+        "mean": 0.017906925465800975,
+        "median": 0.00921630859375,
+        "p05": 0.00275726318359375,
+        "p95": 0.06595993041992185
+      }
+    },
+    "coarse_route": {
+      "n": 808,
+      "mean_entropy_nats": {
+        "mean": 0.11523740917979049,
+        "median": 0.09825017675757408,
+        "p05": 0.05617167074233294,
+        "p95": 0.23208691403269766
+      },
+      "classes": {
+        "background": {
+          "target_area_fraction": 0.7383941243695458,
+          "predicted_hard_patch_fraction": 1.2086168641483675e-06,
+          "fraction_true_area_in_assigned_patches": 1.6368180695280898e-06,
+          "fraction_assigned_patch_area_truly_class": 1.0,
+          "target_area_weighted_mean_probability": 4.101111335330643e-05
+        },
+        "boundary": {
+          "target_area_fraction": 0.036367375865416884,
+          "predicted_hard_patch_fraction": 0.7800231948683941,
+          "fraction_true_area_in_assigned_patches": 0.6861029267311096,
+          "fraction_assigned_patch_area_truly_class": 0.031988486647605896,
+          "target_area_weighted_mean_probability": 0.656048595905304
+        },
+        "interior": {
+          "target_area_fraction": 0.22523849976503732,
+          "predicted_hard_patch_fraction": 0.21997552097618775,
+          "fraction_true_area_in_assigned_patches": 0.8586119413375854,
+          "fraction_assigned_patch_area_truly_class": 0.8791545033454895,
+          "target_area_weighted_mean_probability": 0.8611614108085632
+        }
+      }
+    },
+    "skip_route": {
+      "n": 808,
+      "mean_entropy_nats": {
+        "mean": 0.38764437523181783,
+        "median": 0.389141246676445,
+        "p05": 0.21542834416031836,
+        "p95": 0.542539656162262
+      },
+      "classes": {
+        "background": {
+          "target_area_fraction": 0.7383941243695458,
+          "predicted_hard_patch_fraction": 4.83446745659347e-06,
+          "fraction_true_area_in_assigned_patches": 6.547272278112359e-06,
+          "fraction_assigned_patch_area_truly_class": 1.0,
+          "target_area_weighted_mean_probability": 0.0002923106076195836
+        },
+        "boundary": {
+          "target_area_fraction": 0.036367375865416884,
+          "predicted_hard_patch_fraction": 0.6571503699916145,
+          "fraction_true_area_in_assigned_patches": 0.6997769474983215,
+          "fraction_assigned_patch_area_truly_class": 0.03872637450695038,
+          "target_area_weighted_mean_probability": 0.6363637447357178
+        },
+        "interior": {
+          "target_area_fraction": 0.22523849976503732,
+          "predicted_hard_patch_fraction": 0.3428447200023749,
+          "fraction_true_area_in_assigned_patches": 0.8467250466346741,
+          "fraction_assigned_patch_area_truly_class": 0.5562724471092224,
+          "target_area_weighted_mean_probability": 0.8355897665023804
+        }
+      }
+    }
+  },
+  "audit": {
+    "n": 808,
+    "seed": 42,
+    "split": "legacy ISIC2018 development validation",
+    "precision": "BF16 autocast",
+    "batch": 64,
+    "device": "NVIDIA GeForce RTX 3080",
+    "official_encoder_hash": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+    "source_sha256": {
+      "/home/featurize/referring_image_segmentation/diagnostics/feature_analysis_20261101/diagnose.py": "41de2cd3930d635eb4d8329782e7e1f1a371bf1311f7ac008151ea7fafaa2d57",
+      "/home/featurize/referring_image_segmentation/stage19_region_mambavision_encoder_seed42/models.py": "e152cb88269399c67aeaaeacb71b84213ee46092e179bd04d7987bcfff6739ca",
+      "/home/featurize/referring_image_segmentation/stage17_mambavision_decoder_hiram_seed42/models.py": "cab1a9bded885bc2eef987f7f742134069c05a7cf9ecda84f3d2568bf5a4e597",
+      "/home/featurize/referring_image_segmentation/stage19_region_mambavision_encoder_seed42/results/region_scan/best_dice.pth": "c1014552aa6e1584515179e6940465fdd04d2712d0f3f7eca1f366094e6a3267",
+      "/home/featurize/referring_image_segmentation/stage17_mambavision_decoder_hiram_seed42/results/hiram/best_dice.pth": "48cd1319e38f9e20b795c1c0214f8f0253fcccaccb6a63d79c7eae562764d6f7"
+    },
+    "notes": [
+      "One seed; models and checkpoints selected on this same development validation set.",
+      "Interventions change inference paths while retaining trained weights and may be out of distribution.",
+      "Region area uses 256-pixel morphology and area pooling, not hard patch-majority labels.",
+      "Feature RMS is not attention, class attribution, or segmentation probability.",
+      "No raw images or checkpoints have been uploaded."
+    ]
+  }
+}

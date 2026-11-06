@@ -1,0 +1,591 @@
+{
+  "seed": 42,
+  "epochs": 300,
+  "optimizer_updates": 9000,
+  "encoder": "MambaVision-S + VMamba shared four-route SS2D-style scan",
+  "decoder": "Historical SwinPixelDecoder",
+  "dataset": "ISIC2018 legacy 1886 train / 808 development validation",
+  "evaluation_resolution": "256x256",
+  "primary_criterion": "best_dice",
+  "models": {
+    "best_dice": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8837121744554526,
+        "iou": 0.8084558499200053,
+        "precision": 0.8894428988726725,
+        "recall": 0.9116160517956968,
+        "boundary_f1": 0.3234575664678021,
+        "hd95_pixels": 17.254634509599462,
+        "hd95_diagonal": 0.047659644799348436
+      },
+      "pooled": {
+        "dice": 0.8873144458825643,
+        "iou": 0.7974530114092906,
+        "precision": 0.8865498220083824,
+        "recall": 0.88808038982773
+      },
+      "prec_at": {
+        "0.5": 0.9418316831683168,
+        "0.6": 0.9071782178217822,
+        "0.7": 0.8477722772277227,
+        "0.8": 0.6794554455445545,
+        "0.9": 0.30198019801980197
+      },
+      "threshold_jaccard_065": 0.7564814024707693,
+      "counts": {
+        "tp": 11446993,
+        "fp": 1464851,
+        "fn": 1442598,
+        "tn": 38598646
+      },
+      "loss": 0.3920222007402099,
+      "selected_epoch": 116,
+      "checkpoint_sha256": "904f896208470979fe7cf02d2d68f7cfc3a157c21428af04622ce95edc2c9468",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "faa5869ba3cc8f68a5a9ccaadc93a15751b85c8091dae492810b80c69ddb980f"
+    },
+    "best_loss": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8724111229345041,
+        "iou": 0.793000488020579,
+        "precision": 0.9047951346935017,
+        "recall": 0.877937059086668,
+        "boundary_f1": 0.3185638443454724,
+        "hd95_pixels": 18.74552841220739,
+        "hd95_diagonal": 0.05177769631717555
+      },
+      "pooled": {
+        "dice": 0.8825953681652443,
+        "iou": 0.789861920221362,
+        "precision": 0.9039843386883106,
+        "recall": 0.8621951619721681
+      },
+      "prec_at": {
+        "0.5": 0.9344059405940595,
+        "0.6": 0.8923267326732673,
+        "0.7": 0.8056930693069307,
+        "0.8": 0.6522277227722773,
+        "0.9": 0.25
+      },
+      "threshold_jaccard_065": 0.7251072980129638,
+      "counts": {
+        "tp": 11113343,
+        "fp": 1180391,
+        "fn": 1776248,
+        "tn": 38883106
+      },
+      "loss": 0.30865671256981275,
+      "selected_epoch": 5,
+      "checkpoint_sha256": "1092d29c67036b0f752ed8e3327e43e829cd2921db8807e207eeacaaabaef430",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "91417d8665d01f08799c523ced0785f5ff212a7dd8c37e67e6a0539cda9affc3"
+    },
+    "last": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8797515324182014,
+        "iou": 0.8020108865731606,
+        "precision": 0.8867078221551501,
+        "recall": 0.9095306473805236,
+        "boundary_f1": 0.3070992159379836,
+        "hd95_pixels": 17.185663607459333,
+        "hd95_diagonal": 0.04746913779697406
+      },
+      "pooled": {
+        "dice": 0.8847855273418386,
+        "iou": 0.79337701315238,
+        "precision": 0.8751219318960181,
+        "recall": 0.8946649276924302
+      },
+      "prec_at": {
+        "0.5": 0.9418316831683168,
+        "0.6": 0.9096534653465347,
+        "0.7": 0.8316831683168316,
+        "0.8": 0.6547029702970297,
+        "0.9": 0.2660891089108911
+      },
+      "threshold_jaccard_065": 0.7414776951936927,
+      "counts": {
+        "tp": 11531865,
+        "fp": 1645573,
+        "fn": 1357726,
+        "tn": 38417924
+      },
+      "loss": 0.46725932324286734,
+      "selected_epoch": 300,
+      "checkpoint_sha256": "91ac859226a347d3c10b94c010301967798fab49b6cc9ffb70a1eaab65668296",
+      "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+      "probability_sha256": "d1e77d911045a220e603349c1021bc5ebe1a9947c01d01c726f7cc4b8e4ce265"
+    }
+  },
+  "parameters": {
+    "encoder": 50140584,
+    "adapter": 92672,
+    "decoder_including_head": 407649,
+    "segmentation_head": 65,
+    "trainable": 500321,
+    "decoder_without_head": 407584,
+    "total": 50640905
+  },
+  "pretrained": {
+    "model": "nvidia/MambaVision-S-1K",
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "official_repository": "https://github.com/NVlabs/MambaVision",
+    "official_repository_revision": "7860a506b2eb844eaaae676f08461ce8c3c26f43",
+    "executed_implementation": "MambaVision-S weights with VMamba official cross-scan/merge; shared four-route SSM ablation",
+    "weight_path": "/home/featurize/referring_image_segmentation/stage15_mambavision_ss2d_scan_seed42/official/hf/model.safetensors",
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "loading_info": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    },
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "all_parameters_and_buffers_equal_pretrained": true,
+    "channels": [
+      96,
+      192,
+      384,
+      768
+    ],
+    "params": 50140584,
+    "classifier_params": 769000,
+    "classifier_note": "Pretrained classification head retained, frozen and counted; not executed by feature extraction",
+    "batchnorm_modules": 15,
+    "original_official_forward": false,
+    "full_vmamba_ss2d_module": false,
+    "vmamba_commit": "2ed52ead062a51a64521ed3871d52914bf532876",
+    "routing": "window-local row/column/reversed row/reversed column",
+    "scan_merge_backend": "official VMamba PyTorch CUDA operators, force_torch=True",
+    "direction_parameters": "all four routes share original NVIDIA SSM weights",
+    "merge": "aligned FP32 sum /4, cast back to input dtype",
+    "added_parameters": 0,
+    "replaced_blocks": [
+      {
+        "level": 2,
+        "block": 0
+      },
+      {
+        "level": 2,
+        "block": 1
+      },
+      {
+        "level": 2,
+        "block": 2
+      },
+      {
+        "level": 2,
+        "block": 3
+      },
+      {
+        "level": 3,
+        "block": 0
+      },
+      {
+        "level": 3,
+        "block": 1
+      },
+      {
+        "level": 3,
+        "block": 2
+      }
+    ],
+    "pretrained_state_unchanged_by_replacement": true
+  },
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.2.2+cu121",
+    "cuda_runtime": "12.1",
+    "cudnn": 8902,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_total_gib": 23.5184326171875,
+    "timm": "1.0.22",
+    "transformers": "4.44.2",
+    "mamba-ssm": "1.2.2",
+    "einops": "0.8.1",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "Pillow": "10.3.0",
+    "safetensors": "0.8.0",
+    "selective_scan_cuda_path": "/home/featurize/referring_image_segmentation/stage15_mambavision_ss2d_scan_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so",
+    "selective_scan_cuda_sha256": "0829e6a7d729adf47a5fdf24925238ea859f6395985a0db9fee8a7a8954ba929",
+    "causal-conv1d": "not installed; official MambaVision uses torch conv1d and CUDA selective_scan_fn"
+  },
+  "training": {
+    "active_seconds": 1113.3324633149996,
+    "epoch_seconds_sum": 1092.0441409880077,
+    "mean_epoch_seconds": 3.6401471366266924,
+    "median_epoch_seconds": 3.633993723499998,
+    "max_training_peak_gpu_gib": 8.32492446899414,
+    "resumed": false,
+    "encoder_unchanged": true
+  },
+  "inference": {
+    "batch": 1,
+    "warmup": 3,
+    "repetitions": 10,
+    "device": "NVIDIA GeForce RTX 4090",
+    "precision": "BF16 autocast, FP32 parameters",
+    "includes": "Encoder + Adapter + Swin Decoder + segmentation head",
+    "excludes": "disk I/O, CPU resize/normalization and postprocessing; no cached features",
+    "cuda_synchronized": true,
+    "mean_ms": 14.112978599769122,
+    "median_ms": 14.023263499893801,
+    "std_ms": 0.28742932026674656,
+    "times_seconds": [
+      0.014937052000277617,
+      0.014064668000173697,
+      0.013931831999798305,
+      0.013996759000292514,
+      0.013987804999487707,
+      0.014049767999495089,
+      0.014215470999261015,
+      0.013982577999740897,
+      0.01389005199962412,
+      0.014073800999540254
+    ],
+    "images_per_second": 70.85676442649458,
+    "peak_allocated_gib": 0.33080482482910156,
+    "peak_reserved_gib": 0.369140625,
+    "baseline_allocated_gib": 0.20061969757080078,
+    "incremental_peak_gib": 0.13018512725830078,
+    "flops": null,
+    "flops_note": "No complete operator accounting for selective_scan; no partial FLOPs presented as full-model FLOPs",
+    "historical_latency_note": "Stage4 timings recorded on its original device/session; only descriptive, not a new same-session benchmark"
+  },
+  "preflight_memory": {
+    "encoder_batch64_baseline_gib": 0.9208955764770508,
+    "encoder_batch64_peak_gib": 1.6149873733520508,
+    "decoder_train_batch64_peak_gib": 4.094956398010254
+  },
+  "comparisons": {
+    "mambavision_original": {
+      "reference": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 808,
+        "macro": {
+          "dice": 0.8835978441279395,
+          "iou": 0.8091209170031531,
+          "precision": 0.8975086696469926,
+          "recall": 0.9050809813996099,
+          "boundary_f1": 0.3330566760212871,
+          "hd95_pixels": 17.054988262412245,
+          "hd95_diagonal": 0.04710819473987762
+        },
+        "pooled": {
+          "dice": 0.8892881791339754,
+          "iou": 0.8006470827334812,
+          "precision": 0.8890232325027393,
+          "recall": 0.8895532837310354
+        },
+        "prec_at": {
+          "0.5": 0.9443069306930693,
+          "0.6": 0.9034653465346535,
+          "0.7": 0.8415841584158416,
+          "0.8": 0.6757425742574258,
+          "0.9": 0.3032178217821782
+        },
+        "threshold_jaccard_065": 0.7558865210489848,
+        "counts": {
+          "tp": 11465978,
+          "fp": 1431298,
+          "fn": 1423613,
+          "tn": 38632199
+        },
+        "loss": 0.39842641412621677,
+        "selected_epoch": 159,
+        "checkpoint_sha256": "3c1083c8ad0da0048869dbe3d39d8d54b11c01d39d207116c43c94a6c46fc2f5",
+        "evaluation_resolution": "historical 256x256 grid; not native-image evaluation",
+        "probability_sha256": "881a7d4a1135ff3f4d036ddbe76143c7bf419285b7272a4df3bb2820dacfe6be"
+      },
+      "macro_delta": {
+        "dice": 0.00011433032751306804,
+        "iou": -0.0006650670831478411,
+        "precision": -0.008065770774320136,
+        "recall": 0.006535070396086917,
+        "boundary_f1": -0.009599109553484975,
+        "hd95_pixels": 0.1996462471872178,
+        "hd95_diagonal": 0.0005514500594708191
+      },
+      "pooled_delta": {
+        "dice": -0.001973733251411147,
+        "iou": -0.003194071324190584,
+        "precision": -0.002473410494356898,
+        "recall": -0.0014728939033054056
+      },
+      "wins": 370,
+      "losses": 436,
+      "ties": 2,
+      "paired_image_bootstrap95": [
+        -0.0030107569735386887,
+        0.0034094215085016004
+      ],
+      "interval_caveat": "Exploratory selected development images; not patient-level or training-seed uncertainty",
+      "pixel_errors": {
+        "reference_wrong": 2854911,
+        "corrected": 598677,
+        "introduced": 651215,
+        "net_errors_reduced": -52538,
+        "code_order": [
+          "both_correct",
+          "new_wrong_reference_correct",
+          "new_correct_reference_wrong",
+          "both_wrong"
+        ]
+      }
+    },
+    "dinov3_swin": {
+      "reference": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 808,
+        "macro": {
+          "dice": 0.8918466226384926,
+          "iou": 0.8197817984849926,
+          "precision": 0.8925493407749884,
+          "recall": 0.9203693987025439,
+          "boundary_f1": 0.32752219170987346,
+          "hd95_pixels": 15.134619447110605,
+          "hd95_diagonal": 0.04180387516300666
+        },
+        "pooled": {
+          "dice": 0.9011339744731492,
+          "iou": 0.8200580903764869,
+          "precision": 0.8869910827106485,
+          "recall": 0.9157351850807368
+        },
+        "prec_at": {
+          "0.5": 0.9566831683168316,
+          "0.6": 0.9245049504950495,
+          "0.7": 0.8650990099009901,
+          "0.8": 0.7128712871287128,
+          "0.9": 0.30816831683168316
+        },
+        "threshold_jaccard_065": 0.772638265406567,
+        "counts": {
+          "tp": 11803452,
+          "fp": 1503843,
+          "fn": 1086139,
+          "tn": 38559654
+        },
+        "selected_epoch": 56,
+        "probability_sha256": "83513e12ea8eaffc62ff45cbe37fae9889a8a665eeaaea95535f0b2870782b85",
+        "checkpoint_sha256": "9abd0f402a1a5c8e84380cc77d890e3f290ba8b1eba572b4d1c0e00f245e6f95"
+      },
+      "macro_delta": {
+        "dice": -0.008134448183039988,
+        "iou": -0.011325948564987254,
+        "precision": -0.003106441902315904,
+        "recall": -0.008753346906847037,
+        "boundary_f1": -0.004064625242071351,
+        "hd95_pixels": 2.120015062488857,
+        "hd95_diagonal": 0.005855769636341775
+      },
+      "pooled_delta": {
+        "dice": -0.013819528590584995,
+        "iou": -0.022605078967196324,
+        "precision": -0.000441260702266133,
+        "recall": -0.027654795253006847
+      },
+      "wins": 391,
+      "losses": 417,
+      "ties": 0,
+      "paired_image_bootstrap95": [
+        -0.01387771392475201,
+        -0.0024521908972166403
+      ],
+      "interval_caveat": "Exploratory selected development images; not patient-level or training-seed uncertainty",
+      "pixel_errors": {
+        "reference_wrong": 2589982,
+        "corrected": 826236,
+        "introduced": 1143703,
+        "net_errors_reduced": -317467,
+        "code_order": [
+          "both_correct",
+          "new_wrong_reference_correct",
+          "new_correct_reference_wrong",
+          "both_wrong"
+        ]
+      }
+    },
+    "vmamba_swin": {
+      "reference": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 808,
+        "macro": {
+          "dice": 0.8851559179169967,
+          "iou": 0.810907451187523,
+          "precision": 0.8964791675511417,
+          "recall": 0.9086738096986705,
+          "boundary_f1": 0.34081546251159567,
+          "hd95_pixels": 16.67147409776732,
+          "hd95_diagonal": 0.04604887651135605
+        },
+        "pooled": {
+          "dice": 0.8896068384206578,
+          "iou": 0.801163830255714,
+          "precision": 0.8805933085941529,
+          "recall": 0.8988067968952622
+        },
+        "prec_at": {
+          "0.5": 0.948019801980198,
+          "0.6": 0.9121287128712872,
+          "0.7": 0.8366336633663366,
+          "0.8": 0.681930693069307,
+          "0.9": 0.3180693069306931
+        },
+        "threshold_jaccard_065": 0.7530376777988503,
+        "counts": {
+          "tp": 11585252,
+          "fp": 1570937,
+          "fn": 1304339,
+          "tn": 38492560
+        },
+        "selected_epoch": 112,
+        "probability_sha256": "0f9ada8189f454303ff2cafa3689feaf1db5e13ffe7209a91736349f067beab4",
+        "checkpoint_sha256": "fa3e84d17ea1eb66ae1136b62923645505408b79caeb1cbf97d5770b1f1aac2c"
+      },
+      "macro_delta": {
+        "dice": -0.001443743461544078,
+        "iou": -0.0024516012675177556,
+        "precision": -0.007036268678469182,
+        "recall": 0.0029422420970263152,
+        "boundary_f1": -0.017357896043793564,
+        "hd95_pixels": 0.583160411832143,
+        "hd95_diagonal": 0.0016107682879923854
+      },
+      "pooled_delta": {
+        "dice": -0.002292392538093546,
+        "iou": -0.003710818846423436,
+        "precision": 0.005956513414229536,
+        "recall": -0.010726407067532251
+      },
+      "wins": 395,
+      "losses": 413,
+      "ties": 0,
+      "paired_image_bootstrap95": [
+        -0.006682661525022798,
+        0.00356751861402023
+      ],
+      "interval_caveat": "Exploratory selected development images; not patient-level or training-seed uncertainty",
+      "pixel_errors": {
+        "reference_wrong": 2875276,
+        "corrected": 898704,
+        "introduced": 930877,
+        "net_errors_reduced": -32173,
+        "code_order": [
+          "both_correct",
+          "new_wrong_reference_correct",
+          "new_correct_reference_wrong",
+          "both_wrong"
+        ]
+      }
+    }
+  },
+  "lesion_area_groups": {
+    "lt_0.1": {
+      "n": 269,
+      "mambavision_macro": {
+        "dice": 0.8861396361159956,
+        "iou": 0.8114113896731606,
+        "boundary_f1": 0.4953686344413825,
+        "hd95_pixels": 8.654492268518975
+      },
+      "historical": {
+        "mambavision_original": {
+          "dice": 0.8857995570373911,
+          "iou": 0.8111183876511572,
+          "boundary_f1": 0.5127922596694336,
+          "hd95_pixels": 9.801132286422597
+        },
+        "dinov3_swin": {
+          "dice": 0.8808968255108706,
+          "iou": 0.8057526992596575,
+          "boundary_f1": 0.4753411209959385,
+          "hd95_pixels": 9.424451617369288
+        },
+        "vmamba_swin": {
+          "dice": 0.8889353920668451,
+          "iou": 0.8156331453064566,
+          "boundary_f1": 0.5333194299167257,
+          "hd95_pixels": 8.391032627836909
+        }
+      }
+    },
+    "0.1_to_0.3": {
+      "n": 274,
+      "mambavision_macro": {
+        "dice": 0.875911938107301,
+        "iou": 0.798042381366058,
+        "boundary_f1": 0.25885683909896673,
+        "hd95_pixels": 18.513590026204035
+      },
+      "historical": {
+        "mambavision_original": {
+          "dice": 0.8722715620841148,
+          "iou": 0.7945966136435049,
+          "boundary_f1": 0.26285109452881394,
+          "hd95_pixels": 18.340054465303282
+        },
+        "dinov3_swin": {
+          "dice": 0.8899751295189208,
+          "iou": 0.8157835429474899,
+          "boundary_f1": 0.2717041857460255,
+          "hd95_pixels": 15.316941976141546
+        },
+        "vmamba_swin": {
+          "dice": 0.8750595748578364,
+          "iou": 0.7981033082056683,
+          "boundary_f1": 0.2859817480793604,
+          "hd95_pixels": 17.79775266307779
+        }
+      }
+    },
+    "ge_0.3": {
+      "n": 265,
+      "mambavision_macro": {
+        "dice": 0.8893132218996318,
+        "iou": 0.8162228317697515,
+        "boundary_f1": 0.21574632878541636,
+        "hd95_pixels": 24.68287772205606
+      },
+      "historical": {
+        "mambavision_original": {
+          "dice": 0.8930738460425262,
+          "iou": 0.8221108774417591,
+          "boundary_f1": 0.2231980244272727,
+          "hd95_pixels": 23.089626443352135
+        },
+        "dinov3_swin": {
+          "dice": 0.9048967529860132,
+          "iou": 0.8381567030468445,
+          "boundary_f1": 0.2351857451292804,
+          "hd95_pixels": 20.742463874453755
+        },
+        "vmamba_swin": {
+          "dice": 0.8917586328298299,
+          "iou": 0.8193494265046366,
+          "boundary_f1": 0.20210176636990707,
+          "hd95_pixels": 23.912373828017174
+        }
+      }
+    }
+  },
+  "caveat": "Single seed, selected development validation, unverified patient independence. Original MambaVision vs four-route uses identical pretrained state, capacity and trainable initialization; forward routing/mean-merge changes. DINO/VMamba references have different pretrained architectures/sizes/data. This is not full VMamba SS2D or official independent test.",
+  "artifacts": {
+    "history": "results/history.json",
+    "per_image": "analysis/per_image.csv",
+    "config": "config.json",
+    "learning_curves": "analysis/learning_curves.png",
+    "local_only_cases": "analysis/examples/",
+    "dense_outputs": "results/{best_dice,best_loss,last}/",
+    "full_resume": "results/latest.pth"
+  }
+}

@@ -1,5 +1,9 @@
 # 图文指代分割项目
 
+## 最新：MambaVision 与 HiRAM 实验（2026-11-06 发布）
+
+第十四至十九轮及各组验证 Macro Dice 最佳权重已归档：[发布说明与权重清单](publication/STAGE14_19_20261106.md) · [最新区域扫描结果](stage19_region_mambavision_encoder_seed42/analysis/REPORT.md) · [特征与区域路由诊断](diagnostics/feature_analysis_20261101/REPORT.md)。当前结果来自 ISIC2018 旧开发划分、seed 42，不是独立测试成绩。各权重仅含分割头、适配器和区域模块等非骨干参数，复现需要另行获取原始数据、冻结预训练骨干和运行依赖。
+
 ## 第十三轮：ISIC2016 五组统一 300 轮（2026-10-20）
 
 [源码与配置](stage13_isic_300/README.md) · [冻结协议](stage13_isic_300/PROTOCOL.md) · [完整结果](stage13_isic_300/analysis/REPORT.md) · [结果解释](stage13_isic_300/analysis/FINDINGS.md) · [完成校验](stage13_isic_300/validation.json)。
