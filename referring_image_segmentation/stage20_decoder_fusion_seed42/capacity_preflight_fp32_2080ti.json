@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "effective_batch": 64,
+  "train_micro_batch": 64,
+  "encoder_batch": 16,
+  "evaluation_batch": 16,
+  "checks": [
+    {
+      "micro_batch": 64,
+      "passed": true,
+      "peak_gib": 7.293049335479736,
+      "seconds_for_three_forward_backward": 1.0865716180001073
+    }
+  ],
+  "accumulation": "size-weighted per-image BCE and Dice; one optimizer update per effective batch",
+  "note": "Peak includes reserved validation features and uint8 images; not a formal result"
+}

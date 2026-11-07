@@ -1,0 +1,38 @@
+{
+  "smoke_only": false,
+  "seed": 42,
+  "epochs": 300,
+  "models": [
+    "paired_baseline",
+    "gate_only",
+    "axis_bridge"
+  ],
+  "data": "ISIC2018 original 1886 train / 808 development validation",
+  "encoder": "NVIDIA pretrained MambaVision-S-1K, frozen including buffers",
+  "adapter_decoder": "historic 64-channel adapter and Swin Pixel Decoder",
+  "comparison": "32x32 skip: add vs HEDS context gate vs gate plus coordinate attention",
+  "heds_commit": "a9287da787957b6376a9c403a56ad6693cd04191",
+  "axis_source_sha256": "5a054761661647b0ed8fe8d2bf67f4878c0f9aafdaf75d2e6f68e482a64bddf1",
+  "effective_batch": 64,
+  "micro_batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "updates_per_epoch": 30,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR(T_max=300, eta_min=1e-5), epoch end",
+  "loss": "historical BCEWithLogits plus per-image soft Dice, smooth=1",
+  "gradient_clip": 1.0,
+  "augment_seed": "42 + epoch * 100003",
+  "precision": "BF16 autocast with FP32 segmentation loss",
+  "precision_reason": "Matches the historical stage17 mixed-precision protocol on BF16-capable GPU",
+  "selection": "max validation macro Dice, earliest exact tie",
+  "secondary": "minimum validation loss; last epoch",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

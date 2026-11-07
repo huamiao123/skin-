@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "seed": 42,
+  "data_counts": {
+    "train": 1886,
+    "val": 808
+  },
+  "historical_manifest_exact_match": true,
+  "encoder_sha256": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "encoder_unchanged_including_buffers": true,
+  "encoder_pretrained_audit": {
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "weights_equal": true,
+    "scan_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so"
+  },
+  "encoder_parameters": 50140584,
+  "trainable_parameters": 1046521,
+  "total_parameters": 51188257,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.2.2+cu121",
+  "cuda": "12.1",
+  "hgm_revision": "49ae05afc9785dbbc5a303d39e63588b068e5328",
+  "source_sha256": {
+    "hgm_decoder_source.py": "8c783b14dcedd13d98c433213d2a8f33c8ea0aec5bb4fa8281914b2d73c7a8da",
+    "hgm_fsem_source.py": "107b4fd749bf6443b1e55e603216bca43c2e97d9878d747a392d260e10b6367b",
+    "hgm_psa_source.py": "367f99050964ef7ab15a2291dd9304d1330da56fc47d846ca2a7c6883cea8c0e"
+  },
+  "baseline_initial_hash": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+  "shared_initialization_matches_baseline": true,
+  "features": [
+    [
+      4,
+      96,
+      64,
+      64
+    ],
+    [
+      4,
+      192,
+      32,
+      32
+    ],
+    [
+      4,
+      384,
+      16,
+      16
+    ],
+    [
+      4,
+      768,
+      8,
+      8
+    ]
+  ],
+  "output_shape": [
+    4,
+    1,
+    256,
+    256
+  ],
+  "sample_loss": 1.4355937242507935,
+  "precision": "BF16 autocast with FP32 HGM Mamba and loss",
+  "official_hgm_reproduction": false,
+  "method": "partial Swin + adapted HGM BMD; not full HGM"
+}

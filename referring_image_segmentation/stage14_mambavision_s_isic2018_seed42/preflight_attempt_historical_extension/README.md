@@ -1,0 +1,3 @@
+# 依赖路径诊断存档
+
+正式训练前的首次预检与smoke使用了历史VMamba运行目录中的selective_scan_cuda。没有正式训练结果。为确保本轮使用官方Mamba wheel扩展，隔离导入路径后重新运行全部预检与smoke；本目录不进入正式汇总。

@@ -1,0 +1,40 @@
+{
+  "smoke_only": true,
+  "seed": 42,
+  "epochs": 2,
+  "models": [
+    "ordered_prior",
+    "region_scan"
+  ],
+  "encoder": "NVIDIA MambaVision-S-1K, region router inside levels[2].blocks[0].mixer",
+  "original_encoder_frozen": true,
+  "encoder_eval": true,
+  "new_encoder_router_trainable": true,
+  "dataset": "ISIC2018 legacy development split 1886/808",
+  "effective_batch": 64,
+  "micro_batch": 64,
+  "evaluation_batch": 64,
+  "updates_per_epoch": 30,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR(T_max=300, eta_min=1e-5), epoch end",
+  "segmentation_loss": "historical BCEWithLogits + per-image Soft Dice smooth=1",
+  "region_loss": "mean of three class-balanced soft CE; full-effective-batch target mass; weight=1",
+  "region_targets": "width2 5x5 morphology, area-pool to 16x16; background/boundary/interior",
+  "augmented_seed": "42+epoch*100003",
+  "precision": "BF16 autocast / FP32 loss",
+  "clip": 1.0,
+  "selection": "max val macro Dice; earliest exact tie",
+  "secondary": "min val loss; epoch300",
+  "val_encoder_cache": false,
+  "route_train": "Gumbel hard for region_scan",
+  "route_eval": "argmax",
+  "pretrain_weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+  "gpu": "NVIDIA GeForce RTX 3080"
+}

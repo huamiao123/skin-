@@ -1,0 +1,37 @@
+{
+  "smoke_only": true,
+  "seed": 42,
+  "epochs": 2,
+  "model": "mambavision_swin_partial_hgm_bmd_adapted",
+  "data": "ISIC2018 original 1886 train / 808 development validation",
+  "encoder": "NVIDIA pretrained MambaVision-S-1K, frozen including buffers",
+  "decoder": "Swin levels 8/16/32, two 1x1 projections and adapted HGM BMD",
+  "adaptation": "FP32 HGM Mamba; official p=5 falls back to full raster scan; not full HGM",
+  "upstream_commit": "49ae05afc9785dbbc5a303d39e63588b068e5328",
+  "source_sha256": {
+    "hgm_decoder_source.py": "8c783b14dcedd13d98c433213d2a8f33c8ea0aec5bb4fa8281914b2d73c7a8da",
+    "hgm_fsem_source.py": "107b4fd749bf6443b1e55e603216bca43c2e97d9878d747a392d260e10b6367b",
+    "hgm_psa_source.py": "367f99050964ef7ab15a2291dd9304d1330da56fc47d846ca2a7c6883cea8c0e"
+  },
+  "trainable_parameters": 1046521,
+  "train_batch": 64,
+  "effective_batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "updates_per_epoch": 30,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR(T_max=300, eta_min=1e-5), epoch end",
+  "loss": "historical BCEWithLogits plus per-image soft Dice, smooth=1",
+  "gradient_clip": 1.0,
+  "augment_seed": "42 + epoch * 100003",
+  "precision": "BF16 autocast, FP32 HGM Mamba and segmentation loss",
+  "selection": "max validation macro Dice, earliest exact tie",
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

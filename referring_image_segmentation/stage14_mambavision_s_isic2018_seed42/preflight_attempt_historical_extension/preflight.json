@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "checks": {
+    "data_manifest_exact": true,
+    "n_train": 1886,
+    "n_val": 808,
+    "real_batch64_forward": true,
+    "finite_stage_features": true,
+    "stage_shapes": [
+      [
+        64,
+        96,
+        64,
+        64
+      ],
+      [
+        64,
+        192,
+        32,
+        32
+      ],
+      [
+        64,
+        384,
+        16,
+        16
+      ],
+      [
+        64,
+        768,
+        8,
+        8
+      ]
+    ],
+    "output_shape": [
+      64,
+      1,
+      256,
+      256
+    ],
+    "matches_historical_vmamba_swin_initial_probe": true,
+    "finite_trainable_gradients": true,
+    "trainable_weights_updated": true,
+    "encoder_no_grad": true,
+    "encoder_eval_recursive": true,
+    "encoder_parameters_and_buffers_unchanged": true,
+    "cuda_selective_scan_executed": true
+  },
+  "encoder_hash": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "initial_probe_hash": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+  "pretrained": {
+    "model": "nvidia/MambaVision-S-1K",
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "official_repository": "https://github.com/NVlabs/MambaVision",
+    "official_repository_revision": "7860a506b2eb844eaaae676f08461ce8c3c26f43",
+    "executed_implementation": "Unmodified pinned HF modeling_mambavision.py via AutoModel",
+    "weight_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/official/hf/model.safetensors",
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "loading_info": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    },
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "all_parameters_and_buffers_equal_pretrained": true,
+    "channels": [
+      96,
+      192,
+      384,
+      768
+    ],
+    "params": 50140584,
+    "classifier_params": 769000,
+    "classifier_note": "Pretrained classification head retained, frozen and counted; not executed by feature extraction",
+    "batchnorm_modules": 15
+  },
+  "parameters": {
+    "encoder": 50140584,
+    "adapter": 92672,
+    "decoder_including_head": 407649,
+    "segmentation_head": 65,
+    "trainable": 500321,
+    "decoder_without_head": 407584,
+    "total": 50640905
+  },
+  "environment": {
+    "python": "3.11.8",
+    "torch": "2.2.2+cu121",
+    "cuda_runtime": "12.1",
+    "cudnn": 8902,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_total_gib": 23.5184326171875,
+    "timm": "1.0.22",
+    "transformers": "4.44.2",
+    "mamba-ssm": "1.2.2",
+    "einops": "0.8.1",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "Pillow": "10.3.0",
+    "safetensors": "0.8.0",
+    "selective_scan_cuda_path": "/home/featurize/referring_image_segmentation/stage1_visual/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so",
+    "selective_scan_cuda_sha256": "afdb5303e4aecc54400ad146e5c9b0260e3cf794f5bf37ad4ec69085615e4aca",
+    "causal-conv1d": "not installed; official MambaVision uses torch conv1d and CUDA selective_scan_fn"
+  },
+  "memory": {
+    "encoder_batch64_baseline_gib": 0.9131441116333008,
+    "encoder_batch64_peak_gib": 1.4357271194458008,
+    "decoder_train_batch64_peak_gib": 4.095383644104004
+  },
+  "throughput": {
+    "encoder_batch64_seconds": 0.24873845600006916,
+    "decoder_train_batch64_seconds": 0.912496428000054
+  },
+  "inference": {
+    "batch": 1,
+    "includes": "Encoder + Adapter + Swin Pixel Decoder + segmentation head; no cache",
+    "warmup": 3,
+    "repetitions": 10,
+    "precision": "BF16 autocast",
+    "cuda_synchronized": true,
+    "seconds_per_image": 0.012796316300000398,
+    "images_per_second": 78.14748999287934,
+    "process_peak_gib": 1.0591983795166016,
+    "incremental_peak_gib": 0.13018512725830078,
+    "baseline_gib": 0.9290132522583008,
+    "note": "Preflight process also holds historical GPU-resident data; separate standalone model memory measured at final evaluation"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_sha256": "8c783b14dcedd13d98c433213d2a8f33c8ea0aec5bb4fa8281914b2d73c7a8da",
+  "revision": "49ae05afc9785dbbc5a303d39e63588b068e5328",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "mamba_version": "1.2.2 (HGM requirements: 2.2.4)",
+  "bmd_256_resolution": [
+    {
+      "stage": 0,
+      "side": 64,
+      "pixel_partition": 5,
+      "pixel_partition_applied": false,
+      "window_pool_factor": 1,
+      "window_reduces_resolution": false
+    },
+    {
+      "stage": 1,
+      "side": 128,
+      "pixel_partition": 5,
+      "pixel_partition_applied": false,
+      "window_pool_factor": 1,
+      "window_reduces_resolution": false
+    }
+  ],
+  "isolated_32x32_blocks": {
+    "BiPixelMambaLayer": {
+      "bf16_direct_passed": false,
+      "bf16_error": "RuntimeError: expected scalar type BFloat16 but found Float",
+      "fp32_forward_backward_passed": true,
+      "fp32_error": null
+    },
+    "BiWindowMambaLayer": {
+      "bf16_direct_passed": false,
+      "bf16_error": "RuntimeError: expected scalar type BFloat16 but found Float",
+      "fp32_forward_backward_passed": true,
+      "fp32_error": null
+    }
+  },
+  "note": "Isolated upstream blocks only; not full HGM or a trained experiment"
+}

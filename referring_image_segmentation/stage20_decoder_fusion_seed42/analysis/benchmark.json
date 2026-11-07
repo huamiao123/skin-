@@ -1,0 +1,25 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "warmup": 10,
+  "repeats": 50,
+  "batch": 1,
+  "precision": "BF16 autocast",
+  "scope": "MambaVision-S + adapter + full decoder + head; no data loading",
+  "models": {
+    "paired_baseline": {
+      "mean_ms": 29.72944147997623,
+      "median_ms": 28.88651750004101,
+      "peak_allocated_gib": 0.33165836334228516
+    },
+    "gate_only": {
+      "mean_ms": 41.74250955997195,
+      "median_ms": 40.2404134997596,
+      "peak_allocated_gib": 0.33167552947998047
+    },
+    "axis_bridge": {
+      "mean_ms": 34.8396868400323,
+      "median_ms": 32.585116500058575,
+      "peak_allocated_gib": 0.3316774368286133
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "precision": "BF16 autocast with FP32 HGM Mamba",
+  "batch": 1,
+  "warmup": 10,
+  "repeats": 50,
+  "scope": "full MambaVision-S + adapted partial Swin and HGM BMD + mask head, no data loading",
+  "mean_ms": 17.633914360048948,
+  "median_ms": 17.650691499511595,
+  "peak_allocated_gib": 0.33469152450561523
+}

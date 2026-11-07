@@ -1,0 +1,52 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "seed": 42,
+  "segman_revision": "9ced66ab27f23b0dbc1b0a2fe0ba42e133c55ac8",
+  "source_sha256": "67bea12cb22409344e59908c2ee4b916adcad76be6fb7b2ea43fce988e5b1516",
+  "cross_scan_source_sha256": "533c1eaf78853dc8d6e03eea6682d75a15836bb9da2bf290286e0a784df828ad",
+  "method": "SegMAN-small decoder adapted with standalone framework shims and standard selective scan",
+  "official_reproduction": false,
+  "precision": "BF16 autocast with FP32 loss",
+  "cross_scan_max_abs": 0.0,
+  "cross_scan_grad_max_abs": 4.76837158203125e-07,
+  "standard_scan_reference_max_abs": 5.7220458984375e-06,
+  "standard_scan_reference_gradient_max_abs": 7.62939453125e-06,
+  "real_feature_shapes": [
+    [
+      4,
+      96,
+      64,
+      64
+    ],
+    [
+      4,
+      192,
+      32,
+      32
+    ],
+    [
+      4,
+      384,
+      16,
+      16
+    ],
+    [
+      4,
+      768,
+      8,
+      8
+    ]
+  ],
+  "sample_loss": 1.4144022464752197,
+  "logits_shape": [
+    4,
+    1,
+    256,
+    256
+  ],
+  "encoder_unchanged": true,
+  "encoder_parameters": 50140584,
+  "trainable_parameters": 5563009,
+  "total_parameters": 55703593,
+  "passed": true
+}

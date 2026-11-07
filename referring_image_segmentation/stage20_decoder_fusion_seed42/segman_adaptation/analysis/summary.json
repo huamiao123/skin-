@@ -1,0 +1,266 @@
+{
+  "seed": 42,
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "models": {
+    "segman": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8809432126633666,
+        "iou": 0.8052279121113907,
+        "precision": 0.9020263521842565,
+        "recall": 0.8975556463706684,
+        "boundary_f1": 0.32494983233904745,
+        "hd95_pixels": 16.87229820900447,
+        "hd95_diagonal": 0.0466035799913621
+      },
+      "pooled": {
+        "dice": 0.8862274506796988,
+        "iou": 0.7956987728064713,
+        "precision": 0.8812033985277751,
+        "recall": 0.8913091191178991
+      },
+      "prec_at": {
+        "0.5": 0.9381188118811881,
+        "0.6": 0.9047029702970297,
+        "0.7": 0.8267326732673267,
+        "0.8": 0.6794554455445545,
+        "0.9": 0.3118811881188119
+      },
+      "threshold_jaccard_065": 0.7460465623332198,
+      "counts": {
+        "tp": 11488610,
+        "fp": 1548800,
+        "fn": 1400981,
+        "tn": 38514697
+      },
+      "selected_epoch": 105
+    },
+    "swin": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8833800750829818,
+        "iou": 0.8095505880995063,
+        "precision": 0.9071652343550948,
+        "recall": 0.8952603741087835,
+        "boundary_f1": 0.3375247041453978,
+        "hd95_pixels": 16.625235450567537,
+        "hd95_diagonal": 0.04592115908562223
+      },
+      "pooled": {
+        "dice": 0.8901234656373288,
+        "iou": 0.8020022390584804,
+        "precision": 0.8986667484790255,
+        "recall": 0.8817410886039752
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8403465346534653,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.3131188118811881
+      },
+      "threshold_jaccard_065": 0.7538649104405276,
+      "counts": {
+        "tp": 11365282,
+        "fp": 1281544,
+        "fn": 1524309,
+        "tn": 38781953
+      },
+      "selected_epoch": 127
+    }
+  },
+  "comparison_segman_minus_swin": {
+    "macro_dice_delta": -0.0024368624196151956,
+    "bootstrap95": [
+      -0.007120914849236697,
+      0.0023411730240974864
+    ],
+    "better": 360,
+    "worse": 448,
+    "ties": 0,
+    "corrected_pixels": 833746,
+    "introduced_pixels": 977674,
+    "largest_improvements": [
+      {
+        "id": "193",
+        "delta_dice": 0.7524402428714165
+      },
+      {
+        "id": "45",
+        "delta_dice": 0.46113355106935433
+      },
+      {
+        "id": "633",
+        "delta_dice": 0.3570061586137646
+      },
+      {
+        "id": "601",
+        "delta_dice": 0.34313251243176157
+      },
+      {
+        "id": "540",
+        "delta_dice": 0.3212280575546109
+      },
+      {
+        "id": "305",
+        "delta_dice": 0.31608615381666894
+      },
+      {
+        "id": "156",
+        "delta_dice": 0.21597012656552375
+      },
+      {
+        "id": "628",
+        "delta_dice": 0.20007328108073663
+      },
+      {
+        "id": "90",
+        "delta_dice": 0.19459123787227156
+      },
+      {
+        "id": "20",
+        "delta_dice": 0.19057654007691
+      }
+    ],
+    "largest_regressions": [
+      {
+        "id": "186",
+        "delta_dice": -0.5074521077898559
+      },
+      {
+        "id": "538",
+        "delta_dice": -0.3956159996860738
+      },
+      {
+        "id": "281",
+        "delta_dice": -0.39153775451535516
+      },
+      {
+        "id": "431",
+        "delta_dice": -0.3352291691082371
+      },
+      {
+        "id": "130",
+        "delta_dice": -0.31202663933326924
+      },
+      {
+        "id": "463",
+        "delta_dice": -0.28340385170008475
+      },
+      {
+        "id": "482",
+        "delta_dice": -0.2760751794069439
+      },
+      {
+        "id": "149",
+        "delta_dice": -0.22866299921339228
+      },
+      {
+        "id": "358",
+        "delta_dice": -0.2218059426174427
+      },
+      {
+        "id": "709",
+        "delta_dice": -0.2196101548989874
+      }
+    ]
+  },
+  "strata": [
+    {
+      "group": "lt10pct",
+      "n": 269,
+      "macro_dice": {
+        "segman": 0.8769213713683184,
+        "swin": 0.8883157277460323
+      }
+    },
+    {
+      "group": "10to30pct",
+      "n": 274,
+      "macro_dice": {
+        "segman": 0.8767511148850274,
+        "swin": 0.8701233500828975
+      }
+    },
+    {
+      "group": "ge30pct",
+      "n": 265,
+      "macro_dice": {
+        "segman": 0.8893602319072647,
+        "swin": 0.8920768753986895
+      }
+    }
+  ],
+  "parameters": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "seed": 42,
+    "segman_revision": "9ced66ab27f23b0dbc1b0a2fe0ba42e133c55ac8",
+    "source_sha256": "67bea12cb22409344e59908c2ee4b916adcad76be6fb7b2ea43fce988e5b1516",
+    "cross_scan_source_sha256": "533c1eaf78853dc8d6e03eea6682d75a15836bb9da2bf290286e0a784df828ad",
+    "method": "SegMAN-small decoder adapted with standalone framework shims and standard selective scan",
+    "official_reproduction": false,
+    "precision": "BF16 autocast with FP32 loss",
+    "cross_scan_max_abs": 0.0,
+    "cross_scan_grad_max_abs": 4.76837158203125e-07,
+    "standard_scan_reference_max_abs": 5.7220458984375e-06,
+    "standard_scan_reference_gradient_max_abs": 7.62939453125e-06,
+    "real_feature_shapes": [
+      [
+        4,
+        96,
+        64,
+        64
+      ],
+      [
+        4,
+        192,
+        32,
+        32
+      ],
+      [
+        4,
+        384,
+        16,
+        16
+      ],
+      [
+        4,
+        768,
+        8,
+        8
+      ]
+    ],
+    "sample_loss": 1.4144022464752197,
+    "logits_shape": [
+      4,
+      1,
+      256,
+      256
+    ],
+    "encoder_unchanged": true,
+    "encoder_parameters": 50140584,
+    "trainable_parameters": 5563009,
+    "total_parameters": 55703593,
+    "passed": true
+  },
+  "benchmark": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "precision": "BF16 autocast",
+    "batch": 1,
+    "warmup": 10,
+    "repeats": 50,
+    "scope": "full MambaVision-S + adapted SegMAN decoder + mask head, no data loading",
+    "mean_ms": 10.567794539983879,
+    "median_ms": 10.307130999990477,
+    "peak_allocated_gib": 0.37199831008911133
+  },
+  "limitations": [
+    "single seed and development validation used for selection",
+    "SegMAN framework and selective-scan adaptation, not the official full reproduction",
+    "decoder parameters and normalization differ greatly from Swin",
+    "c1 is not used in the official decoder path",
+    "no independent external test"
+  ]
+}

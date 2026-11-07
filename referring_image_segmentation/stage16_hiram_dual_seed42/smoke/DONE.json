@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "updates": {
+    "paired_baseline": 60,
+    "region_only": 60,
+    "hiram": 60
+  },
+  "smoke_only": true,
+  "resumed": true,
+  "encoder_hashes": {
+    "dinov3": "1fa13c6c5546d18e5998c246452d5e305307b22b7f5d897f6a63f157c8bf2513",
+    "vmamba": "de90c61252d5fbf995e6b8487381b49f80655355d752131b7f2291117873d63a"
+  },
+  "encoder_unchanged": true,
+  "selectors": {
+    "paired_baseline": {
+      "best_dice": {
+        "epoch": 2,
+        "score": 0.8589527082269949
+      },
+      "best_loss": {
+        "epoch": 2,
+        "score": 0.35121234867832446
+      }
+    },
+    "region_only": {
+      "best_dice": {
+        "epoch": 1,
+        "score": 0.8517994225067141
+      },
+      "best_loss": {
+        "epoch": 1,
+        "score": 0.3910852051017308
+      }
+    },
+    "hiram": {
+      "best_dice": {
+        "epoch": 1,
+        "score": 0.8458303027760253
+      },
+      "best_loss": {
+        "epoch": 1,
+        "score": 0.38320286852298396
+      }
+    }
+  },
+  "active_training_seconds": 62.22957950200043
+}

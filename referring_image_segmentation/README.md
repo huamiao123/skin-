@@ -1,5 +1,9 @@
 # 图文指代分割项目
 
+## 最新：Decoder 论文模块实验（2026-11-07 发布）
+
+第 20 轮 AXIS-Bridge 和 SegMAN 适配、第 21 轮 HGM BMD 适配及其每组最佳 Dice 权重已归档：[逐图 Dice 实验汇总](experiment_inventory_macro_dice_20261107.md) · [AXIS 报告](stage20_decoder_fusion_seed42/analysis/REPORT.md) · [SegMAN 报告](stage20_decoder_fusion_seed42/segman_adaptation/analysis/REPORT.md) · [HGM 报告](stage21_hgm_bmd_seed42/analysis/REPORT.md)。这些是单种子、开发验证集选模的模块适配，不是完整论文复现。数据、预训练 backbone 和上游第三方源码不在仓库内，参见[发布说明](publication/STAGE20_21_20261107.md)。
+
 ## 最新：MambaVision 与 HiRAM 实验（2026-11-06 发布）
 
 第十四至十九轮及各组验证 Macro Dice 最佳权重已归档：[发布说明与权重清单](publication/STAGE14_19_20261106.md) · [最新区域扫描结果](stage19_region_mambavision_encoder_seed42/analysis/REPORT.md) · [特征与区域路由诊断](diagnostics/feature_analysis_20261101/REPORT.md)。当前结果来自 ISIC2018 旧开发划分、seed 42，不是独立测试成绩。各权重仅含分割头、适配器和区域模块等非骨干参数，复现需要另行获取原始数据、冻结预训练骨干和运行依赖。

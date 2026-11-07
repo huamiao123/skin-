@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "smoke_only": true,
+  "checks": [
+    {
+      "criterion": "best_dice",
+      "n": 16,
+      "selected_epoch": 2,
+      "selector_matches_history": true,
+      "saved_region_metrics_reproduced_exactly": true,
+      "independent_counts_dice_iou_passed": true
+    },
+    {
+      "criterion": "best_loss",
+      "n": 16,
+      "selected_epoch": 2,
+      "selector_matches_history": true,
+      "saved_region_metrics_reproduced_exactly": true,
+      "independent_counts_dice_iou_passed": true
+    },
+    {
+      "criterion": "last",
+      "n": 16,
+      "selected_epoch": 2,
+      "selector_matches_history": true,
+      "saved_region_metrics_reproduced_exactly": true,
+      "independent_counts_dice_iou_passed": true
+    }
+  ],
+  "encoder_parameters_and_buffers_unchanged": true,
+  "all_three_checkpoints_retained": true
+}

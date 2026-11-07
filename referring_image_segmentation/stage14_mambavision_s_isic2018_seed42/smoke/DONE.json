@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "updates": 60,
+  "smoke_only": true,
+  "resumed": true,
+  "resume_audit": {
+    "checkpoint_epoch": 1,
+    "start_epoch": 2,
+    "updates_restored": 30,
+    "model_hash_restored": true,
+    "optimizer_exact": true,
+    "scheduler_exact": true,
+    "python_numpy_cpu_cuda_rng_exact": true,
+    "reinitialized": false,
+    "probe_hash": "6a760e6448c3fd242ff147a8637dd4ffc376521b394f33bf1929afdf4ba55645"
+  },
+  "encoder_unchanged_including_bn_buffers": true,
+  "initial_encoder_hash": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "final_encoder_hash": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "active_training_seconds": 19.905540631000008,
+  "epoch_seconds_sum": 7.362467209999863,
+  "selectors": {
+    "best_dice": {
+      "epoch": 2,
+      "score": 0.8381962046737189
+    },
+    "best_loss": {
+      "epoch": 2,
+      "score": 0.4091404269237329
+    }
+  },
+  "checkpoints": {
+    "best_dice": {
+      "path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/smoke/best_dice.pth",
+      "sha256": "c2c6964cb246ecea8b333e0a9bcb309c26759296171bc1925daf71425c1e2ea5"
+    },
+    "best_loss": {
+      "path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/smoke/best_loss.pth",
+      "sha256": "7e564a663d8d7c0a963c85a734120122c81206a35a80f3f8c7eb4cfb5be16a68"
+    },
+    "last": {
+      "path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/smoke/last.pth",
+      "sha256": "4617ba5676461584f92e21b1789a4d0d2c7a27d135a08db41af50b1fd4dcfa92"
+    }
+  }
+}

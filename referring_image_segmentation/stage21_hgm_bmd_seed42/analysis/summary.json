@@ -1,0 +1,282 @@
+{
+  "seed": 42,
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "models": {
+    "hgm_bmd": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8823940144514895,
+        "iou": 0.8076948200965591,
+        "precision": 0.8945204877041025,
+        "recall": 0.907156009280127,
+        "boundary_f1": 0.32007977945110777,
+        "hd95_pixels": 17.16543456030495,
+        "hd95_diagonal": 0.04741326242033417
+      },
+      "pooled": {
+        "dice": 0.8894865332229295,
+        "iou": 0.8009687048680239,
+        "precision": 0.8884436149910897,
+        "recall": 0.8905319028353964
+      },
+      "prec_at": {
+        "0.5": 0.943069306930693,
+        "0.6": 0.900990099009901,
+        "0.7": 0.8366336633663366,
+        "0.8": 0.6670792079207921,
+        "0.9": 0.3056930693069307
+      },
+      "threshold_jaccard_065": 0.7460007128145298,
+      "counts": {
+        "tp": 11478592,
+        "fp": 1441296,
+        "fn": 1410999,
+        "tn": 38622201
+      },
+      "selected_epoch": 116
+    },
+    "swin": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8833800750829818,
+        "iou": 0.8095505880995063,
+        "precision": 0.9071652343550948,
+        "recall": 0.8952603741087835,
+        "boundary_f1": 0.3375247041453978,
+        "hd95_pixels": 16.625235450567537,
+        "hd95_diagonal": 0.04592115908562223
+      },
+      "pooled": {
+        "dice": 0.8901234656373288,
+        "iou": 0.8020022390584804,
+        "precision": 0.8986667484790255,
+        "recall": 0.8817410886039752
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8403465346534653,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.3131188118811881
+      },
+      "threshold_jaccard_065": 0.7538649104405276,
+      "counts": {
+        "tp": 11365282,
+        "fp": 1281544,
+        "fn": 1524309,
+        "tn": 38781953
+      },
+      "selected_epoch": 127
+    }
+  },
+  "comparison_hgm_bmd_minus_swin": {
+    "macro_dice_delta": -0.0009860606314924295,
+    "bootstrap95": [
+      -0.00563858362079827,
+      0.003900018817551586
+    ],
+    "better": 393,
+    "worse": 414,
+    "ties": 1,
+    "corrected_pixels": 702624,
+    "introduced_pixels": 749066,
+    "largest_improvements": [
+      {
+        "id": "45",
+        "delta_dice": 0.5716926824237816
+      },
+      {
+        "id": "20",
+        "delta_dice": 0.5346395122915388
+      },
+      {
+        "id": "633",
+        "delta_dice": 0.4074582299560279
+      },
+      {
+        "id": "77",
+        "delta_dice": 0.3780843651027006
+      },
+      {
+        "id": "90",
+        "delta_dice": 0.2995092225125609
+      },
+      {
+        "id": "628",
+        "delta_dice": 0.27293577981651373
+      },
+      {
+        "id": "60",
+        "delta_dice": 0.22064877574889363
+      },
+      {
+        "id": "275",
+        "delta_dice": 0.2138958415036985
+      },
+      {
+        "id": "544",
+        "delta_dice": 0.20159914775316906
+      },
+      {
+        "id": "126",
+        "delta_dice": 0.18556322763478675
+      }
+    ],
+    "largest_regressions": [
+      {
+        "id": "53",
+        "delta_dice": -0.5246511144148939
+      },
+      {
+        "id": "7",
+        "delta_dice": -0.46799471149246796
+      },
+      {
+        "id": "67",
+        "delta_dice": -0.4519828672209624
+      },
+      {
+        "id": "143",
+        "delta_dice": -0.2742096423569341
+      },
+      {
+        "id": "218",
+        "delta_dice": -0.2690101861602585
+      },
+      {
+        "id": "147",
+        "delta_dice": -0.26182348278985507
+      },
+      {
+        "id": "83",
+        "delta_dice": -0.25256713221178595
+      },
+      {
+        "id": "8",
+        "delta_dice": -0.23502691321809144
+      },
+      {
+        "id": "712",
+        "delta_dice": -0.2132598853264751
+      },
+      {
+        "id": "40",
+        "delta_dice": -0.20560187373904415
+      }
+    ]
+  },
+  "strata": [
+    {
+      "group": "lt10pct",
+      "n": 269,
+      "macro_dice": {
+        "hgm_bmd": 0.8769202813297139,
+        "swin": 0.8883157277460323
+      }
+    },
+    {
+      "group": "10to30pct",
+      "n": 274,
+      "macro_dice": {
+        "hgm_bmd": 0.8762405319272875,
+        "swin": 0.8701233500828975
+      }
+    },
+    {
+      "group": "ge30pct",
+      "n": 265,
+      "macro_dice": {
+        "hgm_bmd": 0.8943128386831458,
+        "swin": 0.8920768753986895
+      }
+    }
+  ],
+  "parameters": {
+    "passed": true,
+    "seed": 42,
+    "data_counts": {
+      "train": 1886,
+      "val": 808
+    },
+    "historical_manifest_exact_match": true,
+    "encoder_sha256": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+    "encoder_unchanged_including_buffers": true,
+    "encoder_pretrained_audit": {
+      "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+      "strict_load": true,
+      "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+      "weights_equal": true,
+      "scan_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so"
+    },
+    "encoder_parameters": 50140584,
+    "trainable_parameters": 1046521,
+    "total_parameters": 51188257,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "torch": "2.2.2+cu121",
+    "cuda": "12.1",
+    "hgm_revision": "49ae05afc9785dbbc5a303d39e63588b068e5328",
+    "source_sha256": {
+      "hgm_decoder_source.py": "8c783b14dcedd13d98c433213d2a8f33c8ea0aec5bb4fa8281914b2d73c7a8da",
+      "hgm_fsem_source.py": "107b4fd749bf6443b1e55e603216bca43c2e97d9878d747a392d260e10b6367b",
+      "hgm_psa_source.py": "367f99050964ef7ab15a2291dd9304d1330da56fc47d846ca2a7c6883cea8c0e"
+    },
+    "baseline_initial_hash": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+    "shared_initialization_matches_baseline": true,
+    "features": [
+      [
+        4,
+        96,
+        64,
+        64
+      ],
+      [
+        4,
+        192,
+        32,
+        32
+      ],
+      [
+        4,
+        384,
+        16,
+        16
+      ],
+      [
+        4,
+        768,
+        8,
+        8
+      ]
+    ],
+    "output_shape": [
+      4,
+      1,
+      256,
+      256
+    ],
+    "sample_loss": 1.4355937242507935,
+    "precision": "BF16 autocast with FP32 HGM Mamba and loss",
+    "official_hgm_reproduction": false,
+    "method": "partial Swin + adapted HGM BMD; not full HGM"
+  },
+  "benchmark": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "precision": "BF16 autocast with FP32 HGM Mamba",
+    "batch": 1,
+    "warmup": 10,
+    "repeats": 50,
+    "scope": "full MambaVision-S + adapted partial Swin and HGM BMD + mask head, no data loading",
+    "mean_ms": 17.633914360048948,
+    "median_ms": 17.650691499511595,
+    "peak_allocated_gib": 0.33469152450561523
+  },
+  "limitations": [
+    "single seed and development validation used for selection",
+    "partial Swin plus HGM BMD adaptation, not the complete HGM architecture",
+    "decoder parameters, topology and normalization differ from Swin",
+    "FP32 Mamba 1.2.2 versus upstream dependency 2.2.4",
+    "no independent external test"
+  ]
+}

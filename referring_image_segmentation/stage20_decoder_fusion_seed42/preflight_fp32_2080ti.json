@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "torch": "2.2.2+cu121",
+  "cuda": "12.1",
+  "bf16_supported": false,
+  "precision": "FP32 for paired models, encoder and loss",
+  "axis_source_sha256": "5a054761661647b0ed8fe8d2bf67f4878c0f9aafdaf75d2e6f68e482a64bddf1",
+  "baseline_forward_max_abs_error": 0.0,
+  "reference_initial_hash": "297771b5b6b9c8043c9b84040b87957d18e74091848613d39777f71a7f844219",
+  "stage14_initial_hash": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+  "initialization_matches_stage14": false,
+  "initialization_matches_stage17": false,
+  "axis_explicit_formula_max_abs_error": 2.384185791015625e-07,
+  "data_counts": {
+    "train": 1886,
+    "val": 808
+  },
+  "historical_manifest_exact_match": true,
+  "encoder_sha256": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "pretrained": {
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "weights_equal": true,
+    "scan_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so"
+  },
+  "encoder_parameters": 50140584,
+  "encoder_features": [
+    [
+      4,
+      96,
+      64,
+      64
+    ],
+    [
+      4,
+      192,
+      32,
+      32
+    ],
+    [
+      4,
+      384,
+      16,
+      16
+    ],
+    [
+      4,
+      768,
+      8,
+      8
+    ]
+  ],
+  "encoder_peak_gib_including_resident_data": 0.9307632446289062,
+  "models": {
+    "paired_baseline": {
+      "trainable": 500321,
+      "sample_loss": 1.594395637512207,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    },
+    "gate_only": {
+      "trainable": 503393,
+      "sample_loss": 1.5079894065856934,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    },
+    "axis_bridge": {
+      "trainable": 503649,
+      "sample_loss": 1.4851901531219482,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    }
+  },
+  "encoder_unchanged_including_buffers": true,
+  "passed": true
+}

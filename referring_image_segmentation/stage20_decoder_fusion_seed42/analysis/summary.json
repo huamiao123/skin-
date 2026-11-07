@@ -1,0 +1,405 @@
+{
+  "seed": 42,
+  "split": "legacy ISIC2018 1886/808 development validation",
+  "selection": "best validation macro Dice",
+  "models": {
+    "paired_baseline": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8833800750829818,
+        "iou": 0.8095505880995063,
+        "precision": 0.9071652343550948,
+        "recall": 0.8952603741087835,
+        "boundary_f1": 0.3375247041453978,
+        "hd95_pixels": 16.625235450567537,
+        "hd95_diagonal": 0.04592115908562223
+      },
+      "pooled": {
+        "dice": 0.8901234656373288,
+        "iou": 0.8020022390584804,
+        "precision": 0.8986667484790255,
+        "recall": 0.8817410886039752
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8403465346534653,
+        "0.8": 0.6757425742574258,
+        "0.9": 0.3131188118811881
+      },
+      "threshold_jaccard_065": 0.7538649104405276,
+      "counts": {
+        "tp": 11365282,
+        "fp": 1281544,
+        "fn": 1524309,
+        "tn": 38781953
+      },
+      "selected_epoch": 127
+    },
+    "gate_only": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8815346240428368,
+        "iou": 0.8052484302851246,
+        "precision": 0.8942655556798004,
+        "recall": 0.9047929630738322,
+        "boundary_f1": 0.32443666601722704,
+        "hd95_pixels": 16.94760866436964,
+        "hd95_diagonal": 0.04681159770106118
+      },
+      "pooled": {
+        "dice": 0.8856948201939887,
+        "iou": 0.7948404407024104,
+        "precision": 0.88022518497359,
+        "recall": 0.8912328560308856
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.9071782178217822,
+        "0.7": 0.8316831683168316,
+        "0.8": 0.6584158415841584,
+        "0.9": 0.2908415841584158
+      },
+      "threshold_jaccard_065": 0.7513043979050555,
+      "counts": {
+        "tp": 11487627,
+        "fp": 1563155,
+        "fn": 1401964,
+        "tn": 38500342
+      },
+      "selected_epoch": 32
+    },
+    "axis_bridge": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 808,
+      "macro": {
+        "dice": 0.8843984656691976,
+        "iou": 0.8105387440286911,
+        "precision": 0.9065409398059295,
+        "recall": 0.897989898095264,
+        "boundary_f1": 0.35379672978842286,
+        "hd95_pixels": 16.577997394319123,
+        "hd95_diagonal": 0.04579068115631237
+      },
+      "pooled": {
+        "dice": 0.8867911196971803,
+        "iou": 0.7966080179453399,
+        "precision": 0.8949498684491218,
+        "recall": 0.8787797844012273
+      },
+      "prec_at": {
+        "0.5": 0.9443069306930693,
+        "0.6": 0.905940594059406,
+        "0.7": 0.8366336633663366,
+        "0.8": 0.6683168316831684,
+        "0.9": 0.33663366336633666
+      },
+      "threshold_jaccard_065": 0.7546339392864087,
+      "counts": {
+        "tp": 11327112,
+        "fp": 1329588,
+        "fn": 1562479,
+        "tn": 38733909
+      },
+      "selected_epoch": 159
+    }
+  },
+  "comparisons": {
+    "gate_only": {
+      "macro_dice_delta": -0.001845451040145122,
+      "bootstrap95": [
+        -0.006199019683754333,
+        0.002584131517818688
+      ],
+      "better": 356,
+      "worse": 452,
+      "ties": 0,
+      "corrected_pixels": 623239,
+      "introduced_errors": 782505,
+      "net_errors_removed": -159266,
+      "largest_regressions": [
+        {
+          "id": "635",
+          "delta_dice": -0.3893224045369128
+        },
+        {
+          "id": "149",
+          "delta_dice": -0.36391960442687343
+        },
+        {
+          "id": "67",
+          "delta_dice": -0.3626982098742896
+        },
+        {
+          "id": "53",
+          "delta_dice": -0.3149755923407844
+        },
+        {
+          "id": "7",
+          "delta_dice": -0.27883832875555203
+        },
+        {
+          "id": "712",
+          "delta_dice": -0.24832742775127542
+        },
+        {
+          "id": "554",
+          "delta_dice": -0.24045423411734634
+        },
+        {
+          "id": "55",
+          "delta_dice": -0.23492112064248832
+        },
+        {
+          "id": "83",
+          "delta_dice": -0.20239544338284132
+        },
+        {
+          "id": "636",
+          "delta_dice": -0.18455298191091274
+        }
+      ],
+      "largest_improvements": [
+        {
+          "id": "193",
+          "delta_dice": 0.4477496619663898
+        },
+        {
+          "id": "633",
+          "delta_dice": 0.41514270271454423
+        },
+        {
+          "id": "90",
+          "delta_dice": 0.39843468981970215
+        },
+        {
+          "id": "156",
+          "delta_dice": 0.34137528983824683
+        },
+        {
+          "id": "45",
+          "delta_dice": 0.33463767982910725
+        },
+        {
+          "id": "20",
+          "delta_dice": 0.3064578408583461
+        },
+        {
+          "id": "210",
+          "delta_dice": 0.2111564060207135
+        },
+        {
+          "id": "393",
+          "delta_dice": 0.19995221599735113
+        },
+        {
+          "id": "60",
+          "delta_dice": 0.179457412738254
+        },
+        {
+          "id": "611",
+          "delta_dice": 0.1793584748284619
+        }
+      ]
+    },
+    "axis_bridge": {
+      "macro_dice_delta": 0.001018390586215819,
+      "bootstrap95": [
+        -0.0027677518374512357,
+        0.004877054599540351
+      ],
+      "better": 426,
+      "worse": 382,
+      "ties": 0,
+      "corrected_pixels": 611172,
+      "introduced_errors": 697386,
+      "net_errors_removed": -86214,
+      "largest_regressions": [
+        {
+          "id": "431",
+          "delta_dice": -0.517520604425459
+        },
+        {
+          "id": "329",
+          "delta_dice": -0.30052245451772513
+        },
+        {
+          "id": "113",
+          "delta_dice": -0.2106671993094959
+        },
+        {
+          "id": "779",
+          "delta_dice": -0.20844860878169946
+        },
+        {
+          "id": "164",
+          "delta_dice": -0.19921338463286375
+        },
+        {
+          "id": "146",
+          "delta_dice": -0.19430513279930028
+        },
+        {
+          "id": "662",
+          "delta_dice": -0.18911398251083145
+        },
+        {
+          "id": "195",
+          "delta_dice": -0.17156119686637128
+        },
+        {
+          "id": "7",
+          "delta_dice": -0.16743661571152668
+        },
+        {
+          "id": "272",
+          "delta_dice": -0.16271766143390154
+        }
+      ],
+      "largest_improvements": [
+        {
+          "id": "45",
+          "delta_dice": 0.488175460661672
+        },
+        {
+          "id": "156",
+          "delta_dice": 0.4735083940663203
+        },
+        {
+          "id": "628",
+          "delta_dice": 0.3355205072638253
+        },
+        {
+          "id": "20",
+          "delta_dice": 0.32300393908717245
+        },
+        {
+          "id": "90",
+          "delta_dice": 0.3216573080978276
+        },
+        {
+          "id": "53",
+          "delta_dice": 0.21922119224444814
+        },
+        {
+          "id": "670",
+          "delta_dice": 0.18841911920901944
+        },
+        {
+          "id": "210",
+          "delta_dice": 0.18383622426978707
+        },
+        {
+          "id": "548",
+          "delta_dice": 0.18340729054560578
+        },
+        {
+          "id": "633",
+          "delta_dice": 0.1798747474797433
+        }
+      ]
+    },
+    "axis_minus_gate_only": {
+      "macro_dice_delta": 0.0028638416263609408,
+      "better": 462,
+      "worse": 346,
+      "ties": 0
+    }
+  },
+  "strata": [
+    {
+      "group": "lt10pct",
+      "n": 269,
+      "macro_dice": {
+        "paired_baseline": 0.8883157277460323,
+        "gate_only": 0.8788419270959332,
+        "axis_bridge": 0.8898739395293099
+      }
+    },
+    {
+      "group": "10to30pct",
+      "n": 274,
+      "macro_dice": {
+        "paired_baseline": 0.8701233500828975,
+        "gate_only": 0.8768467287820971,
+        "axis_bridge": 0.8792376016632741
+      }
+    },
+    {
+      "group": "ge30pct",
+      "n": 265,
+      "macro_dice": {
+        "paired_baseline": 0.8920768753986895,
+        "gate_only": 0.8891150722698546,
+        "axis_bridge": 0.884176481779586
+      }
+    }
+  ],
+  "parameters": {
+    "paired_baseline": {
+      "trainable": 500321,
+      "sample_loss": 1.5946263074874878,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    },
+    "gate_only": {
+      "trainable": 503393,
+      "sample_loss": 1.5081502199172974,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    },
+    "axis_bridge": {
+      "trainable": 503649,
+      "sample_loss": 1.4845218658447266,
+      "output_shape": [
+        4,
+        1,
+        256,
+        256
+      ]
+    }
+  },
+  "benchmark": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "warmup": 10,
+    "repeats": 50,
+    "batch": 1,
+    "precision": "BF16 autocast",
+    "scope": "MambaVision-S + adapter + full decoder + head; no data loading",
+    "models": {
+      "paired_baseline": {
+        "mean_ms": 29.72944147997623,
+        "median_ms": 28.88651750004101,
+        "peak_allocated_gib": 0.33165836334228516
+      },
+      "gate_only": {
+        "mean_ms": 41.74250955997195,
+        "median_ms": 40.2404134997596,
+        "peak_allocated_gib": 0.33167552947998047
+      },
+      "axis_bridge": {
+        "mean_ms": 34.8396868400323,
+        "median_ms": 32.585116500058575,
+        "peak_allocated_gib": 0.3316774368286133
+      }
+    }
+  },
+  "limitations": [
+    "single seed",
+    "development validation also used for checkpoint selection",
+    "paired baseline rerun because historical initialization hashes differ; BF16 matches historical precision",
+    "one AXIS-Bridge at the 32x32 skip, not full HEDS-Net reproduction",
+    "32x32 position was selected for a controlled first intervention, not proven optimal",
+    "added trainable parameters and different compute may contribute to any difference"
+  ]
+}
