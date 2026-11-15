@@ -1,0 +1,34 @@
+{
+  "training": false,
+  "test_read": false,
+  "validation_n": 762,
+  "reference": "stage37_lr_horizon100/swin_control/results/swin_control_best_dice.pth",
+  "reference_reason": "Latest locked Swin baseline, prospectively fixed before coverage; not chosen by test results.",
+  "resolution": 256,
+  "coarse_resolution": 64,
+  "subdivision_sizes": [
+    128,
+    256
+  ],
+  "budgets": [
+    256,
+    1024,
+    4096,
+    8192
+  ],
+  "primary_budget": 1024,
+  "controls": [
+    "original direct bilinear baseline exact replay",
+    "two-step bilinear with no point overwrites",
+    "same-budget uniform random grid positions with3 fixed seeds"
+  ],
+  "diagnostics": [
+    "fraction of FP/FN covered by final selected positions",
+    "fraction of errors covered by two-level spatial influence footprint",
+    "ideal label replacement only at fixed final selected positions",
+    "confidence of uncorrected errors"
+  ],
+  "pilot_rule": "At primary1024 budget: final-grid error coverage>=10%, ideal fixed-selected-set macro Dice gain>=0.5pp, and error coverage>=2x random. This is only a low-cost feasibility screen, not predicted real gain or entire PointRend upper bound.",
+  "interpretation": "No learned point head yet. Selections come from unmodified coarse upsampling, not dynamic learned intermediate updates. Footprint/oracle diagnostics are optimistic and not achievable-method claims.",
+  "created_utc": "2026-11-12T05:28:09.409406+00:00"
+}

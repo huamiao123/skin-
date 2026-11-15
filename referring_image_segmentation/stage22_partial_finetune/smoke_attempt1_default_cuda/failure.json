@@ -1,0 +1,5 @@
+{
+  "state": "failed",
+  "error": "Traceback (most recent call last):\n  File \"/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py\", line 382, in <module>\n    try:main()\n        ^^^^^^\n  File \"/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py\", line 324, in main\n    preflight(models,opts,data,train_cache,micro,out)\n  File \"/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py\", line 239, in preflight\n    assert all(torch.equal(v.cpu(),expected[k]) for k,v in model.state_dict().items())\nAssertionError\n",
+  "pid": 1679
+}

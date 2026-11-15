@@ -1,0 +1,126 @@
+{
+  "stage": 47,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "native_fixed",
+    "position_bias",
+    "shifted_windows"
+  ],
+  "question": "Keep original14/7 encoder windows and original Mamba paths; separate native attention implementation, learnable relative bias and shifted-window interaction.",
+  "changes": {
+    "native_fixed": "Native Swin attention blocks with original14/7 windows, no shift, zero frozen relative bias: attention implementation control.",
+    "position_bias": "Same native attention and14/7 windows, no shift; enable learning of zero-initialized relative bias.",
+    "shifted_windows": "Same native attention and trainable relative bias; alternate shifts0/7/0 in Stage3 and0/3 in Stage4."
+  },
+  "primary_reference": "Completed Stage45 UPer64 on same4090, seed42, late-only adaptation and identical training/evaluation recipe.",
+  "encoder": "Early CNN frozen; levels2/3 trainable; complete encoder eval. Original Mamba blocks, sequence14x14/7x7, padding and weights retained.",
+  "decoder": "Identical freshly initialized pinned native UPerHead64 in all arms; no Stage44 early adaptation.",
+  "initialization": "Fresh official ImageNet MambaVision-S each arm; all compatible pretrained tensors exactly migrated. New relative bias tables initialized zero. No warm-start from best segmentation checkpoint.",
+  "swin": {
+    "source": "Microsoft official Swin-Transformer pinned in research/swin_encoder_author_20261112",
+    "in_channels": [
+      384,
+      768
+    ],
+    "heads": [
+      8,
+      16
+    ],
+    "input_hw": [
+      [
+        28,
+        28
+      ],
+      [
+        14,
+        14
+      ]
+    ],
+    "window": [
+      14,
+      7
+    ],
+    "stage3_shifts": [
+      0,
+      7,
+      0
+    ],
+    "stage4_shifts": [
+      0,
+      3
+    ],
+    "relative_bias_init": "zero",
+    "reused": [
+      "qkv weight/bias",
+      "output projection weight/bias",
+      "norm1/norm2",
+      "MLP"
+    ],
+    "boundary_mask": "Native Swin mask blocks cyclic wrap only. No newly introduced valid-pixel padding mask. All arms preserve original padded feature slots; interactions with padding remain part of shift intervention.",
+    "implementation": "Untouched author SwinTransformerBlock, WindowAttention, Mlp and partition/reverse AST nodes with actual timm helpers; custom level orchestration only.",
+    "adaptation": "Existing padding to28/14 and original Mamba scan sequences preserved. All compatible original weights copied exactly. Zero relative bias frozen in implementation control and trainable in other arms. Not a full Swin backbone."
+  },
+  "training": {
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "clip_per_group": 1.0,
+    "optimizer": "AdamW",
+    "physical_batch": 64,
+    "effective_batch": 64,
+    "evaluation_batch": 64,
+    "cosine_horizon": 100,
+    "cosine_floor": 0.01,
+    "loss": "original soft-target BCE + per-image softDice",
+    "forward_precision": "BF16",
+    "loss_precision": "FP32"
+  },
+  "data": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "input": 256,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "All3 arms complete100epochs before full867test. Each selects max762validation per-image macroDice with earliest tie.",
+  "comparisons": [
+    "native_fixed vs Stage45: native attention implementation and spatial orchestration control",
+    "position_bias vs native_fixed: relative position bias learning",
+    "shifted_windows vs position_bias: alternating spatial shift with native cyclic boundary mask",
+    "all new arms vs Stage45: overall utility under original windows"
+  ],
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "test_used": false,
+    "incremental_pairs": [
+      [
+        "native_fixed",
+        "position_bias"
+      ],
+      [
+        "position_bias",
+        "shifted_windows"
+      ]
+    ]
+  },
+  "checks": [
+    "exact pretrained tensor migration and original UPer64 initialization",
+    "original stage-wise Mamba outputs bitwise identical for same stage inputs",
+    "retain evolved padded features through attention, crop only at original stage output",
+    "native_fixed and position_bias initially identical outputs; only bias trainability differs",
+    "author source unchanged; original fixed attention FP32 equivalence tolerance",
+    "both stage3 andstage4 true cross-window influence with blocked cyclic wrap",
+    "real64 batch finite gradients, optimizer restart and full762validation replay"
+  ],
+  "cost": "Preserve physical/effective64; if capacity fails stop before any formal training.",
+  "numeric_equivalence": {
+    "fp64_math_output": "bitwise exact original explicit attention vs native Swin",
+    "fp32_relative_l2_max": 2e-06,
+    "fp32_max_abs_divided_by_output_max_abs_max": 5e-06,
+    "reason": "Old fixed pointwise atol3e-5 rejects normal cancellation-near-zero FP32 kernel differences; diagnosed original stage4 output max202.74, maxdiff2.14e-4, relativeL2 8.18e-7, FP64 difference0. Keep separate native implementation control.",
+    "unchanged_checks": "Historical full762 validation binary predictions exact; cache/direct exact; restored forward loss exact; optimizer replay tolerances unchanged."
+  }
+}

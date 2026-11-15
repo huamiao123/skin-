@@ -1,0 +1,28 @@
+{
+  "protocol": {
+    "stage": "stage31_attention_diagnosis",
+    "purpose": "Distinguish weak learned conditioning from a weak residual path, and characterize remaining validation errors before designing training changes.",
+    "training": false,
+    "validation_n": 762,
+    "test_read": false,
+    "models": [
+      "eca_channel",
+      "cross_channel",
+      "cross_channel_scale"
+    ],
+    "selected_weights": "Existing Stage30 best validation macro Dice; immutable.",
+    "interventions": [
+      "channel identity",
+      "validation-wide mean pre-sigmoid channel logits",
+      "same fixed derangement of per-image channel logits across all layers",
+      "remove all residual fusion",
+      "cross_channel_scale only: equal scale, mean scale logits, permuted scale logits, jointly permuted channel/scale, remove each residual level"
+    ],
+    "interpretation": "Post-training counterfactuals, not retrained ablations. Validation means use no labels and are diagnostic only, not proposed deployable checkpoints. Permutation preserves empirical raw-logit marginals and cross-layer alignment, not image correspondence. No test-based selection.",
+    "metrics": "Original common evaluation.py definitions, all metrics and per-image rows for interventions; exact original prediction replay mandatory.",
+    "decision": "Do not launch new modules until results support a concrete hypothesis; no automatic tuning sweep."
+  },
+  "script_sha256": "78f968b1ed337c4af44e2b34907236272efb781b7e1940781b74605abe876c45",
+  "source_module_sha256": "b9676cfb348ab42320dc55a96b87ae007852438f56165bd532531124be6970c3",
+  "partition_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126"
+}

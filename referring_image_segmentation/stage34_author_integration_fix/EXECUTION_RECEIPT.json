@@ -1,0 +1,57 @@
+{
+  "updated_utc": "2026-11-11T14:48:33.655893+00:00",
+  "state": "formal_training_started",
+  "checks": {
+    "INTEGRATION_VERIFIED.json": true,
+    "REFERENCE_REPLAY_VERIFIED.json": true,
+    "swin_cga_author_init/preflight.json": true,
+    "swin_cga_author_init/RESUME_AUDIT.json": true,
+    "emcad64_exp2/preflight.json": true,
+    "emcad64_exp2/RESUME_AUDIT.json": true
+  },
+  "progress": {
+    "state": "running",
+    "stage": "stage34_author_integration_fix",
+    "arm": "swin_cga_author_init",
+    "epoch": 3,
+    "total_epochs": 100,
+    "updates_per_arm": 90,
+    "micro_batch": 48,
+    "effective_batch": 64,
+    "validation_macro_dice": {
+      "swin_cga_author_init": 0.8478757905411
+    },
+    "best": {
+      "swin_cga_author_init": {
+        "best_dice": 0.8568930107374583,
+        "best_loss": 0.3669965780313246
+      }
+    },
+    "seconds": 32.17130583200196,
+    "peak_allocated_gib": 14.424963474273682,
+    "reserved_gib": 15.259765625,
+    "pid": 18292
+  },
+  "pipeline": {
+    "stage": "stage34_author_integration_fix",
+    "state": "formal_training",
+    "arms": [
+      "swin_cga_author_init",
+      "emcad64_exp2"
+    ],
+    "epochs_per_arm": 100,
+    "lr_schedule_horizon": 300,
+    "pipeline_pid": 17816,
+    "updated_utc": "2026-11-11T14:46:15.092083+00:00",
+    "status_file": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix/swin_cga_author_init/results/run_status.json",
+    "resume_command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix/run_pipeline.py"
+    ],
+    "training_pid": 18292,
+    "arm": "swin_cga_author_init",
+    "completed_trainings": []
+  },
+  "archived_sources_unchanged": true,
+  "test_scheduled_after_both_trainings": true
+}

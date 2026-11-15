@@ -1,0 +1,6002 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "position_bias": 1.1950751391347114
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.7151463975662052,
+          "iou": 0.5895978082295343,
+          "precision": 0.6025381770797553,
+          "recall": 0.983397210872291
+        },
+        "pooled": {
+          "dice": 0.8011230933091844,
+          "iou": 0.6682279797351958,
+          "precision": 0.6841058465242169,
+          "recall": 0.9664327446723083
+        },
+        "prec_at": {
+          "0.5": 0.6837270341207349,
+          "0.6": 0.5485564304461942,
+          "0.7": 0.3766404199475066,
+          "0.8": 0.17191601049868765,
+          "0.9": 0.01706036745406824
+        },
+        "threshold_jaccard_065": 0.3530854346118814,
+        "counts": {
+          "tp": 11666750,
+          "fp": 5387263,
+          "fn": 405223,
+          "tn": 32479196
+        },
+        "loss": 0.9319865296831907,
+        "diagnostics": {
+          "bce_soft": 0.418239227117203,
+          "soft_dice_loss": 0.5137473125783164,
+          "wrong_pixels": 5792486,
+          "wrong_mean_confidence": 0.6603653068525656,
+          "wrong_confidence_gt99_fraction": 5.179123436811069e-07
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 1.434852123260498,
+        "encoder": 0.08641073852777481
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.001,
+        "encoder": 0.0001
+      }
+    },
+    "seconds": 8.626441738000722,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "position_bias": 0.8083311273209742
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.837127816445598,
+          "iou": 0.7359301853458086,
+          "precision": 0.773149246603202,
+          "recall": 0.9573141483840023
+        },
+        "pooled": {
+          "dice": 0.8732053928347069,
+          "iou": 0.7749463720202324,
+          "precision": 0.8215971981732056,
+          "recall": 0.9317316233228818
+        },
+        "prec_at": {
+          "0.5": 0.9278215223097113,
+          "0.6": 0.8412073490813649,
+          "0.7": 0.6837270341207349,
+          "0.8": 0.42650918635170604,
+          "0.9": 0.06561679790026247
+        },
+        "threshold_jaccard_065": 0.6265286402790793,
+        "counts": {
+          "tp": 11247839,
+          "fp": 2442372,
+          "fn": 824134,
+          "tn": 35424087
+        },
+        "loss": 0.67960662244186,
+        "diagnostics": {
+          "bce_soft": 0.25881470712464,
+          "soft_dice_loss": 0.4207919193065073,
+          "wrong_pixels": 3266506,
+          "wrong_mean_confidence": 0.695940746630379,
+          "wrong_confidence_gt99_fraction": 0.00011663838976570072
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.9933195114135742,
+        "encoder": 0.18251463770866394
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009997557473810372,
+        "encoder": 9.997557473810371e-05
+      }
+    },
+    "seconds": 8.395323758002633,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 3,
+    "train_loss": {
+      "position_bias": 0.5469241684593047
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8751773073577696,
+          "iou": 0.7938129695989985,
+          "precision": 0.8723505487231686,
+          "recall": 0.915737610016719
+        },
+        "pooled": {
+          "dice": 0.886268959364743,
+          "iou": 0.7957656983855163,
+          "precision": 0.8916880650618542,
+          "recall": 0.8809153234520986
+        },
+        "prec_at": {
+          "0.5": 0.9435695538057742,
+          "0.6": 0.9068241469816273,
+          "0.7": 0.8385826771653543,
+          "0.8": 0.6272965879265092,
+          "0.9": 0.2073490813648294
+        },
+        "threshold_jaccard_065": 0.7370339202526422,
+        "counts": {
+          "tp": 10634386,
+          "fp": 1291742,
+          "fn": 1437587,
+          "tn": 36574717
+        },
+        "loss": 0.4765870991967169,
+        "diagnostics": {
+          "bce_soft": 0.17305488125702215,
+          "soft_dice_loss": 0.30353222447117484,
+          "wrong_pixels": 2729329,
+          "wrong_mean_confidence": 0.7378791349968314,
+          "wrong_confidence_gt99_fraction": 0.0016619469473998921
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.5391053557395935,
+        "encoder": 0.7615992426872253
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009990232305719944,
+        "encoder": 9.990232305719945e-05
+      }
+    },
+    "seconds": 8.357592029999068,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 4,
+    "train_loss": {
+      "position_bias": 0.381423497629823
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.88360119810509,
+          "iou": 0.8056188225974695,
+          "precision": 0.8899139386809998,
+          "recall": 0.9097502966315154
+        },
+        "pooled": {
+          "dice": 0.8932538537045612,
+          "iou": 0.8070991317155333,
+          "precision": 0.9007470786746725,
+          "recall": 0.8858842709472594
+        },
+        "prec_at": {
+          "0.5": 0.94750656167979,
+          "0.6": 0.916010498687664,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6771653543307087,
+          "0.9": 0.23228346456692914
+        },
+        "threshold_jaccard_065": 0.7581606604294785,
+        "counts": {
+          "tp": 10694371,
+          "fp": 1178408,
+          "fn": 1377602,
+          "tn": 36688051
+        },
+        "loss": 0.37365484910374236,
+        "diagnostics": {
+          "bce_soft": 0.1459119759519582,
+          "soft_dice_loss": 0.2277428833205556,
+          "wrong_pixels": 2556010,
+          "wrong_mean_confidence": 0.7444398971094229,
+          "wrong_confidence_gt99_fraction": 0.0063035747121490135
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.6417180299758911,
+        "encoder": 0.24945756793022156
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009978031724785245,
+        "encoder": 9.978031724785246e-05
+      }
+    },
+    "seconds": 8.419166395000502,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 5,
+    "train_loss": {
+      "position_bias": 0.2877697781565839
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.882722436338078,
+          "iou": 0.8070502494711033,
+          "precision": 0.9256602857594902,
+          "recall": 0.8756357276626184
+        },
+        "pooled": {
+          "dice": 0.8939556210638492,
+          "iou": 0.8082457070336551,
+          "precision": 0.9195770809451873,
+          "recall": 0.8697232010045085
+        },
+        "prec_at": {
+          "0.5": 0.9488188976377953,
+          "0.6": 0.9094488188976378,
+          "0.7": 0.8333333333333334,
+          "0.8": 0.6692913385826772,
+          "0.9": 0.3005249343832021
+        },
+        "threshold_jaccard_065": 0.7479353725540244,
+        "counts": {
+          "tp": 10499275,
+          "fp": 918229,
+          "fn": 1572698,
+          "tn": 36948230
+        },
+        "loss": 0.32123911646720305,
+        "diagnostics": {
+          "bce_soft": 0.1412255340439128,
+          "soft_dice_loss": 0.18001359106674594,
+          "wrong_pixels": 2490927,
+          "wrong_mean_confidence": 0.8102656369379514,
+          "wrong_confidence_gt99_fraction": 0.052155683406217845
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.34641700983047485,
+        "encoder": 0.5590257048606873
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009960967771506667,
+        "encoder": 9.960967771506666e-05
+      }
+    },
+    "seconds": 7.926093575999403,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 6,
+    "train_loss": {
+      "position_bias": 0.2332262280510693
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8843763106620368,
+          "iou": 0.8063059562708753,
+          "precision": 0.8710036461726739,
+          "recall": 0.9297303216964176
+        },
+        "pooled": {
+          "dice": 0.8948804130212086,
+          "iou": 0.8097588926712076,
+          "precision": 0.8709833282835792,
+          "recall": 0.9201258153907402
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8648293963254593,
+          "0.8": 0.6758530183727034,
+          "0.9": 0.21653543307086615
+        },
+        "threshold_jaccard_065": 0.7637019931605459,
+        "counts": {
+          "tp": 11107734,
+          "fp": 1645362,
+          "fn": 964239,
+          "tn": 36221097
+        },
+        "loss": 0.308278794676613,
+        "diagnostics": {
+          "bce_soft": 0.14506578218592747,
+          "soft_dice_loss": 0.16321300459033236,
+          "wrong_pixels": 2609601,
+          "wrong_mean_confidence": 0.8046621826063537,
+          "wrong_confidence_gt99_fraction": 0.06483289974214448
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.20118682086467743,
+        "encoder": 0.6650212407112122
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009939057285945933,
+        "encoder": 9.939057285945933e-05
+      }
+    },
+    "seconds": 8.340942875998735,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 7,
+    "train_loss": {
+      "position_bias": 0.2067007842776884
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8857876642220326,
+          "iou": 0.8092638111339557,
+          "precision": 0.8867904106720668,
+          "recall": 0.9165512990039587
+        },
+        "pooled": {
+          "dice": 0.8943861097834004,
+          "iou": 0.8089497768594262,
+          "precision": 0.9010900922776415,
+          "recall": 0.887781143977045
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.916010498687664,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.6771653543307087,
+          "0.9": 0.2650918635170604
+        },
+        "threshold_jaccard_065": 0.7556703414878303,
+        "counts": {
+          "tp": 10717270,
+          "fp": 1176402,
+          "fn": 1354703,
+          "tn": 36690057
+        },
+        "loss": 0.2906069175152015,
+        "diagnostics": {
+          "bce_soft": 0.14159639054552464,
+          "soft_dice_loss": 0.14901052231550843,
+          "wrong_pixels": 2531105,
+          "wrong_mean_confidence": 0.8147804331257967,
+          "wrong_confidence_gt99_fraction": 0.06832667945423046
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.17217408120632172,
+        "encoder": 0.776892900466919
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000991232189110701,
+        "encoder": 9.91232189110701e-05
+      }
+    },
+    "seconds": 8.289859802996943,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 8,
+    "train_loss": {
+      "position_bias": 0.19100311433270273
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8842711282530422,
+          "iou": 0.8093200930301305,
+          "precision": 0.9274682798623165,
+          "recall": 0.8766253385046381
+        },
+        "pooled": {
+          "dice": 0.8893710782544745,
+          "iou": 0.8007814859140261,
+          "precision": 0.9195513207518796,
+          "recall": 0.8611089504590509
+        },
+        "prec_at": {
+          "0.5": 0.9409448818897638,
+          "0.6": 0.9133858267716536,
+          "0.7": 0.8412073490813649,
+          "0.8": 0.6732283464566929,
+          "0.9": 0.3031496062992126
+        },
+        "threshold_jaccard_065": 0.7506125034500809,
+        "counts": {
+          "tp": 10395284,
+          "fp": 909451,
+          "fn": 1676689,
+          "tn": 36957008
+        },
+        "loss": 0.29779058600973896,
+        "diagnostics": {
+          "bce_soft": 0.15821187002608783,
+          "soft_dice_loss": 0.1395787152405486,
+          "wrong_pixels": 2586140,
+          "wrong_mean_confidence": 0.8434589606168625,
+          "wrong_confidence_gt99_fraction": 0.13693767545453842
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.11422273516654968,
+        "encoder": 0.26833540201187134
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00098807879715968,
+        "encoder": 9.8807879715968e-05
+      }
+    },
+    "seconds": 7.8486967960016045,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 9,
+    "train_loss": {
+      "position_bias": 0.17285560645076148
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8807654995684203,
+          "iou": 0.8014290892166223,
+          "precision": 0.8695017272061599,
+          "recall": 0.9265770032332673
+        },
+        "pooled": {
+          "dice": 0.8865459317855715,
+          "iou": 0.7962123962663908,
+          "precision": 0.8497728318448209,
+          "recall": 0.926645627852216
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9041994750656168,
+          "0.7": 0.8346456692913385,
+          "0.8": 0.6469816272965879,
+          "0.9": 0.22703412073490814
+        },
+        "threshold_jaccard_065": 0.7418375005041228,
+        "counts": {
+          "tp": 11186441,
+          "fp": 1977596,
+          "fn": 885532,
+          "tn": 35888863
+        },
+        "loss": 0.30544220384337456,
+        "diagnostics": {
+          "bce_soft": 0.16365042911583358,
+          "soft_dice_loss": 0.14179177500131562,
+          "wrong_pixels": 2863128,
+          "wrong_mean_confidence": 0.8241540876190896,
+          "wrong_confidence_gt99_fraction": 0.10086206414802272
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.14266778528690338,
+        "encoder": 0.5694832801818848
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009844486647586726,
+        "encoder": 9.844486647586725e-05
+      }
+    },
+    "seconds": 7.848788221999712,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 10,
+    "train_loss": {
+      "position_bias": 0.17014712594599637
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8781121745821284,
+          "iou": 0.7970445402291778,
+          "precision": 0.8504755170842807,
+          "recall": 0.9418517986844162
+        },
+        "pooled": {
+          "dice": 0.8851455630437135,
+          "iou": 0.7939561737407519,
+          "precision": 0.8354640976549961,
+          "recall": 0.9411092950588938
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9081364829396326,
+          "0.7": 0.8359580052493438,
+          "0.8": 0.6430446194225722,
+          "0.9": 0.1968503937007874
+        },
+        "threshold_jaccard_065": 0.7386987179724078,
+        "counts": {
+          "tp": 11361046,
+          "fp": 2237439,
+          "fn": 710927,
+          "tn": 35629020
+        },
+        "loss": 0.3109739150587968,
+        "diagnostics": {
+          "bce_soft": 0.16814971259572686,
+          "soft_dice_loss": 0.1428242141180464,
+          "wrong_pixels": 2948366,
+          "wrong_mean_confidence": 0.8232120146347698,
+          "wrong_confidence_gt99_fraction": 0.10341558680299529
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.12260960787534714,
+        "encoder": 0.3184727728366852
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009803453744100868,
+        "encoder": 9.803453744100869e-05
+      }
+    },
+    "seconds": 7.852383831999759,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 11,
+    "train_loss": {
+      "position_bias": 0.15617302328759008
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8809431280288866,
+          "iou": 0.8002261280811821,
+          "precision": 0.8580298715054977,
+          "recall": 0.9371000704856309
+        },
+        "pooled": {
+          "dice": 0.8916866118611115,
+          "iou": 0.8045437521588159,
+          "precision": 0.8608710108818334,
+          "recall": 0.9247902559092868
+        },
+        "prec_at": {
+          "0.5": 0.963254593175853,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8451443569553806,
+          "0.8": 0.6377952755905512,
+          "0.9": 0.18503937007874016
+        },
+        "threshold_jaccard_065": 0.7478320974796887,
+        "counts": {
+          "tp": 11164043,
+          "fp": 1804268,
+          "fn": 907930,
+          "tn": 36062191
+        },
+        "loss": 0.2995808392059146,
+        "diagnostics": {
+          "bce_soft": 0.1627353221725604,
+          "soft_dice_loss": 0.13684551781556736,
+          "wrong_pixels": 2712198,
+          "wrong_mean_confidence": 0.8373495469226991,
+          "wrong_confidence_gt99_fraction": 0.1321345270514911
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06566793471574783,
+        "encoder": 0.2807369530200958
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009757729755661011,
+        "encoder": 9.757729755661012e-05
+      }
+    },
+    "seconds": 7.8569801570010895,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 12,
+    "train_loss": {
+      "position_bias": 0.1530471170441596
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8844975101049793,
+          "iou": 0.808889900409196,
+          "precision": 0.9000331247904855,
+          "recall": 0.9038117396530783
+        },
+        "pooled": {
+          "dice": 0.8856961377121458,
+          "iou": 0.7948425628658076,
+          "precision": 0.8980288031523483,
+          "recall": 0.8736976134721308
+        },
+        "prec_at": {
+          "0.5": 0.9461942257217848,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8608923884514436,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.763597782224623,
+        "counts": {
+          "tp": 10547254,
+          "fp": 1197641,
+          "fn": 1524719,
+          "tn": 36668818
+        },
+        "loss": 0.3113346228136478,
+        "diagnostics": {
+          "bce_soft": 0.18132403911411607,
+          "soft_dice_loss": 0.13001059484606967,
+          "wrong_pixels": 2722360,
+          "wrong_mean_confidence": 0.862157200667055,
+          "wrong_confidence_gt99_fraction": 0.2085073245272484
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.12773168087005615,
+        "encoder": 0.4637075960636139
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009707359806323417,
+        "encoder": 9.707359806323417e-05
+      }
+    },
+    "seconds": 7.898803516000044,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 13,
+    "train_loss": {
+      "position_bias": 0.14344239582565405
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8875853905682433,
+          "iou": 0.8130664402421152,
+          "precision": 0.9099186611115414,
+          "recall": 0.8979963474852016
+        },
+        "pooled": {
+          "dice": 0.8940794727989135,
+          "iou": 0.8084482119720574,
+          "precision": 0.8999832474780572,
+          "recall": 0.8882526493390931
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8451443569553806,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.3005249343832021
+        },
+        "threshold_jaccard_065": 0.7605905944760207,
+        "counts": {
+          "tp": 10722962,
+          "fp": 1191662,
+          "fn": 1349011,
+          "tn": 36674797
+        },
+        "loss": 0.2908652568739543,
+        "diagnostics": {
+          "bce_soft": 0.16154468935618563,
+          "soft_dice_loss": 0.12932056188583374,
+          "wrong_pixels": 2540673,
+          "wrong_mean_confidence": 0.8472091129378833,
+          "wrong_confidence_gt99_fraction": 0.17807092845084746
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06589596718549728,
+        "encoder": 0.41135963797569275
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009652393605146844,
+        "encoder": 9.652393605146844e-05
+      }
+    },
+    "seconds": 8.396742835000623,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 14,
+    "train_loss": {
+      "position_bias": 0.1419456526558068
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.882209112369873,
+          "iou": 0.802218012923734,
+          "precision": 0.8712577186141973,
+          "recall": 0.925772065777547
+        },
+        "pooled": {
+          "dice": 0.8922891470141086,
+          "iou": 0.8055253269469171,
+          "precision": 0.8842264911176054,
+          "recall": 0.9005001916422444
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8398950131233596,
+          "0.8": 0.6469816272965879,
+          "0.9": 0.20603674540682415
+        },
+        "threshold_jaccard_065": 0.7493556058064889,
+        "counts": {
+          "tp": 10870814,
+          "fp": 1423337,
+          "fn": 1201159,
+          "tn": 36443122
+        },
+        "loss": 0.2954010927458135,
+        "diagnostics": {
+          "bce_soft": 0.16526579176347087,
+          "soft_dice_loss": 0.1301353001219081,
+          "wrong_pixels": 2624496,
+          "wrong_mean_confidence": 0.8495882810890303,
+          "wrong_confidence_gt99_fraction": 0.17398311904457084
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06170239672064781,
+        "encoder": 0.2787250578403473
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009592885397135707,
+        "encoder": 9.592885397135707e-05
+      }
+    },
+    "seconds": 7.877858332998585,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 15,
+    "train_loss": {
+      "position_bias": 0.13940213397856355
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8773118401680204,
+          "iou": 0.7956532375180103,
+          "precision": 0.8500217627754757,
+          "recall": 0.940648131773701
+        },
+        "pooled": {
+          "dice": 0.8848632236475706,
+          "iou": 0.793501965330141,
+          "precision": 0.8397393386628335,
+          "recall": 0.9351120152439042
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9173228346456693,
+          "0.7": 0.8280839895013123,
+          "0.8": 0.60498687664042,
+          "0.9": 0.18110236220472442
+        },
+        "threshold_jaccard_065": 0.7375048274594815,
+        "counts": {
+          "tp": 11288647,
+          "fp": 2154390,
+          "fn": 783326,
+          "tn": 35712069
+        },
+        "loss": 0.327457394186906,
+        "diagnostics": {
+          "bce_soft": 0.1944200382066837,
+          "soft_dice_loss": 0.13303733873242155,
+          "wrong_pixels": 2937716,
+          "wrong_mean_confidence": 0.8611303216300399,
+          "wrong_confidence_gt99_fraction": 0.19503655220586333
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.033333007246255875,
+        "encoder": 0.4073394238948822
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009528893909706797,
+        "encoder": 9.528893909706797e-05
+      }
+    },
+    "seconds": 7.891450448998512,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 16,
+    "train_loss": {
+      "position_bias": 0.13082801619364878
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8873657531421872,
+          "iou": 0.8112264411898931,
+          "precision": 0.8897128928041742,
+          "recall": 0.9166871800881725
+        },
+        "pooled": {
+          "dice": 0.8951714187707583,
+          "iou": 0.8102355731735172,
+          "precision": 0.883275845997588,
+          "recall": 0.907391774318912
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.6758530183727034,
+          "0.9": 0.26246719160104987
+        },
+        "threshold_jaccard_065": 0.7643735044036504,
+        "counts": {
+          "tp": 10954009,
+          "fp": 1447563,
+          "fn": 1117964,
+          "tn": 36418896
+        },
+        "loss": 0.29198534688924555,
+        "diagnostics": {
+          "bce_soft": 0.1670634973002231,
+          "soft_dice_loss": 0.12492184845481331,
+          "wrong_pixels": 2565527,
+          "wrong_mean_confidence": 0.8552812385058608,
+          "wrong_confidence_gt99_fraction": 0.19215155404718018
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.07988610863685608,
+        "encoder": 0.33704593777656555
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009460482294732421,
+        "encoder": 9.460482294732421e-05
+      }
+    },
+    "seconds": 7.879697839001892,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 17,
+    "train_loss": {
+      "position_bias": 0.12942289105149368
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8841915635223038,
+          "iou": 0.8073097741195465,
+          "precision": 0.9009353942836152,
+          "recall": 0.9011325459962792
+        },
+        "pooled": {
+          "dice": 0.8972758112711744,
+          "iou": 0.8136901506672457,
+          "precision": 0.8848236417660806,
+          "recall": 0.9100834635730216
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8293963254593176,
+          "0.8": 0.6614173228346457,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7484076631053496,
+        "counts": {
+          "tp": 10986503,
+          "fp": 1430099,
+          "fn": 1085470,
+          "tn": 36436360
+        },
+        "loss": 0.30290810939833873,
+        "diagnostics": {
+          "bce_soft": 0.17785649611724644,
+          "soft_dice_loss": 0.12505161089534209,
+          "wrong_pixels": 2515569,
+          "wrong_mean_confidence": 0.8670535075581444,
+          "wrong_confidence_gt99_fraction": 0.24212852042619384
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06583105027675629,
+        "encoder": 0.36943984031677246
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009387718066217125,
+        "encoder": 9.387718066217125e-05
+      }
+    },
+    "seconds": 7.876556160001201,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 18,
+    "train_loss": {
+      "position_bias": 0.12338301814373578
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8850375559618499,
+          "iou": 0.8099083812752267,
+          "precision": 0.9014001686042237,
+          "recall": 0.9032317975009638
+        },
+        "pooled": {
+          "dice": 0.8897280077889506,
+          "iou": 0.8013604000017177,
+          "precision": 0.8984890557523375,
+          "recall": 0.8811361655629946
+        },
+        "prec_at": {
+          "0.5": 0.9501312335958005,
+          "0.6": 0.9186351706036745,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2690288713910761
+        },
+        "threshold_jaccard_065": 0.7610789050238085,
+        "counts": {
+          "tp": 10637052,
+          "fp": 1201770,
+          "fn": 1434921,
+          "tn": 36664689
+        },
+        "loss": 0.3138569390054137,
+        "diagnostics": {
+          "bce_soft": 0.18808337717544377,
+          "soft_dice_loss": 0.12577353906756625,
+          "wrong_pixels": 2636691,
+          "wrong_mean_confidence": 0.8704158786509866,
+          "wrong_confidence_gt99_fraction": 0.2619575065868545
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06063263863325119,
+        "encoder": 0.2955034077167511
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009310673033669522,
+        "encoder": 9.310673033669521e-05
+      }
+    },
+    "seconds": 7.895626713998354,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 19,
+    "train_loss": {
+      "position_bias": 0.1255309168379734
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854408067162333,
+          "iou": 0.8099855786617709,
+          "precision": 0.9001681028551023,
+          "recall": 0.9048194854610301
+        },
+        "pooled": {
+          "dice": 0.8911203251596431,
+          "iou": 0.803622201198643,
+          "precision": 0.8918476141483368,
+          "recall": 0.8903942213919795
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.9173228346456693,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6929133858267716,
+          "0.9": 0.2769028871391076
+        },
+        "threshold_jaccard_065": 0.7577421140705786,
+        "counts": {
+          "tp": 10748815,
+          "fp": 1303485,
+          "fn": 1323158,
+          "tn": 36562974
+        },
+        "loss": 0.31839633081841656,
+        "diagnostics": {
+          "bce_soft": 0.19493085165505647,
+          "soft_dice_loss": 0.12346548014112657,
+          "wrong_pixels": 2626643,
+          "wrong_mean_confidence": 0.8800236310802786,
+          "wrong_confidence_gt99_fraction": 0.2832737452329837
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.07106150686740875,
+        "encoder": 0.4724881649017334
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009229423231234974,
+        "encoder": 9.229423231234974e-05
+      }
+    },
+    "seconds": 7.8585697499984235,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 20,
+    "train_loss": {
+      "position_bias": 0.12303936854399906
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.887227836226763,
+          "iou": 0.8119019972730004,
+          "precision": 0.8937554726345031,
+          "recall": 0.9129841774100852
+        },
+        "pooled": {
+          "dice": 0.8947930189637918,
+          "iou": 0.8096157862890636,
+          "precision": 0.8865214678545219,
+          "recall": 0.9032203766525986
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6771653543307087,
+          "0.9": 0.27165354330708663
+        },
+        "threshold_jaccard_065": 0.7619292852656534,
+        "counts": {
+          "tp": 10903652,
+          "fp": 1395714,
+          "fn": 1168321,
+          "tn": 36470745
+        },
+        "loss": 0.304175188378712,
+        "diagnostics": {
+          "bce_soft": 0.18188473789554255,
+          "soft_dice_loss": 0.12229045372935418,
+          "wrong_pixels": 2564035,
+          "wrong_mean_confidence": 0.8686774062108478,
+          "wrong_confidence_gt99_fraction": 0.2476978668387912
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06040666252374649,
+        "encoder": 0.344568133354187
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0009144048842659081,
+        "encoder": 9.14404884265908e-05
+      }
+    },
+    "seconds": 7.893700107000768,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 21,
+    "train_loss": {
+      "position_bias": 0.11726281163801192
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8887053504798184,
+          "iou": 0.8147536183746186,
+          "precision": 0.8963391120496883,
+          "recall": 0.9132682034229307
+        },
+        "pooled": {
+          "dice": 0.895343206506492,
+          "iou": 0.8105170870990112,
+          "precision": 0.9004924800765768,
+          "recall": 0.8902524881392627
+        },
+        "prec_at": {
+          "0.5": 0.9501312335958005,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.7020997375328084,
+          "0.9": 0.2847769028871391
+        },
+        "threshold_jaccard_065": 0.7659564735970401,
+        "counts": {
+          "tp": 10747104,
+          "fp": 1187592,
+          "fn": 1324869,
+          "tn": 36678867
+        },
+        "loss": 0.30276485612699056,
+        "diagnostics": {
+          "bce_soft": 0.18261678348688942,
+          "soft_dice_loss": 0.12014805410164861,
+          "wrong_pixels": 2512461,
+          "wrong_mean_confidence": 0.8738933698278217,
+          "wrong_confidence_gt99_fraction": 0.2681211768063265
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06070210039615631,
+        "encoder": 0.3427993655204773
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000905463412215599,
+        "encoder": 9.05463412215599e-05
+      }
+    },
+    "seconds": 8.416151999001158,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 22,
+    "train_loss": {
+      "position_bias": 0.11480842567071682
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8891017030999881,
+          "iou": 0.8148056339084406,
+          "precision": 0.8936794221547958,
+          "recall": 0.9162045278625385
+        },
+        "pooled": {
+          "dice": 0.8955605464762226,
+          "iou": 0.8108733743790891,
+          "precision": 0.8969394294748952,
+          "recall": 0.894185896539033
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.931758530183727,
+          "0.7": 0.863517060367454,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2821522309711286
+        },
+        "threshold_jaccard_065": 0.7683460477147949,
+        "counts": {
+          "tp": 10794588,
+          "fp": 1240325,
+          "fn": 1277385,
+          "tn": 36626134
+        },
+        "loss": 0.3032223663617933,
+        "diagnostics": {
+          "bce_soft": 0.18400181720419506,
+          "soft_dice_loss": 0.11922054450342974,
+          "wrong_pixels": 2517710,
+          "wrong_mean_confidence": 0.8778108576525084,
+          "wrong_confidence_gt99_fraction": 0.27432547831164034
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.123096764087677,
+        "encoder": 0.3489413857460022
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008961267311259666,
+        "encoder": 8.961267311259666e-05
+      }
+    },
+    "seconds": 8.407744774001912,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 23,
+    "train_loss": {
+      "position_bias": 0.10957615575254406
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8870218888465411,
+          "iou": 0.8115129487963865,
+          "precision": 0.8864920336524708,
+          "recall": 0.9199385444417758
+        },
+        "pooled": {
+          "dice": 0.893306850852672,
+          "iou": 0.8071856697955857,
+          "precision": 0.8837074617090537,
+          "recall": 0.9031170795362117
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8648293963254593,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2742782152230971
+        },
+        "threshold_jaccard_065": 0.7662447881284098,
+        "counts": {
+          "tp": 10902405,
+          "fp": 1434715,
+          "fn": 1169568,
+          "tn": 36431744
+        },
+        "loss": 0.31090305217607755,
+        "diagnostics": {
+          "bce_soft": 0.18995445344861098,
+          "soft_dice_loss": 0.12094860361629897,
+          "wrong_pixels": 2604283,
+          "wrong_mean_confidence": 0.878456051072903,
+          "wrong_confidence_gt99_fraction": 0.2693455357962249
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06419628858566284,
+        "encoder": 0.9933058619499207
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008864040551740157,
+        "encoder": 8.864040551740156e-05
+      }
+    },
+    "seconds": 7.834017836001294,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 24,
+    "train_loss": {
+      "position_bias": 0.10961455005603277
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8841120968283311,
+          "iou": 0.8068455950290208,
+          "precision": 0.8825433783132824,
+          "recall": 0.9192304837074483
+        },
+        "pooled": {
+          "dice": 0.8903829085811537,
+          "iou": 0.8024235706775551,
+          "precision": 0.8789922347781173,
+          "recall": 0.902072676935245
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6640419947506562,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7611488544031938,
+        "counts": {
+          "tp": 10889797,
+          "fp": 1499160,
+          "fn": 1182176,
+          "tn": 36367299
+        },
+        "loss": 0.3165177594958328,
+        "diagnostics": {
+          "bce_soft": 0.1926028451190533,
+          "soft_dice_loss": 0.12391492012604641,
+          "wrong_pixels": 2681336,
+          "wrong_mean_confidence": 0.8729581824286055,
+          "wrong_confidence_gt99_fraction": 0.2560525797587471
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06754826009273529,
+        "encoder": 0.4215382933616638
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008763049794670776,
+        "encoder": 8.763049794670775e-05
+      }
+    },
+    "seconds": 7.854913679999299,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 25,
+    "train_loss": {
+      "position_bias": 0.10786556894174942
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8862919161729927,
+          "iou": 0.8104387486277563,
+          "precision": 0.8778159920244674,
+          "recall": 0.9276451406348338
+        },
+        "pooled": {
+          "dice": 0.8944860363524124,
+          "iou": 0.809113286458274,
+          "precision": 0.8725951510805615,
+          "recall": 0.9175035431242267
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6666666666666666,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7574702843057634,
+        "counts": {
+          "tp": 11076078,
+          "fp": 1617183,
+          "fn": 995895,
+          "tn": 36249276
+        },
+        "loss": 0.3137852197556984,
+        "diagnostics": {
+          "bce_soft": 0.19306786561731903,
+          "soft_dice_loss": 0.12071734964065352,
+          "wrong_pixels": 2613078,
+          "wrong_mean_confidence": 0.8792193314868423,
+          "wrong_confidence_gt99_fraction": 0.26981016257455764
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.047129858285188675,
+        "encoder": 0.30553317070007324
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008658394705735987,
+        "encoder": 8.658394705735987e-05
+      }
+    },
+    "seconds": 7.836604288000672,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 26,
+    "train_loss": {
+      "position_bias": 0.10853668683912696
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8839143644237715,
+          "iou": 0.807814801295823,
+          "precision": 0.8916844739692111,
+          "recall": 0.9111257128582555
+        },
+        "pooled": {
+          "dice": 0.8887591865511487,
+          "iou": 0.7997899067374894,
+          "precision": 0.8984824717714592,
+          "recall": 0.8792440970502502
+        },
+        "prec_at": {
+          "0.5": 0.9514435695538058,
+          "0.6": 0.9186351706036745,
+          "0.7": 0.8451443569553806,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.26246719160104987
+        },
+        "threshold_jaccard_065": 0.757924752807723,
+        "counts": {
+          "tp": 10614211,
+          "fp": 1199276,
+          "fn": 1457762,
+          "tn": 36667183
+        },
+        "loss": 0.3302599714184058,
+        "diagnostics": {
+          "bce_soft": 0.20687753799080535,
+          "soft_dice_loss": 0.1233824375733303,
+          "wrong_pixels": 2657038,
+          "wrong_mean_confidence": 0.8865101372538307,
+          "wrong_confidence_gt99_fraction": 0.3225753639955469
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.030370287597179413,
+        "encoder": 0.22790412604808807
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000855017856687341,
+        "encoder": 8.55017856687341e-05
+      }
+    },
+    "seconds": 7.89124438699946,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 27,
+    "train_loss": {
+      "position_bias": 0.10428435204517045
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883735251634518,
+          "iou": 0.8138724014814317,
+          "precision": 0.8884651918185915,
+          "recall": 0.9205265638256364
+        },
+        "pooled": {
+          "dice": 0.8964035135913238,
+          "iou": 0.8122565852926916,
+          "precision": 0.886811092877198,
+          "recall": 0.9062057213017293
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.931758530183727,
+          "0.7": 0.8569553805774278,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.2847769028871391
+        },
+        "threshold_jaccard_065": 0.7644715245842557,
+        "counts": {
+          "tp": 10939691,
+          "fp": 1396297,
+          "fn": 1132282,
+          "tn": 36470162
+        },
+        "loss": 0.30890947283096515,
+        "diagnostics": {
+          "bce_soft": 0.1901260512316321,
+          "soft_dice_loss": 0.11878342609705887,
+          "wrong_pixels": 2528579,
+          "wrong_mean_confidence": 0.880076092415627,
+          "wrong_confidence_gt99_fraction": 0.2867472204744246
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0327758863568306,
+        "encoder": 0.32236814498901367
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008438508174347009,
+        "encoder": 8.438508174347009e-05
+      }
+    },
+    "seconds": 7.8913364359978,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 28,
+    "train_loss": {
+      "position_bias": 0.10096406557400685
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8846742668794015,
+          "iou": 0.8081623243358974,
+          "precision": 0.8872100285734689,
+          "recall": 0.9160400406669466
+        },
+        "pooled": {
+          "dice": 0.8913068961713987,
+          "iou": 0.8039257149643013,
+          "precision": 0.8876361469584093,
+          "recall": 0.8950081316450923
+        },
+        "prec_at": {
+          "0.5": 0.9514435695538058,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6732283464566929,
+          "0.9": 0.24934383202099739
+        },
+        "threshold_jaccard_065": 0.7620397690928902,
+        "counts": {
+          "tp": 10804514,
+          "fp": 1367719,
+          "fn": 1267459,
+          "tn": 36498740
+        },
+        "loss": 0.3255734722132445,
+        "diagnostics": {
+          "bce_soft": 0.20364155919533075,
+          "soft_dice_loss": 0.12193191927561922,
+          "wrong_pixels": 2635178,
+          "wrong_mean_confidence": 0.8870310555999127,
+          "wrong_confidence_gt99_fraction": 0.31116835371272833
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03210507333278656,
+        "encoder": 0.32686761021614075
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008323493733352076,
+        "encoder": 8.323493733352077e-05
+      }
+    },
+    "seconds": 7.8721349719999125,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 29,
+    "train_loss": {
+      "position_bias": 0.10001909429422745
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8839675314277381,
+          "iou": 0.8067409694583176,
+          "precision": 0.8724043888900714,
+          "recall": 0.9294041988195376
+        },
+        "pooled": {
+          "dice": 0.8913124781169278,
+          "iou": 0.8039347972484264,
+          "precision": 0.8653470414878348,
+          "recall": 0.9188843447545816
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8385826771653543,
+          "0.8": 0.6456692913385826,
+          "0.9": 0.26246719160104987
+        },
+        "threshold_jaccard_065": 0.7562192576135932,
+        "counts": {
+          "tp": 11092747,
+          "fp": 1726095,
+          "fn": 979226,
+          "tn": 36140364
+        },
+        "loss": 0.32999496572599635,
+        "diagnostics": {
+          "bce_soft": 0.2078057820872059,
+          "soft_dice_loss": 0.12218918449922496,
+          "wrong_pixels": 2705321,
+          "wrong_mean_confidence": 0.8855221817160301,
+          "wrong_confidence_gt99_fraction": 0.2976378773535562
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.1232777088880539,
+        "encoder": 0.8624409437179565
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008205248749256015,
+        "encoder": 8.205248749256015e-05
+      }
+    },
+    "seconds": 7.877365967997321,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 30,
+    "train_loss": {
+      "position_bias": 0.10270938293046436
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8838414195798188,
+          "iou": 0.8067009699970269,
+          "precision": 0.8741557613608028,
+          "recall": 0.9276662376311539
+        },
+        "pooled": {
+          "dice": 0.8922973945713132,
+          "iou": 0.8055387702423877,
+          "precision": 0.8792627910268205,
+          "recall": 0.9057242755595958
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6509186351706037,
+          "0.9": 0.24540682414698162
+        },
+        "threshold_jaccard_065": 0.7568990963928656,
+        "counts": {
+          "tp": 10933879,
+          "fp": 1501401,
+          "fn": 1138094,
+          "tn": 36365058
+        },
+        "loss": 0.32137710403582553,
+        "diagnostics": {
+          "bce_soft": 0.19857030242603282,
+          "soft_dice_loss": 0.12280681314743723,
+          "wrong_pixels": 2639495,
+          "wrong_mean_confidence": 0.8780242492467806,
+          "wrong_confidence_gt99_fraction": 0.28768230286475255
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.13364025950431824,
+        "encoder": 0.49135854840278625
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0008083889915582234,
+        "encoder": 8.083889915582235e-05
+      }
+    },
+    "seconds": 7.892705883001327,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 31,
+    "train_loss": {
+      "position_bias": 0.0995159462678976
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8879492251217938,
+          "iou": 0.8142809971319894,
+          "precision": 0.9045109263425836,
+          "recall": 0.9046481454222995
+        },
+        "pooled": {
+          "dice": 0.8951708557520706,
+          "iou": 0.810234650681146,
+          "precision": 0.9065647618522577,
+          "recall": 0.8840597970190954
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.3123359580052493
+        },
+        "threshold_jaccard_065": 0.7635116079823513,
+        "counts": {
+          "tp": 10672346,
+          "fp": 1099947,
+          "fn": 1399627,
+          "tn": 36766512
+        },
+        "loss": 0.31603113325249177,
+        "diagnostics": {
+          "bce_soft": 0.19748450764833786,
+          "soft_dice_loss": 0.1185466443772704,
+          "wrong_pixels": 2499574,
+          "wrong_mean_confidence": 0.8857121085555066,
+          "wrong_confidence_gt99_fraction": 0.3213871643728091
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06844485551118851,
+        "encoder": 0.3012057840824127
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007959536998847743,
+        "encoder": 7.959536998847744e-05
+      }
+    },
+    "seconds": 7.85375014300007,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 32,
+    "train_loss": {
+      "position_bias": 0.09470816242606364
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8830789509091973,
+          "iou": 0.8054932357608631,
+          "precision": 0.8761575846669889,
+          "recall": 0.9241810159873585
+        },
+        "pooled": {
+          "dice": 0.8911437064216602,
+          "iou": 0.8036602322433422,
+          "precision": 0.8684051239336275,
+          "recall": 0.9151050950826348
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8385826771653543,
+          "0.8": 0.6601049868766404,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7517131157085263,
+        "counts": {
+          "tp": 11047124,
+          "fp": 1674040,
+          "fn": 1024849,
+          "tn": 36192419
+        },
+        "loss": 0.33226227306631295,
+        "diagnostics": {
+          "bce_soft": 0.21004605950333002,
+          "soft_dice_loss": 0.12221621731760621,
+          "wrong_pixels": 2698889,
+          "wrong_mean_confidence": 0.8876148926705704,
+          "wrong_confidence_gt99_fraction": 0.3012424742180949
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.09494493156671524,
+        "encoder": 0.48622316122055054
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007832312720368048,
+        "encoder": 7.832312720368048e-05
+      }
+    },
+    "seconds": 7.869195186001889,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 33,
+    "train_loss": {
+      "position_bias": 0.09356449359547928
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8831641804482725,
+          "iou": 0.8054988524794883,
+          "precision": 0.8752727003609977,
+          "recall": 0.9251487370945621
+        },
+        "pooled": {
+          "dice": 0.8919628305205566,
+          "iou": 0.8049936004760575,
+          "precision": 0.8780449284209744,
+          "recall": 0.9063290648512882
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6561679790026247,
+          "0.9": 0.24146981627296588
+        },
+        "threshold_jaccard_065": 0.7516882298187931,
+        "counts": {
+          "tp": 10941180,
+          "fp": 1519663,
+          "fn": 1130793,
+          "tn": 36346796
+        },
+        "loss": 0.33562244392755464,
+        "diagnostics": {
+          "bce_soft": 0.21335969446838057,
+          "soft_dice_loss": 0.12226274069838637,
+          "wrong_pixels": 2650456,
+          "wrong_mean_confidence": 0.8933945968649314,
+          "wrong_confidence_gt99_fraction": 0.34181401238126574
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.037857405841350555,
+        "encoder": 0.3790355324745178
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007702342635146033,
+        "encoder": 7.702342635146033e-05
+      }
+    },
+    "seconds": 7.883639563999168,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 34,
+    "train_loss": {
+      "position_bias": 0.09256005773867934
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861336347162813,
+          "iou": 0.8109225371480159,
+          "precision": 0.8903405378576469,
+          "recall": 0.9155123289516552
+        },
+        "pooled": {
+          "dice": 0.8927826490632893,
+          "iou": 0.8063300744953024,
+          "precision": 0.8955309192576661,
+          "recall": 0.8900511954425345
+        },
+        "prec_at": {
+          "0.5": 0.9514435695538058,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6732283464566929,
+          "0.9": 0.2782152230971129
+        },
+        "threshold_jaccard_065": 0.7617846181705619,
+        "counts": {
+          "tp": 10744674,
+          "fp": 1253431,
+          "fn": 1327299,
+          "tn": 36613028
+        },
+        "loss": 0.3333352115836356,
+        "diagnostics": {
+          "bce_soft": 0.2140357463847934,
+          "soft_dice_loss": 0.11929946934457213,
+          "wrong_pixels": 2580730,
+          "wrong_mean_confidence": 0.8948099276730505,
+          "wrong_confidence_gt99_fraction": 0.35559783472118356
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.09241970628499985,
+        "encoder": 0.4795944392681122
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007569755007964338,
+        "encoder": 7.569755007964339e-05
+      }
+    },
+    "seconds": 7.826972951999778,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 35,
+    "train_loss": {
+      "position_bias": 0.09041998880665476
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8847754777496596,
+          "iou": 0.808588038740697,
+          "precision": 0.8864371342854473,
+          "recall": 0.9169986496310368
+        },
+        "pooled": {
+          "dice": 0.8918998255879897,
+          "iou": 0.8048909712168013,
+          "precision": 0.8904419312181544,
+          "recall": 0.8933625017219637
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.26246719160104987
+        },
+        "threshold_jaccard_065": 0.759295285186145,
+        "counts": {
+          "tp": 10784648,
+          "fp": 1326920,
+          "fn": 1287325,
+          "tn": 36539539
+        },
+        "loss": 0.3353092559366401,
+        "diagnostics": {
+          "bce_soft": 0.2146104064200494,
+          "soft_dice_loss": 0.12069882573730989,
+          "wrong_pixels": 2614245,
+          "wrong_mean_confidence": 0.8955704120588114,
+          "wrong_confidence_gt99_fraction": 0.35436732211403293
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03166006878018379,
+        "encoder": 0.3352912664413452
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000743468068680349,
+        "encoder": 7.43468068680349e-05
+      }
+    },
+    "seconds": 7.901859228000831,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 36,
+    "train_loss": {
+      "position_bias": 0.08990375291504764
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8840843781917268,
+          "iou": 0.8070198229028803,
+          "precision": 0.879854099991861,
+          "recall": 0.9213374528114754
+        },
+        "pooled": {
+          "dice": 0.8930658749045937,
+          "iou": 0.8067922513705326,
+          "precision": 0.882555229213805,
+          "recall": 0.9038298876248315
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6679790026246719,
+          "0.9": 0.24671916010498687
+        },
+        "threshold_jaccard_065": 0.7620404431661624,
+        "counts": {
+          "tp": 10911010,
+          "fp": 1451967,
+          "fn": 1160963,
+          "tn": 36414492
+        },
+        "loss": 0.33697738562981916,
+        "diagnostics": {
+          "bce_soft": 0.2160653024520774,
+          "soft_dice_loss": 0.1209120770764789,
+          "wrong_pixels": 2612930,
+          "wrong_mean_confidence": 0.89494869325799,
+          "wrong_confidence_gt99_fraction": 0.3541457291240102
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02386581525206566,
+        "encoder": 0.3088774085044861
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007297252973710757,
+        "encoder": 7.297252973710757e-05
+      }
+    },
+    "seconds": 7.80784418300027,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 37,
+    "train_loss": {
+      "position_bias": 0.08602002822455268
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.887037817464205,
+          "iou": 0.81204673063719,
+          "precision": 0.8886425672081789,
+          "recall": 0.9180490016652803
+        },
+        "pooled": {
+          "dice": 0.8947198311928137,
+          "iou": 0.8094959598871584,
+          "precision": 0.8893392190612996,
+          "recall": 0.9001659463618747
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.28608923884514437
+        },
+        "threshold_jaccard_065": 0.7596026115425408,
+        "counts": {
+          "tp": 10866779,
+          "fp": 1352157,
+          "fn": 1205194,
+          "tn": 36514302
+        },
+        "loss": 0.32972510467989863,
+        "diagnostics": {
+          "bce_soft": 0.2115533071474766,
+          "soft_dice_loss": 0.11817179014050741,
+          "wrong_pixels": 2557351,
+          "wrong_mean_confidence": 0.8975905170253661,
+          "wrong_confidence_gt99_fraction": 0.35855226756123815
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.040925998240709305,
+        "encoder": 0.3389642536640167
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007157607493247111,
+        "encoder": 7.157607493247111e-05
+      }
+    },
+    "seconds": 7.868574325002555,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 38,
+    "train_loss": {
+      "position_bias": 0.08535169303606828
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8870171903656623,
+          "iou": 0.8123011687185052,
+          "precision": 0.8946271520042063,
+          "recall": 0.911971284100668
+        },
+        "pooled": {
+          "dice": 0.8954636330121648,
+          "iou": 0.8107144859830832,
+          "precision": 0.8892094260299628,
+          "recall": 0.9018064404219592
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.6692913385826772,
+          "0.9": 0.2887139107611549
+        },
+        "threshold_jaccard_065": 0.7645593500575788,
+        "counts": {
+          "tp": 10886583,
+          "fp": 1356408,
+          "fn": 1185390,
+          "tn": 36510051
+        },
+        "loss": 0.3318518476849153,
+        "diagnostics": {
+          "bce_soft": 0.21416630539212014,
+          "soft_dice_loss": 0.11768553404044604,
+          "wrong_pixels": 2541798,
+          "wrong_mean_confidence": 0.8987251371695733,
+          "wrong_confidence_gt99_fraction": 0.3645120501314424
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0800328403711319,
+        "encoder": 0.404519647359848
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0007015882058642164,
+        "encoder": 7.015882058642164e-05
+      }
+    },
+    "seconds": 7.9004481629999646,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 39,
+    "train_loss": {
+      "position_bias": 0.08784548121317826
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8922177732238006,
+          "iou": 0.8208504149065319,
+          "precision": 0.9066197727615342,
+          "recall": 0.9090070399475388
+        },
+        "pooled": {
+          "dice": 0.9000404612837398,
+          "iou": 0.8182486987968288,
+          "precision": 0.9093455485673668,
+          "recall": 0.8909238779775269
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.7034120734908137,
+          "0.9": 0.34776902887139105
+        },
+        "threshold_jaccard_065": 0.7723404480552384,
+        "counts": {
+          "tp": 10755209,
+          "fp": 1072208,
+          "fn": 1316764,
+          "tn": 36794251
+        },
+        "loss": 0.31755057407489284,
+        "diagnostics": {
+          "bce_soft": 0.20497104572498892,
+          "soft_dice_loss": 0.11257954188219206,
+          "wrong_pixels": 2388972,
+          "wrong_mean_confidence": 0.8991761327720887,
+          "wrong_confidence_gt99_fraction": 0.37942889242737043
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.05192716419696808,
+        "encoder": 0.4178788661956787
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0006872216535789157,
+        "encoder": 6.872216535789157e-05
+      }
+    },
+    "seconds": 8.367916225000954,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 40,
+    "train_loss": {
+      "position_bias": 0.08504924794396312
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8876144890361076,
+          "iou": 0.8128247617471775,
+          "precision": 0.8934912902508454,
+          "recall": 0.9141347539896507
+        },
+        "pooled": {
+          "dice": 0.8943202000608419,
+          "iou": 0.8088419451183366,
+          "precision": 0.8935694157162803,
+          "recall": 0.8950722470966428
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6732283464566929,
+          "0.9": 0.2992125984251969
+        },
+        "threshold_jaccard_065": 0.7600793590879549,
+        "counts": {
+          "tp": 10805288,
+          "fp": 1286988,
+          "fn": 1266685,
+          "tn": 36579471
+        },
+        "loss": 0.3318940554391055,
+        "diagnostics": {
+          "bce_soft": 0.21478135606122456,
+          "soft_dice_loss": 0.11711271416171017,
+          "wrong_pixels": 2553673,
+          "wrong_mean_confidence": 0.8988480619663402,
+          "wrong_confidence_gt99_fraction": 0.3663213731750306
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.052843786776065826,
+        "encoder": 0.3529621660709381
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0006726752705214193,
+        "encoder": 6.726752705214194e-05
+      }
+    },
+    "seconds": 7.8998880489998555,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 41,
+    "train_loss": {
+      "position_bias": 0.08307570806869394
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8887195375963839,
+          "iou": 0.8146259919424951,
+          "precision": 0.8986495229731869,
+          "recall": 0.9107100421295021
+        },
+        "pooled": {
+          "dice": 0.8951917622248825,
+          "iou": 0.8102689060570689,
+          "precision": 0.9013219641055814,
+          "recall": 0.8891443842692491
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8595800524934383,
+          "0.8": 0.6968503937007874,
+          "0.9": 0.2742782152230971
+        },
+        "threshold_jaccard_065": 0.7643566008700842,
+        "counts": {
+          "tp": 10733727,
+          "fp": 1175144,
+          "fn": 1338246,
+          "tn": 36691315
+        },
+        "loss": 0.33146970635011125,
+        "diagnostics": {
+          "bce_soft": 0.21547930052117725,
+          "soft_dice_loss": 0.11599040156587215,
+          "wrong_pixels": 2513390,
+          "wrong_mean_confidence": 0.9012258257051737,
+          "wrong_confidence_gt99_fraction": 0.3859102646226809
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0632859617471695,
+        "encoder": 0.35582953691482544
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000657963412215599,
+        "encoder": 6.57963412215599e-05
+      }
+    },
+    "seconds": 7.8769914689983125,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 42,
+    "train_loss": {
+      "position_bias": 0.08133960427560331
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.884740301201962,
+          "iou": 0.8082087281081828,
+          "precision": 0.8903109047621703,
+          "recall": 0.9125195993281492
+        },
+        "pooled": {
+          "dice": 0.8905631170942808,
+          "iou": 0.8027163426925312,
+          "precision": 0.8848558842265456,
+          "recall": 0.8963444500745653
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.916010498687664,
+          "0.7": 0.847769028871391,
+          "0.8": 0.6614173228346457,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7617742441907713,
+        "counts": {
+          "tp": 10820646,
+          "fp": 1408064,
+          "fn": 1251327,
+          "tn": 36458395
+        },
+        "loss": 0.3485137377511172,
+        "diagnostics": {
+          "bce_soft": 0.2287199242221402,
+          "soft_dice_loss": 0.1197938255750601,
+          "wrong_pixels": 2659391,
+          "wrong_mean_confidence": 0.9025704767028933,
+          "wrong_confidence_gt99_fraction": 0.38445456121345073
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04118577390909195,
+        "encoder": 0.32228440046310425
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0006431005974894185,
+        "encoder": 6.431005974894185e-05
+      }
+    },
+    "seconds": 7.863229662001686,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 43,
+    "train_loss": {
+      "position_bias": 0.08099680898803921
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8886933396749974,
+          "iou": 0.8147340630876136,
+          "precision": 0.8936963590540784,
+          "recall": 0.915685174556616
+        },
+        "pooled": {
+          "dice": 0.8954928223003231,
+          "iou": 0.8107623385167477,
+          "precision": 0.8980705532867927,
+          "recall": 0.8929298466787492
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6902887139107612,
+          "0.9": 0.29396325459317585
+        },
+        "threshold_jaccard_065": 0.7667299012244905,
+        "counts": {
+          "tp": 10779425,
+          "fp": 1223446,
+          "fn": 1292548,
+          "tn": 36643013
+        },
+        "loss": 0.33247202478368765,
+        "diagnostics": {
+          "bce_soft": 0.2166384058048719,
+          "soft_dice_loss": 0.11583359832838765,
+          "wrong_pixels": 2515994,
+          "wrong_mean_confidence": 0.9015181269868395,
+          "wrong_confidence_gt99_fraction": 0.3853375643980073
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03459520637989044,
+        "encoder": 0.2638130784034729
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000628101494146603,
+        "encoder": 6.281014941466031e-05
+      }
+    },
+    "seconds": 7.916440683999099,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 44,
+    "train_loss": {
+      "position_bias": 0.08010539548394537
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8876067357509001,
+          "iou": 0.8126807682695181,
+          "precision": 0.8910359592627909,
+          "recall": 0.9160623006835023
+        },
+        "pooled": {
+          "dice": 0.8961082924834968,
+          "iou": 0.8117719214500937,
+          "precision": 0.8922214154595474,
+          "recall": 0.9000291832992006
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6732283464566929,
+          "0.9": 0.2926509186351706
+        },
+        "threshold_jaccard_065": 0.7630427582719256,
+        "counts": {
+          "tp": 10865128,
+          "fp": 1312486,
+          "fn": 1206845,
+          "tn": 36553973
+        },
+        "loss": 0.3337787774604137,
+        "diagnostics": {
+          "bce_soft": 0.21706423300301309,
+          "soft_dice_loss": 0.11671453730014991,
+          "wrong_pixels": 2519331,
+          "wrong_mean_confidence": 0.9013349593838291,
+          "wrong_confidence_gt99_fraction": 0.38167434132315287
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03822055459022522,
+        "encoder": 0.31675031781196594
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0006129809044912887,
+        "encoder": 6.129809044912887e-05
+      }
+    },
+    "seconds": 7.84139796999807,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 45,
+    "train_loss": {
+      "position_bias": 0.07879326199423344
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8876046645631385,
+          "iou": 0.81355412237872,
+          "precision": 0.9042382963766601,
+          "recall": 0.9041395264149288
+        },
+        "pooled": {
+          "dice": 0.8937644867358694,
+          "iou": 0.807933280046913,
+          "precision": 0.9010970700735618,
+          "recall": 0.8865502764129773
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8438320209973753,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2992125984251969
+        },
+        "threshold_jaccard_065": 0.7617227632787149,
+        "counts": {
+          "tp": 10702411,
+          "fp": 1174679,
+          "fn": 1369562,
+          "tn": 36691780
+        },
+        "loss": 0.3495439433363166,
+        "diagnostics": {
+          "bce_soft": 0.23305044094408592,
+          "soft_dice_loss": 0.11649351655028936,
+          "wrong_pixels": 2544241,
+          "wrong_mean_confidence": 0.9104593457742474,
+          "wrong_confidence_gt99_fraction": 0.4294585300684959
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.08455736190080643,
+        "encoder": 0.3892158269882202
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005977537507199337,
+        "encoder": 5.977537507199338e-05
+      }
+    },
+    "seconds": 7.824715669998113,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 46,
+    "train_loss": {
+      "position_bias": 0.07992155048778934
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853814886590045,
+          "iou": 0.8089241507131117,
+          "precision": 0.8812824947612767,
+          "recall": 0.9226276898805676
+        },
+        "pooled": {
+          "dice": 0.894426649792819,
+          "iou": 0.809016108813772,
+          "precision": 0.8817716579196874,
+          "recall": 0.9074501740519134
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.6640419947506562,
+          "0.9": 0.2637795275590551
+        },
+        "threshold_jaccard_065": 0.7585922215930704,
+        "counts": {
+          "tp": 10954714,
+          "fp": 1468813,
+          "fn": 1117259,
+          "tn": 36397646
+        },
+        "loss": 0.34571987500028034,
+        "diagnostics": {
+          "bce_soft": 0.22687130274735098,
+          "soft_dice_loss": 0.11884857663332321,
+          "wrong_pixels": 2586072,
+          "wrong_mean_confidence": 0.9045965967377088,
+          "wrong_confidence_gt99_fraction": 0.3943227412075147
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.058383628726005554,
+        "encoder": 0.3245715796947479
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005824350601949143,
+        "encoder": 5.8243506019491436e-05
+      }
+    },
+    "seconds": 7.828731432000495,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 47,
+    "train_loss": {
+      "position_bias": 0.0778640760849541
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883817511507845,
+          "iou": 0.8136300960563894,
+          "precision": 0.8932133771925636,
+          "recall": 0.9154211231339842
+        },
+        "pooled": {
+          "dice": 0.8958184669121375,
+          "iou": 0.8112963675519603,
+          "precision": 0.8904671046999225,
+          "recall": 0.9012345372210491
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8569553805774278,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2887139107611549
+        },
+        "threshold_jaccard_065": 0.7661370543008617,
+        "counts": {
+          "tp": 10879679,
+          "fp": 1338267,
+          "fn": 1192294,
+          "tn": 36528192
+        },
+        "loss": 0.3394259222223377,
+        "diagnostics": {
+          "bce_soft": 0.22375588287205833,
+          "soft_dice_loss": 0.11567004599909145,
+          "wrong_pixels": 2530561,
+          "wrong_mean_confidence": 0.90572799595876,
+          "wrong_confidence_gt99_fraction": 0.4038199434828878
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03457634896039963,
+        "encoder": 0.43371716141700745
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005670399506143308,
+        "encoder": 5.670399506143308e-05
+      }
+    },
+    "seconds": 7.807470048999676,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 48,
+    "train_loss": {
+      "position_bias": 0.07556269644173938
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8864070166841306,
+          "iou": 0.8107319530866829,
+          "precision": 0.8818262249617068,
+          "recall": 0.9239006488570463
+        },
+        "pooled": {
+          "dice": 0.8941825875505683,
+          "iou": 0.808616845316187,
+          "precision": 0.8869816981629701,
+          "recall": 0.9015013535898398
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8595800524934383,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.27034120734908135
+        },
+        "threshold_jaccard_065": 0.7608369322115897,
+        "counts": {
+          "tp": 10882900,
+          "fp": 1386688,
+          "fn": 1189073,
+          "tn": 36479771
+        },
+        "loss": 0.35137237870474186,
+        "diagnostics": {
+          "bce_soft": 0.23389635890174726,
+          "soft_dice_loss": 0.11747600556671463,
+          "wrong_pixels": 2575761,
+          "wrong_mean_confidence": 0.9106866899764211,
+          "wrong_confidence_gt99_fraction": 0.4269751735506516
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03468366339802742,
+        "encoder": 0.3089069426059723
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005515836150926646,
+        "encoder": 5.515836150926647e-05
+      }
+    },
+    "seconds": 7.869520905998797,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 49,
+    "train_loss": {
+      "position_bias": 0.07651433478231015
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8864581887971075,
+          "iou": 0.8111184483385949,
+          "precision": 0.8860414476249533,
+          "recall": 0.9198151373382233
+        },
+        "pooled": {
+          "dice": 0.8931837454557713,
+          "iou": 0.8069846659629801,
+          "precision": 0.8886957511492252,
+          "recall": 0.8977172994008519
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.916010498687664,
+          "0.7": 0.84251968503937,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.2769028871391076
+        },
+        "threshold_jaccard_065": 0.7655158238854747,
+        "counts": {
+          "tp": 10837219,
+          "fp": 1357302,
+          "fn": 1234754,
+          "tn": 36509157
+        },
+        "loss": 0.35017869384895783,
+        "diagnostics": {
+          "bce_soft": 0.2326716803346719,
+          "soft_dice_loss": 0.11750700436239167,
+          "wrong_pixels": 2592056,
+          "wrong_mean_confidence": 0.9059611251926772,
+          "wrong_confidence_gt99_fraction": 0.409589144678973
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02513221837580204,
+        "encoder": 0.26303285360336304
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005360813071670102,
+        "encoder": 5.360813071670102e-05
+      }
+    },
+    "seconds": 7.8124716300008,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 50,
+    "train_loss": {
+      "position_bias": 0.07503736234039922
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8878915110493005,
+          "iou": 0.8131662052327403,
+          "precision": 0.8923310687135568,
+          "recall": 0.9157646251332743
+        },
+        "pooled": {
+          "dice": 0.8954695050440156,
+          "iou": 0.8107241123113582,
+          "precision": 0.8913203244903873,
+          "recall": 0.8996574959205095
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.28083989501312334
+        },
+        "threshold_jaccard_065": 0.7651102925548797,
+        "counts": {
+          "tp": 10860641,
+          "fp": 1324250,
+          "fn": 1211332,
+          "tn": 36542209
+        },
+        "loss": 0.3468339854650923,
+        "diagnostics": {
+          "bce_soft": 0.23101591704085744,
+          "soft_dice_loss": 0.11581805293641378,
+          "wrong_pixels": 2535582,
+          "wrong_mean_confidence": 0.9099456769392782,
+          "wrong_confidence_gt99_fraction": 0.42539109364240635
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.033139195293188095,
+        "encoder": 0.24098819494247437
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0005205483257436735,
+        "encoder": 5.205483257436735e-05
+      }
+    },
+    "seconds": 7.886332729998685,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 51,
+    "train_loss": {
+      "position_bias": 0.07397633986913008
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8875528995520745,
+          "iou": 0.8124253165826871,
+          "precision": 0.8878570370624719,
+          "recall": 0.9195321951617601
+        },
+        "pooled": {
+          "dice": 0.895585386833517,
+          "iou": 0.8109141043197277,
+          "precision": 0.8884559849153232,
+          "recall": 0.9028301338977481
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6758530183727034,
+          "0.9": 0.28083989501312334
+        },
+        "threshold_jaccard_065": 0.7659763327015302,
+        "counts": {
+          "tp": 10898941,
+          "fp": 1368342,
+          "fn": 1173032,
+          "tn": 36498117
+        },
+        "loss": 0.34794353218529167,
+        "diagnostics": {
+          "bce_soft": 0.2317143409583825,
+          "soft_dice_loss": 0.11622919435576191,
+          "wrong_pixels": 2541374,
+          "wrong_mean_confidence": 0.9092291034446655,
+          "wrong_confidence_gt99_fraction": 0.4227465142871533
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.053125448524951935,
+        "encoder": 0.3388858735561371
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.000505,
+        "encoder": 5.05e-05
+      }
+    },
+    "seconds": 7.835311980998085,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 52,
+    "train_loss": {
+      "position_bias": 0.07247751477161622
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8879760332765303,
+          "iou": 0.8130732837294491,
+          "precision": 0.8879870199959747,
+          "recall": 0.9198050491565641
+        },
+        "pooled": {
+          "dice": 0.8955077322349937,
+          "iou": 0.8107867826427585,
+          "precision": 0.8885873756053815,
+          "recall": 0.9025367270122291
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.847769028871391,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2926509186351706
+        },
+        "threshold_jaccard_065": 0.7655500416204485,
+        "counts": {
+          "tp": 10895399,
+          "fp": 1366084,
+          "fn": 1176574,
+          "tn": 36500375
+        },
+        "loss": 0.34787790903582033,
+        "diagnostics": {
+          "bce_soft": 0.232184396875812,
+          "soft_dice_loss": 0.11569350738850791,
+          "wrong_pixels": 2542658,
+          "wrong_mean_confidence": 0.9097056966220606,
+          "wrong_confidence_gt99_fraction": 0.42630428472881526
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04898526519536972,
+        "encoder": 0.2550995945930481
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0004894516742563266,
+        "encoder": 4.894516742563266e-05
+      }
+    },
+    "seconds": 7.877685227998882,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 53,
+    "train_loss": {
+      "position_bias": 0.07209259360112164
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8892292730762319,
+          "iou": 0.8151554009198216,
+          "precision": 0.8967810773517741,
+          "recall": 0.9132906873449251
+        },
+        "pooled": {
+          "dice": 0.8965971803006544,
+          "iou": 0.8125746683744731,
+          "precision": 0.8963506249391486,
+          "recall": 0.8968438713373531
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2952755905511811
+        },
+        "threshold_jaccard_065": 0.7684962032732562,
+        "counts": {
+          "tp": 10826675,
+          "fp": 1251941,
+          "fn": 1245298,
+          "tn": 36614518
+        },
+        "loss": 0.3461677688626167,
+        "diagnostics": {
+          "bce_soft": 0.23165013752584382,
+          "soft_dice_loss": 0.11451762633060845,
+          "wrong_pixels": 2497239,
+          "wrong_mean_confidence": 0.9116408122678776,
+          "wrong_confidence_gt99_fraction": 0.4359770931016214
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04293326660990715,
+        "encoder": 0.4127134680747986
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00047391869283298986,
+        "encoder": 4.739186928329899e-05
+      }
+    },
+    "seconds": 7.897256596999796,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 54,
+    "train_loss": {
+      "position_bias": 0.07152402280876265
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883281060087364,
+          "iou": 0.8138421929485344,
+          "precision": 0.8923034670311739,
+          "recall": 0.9161484774283728
+        },
+        "pooled": {
+          "dice": 0.8956234842963111,
+          "iou": 0.8109765750728917,
+          "precision": 0.8941918994039068,
+          "recall": 0.8970596604217057
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.678477690288714,
+          "0.9": 0.29396325459317585
+        },
+        "threshold_jaccard_065": 0.769285445534786,
+        "counts": {
+          "tp": 10829280,
+          "fp": 1281409,
+          "fn": 1242693,
+          "tn": 36585050
+        },
+        "loss": 0.3488781716567012,
+        "diagnostics": {
+          "bce_soft": 0.23341371662660534,
+          "soft_dice_loss": 0.11546445002393146,
+          "wrong_pixels": 2524102,
+          "wrong_mean_confidence": 0.910457484424061,
+          "wrong_confidence_gt99_fraction": 0.4319223232658585
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.045373979955911636,
+        "encoder": 0.371215283870697
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00045841638490733545,
+        "encoder": 4.584163849073355e-05
+      }
+    },
+    "seconds": 7.918767899998784,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 55,
+    "train_loss": {
+      "position_bias": 0.07234194416509326
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8862013573054509,
+          "iou": 0.8103234965592531,
+          "precision": 0.8862558991819418,
+          "recall": 0.9188278956249525
+        },
+        "pooled": {
+          "dice": 0.8938327182699332,
+          "iou": 0.8080447984973499,
+          "precision": 0.8827900896846858,
+          "recall": 0.9051551059632091
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6679790026246719,
+          "0.9": 0.2637795275590551
+        },
+        "threshold_jaccard_065": 0.7624867164309859,
+        "counts": {
+          "tp": 10927008,
+          "fp": 1450802,
+          "fn": 1144965,
+          "tn": 36415657
+        },
+        "loss": 0.3597369527253579,
+        "diagnostics": {
+          "bce_soft": 0.2424958137858884,
+          "soft_dice_loss": 0.11724114433674049,
+          "wrong_pixels": 2595767,
+          "wrong_mean_confidence": 0.9119137864180442,
+          "wrong_confidence_gt99_fraction": 0.43632883845121695
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0806182399392128,
+        "encoder": 0.30400899052619934
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0004429600493856695,
+        "encoder": 4.429600493856695e-05
+      }
+    },
+    "seconds": 7.889720406998094,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 56,
+    "train_loss": {
+      "position_bias": 0.07231208817956304
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8901000143403379,
+          "iou": 0.8168054635917014,
+          "precision": 0.8984173147797438,
+          "recall": 0.9132774718008517
+        },
+        "pooled": {
+          "dice": 0.896844638471856,
+          "iou": 0.812981262430256,
+          "precision": 0.899258852594016,
+          "recall": 0.8944433523832434
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6889763779527559,
+          "0.9": 0.30971128608923887
+        },
+        "threshold_jaccard_065": 0.7704126124199863,
+        "counts": {
+          "tp": 10797696,
+          "fp": 1209632,
+          "fn": 1274277,
+          "tn": 36656827
+        },
+        "loss": 0.34848112790916225,
+        "diagnostics": {
+          "bce_soft": 0.23478875025676618,
+          "soft_dice_loss": 0.11369239095002022,
+          "wrong_pixels": 2483909,
+          "wrong_mean_confidence": 0.9142035479079746,
+          "wrong_confidence_gt99_fraction": 0.45417324064609454
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.027979563921689987,
+        "encoder": 0.2955697476863861
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00042756493980508576,
+        "encoder": 4.275649398050858e-05
+      }
+    },
+    "seconds": 7.881505798999569,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 57,
+    "train_loss": {
+      "position_bias": 0.07151462012864372
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8886934820980424,
+          "iou": 0.8148853390616524,
+          "precision": 0.8972903846146618,
+          "recall": 0.9123401228176145
+        },
+        "pooled": {
+          "dice": 0.8953777233937015,
+          "iou": 0.810573661563794,
+          "precision": 0.8939740586701406,
+          "recall": 0.8967858029503545
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.2926509186351706
+        },
+        "threshold_jaccard_065": 0.7648320998060009,
+        "counts": {
+          "tp": 10825974,
+          "fp": 1283968,
+          "fn": 1245999,
+          "tn": 36582491
+        },
+        "loss": 0.3516624512009108,
+        "diagnostics": {
+          "bce_soft": 0.23664888285902227,
+          "soft_dice_loss": 0.11501355559181353,
+          "wrong_pixels": 2529967,
+          "wrong_mean_confidence": 0.9117265440515935,
+          "wrong_confidence_gt99_fraction": 0.43927055175027974
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03004806488752365,
+        "encoder": 0.2394217997789383
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0004122462492800663,
+        "encoder": 4.122462492800663e-05
+      }
+    },
+    "seconds": 7.885400481001852,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 58,
+    "train_loss": {
+      "position_bias": 0.07039604902520286
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8865053710819678,
+          "iou": 0.8109687085866575,
+          "precision": 0.8898958816462813,
+          "recall": 0.9159656787723095
+        },
+        "pooled": {
+          "dice": 0.894192579517478,
+          "iou": 0.8086331877998202,
+          "precision": 0.8858222423774563,
+          "recall": 0.902722612119825
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6692913385826772,
+          "0.9": 0.2677165354330709
+        },
+        "threshold_jaccard_065": 0.7656330932971829,
+        "counts": {
+          "tp": 10897643,
+          "fp": 1404648,
+          "fn": 1174330,
+          "tn": 36461811
+        },
+        "loss": 0.3585017160793615,
+        "diagnostics": {
+          "bce_soft": 0.24156324897851217,
+          "soft_dice_loss": 0.11693848039847346,
+          "wrong_pixels": 2578978,
+          "wrong_mean_confidence": 0.91186980089083,
+          "wrong_confidence_gt99_fraction": 0.438620647403739
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03167169913649559,
+        "encoder": 0.2141762524843216
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0003970190955087116,
+        "encoder": 3.9701909550871155e-05
+      }
+    },
+    "seconds": 7.908338608998747,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 59,
+    "train_loss": {
+      "position_bias": 0.0692856306741498
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8868465709856561,
+          "iou": 0.8114631292525213,
+          "precision": 0.8845893395149177,
+          "recall": 0.9216787907174996
+        },
+        "pooled": {
+          "dice": 0.8948132022374846,
+          "iou": 0.8096488340695541,
+          "precision": 0.8836074899770588,
+          "recall": 0.9063067818325968
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.678477690288714,
+          "0.9": 0.2755905511811024
+        },
+        "threshold_jaccard_065": 0.7637653084320374,
+        "counts": {
+          "tp": 10940911,
+          "fp": 1441183,
+          "fn": 1131062,
+          "tn": 36425276
+        },
+        "loss": 0.3574849342110902,
+        "diagnostics": {
+          "bce_soft": 0.24098824860229892,
+          "soft_dice_loss": 0.11649668310570904,
+          "wrong_pixels": 2572245,
+          "wrong_mean_confidence": 0.913390903801654,
+          "wrong_confidence_gt99_fraction": 0.4426215232219326
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.028871774673461914,
+        "encoder": 0.21640349924564362
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00038189850585339686,
+        "encoder": 3.818985058533969e-05
+      }
+    },
+    "seconds": 7.88450046899743,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 60,
+    "train_loss": {
+      "position_bias": 0.06993255338385654
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8876420247506973,
+          "iou": 0.8126875175664824,
+          "precision": 0.8898693501842314,
+          "recall": 0.9175895628718502
+        },
+        "pooled": {
+          "dice": 0.8954349392497927,
+          "iou": 0.8106674482729193,
+          "precision": 0.8907439927684037,
+          "recall": 0.9001755553959573
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2769028871391076
+        },
+        "threshold_jaccard_065": 0.767341176625886,
+        "counts": {
+          "tp": 10866895,
+          "fp": 1332901,
+          "fn": 1205078,
+          "tn": 36533558
+        },
+        "loss": 0.36030133487045607,
+        "diagnostics": {
+          "bce_soft": 0.24468125594569629,
+          "soft_dice_loss": 0.11562008666867034,
+          "wrong_pixels": 2537979,
+          "wrong_mean_confidence": 0.9167521027673216,
+          "wrong_confidence_gt99_fraction": 0.46441361413943927
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02192673459649086,
+        "encoder": 0.18938887119293213
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00036689940251058157,
+        "encoder": 3.668994025105816e-05
+      }
+    },
+    "seconds": 7.879636624998966,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 61,
+    "train_loss": {
+      "position_bias": 0.06854773016522064
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8869593553614803,
+          "iou": 0.8113330079510166,
+          "precision": 0.8863890121394216,
+          "recall": 0.9198186631872064
+        },
+        "pooled": {
+          "dice": 0.8944625170509585,
+          "iou": 0.8090747992234179,
+          "precision": 0.8845615926286298,
+          "recall": 0.9045875930968368
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8648293963254593,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2690288713910761
+        },
+        "threshold_jaccard_065": 0.7649572484474794,
+        "counts": {
+          "tp": 10920157,
+          "fp": 1425119,
+          "fn": 1151816,
+          "tn": 36441340
+        },
+        "loss": 0.36457346899928694,
+        "diagnostics": {
+          "bce_soft": 0.24835822330372226,
+          "soft_dice_loss": 0.11621525156216359,
+          "wrong_pixels": 2576935,
+          "wrong_mean_confidence": 0.915632584564532,
+          "wrong_confidence_gt99_fraction": 0.4594337847093543
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.023688185960054398,
+        "encoder": 0.1707829385995865
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0003520365877844012,
+        "encoder": 3.520365877844012e-05
+      }
+    },
+    "seconds": 7.9155493050020596,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 62,
+    "train_loss": {
+      "position_bias": 0.06746867333844003
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881105433360704,
+          "iou": 0.8135183535455851,
+          "precision": 0.8931494428210904,
+          "recall": 0.9152186830292647
+        },
+        "pooled": {
+          "dice": 0.8952978223253026,
+          "iou": 0.810442706114536,
+          "precision": 0.8931382349309105,
+          "recall": 0.8974678786972105
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2887139107611549
+        },
+        "threshold_jaccard_065": 0.768344375035696,
+        "counts": {
+          "tp": 10834208,
+          "fp": 1296286,
+          "fn": 1237765,
+          "tn": 36570173
+        },
+        "loss": 0.3585368421446933,
+        "diagnostics": {
+          "bce_soft": 0.2432732446769404,
+          "soft_dice_loss": 0.1152635983281874,
+          "wrong_pixels": 2534051,
+          "wrong_mean_confidence": 0.9159960645210886,
+          "wrong_confidence_gt99_fraction": 0.4636501001755687
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.027935493737459183,
+        "encoder": 0.1957198977470398
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0003373247294785808,
+        "encoder": 3.373247294785808e-05
+      }
+    },
+    "seconds": 7.88640391899753,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 63,
+    "train_loss": {
+      "position_bias": 0.06764057205944526
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.887333482346341,
+          "iou": 0.812231251062689,
+          "precision": 0.8898998091271141,
+          "recall": 0.9168344841372104
+        },
+        "pooled": {
+          "dice": 0.8952575950066523,
+          "iou": 0.810376781917811,
+          "precision": 0.8909910319405481,
+          "recall": 0.8995652160587172
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9186351706036745,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.678477690288714,
+          "0.9": 0.2755905511811024
+        },
+        "threshold_jaccard_065": 0.7644811717928648,
+        "counts": {
+          "tp": 10859527,
+          "fp": 1328617,
+          "fn": 1212446,
+          "tn": 36537842
+        },
+        "loss": 0.36440412954395524,
+        "diagnostics": {
+          "bce_soft": 0.248486656764048,
+          "soft_dice_loss": 0.1159174817753589,
+          "wrong_pixels": 2541063,
+          "wrong_mean_confidence": 0.9190946651276,
+          "wrong_confidence_gt99_fraction": 0.47641400469016315
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.023781316354870796,
+        "encoder": 0.20337778329849243
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00032277834642108455,
+        "encoder": 3.2277834642108455e-05
+      }
+    },
+    "seconds": 7.87946978400214,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 64,
+    "train_loss": {
+      "position_bias": 0.06789651168618956
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853235584025542,
+          "iou": 0.8084410561670123,
+          "precision": 0.8787172360989569,
+          "recall": 0.9246814294073925
+        },
+        "pooled": {
+          "dice": 0.8932601815273679,
+          "iou": 0.8071094638666935,
+          "precision": 0.875890493147701,
+          "recall": 0.9113327208402471
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8451443569553806,
+          "0.8": 0.6719160104986877,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7592292943861608,
+        "counts": {
+          "tp": 11001584,
+          "fp": 1558872,
+          "fn": 1070389,
+          "tn": 36307587
+        },
+        "loss": 0.37191368948443354,
+        "diagnostics": {
+          "bce_soft": 0.25406276741678635,
+          "soft_dice_loss": 0.11785092081610613,
+          "wrong_pixels": 2629261,
+          "wrong_mean_confidence": 0.9163874801336992,
+          "wrong_confidence_gt99_fraction": 0.4605959621353681
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0511104017496109,
+        "encoder": 0.270955890417099
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0003084117941357836,
+        "encoder": 3.084117941357836e-05
+      }
+    },
+    "seconds": 7.872583374999522,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 65,
+    "train_loss": {
+      "position_bias": 0.0666966412378394
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8884741989978983,
+          "iou": 0.8148255638913278,
+          "precision": 0.9027672433518363,
+          "recall": 0.9064888943882929
+        },
+        "pooled": {
+          "dice": 0.8954209143324011,
+          "iou": 0.8106444581025322,
+          "precision": 0.901684544810377,
+          "recall": 0.8892437052336019
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.30446194225721784
+        },
+        "threshold_jaccard_065": 0.7677281769189899,
+        "counts": {
+          "tp": 10734926,
+          "fp": 1170486,
+          "fn": 1337047,
+          "tn": 36695973
+        },
+        "loss": 0.3652456067991382,
+        "diagnostics": {
+          "bce_soft": 0.25044254790453774,
+          "soft_dice_loss": 0.11480304935159959,
+          "wrong_pixels": 2507533,
+          "wrong_mean_confidence": 0.9196698332388272,
+          "wrong_confidence_gt99_fraction": 0.486325404291788
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06894166767597198,
+        "encoder": 0.39221489429473877
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0002942392506752891,
+        "encoder": 2.9423925067528905e-05
+      }
+    },
+    "seconds": 7.886691407002218,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 66,
+    "train_loss": {
+      "position_bias": 0.06599985895834444
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8868485768321267,
+          "iou": 0.8117700804401126,
+          "precision": 0.8884894436093276,
+          "recall": 0.917615356812503
+        },
+        "pooled": {
+          "dice": 0.8948998524400821,
+          "iou": 0.8097907274883981,
+          "precision": 0.8881407527228852,
+          "recall": 0.9017626199130829
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.2795275590551181
+        },
+        "threshold_jaccard_065": 0.7633742132725218,
+        "counts": {
+          "tp": 10886054,
+          "fp": 1371073,
+          "fn": 1185919,
+          "tn": 36495386
+        },
+        "loss": 0.370275297972161,
+        "diagnostics": {
+          "bce_soft": 0.2540450297941373,
+          "soft_dice_loss": 0.11623027646948346,
+          "wrong_pixels": 2556992,
+          "wrong_mean_confidence": 0.9203079156645887,
+          "wrong_confidence_gt99_fraction": 0.48325024090806695
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03792782500386238,
+        "encoder": 0.31008321046829224
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00028027470262892434,
+        "encoder": 2.8027470262892437e-05
+      }
+    },
+    "seconds": 7.871192413997051,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 67,
+    "train_loss": {
+      "position_bias": 0.06638732296538126
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8875115326186976,
+          "iou": 0.812514622887321,
+          "precision": 0.8887917079800703,
+          "recall": 0.9182463914969192
+        },
+        "pooled": {
+          "dice": 0.8954666204048947,
+          "iou": 0.8107193833591073,
+          "precision": 0.888838553517576,
+          "recall": 0.902194280918289
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.678477690288714,
+          "0.9": 0.27296587926509186
+        },
+        "threshold_jaccard_065": 0.7654036041799558,
+        "counts": {
+          "tp": 10891265,
+          "fp": 1362102,
+          "fn": 1180708,
+          "tn": 36504357
+        },
+        "loss": 0.3622652179612888,
+        "diagnostics": {
+          "bce_soft": 0.24651188894206771,
+          "soft_dice_loss": 0.11575333214807385,
+          "wrong_pixels": 2542810,
+          "wrong_mean_confidence": 0.9163334065817809,
+          "wrong_confidence_gt99_fraction": 0.4642690566735226
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.025479525327682495,
+        "encoder": 0.2613658010959625
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0002665319313196509,
+        "encoder": 2.665319313196509e-05
+      }
+    },
+    "seconds": 7.8549627190004685,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 68,
+    "train_loss": {
+      "position_bias": 0.06550664518696127
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8878758875610245,
+          "iou": 0.8132669108316617,
+          "precision": 0.8918466862064708,
+          "recall": 0.9157478266497077
+        },
+        "pooled": {
+          "dice": 0.8953697668728765,
+          "iou": 0.8105606202160095,
+          "precision": 0.8886708708152476,
+          "recall": 0.9021704240060842
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.766380744835082,
+        "counts": {
+          "tp": 10890977,
+          "fp": 1364378,
+          "fn": 1180996,
+          "tn": 36502081
+        },
+        "loss": 0.36891189898092913,
+        "diagnostics": {
+          "bce_soft": 0.25378783888078427,
+          "soft_dice_loss": 0.11512407762172028,
+          "wrong_pixels": 2545374,
+          "wrong_mean_confidence": 0.9204052177983604,
+          "wrong_confidence_gt99_fraction": 0.48580915810407427
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.039298392832279205,
+        "encoder": 0.26977646350860596
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0002530244992035662,
+        "encoder": 2.530244992035662e-05
+      }
+    },
+    "seconds": 7.861608447998151,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 69,
+    "train_loss": {
+      "position_bias": 0.06540227460962338
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883936061935672,
+          "iou": 0.8140317085926693,
+          "precision": 0.8933877038020936,
+          "recall": 0.9151540201457438
+        },
+        "pooled": {
+          "dice": 0.8956040391406859,
+          "iou": 0.8109446891166006,
+          "precision": 0.8941065568911662,
+          "recall": 0.8971065458811083
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9304461942257218,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.28083989501312334
+        },
+        "threshold_jaccard_065": 0.7670733258279427,
+        "counts": {
+          "tp": 10829846,
+          "fp": 1282632,
+          "fn": 1242127,
+          "tn": 36583827
+        },
+        "loss": 0.3634154303806035,
+        "diagnostics": {
+          "bce_soft": 0.2486121049077492,
+          "soft_dice_loss": 0.11480333626739622,
+          "wrong_pixels": 2524759,
+          "wrong_mean_confidence": 0.9187237997804447,
+          "wrong_confidence_gt99_fraction": 0.4800881985171654
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03390457108616829,
+        "encoder": 0.16593807935714722
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00023976573648539656,
+        "encoder": 2.3976573648539656e-05
+      }
+    },
+    "seconds": 7.880845741001394,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 70,
+    "train_loss": {
+      "position_bias": 0.06518403324570156
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8884840075939707,
+          "iou": 0.8142916892355594,
+          "precision": 0.8940925477093562,
+          "recall": 0.9146297185920683
+        },
+        "pooled": {
+          "dice": 0.8961243450462402,
+          "iou": 0.8117982682422487,
+          "precision": 0.8932971042825405,
+          "recall": 0.898969538782103
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2926509186351706
+        },
+        "threshold_jaccard_065": 0.768973066918487,
+        "counts": {
+          "tp": 10852336,
+          "fp": 1296294,
+          "fn": 1219637,
+          "tn": 36570165
+        },
+        "loss": 0.36854991887810973,
+        "diagnostics": {
+          "bce_soft": 0.2540547992457242,
+          "soft_dice_loss": 0.11449512690696817,
+          "wrong_pixels": 2515931,
+          "wrong_mean_confidence": 0.9212880199390845,
+          "wrong_confidence_gt99_fraction": 0.4943708710612493
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.034655988216400146,
+        "encoder": 0.23943614959716797
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0002267687279631953,
+        "encoder": 2.2676872796319533e-05
+      }
+    },
+    "seconds": 7.875293077002425,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 71,
+    "train_loss": {
+      "position_bias": 0.06503231155025364
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8867376892783944,
+          "iou": 0.8113648352339226,
+          "precision": 0.8870292193811768,
+          "recall": 0.9186361352986057
+        },
+        "pooled": {
+          "dice": 0.8946690777636356,
+          "iou": 0.8094128733442953,
+          "precision": 0.8885061465880955,
+          "recall": 0.9009181017883323
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.847769028871391,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.27296587926509186
+        },
+        "threshold_jaccard_065": 0.7654481003315001,
+        "counts": {
+          "tp": 10875859,
+          "fp": 1364753,
+          "fn": 1196114,
+          "tn": 36501706
+        },
+        "loss": 0.36953733067499994,
+        "diagnostics": {
+          "bce_soft": 0.2532756957482165,
+          "soft_dice_loss": 0.11626163117216015,
+          "wrong_pixels": 2560867,
+          "wrong_mean_confidence": 0.9192297208175839,
+          "wrong_confidence_gt99_fraction": 0.4789538074409956
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02909858524799347,
+        "encoder": 0.3388576805591583
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00021404630011522585,
+        "encoder": 2.1404630011522586e-05
+      }
+    },
+    "seconds": 7.881875876999402,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 72,
+    "train_loss": {
+      "position_bias": 0.06445875084412818
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861552299999989,
+          "iou": 0.8102750900422296,
+          "precision": 0.8856703337524506,
+          "recall": 0.9190384009741552
+        },
+        "pooled": {
+          "dice": 0.8940075868239866,
+          "iou": 0.8083306686134651,
+          "precision": 0.8828523375473621,
+          "recall": 0.9054483471757268
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6679790026246719,
+          "0.9": 0.2677165354330709
+        },
+        "threshold_jaccard_065": 0.7640969434888307,
+        "counts": {
+          "tp": 10930548,
+          "fp": 1450399,
+          "fn": 1141425,
+          "tn": 36416060
+        },
+        "loss": 0.37927618568024923,
+        "diagnostics": {
+          "bce_soft": 0.26255741426012336,
+          "soft_dice_loss": 0.11671875765317381,
+          "wrong_pixels": 2591824,
+          "wrong_mean_confidence": 0.9223925069672045,
+          "wrong_confidence_gt99_fraction": 0.49553287568909
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.01951858215034008,
+        "encoder": 0.13538318872451782
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0002016110084417766,
+        "encoder": 2.016110084417766e-05
+      }
+    },
+    "seconds": 7.86970210599975,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 73,
+    "train_loss": {
+      "position_bias": 0.06428975922431825
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8865036509466006,
+          "iou": 0.8107713765298135,
+          "precision": 0.8855414130614152,
+          "recall": 0.9197053362724982
+        },
+        "pooled": {
+          "dice": 0.8938994600101752,
+          "iou": 0.808153895321666,
+          "precision": 0.8819600714422602,
+          "recall": 0.9061665396368929
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.6692913385826772,
+          "0.9": 0.26246719160104987
+        },
+        "threshold_jaccard_065": 0.7652165582297277,
+        "counts": {
+          "tp": 10939218,
+          "fp": 1464085,
+          "fn": 1132755,
+          "tn": 36402374
+        },
+        "loss": 0.3748354517568753,
+        "diagnostics": {
+          "bce_soft": 0.25835719587296013,
+          "soft_dice_loss": 0.11647826980730992,
+          "wrong_pixels": 2596840,
+          "wrong_mean_confidence": 0.9200035797913815,
+          "wrong_confidence_gt99_fraction": 0.4818109702561575
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.024040959775447845,
+        "encoder": 0.14038033783435822
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0001894751250743986,
+        "encoder": 1.894751250743986e-05
+      }
+    },
+    "seconds": 7.864155667000887,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 74,
+    "train_loss": {
+      "position_bias": 0.06411861690711368
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8872028201501776,
+          "iou": 0.8121341185557063,
+          "precision": 0.8883783970426323,
+          "recall": 0.9180661936026882
+        },
+        "pooled": {
+          "dice": 0.8948934089477333,
+          "iou": 0.809780175227829,
+          "precision": 0.8897778625788544,
+          "recall": 0.9000681164545348
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.678477690288714,
+          "0.9": 0.27296587926509186
+        },
+        "threshold_jaccard_065": 0.7661441271884852,
+        "counts": {
+          "tp": 10865598,
+          "fp": 1345987,
+          "fn": 1206375,
+          "tn": 36520472
+        },
+        "loss": 0.3713777301505482,
+        "diagnostics": {
+          "bce_soft": 0.25560827604116104,
+          "soft_dice_loss": 0.11576946247906822,
+          "wrong_pixels": 2552362,
+          "wrong_mean_confidence": 0.9208754111794177,
+          "wrong_confidence_gt99_fraction": 0.48932753269324647
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04943247139453888,
+        "encoder": 0.31898000836372375
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0001776506266647924,
+        "encoder": 1.776506266647924e-05
+      }
+    },
+    "seconds": 7.8801581770021585,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 75,
+    "train_loss": {
+      "position_bias": 0.06382774838966378
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883905735773083,
+          "iou": 0.814214758943366,
+          "precision": 0.8944947241065937,
+          "recall": 0.913941026965564
+        },
+        "pooled": {
+          "dice": 0.8953960208324864,
+          "iou": 0.8106036531819331,
+          "precision": 0.8940302160870909,
+          "recall": 0.8967660050266846
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.678477690288714,
+          "0.9": 0.2926509186351706
+        },
+        "threshold_jaccard_065": 0.7690530421115908,
+        "counts": {
+          "tp": 10825735,
+          "fp": 1283179,
+          "fn": 1246238,
+          "tn": 36583280
+        },
+        "loss": 0.36666760842005414,
+        "diagnostics": {
+          "bce_soft": 0.25206720211061595,
+          "soft_dice_loss": 0.11460040482323314,
+          "wrong_pixels": 2529417,
+          "wrong_mean_confidence": 0.919314340931112,
+          "wrong_confidence_gt99_fraction": 0.4824641409463129
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.06680524349212646,
+        "encoder": 0.2791280448436737
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0001661491825652991,
+        "encoder": 1.661491825652991e-05
+      }
+    },
+    "seconds": 7.8995363770009135,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 76,
+    "train_loss": {
+      "position_bias": 0.06324133861608495
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8873972968894944,
+          "iou": 0.8124111352238922,
+          "precision": 0.8880637986575046,
+          "recall": 0.9186129274427225
+        },
+        "pooled": {
+          "dice": 0.8946402443051013,
+          "iou": 0.8093656745650869,
+          "precision": 0.8865868215347907,
+          "recall": 0.9028413168253441
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.678477690288714,
+          "0.9": 0.2755905511811024
+        },
+        "threshold_jaccard_065": 0.7680445218480015,
+        "counts": {
+          "tp": 10899076,
+          "fp": 1394222,
+          "fn": 1172897,
+          "tn": 36472237
+        },
+        "loss": 0.37857115691102394,
+        "diagnostics": {
+          "bce_soft": 0.2630516249207374,
+          "soft_dice_loss": 0.11551953785688546,
+          "wrong_pixels": 2567119,
+          "wrong_mean_confidence": 0.9230645322784878,
+          "wrong_confidence_gt99_fraction": 0.5033701203567111
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.042255572974681854,
+        "encoder": 0.215337872505188
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00015498214331265904,
+        "encoder": 1.5498214331265904e-05
+      }
+    },
+    "seconds": 7.888942140998552,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 77,
+    "train_loss": {
+      "position_bias": 0.0631239267573756
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8885471623199411,
+          "iou": 0.8145637786703892,
+          "precision": 0.8935435933784387,
+          "recall": 0.9150624353796345
+        },
+        "pooled": {
+          "dice": 0.895936222414722,
+          "iou": 0.8114895539587792,
+          "precision": 0.8926478979163561,
+          "recall": 0.8992488634625011
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2900262467191601
+        },
+        "threshold_jaccard_065": 0.7693355205664469,
+        "counts": {
+          "tp": 10855708,
+          "fp": 1305535,
+          "fn": 1216265,
+          "tn": 36560924
+        },
+        "loss": 0.36795549646137266,
+        "diagnostics": {
+          "bce_soft": 0.2535227292322424,
+          "soft_dice_loss": 0.11443275932877708,
+          "wrong_pixels": 2521800,
+          "wrong_mean_confidence": 0.9208503682671848,
+          "wrong_confidence_gt99_fraction": 0.49002775795067016
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.029272543266415596,
+        "encoder": 0.2657468914985657
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0001441605294264014,
+        "encoder": 1.441605294264014e-05
+      }
+    },
+    "seconds": 7.887242180000612,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 78,
+    "train_loss": {
+      "position_bias": 0.06292468290440224
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8882549306649928,
+          "iou": 0.8140482286189903,
+          "precision": 0.8931293810081267,
+          "recall": 0.9152350841009717
+        },
+        "pooled": {
+          "dice": 0.8956154693729774,
+          "iou": 0.810963432152101,
+          "precision": 0.892605085078786,
+          "recall": 0.8986462279198272
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7688631426108303,
+        "counts": {
+          "tp": 10848433,
+          "fp": 1305243,
+          "fn": 1223540,
+          "tn": 36561216
+        },
+        "loss": 0.3709089235057981,
+        "diagnostics": {
+          "bce_soft": 0.25627305579623527,
+          "soft_dice_loss": 0.11463587412371097,
+          "wrong_pixels": 2528783,
+          "wrong_mean_confidence": 0.9219246977333012,
+          "wrong_confidence_gt99_fraction": 0.49638620632928965
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.024591809138655663,
+        "encoder": 0.1831626147031784
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.0001336950205329225,
+        "encoder": 1.3369502053292252e-05
+      }
+    },
+    "seconds": 7.882548929999757,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 79,
+    "train_loss": {
+      "position_bias": 0.06299230668097261
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8874035334704558,
+          "iou": 0.8123747469001598,
+          "precision": 0.8865715137413346,
+          "recall": 0.9202789500438752
+        },
+        "pooled": {
+          "dice": 0.8951430434980027,
+          "iou": 0.8101890821523596,
+          "precision": 0.8857777083895142,
+          "recall": 0.9047085343878751
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.678477690288714,
+          "0.9": 0.27296587926509186
+        },
+        "threshold_jaccard_065": 0.7653809956645792,
+        "counts": {
+          "tp": 10921617,
+          "fp": 1408358,
+          "fn": 1150356,
+          "tn": 36458101
+        },
+        "loss": 0.3755913084260435,
+        "diagnostics": {
+          "bce_soft": 0.2601764778609038,
+          "soft_dice_loss": 0.11541483783972233,
+          "wrong_pixels": 2558714,
+          "wrong_mean_confidence": 0.9228309100550408,
+          "wrong_confidence_gt99_fraction": 0.4989451732393695
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.020956791937351227,
+        "encoder": 0.17690764367580414
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00012359594482598438,
+        "encoder": 1.2359594482598438e-05
+      }
+    },
+    "seconds": 7.855180898000981,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 80,
+    "train_loss": {
+      "position_bias": 0.06257304704075527
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8879100966488603,
+          "iou": 0.8134217191665202,
+          "precision": 0.8918115875474989,
+          "recall": 0.9158773983298899
+        },
+        "pooled": {
+          "dice": 0.8951688520577181,
+          "iou": 0.8102313676845063,
+          "precision": 0.890113698952692,
+          "recall": 0.900281751789869
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.2900262467191601
+        },
+        "threshold_jaccard_065": 0.7674051010770326,
+        "counts": {
+          "tp": 10868177,
+          "fp": 1341698,
+          "fn": 1203796,
+          "tn": 36524761
+        },
+        "loss": 0.37738114329460726,
+        "diagnostics": {
+          "bce_soft": 0.26240092938340553,
+          "soft_dice_loss": 0.11498023268431816,
+          "wrong_pixels": 2545494,
+          "wrong_mean_confidence": 0.9238834962240688,
+          "wrong_confidence_gt99_fraction": 0.5077061662687086
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.027587801218032837,
+        "encoder": 0.1784151941537857
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00011387326887403324,
+        "encoder": 1.1387326887403323e-05
+      }
+    },
+    "seconds": 7.842125570998178,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 81,
+    "train_loss": {
+      "position_bias": 0.0622261630515405
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8878733484446836,
+          "iou": 0.813181357350707,
+          "precision": 0.8907313058967704,
+          "recall": 0.9168704569489324
+        },
+        "pooled": {
+          "dice": 0.895317387940946,
+          "iou": 0.8104747718189704,
+          "precision": 0.8896535654118629,
+          "recall": 0.9010537879764973
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6889763779527559,
+          "0.9": 0.2769028871391076
+        },
+        "threshold_jaccard_065": 0.7661736803861833,
+        "counts": {
+          "tp": 10877497,
+          "fp": 1349169,
+          "fn": 1194476,
+          "tn": 36517290
+        },
+        "loss": 0.37197577499654977,
+        "diagnostics": {
+          "bce_soft": 0.25697677693967746,
+          "soft_dice_loss": 0.11499900032529055,
+          "wrong_pixels": 2543645,
+          "wrong_mean_confidence": 0.9219891225991085,
+          "wrong_confidence_gt99_fraction": 0.4942073284597497
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04267636314034462,
+        "encoder": 0.19432295858860016
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 0.00010453658778440106,
+        "encoder": 1.0453658778440107e-05
+      }
+    },
+    "seconds": 7.8866728430002695,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 82,
+    "train_loss": {
+      "position_bias": 0.06177576943394488
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.888241701371158,
+          "iou": 0.8139345992045217,
+          "precision": 0.8944300147710527,
+          "recall": 0.913903344325338
+        },
+        "pooled": {
+          "dice": 0.8957096670571456,
+          "iou": 0.8111179101515303,
+          "precision": 0.8949859293870006,
+          "recall": 0.896434576187339
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2821522309711286
+        },
+        "threshold_jaccard_065": 0.7672206253099498,
+        "counts": {
+          "tp": 10821734,
+          "fp": 1269779,
+          "fn": 1250239,
+          "tn": 36596680
+        },
+        "loss": 0.37579407701342127,
+        "diagnostics": {
+          "bce_soft": 0.261123681162286,
+          "soft_dice_loss": 0.11467040414259502,
+          "wrong_pixels": 2520018,
+          "wrong_mean_confidence": 0.9242536665418497,
+          "wrong_confidence_gt99_fraction": 0.5123927686230813
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03860657289624214,
+        "encoder": 0.2491089105606079
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 9.559511573409196e-05,
+        "encoder": 9.559511573409195e-06
+      }
+    },
+    "seconds": 7.90409006399932,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 83,
+    "train_loss": {
+      "position_bias": 0.062396428807542786
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8874448724970581,
+          "iou": 0.812299048456703,
+          "precision": 0.8885197512406601,
+          "recall": 0.9184723318867193
+        },
+        "pooled": {
+          "dice": 0.8949832433950349,
+          "iou": 0.8099273047630212,
+          "precision": 0.8880907639130172,
+          "recall": 0.9019835448604797
+        },
+        "prec_at": {
+          "0.5": 0.9566929133858267,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8595800524934383,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2677165354330709
+        },
+        "threshold_jaccard_065": 0.7644111083460703,
+        "counts": {
+          "tp": 10888721,
+          "fp": 1372099,
+          "fn": 1183252,
+          "tn": 36494360
+        },
+        "loss": 0.3780630761244166,
+        "diagnostics": {
+          "bce_soft": 0.26267950092087894,
+          "soft_dice_loss": 0.11538357121425039,
+          "wrong_pixels": 2555351,
+          "wrong_mean_confidence": 0.9236135767443393,
+          "wrong_confidence_gt99_fraction": 0.5063398335492854
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03356507048010826,
+        "encoder": 0.25507479906082153
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 8.705767687650265e-05,
+        "encoder": 8.705767687650265e-06
+      }
+    },
+    "seconds": 7.842650711998431,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 84,
+    "train_loss": {
+      "position_bias": 0.06174827551159095
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8882028417378608,
+          "iou": 0.8137084428770279,
+          "precision": 0.8912921315355016,
+          "recall": 0.9170230804396199
+        },
+        "pooled": {
+          "dice": 0.8956506936304833,
+          "iou": 0.8110211945302724,
+          "precision": 0.8907120482808136,
+          "recall": 0.9006444099899826
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.28083989501312334
+        },
+        "threshold_jaccard_065": 0.7693489002772811,
+        "counts": {
+          "tp": 10872555,
+          "fp": 1334033,
+          "fn": 1199418,
+          "tn": 36532426
+        },
+        "loss": 0.3744127201283072,
+        "diagnostics": {
+          "bce_soft": 0.2597317895082038,
+          "soft_dice_loss": 0.11468093711247282,
+          "wrong_pixels": 2533451,
+          "wrong_mean_confidence": 0.92320923171736,
+          "wrong_confidence_gt99_fraction": 0.5045090668814988
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03368338942527771,
+        "encoder": 0.14643166959285736
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 7.893269663304783e-05,
+        "encoder": 7.893269663304784e-06
+      }
+    },
+    "seconds": 7.870186424999702,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 85,
+    "train_loss": {
+      "position_bias": 0.06237667944373154
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881855712585455,
+          "iou": 0.8138252573829463,
+          "precision": 0.8932623416459642,
+          "recall": 0.9150846030484701
+        },
+        "pooled": {
+          "dice": 0.8956832058739658,
+          "iou": 0.8110745128917624,
+          "precision": 0.8910425453355431,
+          "recall": 0.9003724577581478
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2874015748031496
+        },
+        "threshold_jaccard_065": 0.7685991168083879,
+        "counts": {
+          "tp": 10869272,
+          "fp": 1329104,
+          "fn": 1202701,
+          "tn": 36537355
+        },
+        "loss": 0.37504933465497076,
+        "diagnostics": {
+          "bce_soft": 0.2604156101313163,
+          "soft_dice_loss": 0.11463373555286037,
+          "wrong_pixels": 2531805,
+          "wrong_mean_confidence": 0.9236652292069221,
+          "wrong_confidence_gt99_fraction": 0.5049334368168165
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.020366838201880455,
+        "encoder": 0.20095911622047424
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 7.122819337828752e-05,
+        "encoder": 7.122819337828752e-06
+      }
+    },
+    "seconds": 7.813819303002674,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 86,
+    "train_loss": {
+      "position_bias": 0.062016242887915636
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8884092351177371,
+          "iou": 0.8141014712071638,
+          "precision": 0.892111444606113,
+          "recall": 0.9164630813517634
+        },
+        "pooled": {
+          "dice": 0.8958339978756323,
+          "iou": 0.811321844860362,
+          "precision": 0.8902561951303471,
+          "recall": 0.9014821355216749
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2900262467191601
+        },
+        "threshold_jaccard_065": 0.7669885810267184,
+        "counts": {
+          "tp": 10882668,
+          "fp": 1341530,
+          "fn": 1189305,
+          "tn": 36524929
+        },
+        "loss": 0.3748247014881745,
+        "diagnostics": {
+          "bce_soft": 0.2603792907997692,
+          "soft_dice_loss": 0.1144454145994712,
+          "wrong_pixels": 2530835,
+          "wrong_mean_confidence": 0.9235855406274319,
+          "wrong_confidence_gt99_fraction": 0.5050183042355586
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.05651828646659851,
+        "encoder": 0.42159342765808105
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 6.395177052675794e-05,
+        "encoder": 6.3951770526757955e-06
+      }
+    },
+    "seconds": 7.798911654001131,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 87,
+    "train_loss": {
+      "position_bias": 0.06187847955103012
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.888170975696816,
+          "iou": 0.8137237787323162,
+          "precision": 0.8923269339297177,
+          "recall": 0.9158434056747372
+        },
+        "pooled": {
+          "dice": 0.8958070833636056,
+          "iou": 0.811277694202589,
+          "precision": 0.8913274705246742,
+          "recall": 0.9003319507092999
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2821522309711286
+        },
+        "threshold_jaccard_065": 0.767592256833639,
+        "counts": {
+          "tp": 10868783,
+          "fp": 1325145,
+          "fn": 1203190,
+          "tn": 36541314
+        },
+        "loss": 0.3738039212589815,
+        "diagnostics": {
+          "bce_soft": 0.25914431713384595,
+          "soft_dice_loss": 0.1146595922354951,
+          "wrong_pixels": 2528335,
+          "wrong_mean_confidence": 0.9226672312277184,
+          "wrong_confidence_gt99_fraction": 0.5009126559573791
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0343238040804863,
+        "encoder": 0.2359725385904312
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 5.7110609029320425e-05,
+        "encoder": 5.711060902932042e-06
+      }
+    },
+    "seconds": 7.834814568999718,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 88,
+    "train_loss": {
+      "position_bias": 0.06164716384822971
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883692874441396,
+          "iou": 0.8141397341688785,
+          "precision": 0.8934691477883515,
+          "recall": 0.9150784801885085
+        },
+        "pooled": {
+          "dice": 0.8959728629411601,
+          "iou": 0.811549673795209,
+          "precision": 0.8916334401198617,
+          "recall": 0.9003547307469956
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2887139107611549
+        },
+        "threshold_jaccard_065": 0.7672249608812318,
+        "counts": {
+          "tp": 10869058,
+          "fp": 1320994,
+          "fn": 1202915,
+          "tn": 36545465
+        },
+        "loss": 0.3744312817343264,
+        "diagnostics": {
+          "bce_soft": 0.2599388743479421,
+          "soft_dice_loss": 0.11449241778981967,
+          "wrong_pixels": 2523909,
+          "wrong_mean_confidence": 0.9234684038385421,
+          "wrong_confidence_gt99_fraction": 0.5043391025587689
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.022948941215872765,
+        "encoder": 0.1806209683418274
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 5.071146028642945e-05,
+        "encoder": 5.0711460286429456e-06
+      }
+    },
+    "seconds": 7.840318847000162,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 89,
+    "train_loss": {
+      "position_bias": 0.06088312641813293
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.888220538560057,
+          "iou": 0.8138184964199386,
+          "precision": 0.8923398943730948,
+          "recall": 0.9160205046989368
+        },
+        "pooled": {
+          "dice": 0.8957421409002821,
+          "iou": 0.8111711712249574,
+          "precision": 0.8911432187943825,
+          "recall": 0.9003887765487878
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2847769028871391
+        },
+        "threshold_jaccard_065": 0.7668567275077052,
+        "counts": {
+          "tp": 10869469,
+          "fp": 1327750,
+          "fn": 1202504,
+          "tn": 36538709
+        },
+        "loss": 0.3761685972451538,
+        "diagnostics": {
+          "bce_soft": 0.2616138340137762,
+          "soft_dice_loss": 0.11455474422359717,
+          "wrong_pixels": 2530254,
+          "wrong_mean_confidence": 0.9243366731261423,
+          "wrong_confidence_gt99_fraction": 0.5085465727946681
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.029142070561647415,
+        "encoder": 0.16967929899692535
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 4.4760639485315584e-05,
+        "encoder": 4.476063948531558e-06
+      }
+    },
+    "seconds": 7.843439102001867,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 90,
+    "train_loss": {
+      "position_bias": 0.0613831002917042
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881703621058238,
+          "iou": 0.813759456409924,
+          "precision": 0.8923998189802087,
+          "recall": 0.9158665189901759
+        },
+        "pooled": {
+          "dice": 0.8955044412743762,
+          "iou": 0.8107813872131969,
+          "precision": 0.8913336931605232,
+          "recall": 0.899714404596498
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6889763779527559,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7685824294418774,
+        "counts": {
+          "tp": 10861328,
+          "fp": 1324151,
+          "fn": 1210645,
+          "tn": 36542308
+        },
+        "loss": 0.3793357519965785,
+        "diagnostics": {
+          "bce_soft": 0.26472864798673496,
+          "soft_dice_loss": 0.11460710447917147,
+          "wrong_pixels": 2534796,
+          "wrong_mean_confidence": 0.924945318125941,
+          "wrong_confidence_gt99_fraction": 0.5154174142613449
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.04833481088280678,
+        "encoder": 0.2151990681886673
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 3.92640193676584e-05,
+        "encoder": 3.92640193676584e-06
+      }
+    },
+    "seconds": 7.87990199900014,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 91,
+    "train_loss": {
+      "position_bias": 0.06139928538624833
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8880814896815579,
+          "iou": 0.8136334603991087,
+          "precision": 0.8926355075800874,
+          "recall": 0.9154915942860776
+        },
+        "pooled": {
+          "dice": 0.8954995137688445,
+          "iou": 0.8107733087782724,
+          "precision": 0.8924342340434581,
+          "recall": 0.8985859229473094
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6889763779527559,
+          "0.9": 0.28608923884514437
+        },
+        "threshold_jaccard_065": 0.767699922704601,
+        "counts": {
+          "tp": 10847705,
+          "fp": 1307482,
+          "fn": 1224268,
+          "tn": 36558977
+        },
+        "loss": 0.37693425520198554,
+        "diagnostics": {
+          "bce_soft": 0.26226204195673386,
+          "soft_dice_loss": 0.11467220119916861,
+          "wrong_pixels": 2531750,
+          "wrong_mean_confidence": 0.9244464966855068,
+          "wrong_confidence_gt99_fraction": 0.5114809914091044
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02526511810719967,
+        "encoder": 0.1614779680967331
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 3.4227024433899005e-05,
+        "encoder": 3.4227024433899e-06
+      }
+    },
+    "seconds": 7.845935285000451,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 92,
+    "train_loss": {
+      "position_bias": 0.06144354603829086
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.887877912394319,
+          "iou": 0.8132603752803311,
+          "precision": 0.8916162756070346,
+          "recall": 0.9160885643129177
+        },
+        "pooled": {
+          "dice": 0.8954612083152201,
+          "iou": 0.810710511080694,
+          "precision": 0.8917203144782677,
+          "recall": 0.8992336215463702
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7681068511760738,
+        "counts": {
+          "tp": 10855524,
+          "fp": 1318163,
+          "fn": 1216449,
+          "tn": 36548296
+        },
+        "loss": 0.37621034427577743,
+        "diagnostics": {
+          "bce_soft": 0.2613345594230912,
+          "soft_dice_loss": 0.11487579674232663,
+          "wrong_pixels": 2534612,
+          "wrong_mean_confidence": 0.9239235193014124,
+          "wrong_confidence_gt99_fraction": 0.5081748212349662
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.02408716455101967,
+        "encoder": 0.1816605031490326
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 2.965462558991324e-05,
+        "encoder": 2.9654625589913243e-06
+      }
+    },
+    "seconds": 7.858564430996921,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 93,
+    "train_loss": {
+      "position_bias": 0.06159119710942468
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881774997279221,
+          "iou": 0.8137924459068899,
+          "precision": 0.8929927485417539,
+          "recall": 0.9152729338076315
+        },
+        "pooled": {
+          "dice": 0.8956528322674107,
+          "iou": 0.8110247016853738,
+          "precision": 0.8927110298647961,
+          "recall": 0.8986140873575512
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7686168556569359,
+        "counts": {
+          "tp": 10848045,
+          "fp": 1303754,
+          "fn": 1223928,
+          "tn": 36562705
+        },
+        "loss": 0.37599573986423923,
+        "diagnostics": {
+          "bce_soft": 0.2613655955303372,
+          "soft_dice_loss": 0.11463014722809078,
+          "wrong_pixels": 2527682,
+          "wrong_mean_confidence": 0.9241823263369907,
+          "wrong_confidence_gt99_fraction": 0.5100012580696465
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03487729653716087,
+        "encoder": 0.2703920006752014
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 2.5551335241327675e-05,
+        "encoder": 2.5551335241327677e-06
+      }
+    },
+    "seconds": 7.887527235001471,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 94,
+    "train_loss": {
+      "position_bias": 0.06087918890875192
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8879350603887167,
+          "iou": 0.8133565573947064,
+          "precision": 0.8916290185575996,
+          "recall": 0.9161689332975108
+        },
+        "pooled": {
+          "dice": 0.8955065560813021,
+          "iou": 0.8107848543709606,
+          "precision": 0.8910241202121002,
+          "recall": 0.9000343191622446
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2900262467191601
+        },
+        "threshold_jaccard_065": 0.7690100052324742,
+        "counts": {
+          "tp": 10865190,
+          "fp": 1328857,
+          "fn": 1206783,
+          "tn": 36537602
+        },
+        "loss": 0.37645219974317573,
+        "diagnostics": {
+          "bce_soft": 0.2616383126714411,
+          "soft_dice_loss": 0.1148138737741105,
+          "wrong_pixels": 2535640,
+          "wrong_mean_confidence": 0.923992506475264,
+          "wrong_confidence_gt99_fraction": 0.5080835607578363
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.017615079879760742,
+        "encoder": 0.1778869479894638
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 2.1921202840320074e-05,
+        "encoder": 2.1921202840320077e-06
+      }
+    },
+    "seconds": 7.8628278380019765,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 95,
+    "train_loss": {
+      "position_bias": 0.0607969712225023
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8882029432745301,
+          "iou": 0.8137645813478612,
+          "precision": 0.8920242180171124,
+          "recall": 0.9162031125332485
+        },
+        "pooled": {
+          "dice": 0.8958110436836546,
+          "iou": 0.8112841905901191,
+          "precision": 0.8912350660980481,
+          "recall": 0.9004342537876783
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8569553805774278,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2847769028871391
+        },
+        "threshold_jaccard_065": 0.7684734545359138,
+        "counts": {
+          "tp": 10870018,
+          "fp": 1326560,
+          "fn": 1201955,
+          "tn": 36539899
+        },
+        "loss": 0.37529856795713973,
+        "diagnostics": {
+          "bce_soft": 0.2607140480064032,
+          "soft_dice_loss": 0.11458452448757302,
+          "wrong_pixels": 2528515,
+          "wrong_mean_confidence": 0.9237454138244108,
+          "wrong_confidence_gt99_fraction": 0.5073234685180827
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03851072117686272,
+        "encoder": 0.20501385629177094
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.8767810889299082e-05,
+        "encoder": 1.8767810889299083e-06
+      }
+    },
+    "seconds": 7.815173956998478,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 96,
+    "train_loss": {
+      "position_bias": 0.06091315862609119
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8879226950162634,
+          "iou": 0.813260350896276,
+          "precision": 0.8906916569113906,
+          "recall": 0.9170628096107972
+        },
+        "pooled": {
+          "dice": 0.8956219193491874,
+          "iou": 0.8109740088479439,
+          "precision": 0.8901396258017059,
+          "recall": 0.9011721613360136
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8569553805774278,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2795275590551181
+        },
+        "threshold_jaccard_065": 0.7679535738715159,
+        "counts": {
+          "tp": 10878926,
+          "fp": 1342669,
+          "fn": 1193047,
+          "tn": 36523790
+        },
+        "loss": 0.3772225389330406,
+        "diagnostics": {
+          "bce_soft": 0.26240463597880886,
+          "soft_dice_loss": 0.1148179087426093,
+          "wrong_pixels": 2535716,
+          "wrong_mean_confidence": 0.9242237693079602,
+          "wrong_confidence_gt99_fraction": 0.5098244440623477
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.01948879472911358,
+        "encoder": 0.1802254170179367
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.609427140540686e-05,
+        "encoder": 1.6094271405406859e-06
+      }
+    },
+    "seconds": 7.887692085998424,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 97,
+    "train_loss": {
+      "position_bias": 0.06042122847202095
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881060736854984,
+          "iou": 0.8136031103170904,
+          "precision": 0.8920986513110977,
+          "recall": 0.915975429722968
+        },
+        "pooled": {
+          "dice": 0.8956993482921995,
+          "iou": 0.8111009867711305,
+          "precision": 0.891185516811804,
+          "recall": 0.9002591374251748
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2847769028871391
+        },
+        "threshold_jaccard_065": 0.7674632074277052,
+        "counts": {
+          "tp": 10867904,
+          "fp": 1326980,
+          "fn": 1204069,
+          "tn": 36539479
+        },
+        "loss": 0.37714818362488833,
+        "diagnostics": {
+          "bce_soft": 0.26252833352939975,
+          "soft_dice_loss": 0.1146198598731534,
+          "wrong_pixels": 2531049,
+          "wrong_mean_confidence": 0.9244751643323839,
+          "wrong_confidence_gt99_fraction": 0.51145434165834
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.03310844674706459,
+        "encoder": 0.21062269806861877
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.3903222849333507e-05,
+        "encoder": 1.3903222849333507e-06
+      }
+    },
+    "seconds": 7.882147922002332,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 98,
+    "train_loss": {
+      "position_bias": 0.06055962344116017
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881550645700085,
+          "iou": 0.8136917467155648,
+          "precision": 0.8920971009890641,
+          "recall": 0.9160543030025489
+        },
+        "pooled": {
+          "dice": 0.8957695427058037,
+          "iou": 0.8112161159734673,
+          "precision": 0.891491841042409,
+          "recall": 0.9000884942337097
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7675538430856614,
+        "counts": {
+          "tp": 10865844,
+          "fp": 1322539,
+          "fn": 1206129,
+          "tn": 36543920
+        },
+        "loss": 0.37797024979053206,
+        "diagnostics": {
+          "bce_soft": 0.26338648428441347,
+          "soft_dice_loss": 0.11458375275604368,
+          "wrong_pixels": 2528668,
+          "wrong_mean_confidence": 0.924857027816118,
+          "wrong_confidence_gt99_fraction": 0.5142086663808773
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.025078972801566124,
+        "encoder": 0.17820744216442108
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.2196827521475402e-05,
+        "encoder": 1.2196827521475403e-06
+      }
+    },
+    "seconds": 7.870401624000806,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 99,
+    "train_loss": {
+      "position_bias": 0.06156927328220986
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881685472914134,
+          "iou": 0.8137058723833825,
+          "precision": 0.8927449667605776,
+          "recall": 0.9154831071647824
+        },
+        "pooled": {
+          "dice": 0.8957929592976088,
+          "iou": 0.8112545258974176,
+          "precision": 0.892276087338151,
+          "recall": 0.8993376641912635
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.767582556902816,
+        "counts": {
+          "tp": 10856780,
+          "fp": 1310732,
+          "fn": 1215193,
+          "tn": 36555727
+        },
+        "loss": 0.37724844911905725,
+        "diagnostics": {
+          "bce_soft": 0.26269653376944735,
+          "soft_dice_loss": 0.11455191448917539,
+          "wrong_pixels": 2525925,
+          "wrong_mean_confidence": 0.9248384742984492,
+          "wrong_confidence_gt99_fraction": 0.5138450270692915
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.040484052151441574,
+        "encoder": 0.2356976568698883
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.0976769428005579e-05,
+        "encoder": 1.0976769428005578e-06
+      }
+    },
+    "seconds": 7.885839919999853,
+    "peak_allocated_gib": 14.093281745910645
+  },
+  {
+    "epoch": 100,
+    "train_loss": {
+      "position_bias": 0.06026936999560666
+    },
+    "validation": {
+      "position_bias": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8881100424520496,
+          "iou": 0.8136156129982759,
+          "precision": 0.8920748489271222,
+          "recall": 0.9160350462126047
+        },
+        "pooled": {
+          "dice": 0.895757784375905,
+          "iou": 0.8111968295557701,
+          "precision": 0.8915759158728981,
+          "recall": 0.8999790672162703
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.28346456692913385
+        },
+        "threshold_jaccard_065": 0.7683574565801844,
+        "counts": {
+          "tp": 10864523,
+          "fp": 1321229,
+          "fn": 1207450,
+          "tn": 36545230
+        },
+        "loss": 0.3778425444142399,
+        "diagnostics": {
+          "bce_soft": 0.2632119088504571,
+          "soft_dice_loss": 0.11463063830152898,
+          "wrong_pixels": 2528679,
+          "wrong_mean_confidence": 0.9249449361765731,
+          "wrong_confidence_gt99_fraction": 0.5143843880539998
+        }
+      }
+    },
+    "gradient_norms": {
+      "position_bias": {
+        "decoder": 0.0200056042522192,
+        "encoder": 0.2087644636631012
+      }
+    },
+    "learning_rates": {
+      "position_bias": {
+        "decoder": 1.024425261896286e-05,
+        "encoder": 1.024425261896286e-06
+      }
+    },
+    "seconds": 7.877222197999799,
+    "peak_allocated_gib": 14.093281745910645
+  }
+]

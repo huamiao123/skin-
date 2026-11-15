@@ -1,0 +1,17 @@
+{
+  "columns": [
+    "residual_rms",
+    "base_merge_rms",
+    "residual_to_base_rms",
+    "context_rms",
+    "skip_rms",
+    "dw3_dw5_cosine",
+    "dw3_dw5_relative_distance"
+  ],
+  "layer_sizes": {
+    "0": 64,
+    "1": 32,
+    "2": 16
+  },
+  "denominator": "Swin input minus residual, approximates original merge after finite-precision addition"
+}

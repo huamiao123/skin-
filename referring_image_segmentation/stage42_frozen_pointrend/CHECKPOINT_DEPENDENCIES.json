@@ -1,0 +1,8 @@
+{
+  "format": "point_head_only",
+  "baseline_checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage37_lr_horizon100/swin_control/results/swin_control_best_dice.pth",
+  "baseline_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526",
+  "point_checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/frozen_point/results/frozen_point_best_dice.pth",
+  "loader": "System().load_point_state(checkpoint[model]); System loads frozen baseline using verified REFERENCE_MODELS.json",
+  "migration": "Preserve the referenced baseline and source/environment alongside the small point checkpoint"
+}

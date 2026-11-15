@@ -1,0 +1,1 @@
+INVALID AUTOMATED TEMPLATE OUTPUT. Quarantined as INVALID_TEMPLATE_topic_brief.md. The helper contains unrelated connectivity-control boilerplate. Do not use it as medical evidence. Consult the manually audited main report instead.

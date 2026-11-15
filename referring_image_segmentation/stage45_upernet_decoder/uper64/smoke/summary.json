@@ -1,0 +1,159 @@
+{
+  "arm": "uper64",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "uper64",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage45_upernet_decoder/uper64/smoke/uper64_best_dice.pth",
+    "sha256": "e19ccfa58adf1097510a4a9fc7d421144490ace39b8e2ff70786104523df6b02",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.840486593195764,
+        "iou": 0.7406763886498112,
+        "precision": 0.7797371765188936,
+        "recall": 0.955350055726179
+      },
+      "pooled": {
+        "dice": 0.8746403662099953,
+        "iou": 0.777209649207309,
+        "precision": 0.8257839834063305,
+        "recall": 0.9296413270639357
+      },
+      "prec_at": {
+        "0.5": 0.9278215223097113,
+        "0.6": 0.8451443569553806,
+        "0.7": 0.6968503937007874,
+        "0.8": 0.43832020997375326,
+        "0.9": 0.07217847769028872
+      },
+      "threshold_jaccard_065": 0.6409305112086761,
+      "counts": {
+        "tp": 11222605,
+        "fp": 2367638,
+        "fn": 849368,
+        "tn": 35498821
+      },
+      "loss": 0.6786305597760859,
+      "diagnostics": {
+        "bce_soft": 0.25709380361977524,
+        "soft_dice_loss": 0.4215367403556043,
+        "wrong_pixels": 3217006,
+        "wrong_mean_confidence": 0.693275944119483,
+        "wrong_confidence_gt99_fraction": 7.39818327973277e-05
+      }
+    }
+  },
+  "validation": {
+    "uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.840486593195764,
+        "iou": 0.7406763886498112,
+        "precision": 0.7797371765188936,
+        "recall": 0.955350055726179,
+        "boundary_f1": 0.12328551037552285,
+        "hd95_pixels": 19.6766049651927,
+        "hd95_diagonal": 0.054349456256315036
+      },
+      "pooled": {
+        "dice": 0.8746403662099953,
+        "iou": 0.777209649207309,
+        "precision": 0.8257839834063305,
+        "recall": 0.9296413270639357
+      },
+      "prec_at": {
+        "0.5": 0.9278215223097113,
+        "0.6": 0.8451443569553806,
+        "0.7": 0.6968503937007874,
+        "0.8": 0.43832020997375326,
+        "0.9": 0.07217847769028872
+      },
+      "threshold_jaccard_065": 0.6409305112086761,
+      "counts": {
+        "tp": 11222605,
+        "fp": 2367638,
+        "fn": 849368,
+        "tn": 35498821
+      },
+      "severe_undercoverage": 7,
+      "epoch": 2,
+      "checkpoint_sha256": "e19ccfa58adf1097510a4a9fc7d421144490ace39b8e2ff70786104523df6b02"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage37_swin_control_vs_uper64": {
+        "macro_dice_delta": -0.04710145030100623,
+        "image_bootstrap95": [
+          -0.055121819812485685,
+          -0.038843537016430625
+        ],
+        "improved": 201,
+        "worsened": 561,
+        "gains_over5pp": 97,
+        "losses_over5pp": 371,
+        "net_reduced_fn": 763880,
+        "net_added_fp": 1455260,
+        "severe_undercoverage": [
+          28,
+          7
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Native UPerHead64/128 versus original Swin decoder",
+  "archived_reference_caveat": "Stage37 late-only Swin reference matches encoder/data/recipe; decoder package differs in topology,input projection,norm,activation and capacity",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

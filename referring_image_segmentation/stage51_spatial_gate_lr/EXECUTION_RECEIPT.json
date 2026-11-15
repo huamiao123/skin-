@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-11-12T15:15:29.704645+00:00",
+  "integration_verified": true,
+  "optimizer_only_gate_update_verified": true,
+  "all_three_reference_predictions_exact": true,
+  "smoke_checks": {
+    "cab": {
+      "passed": true,
+      "actual_process_resume": true,
+      "learning_rates": {
+        "decoder": 0.001,
+        "encoder": 0.0001,
+        "gate": 0.001
+      },
+      "peak_gib": 12.72621488571167,
+      "mean_epoch_seconds": 7.538034000495827
+    },
+    "conv_control": {
+      "passed": true,
+      "actual_process_resume": true,
+      "learning_rates": {
+        "decoder": 0.001,
+        "encoder": 0.0001,
+        "gate": 0.001
+      },
+      "peak_gib": 12.714718341827393,
+      "mean_epoch_seconds": 7.535585946501669
+    }
+  },
+  "pipeline_at_receipt": {
+    "stage": "stage51_spatial_gate_lr",
+    "state": "formal_training",
+    "arms": [
+      "cab",
+      "conv_control"
+    ],
+    "epochs_per_arm": 100,
+    "lr_schedule_horizon": 100,
+    "pipeline_pid": 36052,
+    "updated_utc": "2026-11-12T15:14:40.983189+00:00",
+    "status_file": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage51_spatial_gate_lr/cab/results/run_status.json",
+    "resume_command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage51_spatial_gate_lr/run_pipeline.py"
+    ],
+    "training_pid": 36702,
+    "arm": "cab",
+    "completed_trainings": []
+  },
+  "all_new_artifacts_server_only": true,
+  "formal_protocol_frozen": true
+}

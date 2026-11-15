@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "seed": 42,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_total_gib": 47.37310791015625,
+  "cuda": "12.1",
+  "torch": "2.2.2+cu121",
+  "data_counts": {
+    "train": 1886,
+    "val": 808
+  },
+  "manifest_exact_match": true,
+  "target_stats": {
+    "train": {
+      "min": 0.0,
+      "max": 1.0,
+      "max_sum_error": 0.0
+    },
+    "val": {
+      "min": 0.0,
+      "max": 1.0,
+      "max_sum_error": 0.0
+    }
+  },
+  "synthetic_gradients": {
+    "old_bg": {
+      "loss": 0.0,
+      "gradient": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "new_bg": {
+      "loss": 1.0986123085021973,
+      "gradient": [
+        -0.6666666865348816,
+        0.3333333134651184,
+        0.3333333134651184
+      ]
+    },
+    "old_boundary": {
+      "loss": 1.0986123085021973,
+      "gradient": [
+        0.3333333134651184,
+        -0.6666666865348816,
+        0.3333333134651184
+      ]
+    }
+  },
+  "same_initialization": true,
+  "model_initial_sha256": "d676a94edd082dc8f185079725fcafa7a662bde198adbbbbcc4e98705d726879",
+  "initial_outputs_max_abs": {
+    "original": 0.0,
+    "scaled_original": 0.0,
+    "background_supervised": 0.0
+  },
+  "probe_initial_sha256": "9182adbc07f3536931e0066fc2806912d84d6b9f7dfa3c3b602ed5bce38064a0",
+  "stage17_probe_initial_sha256": "bffe5c3f6d3e45fc97f13ff5eafea07ee5c5c53c2a50ca218ac9a110a1936928",
+  "stage17_initial_probe_matches": false,
+  "encoder_sha256": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26",
+  "pretrained": {
+    "weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+    "strict_load": true,
+    "hf_revision": "e4f9ea93877fba6f1e2d231fd0f0a391368ad895",
+    "weights_equal": true,
+    "scan_path": "/home/featurize/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/runtime/selective_scan_cuda.cpython-311-x86_64-linux-gnu.so"
+  },
+  "encoder_frozen_including_buffers": true,
+  "feature_shapes": [
+    [
+      4,
+      96,
+      64,
+      64
+    ],
+    [
+      4,
+      192,
+      32,
+      32
+    ],
+    [
+      4,
+      384,
+      16,
+      16
+    ],
+    [
+      4,
+      768,
+      8,
+      8
+    ]
+  ],
+  "sample_checks": {
+    "original": {
+      "loss": 5.874122619628906,
+      "trainable": 637327
+    },
+    "scaled_original": {
+      "loss": 8.012927055358887,
+      "trainable": 637327
+    },
+    "background_supervised": {
+      "loss": 8.024152755737305,
+      "trainable": 637327
+    }
+  }
+}

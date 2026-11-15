@@ -1,0 +1,252 @@
+{
+  "arm": "cab",
+  "seed": 42,
+  "epochs": 100,
+  "selection": {
+    "arm": "cab",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage50_mamba_spatial_adapter/cab/results/cab_best_dice.pth",
+    "sha256": "89f36d17958161f56609e949063c72bbf91dc6573eda7e3e24c86e56bd3e35cb",
+    "epoch": 39,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8916412729391126,
+        "iou": 0.8200530837993016,
+        "precision": 0.9075435441782987,
+        "recall": 0.9073462903760777
+      },
+      "pooled": {
+        "dice": 0.8983641935801414,
+        "iou": 0.8154820207775221,
+        "precision": 0.9110700431545744,
+        "recall": 0.8860078630063205
+      },
+      "prec_at": {
+        "0.5": 0.9593175853018373,
+        "0.6": 0.9212598425196851,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.7020997375328084,
+        "0.9": 0.3464566929133858
+      },
+      "threshold_jaccard_065": 0.7677019554716118,
+      "counts": {
+        "tp": 10695863,
+        "fp": 1044028,
+        "fn": 1376110,
+        "tn": 36822431
+      },
+      "loss": 0.3256379502026115,
+      "diagnostics": {
+        "bce_soft": 0.2125695736545903,
+        "soft_dice_loss": 0.11306836864766799,
+        "wrong_pixels": 2420138,
+        "wrong_mean_confidence": 0.902612747988372,
+        "wrong_confidence_gt99_fraction": 0.39769509011469595
+      }
+    }
+  },
+  "validation": {
+    "cab": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8916412729391126,
+        "iou": 0.8200530837993016,
+        "precision": 0.9075435441782987,
+        "recall": 0.9073462903760777,
+        "boundary_f1": 0.3384166918903158,
+        "hd95_pixels": 14.576063299684858,
+        "hd95_diagonal": 0.040261067196138776
+      },
+      "pooled": {
+        "dice": 0.8983641935801414,
+        "iou": 0.8154820207775221,
+        "precision": 0.9110700431545744,
+        "recall": 0.8860078630063205
+      },
+      "prec_at": {
+        "0.5": 0.9593175853018373,
+        "0.6": 0.9212598425196851,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.7020997375328084,
+        "0.9": 0.3464566929133858
+      },
+      "threshold_jaccard_065": 0.7677019554716118,
+      "counts": {
+        "tp": 10695863,
+        "fp": 1044028,
+        "fn": 1376110,
+        "tn": 36822431
+      },
+      "severe_undercoverage": 19,
+      "epoch": 39,
+      "checkpoint_sha256": "89f36d17958161f56609e949063c72bbf91dc6573eda7e3e24c86e56bd3e35cb"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {
+    "cab": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8945401006361138,
+        "iou": 0.8214731402530885,
+        "precision": 0.8657556527973213,
+        "recall": 0.9520741578066692,
+        "boundary_f1": 0.250066503606766,
+        "hd95_pixels": 16.206844796014803,
+        "hd95_diagonal": 0.044765507253515524
+      },
+      "pooled": {
+        "dice": 0.8974955729399015,
+        "iou": 0.8140516726387513,
+        "precision": 0.8763223049673469,
+        "recall": 0.9197173301400486
+      },
+      "prec_at": {
+        "0.5": 0.9630911188004614,
+        "0.6": 0.9319492502883506,
+        "0.7": 0.8662053056516724,
+        "0.8": 0.6874279123414071,
+        "0.9": 0.3091118800461361
+      },
+      "threshold_jaccard_065": 0.7742411578827428,
+      "counts": {
+        "tp": 14907712,
+        "fp": 2103965,
+        "fn": 1301303,
+        "tn": 38506732
+      },
+      "severe_undercoverage": 15,
+      "epoch": 39,
+      "checkpoint_sha256": "89f36d17958161f56609e949063c72bbf91dc6573eda7e3e24c86e56bd3e35cb"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8966259106591898,
+        "iou": 0.8251672240975944,
+        "precision": 0.8692985300242783,
+        "recall": 0.9522786887413297,
+        "boundary_f1": 0.26931478378295826,
+        "hd95_pixels": 16.26075513815394,
+        "hd95_diagonal": 0.044914414942979076
+      },
+      "pooled": {
+        "dice": 0.8979914265902919,
+        "iou": 0.8148679132430251,
+        "precision": 0.8741091432254756,
+        "recall": 0.9232153835381114
+      },
+      "prec_at": {
+        "0.5": 0.9642445213379469,
+        "0.6": 0.936562860438293,
+        "0.7": 0.8754325259515571,
+        "0.8": 0.698961937716263,
+        "0.9": 0.3402537485582468
+      },
+      "threshold_jaccard_065": 0.7838454681285856,
+      "counts": {
+        "tp": 14964412,
+        "fp": 2155203,
+        "fn": 1244603,
+        "tn": 38455494
+      },
+      "severe_undercoverage": 14,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_cab": {
+        "macro_dice_delta": -0.001165428195205815,
+        "image_bootstrap95": [
+          -0.002139587306823821,
+          -0.00011050598669097373
+        ],
+        "improved": 348,
+        "worsened": 413,
+        "gains_over5pp": 6,
+        "losses_over5pp": 8,
+        "net_reduced_fn": -34615,
+        "net_added_fp": -13111,
+        "severe_undercoverage": [
+          21,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    },
+    "test": {
+      "stage45_uper64_vs_cab": {
+        "macro_dice_delta": -0.0020858100230760146,
+        "image_bootstrap95": [
+          -0.0036095353294683216,
+          -0.0006550181641167255
+        ],
+        "improved": 328,
+        "worsened": 538,
+        "gains_over5pp": 11,
+        "losses_over5pp": 9,
+        "net_reduced_fn": -56700,
+        "net_added_fp": -51238,
+        "severe_undercoverage": [
+          14,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": true,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 867,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Native CAB versus same two convolutions with fixed channel scaling inside stage3 Mamba block; UPer64 reference",
+  "archived_reference_caveat": "Stage45 UPer64 shares original pretraining, head, late-full tuning, data and schedule; one spatial residual branch added",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

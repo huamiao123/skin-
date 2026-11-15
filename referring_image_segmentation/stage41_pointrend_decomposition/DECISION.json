@@ -1,0 +1,33 @@
+{
+  "completed": true,
+  "validation_only": true,
+  "test_read": false,
+  "training_started": false,
+  "evidence": {
+    "baseline_selected_epoch8_dice": 0.8875880434967702,
+    "baseline_epoch4_dice": 0.8838930142769524,
+    "uncertainty_epoch4_coarse_direct": 0.8858700996392214,
+    "random_epoch4_coarse_direct": 0.8853468474601562
+  },
+  "conclusion": [
+    "At fixed selected weights, inference refinement changes macro Dice by only -0.0263pp (uncertain trained) and +0.0015pp (random trained/native random); no clear point refinement benefit.",
+    "Native uncertain refinement corrects92951 pixels but damages99475; raw point error enrichment did not demonstrate learned correction.",
+    "Swapping policies and two alternative random grids do not recover baseline validation best.",
+    "Selected coarse model differences already exist before refinement, but matched epoch4 baseline is weaker; cannot assert harmful point supervision from selected-epoch comparison.",
+    "Validation-only decomposition cannot attribute prior random-arm test gain to its inference mechanism."
+  ],
+  "action": "Do not add more gates/modules or sweep point budgets on this evidence. Archive current joint PointRend adaptation as no validated improvement.",
+  "bounded_next_if_revisiting": "Freeze selected strong baseline, train only native point MLP, compare no-refinement and uncertainty-refinement with identical baseline masks; stop family if point head adds no reproducible validation benefit.",
+  "checks": {
+    "point_uncertain": {
+      "native_binary_replay_exact": true,
+      "transition_accounting_exact": true,
+      "per_stage_snapshot_nonzero_and_consistent": true
+    },
+    "point_random": {
+      "native_binary_replay_exact": true,
+      "transition_accounting_exact": true,
+      "per_stage_snapshot_nonzero_and_consistent": true
+    }
+  }
+}

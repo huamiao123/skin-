@@ -1,0 +1,1454 @@
+[
+  {
+    "title": "Confidence Calibration and Predictive Uncertainty Estimation for Deep Medical Image Segmentation",
+    "authors": [
+      "Alireza Mehrtash",
+      "William M. Wells",
+      "Clare M. Tempany",
+      "Purang Abolmaesumi",
+      "Tina Kapur"
+    ],
+    "year": 2020,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2020.3006437",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2020.3006437",
+    "abstract": "Fully convolutional neural networks (FCNs), and in particular U-Nets, have achieved state-of-the-art results in semantic segmentation for numerous medical imaging applications. Moreover, batch normalization and Dice loss have been used successfully to stabilize and accelerate training. However, these networks are poorly calibrated i.e. they tend to produce overconfident predictions for both correct and erroneous classifications, making them unreliable and hard to interpret. In this paper, we study predictive uncertainty estimation in FCNs for medical image segmentation. We make the following contributions: 1) We systematically compare cross-entropy loss with Dice loss in terms of segmentation quality and uncertainty estimation of FCNs; 2) We propose model ensembling for confidence calibration of the FCNs trained with batch normalization and Dice loss; 3) We assess the ability of calibrated FCNs to predict segmentation quality of structures and detect out-of-distribution test examples. We conduct extensive experiments across three medical image segmentation applications of the brain, the heart, and the prostate to evaluate our contributions. The results of this study offer considerable insight into the predictive uncertainty estimation and out-of-distribution detection in medical image segmentation and provide practical recipes for confidence calibration. Moreover, we consistently demonstrate that model ensembling improves confidence calibration.",
+    "source": "openalex",
+    "citation_count": 475,
+    "is_open_access": true,
+    "open_access_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7704933",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Calibration",
+      "Computer science",
+      "Convolutional neural network",
+      "Dice",
+      "Image segmentation",
+      "Normalization (sociology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref",
+      "arxiv"
+    ],
+    "score": 0.8683
+  },
+  {
+    "title": "Calibrating ensembles for scalable uncertainty quantification in deep learning-based medical image segmentation",
+    "authors": [
+      "Thomas Buddenkotte",
+      "Lorena Escudero Sánchez",
+      "Mireia Crispin‐Ortuzar",
+      "Ramona Woitek",
+      "Cathal McCague",
+      "James D. Brenton",
+      "Ozan Öktem",
+      "Evis Sala",
+      "Leonardo Rundo"
+    ],
+    "year": 2023,
+    "venue": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2023.107096",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.compbiomed.2023.107096",
+    "abstract": "Uncertainty quantification in automated image analysis is highly desired in many applications. Typically, machine learning models in classification or segmentation are only developed to provide binary answers; however, quantifying the uncertainty of the models can play a critical role for example in active learning or machine human interaction. Uncertainty quantification is especially difficult when using deep learning-based models, which are the state-of-the-art in many imaging applications. The current uncertainty quantification approaches do not scale well in high-dimensional real-world problems. Scalable solutions often rely on classical techniques, such as dropout, during inference or training ensembles of identical models with different random seeds to obtain a posterior distribution. In this paper, we present the following contributions. First, we show that the classical approaches fail to approximate the classification probability. Second, we propose a scalable and intuitive framework for uncertainty quantification in medical image segmentation that yields measurements that approximate the classification probability. Third, we suggest the usage of k-fold cross-validation to overcome the need for held out calibration data. Lastly, we motivate the adoption of our method in active learning, creating pseudo-labels to learn from unlabeled images and human-machine collaboration.",
+    "source": "openalex",
+    "citation_count": 50,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1016/j.compbiomed.2023.107096",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Machine learning",
+      "Scalability",
+      "Uncertainty quantification",
+      "Inference",
+      "Segmentation",
+      "Deep learning"
+    ],
+    "score": 0.7492,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Generalizable Medical Image Segmentation via Random Amplitude Mixup and Domain-Specific Image Restoration",
+    "authors": [
+      "Ziqi Zhou",
+      "Lei Qi",
+      "Yinghuan Shi"
+    ],
+    "year": 2022,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-031-19803-8_25",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-19803-8_25",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 70,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2208.03901",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Overfitting",
+      "Segmentation",
+      "Artificial intelligence",
+      "Regularization (linguistics)",
+      "Image segmentation",
+      "Scale-space segmentation",
+      "Image (mathematics)"
+    ],
+    "score": 0.7428,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Learning with limited annotations: A survey on deep semi-supervised learning for medical image segmentation",
+    "authors": [
+      "Rushi Jiao",
+      "Yichi Zhang",
+      "Le Ding",
+      "Bingsen Xue",
+      "Jicong Zhang",
+      "Rong Cai",
+      "Cheng Jin"
+    ],
+    "year": 2023,
+    "venue": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2023.107840",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.compbiomed.2023.107840",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 403,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2207.14191",
+    "publication_type": "review",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Deep learning",
+      "Field (mathematics)",
+      "Image segmentation",
+      "Machine learning",
+      "Image (mathematics)"
+    ],
+    "score": 0.7425,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Average Calibration Error: A Differentiable Loss for Improved Reliability in Image Segmentation",
+    "authors": [
+      "Theodore Barfoot",
+      "Luis C. García-Peraza-Herrera",
+      "Ben Glocker",
+      "Tom K. Vercauteren"
+    ],
+    "year": 2024,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-031-72114-4_14",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-72114-4_14",
+    "abstract": "Deep neural networks for medical image segmentation often produce overconfident results misaligned with empirical observations. Such miscalibration challenges their clinical translation. We propose to use marginal L1 average calibration error (mL1-ACE) as a novel auxiliary loss function to improve pixel-wise calibration without compromising segmentation quality. We show that this loss, despite using hard binning, is directly differentiable, bypassing the need for approximate but differentiable surrogate or soft binning approaches. Our work also introduces the concept of dataset reliability histograms which generalises standard reliability diagrams for refined visual assessment of calibration in semantic segmentation aggregated at the dataset level. Using mL1-ACE, we reduce average and maximum calibration error by 45% and 55% respectively, maintaining a Dice score of 87% on the BraTS 2021 dataset. We share our code here: https://github.com/cai4cai/ACE-DLIRIS .",
+    "source": "openalex",
+    "citation_count": 11,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1007/978-3-031-72114-4_14",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Differentiable function",
+      "Reliability (semiconductor)",
+      "Calibration",
+      "Artificial intelligence",
+      "Image (mathematics)",
+      "Segmentation",
+      "Image segmentation"
+    ],
+    "score": 0.7123,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "CALSeg: Improving Calibration of Medical Image Segmentation Via Variational Label Smoothing",
+    "authors": [
+      "Xutao Guo",
+      "Yanwu Yang",
+      "Chenfei Ye",
+      "Guoqing Cai",
+      "Ting Ma"
+    ],
+    "year": 2024,
+    "venue": "IEEE International Conference on Acoustics Speech and Signal Processing",
+    "doi": "10.1109/icassp48485.2024.10446030",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icassp48485.2024.10446030",
+    "abstract": "In practical medical image segmentation tasks, ensuring confidence calibration is crucial. However, medical image segmentation typically relies on hard labels (one-hot vectors), and when minimizing the cross-entropy loss, the model’s softmax predictions are compelled to align with hard labels, resulting in over-confident predictions. To alleviate above problems, this study proposes a novel framework on calibration of medical image segmentation, called CALSeg. The Variational Label Smoothing (VLS) method is innovatively proposed, which learns the latent joint distribution of images and labels through variational inference to capture complex relationships between images and labels. This enables the effective estimation of latent soft labels by learning pixel-level information and semantic probability distribution features. The training of a neural network based on estimated soft labels provides a regularization effect, effectively preventing model overfitting and improving the calibration of the model. Comprehensive experiments on two medical image segmentation datasets demonstrate that CALSeg achieved optimal network calibration while also improving segmentation accuracy. The code is available at https://github.com/Guoxt/CALSeg.",
+    "source": "openalex",
+    "citation_count": 3,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Softmax function",
+      "Overfitting",
+      "Smoothing",
+      "Image segmentation",
+      "Inference"
+    ],
+    "score": 0.71,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Studying the Impact of Augmentations on Medical Confidence Calibration",
+    "authors": [
+      "Adrit Rao",
+      "Joon‐Young Lee",
+      "Oliver Aalami"
+    ],
+    "year": 2023,
+    "venue": "IEEE International Conference on Computer Vision Workshops",
+    "doi": "10.1109/iccvw60793.2023.00260",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/iccvw60793.2023.00260",
+    "abstract": "The clinical explainability of convolutional neural networks (CNN) heavily relies on the joint interpretation of a model’s predicted diagnostic label and associated confidence. A highly certain or uncertain model can significantly impact clinical decision-making. Thus, ensuring that confidence estimates reflect the true correctness likelihood for a prediction is essential. CNNs are often poorly calibrated and prone to overconfidence leading to improper measures of uncertainty. This creates the need for confidence calibration. However, accuracy and performance-based evaluations of CNNs are commonly used as the sole benchmark for medical tasks. Taking into consideration the risks associated with miscalibration is of high importance. In recent years, modern augmentation techniques, which cut, mix, and combine images, have been introduced. Such augmentations have benefited CNNs through regularization, robustness to adversarial samples, and calibration. Standard augmentations based on image scaling, rotating, and zooming, are widely leveraged in the medical domain to combat the scarcity of data. In this paper, we evaluate the effects of three modern augmentation techniques, CutMix, MixUp, and CutOut on the calibration and performance of CNNs for medical tasks. CutMix improved calibration the most while CutOut often lowered the level of calibration.",
+    "source": "openalex",
+    "citation_count": 10,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2308.11902",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Calibration",
+      "Computer science",
+      "Confidence interval",
+      "Statistics",
+      "Mathematics"
+    ],
+    "score": 0.6995,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Medical Image Segmentation With Limited Supervision: A Review of Deep Network Models",
+    "authors": [
+      "Jialin Peng",
+      "Ye Wang"
+    ],
+    "year": 2021,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2021.3062380",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2021.3062380",
+    "abstract": "Despite the remarkable performance of deep learning methods on various tasks, most cutting-edge models rely heavily on large-scale annotated training examples, which are often unavailable for clinical and health care tasks. The labeling costs for medical images are very high, especially in medical image segmentation, which typically requires intensive pixel/voxel-wise labeling. Therefore, the strong capability of learning and generalizing from limited supervision, including a limited amount of annotations, sparse annotations, and inaccurate annotations, is crucial for the successful application of deep learning models in medical image segmentation. However, due to its intrinsic difficulty, segmentation with limited supervision is challenging and specific model design and/or learning strategies are needed. In this paper, we provide a systematic and up-to-date review of the solutions above, with summaries and comments about the methodologies. We also highlight several problems in this field, discussed future directions observing further investigations.",
+    "source": "openalex",
+    "citation_count": 115,
+    "is_open_access": true,
+    "open_access_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09363892.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Deep learning",
+      "Artificial intelligence",
+      "Field (mathematics)",
+      "Image segmentation",
+      "Machine learning",
+      "Enhanced Data Rates for GSM Evolution"
+    ],
+    "score": 0.6892,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multivariate Confidence Calibration for Object Detection",
+    "authors": [
+      "Fabian Küppers",
+      "Jan Kronenberger",
+      "Amirhossein Shantia",
+      "Anselm Haselhoff"
+    ],
+    "year": 2020,
+    "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+    "doi": "10.1109/cvprw50498.2020.00171",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvprw50498.2020.00171",
+    "abstract": "Unbiased confidence estimates of neural networks are crucial especially for safety-critical applications. Many methods have been developed to calibrate biased confidence estimates. Though there is a variety of methods for classification, the field of object detection has not been addressed yet. Therefore, we present a novel framework to measure and calibrate biased (or miscalibrated) confidence estimates of object detection methods1. The main difference to related work in the field of classifier calibration is that we also use additional information of the regression output of an object detector for calibration. Our approach allows, for the first time, to obtain calibrated confidence estimates with respect to image location and box scale. In addition, we propose a new measure to evaluate miscalibration of object detectors. Finally, we show that our developed methods outperform state-of-the-art calibration models for the task of object detection and provides reliable confidence estimates across different locations and scales.",
+    "source": "openalex",
+    "citation_count": 132,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2004.13546",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Calibration",
+      "Classifier (UML)",
+      "Artificial intelligence",
+      "Object detection",
+      "Measure (data warehouse)",
+      "Confidence interval",
+      "Object (grammar)"
+    ],
+    "score": 0.6836,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Diminishing Uncertainty Within the Training Pool: Active Learning for Medical Image Segmentation",
+    "authors": [
+      "Vishwesh Nath",
+      "Dong Yang",
+      "Bennett A. Landman",
+      "Daguang Xu",
+      "Holger R. Roth"
+    ],
+    "year": 2020,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2020.3048055",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2020.3048055",
+    "abstract": "Active learning is a unique abstraction of machine learning techniques where the model/algorithm could guide users for annotation of a set of data points that would be beneficial to the model, unlike passive machine learning. The primary advantage being that active learning frameworks select data points that can accelerate the learning process of a model and can reduce the amount of data needed to achieve full accuracy as compared to a model trained on a randomly acquired data set. Multiple frameworks for active learning combined with deep learning have been proposed, and the majority of them are dedicated to classification tasks. Herein, we explore active learning for the task of segmentation of medical imaging data sets. We investigate our proposed framework using two datasets: 1.) MRI scans of the hippocampus, 2.) CT scans of pancreas and tumors. This work presents a query-by-committee approach for active learning where a joint optimizer is used for the committee. At the same time, we propose three new strategies for active learning: 1.) increasing frequency of uncertain data to bias the training data set; 2.) Using mutual information among the input images as a regularizer for acquisition to ensure diversity in the training dataset; 3.) adaptation of Dice log-likelihood for Stein variational gradient descent (SVGD). The results indicate an improvement in terms of data reduction by achieving full accuracy while only using 22.69% and 48.85% of the available data for each dataset, respectively.",
+    "source": "openalex",
+    "citation_count": 118,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2101.02323",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Active learning (machine learning)",
+      "Artificial intelligence",
+      "Machine learning",
+      "Segmentation",
+      "Set (abstract data type)",
+      "Deep learning",
+      "Medical imaging"
+    ],
+    "score": 0.68,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Semi-supervised Medical Image Segmentation with Confidence Calibration",
+    "authors": [
+      "Qisen Xu",
+      "Qian Wu",
+      "Yiqiu Hu",
+      "Bo Jin",
+      "Bin Hu",
+      "Fengping Zhu",
+      "Yuxin Li",
+      "Xiangfeng Wang"
+    ],
+    "year": 2021,
+    "venue": "2021 International Joint Conference on Neural Networks (IJCNN)",
+    "doi": "10.1109/ijcnn52387.2021.9534435",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ijcnn52387.2021.9534435",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/9533266/9533267/09534435.pdf?arnumber=9534435",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6787,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Maximum Entropy on Erroneous Predictions (MEEP): Improving model calibration for medical image segmentation",
+    "authors": [
+      "Agostina J. Larrazabal",
+      "César E. Martínez",
+      "José Dolz",
+      "Enzo Ferrante"
+    ],
+    "year": 2021,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2112.12218",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2112.12218",
+    "abstract": "Modern deep neural networks achieved remarkable progress in medical image segmentation tasks. However, it has recently been observed that they tend to produce overconfident estimates, even in situations of high uncertainty, leading to poorly calibrated and unreliable models. In this work we introduce Maximum Entropy on Erroneous Predictions (MEEP), a training strategy for segmentation networks which selectively penalizes overconfident predictions, focusing only on misclassified pixels. Our method is agnostic to the neural architecture, does not increase model complexity and can be coupled with multiple segmentation loss functions. We benchmark the proposed strategy in two challenging segmentation tasks: white matter hyperintensity lesions in magnetic resonance images (MRI) of the brain, and atrial segmentation in cardiac MRI. The experimental results demonstrate that coupling MEEP with standard segmentation losses leads to improvements not only in terms of model calibration, but also in segmentation quality.",
+    "source": "openalex",
+    "citation_count": 9,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2112.12218",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Artificial intelligence",
+      "Benchmark (surveying)",
+      "Image segmentation",
+      "Artificial neural network",
+      "Entropy (arrow of time)",
+      "Pixel"
+    ],
+    "score": 0.6764,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Uncertainty Quantification in Medical Image Segmentation: A Comprehensive Survey",
+    "authors": [
+      "Seyed Sina Ziaee",
+      "Katie L. Ovens"
+    ],
+    "year": 2026,
+    "venue": "Journal of Imaging",
+    "doi": "10.3390/jimaging12080341",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/jimaging12080341",
+    "abstract": "Uncertainty quantification (UQ) in medical image segmentation is essential for ensuring the reliability and interpretability of deep learning models in clinical decision-making. While convolutional neural networks (CNNs) and transformer-based architectures have achieved remarkable segmentation performance, they often provide deterministic outputs without accounting for uncertainty, which can lead to overconfident predictions in ambiguous cases. This paper presents a comprehensive survey of UQ techniques in medical image segmentation, categorizing existing approaches into Bayesian methods, deep ensembles, deterministic methods, test-time data augmentation, and hybrid models, while treating foundation-model-based UQ as a separate cross-cutting category. We examine key methodologies, including Monte Carlo dropout, Bayesian neural networks, variational inference, and ensemble learning, discussing their advantages and limitations in addressing aleatoric and epistemic uncertainties. Additionally, we explore the clinical relevance of UQ by reviewing its applications in brain tumor segmentation, cardiac imaging, lung nodule detection, and other medical domains. The paper also highlights key evaluation metrics, such as calibration errors, uncertainty-error correlation, and visual interpretability, to assess the effectiveness of UQ methods. Finally, we discuss challenges and future research directions, emphasizing the need for scalable, interpretable, and clinically actionable uncertainty quantification strategies to improve trust in AI-assisted medical image analysis.",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2313-433X/12/8/341/pdf?version=1785242890",
+    "publication_type": "review",
+    "keywords": [
+      "Interpretability",
+      "Uncertainty quantification",
+      "Computer science",
+      "Convolutional neural network",
+      "Artificial intelligence",
+      "Key (lock)",
+      "Machine learning",
+      "Bayesian probability"
+    ],
+    "score": 0.6742,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Using Soft Labels to Model Uncertainty in Medical Image Segmentation",
+    "authors": [
+      "João Lourenço Silva",
+      "Arlindo L. Oliveira"
+    ],
+    "year": 2021,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2109.12622",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2109.12622",
+    "abstract": "Medical image segmentation is inherently uncertain. For a given image, there may be multiple plausible segmentation hypotheses, and physicians will often disagree on lesion and organ boundaries. To be suited to real-world application, automatic segmentation systems must be able to capture this uncertainty and variability. Thus far, this has been addressed by building deep learning models that, through dropout, multiple heads, or variational inference, can produce a set - infinite, in some cases - of plausible segmentation hypotheses for any given image. However, in clinical practice, it may not be practical to browse all hypotheses. Furthermore, recent work shows that segmentation variability plateaus after a certain number of independent annotations, suggesting that a large enough group of physicians may be able to represent the whole space of possible segmentations. Inspired by this, we propose a simple method to obtain soft labels from the annotations of multiple physicians and train models that, for each image, produce a single well-calibrated output that can be thresholded at multiple confidence levels, according to each application's precision-recall requirements. We evaluated our method on the MICCAI 2021 QUBIQ challenge, showing that it performs well across multiple medical image segmentation tasks, produces well-calibrated predictions, and, on average, performs better at matching physicians' predictions than other physicians.",
+    "source": "openalex",
+    "citation_count": 7,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2109.12622",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Inference",
+      "Computer science",
+      "Artificial intelligence",
+      "Matching (statistics)",
+      "Image segmentation",
+      "Image (mathematics)",
+      "Set (abstract data type)"
+    ],
+    "score": 0.6691,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "DOMINO: Domain-aware Model Calibration in Medical Image Segmentation",
+    "authors": [
+      "Skylar E. Stolte",
+      "Kyle Volle",
+      "Aprinda Indahlastari",
+      "Alejandro Albizu",
+      "Adam J. Woods",
+      "Kevin Brink",
+      "Matthew Hale",
+      "Ruogu Fang"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2209.06077v1",
+    "url": "http://arxiv.org/abs/2209.06077v1",
+    "abstract": "Model calibration measures the agreement between the predicted probability estimates and the true correctness likelihood. Proper model calibration is vital for high-risk applications. Unfortunately, modern deep neural networks are poorly calibrated, compromising trustworthiness and reliability. Medical image segmentation particularly suffers from this due to the natural uncertainty of tissue boundaries. This is exasperated by their loss functions, which favor overconfidence in the majority classes. We address these challenges with DOMINO, a domain-aware model calibration method that leverages the semantic confusability and hierarchical similarity between class labels. Our experiments demonstrate that our DOMINO-calibrated deep neural networks outperform non-calibrated models and state-of-the-art morphometric methods in head image segmentation. Our results show that our method can consistently achieve better calibration, higher accuracy, and faster inference times than these methods, especially on rarer classes. This performance is attributed to our domain-aware regularization to inform semantic model calibration. These findings show the importance of semantic ties between class labels in building confidence in deep learning models. The framework has the potential to improve the trustworthiness and reliability of generic medical image segmentation models. The code for this article is available at: https://github.com/lab-smile/DOMINO.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2209.06077v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6612,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Reliability-Preserving Compression for Deployable Medical Image Segmentation",
+    "authors": [
+      "Sagar Kumar",
+      "Shailja Sharma",
+      "Tirthajit Baruah",
+      "Punit Rathore"
+    ],
+    "year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2610.25460",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2610.25460",
+    "abstract": "Post-training compression of pretrained medical segmentation models commonly uses quantization, pruning, or distillation to reduce model size and computational cost. Existing medical segmentation quantization studies mainly evaluate Dice, model size, memory, and latency, but this is incomplete for safety-critical use because compressed models should also preserve uncertainty signals that indicate unreliable predictions. We study this problem in compressed MRI/CT segmentation and formalize why Dice can remain stable while uncertainty changes. Motivated by this failure mode, we propose score-guided aggregate-validated mixed precision (SGAV-MP), a post-training compression framework that selects layer precisions under reliability constraints. SGAV-MP ranks quantization actions with a compact benefit-risk score and accepts them only after full-model reliability validation on a calibration set. Across five 2D backbones and three 3D benchmarks, SGAV-MP preserves FP32-level Dice and high uncertainty-map agreement, achieving $3.59\\times$--$7.8\\times$ compression in 2D and $4.73\\times$--$7.82\\times$ in 3D. We also report backend-supported TensorRT deployment measurements separately to distinguish runtime execution from reliability-preserving storage compression.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2610.25460",
+    "publication_type": "preprint",
+    "keywords": [
+      "Dice",
+      "Computer science",
+      "Segmentation",
+      "Quantization (signal processing)",
+      "Artificial intelligence",
+      "Compression (physics)",
+      "Computer vision",
+      "Reliability (semiconductor)"
+    ],
+    "score": 0.6517,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "HLNet: High-Confidence Lightweight Network for Semi-Supervised Medical Image Segmentation",
+    "authors": [
+      "Xiaoyu Huang",
+      "Jianxin Hou",
+      "Canfei Xu",
+      "Jinwei Ge",
+      "San Li",
+      "Yang Li"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.21203/rs.3.rs-9399994/v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-9399994/v1",
+    "abstract": "Abstract Semi-Supervised Learning(SSL) can effectively alleviate the reliance on large amounts of pixel-level labeled data when training fully supervised medical image segmentation models. However, most current semi-supervised learning approaches rely on self-training or consistency regularization methods, which are highly susceptible to erroneous supervision from low-quality pseudo-labels, thus affecting model segmentation performance. Additionally, existing semi-supervised backbone networks typically have large parameter sizes, making them unsuitable for portable device designs. To address these issues, this paper proposes a lightweight semi-supervised segmentation model with high confidence under dual-level perturbations. Perturbations are applied at both the input data and model levels to guide the model in learning more robust feature representations. Furthermore, low-quality pixels are ignored, and EVidence Inference Learning(EVIL) is introduced to estimate the uncertainty of pseudo-labels, mitigating the erroneous supervision from pseudo-labels during training. Experimental results show that the proposed model outperforms comparison models on three different public datasets—ACDC, BUSI, and Promise12. With only 20% labeled data, the model achieves promising segmentation performance in terms of Dice Similarity Coefficient (DSC) and Jaccard index, while significantly reducing the number of parameters.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.researchsquare.com/article/rs-9399994/v1",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6395,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Medical Image Segmentation Pruning via Influence-Space Correlation and Statistics Calibration",
+    "authors": [
+      "Zexu Huang",
+      "Yihao Chen"
+    ],
+    "year": 2026,
+    "venue": "2026 International Joint Conference on Neural Networks (IJCNN)",
+    "doi": "10.1109/ijcnn69854.2026.11729471",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ijcnn69854.2026.11729471",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11728400/11728402/11729471.pdf?arnumber=11729471",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6395,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Training-Free One-Shot Medical Image Segmentation with SAM via Confidence and Consistency-Based Bidirectional Prompt Evolution",
+    "authors": [
+      "Muyang Li",
+      "Kang Li",
+      "Guotai Wang"
+    ],
+    "year": 2026,
+    "venue": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+    "doi": "10.1109/isbi61048.2026.11515319",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/isbi61048.2026.11515319",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11515282/11515297/11515319.pdf?arnumber=11515319",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6395,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Semi-supervised Medical Image Segmentation with Low-Confidence Consistency and Class Separation",
+    "authors": [
+      "Zhimin Gao",
+      "Tianyou Yu"
+    ],
+    "year": 2023,
+    "venue": "2023 International Conference on Intelligent Supercomputing and BioPharma (ISBP)",
+    "doi": "10.1109/isbp57705.2023.10061306",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/isbp57705.2023.10061306",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/10059466/10061291/10061306.pdf?arnumber=10061306",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.632,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Confidence Calibration for Deep Renal Biopsy Immunofluorescence Image Classification",
+    "authors": [
+      "Federico Pollastri",
+      "Juan Maroñas",
+      "Federico Bolelli",
+      "Giulia Ligabue",
+      "Roberto Paredes",
+      "Riccardo Magistroni",
+      "Costantino Grana"
+    ],
+    "year": 2021,
+    "venue": "Proceedings - International Conference on Pattern Recognition/Proceedings/International Conference on Pattern Recognition",
+    "doi": "10.1109/icpr48806.2021.9412685",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icpr48806.2021.9412685",
+    "abstract": "With this work we tackle immunofluorescence classification in renal biopsy, employing state-of-the-art Convolutional Neural Networks. In this setting, the aim of the probabilistic model is to assist an expert practitioner towards identifying the location pattern of antibody deposits within a glomerulus. Since modern neural networks often provide overconfident outputs, we stress the importance of having a reliable prediction, demonstrating that Temperature Scaling (TS), a recently introduced re-calibration technique, can be successfully applied to immunofluorescence classification in renal biopsy. Experimental results demonstrate that the designed model yields good accuracy on the specific task, and that TS is able to provide reliable probabilities, which are highly valuable for such a task given the low inter-rater agreement.",
+    "source": "openalex",
+    "citation_count": 17,
+    "is_open_access": true,
+    "open_access_url": "https://iris.unimore.it/bitstream/11380/1212429/1/2020_ICPR_Confidence_Calibration_for_Deep_Renal_Biopsy_Immunofluorescence_Image_Classification.pdf",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Convolutional neural network",
+      "Artificial intelligence",
+      "Probabilistic logic",
+      "Task (project management)",
+      "Calibration",
+      "Immunofluorescence",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.6288,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Medical image segmentation method based on confidence learning and collaborative training",
+    "authors": [
+      "Zhao Hongwei",
+      "Chen Yuhan",
+      "Liu Pingping",
+      "Zhou Qiuzhan"
+    ],
+    "year": 2024,
+    "venue": "Scientific Insights and Discoveries Review",
+    "doi": "10.59782/sidr.v2i1.117",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.59782/sidr.v2i1.117",
+    "abstract": "Confidence learning plays an important role in the training of low-quality annotated data of medical images. However, the current applications of confidence learning are based on the average teacher model, and the possibility of confidence learning on other networks has not been explored. To address this problem, a segmentation model based on confidence learning and co-training is proposed. The model uses two different networks to encourage the output results of the two networks to be consistent. Then, the output of one of the networks is compared with the original low-quality annotations using confidence learning, and the low-quality annotated data is corrected to provide an effective training reference. The proposed model is compared on three medical image datasets of different modalities. Experimental results show that the segmentation effect of the proposed model is better than that of the existing confidence learning model.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://crestapress.org/index.php/sidr/article/download/117/93",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6267,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Distribution-aware Margin Calibration for Medical Image Segmentation",
+    "authors": [
+      "Zhibin Li",
+      "Litao Yu",
+      "Jian Zhang"
+    ],
+    "year": 2020,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2011.01462",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2011.01462",
+    "abstract": "The Jaccard index, also known as Intersection-over-Union (IoU score), is one of the most critical evaluation metrics in medical image segmentation. However, directly optimizing the mean IoU (mIoU) score over multiple objective classes is an open problem. Although some algorithms have been proposed to optimize its surrogates, there is no guarantee provided for their generalization ability. In this paper, we present a novel data-distribution-aware margin calibration method for a better generalization of the mIoU over the whole data-distribution, underpinned by a rigid lower bound. This scheme ensures a better segmentation performance in terms of IoU scores in practice. We evaluate the effectiveness of the proposed margin calibration method on two medical image segmentation datasets, showing substantial improvements of IoU scores over other learning schemes using deep segmentation models.",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2011.01462",
+    "publication_type": "preprint",
+    "keywords": [
+      "Margin (machine learning)",
+      "Intersection (aeronautics)",
+      "Generalization",
+      "Jaccard index",
+      "Segmentation",
+      "Artificial intelligence",
+      "Computer science",
+      "Calibration"
+    ],
+    "score": 0.6142,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Invariant Content Representation for Generalizable Medical Image Segmentation",
+    "authors": [
+      "Zhiming Cheng",
+      "Shuai Wang",
+      "Yuhan Gao",
+      "Zunjie Zhu",
+      "Chenggang Clarence Yan"
+    ],
+    "year": 2024,
+    "venue": "Journal of Imaging Informatics in Medicine",
+    "doi": "10.1007/s10278-024-01088-9",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s10278-024-01088-9",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11612095/pdf/10278_2024_Article_1088.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Invariant (physics)",
+      "Segmentation",
+      "Artificial intelligence",
+      "Representation (politics)",
+      "Computer science",
+      "Mathematics",
+      "Computer vision",
+      "Political science"
+    ],
+    "score": 0.6101,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Image Segmentation Based on Statistical Confidence Intervals",
+    "authors": [
+      "Pablo Buenestado",
+      "Leonardo Acho"
+    ],
+    "year": 2018,
+    "venue": "Entropy",
+    "doi": "10.3390/e20010046",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/e20010046",
+    "abstract": "Image segmentation is defined as a partition realized to an image into homogeneous regions to modify it into something that is more meaningful and softer to examine. Although several segmentation approaches have been proposed recently, in this paper, we develop a new image segmentation method based on the statistical confidence interval tool along with the well-known Otsu algorithm. According to our numerical experiments, our method has a dissimilar performance in comparison to the standard Otsu algorithm to specially process images with speckle noise perturbation. Actually, the effect of the speckle noise entropy is almost filtered out by our algorithm. Furthermore, our approach is validated by employing some image samples.",
+    "source": "crossref",
+    "citation_count": 15,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/1099-4300/20/1/46/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5899,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Non-equivalent images and pixels: Confidence-aware resampling with meta-learning mixup for polyp segmentation",
+    "authors": [
+      "Xiaoqing Guo",
+      "Zhen Chen",
+      "Jun Liu",
+      "Yixuan Yuan"
+    ],
+    "year": 2022,
+    "venue": "Medical Image Analysis",
+    "doi": "10.1016/j.media.2022.102394",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.media.2022.102394",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 30,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S1361841522000469?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5776,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Introduction to Medical Image Recognition, Segmentation, and Parsing",
+    "authors": [
+      "S.Kevin Zhou"
+    ],
+    "year": 2016,
+    "venue": "Medical Image Recognition, Segmentation and Parsing",
+    "doi": "10.1016/b978-0-12-802581-9.00001-9",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/b978-0-12-802581-9.00001-9",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 14,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:B9780128025819000019?httpAccept=text/xml",
+    "publication_type": "book-chapter",
+    "keywords": [],
+    "score": 0.5607,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Towards Trustworthy Breast Tumor Segmentation in Ultrasound using Monte Carlo Dropout and Deep Ensembles for Epistemic Uncertainty Estimation",
+    "authors": [
+      "Toufiq Musah",
+      "Chinasa Kalaiwo",
+      "Maimoona Akram",
+      "Ubaida Napari Abdulai",
+      "Maruf Adewole",
+      "Farouk Dako",
+      "Adaobi Chiazor Emegoakor",
+      "Udunna C. Anazodo",
+      "Prince Ebenezer Adjei",
+      "Confidence Raymond"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2508.17768v1",
+    "url": "http://arxiv.org/abs/2508.17768v1",
+    "abstract": "Automated segmentation of BUS images is important for precise lesion delineation and tumor characterization, but is challenged by inherent artifacts and dataset inconsistencies. In this work, we evaluate the use of a modified Residual Encoder U-Net for breast ultrasound segmentation, with a focus on uncertainty quantification. We identify and correct for data duplication in the BUSI dataset, and use a deduplicated subset for more reliable estimates of generalization performance. Epistemic uncertainty is quantified using Monte Carlo dropout, deep ensembles, and their combination. Models are benchmarked on both in-distribution and out-of-distribution datasets to demonstrate how they generalize to unseen cross-domain data. Our approach achieves state-of-the-art segmentation accuracy on the Breast-Lesion-USG dataset with in-distribution validation, and provides calibrated uncertainty estimates that effectively signal regions of low model confidence. Performance declines and increased uncertainty observed in out-of-distribution evaluation highlight the persistent challenge of domain shift in medical imaging, and the importance of integrated uncertainty modeling for trustworthy clinical deployment. \\footnote{Code available at: https://github.com/toufiqmusah/nn-uncertainty.git}",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2508.17768v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5579,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Learning with imperfect datasets in medical image segmentation",
+    "authors": [
+      "Yuhang Ding"
+    ],
+    "year": 2024,
+    "venue": "OPUS - Open Publications of UTS Scholars (University of Technology Sydney)",
+    "doi": "",
+    "arxiv_id": "",
+    "url": "https://openalex.org/W7216881435",
+    "abstract": "edical image segmentation aims to partition medical images into distinct physiological regions, such as organs and lesions, which is crucial for disease diagnosis and treatment planning.The advent of deep neural networks has significantly advanced this field.However, the performance in real-world scenarios remains unsatisfactory due to imperfect data and annotations during both training and deployment.First, scaling up training data and annotations is challenging.This is because obtaining medical images is difficult due to privacy concerns.Furthermore, annotating medical images requires substantial expertise, making the process costly and difficult to carry out.Second, the quality of medical images cannot always be guaranteed in real-world scenarios, leading to significant performance drops in outlier cases.Third, real-world medical applications are safety-critical and demand extremely accurate predictions, a requirement that most existing models fail to meet adequately.These challenges hinder the practical deployment of medical image segmentation.Consequently, both academic and industrial communities are striving to develop highly accurate medical image segmentation algorithms that can perform well despite imperfect data.To this end, this thesis proposes deep learning methods to develop a well-performed medical image segmentation model that can be effectively trained with limited and low-quality data/annotations.Specifically, a comprehensive suite is proposed from three directions: (1) applying image registration to generate realistic and diverse training samples and adopting barely-supervised learning paradigms to enable learning with insufficient annotated data; (2) devising region-aware fusion module to address missing modality problem; (3) incorporating automatic and interactive medical image segmentation into a single model and one training session to achieve sufficient segmentation performance for practical use.Extensive experiments on several medical image segmentation tasks, such as brain tumor segmentation, brain structure segmentation and abdominal organ segmentation, demonstrate the effectiveness and efficiency of the proposed techniques.ix",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://opus.lib.uts.edu.au/bitstream/10453/186717/1/thesis.pdf",
+    "publication_type": "dissertation",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Image segmentation",
+      "Segmentation",
+      "Imperfect",
+      "Pattern recognition (psychology)",
+      "Image (mathematics)",
+      "Computer vision"
+    ],
+    "score": 0.5579,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Fréchet Radiomic Distance (FRD): A Versatile Metric for Comparing Medical Imaging Datasets",
+    "authors": [
+      "Nicholas Konz",
+      "Richard Osuala",
+      "Preeti Verma",
+      "Yuwen Chen",
+      "Hanxue Gu",
+      "Haoyu Dong",
+      "Yaqian Chen",
+      "Andrew Marshall",
+      "Lidia Garrucho",
+      "Kaisar Kushibar",
+      "Daniel M. Lang",
+      "Gene S. Kim",
+      "Lars J. Grimm",
+      "John M. Lewin",
+      "James S. Duncan",
+      "Julia A. Schnabel",
+      "Oliver Diaz",
+      "Karim Lekadir",
+      "Maciej A. Mazurowski"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2026.103943",
+    "arxiv_id": "2412.01496v2",
+    "url": "http://arxiv.org/abs/2412.01496v2",
+    "abstract": "Determining whether two sets of images belong to the same or different distributions or domains is a crucial task in modern medical image analysis and deep learning; for example, to evaluate the output quality of image generative models. Currently, metrics used for this task either rely on the (potentially biased) choice of some downstream task, such as segmentation, or adopt task-independent perceptual metrics (e.g., Fréchet Inception Distance/FID) from natural imaging, which we show insufficiently capture anatomical features. To this end, we introduce a new perceptual metric tailored for medical images, FRD (Fréchet Radiomic Distance), which utilizes standardized, clinically meaningful, and interpretable image features. We show that FRD is superior to other image distribution metrics for a range of medical imaging applications, including out-of-domain (OOD) detection, the evaluation of image-to-image translation (by correlating more with downstream task performance as well as anatomical consistency and realism), and the evaluation of unconditional image generation. Moreover, FRD offers additional benefits such as stability and computational efficiency at low sample sizes, sensitivity to image corruptions and adversarial attacks, feature interpretability, and correlation with radiologist-perceived image quality. Additionally, we address key gaps in the literature by presenting an extensive framework for the multifaceted evaluation of image similarity metrics in medical imaging -- including the first large-scale comparative study of generative models for medical image translation -- and release an accessible codebase to facilitate future research. Our results are supported by thorough experiments spanning a variety of datasets, modalities, and downstream tasks, highlighting the broad potential of FRD for medical image analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2412.01496v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.555,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Test-time generative augmentation for medical image segmentation",
+    "authors": [
+      "Xiao Ma",
+      "Yuhui Tao",
+      "Zetian Zhang",
+      "Yuhan Zhang",
+      "Xi Wang",
+      "Sheng Zhang",
+      "Zexuan Ji",
+      "Yizhe Zhang",
+      "Qiang Chen",
+      "Guang Yang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103902",
+    "arxiv_id": "2406.17608v2",
+    "url": "http://arxiv.org/abs/2406.17608v2",
+    "abstract": "Medical image segmentation is critical for clinical diagnosis, treatment planning, and monitoring, yet segmentation models often struggle with uncertainties stemming from occlusions, ambiguous boundaries, and variations in imaging devices. Traditional test-time augmentation (TTA) techniques typically rely on predefined geometric and photometric transformations, limiting their adaptability and effectiveness in complex medical scenarios. In this study, we introduced Test-Time Generative Augmentation (TTGA), a novel augmentation strategy specifically tailored for medical image segmentation at inference time. Different from conventional augmentation strategies that suffer from excessive randomness or limited flexibility, TTGA leverages a domain-fine-tuned generative model to produce contextually relevant and diverse augmentations tailored to the characteristics of each test image. Built upon diffusion model inversion, a masked null-text inversion method is proposed to enable region-specific augmentations during sampling. Furthermore, a dual denoising pathway is designed to balance precise identity preservation with controlled variability. We demonstrate the efficacy of our TTGA through extensive experiments across three distinct segmentation tasks spanning nine datasets. Our results consistently demonstrate that TTGA not only improves segmentation accuracy (with DSC gains ranging from 0.1% to 2.3% over the baseline) but also offers pixel-wise error estimation (with DSC gains ranging from 1.1% to 29.0% over the baseline). The source code and demonstration are available at: https://github.com/maxiao0234/TTGA.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2406.17608v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.555,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation",
+    "authors": [
+      "Fenghe Tang",
+      "Bingkun Nian",
+      "Yingtai Li",
+      "Zihang Jiang",
+      "Jie Yang",
+      "Wei Liu",
+      "S. Kevin Zhou"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103606",
+    "arxiv_id": "2408.08070v2",
+    "url": "http://arxiv.org/abs/2408.08070v2",
+    "abstract": "Recently, the state space model Mamba has demonstrated efficient long-sequence modeling capabilities, particularly for addressing long-sequence visual tasks in 3D medical imaging. However, existing generative self-supervised learning methods have not yet fully unleashed Mamba's potential for handling long-range dependencies because they overlook the inherent causal properties of state space sequences in masked modeling. To address this challenge, we propose a general-purpose pre-training framework called MambaMIM, a masked image modeling method based on a novel TOKen-Interpolation strategy (TOKI) for the selective structure state space sequence, which learns causal relationships of state space within the masked sequence. Further, MambaMIM introduces a bottom-up 3D hybrid masking strategy to maintain a masking consistency across different architectures and can be used on any single or hybrid Mamba architecture to enhance its multi-scale and long-range representation capability. We pre-train MambaMIM on a large-scale dataset of 6.8K CT scans and evaluate its performance across eight public medical segmentation benchmarks. Extensive downstream experiments reveal the feasibility and advancement of using Mamba for medical image pre-training. In particular, when we apply the MambaMIM to a customized architecture that hybridizes MedNeXt and Vision Mamba, we consistently obtain the state-of-the-art segmentation performance. The code is available at: https://github.com/FengheTan9/MambaMIM.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.08070v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.555,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "CNN Architecture for Surgical Image Segmentation Systems with Recursive Network Structure to Mitigate Overfitting",
+    "authors": [
+      "Taito Manabe",
+      "Koki Tomonaga",
+      "Yuichiro Shibata"
+    ],
+    "year": 2019,
+    "venue": "2019 Seventh International Symposium on Computing and Networking (CANDAR)",
+    "doi": "10.1109/candar.2019.00029",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/candar.2019.00029",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 3,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/8949788/8958293/08958430.pdf?arnumber=8958430",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5478,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Cross-dimensional transfer learning in medical image segmentation with deep learning",
+    "authors": [
+      "Hicham Messaoudi",
+      "Ahror Belaid",
+      "Douraied Ben Salem",
+      "Pierre-Henri Conze"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2023.102868",
+    "arxiv_id": "2307.15872v1",
+    "url": "http://arxiv.org/abs/2307.15872v1",
+    "abstract": "Over the last decade, convolutional neural networks have emerged and advanced the state-of-the-art in various image analysis and computer vision applications. The performance of 2D image classification networks is constantly improving and being trained on databases made of millions of natural images. However, progress in medical image analysis has been hindered by limited annotated data and acquisition constraints. These limitations are even more pronounced given the volumetry of medical imaging data. In this paper, we introduce an efficient way to transfer the efficiency of a 2D classification network trained on natural images to 2D, 3D uni- and multi-modal medical image segmentation applications. In this direction, we designed novel architectures based on two key principles: weight transfer by embedding a 2D pre-trained encoder into a higher dimensional U-Net, and dimensional transfer by expanding a 2D segmentation network into a higher dimension one. The proposed networks were tested on benchmarks comprising different modalities: MR, CT, and ultrasound images. Our 2D network ranked first on the CAMUS challenge dedicated to echo-cardiographic data segmentation and surpassed the state-of-the-art. Regarding 2D/3D MR and CT abdominal images from the CHAOS challenge, our approach largely outperformed the other 2D-based methods described in the challenge paper on Dice, RAVD, ASSD, and MSSD scores and ranked third on the online evaluation platform. Our 3D network applied to the BraTS 2022 competition also achieved promising results, reaching an average Dice score of 91.69% (91.22%) for the whole tumor, 83.23% (84.77%) for the tumor core, and 81.75% (83.88%) for enhanced tumor using the approach based on weight (dimensional) transfer. Experimental and qualitative results illustrate the effectiveness of our methods for multi-dimensional medical image segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2307.15872v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.545,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Weakly-Supervised 3D Medical Image Segmentation using Geometric Prior and Contrastive Similarity",
+    "authors": [
+      "Hao Du",
+      "Qihua Dong",
+      "Yan Xu",
+      "Jing Liao"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1109/tmi.2023.3269523",
+    "arxiv_id": "2302.02125v1",
+    "url": "http://arxiv.org/abs/2302.02125v1",
+    "abstract": "Medical image segmentation is almost the most important pre-processing procedure in computer-aided diagnosis but is also a very challenging task due to the complex shapes of segments and various artifacts caused by medical imaging, (i.e., low-contrast tissues, and non-homogenous textures). In this paper, we propose a simple yet effective segmentation framework that incorporates the geometric prior and contrastive similarity into the weakly-supervised segmentation framework in a loss-based fashion. The proposed geometric prior built on point cloud provides meticulous geometry to the weakly-supervised segmentation proposal, which serves as better supervision than the inherent property of the bounding-box annotation (i.e., height and width). Furthermore, we propose contrastive similarity to encourage organ pixels to gather around in the contrastive embedding space, which helps better distinguish low-contrast tissues. The proposed contrastive embedding space can make up for the poor representation of the conventionally-used gray space. Extensive experiments are conducted to verify the effectiveness and the robustness of the proposed weakly-supervised segmentation framework. The proposed framework is superior to state-of-the-art weakly-supervised methods on the following publicly accessible datasets: LiTS 2017 Challenge, KiTS 2021 Challenge, and LPBA40. We also dissect our method and evaluate the performance of each component.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2302.02125v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.545,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Segment Anything Model for Medical Image Analysis: an Experimental Study",
+    "authors": [
+      "Maciej A. Mazurowski",
+      "Haoyu Dong",
+      "Hanxue Gu",
+      "Jichen Yang",
+      "Nicholas Konz",
+      "Yixin Zhang"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2023.102918",
+    "arxiv_id": "2304.10517v3",
+    "url": "http://arxiv.org/abs/2304.10517v3",
+    "abstract": "Training segmentation models for medical images continues to be challenging due to the limited availability of data annotations. Segment Anything Model (SAM) is a foundation model that is intended to segment user-defined objects of interest in an interactive manner. While the performance on natural images is impressive, medical image domains pose their own set of challenges. Here, we perform an extensive evaluation of SAM's ability to segment medical images on a collection of 19 medical imaging datasets from various modalities and anatomies. We report the following findings: (1) SAM's performance based on single prompts highly varies depending on the dataset and the task, from IoU=0.1135 for spine MRI to IoU=0.8650 for hip X-ray. (2) Segmentation performance appears to be better for well-circumscribed objects with prompts with less ambiguity and poorer in various other scenarios such as the segmentation of brain tumors. (3) SAM performs notably better with box prompts than with point prompts. (4) SAM outperforms similar methods RITM, SimpleClick, and FocalClick in almost all single-point prompt settings. (5) When multiple-point prompts are provided iteratively, SAM's performance generally improves only slightly while other methods' performance improves to the level that surpasses SAM's point-based performance. We also provide several illustrations for SAM's performance on all tested datasets, iterative segmentation, and SAM's behavior given prompt ambiguity. We conclude that SAM shows impressive zero-shot segmentation performance for certain medical imaging datasets, but moderate to poor performance for others. SAM has the potential to make a significant impact in automated medical image segmentation in medical imaging, but appropriate care needs to be applied when using it.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2304.10517v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.545,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "GAN-GA: A Generative Model based on Genetic Algorithm for Medical Image Generation",
+    "authors": [
+      "M. AbdulRazek",
+      "G. Khoriba",
+      "M. Belal"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.3389/978-2-8325-1231-9",
+    "arxiv_id": "2401.00314v1",
+    "url": "http://arxiv.org/abs/2401.00314v1",
+    "abstract": "Medical imaging is an essential tool for diagnosing and treating diseases. However, lacking medical images can lead to inaccurate diagnoses and ineffective treatments. Generative models offer a promising solution for addressing medical image shortage problems due to their ability to generate new data from existing datasets and detect anomalies in this data. Data augmentation with position augmentation methods like scaling, cropping, flipping, padding, rotation, and translation could lead to more overfitting in domains with little data, such as medical image data. This paper proposes the GAN-GA, a generative model optimized by embedding a genetic algorithm. The proposed model enhances image fidelity and diversity while preserving distinctive features. The proposed medical image synthesis approach improves the quality and fidelity of medical images, an essential aspect of image interpretation. To evaluate synthesized images: Frechet Inception Distance (FID) is used. The proposed GAN-GA model is tested by generating Acute lymphoblastic leukemia (ALL) medical images, an image dataset, and is the first time to be used in generative models. Our results were compared to those of InfoGAN as a baseline model. The experimental results show that the proposed optimized GAN-GA enhances FID scores by about 6.8\\%, especially in earlier training epochs. The source code and dataset will be available at: https://github.com/Mustafa-AbdulRazek/InfoGAN-GA.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2401.00314v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.545,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Confidence–Uncertainty Boundary Calibration for Bayesian Deep Learning in Medical Image Analysis",
+    "authors": [
+      "Hua Xu",
+      "Julián Arias",
+      "Juan Ignacio Godino-Llorente"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7150021",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7150021",
+    "abstract": "In critical decision support systems based on medical imaging, the reliability of AI-assisted decision making is as relevant as predictive accuracy. Although deep learning models have demonstrated significant accuracy, they frequently suffer from miscalibration, manifested as overconfidence in erroneous predictions. To facilitate clinical acceptance, it is imperative that models quantify uncertainty in a manner that correlates with prediction correctness, allowing clinicians to identify unreliable outputs for further review. In order to address this necessity, the present paper proposes a probabilistic optimization framework grounded in Bayesian deep learning. Specifically, the Confidence–Uncertainty Boundary Curve (CUBC) is first explored as an intermediate operational target. Grounded in this target, a novel Confidence–Uncertainty Boundary Loss (CUB-Loss) is proposed to regularize the alignment between prediction confidence and uncertainty estimates during training, imposing penalties on high-certainty errors and low-certainty correct predictions. Upon completion of training optimization, a Boundary Curve Calibration Error (BCCE) metric is further introduced to measure the degree of boundary alignment in the calibrated model. Building on this measurement, a Dual Temperature Scaling (DTS) strategy is devised to perform post-hoc refinement, further adjusting the posterior predictive distribution across different confidence–uncertainty regions. The proposed framework is validated on three distinct medical imaging tasks: automatic screening of pneumonia, diabetic retinopathy detection, and identification of skin lesions. Empirical results demonstrate that the proposed approach improves uncertainty calibration across diverse modalities, maintains robust performance in data-scarce scenarios, and remains effective on severely imbalanced datasets, underscoring its potential for real clinical deployment.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5395,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Anomaly Detection-Inspired Few-Shot Medical Image Segmentation Through Self-Supervision With Supervoxels",
+    "authors": [
+      "Stine Hansen",
+      "Srishti Gautam",
+      "Robert Jenssen",
+      "Michael Kampffmeyer"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2022.102385",
+    "arxiv_id": "2203.02048v1",
+    "url": "http://arxiv.org/abs/2203.02048v1",
+    "abstract": "Recent work has shown that label-efficient few-shot learning through self-supervision can achieve promising medical image segmentation results. However, few-shot segmentation models typically rely on prototype representations of the semantic classes, resulting in a loss of local information that can degrade performance. This is particularly problematic for the typically large and highly heterogeneous background class in medical image segmentation problems. Previous works have attempted to address this issue by learning additional prototypes for each class, but since the prototypes are based on a limited number of slices, we argue that this ad-hoc solution is insufficient to capture the background properties. Motivated by this, and the observation that the foreground class (e.g., one organ) is relatively homogeneous, we propose a novel anomaly detection-inspired approach to few-shot medical image segmentation in which we refrain from modeling the background explicitly. Instead, we rely solely on a single foreground prototype to compute anomaly scores for all query pixels. The segmentation is then performed by thresholding these anomaly scores using a learned threshold. Assisted by a novel self-supervision task that exploits the 3D structure of medical images through supervoxels, our proposed anomaly detection-inspired few-shot medical image segmentation model outperforms previous state-of-the-art approaches on two representative MRI datasets for the tasks of abdominal organ segmentation and cardiac segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2203.02048v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.535,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Confidence Calibration of CNNs in Medical Image Databases",
+    "authors": [
+      "Nancy López-Miguel",
+      "Raquel Diaz-Hernández",
+      "Leopoldo Altamirano-Robles"
+    ],
+    "year": 2025,
+    "venue": "Computación y Sistemas",
+    "doi": "10.13053/cys-29-1-5510",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.13053/cys-29-1-5510",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5295,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Semi-supervised medical image segmentation based on cross-pseudo-supervised guidance with high-confidence pseudo labeling",
+    "authors": [
+      "Cheng Tansi",
+      "Ke Lu",
+      "Haiyi Wang",
+      "Yang Zhao",
+      "Chuang Jia",
+      "Jian Xue"
+    ],
+    "year": 2025,
+    "venue": "Medical Imaging 2025: Image Processing",
+    "doi": "10.1117/12.3047161",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3047161",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5295,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "CapsNet for Medical Image Segmentation",
+    "authors": [
+      "Minh Tran",
+      "Viet-Khoa Vo-Ho",
+      "Kyle Quinn",
+      "Hien Nguyen",
+      "Khoa Luu",
+      "Ngan Le"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2203.08948v1",
+    "url": "http://arxiv.org/abs/2203.08948v1",
+    "abstract": "Convolutional Neural Networks (CNNs) have been successful in solving tasks in computer vision including medical image segmentation due to their ability to automatically extract features from unstructured data. However, CNNs are sensitive to rotation and affine transformation and their success relies on huge-scale labeled datasets capturing various input variations. This network paradigm has posed challenges at scale because acquiring annotated data for medical segmentation is expensive, and strict privacy regulations. Furthermore, visual representation learning with CNNs has its own flaws, e.g., it is arguable that the pooling layer in traditional CNNs tends to discard positional information and CNNs tend to fail on input images that differ in orientations and sizes. Capsule network (CapsNet) is a recent new architecture that has achieved better robustness in representation learning by replacing pooling layers with dynamic routing and convolutional strides, which has shown potential results on popular tasks such as classification, recognition, segmentation, and natural language processing. Different from CNNs, which result in scalar outputs, CapsNet returns vector outputs, which aim to preserve the part-whole relationships. In this work, we first introduce the limitations of CNNs and fundamentals of CapsNet. We then provide recent developments of CapsNet for the task of medical image segmentation. We finally discuss various effective network architectures to implement a CapsNet for both 2D images and 3D volumetric medical image segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2203.08948v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5279,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Learning With Context Feedback Loop for Robust Medical Image Segmentation",
+    "authors": [
+      "Kibrom Berihu Girum",
+      "Gilles Créhange",
+      "Alain Lalande"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "10.1109/tmi.2021.3060497",
+    "arxiv_id": "2103.02844v1",
+    "url": "http://arxiv.org/abs/2103.02844v1",
+    "abstract": "Deep learning has successfully been leveraged for medical image segmentation. It employs convolutional neural networks (CNN) to learn distinctive image features from a defined pixel-wise objective function. However, this approach can lead to less output pixel interdependence producing incomplete and unrealistic segmentation results. In this paper, we present a fully automatic deep learning method for robust medical image segmentation by formulating the segmentation problem as a recurrent framework using two systems. The first one is a forward system of an encoder-decoder CNN that predicts the segmentation result from the input image. The predicted probabilistic output of the forward system is then encoded by a fully convolutional network (FCN)-based context feedback system. The encoded feature space of the FCN is then integrated back into the forward system's feed-forward learning process. Using the FCN-based context feedback loop allows the forward system to learn and extract more high-level image features and fix previous mistakes, thereby improving prediction accuracy over time. Experimental results, performed on four different clinical datasets, demonstrate our method's potential application for single and multi-structure medical image segmentation by outperforming the state of the art methods. With the feedback loop, deep learning methods can now produce results that are both anatomically plausible and robust to low contrast images. Therefore, formulating image segmentation as a recurrent framework of two interconnected networks via context feedback loop can be a potential method for robust and efficient medical image analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2103.02844v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.525,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Semi-Supervised Medical Image Segmentation with Confidence-Aware Learning",
+    "authors": [
+      "Huanqing Xu",
+      "Bo Peng",
+      "Jie Zhu",
+      "Yi Cao",
+      "Jiahui Song",
+      "Jianjun Lei"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5092496",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5092496",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5224,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Medical volume segmentation by overfitting sparsely annotated data",
+    "authors": [
+      "Tristan Payer",
+      "Faraz Nizamani",
+      "Meinrad Beer",
+      "Michael Götz",
+      "Timo Ropinski"
+    ],
+    "year": 2023,
+    "venue": "Journal of Medical Imaging",
+    "doi": "10.1117/1.jmi.10.4.044007",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/1.jmi.10.4.044007",
+    "abstract": "PurposeSemantic segmentation is one of the most significant tasks in medical image computing, whereby deep neural networks have shown great success. Unfortunately, supervised approaches are very data-intensive, and obtaining reliable annotations is time-consuming and expensive. Sparsely labeled approaches, such as bounding boxes, have shown some success in reducing the annotation time. However, in 3D volume data, each slice must still be manually labeled.ApproachWe evaluate approaches that reduce the annotation effort by reducing the number of slices that need to be labeled in a 3D volume. In a two-step process, a similarity metric is used to select slices that should be annotated by a trained radiologist. In the second step, a predictor is used to predict the segmentation mask for the rest of the slices. We evaluate different combinations of selectors and predictors on medical CT and MRI volumes. Thus we can determine that combination works best, and how far slice annotations can be reduced.ResultsOur results show that for instance for the Medical Segmentation Decathlon—heart dataset, some selector, and predictor combinations allow for a Dice score 0.969 when only annotating 20% of slices per volume. Experiments on other datasets show a similarly positive trend.ConclusionsWe evaluate a method that supports experts during the labeling of 3D medical volumes. Our approach makes it possible to drastically reduce the number of slices that need to be manually labeled. We present a recommendation in which selector predictor combination to use for different tasks and goals.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "https://www.spiedigitallibrary.org/journals/journal-of-medical-imaging/volume-10/issue-04/044007/Medical-volume-segmentation-by-overfitting-sparsely-annotated-data/10.1117/1.JMI.10.4.044007.full",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5167,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Test-Time Adaptable Neural Networks for Robust Medical Image Segmentation",
+    "authors": [
+      "Neerav Karani",
+      "Ertunc Erdil",
+      "Krishna Chaitanya",
+      "Ender Konukoglu"
+    ],
+    "year": 2020,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2020.101907",
+    "arxiv_id": "2004.04668v4",
+    "url": "http://arxiv.org/abs/2004.04668v4",
+    "abstract": "Convolutional Neural Networks (CNNs) work very well for supervised learning problems when the training dataset is representative of the variations expected to be encountered at test time. In medical image segmentation, this premise is violated when there is a mismatch between training and test images in terms of their acquisition details, such as the scanner model or the protocol. Remarkable performance degradation of CNNs in this scenario is well documented in the literature. To address this problem, we design the segmentation CNN as a concatenation of two sub-networks: a relatively shallow image normalization CNN, followed by a deep CNN that segments the normalized image. We train both these sub-networks using a training dataset, consisting of annotated images from a particular scanner and protocol setting. Now, at test time, we adapt the image normalization sub-network for \\emph{each test image}, guided by an implicit prior on the predicted segmentation labels. We employ an independently trained denoising autoencoder (DAE) in order to model such an implicit prior on plausible anatomical segmentation labels. We validate the proposed idea on multi-center Magnetic Resonance imaging datasets of three anatomies: brain, heart and prostate. The proposed test-time adaptation consistently provides performance improvement, demonstrating the promise and generality of the approach. Being agnostic to the architecture of the deep CNN, the second sub-network, the proposed design can be utilized with any segmentation network to increase robustness to variations in imaging scanners and protocols. Our code is available at: \\url{https://github.com/neerakara/test-time-adaptable-neural-networks-for-domain-generalization}.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2004.04668v4",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.515,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Uncertainty-aware multi-view co-training for semi-supervised medical image segmentation and domain adaptation",
+    "authors": [
+      "Yingda Xia",
+      "Dong Yang",
+      "Zhiding Yu",
+      "Fengze Liu",
+      "Jinzheng Cai",
+      "Lequan Yu",
+      "Zhuotun Zhu",
+      "Daguang Xu",
+      "Alan Yuille",
+      "Holger Roth"
+    ],
+    "year": 2020,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2020.101766",
+    "arxiv_id": "2006.16806v1",
+    "url": "http://arxiv.org/abs/2006.16806v1",
+    "abstract": "Although having achieved great success in medical image segmentation, deep learning-based approaches usually require large amounts of well-annotated data, which can be extremely expensive in the field of medical image analysis. Unlabeled data, on the other hand, is much easier to acquire. Semi-supervised learning and unsupervised domain adaptation both take the advantage of unlabeled data, and they are closely related to each other. In this paper, we propose uncertainty-aware multi-view co-training (UMCT), a unified framework that addresses these two tasks for volumetric medical image segmentation. Our framework is capable of efficiently utilizing unlabeled data for better performance. We firstly rotate and permute the 3D volumes into multiple views and train a 3D deep network on each view. We then apply co-training by enforcing multi-view consistency on unlabeled data, where an uncertainty estimation of each view is utilized to achieve accurate labeling. Experiments on the NIH pancreas segmentation dataset and a multi-organ segmentation dataset show state-of-the-art performance of the proposed framework on semi-supervised medical image segmentation. Under unsupervised domain adaptation settings, we validate the effectiveness of this work by adapting our multi-organ segmentation model to two pathological organs from the Medical Segmentation Decathlon Datasets. Additionally, we show that our UMCT-DA model can even effectively handle the challenging situation where labeled source data is inaccessible, demonstrating strong potentials for real-world applications.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2006.16806v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.515,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Bootstrap Confidence Limits for Bootstrap Overfitting-Corrected Model Performance",
+    "authors": [
+      "Frank Harrell"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.59350/2386a-rje24",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.59350/2386a-rje24",
+    "abstract": "How to cite this article Harrell FE (2025). Bootstrap Confidence Limits for Bootstrap Overfitting-Corrected Model Performance. Statistical Thinking.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.fharrell.com/post/bootcal/",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.4962
+  },
+  {
+    "title": "Building medical image classifiers with very limited data using segmentation networks",
+    "authors": [
+      "Ken C. L. Wong",
+      "Tanveer Syeda-Mahmood",
+      "Mehdi Moradi"
+    ],
+    "year": 2018,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2018.07.010",
+    "arxiv_id": "1808.05205v1",
+    "url": "http://arxiv.org/abs/1808.05205v1",
+    "abstract": "Deep learning has shown promising results in medical image analysis, however, the lack of very large annotated datasets confines its full potential. Although transfer learning with ImageNet pre-trained classification models can alleviate the problem, constrained image sizes and model complexities can lead to unnecessary increase in computational cost and decrease in performance. As many common morphological features are usually shared by different classification tasks of an organ, it is greatly beneficial if we can extract such features to improve classification with limited samples. Therefore, inspired by the idea of curriculum learning, we propose a strategy for building medical image classifiers using features from segmentation networks. By using a segmentation network pre-trained on similar data as the classification task, the machine can first learn the simpler shape and structural concepts before tackling the actual classification problem which usually involves more complicated concepts. Using our proposed framework on a 3D three-class brain tumor type classification problem, we achieved 82% accuracy on 191 testing samples with 91 training samples. When applying to a 2D nine-class cardiac semantic level classification problem, we achieved 86% accuracy on 263 testing samples with 108 training samples. Comparisons with ImageNet pre-trained classifiers and classifiers trained from scratch are presented.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1808.05205v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.495,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "TransMorph: Transformer for unsupervised medical image registration",
+    "authors": [
+      "Junyu Chen",
+      "Eric C. Frey",
+      "Yufan He",
+      "William P. Segars",
+      "Ye Li",
+      "Yong Du"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2022.102615",
+    "arxiv_id": "2111.10480v6",
+    "url": "http://arxiv.org/abs/2111.10480v6",
+    "abstract": "In the last decade, convolutional neural networks (ConvNets) have been a major focus of research in medical image analysis. However, the performances of ConvNets may be limited by a lack of explicit consideration of the long-range spatial relationships in an image. Recently Vision Transformer architectures have been proposed to address the shortcomings of ConvNets and have produced state-of-the-art performances in many medical imaging applications. Transformers may be a strong candidate for image registration because their substantially larger receptive field enables a more precise comprehension of the spatial correspondence between moving and fixed images. Here, we present TransMorph, a hybrid Transformer-ConvNet model for volumetric medical image registration. This paper also presents diffeomorphic and Bayesian variants of TransMorph: the diffeomorphic variants ensure the topology-preserving deformations, and the Bayesian variant produces a well-calibrated registration uncertainty estimate. We extensively validated the proposed models using 3D medical images from three applications: inter-patient and atlas-to-patient brain MRI registration and phantom-to-CT registration. The proposed models are evaluated in comparison to a variety of existing registration methods and Transformer architectures. Qualitative and quantitative results demonstrate that the proposed Transformer-based model leads to a substantial performance improvement over the baseline methods, confirming the effectiveness of Transformers for medical image registration.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2111.10480v6",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4583,
+    "sources": [
+      "arxiv"
+    ]
+  }
+]

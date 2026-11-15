@@ -1,0 +1,51 @@
+{
+  "stage": 42,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "frozen_point"
+  ],
+  "train_n": 1886,
+  "val_n": 762,
+  "test_n": 867,
+  "reference_checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage37_lr_horizon100/swin_control/results/swin_control_best_dice.pth",
+  "reference_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526",
+  "changes": {
+    "frozen_point": "Load validation-selected Stage37 Swin baseline; freeze entire encoder, adapters, decoder and buffers; train only original PointRend MLP with native uncertain sampling"
+  },
+  "selection": "max_validation_macro_dice_earliest_tie",
+  "threshold": 0.5,
+  "training": {
+    "loss": "native point CE only; frozen coarse loss has zero gradient and is omitted from optimized loss",
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "effective_batch": 64,
+    "micro_batch": 64,
+    "lr_schedule": "cosine100_floor0.01",
+    "train_points": 1024,
+    "oversample": 3,
+    "importance": 0.75,
+    "augmentation": "same seed42 per-epoch geometry and order as previous experiments",
+    "cached_features": "recompute frozen fine and coarse features for each epoch augmentation; validation cache fixed"
+  },
+  "inference": {
+    "primary": "native uncertainty,2subdivisions,1024points per step",
+    "secondary": [
+      "coarse_direct",
+      "coarse_stepwise",
+      "uniform fixed grid same head"
+    ]
+  },
+  "success_screen": {
+    "validation_dice_gain_pp_at_least": 0.1,
+    "boundary_f1_no_decrease_vs_direct_baseline": true,
+    "failure_action": "stop current PointRend adaptation; no gate/budget sweep based on test"
+  },
+  "caveats": [
+    "Additional100 head-only epochs after existing baseline training; not equal-total-training-budget method comparison",
+    "Single seed mechanism isolation; no fresh independent test, existing867 previously exposed",
+    "Checkpoint stores only point-head tensors; frozen baseline checksum/path is mandatory dependency",
+    "Historical joint-trained comparisons are contextual; full backbone and selection trajectory differ"
+  ]
+}

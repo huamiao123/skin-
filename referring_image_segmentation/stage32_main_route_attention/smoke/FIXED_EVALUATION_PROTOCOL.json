@@ -1,0 +1,81 @@
+{
+  "models": [
+    {
+      "arm": "main_context_channel",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage32_main_route_attention/smoke/main_context_channel_best_dice.pth",
+      "checkpoint_sha256": "5bf06d1083b5874b3dbca531a7d467af7462e79511446e65b544207c56b1a322",
+      "epoch": 2,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8758061977106487,
+          "iou": 0.7940648426377658,
+          "precision": 0.8725608312176122,
+          "recall": 0.9139763084582294
+        },
+        "pooled": {
+          "dice": 0.8868005552565897,
+          "iou": 0.7966232461254911,
+          "precision": 0.8777599388472264,
+          "recall": 0.8960293400258599
+        },
+        "prec_at": {
+          "0.5": 0.9448818897637795,
+          "0.6": 0.910761154855643,
+          "0.7": 0.8346456692913385,
+          "0.8": 0.6430446194225722,
+          "0.9": 0.17454068241469817
+        },
+        "threshold_jaccard_065": 0.7402153616544486,
+        "counts": {
+          "tp": 10816842,
+          "fp": 1506393,
+          "fn": 1255131,
+          "tn": 36360066
+        },
+        "loss": 0.30936002574880606,
+        "diagnostics": {
+          "bce_soft": 0.1586632457539791,
+          "soft_dice_loss": 0.15069677510599452,
+          "wrong_pixels": 2761524,
+          "wrong_mean_confidence": 0.8196614067243615,
+          "wrong_confidence_gt99_fraction": 0.12069169053030139
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "arm": "control",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/control_best_dice.pth",
+      "checkpoint_sha256": "cf03ea076c34157d565df093ed0f71eddabf06fc3eae5d3212174bef170d0df4"
+    },
+    {
+      "arm": "local_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/local_fusion_best_dice.pth",
+      "checkpoint_sha256": "d6d7be7b72c7e7a9e24bd81800e425fa64ba9f7a0c7d661c862736c97b6dc896"
+    },
+    {
+      "arm": "anchor_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/anchor_fusion_best_dice.pth",
+      "checkpoint_sha256": "fc95065a0aee546ee3f6ea0586acf06dd27d151de3bdbcc11c03864daa8534c3"
+    },
+    {
+      "arm": "cross_channel_scale",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage30_channel_fusion/results/cross_channel_scale_best_dice.pth",
+      "checkpoint_sha256": "0b35a0780c85df7cf53f363ebd4b6210723d4e8596024b3a64cf940fcb69a7cd"
+    }
+  ],
+  "epochs": 2,
+  "partition_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+  "threshold": 0.5,
+  "input_resolution": 256,
+  "selection": "validation_macro_dice_earliest_tie",
+  "evaluation_batch": 64,
+  "test_already_exposed": true,
+  "test_used_for_selection": false,
+  "test_subset": true,
+  "patient_disjointness_verified": false,
+  "lr_schedule_horizon": 300
+}

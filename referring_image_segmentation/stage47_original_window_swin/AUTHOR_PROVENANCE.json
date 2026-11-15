@@ -1,0 +1,393 @@
+{
+  "repository": "microsoft/Swin-Transformer",
+  "commit": "f82860bfb5225915aca09c3227159ee9e1df874d",
+  "source_sha256": "779c9ad487e2c577eff12a60c7a2f92267e2bb55c68f7bb32c8edad5ad5bd1e1",
+  "untouched_ast_nodes": {
+    "Mlp": "f55c11fd5396c899c4ec1571b0e8f7f279d934942d8d3dc33eab3f07a3d00ba1",
+    "window_partition": "529ec5b9a5317fe46e1f8bdb6b98db8649f6843c8e6180302dafb6b3ae97e534",
+    "window_reverse": "fcbad8e7f6163e28076bfbf5fdc07b6444fe189f2eff199e7f6539f4844e27aa",
+    "WindowAttention": "d4fac772954739a42722efac051e69f6daf74501e1e0d6889f30cf89bd717adb",
+    "SwinTransformerBlock": "0b6dbfb70fa53960cf93e7dca2b200a63f88d277793a0036202505d22610fce3"
+  },
+  "timm_helper_sources": {
+    "/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/layers/drop.py": "3dc892acc4333156de3e1bd921bd2f335373f7212c23c0b9e3f4b3ec5f5b5710",
+    "/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/layers/helpers.py": "f552ea203f238ddc3f527dbbd05deb40bbcdcfdbd032137d9adb3b924fcc6bf6",
+    "/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/layers/weight_init.py": "160c28c37b76405ea2ebb9944108584f525866e33c563718f6862615f4f4f4d8"
+  },
+  "transferred_blocks": {
+    "native_fixed": {
+      "2": [
+        {
+          "block": 4,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 5,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 6,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "block": 3,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 4,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        }
+      ],
+      "author_ast": {
+        "Mlp": "f55c11fd5396c899c4ec1571b0e8f7f279d934942d8d3dc33eab3f07a3d00ba1",
+        "window_partition": "529ec5b9a5317fe46e1f8bdb6b98db8649f6843c8e6180302dafb6b3ae97e534",
+        "window_reverse": "fcbad8e7f6163e28076bfbf5fdc07b6444fe189f2eff199e7f6539f4844e27aa",
+        "WindowAttention": "d4fac772954739a42722efac051e69f6daf74501e1e0d6889f30cf89bd717adb",
+        "SwinTransformerBlock": "0b6dbfb70fa53960cf93e7dca2b200a63f88d277793a0036202505d22610fce3"
+      }
+    },
+    "position_bias": {
+      "2": [
+        {
+          "block": 4,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 5,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 6,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "block": 3,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 4,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        }
+      ],
+      "author_ast": {
+        "Mlp": "f55c11fd5396c899c4ec1571b0e8f7f279d934942d8d3dc33eab3f07a3d00ba1",
+        "window_partition": "529ec5b9a5317fe46e1f8bdb6b98db8649f6843c8e6180302dafb6b3ae97e534",
+        "window_reverse": "fcbad8e7f6163e28076bfbf5fdc07b6444fe189f2eff199e7f6539f4844e27aa",
+        "WindowAttention": "d4fac772954739a42722efac051e69f6daf74501e1e0d6889f30cf89bd717adb",
+        "SwinTransformerBlock": "0b6dbfb70fa53960cf93e7dca2b200a63f88d277793a0036202505d22610fce3"
+      }
+    },
+    "shifted_windows": {
+      "2": [
+        {
+          "block": 4,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 5,
+          "shift": 7,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index",
+            "attn_mask"
+          ]
+        },
+        {
+          "block": 6,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "block": 3,
+          "shift": 0,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index"
+          ]
+        },
+        {
+          "block": 4,
+          "shift": 3,
+          "transferred_keys": [
+            "attn.proj.bias",
+            "attn.proj.weight",
+            "attn.qkv.bias",
+            "attn.qkv.weight",
+            "mlp.fc1.bias",
+            "mlp.fc1.weight",
+            "mlp.fc2.bias",
+            "mlp.fc2.weight",
+            "norm1.bias",
+            "norm1.weight",
+            "norm2.bias",
+            "norm2.weight"
+          ],
+          "new_keys": [
+            "attn.relative_position_bias_table",
+            "attn.relative_position_index",
+            "attn_mask"
+          ]
+        }
+      ],
+      "author_ast": {
+        "Mlp": "f55c11fd5396c899c4ec1571b0e8f7f279d934942d8d3dc33eab3f07a3d00ba1",
+        "window_partition": "529ec5b9a5317fe46e1f8bdb6b98db8649f6843c8e6180302dafb6b3ae97e534",
+        "window_reverse": "fcbad8e7f6163e28076bfbf5fdc07b6444fe189f2eff199e7f6539f4844e27aa",
+        "WindowAttention": "d4fac772954739a42722efac051e69f6daf74501e1e0d6889f30cf89bd717adb",
+        "SwinTransformerBlock": "0b6dbfb70fa53960cf93e7dca2b200a63f88d277793a0036202505d22610fce3"
+      }
+    }
+  },
+  "bias_init": "Zero in all arms; frozen only in native_fixed",
+  "original_window_and_padding": true,
+  "unchanged_uper_author_module_sha256": "9e34fe6f3f7a3cbe38651ffb2891abf717e8691b03aec72ee0b8d373af1bb796"
+}

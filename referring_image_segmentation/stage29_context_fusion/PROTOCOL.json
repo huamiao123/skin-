@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-11",
+  "status": "prospectively_fixed_before_smoke_training",
+  "question": "Does repeatedly reintroducing the deepest decoder context reduce lesion undercoverage beyond a capacity-matched ordinary local residual fusion?",
+  "arms": {
+    "control": "Original late-finetuned MambaVision-S + Swin decoder",
+    "local_fusion": "Residual fusion reads current decoder feature and skip at each 16/32/64 stage",
+    "anchor_fusion": "Identical residual fusion instead reads the first 8x8 Swin output resized directly to each stage, plus the same skip"
+  },
+  "routing_factor": "local_fusion and anchor_fusion have identical parameters, initialization and operators; only context source differs",
+  "module": {
+    "hidden_channels": 32,
+    "depthwise_kernels": [
+      3,
+      5
+    ],
+    "norm": "GroupNorm",
+    "gate": "2*sigmoid, initialized to 1",
+    "residual_output": "zero initialization; initial outputs exactly baseline",
+    "placement": "after normal upsample+skip sum, before each of 3 Swin levels"
+  },
+  "not_claimed": [
+    "novel attention operator",
+    "proof that coarse features are always correct",
+    "uncertainty or reliability estimation",
+    "absence of global context in original Swin",
+    "full reproduction of EMCAD or MVSeg"
+  ],
+  "prior_evidence": [
+    "stage25 some recurring severe interior undercoverage, not universal large-lesion degradation",
+    "stage26 coarse probes recover some failures but inferior overall",
+    "stage27 auxiliary loss alone did not reliably transfer coverage benefits"
+  ],
+  "training": {
+    "seed": 42,
+    "epochs": 300,
+    "effective_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "schedule": "original 300-epoch cosine floor .01",
+    "encoder": "only levels2/3 trainable; all modules eval, no DropPath",
+    "loss": "unchanged BCE + soft Dice",
+    "resolution": 256,
+    "augmentation": "unchanged flips and rotations"
+  },
+  "data": {
+    "train": 1886,
+    "validation": 762,
+    "test": 867,
+    "partition": "copied byte-identically from Stage28",
+    "patient_disjointness_verified": false,
+    "test_is_filtered_subset": true,
+    "test_already_exposed": true
+  },
+  "selection": "maximum validation per-image mean foreground Dice, earliest exact tie; never test-based",
+  "metrics": "common evaluation.py macro and pooled Dice/IoU/precision/recall, Prec@ thresholds, threshold Jaccard, boundary F1, HD95; per-image records; severe recall<.5",
+  "analysis": {
+    "primary": "anchor vs local_fusion; both vs control",
+    "secondary": "GT-area quartiles, severe undercoverage, new >5pp failures, FP/FN pixel tradeoff, validation-only branch interventions",
+    "seed_confirmation_trigger": "validation macro Dice at least +0.20 percentage points above both controls, severe undercoverage no higher than control, pooled Dice no more than 0.10pp lower; trigger is practical screening, not statistical significance",
+    "test": "all 3 fixed validation-best weights evaluated only after training and exact validation replay; regardless of favorable results; no follow-up decision from test"
+  },
+  "hardware": "RTX A4000 16GB; same calibrated microbatch all arms; gradient accumulation maintains 64; validation and test batch64",
+  "cache": "only immutable prefix f1/f2/mid and current augmented targets; trainable f3/f4 recomputed every optimizer step",
+  "completion": "training_done does not mean experiment complete; pipeline must finish validation and test for all arms",
+  "limitations": "One seed, one screened split, already-exposed test. No publication or novelty guarantee."
+}

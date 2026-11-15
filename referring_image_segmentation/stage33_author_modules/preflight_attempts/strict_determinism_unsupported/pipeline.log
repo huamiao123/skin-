@@ -1,0 +1,11 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/run_pipeline.py", line 72, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/run_pipeline.py", line 45, in main
+    run([str(ROOT/'train.py'),'--arm',arm,'--smoke','--stop-after-epoch','1'],s/'first.log',state='smoke_training',arm=arm)
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/run_pipeline.py", line 25, in run
+    if code:raise RuntimeError(f'Child exited {code}; inspect {log}')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Child exited 1; inspect /home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/emcad64/smoke/first.log

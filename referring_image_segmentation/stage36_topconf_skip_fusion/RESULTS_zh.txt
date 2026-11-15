@@ -1,0 +1,7 @@
+Stage36 完成：3组各100轮；最佳权重只按验证集逐图宏平均Dice选择。
+
+swin_control: best_epoch=18, val_macro_Dice=0.88748556, test_macro_Dice=0.89697798, test_pooled_Dice=0.89644281
+uct_concat: best_epoch=70, val_macro_Dice=0.88833765, test_macro_Dice=0.89151859, test_pooled_Dice=0.89447073
+uct_cca: best_epoch=25, val_macro_Dice=0.88832321, test_macro_Dice=0.89192749, test_pooled_Dice=0.89297349
+
+注意力贡献看各自去注意力对照；完整融合块的贡献看同设备Swin。测试集已暴露，单seed结果不构成独立确认。

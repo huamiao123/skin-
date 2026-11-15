@@ -1,0 +1,25 @@
+Stage44：浅层CNN适配对照100轮完成；同初始化、同原Swin decoder、同数据/损失/有效及物理batch64。仅新增stem+levels0/1参数组LR1e-5，BN统计和DropPath保持原行为。验证选权重后测试867张。单seed，只支持训练策略筛查。
+[
+  {
+    "arm": "stage37_swin_control",
+    "best_epoch": 8,
+    "val_macro_dice": 0.8875880434967702,
+    "test_macro_dice": 0.8939605108327608,
+    "test_pooled_dice": 0.8918149968519326
+  },
+  {
+    "arm": "early_adapt",
+    "best_epoch": 5,
+    "val_macro_dice": 0.888550016434322,
+    "test_macro_dice": 0.8945511255998679,
+    "test_pooled_dice": 0.8943415373655115
+  }
+]
+{
+  "validation_dice_gain_pp": 0.09619729375517361,
+  "validation_boundary_f1_delta": -0.006299748310496733,
+  "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+  "test_used_for_screen": false,
+  "passed": false,
+  "decision": "no_validated_screen_pass_review_decoder_next"
+}

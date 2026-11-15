@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": {
+    "all_initial_weights_match_stage30_cross_channel_scale": true,
+    "initial_logits_match_stage30_cross_channel_scale": true,
+    "official_encoder_features_identical": true,
+    "main_context_channel": {
+      "loss": 1.217382550239563,
+      "gradient_norms": {
+        "decoder": 0.9574055671691895,
+        "encoder": 0.22509709000587463
+      },
+      "frozen_unchanged": true,
+      "attention_gradients_nonzero": true,
+      "resume_loss_exact": true,
+      "resume_decoder_exact": true,
+      "encoder_replay_relative_l2": 0.0002913788321571579,
+      "encoder_replay_max_abs": 2.8252601623535156e-05
+    }
+  }
+}

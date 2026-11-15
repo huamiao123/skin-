@@ -1,0 +1,56 @@
+[
+  {
+    "arm": "stage45_uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919,
+    "reused_reference": true
+  },
+  {
+    "arm": "stage50_cab",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8916412729391126,
+    "test_macro_dice": 0.8945401006361138,
+    "test_pooled_dice": 0.8974955729399015,
+    "reused_reference": true
+  },
+  {
+    "arm": "stage50_conv_control",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8916478179501051,
+    "test_macro_dice": 0.8935490345594725,
+    "test_pooled_dice": 0.8964555939001847,
+    "reused_reference": true
+  },
+  {
+    "arm": "cab",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8921385299726656,
+    "test_macro_dice": 0.8957990816080726,
+    "test_pooled_dice": 0.897963935207341,
+    "parameters": {
+      "total": 52124917,
+      "trainable": 47974093,
+      "decoder": 1089089,
+      "encoder_trainable": 46885004
+    },
+    "max_peak_allocated_gib": 12.726306438446045,
+    "mean_epoch_seconds": 7.032669164710024
+  },
+  {
+    "arm": "conv_control",
+    "best_epoch": 39,
+    "val_macro_dice": 0.891184577523247,
+    "test_macro_dice": 0.8947030976473693,
+    "test_pooled_dice": 0.8971712337815584,
+    "parameters": {
+      "total": 52115305,
+      "trainable": 47964481,
+      "decoder": 1089089,
+      "encoder_trainable": 46875392
+    },
+    "max_peak_allocated_gib": 12.715221881866455,
+    "mean_epoch_seconds": 7.009183939949725
+  }
+]

@@ -1,0 +1,233 @@
+{
+  "passed": true,
+  "checks": {
+    "official_feature_max_abs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "initial_logits_identical": true,
+    "initial_probe_hash": "bffe5c3f6d3e45fc97f13ff5eafea07ee5c5c53c2a50ca218ac9a110a1936928",
+    "control_mode_policy": {
+      "drop_paths": [
+        {
+          "name": "model.levels.0.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.0117647061124444
+        },
+        {
+          "name": "model.levels.0.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.0235294122248888
+        },
+        {
+          "name": "model.levels.1.blocks.0.drop_path",
+          "training": false,
+          "prob": 0.03529411926865578
+        },
+        {
+          "name": "model.levels.1.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.0470588244497776
+        },
+        {
+          "name": "model.levels.1.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.05882352963089943
+        },
+        {
+          "name": "model.levels.2.blocks.0.drop_path",
+          "training": false,
+          "prob": 0.07058823853731155
+        },
+        {
+          "name": "model.levels.2.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.08235294371843338
+        },
+        {
+          "name": "model.levels.2.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.0941176488995552
+        },
+        {
+          "name": "model.levels.2.blocks.3.drop_path",
+          "training": false,
+          "prob": 0.10588235408067703
+        },
+        {
+          "name": "model.levels.2.blocks.4.drop_path",
+          "training": false,
+          "prob": 0.11764705926179886
+        },
+        {
+          "name": "model.levels.2.blocks.5.drop_path",
+          "training": false,
+          "prob": 0.12941177189350128
+        },
+        {
+          "name": "model.levels.2.blocks.6.drop_path",
+          "training": false,
+          "prob": 0.1411764770746231
+        },
+        {
+          "name": "model.levels.3.blocks.0.drop_path",
+          "training": false,
+          "prob": 0.15294118225574493
+        },
+        {
+          "name": "model.levels.3.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.16470588743686676
+        },
+        {
+          "name": "model.levels.3.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.1764705926179886
+        },
+        {
+          "name": "model.levels.3.blocks.3.drop_path",
+          "training": false,
+          "prob": 0.1882352977991104
+        },
+        {
+          "name": "model.levels.3.blocks.4.drop_path",
+          "training": false,
+          "prob": 0.20000000298023224
+        }
+      ],
+      "evaluation_deterministic": true,
+      "train_rng_replay_exact": true
+    },
+    "drop_path_mode_policy": {
+      "drop_paths": [
+        {
+          "name": "model.levels.0.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.0117647061124444
+        },
+        {
+          "name": "model.levels.0.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.0235294122248888
+        },
+        {
+          "name": "model.levels.1.blocks.0.drop_path",
+          "training": false,
+          "prob": 0.03529411926865578
+        },
+        {
+          "name": "model.levels.1.blocks.1.drop_path",
+          "training": false,
+          "prob": 0.0470588244497776
+        },
+        {
+          "name": "model.levels.1.blocks.2.drop_path",
+          "training": false,
+          "prob": 0.05882352963089943
+        },
+        {
+          "name": "model.levels.2.blocks.0.drop_path",
+          "training": true,
+          "prob": 0.07058823853731155
+        },
+        {
+          "name": "model.levels.2.blocks.1.drop_path",
+          "training": true,
+          "prob": 0.08235294371843338
+        },
+        {
+          "name": "model.levels.2.blocks.2.drop_path",
+          "training": true,
+          "prob": 0.0941176488995552
+        },
+        {
+          "name": "model.levels.2.blocks.3.drop_path",
+          "training": true,
+          "prob": 0.10588235408067703
+        },
+        {
+          "name": "model.levels.2.blocks.4.drop_path",
+          "training": true,
+          "prob": 0.11764705926179886
+        },
+        {
+          "name": "model.levels.2.blocks.5.drop_path",
+          "training": true,
+          "prob": 0.12941177189350128
+        },
+        {
+          "name": "model.levels.2.blocks.6.drop_path",
+          "training": true,
+          "prob": 0.1411764770746231
+        },
+        {
+          "name": "model.levels.3.blocks.0.drop_path",
+          "training": true,
+          "prob": 0.15294118225574493
+        },
+        {
+          "name": "model.levels.3.blocks.1.drop_path",
+          "training": true,
+          "prob": 0.16470588743686676
+        },
+        {
+          "name": "model.levels.3.blocks.2.drop_path",
+          "training": true,
+          "prob": 0.1764705926179886
+        },
+        {
+          "name": "model.levels.3.blocks.3.drop_path",
+          "training": true,
+          "prob": 0.1882352977991104
+        },
+        {
+          "name": "model.levels.3.blocks.4.drop_path",
+          "training": true,
+          "prob": 0.20000000298023224
+        }
+      ],
+      "evaluation_deterministic": true,
+      "train_rng_replay_exact": true
+    },
+    "control": {
+      "frozen_unchanged": true,
+      "changed_tensors": 306,
+      "gradient_norms": {
+        "decoder": 5.093465328216553,
+        "encoder": 0.8498243093490601
+      },
+      "restored_model_optimizer_rng_exact": true,
+      "resume_loss_exact": true,
+      "resume_update_exact": false,
+      "decoder_update_exact": true,
+      "encoder_replay_difference_relative_to_update_l2": 0.0004179392152528383,
+      "encoder_replay_max_abs": 4.70280647277832e-05,
+      "encoder_different_tensors": 112,
+      "replay_limits": {
+        "relative_to_update_l2": 0.01,
+        "max_abs": 0.0001
+      }
+    },
+    "drop_path": {
+      "frozen_unchanged": true,
+      "changed_tensors": 306,
+      "gradient_norms": {
+        "decoder": 4.959891319274902,
+        "encoder": 0.7899479866027832
+      },
+      "restored_model_optimizer_rng_exact": true,
+      "resume_loss_exact": true,
+      "resume_update_exact": false,
+      "decoder_update_exact": true,
+      "encoder_replay_difference_relative_to_update_l2": 7.542962662061785e-05,
+      "encoder_replay_max_abs": 3.919005393981934e-06,
+      "encoder_different_tensors": 61,
+      "replay_limits": {
+        "relative_to_update_l2": 0.01,
+        "max_abs": 0.0001
+      }
+    }
+  }
+}

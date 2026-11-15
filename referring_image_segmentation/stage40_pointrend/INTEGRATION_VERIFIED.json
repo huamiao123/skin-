@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "shared_full_initial_state_exact": true,
+  "original_swin_coarse_logits_exact": true,
+  "binary_probability_equivalent": true,
+  "point_train_calls": [
+    [
+      [
+        2,
+        64,
+        1024
+      ],
+      [
+        2,
+        2,
+        1024
+      ]
+    ]
+  ],
+  "point_inference_calls": [
+    [
+      [
+        2,
+        64,
+        1024
+      ],
+      [
+        2,
+        2,
+        1024
+      ]
+    ],
+    [
+      [
+        2,
+        64,
+        1024
+      ],
+      [
+        2,
+        2,
+        1024
+      ]
+    ]
+  ],
+  "uniform_grid_unique_and_batch_invariant": true,
+  "author_node_hashes": {
+    "point_features.py": {
+      "sha256": "81f16bc695110dd45575bb64d8b1d84efbed4d13ab1acb44d2b0d00e88f2daae",
+      "nodes": {
+        "point_sample": "aea1f7d94cf51f9c8adc0fdcde7e6b53b4ffa342d6cabda141537c2d10b10394",
+        "get_uncertain_point_coords_with_randomness": "b5cd026b2bb9f00f821d83bf0731be9acd6be33251846e0dd042f55b81c5bb0f",
+        "get_uncertain_point_coords_on_grid": "5c230180d063df137ee96e817e4c76a2b3ee51ad39251670517fa58269ea1cfd"
+      }
+    },
+    "point_head.py": {
+      "sha256": "dba5285de7349da62bd89d87761089a9fd1598ddd7f13c5819f6478cdab1f4d0",
+      "nodes": {
+        "StandardPointHead": "76fa96941d93489c8db4300454e32d5604c65ea228a7e061167317ffc5eb5ab3",
+        "build_point_head": "fb15514a2143e075dd3e38708783f44ecd4c61262fe2913c80b7dd7baa1db4b3"
+      }
+    },
+    "semantic_seg.py": {
+      "sha256": "25e1cb163304f1bd4f91c0a97f9999dc35d7a99900b11d4e2745d1c8e2e1a0a0",
+      "nodes": {
+        "calculate_uncertainty": "8175b718cbf11643a3f3f0c381922dc4a07240cda61499cb78e1cb0d907a5322",
+        "PointRendSemSegHead": "2a965214dfecbf1067e6400d0eb9ce1d2278151cb3b891155a146fe497aba776"
+      }
+    }
+  }
+}

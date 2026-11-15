@@ -1,0 +1,14 @@
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+BUILDING_FROZEN_FEATURE_CACHES
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py", line 386, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py", line 328, in main
+    preflight(models,opts,data,train_cache,micro,out)
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage22_partial_finetune/train.py", line 242, in preflight
+    assert all(torch.equal(v.cpu(),expected[k]) for k,v in model.state_dict().items())
+AssertionError

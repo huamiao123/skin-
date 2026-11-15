@@ -1,0 +1,138 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "conv_control": 1.1950846471816838
+    },
+    "validation": {
+      "conv_control": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.7177237559456099,
+          "iou": 0.5924936547262285,
+          "precision": 0.605639303688624,
+          "recall": 0.983178728620609
+        },
+        "pooled": {
+          "dice": 0.8035603529203328,
+          "iou": 0.6716263163643107,
+          "precision": 0.6877279749606697,
+          "recall": 0.9663143713127921
+        },
+        "prec_at": {
+          "0.5": 0.6863517060367454,
+          "0.6": 0.5498687664041995,
+          "0.7": 0.37926509186351703,
+          "0.8": 0.17716535433070865,
+          "0.9": 0.01837270341207349
+        },
+        "threshold_jaccard_065": 0.35830733438454376,
+        "counts": {
+          "tp": 11665321,
+          "fp": 5296794,
+          "fn": 406652,
+          "tn": 32569665
+        },
+        "loss": 0.9301474300895151,
+        "diagnostics": {
+          "bce_soft": 0.4164687542151904,
+          "soft_dice_loss": 0.5136786783774068,
+          "wrong_pixels": 5703446,
+          "wrong_mean_confidence": 0.6594656127082897,
+          "wrong_confidence_gt99_fraction": 3.5066519434040405e-07
+        }
+      }
+    },
+    "gradient_norms": {
+      "conv_control": {
+        "decoder": 1.4342257976531982,
+        "encoder": 0.08491550385951996
+      }
+    },
+    "learning_rates": {
+      "conv_control": {
+        "decoder": 0.001,
+        "encoder": 0.0001,
+        "gate": 0.001
+      }
+    },
+    "adapter_diagnostics": {
+      "conv_control": {
+        "scale_abs_mean": 0.00953960046172142,
+        "scale_abs_max": 0.02802187204360962,
+        "branch_gradient_l1": 0.08203081510873744
+      }
+    },
+    "seconds": 7.1907949009982985,
+    "peak_allocated_gib": 12.714718341827393
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "conv_control": 0.8081712483854081
+    },
+    "validation": {
+      "conv_control": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8367824269874158,
+          "iou": 0.7354571158385723,
+          "precision": 0.7707372203589743,
+          "recall": 0.95928162159802
+        },
+        "pooled": {
+          "dice": 0.8724267534438812,
+          "iou": 0.7737206927430067,
+          "precision": 0.817017183607684,
+          "recall": 0.9358987963276592
+        },
+        "prec_at": {
+          "0.5": 0.9251968503937008,
+          "0.6": 0.8398950131233596,
+          "0.7": 0.6837270341207349,
+          "0.8": 0.41601049868766404,
+          "0.9": 0.06955380577427822
+        },
+        "threshold_jaccard_065": 0.6252806316742227,
+        "counts": {
+          "tp": 11298145,
+          "fp": 2530383,
+          "fn": 773828,
+          "tn": 35336076
+        },
+        "loss": 0.6775250090701687,
+        "diagnostics": {
+          "bce_soft": 0.2585541514430459,
+          "soft_dice_loss": 0.41897086990786975,
+          "wrong_pixels": 3304211,
+          "wrong_mean_confidence": 0.6994318188357602,
+          "wrong_confidence_gt99_fraction": 0.00013407134108566312
+        }
+      }
+    },
+    "gradient_norms": {
+      "conv_control": {
+        "decoder": 0.9944442510604858,
+        "encoder": 0.169300377368927
+      }
+    },
+    "learning_rates": {
+      "conv_control": {
+        "decoder": 0.0009997557473810372,
+        "encoder": 9.997557473810371e-05,
+        "gate": 0.0009997557473810372
+      }
+    },
+    "adapter_diagnostics": {
+      "conv_control": {
+        "scale_abs_mean": 0.012868707999587059,
+        "scale_abs_max": 0.0443720668554306,
+        "branch_gradient_l1": 0.28725036996183917
+      }
+    },
+    "seconds": 7.88037699200504,
+    "peak_allocated_gib": 12.712978839874268
+  }
+]

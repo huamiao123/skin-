@@ -1,0 +1,159 @@
+{
+  "arm": "cfam",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "cfam",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/cfam/smoke/cfam_best_dice.pth",
+    "sha256": "fa457f898de3801c954f2b4bd68deebdd66c63f5abe45faa34a372393a04b3bf",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8380432815819905,
+        "iou": 0.737271206686222,
+        "precision": 0.7739947854205325,
+        "recall": 0.9578328484593129
+      },
+      "pooled": {
+        "dice": 0.8737111236294864,
+        "iou": 0.7757433656319473,
+        "precision": 0.8213516637921431,
+        "recall": 0.9332007286629949
+      },
+      "prec_at": {
+        "0.5": 0.926509186351706,
+        "0.6": 0.8438320209973753,
+        "0.7": 0.6863517060367454,
+        "0.8": 0.4225721784776903,
+        "0.9": 0.07349081364829396
+      },
+      "threshold_jaccard_065": 0.6284003882370383,
+      "counts": {
+        "tp": 11265574,
+        "fp": 2450322,
+        "fn": 806399,
+        "tn": 35416137
+      },
+      "loss": 0.6750571214620835,
+      "diagnostics": {
+        "bce_soft": 0.256174733945391,
+        "soft_dice_loss": 0.41888237625282265,
+        "wrong_pixels": 3256721,
+        "wrong_mean_confidence": 0.6966874341987686,
+        "wrong_confidence_gt99_fraction": 4.88221127938193e-05
+      }
+    }
+  },
+  "validation": {
+    "cfam": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8380432815819905,
+        "iou": 0.737271206686222,
+        "precision": 0.7739947854205325,
+        "recall": 0.9578328484593129,
+        "boundary_f1": 0.1194097115645328,
+        "hd95_pixels": 20.036536972724182,
+        "hd95_diagonal": 0.05534363736292284
+      },
+      "pooled": {
+        "dice": 0.8737111236294864,
+        "iou": 0.7757433656319473,
+        "precision": 0.8213516637921431,
+        "recall": 0.9332007286629949
+      },
+      "prec_at": {
+        "0.5": 0.926509186351706,
+        "0.6": 0.8438320209973753,
+        "0.7": 0.6863517060367454,
+        "0.8": 0.4225721784776903,
+        "0.9": 0.07349081364829396
+      },
+      "threshold_jaccard_065": 0.6284003882370383,
+      "counts": {
+        "tp": 11265574,
+        "fp": 2450322,
+        "fn": 806399,
+        "tn": 35416137
+      },
+      "severe_undercoverage": 7,
+      "epoch": 2,
+      "checkpoint_sha256": "fa457f898de3801c954f2b4bd68deebdd66c63f5abe45faa34a372393a04b3bf"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_cfam": {
+        "macro_dice_delta": -0.05476341955232786,
+        "image_bootstrap95": [
+          -0.06196338115735419,
+          -0.04688866682252486
+        ],
+        "improved": 175,
+        "worsened": 587,
+        "gains_over5pp": 80,
+        "losses_over5pp": 381,
+        "net_reduced_fn": 535096,
+        "net_added_fp": 1393183,
+        "severe_undercoverage": [
+          21,
+          7
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Single CFAM or parameter-matched convolution versus native UPer64",
+  "archived_reference_caveat": "Stage45 UPer64 reference shares original encoder/data/recipe and common head; one post-FPN refinement module differs",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

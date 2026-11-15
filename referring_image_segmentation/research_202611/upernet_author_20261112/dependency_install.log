@@ -1,0 +1,49 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting mmcv-lite==2.1.0
+  Downloading mmcv_lite-2.1.0-py2.py3-none-any.whl (719 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 720.0/720.0 kB 51.5 MB/s  0:00:00
+Collecting mmengine==0.10.7
+  Downloading mmengine-0.10.7-py3-none-any.whl (452 kB)
+Collecting addict (from mmcv-lite==2.1.0)
+  Downloading addict-2.4.0-py3-none-any.whl (3.8 kB)
+Requirement already satisfied: numpy in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmcv-lite==2.1.0) (1.26.4)
+Requirement already satisfied: packaging in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmcv-lite==2.1.0) (26.3)
+Requirement already satisfied: Pillow in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmcv-lite==2.1.0) (10.3.0)
+Requirement already satisfied: pyyaml in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmcv-lite==2.1.0) (6.0.3)
+Collecting yapf (from mmcv-lite==2.1.0)
+  Downloading yapf-0.43.0-py3-none-any.whl (256 kB)
+Collecting opencv-python>=3 (from mmcv-lite==2.1.0)
+  Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (73.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.8/73.8 MB 232.6 MB/s  0:00:00
+Requirement already satisfied: matplotlib in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmengine==0.10.7) (3.9.4)
+Collecting rich (from mmengine==0.10.7)
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Requirement already satisfied: termcolor in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from mmengine==0.10.7) (3.3.0)
+Collecting numpy (from mmcv-lite==2.1.0)
+  Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 200.9 MB/s  0:00:00
+Requirement already satisfied: contourpy>=1.0.1 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (1.5.1)
+Requirement already satisfied: pyparsing>=2.3.1 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from matplotlib->mmengine==0.10.7) (4.0.0)
+Requirement already satisfied: tzdata in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib->mmengine==0.10.7) (2026.6)
+Collecting markdown-it-py>=2.2.0 (from rich->mmengine==0.10.7)
+  Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->mmengine==0.10.7)
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 87.9 MB/s  0:00:00
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->mmengine==0.10.7)
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting platformdirs>=3.5.1 (from yapf->mmcv-lite==2.1.0)
+  Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+Installing collected packages: addict, pygments, platformdirs, numpy, mdurl, yapf, opencv-python, markdown-it-py, rich, mmengine, mmcv-lite
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.4
+    Uninstalling numpy-1.26.4:
+      Successfully uninstalled numpy-1.26.4
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+scipy 1.13.1 requires numpy<2.3,>=1.22.4, but you have numpy 2.4.6 which is incompatible.
+Successfully installed addict-2.4.0 markdown-it-py-4.3.0 mdurl-0.1.2 mmcv-lite-2.1.0 mmengine-0.10.7 numpy-2.4.6 opencv-python-5.0.0.93 platformdirs-4.14.5 pygments-2.21.0 rich-15.0.0 yapf-0.43.0

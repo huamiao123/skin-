@@ -1,0 +1,126 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "early_adapt": 0.6574589127194717
+    },
+    "validation": {
+      "early_adapt": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.854930795106176,
+          "iou": 0.7622376907682373,
+          "precision": 0.8435353420097487,
+          "recall": 0.909315119057428
+        },
+        "pooled": {
+          "dice": 0.8734043749590797,
+          "iou": 0.7752598674678466,
+          "precision": 0.8662118509590375,
+          "recall": 0.8807173442153987
+        },
+        "prec_at": {
+          "0.5": 0.931758530183727,
+          "0.6": 0.889763779527559,
+          "0.7": 0.7703412073490814,
+          "0.8": 0.5078740157480315,
+          "0.9": 0.10498687664041995
+        },
+        "threshold_jaccard_065": 0.6861784850522451,
+        "counts": {
+          "tp": 10631996,
+          "fp": 1642133,
+          "fn": 1439977,
+          "tn": 36224326
+        },
+        "loss": 0.37277760139600497,
+        "diagnostics": {
+          "bce_soft": 0.18081833891511903,
+          "soft_dice_loss": 0.19195926298932453,
+          "wrong_pixels": 3082110,
+          "wrong_mean_confidence": 0.8489354399716114,
+          "wrong_confidence_gt99_fraction": 0.06802774722511526
+        }
+      }
+    },
+    "gradient_norms": {
+      "early_adapt": {
+        "decoder": 0.48679807782173157,
+        "encoder": 0.35661250352859497,
+        "early_encoder": 2.4045913219451904
+      }
+    },
+    "learning_rates": {
+      "early_adapt": {
+        "decoder": 0.001,
+        "encoder": 0.0001,
+        "early_encoder": 1e-05
+      }
+    },
+    "seconds": 8.24728198199955,
+    "peak_allocated_gib": 14.9160795211792
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "early_adapt": 0.26951436083744085
+    },
+    "validation": {
+      "early_adapt": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8716470562506059,
+          "iou": 0.7879604327188989,
+          "precision": 0.854255291820745,
+          "recall": 0.9267207013135104
+        },
+        "pooled": {
+          "dice": 0.884931261790004,
+          "iou": 0.7936113994286771,
+          "precision": 0.8659475009103607,
+          "recall": 0.9047660229193687
+        },
+        "prec_at": {
+          "0.5": 0.9435695538057742,
+          "0.6": 0.910761154855643,
+          "0.7": 0.8188976377952756,
+          "0.8": 0.6128608923884514,
+          "0.9": 0.17191601049868765
+        },
+        "threshold_jaccard_065": 0.7288453304462659,
+        "counts": {
+          "tp": 10922311,
+          "fp": 1690822,
+          "fn": 1149662,
+          "tn": 36175637
+        },
+        "loss": 0.3149666454535457,
+        "diagnostics": {
+          "bce_soft": 0.16004152963637053,
+          "soft_dice_loss": 0.15492513548983677,
+          "wrong_pixels": 2840484,
+          "wrong_mean_confidence": 0.8151128739871482,
+          "wrong_confidence_gt99_fraction": 0.10750843870269997
+        }
+      }
+    },
+    "gradient_norms": {
+      "early_adapt": {
+        "decoder": 0.21620070934295654,
+        "encoder": 0.39982864260673523,
+        "early_encoder": 1.5377970933914185
+      }
+    },
+    "learning_rates": {
+      "early_adapt": {
+        "decoder": 0.0009997557473810372,
+        "encoder": 9.997557473810371e-05,
+        "early_encoder": 9.997557473810373e-06
+      }
+    },
+    "seconds": 9.100895581999794,
+    "peak_allocated_gib": 14.9143705368042
+  }
+]

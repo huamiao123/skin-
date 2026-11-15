@@ -1,0 +1,56 @@
+Stage45: native UPerHead64/128, unchanged late-only encoder adaptation and common soft BCE+Dice;100 epochs per arm, selected by762 validation images and evaluated on867 test images. Decoder-package comparison; not an isolated attribution to feature compression. Single seed; exposed test.\n[
+  {
+    "arm": "stage37_swin_control",
+    "best_epoch": 8,
+    "val_macro_dice": 0.8875880434967702,
+    "test_macro_dice": 0.8939605108327608,
+    "test_pooled_dice": 0.8918149968519326
+  },
+  {
+    "arm": "uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919,
+    "parameters": {
+      "total": 51229673,
+      "trainable": 47078849,
+      "decoder": 1089089,
+      "encoder_trainable": 45989760
+    },
+    "max_peak_allocated_gib": 12.670898914337158,
+    "mean_epoch_seconds": 6.844060532320254
+  },
+  {
+    "arm": "uper128",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8886597814425354,
+    "test_macro_dice": 0.8941345276047787,
+    "test_pooled_dice": 0.8941223210634449,
+    "parameters": {
+      "total": 53129769,
+      "trainable": 48978945,
+      "decoder": 2989185,
+      "encoder_trainable": 45989760
+    },
+    "max_peak_allocated_gib": 13.548450946807861,
+    "mean_epoch_seconds": 8.909647996239801
+  }
+]\n{
+  "uper64": {
+    "validation_dice_gain_pp": 0.5218657637548141,
+    "validation_boundary_f1_delta": 0.019769973915673533,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": true,
+    "decision": "candidate_for_paired_seed_replication"
+  },
+  "uper128": {
+    "validation_dice_gain_pp": 0.10717379457652054,
+    "validation_boundary_f1_delta": -5.999656724708924e-05,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "no_validated_screen_pass_review_paired_validation_errors"
+  }
+}

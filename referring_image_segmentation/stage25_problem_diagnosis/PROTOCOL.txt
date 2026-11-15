@@ -1,0 +1,53 @@
+Stage25: diagnose the failure before selecting an intervention
+
+Authorization: prepare follow-up work now and serialize it after Stage24;
+latest user constraint: identify a problem and test its cause before optimizing.
+This stage does not train a new model and does not change previous experiments.
+
+Established observation (exploratory, seed42 development validation):
+Stage22 late-stage adaptation improves macro Dice by 0.648 percentage points,
+but reduces macro recall and loses 0.964 points in the largest area quartile.
+Stage23 lower encoder learning rate does not improve overall macro Dice.
+These observations do not establish a lack of global information or justify
+adding a boundary/fusion/attention module by themselves.
+
+Inputs: completed Stage22, Stage23 and (after it finishes) Stage24, their
+preselected best-Dice probabilities and per-image records for all three
+already-exported checkpoint criteria. Only the fixed 762 development cases.
+Never read held-out images, masks, predictions or test metrics.
+
+Questions and checks fixed before the new diagnostics:
+1. Is loss of lesion extent replicated in seed43 using the same area groups?
+2. Are false negatives close to the 0.5 threshold or strongly background-like?
+   Report probabilities <0.1, and the diagnostic global threshold curve.
+   No threshold is adopted for deployment or substituted for official metrics.
+3. Is spatial ordering still sufficient? Exact best per-image threshold Dice
+   is an offline oracle using ground truth, not a deployable score or a bound
+   on possible architectural improvements. Preserve ties in probabilities.
+4. Are errors within 3/8 pixels of the annotation boundary or deeper inside?
+   Distance uses zero padding outside the image; frame contact is reported.
+5. Is the conclusion dependent on best-Dice selection? Also compare the
+   previously exported best-loss and last checkpoints without reselecting them.
+6. Does frame contact co-occur with failures? Stratify it within area quartiles;
+   do not interpret this association as proof of a padding/augmentation cause.
+
+Area cut points come from Stage22 validation GT quartiles and are reused for
+all models and seeds. Each stage's probabilities are checked against the
+recorded per-image TP/FP/FN/TN at 0.5, with exact validation ID order and mask
+preprocessing. Diagnostics record source/input hashes and per-image outputs.
+
+Execution: CPU-only. Completed Stage22/23 can be examined immediately;
+Stage24 runs only after DONE.json exists and its training process exits.
+Queue uses a lock, durable state and explicit failure/timeout detection.
+
+Decision discipline: no automatic module training. Use the report to choose
+one falsifiable intervention and its matched control. A coarse auxiliary head
+is only a possible hypothesis, not an approved causal explanation or novelty.
+The current decoder already combines four scales and uses Swin blocks; its
+8x8 level has a window covering that feature map. Do not describe it as having
+no multiscale fusion or no global context.
+
+Limitations: development analyses follow observation of Stage22 failures;
+seed43 reuses the same images, so it is seed replication, not independent-data
+confirmation. Two seeds cannot estimate variability precisely. Annotation
+ambiguity and unmeasured identity overlap may remain. No new SOTA claims.

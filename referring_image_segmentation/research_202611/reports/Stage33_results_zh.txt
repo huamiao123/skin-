@@ -1,0 +1,12 @@
+第33轮结果：两组100轮训练和全部867张测试集评估均已完成。
+选择规则：验证集逐图宏平均Dice最佳，测试阈值固定0.5。
+
+control: 最佳epoch=7；验证宏Dice=88.7147%；验证pooled Dice=89.0344%；测试宏Dice=89.5344%；测试pooled Dice=89.1884%。
+local_fusion: 最佳epoch=7；验证宏Dice=88.8176%；验证pooled Dice=89.2626%；测试宏Dice=89.8266%；测试pooled Dice=89.6192%。
+emcad64: 最佳epoch=5；验证宏Dice=88.7357%；验证pooled Dice=89.5836%；测试宏Dice=88.9716%；测试pooled Dice=89.2500%。
+swin_cga: 最佳epoch=55；验证宏Dice=88.9510%；验证pooled Dice=89.4355%；测试宏Dice=88.8544%；测试pooled Dice=89.1347%。
+
+两种作者模块适配均未改善测试宏Dice。EMCAD较control低0.5628个百分点，CGA较control低0.6800个百分点；较local_fusion分别低0.8550和0.9722个百分点。CGA验证最佳从第8轮更新到第55轮，验证提升未转化成测试提升。
+测试上两者漏分减少但误分增加：相对control，EMCAD少466435个FN、增加556513个FP；CGA少420087个FN、增加541936个FP。这是本次运行的错误变化，不能单凭这些数值断言原因是某一种归一化或域偏移。
+只有seed42，且测试集已有开发期暴露；不能据此否定原论文方法或宣称独立泛化证明。完整macro/pooled Dice、IoU、precision/recall、Prec@、边界F1、HD95、threshold Jaccard与逐图结果均位于各组results。
+原作者算法未改，模型接入当前64通道协议；不是原论文全部训练设置复现。最佳权重已保留，latest及短程检查权重已按既定规则清理。GPU当前空闲，没有自动开始MFMS。

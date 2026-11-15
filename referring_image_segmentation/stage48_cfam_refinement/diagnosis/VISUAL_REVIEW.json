@@ -1,0 +1,31 @@
+{
+  "validation_only": true,
+  "reviewed_ids": [
+    "511",
+    "53",
+    "673",
+    "536",
+    "709",
+    "108",
+    "126",
+    "136",
+    "115",
+    "77",
+    "791",
+    "618"
+  ],
+  "visual_observations": {
+    "511": "Stored target is a small irregular subregion within/next to the visible larger pigmented area; do not assume model-selected whole region is correct.",
+    "536": "Stored mask is ring-like with central background. Origin/annotation intent is not verified; do not fill or delete it.",
+    "673": "Two spatial regions; target selects the smaller right region, prediction additionally selects left region.",
+    "126_136": "Prediction emphasizes a small central darker area while stored target spans a larger faint area.",
+    "791": "Prediction mainly covers darker subregions whereas the annotation covers broader appearance."
+  },
+  "file_audit": "All2694 stored train/val masks match archived hashes, mode L; unusual shapes are already present in stored masks, not caused by a recent palette conversion. 0.5 threshold is unchanged.",
+  "uncertainty": "Hash equality proves preservation, not correctness of legacy pairing or upstream annotations. Original ISIC name mapping is not recovered here. Source traces to legacy EGE-UNet prepared data.",
+  "decision": "Continue controlled same-data CFAM/conv comparison without changing labels, exclusions, threshold, or baseline. Interpret as development result. Keep annotation/provenance concern explicit; no claim that local feature noise is the established cause.",
+  "diagnostic_inference": "Most false-positive pixels belong to prediction components also overlapping GT; wholly disjoint components only1.27% of baselineFP pixels. Region extent/coverage matters more than isolated speck removal by this measure.",
+  "no_test_access": true,
+  "no_label_changes": true,
+  "formal_training_not_yet_started": true
+}

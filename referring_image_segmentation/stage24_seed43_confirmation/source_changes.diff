@@ -1,0 +1,49 @@
+--- stage22/train.py
++++ stage24/train.py
+@@ -23,6 +23,7 @@
+ HF = PROJECT/'stage14_mambavision_s_isic2018_seed42/official/hf'
+ WEIGHT_SHA = '006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180'
+ NAMES = ('frozen', 'finetune34')
++SEED = 43
+ GIB = 1024**3
+ STOP = False
+ 
+@@ -67,7 +68,7 @@
+     torch.use_deterministic_algorithms(True)
+     torch.backends.cudnn.benchmark=False
+     torch.backends.cudnn.deterministic=True
+-    random.seed(42);np.random.seed(42);torch.manual_seed(42);torch.cuda.manual_seed_all(42)
++    random.seed(SEED);np.random.seed(SEED);torch.manual_seed(SEED);torch.cuda.manual_seed_all(SEED)
+ 
+ class System(nn.Module):
+     def __init__(self, finetune=False):
+@@ -80,7 +81,7 @@
+         self.encoder.requires_grad_(False)
+         if finetune:
+             for level in self.encoder.model.levels[2:]: level.requires_grad_(True)
+-        self.probe=Probe(decoder='swin',seed=42,channels=(96,192,384,768))
++        self.probe=Probe(decoder='swin',seed=SEED,channels=(96,192,384,768))
+         self.finetune=finetune
+         self.train()
+ 
+@@ -332,7 +333,7 @@
+     lock=(out/'run.lock').open('w');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+     if (out/'DONE.json').exists():print('ALREADY_COMPLETE',flush=True);return
+     assert digest(HF/'model.safetensors')==WEIGHT_SHA
+-    data=ImageData(42)
++    data=ImageData(SEED)
+     historical=json.loads((PROJECT/'stage1_visual/data_manifest.json').read_text())['members']
+     assert data.audit==historical,'Dataset differs from archived experiment'
+     partition=json.loads((ROOT/'identity_partition.json').read_text())
+@@ -347,9 +348,9 @@
+     dump(out/'active_partition.json',partition)
+     for row in json.loads((HF.parent/'source_download.json').read_text())['files']:
+         assert digest(HF/row['path'])==row['sha256'],('Official source mismatch',row['path'])
+-    source_paths=[ROOT/'train.py',ROOT/'PROTOCOL.md',ROOT/'test_protocol.json',ROOT/'identity_partition.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
++    source_paths=[ROOT/'train.py',ROOT/'PROTOCOL.md',ROOT/'test_protocol.json',ROOT/'identity_partition.json',ROOT/'DECISION.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
+     provenance={str(p.relative_to(PROJECT)):digest(p) for p in source_paths}
+-    config=dict(seed=42,epochs=2 if args.smoke else 300,effective_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
++    config=dict(seed=SEED,epochs=2 if args.smoke else 300,effective_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
+       selection='max_validation_macro_dice_earliest_tie',data_manifest_sha256=digest(PROJECT/'stage1_visual/data_manifest.json'),
+       weights_sha256=WEIGHT_SHA,sources=provenance,encoder_eval_both=True,precision='BF16_autocast_FP32_loss',
+       deterministic_algorithms=True,cublas_workspace_config=os.environ['CUBLAS_WORKSPACE_CONFIG'],

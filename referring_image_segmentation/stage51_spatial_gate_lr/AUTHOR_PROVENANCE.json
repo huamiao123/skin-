@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/csguoh/MambaIR",
+  "commit": "33d7b3460c4665229334cc8de38c7f4c766ed3be",
+  "file": "/home/waas/mambavision_stage22/research/topconf_mamba_followup_20261112/author_sources/csguoh__MambaIR/basicsr/archs/mambair_arch.py",
+  "sha256": "1847acab730c90758d4c5b1fb9d8a8ece5cb80bee369ee43a728041e9125c9d7",
+  "exact_classes": [
+    "ChannelAttention",
+    "CAB"
+  ],
+  "native_source_extracted_unmodified": true,
+  "adaptations": [
+    "Single selected Mamba block",
+    "Preserve original MLP",
+    "Add zero-initialized residual scale",
+    "Unwindow/crop/repad using native MambaVision geometry"
+  ],
+  "control": "Replace only CAB final ChannelAttention with constant0.5; unchanged preceding native conv/GELU.",
+  "paper": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/2740_ECCV_2024_paper.php",
+  "stage51_change": "Only residual-scale optimizer group LR; copied Stage50 author adapter unchanged.",
+  "stage50_author_modules_sha256": "982472ae9eba96321a58c286965c7e3f613abf5f91f22374d2d0ea6804577822"
+}

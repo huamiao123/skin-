@@ -1,0 +1,40 @@
+{
+  "smoke_only": true,
+  "seed": 42,
+  "epochs": 2,
+  "models": [
+    "original",
+    "scaled_original",
+    "background_supervised"
+  ],
+  "effective_batch": 64,
+  "micro_batch": 64,
+  "encoder_batch": 64,
+  "evaluation_batch": 64,
+  "updates_per_epoch": 30,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "scheduler": "CosineAnnealingLR(T_max=300, eta_min=1e-5), epoch end",
+  "segmentation_loss": "stage1 BCEWithLogits + per-image Soft Dice smooth=1",
+  "auxiliary_loss": "original boundary+interior; scaled_original=1.5*original; background_supervised=original+background; each class normalized by effective-batch target mass",
+  "route_training": "gumbel hard stochastic",
+  "route_evaluation": "argmax deterministic",
+  "common_gumbel_draws": true,
+  "train_route_measurement": "non-mutating observation of actual gumbel samples",
+  "augment_seed": "42+epoch*100003",
+  "precision": "BF16 autocast / FP32 loss",
+  "clip": 1.0,
+  "selection": "max val macro Dice; earliest exact tie",
+  "secondary": "min val segmentation loss; epoch 300",
+  "data": "ISIC2018 1886/808 legacy development split",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "encoder": "NVIDIA MambaVision-S-1K",
+  "hiram_position": "32x32 decoder skip",
+  "official_hiram_commit": "d8aac2de3c33f8f2e79e281fcea8e5239db29645"
+}

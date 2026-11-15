@@ -1,0 +1,16 @@
+{
+  "initial_check_failure": "Stage4 FP32 pointwise allclose",
+  "mathematics_fp64_exact": true,
+  "model_code_changed": false,
+  "verification_change": {
+    "fp64_math_output": "bitwise exact original explicit attention vs native Swin",
+    "fp32_relative_l2_max": 2e-06,
+    "fp32_max_abs_divided_by_output_max_abs_max": 5e-06,
+    "reason": "Old fixed pointwise atol3e-5 rejects normal cancellation-near-zero FP32 kernel differences; diagnosed original stage4 output max202.74, maxdiff2.14e-4, relativeL2 8.18e-7, FP64 difference0. Keep separate native implementation control.",
+    "unchanged_checks": "Historical full762 validation binary predictions exact; cache/direct exact; restored forward loss exact; optimizer replay tolerances unchanged."
+  },
+  "archived_logs": [
+    "verification_attempts/01_fp32_threshold.log",
+    "verification_attempts/02_fp64_diagnostic.log"
+  ]
+}

@@ -1,0 +1,19 @@
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+BUILDING_FROZEN_PREFIX_CACHE
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/torch/autograd/__init__.py:266: UserWarning: adaptive_max_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at ../aten/src/ATen/Context.cpp:79.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/torch/autograd/__init__.py:266: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at ../aten/src/ATen/Context.cpp:79.)
+  Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/train.py", line 310, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/train.py", line 244, in main
+    preflight(models,train_cache,data,val_cache,micro,out)
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/train.py", line 174, in preflight
+    assert rel<=.01 and max_abs<=.0001,(name,group,rel,max_abs)
+                        ^^^^^^^^^^^^^^
+AssertionError: ('madg_mfms', 'encoder', 0.006371526012532358, 0.00013446807861328125)

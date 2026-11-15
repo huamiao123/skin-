@@ -1,0 +1,41 @@
+{
+  "stage": "stage33_author_modules",
+  "status": "fixed_before_real_data_smoke",
+  "seed": 42,
+  "arms": [
+    "emcad64",
+    "swin_cga"
+  ],
+  "rationale": "Use actual published author implementations after Stage29-32 custom fusion did not show stable gains; vetted in research/topconf_open_source_20261111.",
+  "changes": {
+    "emcad64": "Replace Swin by original EMCAD(channels=[64]*4), retain adapters and readout initialization.",
+    "swin_cga": "Retain original Swin weights; original MambaLiteUNet CGA(64,64,32) at 16/32/64 skip additions."
+  },
+  "authors_internal_code_modified": false,
+  "extra_supervision": false,
+  "training": {
+    "epochs": 100,
+    "lr_horizon": 300,
+    "lr_note": "First100 of archived300 cosine kept to match archived controls; not an optimized100-epoch cosine.",
+    "micro_batch": 48,
+    "effective_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "precision": "BF16 forward FP32 loss",
+    "encoder": "late two stages trainable, all encoder modules eval; author decoder BN remains train in training"
+  },
+  "split": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "max validation per-image foreground Dice, earliest tie; threshold0.5 fixed",
+  "completion": "Two-epoch real-data process restart and validation replay before100-epoch formal run. Train both fixed arms before testing either. Full867 test on fixed best-Dice weights.",
+  "retention": "Keep best-Dice model; latest optimizer state only while unfinished. Best-loss value recorded without extra model copy. Remove smoke model files after final success.",
+  "metrics": "Common evaluation.py macro and pooled Dice/IoU/precision/recall, Prec@ thresholds, boundary F1, HD95, threshold Jaccard and per-image rows.",
+  "references": "Archived Stage29 control/local first100 reused only with unchanged protocol and replayed validation; no test-based next-stage selection.",
+  "next_step_screen": "Validation only: require >=0.2 percentage point macro Dice improvement over strongest archived validation of the two references and no increase in severe undercoverage before seed confirmation; exploratory screen, not a publication criterion."
+}

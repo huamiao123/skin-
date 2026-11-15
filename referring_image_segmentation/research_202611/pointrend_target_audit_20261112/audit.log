@@ -1,0 +1,35 @@
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+PROCESSED 64
+PROCESSED 128
+PROCESSED 192
+PROCESSED 256
+PROCESSED 320
+PROCESSED 384
+PROCESSED 448
+PROCESSED 512
+PROCESSED 576
+PROCESSED 640
+PROCESSED 704
+PROCESSED 768
+PROCESSED 832
+PROCESSED 896
+PROCESSED 960
+PROCESSED 1024
+PROCESSED 1088
+PROCESSED 1152
+PROCESSED 1216
+PROCESSED 1280
+PROCESSED 1344
+PROCESSED 1408
+PROCESSED 1472
+PROCESSED 1536
+PROCESSED 1600
+PROCESSED 1664
+PROCESSED 1728
+PROCESSED 1792
+PROCESSED 1856
+PROCESSED 1886
+{"utc": "2026-11-12T07:04:00.812926+00:00", "test_read": false, "training": false, "training_masks": {"images": 1886, "pixels": 123600896, "gray_pixels": 1281618, "threshold05_fg": 25259205, "old_hard_fg": 24621257, "disagreement": 637948, "sampled_points": 1931264, "sampled_correct_fg": 609961, "sampled_old_fg": 578959, "sampled_disagreement": 31002}, "affected_foreground_fraction": 0.02525606011748984, "sampled_disagreement_fraction": 0.016052699164899258, "affected_sampled_fg_fraction": 0.05082620036362981, "sampled_geometry": "unaugmented training images; fixed baseline uncertainty sampling1024,oversample3,importance.75; does not estimate every augmented epoch", "code": {"stage40_source_sha256": "c6adaf65c5767ba6a3461f5804e41ff6b06395149db8aa2ab7c4921215e9df30", "stage42_source_sha256": "580971e82bbcf3ef9747f384480f58dfa54b8cca99f35a597defd9ce28de1313", "author_semantic_sha256": "25e1cb163304f1bd4f91c0a97f9999dc35d7a99900b11d4e2745d1c8e2e1a0a0"}, "findings": ["Float mask.long truncates fractional positives instead of thresholding0.5", "Stage40 coarse loss receives truncated integer target, diverging from the original soft-label coarse BCE+Dice", "Stage42 backbone is fixed; wrong point CE targets remain, but cannot change baseline weights", "Historical measured scores remain records of executed code; prior claims about faithful PointRend adaptation must be qualified"], "minimal_fix": ["Point CE target=(original_target>=.5).long()", "For joint training preserve original soft target exclusively for existing coarse loss; do not feed the integer point target into original BCE+Dice", "Retest frozen baseline head-only corrected labels first; no new attention or LR changes"]}

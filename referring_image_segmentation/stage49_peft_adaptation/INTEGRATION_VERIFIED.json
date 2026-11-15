@@ -1,0 +1,510 @@
+{
+  "passed": true,
+  "checks": {
+    "frozen": {
+      "shared_weights_exact": true,
+      "initial_output_exact": true,
+      "actual_adapter_calls": {},
+      "encoder_trainable": 0,
+      "decoder_trainable": 1089089,
+      "total": 51229673,
+      "targets": []
+    },
+    "lora8": {
+      "shared_weights_exact": true,
+      "initial_output_exact": true,
+      "actual_adapter_calls": {
+        "model.levels.2.blocks.0.mixer.in_proj": 1,
+        "model.levels.2.blocks.0.mixer.out_proj": 1,
+        "model.levels.2.blocks.0.mlp.fc1": 1,
+        "model.levels.2.blocks.0.mlp.fc2": 1,
+        "model.levels.2.blocks.1.mixer.in_proj": 1,
+        "model.levels.2.blocks.1.mixer.out_proj": 1,
+        "model.levels.2.blocks.1.mlp.fc1": 1,
+        "model.levels.2.blocks.1.mlp.fc2": 1,
+        "model.levels.2.blocks.2.mixer.in_proj": 1,
+        "model.levels.2.blocks.2.mixer.out_proj": 1,
+        "model.levels.2.blocks.2.mlp.fc1": 1,
+        "model.levels.2.blocks.2.mlp.fc2": 1,
+        "model.levels.2.blocks.3.mixer.in_proj": 1,
+        "model.levels.2.blocks.3.mixer.out_proj": 1,
+        "model.levels.2.blocks.3.mlp.fc1": 1,
+        "model.levels.2.blocks.3.mlp.fc2": 1,
+        "model.levels.2.blocks.4.mixer.qkv": 1,
+        "model.levels.2.blocks.4.mixer.proj": 1,
+        "model.levels.2.blocks.4.mlp.fc1": 1,
+        "model.levels.2.blocks.4.mlp.fc2": 1,
+        "model.levels.2.blocks.5.mixer.qkv": 1,
+        "model.levels.2.blocks.5.mixer.proj": 1,
+        "model.levels.2.blocks.5.mlp.fc1": 1,
+        "model.levels.2.blocks.5.mlp.fc2": 1,
+        "model.levels.2.blocks.6.mixer.qkv": 1,
+        "model.levels.2.blocks.6.mixer.proj": 1,
+        "model.levels.2.blocks.6.mlp.fc1": 1,
+        "model.levels.2.blocks.6.mlp.fc2": 1,
+        "model.levels.3.blocks.0.mixer.in_proj": 1,
+        "model.levels.3.blocks.0.mixer.out_proj": 1,
+        "model.levels.3.blocks.0.mlp.fc1": 1,
+        "model.levels.3.blocks.0.mlp.fc2": 1,
+        "model.levels.3.blocks.1.mixer.in_proj": 1,
+        "model.levels.3.blocks.1.mixer.out_proj": 1,
+        "model.levels.3.blocks.1.mlp.fc1": 1,
+        "model.levels.3.blocks.1.mlp.fc2": 1,
+        "model.levels.3.blocks.2.mixer.in_proj": 1,
+        "model.levels.3.blocks.2.mixer.out_proj": 1,
+        "model.levels.3.blocks.2.mlp.fc1": 1,
+        "model.levels.3.blocks.2.mlp.fc2": 1,
+        "model.levels.3.blocks.3.mixer.qkv": 1,
+        "model.levels.3.blocks.3.mixer.proj": 1,
+        "model.levels.3.blocks.3.mlp.fc1": 1,
+        "model.levels.3.blocks.3.mlp.fc2": 1,
+        "model.levels.3.blocks.4.mixer.qkv": 1,
+        "model.levels.3.blocks.4.mixer.proj": 1,
+        "model.levels.3.blocks.4.mlp.fc1": 1,
+        "model.levels.3.blocks.4.mlp.fc2": 1
+      },
+      "encoder_trainable": 774144,
+      "decoder_trainable": 1089089,
+      "total": 52003817,
+      "targets": [
+        {
+          "path": "model.levels.2.blocks.0.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.0.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.0.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.0.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.1.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.1.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.1.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.1.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.2.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.2.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.2.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.2.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.3.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.3.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.3.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.3.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.4.mixer.qkv",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1152,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.2.blocks.4.mixer.proj",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.4.mlp.fc1",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.4.mlp.fc2",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.5.mixer.qkv",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1152,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.2.blocks.5.mixer.proj",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.5.mlp.fc1",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.5.mlp.fc2",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.6.mixer.qkv",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1152,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.2.blocks.6.mixer.proj",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 384,
+          "trainable": 6144
+        },
+        {
+          "path": "model.levels.2.blocks.6.mlp.fc1",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 384,
+          "out_features": 1536,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.2.blocks.6.mlp.fc2",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 1536,
+          "out_features": 384,
+          "trainable": 15360
+        },
+        {
+          "path": "model.levels.3.blocks.0.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.0.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.0.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 3072,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.0.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 3072,
+          "out_features": 768,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.1.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.1.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.1.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 3072,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.1.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 3072,
+          "out_features": 768,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.2.mixer.in_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.2.mixer.out_proj",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.2.mlp.fc1",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 3072,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.2.mlp.fc2",
+          "kind": "MambaVisionMixer",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 3072,
+          "out_features": 768,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.3.mixer.qkv",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 2304,
+          "trainable": 24576
+        },
+        {
+          "path": "model.levels.3.blocks.3.mixer.proj",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.3.mlp.fc1",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 3072,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.3.mlp.fc2",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 3072,
+          "out_features": 768,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.4.mixer.qkv",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 2304,
+          "trainable": 24576
+        },
+        {
+          "path": "model.levels.3.blocks.4.mixer.proj",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 768,
+          "trainable": 12288
+        },
+        {
+          "path": "model.levels.3.blocks.4.mlp.fc1",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 768,
+          "out_features": 3072,
+          "trainable": 30720
+        },
+        {
+          "path": "model.levels.3.blocks.4.mlp.fc2",
+          "kind": "Attention",
+          "rank": 8,
+          "alpha": 8,
+          "in_features": 3072,
+          "out_features": 768,
+          "trainable": 30720
+        }
+      ]
+    }
+  },
+  "native_lora_file": "/home/waas/mambavision_stage22/research/peft_followup_20261112/author_sources/microsoft__LoRA/loralib/layers.py",
+  "native_lora_sha256": "ea9fa6bd0930dfbf5af08440f6c71aeab3408cf07d3cca7620c86c45ea730797",
+  "manual_forward_exact": true,
+  "automatic_merge_disabled": true,
+  "no_ssm_or_window_change": true
+}

@@ -1,0 +1,54 @@
+{
+  "selection": {
+    "arm": "swin_cga",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/swin_cga/smoke/swin_cga_best_dice.pth",
+    "sha256": "d5fa210b0dc3435bb421a828174284f135368c648489abafd62f33899e87a9f8",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8728754611564687,
+        "iou": 0.792095454215185,
+        "precision": 0.9175544408071284,
+        "recall": 0.8663902837980773
+      },
+      "pooled": {
+        "dice": 0.879796808886272,
+        "iou": 0.785390379053965,
+        "precision": 0.925870682824862,
+        "recall": 0.838091089169931
+      },
+      "prec_at": {
+        "0.5": 0.9343832020997376,
+        "0.6": 0.8910761154855643,
+        "0.7": 0.8031496062992126,
+        "0.8": 0.6456692913385826,
+        "0.9": 0.24803149606299213
+      },
+      "threshold_jaccard_065": 0.7217244686076718,
+      "counts": {
+        "tp": 10117413,
+        "fp": 810045,
+        "fn": 1954560,
+        "tn": 37056414
+      },
+      "loss": 0.33345293967429734,
+      "diagnostics": {
+        "bce_soft": 0.18451177236914948,
+        "soft_dice_loss": 0.1489411670704839,
+        "wrong_pixels": 2764605,
+        "wrong_mean_confidence": 0.8609556126956448,
+        "wrong_confidence_gt99_fraction": 0.24193944523720387
+      }
+    }
+  },
+  "selection_rule": "max_validation_macro_dice_earliest_tie",
+  "threshold": 0.5,
+  "batch64": true,
+  "input_resolution": 256,
+  "test_already_exposed": true,
+  "test_used_for_selection": false,
+  "patient_disjointness_verified": false,
+  "split_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126"
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "checks": {
+    "swin_cga_author_init": {
+      "native_root_initialization_exact": true,
+      "changed_decoder_tensors": 252,
+      "changes_restricted_to_fresh_gates": true,
+      "parameter_count_unchanged": true,
+      "encoder_exact": true,
+      "adapters_exact": true,
+      "shared_swin_or_readout_exact": true,
+      "all_trainable_parameters_in_optimizer": true,
+      "outer_torch_rng_unchanged": true,
+      "frozen_encoder_early_trainable_late": true,
+      "original_author_sha256": "e62b5b00136b10abef4729740cec7cacdfcd53d4d8247cf2ce680065e67bc535"
+    },
+    "emcad64_exp2": {
+      "native_binary_config_exact": true,
+      "expansion_factor": 2,
+      "activation": "relu6",
+      "old_decoder_parameters": 284043,
+      "new_decoder_parameters": 108939,
+      "encoder_exact": true,
+      "adapters_exact": true,
+      "shared_swin_or_readout_exact": true,
+      "all_trainable_parameters_in_optimizer": true,
+      "outer_torch_rng_unchanged": true,
+      "frozen_encoder_early_trainable_late": true,
+      "original_author_sha256": "4b36981117376ea005aed8844f4ea9c846f432286695b85c1530797a20157a18"
+    }
+  },
+  "original_files_unchanged": true,
+  "test_read": false,
+  "scope": "CPU construction and parameter ownership; real-data forward/backward and resume checked separately"
+}

@@ -1,0 +1,25 @@
+{
+  "decision": "Proceed author PointRend controlled pilot after prespecified validation-only coverage screen",
+  "validation_n": 762,
+  "test_used_for_screen": false,
+  "final_points": 1024,
+  "final_pixel_fraction": 0.015625,
+  "error_coverage": 0.12829324214890597,
+  "random_error_coverage": 0.015586491557718574,
+  "ideal_fixed_set_dice_gain_pp": 3.1785861745861843,
+  "caution": "Oracle label overwrite is diagnostic only, neither achieved model score nor full adaptive algorithm upper bound",
+  "high_confidence95_error_fraction": 0.4122267387641395,
+  "reference": "Matched Stage37 Swin100 reused; no repeated baseline training",
+  "experimental_arms": [
+    "point_uncertain",
+    "point_random"
+  ],
+  "epochs_each": 100,
+  "split": {
+    "train": 1886,
+    "validation": 762,
+    "test": 867
+  },
+  "test_protocol": "All formal trainings complete, then fixed val-selected checkpoint evaluates all867 test images; test previously exposed",
+  "all_artifacts_remote": true
+}

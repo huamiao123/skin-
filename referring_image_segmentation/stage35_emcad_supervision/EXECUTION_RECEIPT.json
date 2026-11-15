@@ -1,0 +1,35 @@
+{
+  "updated_utc": "2026-11-12T02:16:42.472139+00:00",
+  "state": "formal_training_started",
+  "checks": {
+    "INTEGRATION_VERIFIED.json": true,
+    "REFERENCE_REPLAY_VERIFIED.json": true,
+    "emcad_single/preflight.json": true,
+    "emcad_single/RESUME_AUDIT.json": true,
+    "emcad_deep/preflight.json": true,
+    "emcad_deep/RESUME_AUDIT.json": true
+  },
+  "pipeline": {
+    "stage": "stage35_emcad_supervision",
+    "state": "formal_training",
+    "arms": [
+      "emcad_single",
+      "emcad_deep"
+    ],
+    "epochs_per_arm": 100,
+    "lr_schedule_horizon": 300,
+    "pipeline_pid": 3300,
+    "updated_utc": "2026-11-12T02:14:56.813970+00:00",
+    "status_file": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision/emcad_single/results/run_status.json",
+    "resume_command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision/run_pipeline.py"
+    ],
+    "training_pid": 4158,
+    "arm": "emcad_single",
+    "completed_trainings": []
+  },
+  "original_source_unchanged": true,
+  "server_port": 32098,
+  "test_scheduled": true
+}

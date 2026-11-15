@@ -1,0 +1,25 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "warmup": 5,
+  "repeats": 30,
+  "batch": 1,
+  "precision": "BF16",
+  "scope": "MambaVision-S + adapter + HiRAM + decoder + head, no data loading",
+  "models": {
+    "original": {
+      "mean_ms": 28.17473143331881,
+      "median_ms": 27.527114499662275,
+      "peak_allocated_gib": 0.990382194519043
+    },
+    "scaled_original": {
+      "mean_ms": 28.485904299971782,
+      "median_ms": 27.897033000044758,
+      "peak_allocated_gib": 0.990382194519043
+    },
+    "background_supervised": {
+      "mean_ms": 29.623624366649892,
+      "median_ms": 29.680318500140856,
+      "peak_allocated_gib": 0.990382194519043
+    }
+  }
+}

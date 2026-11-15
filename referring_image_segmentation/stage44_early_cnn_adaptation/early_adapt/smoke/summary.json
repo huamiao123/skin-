@@ -1,0 +1,159 @@
+{
+  "arm": "early_adapt",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "early_adapt",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage44_early_cnn_adaptation/early_adapt/smoke/early_adapt_best_dice.pth",
+    "sha256": "49df75d35e557ced344cc7efddb0c8ef1227fff55cc3e539dffbcc820d3d6d25",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8716470562506059,
+        "iou": 0.7879604327188989,
+        "precision": 0.854255291820745,
+        "recall": 0.9267207013135104
+      },
+      "pooled": {
+        "dice": 0.884931261790004,
+        "iou": 0.7936113994286771,
+        "precision": 0.8659475009103607,
+        "recall": 0.9047660229193687
+      },
+      "prec_at": {
+        "0.5": 0.9435695538057742,
+        "0.6": 0.910761154855643,
+        "0.7": 0.8188976377952756,
+        "0.8": 0.6128608923884514,
+        "0.9": 0.17191601049868765
+      },
+      "threshold_jaccard_065": 0.7288453304462659,
+      "counts": {
+        "tp": 10922311,
+        "fp": 1690822,
+        "fn": 1149662,
+        "tn": 36175637
+      },
+      "loss": 0.3149666454535457,
+      "diagnostics": {
+        "bce_soft": 0.16004152963637053,
+        "soft_dice_loss": 0.15492513548983677,
+        "wrong_pixels": 2840484,
+        "wrong_mean_confidence": 0.8151128739871482,
+        "wrong_confidence_gt99_fraction": 0.10750843870269997
+      }
+    }
+  },
+  "validation": {
+    "early_adapt": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8716470562506059,
+        "iou": 0.7879604327188989,
+        "precision": 0.854255291820745,
+        "recall": 0.9267207013135104,
+        "boundary_f1": 0.2477194700874622,
+        "hd95_pixels": 18.92359471335186,
+        "hd95_diagonal": 0.05226953963373828
+      },
+      "pooled": {
+        "dice": 0.884931261790004,
+        "iou": 0.7936113994286771,
+        "precision": 0.8659475009103607,
+        "recall": 0.9047660229193687
+      },
+      "prec_at": {
+        "0.5": 0.9435695538057742,
+        "0.6": 0.910761154855643,
+        "0.7": 0.8188976377952756,
+        "0.8": 0.6128608923884514,
+        "0.9": 0.17191601049868765
+      },
+      "threshold_jaccard_065": 0.7288453304462659,
+      "counts": {
+        "tp": 10922311,
+        "fp": 1690822,
+        "fn": 1149662,
+        "tn": 36175637
+      },
+      "severe_undercoverage": 12,
+      "epoch": 2,
+      "checkpoint_sha256": "49df75d35e557ced344cc7efddb0c8ef1227fff55cc3e539dffbcc820d3d6d25"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage37_swin_control_vs_early_adapt": {
+        "macro_dice_delta": -0.015940987246164405,
+        "image_bootstrap95": [
+          -0.021714829225260707,
+          -0.010499467919906413
+        ],
+        "improved": 245,
+        "worsened": 517,
+        "gains_over5pp": 68,
+        "losses_over5pp": 114,
+        "net_reduced_fn": 463586,
+        "net_added_fp": 778444,
+        "severe_undercoverage": [
+          28,
+          12
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "encoder BN buffers fixed; stem and all used stages trainable",
+  "lr_horizon": 100,
+  "primary_comparison": "Early CNN adaptation versus matched late-only baseline",
+  "archived_reference_caveat": "Stage37 baseline matches architecture, initialization, hardware,batch64,loss,data and schedule; early weights added at1e-5",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

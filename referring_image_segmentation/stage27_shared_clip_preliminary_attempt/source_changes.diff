@@ -1,0 +1,168 @@
+--- stage22/train.py
++++ stage27/train.py
+@@ -1,4 +1,4 @@
+-"""Paired frozen/late-stage adaptation with verified frozen-prefix caching."""
++"""Paired late-stage adaptation with/without training-only coverage supervision."""
+ from pathlib import Path
+ import argparse, contextlib, copy, csv, gc, hashlib, importlib.util, json, math
+ import os, random, signal, sys, time, traceback
+@@ -19,10 +19,11 @@
+ from stage1_visual.models import segmentation_loss, tensor_hash
+ from evaluation import aggregate_counts, summarize_rows
+ from scipy.ndimage import binary_erosion, distance_transform_edt
++from coverage_aux import attach_coverage_head,forward_training,coverage_loss,assert_coverage_gradients,coverage_checks,WEIGHT
+ 
+ HF = PROJECT/'stage14_mambavision_s_isic2018_seed42/official/hf'
+ WEIGHT_SHA = '006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180'
+-NAMES = ('frozen', 'finetune34')
++NAMES = ('control', 'coverage_aux')
+ GIB = 1024**3
+ STOP = False
+ 
+@@ -70,8 +71,10 @@
+     random.seed(42);np.random.seed(42);torch.manual_seed(42);torch.cuda.manual_seed_all(42)
+ 
+ class System(nn.Module):
+-    def __init__(self, finetune=False):
++    def __init__(self, auxiliary=False):
++        finetune=True
+         super().__init__()
++        self.auxiliary=auxiliary
+         self.encoder,info=AutoModel.from_pretrained(str(HF),trust_remote_code=True,local_files_only=True,output_loading_info=True)
+         assert all(not info.get(k) for k in ('missing_keys','unexpected_keys','mismatched_keys','error_msgs')),info
+         state=load_file(str(HF/'model.safetensors'))
+@@ -82,6 +85,7 @@
+             for level in self.encoder.model.levels[2:]: level.requires_grad_(True)
+         self.probe=Probe(decoder='swin',seed=42,channels=(96,192,384,768))
+         self.finetune=finetune
++        attach_coverage_head(self)
+         self.train()
+ 
+     def train(self, mode=True):
+@@ -153,8 +157,12 @@
+     loss_value=0.
+     for begin in range(0,len(ids),micro):
+         chunk=ids[begin:begin+micro]
+-        with torch.autocast('cuda',dtype=torch.bfloat16): logits=model.from_cache(cache,chunk)
+-        loss=segmentation_loss(logits,cache['target'][chunk])
++        with torch.autocast('cuda',dtype=torch.bfloat16):
++            logits,auxiliary=forward_training(model,cache,chunk)
++        main_loss=segmentation_loss(logits,cache['target'][chunk])
++        aux_loss=coverage_loss(auxiliary,cache['target'][chunk])
++        loss=main_loss+WEIGHT*aux_loss
++        model.last_loss_components=dict(primary=float(main_loss.detach()),coverage_bce=float(aux_loss.detach()),coverage_weight=WEIGHT if model.auxiliary else 0.)
+         if not torch.isfinite(loss): raise FloatingPointError('Nonfinite loss')
+         (loss*(len(chunk)/len(ids))).backward()
+         loss_value+=float(loss.detach())*len(chunk)/len(ids)
+@@ -163,6 +171,7 @@
+         norm=torch.nn.utils.clip_grad_norm_(group['params'],1.,error_if_nonfinite=True)
+         norms[group['name']]=float(norm)
+     if check:
++        assert_coverage_gradients(model)
+         assert norms['decoder']>0
+         if model.finetune:
+             assert norms['encoder']>0
+@@ -195,7 +204,7 @@
+     memory_limit=torch.cuda.get_device_properties(0).total_memory-1.2*GIB
+     for micro in (64,48,32,24,16,8,4):
+         try:
+-            model=models['finetune34'];model.load_state_dict(initial['finetune34']);opt=optimizer(model)
++            model=models['coverage_aux'];model.load_state_dict(initial['coverage_aux']);opt=optimizer(model)
+             torch.cuda.empty_cache();torch.cuda.reset_peak_memory_stats();start=time.perf_counter()
+             for _ in range(2): update(model,opt,cache,torch.arange(64,device='cuda'),micro,check=True)
+             torch.cuda.synchronize();peak=torch.cuda.max_memory_allocated()
+@@ -209,7 +218,7 @@
+             records.append(dict(micro=micro,passed=False,error='CUDA OOM'))
+             try: del opt
+             except UnboundLocalError: pass
+-            models['finetune34'].zero_grad(set_to_none=True)
++            models['coverage_aux'].zero_grad(set_to_none=True)
+             gc.collect();torch.cuda.empty_cache()
+     if chosen is None:raise RuntimeError('No safe microbatch')
+     for n,m in models.items():m.load_state_dict(initial[n]);m.zero_grad(set_to_none=True);opts[n]=optimizer(m)
+@@ -223,14 +232,14 @@
+     ids=torch.arange(8,device='cuda');images,_=data.batch('train',ids)
+     checks={}
+     with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):
+-        _,official=models['frozen'].encoder(images)
+-        f1,f2,mid=models['frozen'].prefix(images);f3,f4=models['frozen'].suffix(mid)
++        _,official=models['control'].encoder(images)
++        f1,f2,mid=models['control'].prefix(images);f3,f4=models['control'].suffix(mid)
+         checks['official_feature_max_abs']=[float((a-b).abs().max()) for a,b in zip(official,[f1,f2,f3,f4])]
+         assert all(v==0 for v in checks['official_feature_max_abs'])
+-        a=models['frozen'](images);b=models['finetune34'](images)
++        a=models['control'](images);b=models['coverage_aux'](images)
+         assert torch.equal(a,b);checks['initial_logits_identical']=True
+-    checks['initial_probe_hash']=tensor_hash(models['frozen'].probe)
+-    assert checks['initial_probe_hash']==tensor_hash(models['finetune34'].probe)
++    checks['initial_probe_hash']=tensor_hash(models['control'].probe)
++    assert checks['initial_probe_hash']==tensor_hash(models['coverage_aux'].probe)
+     for name,model in models.items():
+         h=frozen_hash(model)
+         loss,norms=update(model,opts[name],cache,torch.arange(64,device='cuda'),micro,check=True)
+@@ -308,7 +317,7 @@
+             dump(out/f'{name}_{criterion}_metrics.json',full)
+     with (out/'per_image.csv').open('w',newline='') as f:
+         writer=csv.DictWriter(f,fieldnames=list(all_rows[0]));writer.writeheader();writer.writerows(all_rows)
+-    base=best_probs['frozen']>=.5;fine=best_probs['finetune34']>=.5
++    base=best_probs['control']>=.5;fine=best_probs['coverage_aux']>=.5
+     diffs=np.array([boundary_row(f,g)['dice']-boundary_row(b,g)['dice'] for f,b,g in zip(fine,base,gt)])
+     generator=np.random.default_rng(42);boot=np.array([diffs[generator.integers(len(diffs),size=len(diffs))].mean() for _ in range(2000)])
+     summary['paired']=dict(macro_dice_delta=float(diffs.mean()),image_bootstrap95=np.percentile(boot,[2.5,97.5]).tolist(),
+@@ -327,6 +336,7 @@
+ def main():
+     parser=argparse.ArgumentParser();parser.add_argument('--smoke',action='store_true');parser.add_argument('--stop-after-epoch',type=int)
+     args=parser.parse_args();setup()
++    coverage_checks()
+     out=ROOT/('smoke' if args.smoke else 'results');out.mkdir(exist_ok=True)
+     import fcntl
+     lock=(out/'run.lock').open('w');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+@@ -347,25 +357,26 @@
+     dump(out/'active_partition.json',partition)
+     for row in json.loads((HF.parent/'source_download.json').read_text())['files']:
+         assert digest(HF/row['path'])==row['sha256'],('Official source mismatch',row['path'])
+-    source_paths=[ROOT/'train.py',ROOT/'PROTOCOL.md',ROOT/'test_protocol.json',ROOT/'identity_partition.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
++    source_paths=[ROOT/'train.py',ROOT/'PROTOCOL.md',ROOT/'coverage_aux.py',ROOT/'DECISION.json',ROOT/'test_protocol.json',ROOT/'identity_partition.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
+     provenance={str(p.relative_to(PROJECT)):digest(p) for p in source_paths}
+     config=dict(seed=42,epochs=2 if args.smoke else 300,effective_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
+       selection='max_validation_macro_dice_earliest_tie',data_manifest_sha256=digest(PROJECT/'stage1_visual/data_manifest.json'),
+       weights_sha256=WEIGHT_SHA,sources=provenance,encoder_eval_both=True,precision='BF16_autocast_FP32_loss',
+       deterministic_algorithms=True,cublas_workspace_config=os.environ['CUBLAS_WORKSPACE_CONFIG'],
+       partition_counts=partition['counts'],partition='image_identity_screened_v1')
++    config.update(arms=['control','coverage_aux'],both_train_late_encoder=True,coverage_weight=WEIGHT,coverage_head_trainable_parameters={'control':0,'coverage_aux':769},inference_coverage_head=False)
+     if (out/'config.json').exists():assert json.loads((out/'config.json').read_text())==config
+     else:dump(out/'config.json',config)
+     dump(out/'environment.json',environment())
+-    models={name:System(name=='finetune34').cuda() for name in NAMES}
+-    assert tensor_hash(models['frozen'].probe)==tensor_hash(models['finetune34'].probe)
++    models={name:System(name=='coverage_aux').cuda() for name in NAMES}
++    assert tensor_hash(models['control'].probe)==tensor_hash(models['coverage_aux'].probe)
+     opts={name:optimizer(model) for name,model in models.items()}
+     frozen_before={n:frozen_hash(m) for n,m in models.items()}
+     dump(out/'parameters.json',{n:dict(total=sum(p.numel() for p in m.parameters()),trainable=sum(p.numel() for p in m.parameters() if p.requires_grad),encoder_trainable=sum(p.numel() for p in m.encoder.parameters() if p.requires_grad),probe_hash=tensor_hash(m.probe)) for n,m in models.items()})
+     train_cache=cache_new(len(data.ids['train']));val_cache=cache_new(len(data.ids['val']))
+     print('BUILDING_FROZEN_FEATURE_CACHES',flush=True)
+-    fill_cache(models['frozen'],data,'val',val_cache)
+-    fill_cache(models['frozen'],data,'train',train_cache)
++    fill_cache(models['control'],data,'val',val_cache)
++    fill_cache(models['control'],data,'train',train_cache)
+     if args.smoke:
+         micro=calibrate(models,opts,train_cache,out)
+         preflight(models,opts,data,train_cache,micro,out)
+@@ -389,7 +400,7 @@
+     signal.signal(signal.SIGTERM,stop_handler);signal.signal(signal.SIGINT,stop_handler)
+     for epoch in range(start,config['epochs']+1):
+         tick=time.perf_counter();order,matrices=data.geometry(epoch)
+-        fill_cache(models['frozen'],data,'train',train_cache,matrices)
++        fill_cache(models['control'],data,'train',train_cache,matrices)
+         for n in NAMES:models[n].train();lr_epoch(opts[n],epoch)
+         losses={n:0. for n in NAMES};gradients={}
+         torch.cuda.reset_peak_memory_stats()
+@@ -408,6 +419,7 @@
+                     selectors[n][criterion]=value
+                     save(out/f'{n}_{criterion}.pth',dict(epoch=epoch,model=cpu_tree(models[n].state_dict()),metric=metric,config=config))
+             assert frozen_hash(models[n])==frozen_before[n]
++        record['last_batch_loss_components']={n:m.last_loss_components for n,m in models.items()}
+         record.update(seconds=time.perf_counter()-tick,peak_allocated_gib=torch.cuda.max_memory_allocated()/GIB,reserved_gib=torch.cuda.memory_reserved()/GIB)
+         history.append(record)
+         save(latest,dict(epoch=epoch,models={n:cpu_tree(m.state_dict()) for n,m in models.items()},optimizers={n:cpu_tree(o.state_dict()) for n,o in opts.items()},rng=rng(),selectors=selectors,history=history,config=config,elapsed=elapsed+time.perf_counter()-started))

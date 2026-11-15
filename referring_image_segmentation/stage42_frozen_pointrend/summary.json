@@ -1,0 +1,600 @@
+{
+  "complete": true,
+  "arms": {
+    "frozen_point": {
+      "arm": "frozen_point",
+      "seed": 42,
+      "epochs": 100,
+      "selection": {
+        "arm": "frozen_point",
+        "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/frozen_point/results/frozen_point_best_dice.pth",
+        "sha256": "493ec3bb747740bd8fd1df6865175edbc29c08f1b24eee53f2241f0114851277",
+        "epoch": 6,
+        "validation": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8869821729618651,
+            "iou": 0.8122357483104748,
+            "precision": 0.9054208874517048,
+            "recall": 0.9010837341037887
+          },
+          "pooled": {
+            "dice": 0.8931992593603708,
+            "iou": 0.8070099942688724,
+            "precision": 0.9036459253927905,
+            "recall": 0.8829913718329224
+          },
+          "prec_at": {
+            "0.5": 0.9566929133858267,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6811023622047244,
+            "0.9": 0.2887139107611549
+          },
+          "threshold_jaccard_065": 0.7608309189687009,
+          "counts": {
+            "tp": 10659448,
+            "fp": 1136597,
+            "fn": 1412525,
+            "tn": 36729862
+          },
+          "loss": 0.2977606981132287,
+          "diagnostics": {
+            "bce_soft": 0.16971518940187189,
+            "soft_dice_loss": 0.12804549259776518,
+            "wrong_pixels": 2549122,
+            "wrong_mean_confidence": 0.841421445054549,
+            "wrong_confidence_gt99_fraction": 0.2196297391807846
+          }
+        }
+      },
+      "validation": {
+        "frozen_point": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8869821729618651,
+            "iou": 0.8122357483104748,
+            "precision": 0.9054208874517048,
+            "recall": 0.9010837341037887,
+            "boundary_f1": 0.31504590244802444,
+            "hd95_pixels": 15.257538010325534,
+            "hd95_diagonal": 0.042143392934815185
+          },
+          "pooled": {
+            "dice": 0.8931992593603708,
+            "iou": 0.8070099942688724,
+            "precision": 0.9036459253927905,
+            "recall": 0.8829913718329224
+          },
+          "prec_at": {
+            "0.5": 0.9566929133858267,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6811023622047244,
+            "0.9": 0.2887139107611549
+          },
+          "threshold_jaccard_065": 0.7608309189687009,
+          "counts": {
+            "tp": 10659448,
+            "fp": 1136597,
+            "fn": 1412525,
+            "tn": 36729862
+          },
+          "severe_undercoverage": 22,
+          "epoch": 6,
+          "checkpoint_sha256": "493ec3bb747740bd8fd1df6865175edbc29c08f1b24eee53f2241f0114851277"
+        },
+        "stage37_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8875880434967702,
+            "iou": 0.8138607420233221,
+            "precision": 0.9175074877102842,
+            "recall": 0.8906607926413481,
+            "boundary_f1": 0.3315368319798511,
+            "hd95_pixels": 15.288905652229976,
+            "hd95_diagonal": 0.042230034623488864
+          },
+          "pooled": {
+            "dice": 0.8922655883553847,
+            "iou": 0.8054869280721078,
+            "precision": 0.9197634565441892,
+            "recall": 0.8663641809006697
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9186351706036745,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6916010498687664,
+            "0.9": 0.30708661417322836
+          },
+          "threshold_jaccard_065": 0.7625283526464428,
+          "counts": {
+            "tp": 10458725,
+            "fp": 912378,
+            "fn": 1613248,
+            "tn": 36954081
+          },
+          "severe_undercoverage": 28,
+          "epoch": 8,
+          "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+        }
+      },
+      "test": {
+        "frozen_point": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8897090583876233,
+            "iou": 0.8140900104561379,
+            "precision": 0.8646099771854959,
+            "recall": 0.9434667088728249,
+            "boundary_f1": 0.23346418605757133,
+            "hd95_pixels": 17.16750055672939,
+            "hd95_diagonal": 0.047418968983153044
+          },
+          "pooled": {
+            "dice": 0.8889510329662847,
+            "iou": 0.8001006790363265,
+            "precision": 0.8761561573797092,
+            "recall": 0.9021251445569024
+          },
+          "prec_at": {
+            "0.5": 0.9665513264129181,
+            "0.6": 0.9296424452133795,
+            "0.7": 0.8604382929642446,
+            "0.8": 0.6908881199538639,
+            "0.9": 0.25144175317185696
+          },
+          "threshold_jaccard_065": 0.7679760504373783,
+          "counts": {
+            "tp": 14622560,
+            "fp": 2066885,
+            "fn": 1586455,
+            "tn": 38543812
+          },
+          "severe_undercoverage": 18,
+          "epoch": 6,
+          "checkpoint_sha256": "493ec3bb747740bd8fd1df6865175edbc29c08f1b24eee53f2241f0114851277"
+        },
+        "stage37_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8939605108327608,
+            "iou": 0.8212834862427795,
+            "precision": 0.8811951612105414,
+            "recall": 0.9339140678872623,
+            "boundary_f1": 0.2520583696007701,
+            "hd95_pixels": 16.74292252504131,
+            "hd95_diagonal": 0.04624622677475664
+          },
+          "pooled": {
+            "dice": 0.8918149968519326,
+            "iou": 0.8047528114155277,
+            "precision": 0.8961308204571226,
+            "recall": 0.8875405445673288
+          },
+          "prec_at": {
+            "0.5": 0.9653979238754326,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8731257208765859,
+            "0.8": 0.7277970011534025,
+            "0.9": 0.28143021914648214
+          },
+          "threshold_jaccard_065": 0.7774066189547868,
+          "counts": {
+            "tp": 14386158,
+            "fp": 1667478,
+            "fn": 1822857,
+            "tn": 38943219
+          },
+          "severe_undercoverage": 21,
+          "epoch": 8,
+          "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+        }
+      },
+      "comparisons": {
+        "validation": {
+          "stage37_swin_control_vs_frozen_point": {
+            "macro_dice_delta": -0.0006058705349051973,
+            "image_bootstrap95": [
+              -0.001736722826987626,
+              0.0004757278628142479
+            ],
+            "improved": 314,
+            "worsened": 447,
+            "gains_over5pp": 4,
+            "losses_over5pp": 4,
+            "net_reduced_fn": 200723,
+            "net_added_fp": 224219,
+            "severe_undercoverage": [
+              28,
+              22
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        },
+        "test": {
+          "stage37_swin_control_vs_frozen_point": {
+            "macro_dice_delta": -0.004251452445137634,
+            "image_bootstrap95": [
+              -0.005304520029248412,
+              -0.0031890315270254083
+            ],
+            "improved": 304,
+            "worsened": 562,
+            "gains_over5pp": 5,
+            "losses_over5pp": 3,
+            "net_reduced_fn": 236402,
+            "net_added_fp": 399407,
+            "severe_undercoverage": [
+              21,
+              18
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        }
+      },
+      "test_evaluated": true,
+      "complete": true,
+      "train_n": 1886,
+      "validation_n": 762,
+      "test_n": 867,
+      "normalization": "all existing baseline frozen in eval; only point MLP trained",
+      "lr_horizon": 100,
+      "primary_comparison": "Frozen baseline plus point-only training",
+      "archived_reference_caveat": "Stage37 selected baseline frozen; additional100head-onlyepochs; not equal-total-training-budget comparison",
+      "validation_only_screen": {
+        "status": "defer_to_final_paired_validation",
+        "test_used_for_selection": false
+      }
+    }
+  },
+  "secondary": {
+    "val": {
+      "coarse_direct": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8875880434967702,
+            "iou": 0.8138607420233221,
+            "precision": 0.9175074877102842,
+            "recall": 0.8906607926413481,
+            "boundary_f1": 0.3315368319798511,
+            "hd95_pixels": 15.288905652229976,
+            "hd95_diagonal": 0.042230034623488864
+          },
+          "pooled": {
+            "dice": 0.8922655883553847,
+            "iou": 0.8054869280721078,
+            "precision": 0.9197634565441892,
+            "recall": 0.8663641809006697
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9186351706036745,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6916010498687664,
+            "0.9": 0.30708661417322836
+          },
+          "threshold_jaccard_065": 0.7625283526464428,
+          "counts": {
+            "tp": 10458725,
+            "fp": 912378,
+            "fn": 1613248,
+            "tn": 36954081
+          },
+          "severe_undercoverage": 28
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.0006058705349051973,
+          "image_bootstrap95": [
+            -0.001736722826987626,
+            0.0004757278628142479
+          ],
+          "improved": 314,
+          "worsened": 447,
+          "gains_over5pp": 4,
+          "losses_over5pp": 4,
+          "net_reduced_fn": 200723,
+          "net_added_fp": 224219,
+          "severe_undercoverage": [
+            28,
+            22
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      },
+      "coarse_stepwise": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8876310361195712,
+            "iou": 0.8139229505083133,
+            "precision": 0.9175165551168881,
+            "recall": 0.8907384322425347,
+            "boundary_f1": 0.3292128035989023,
+            "hd95_pixels": 15.30720214085321,
+            "hd95_diagonal": 0.04228057201090056
+          },
+          "pooled": {
+            "dice": 0.8923033685343595,
+            "iou": 0.8055485077658088,
+            "precision": 0.9195898949447737,
+            "recall": 0.8665894961826042
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9186351706036745,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6916010498687664,
+            "0.9": 0.30577427821522307
+          },
+          "threshold_jaccard_065": 0.7625720813666392,
+          "counts": {
+            "tp": 10461445,
+            "fp": 914762,
+            "fn": 1610528,
+            "tn": 36951697
+          },
+          "severe_undercoverage": 28
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.0006488631577059726,
+          "image_bootstrap95": [
+            -0.001758576898799339,
+            0.0004179258304562792
+          ],
+          "improved": 304,
+          "worsened": 457,
+          "gains_over5pp": 4,
+          "losses_over5pp": 4,
+          "net_reduced_fn": 198003,
+          "net_added_fp": 221835,
+          "severe_undercoverage": [
+            28,
+            22
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      },
+      "random": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8876332751235962,
+            "iou": 0.8138642790872727,
+            "precision": 0.9166906573304401,
+            "recall": 0.8914953760991431,
+            "boundary_f1": 0.3292812304617877,
+            "hd95_pixels": 15.204409546372824,
+            "hd95_diagonal": 0.04199664489913165
+          },
+          "pooled": {
+            "dice": 0.8924410330231426,
+            "iou": 0.8057729291462549,
+            "precision": 0.9184616479778209,
+            "recall": 0.8678541610389618
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9199475065616798,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6929133858267716,
+            "0.9": 0.30183727034120733
+          },
+          "threshold_jaccard_065": 0.7623965968106935,
+          "counts": {
+            "tp": 10476712,
+            "fp": 930092,
+            "fn": 1595261,
+            "tn": 36936367
+          },
+          "severe_undercoverage": 27
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.0006511021617312204,
+          "image_bootstrap95": [
+            -0.001674848543105706,
+            0.00034241317974887227
+          ],
+          "improved": 305,
+          "worsened": 456,
+          "gains_over5pp": 1,
+          "losses_over5pp": 3,
+          "net_reduced_fn": 182736,
+          "net_added_fp": 206505,
+          "severe_undercoverage": [
+            27,
+            22
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      }
+    },
+    "test": {
+      "coarse_direct": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8939605108327608,
+            "iou": 0.8212834862427795,
+            "precision": 0.8811951612105414,
+            "recall": 0.9339140678872623,
+            "boundary_f1": 0.2520583696007701,
+            "hd95_pixels": 16.74292252504131,
+            "hd95_diagonal": 0.04624622677475664
+          },
+          "pooled": {
+            "dice": 0.8918149968519326,
+            "iou": 0.8047528114155277,
+            "precision": 0.8961308204571226,
+            "recall": 0.8875405445673288
+          },
+          "prec_at": {
+            "0.5": 0.9653979238754326,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8731257208765859,
+            "0.8": 0.7277970011534025,
+            "0.9": 0.28143021914648214
+          },
+          "threshold_jaccard_065": 0.7774066189547868,
+          "counts": {
+            "tp": 14386158,
+            "fp": 1667478,
+            "fn": 1822857,
+            "tn": 38943219
+          },
+          "severe_undercoverage": 21
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.004251452445137634,
+          "image_bootstrap95": [
+            -0.005304520029248412,
+            -0.0031890315270254083
+          ],
+          "improved": 304,
+          "worsened": 562,
+          "gains_over5pp": 5,
+          "losses_over5pp": 3,
+          "net_reduced_fn": 236402,
+          "net_added_fp": 399407,
+          "severe_undercoverage": [
+            21,
+            18
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      },
+      "coarse_stepwise": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8939294091971636,
+            "iou": 0.8212298484335859,
+            "precision": 0.8809826485521178,
+            "recall": 0.9340992438018738,
+            "boundary_f1": 0.24900284555674876,
+            "hd95_pixels": 16.765863231184426,
+            "hd95_diagonal": 0.04630959212194026
+          },
+          "pooled": {
+            "dice": 0.8918113867719961,
+            "iou": 0.8047469321799561,
+            "precision": 0.8959052714267418,
+            "recall": 0.8877547463556545
+          },
+          "prec_at": {
+            "0.5": 0.9653979238754326,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8742791234140715,
+            "0.8": 0.7254901960784313,
+            "0.9": 0.28143021914648214
+          },
+          "threshold_jaccard_065": 0.7780999706585875,
+          "counts": {
+            "tp": 14389630,
+            "fp": 1671923,
+            "fn": 1819385,
+            "tn": 38938774
+          },
+          "severe_undercoverage": 21
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.004220350809540561,
+          "image_bootstrap95": [
+            -0.005271388632986735,
+            -0.0031707698335353817
+          ],
+          "improved": 301,
+          "worsened": 565,
+          "gains_over5pp": 5,
+          "losses_over5pp": 3,
+          "net_reduced_fn": 232930,
+          "net_added_fp": 394962,
+          "severe_undercoverage": [
+            21,
+            18
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      },
+      "random": {
+        "metrics": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8937074536140722,
+            "iou": 0.8208335473224412,
+            "precision": 0.8797940185886329,
+            "recall": 0.9348902045308957,
+            "boundary_f1": 0.2491469811882316,
+            "hd95_pixels": 16.63324413686413,
+            "hd95_diagonal": 0.045943280165265644
+          },
+          "pooled": {
+            "dice": 0.8917265729735255,
+            "iou": 0.8046088187515696,
+            "precision": 0.8944302873831039,
+            "recall": 0.8890391550627845
+          },
+          "prec_at": {
+            "0.5": 0.9630911188004614,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8719723183391004,
+            "0.8": 0.720876585928489,
+            "0.9": 0.279123414071511
+          },
+          "threshold_jaccard_065": 0.777670645704144,
+          "counts": {
+            "tp": 14410449,
+            "fp": 1700867,
+            "fn": 1798566,
+            "tn": 38909830
+          },
+          "severe_undercoverage": 21
+        },
+        "primary_minus_policy": {
+          "macro_dice_delta": -0.003998395226449132,
+          "image_bootstrap95": [
+            -0.004965437374869364,
+            -0.0030180321752995916
+          ],
+          "improved": 299,
+          "worsened": 567,
+          "gains_over5pp": 4,
+          "losses_over5pp": 1,
+          "net_reduced_fn": 212111,
+          "net_added_fp": 366018,
+          "severe_undercoverage": [
+            21,
+            18
+          ],
+          "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+        }
+      }
+    }
+  },
+  "screen": {
+    "validation_dice_gain_pp": -0.060587053490512854,
+    "validation_boundary_f1_delta": -0.01649092953182668,
+    "rule": "macro Dice gain >=0.1pp and boundaryF1 nondecrease; validation only",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "stop_current_PointRend_adaptation_no_validated_screen_pass"
+  },
+  "test_n_per_arm": 867,
+  "baseline_frozen": true,
+  "additional_point_head_epochs": 100,
+  "checkpoint_dependency": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage37_lr_horizon100/swin_control/results/swin_control_best_dice.pth",
+  "dependency_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+}

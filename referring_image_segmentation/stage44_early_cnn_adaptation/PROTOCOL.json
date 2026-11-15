@@ -1,0 +1,55 @@
+{
+  "stage": 44,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "early_adapt"
+  ],
+  "hypothesis": "Early CNN representations frozen in prior runs may limit task adaptation; test weight adaptation alone",
+  "changes": {
+    "early_adapt": "Add stem and encoder levels0/1 to trainable parameters at1e-5; existing levels2/3 remain1e-4 and original adapters/Swin1e-3"
+  },
+  "initialization": "Same pinned ImageNet weights and deterministic fresh decoder initialization as Stage37; not warm-started from a selected segmentation checkpoint",
+  "architecture": "Original MambaVision-S +64channel adapters +Swin decoder; no PointRend, no new blocks",
+  "encoder_mode": "Entire encoder remains eval; BN running statistics fixed, stochastic depth disabled; gradients enabled for used stem and all4stages",
+  "unused_classifier": "Frozen and not called",
+  "optimizer": {
+    "name": "AdamW",
+    "early_encoder_lr": 1e-05,
+    "late_encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "clip_norm_per_group": 1.0,
+    "schedule": "cosine100_floor0.01"
+  },
+  "batch": {
+    "effective": 64,
+    "micro": 64,
+    "evaluation": 64,
+    "fallback": "If batch64 fails capacity, stop before formal training and establish a matched control rather than silently change batch"
+  },
+  "inputs": {
+    "resolution": 256,
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "augmentation": "same seeded flips and rotations"
+  },
+  "target": "Original normalized soft masks for BCE+softDice; threshold0.5 for common metrics",
+  "cache": "Only normalized FP32 images and FP32 targets; no cached encoder features. Entire trainable forward recomputed each update.",
+  "selection": "max validation per-image macro Dice, earliest exact tie",
+  "threshold": 0.5,
+  "reference": "Reuse Stage37 same4090,seed42,batch64,100cosine Swin baseline after full validation replay",
+  "test": "Evaluate complete867 at fixed validation-selected weights; already-exposed test is not fresh confirmation",
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "validation_only": true
+  },
+  "next": "Replication only if screen passes; otherwise evaluate a standard decoder as separately specified experiment, no automated module sweep",
+  "caveats": [
+    "Single seed learning-policy screen, not a novel segmentation method",
+    "Small early LR is prospectively chosen, not tuned against validation/test",
+    "No claim early features are already proven to be the bottleneck"
+  ]
+}

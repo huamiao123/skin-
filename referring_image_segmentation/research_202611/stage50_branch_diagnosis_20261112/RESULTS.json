@@ -1,0 +1,370 @@
+{
+  "validation_only": true,
+  "test_read": false,
+  "n": 762,
+  "arms": {
+    "cab": {
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage50_mamba_spatial_adapter/cab/results/cab_best_dice.pth",
+      "sha256": "89f36d17958161f56609e949063c72bbf91dc6573eda7e3e24c86e56bd3e35cb",
+      "epoch": 39,
+      "trained": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8916412729391126,
+          "iou": 0.8200530837993016,
+          "precision": 0.9075435441782987,
+          "recall": 0.9073462903760777,
+          "boundary_f1": 0.3384166918903158,
+          "hd95_pixels": 14.576063299684858,
+          "hd95_diagonal": 0.040261067196138776
+        },
+        "pooled": {
+          "dice": 0.8983641935801414,
+          "iou": 0.8154820207775221,
+          "precision": 0.9110700431545744,
+          "recall": 0.8860078630063205
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.7020997375328084,
+          "0.9": 0.3464566929133858
+        },
+        "threshold_jaccard_065": 0.7677019554716118,
+        "counts": {
+          "tp": 10695863,
+          "fp": 1044028,
+          "fn": 1376110,
+          "tn": 36822431
+        },
+        "severe_undercoverage": 19
+      },
+      "scale_abs_mean": 0.0029610502533614635,
+      "scale_abs_max": 0.013273388147354126,
+      "branch_relative_to_mlp_median": 0.0009806327288970351,
+      "branch_relative_to_mlp_p95": 0.0014481056365184483,
+      "branch_relative_to_norm2_input_median": 0.0011247980874031782,
+      "layer_parameter_changes": {
+        "cab.0.weight": {
+          "norm": 6.970571790746956,
+          "change_norm": 2.318569686582606,
+          "relative_change": 0.3545643051880836
+        },
+        "cab.0.bias": {
+          "norm": 0.11512074910181207,
+          "change_norm": 0.011829101470249686,
+          "relative_change": 0.10276224349055398
+        },
+        "cab.2.weight": {
+          "norm": 11.44071994253909,
+          "change_norm": 1.6999761745821436,
+          "relative_change": 0.1501960854791823
+        },
+        "cab.2.bias": {
+          "norm": 0.3393471539413097,
+          "change_norm": 0.03284149925429137,
+          "relative_change": 0.09382077528198915
+        },
+        "cab.3.attention.1.weight": {
+          "norm": 1.9809567341296543,
+          "change_norm": 0.10568563566731251,
+          "relative_change": 0.053314163075406665
+        },
+        "cab.3.attention.1.bias": {
+          "norm": 0.11612594837860866,
+          "change_norm": 0.012999107266325992,
+          "relative_change": 0.11152624219079345
+        },
+        "cab.3.attention.3.weight": {
+          "norm": 11.273188079699153,
+          "change_norm": 0.036155169151904816,
+          "relative_change": 0.0032037087404696873
+        },
+        "cab.3.attention.3.bias": {
+          "norm": 3.260502011746934,
+          "change_norm": 0.054744791201361255,
+          "relative_change": 0.01677097590412419
+        }
+      },
+      "bypass": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.891665428054884,
+          "iou": 0.8200850524244409,
+          "precision": 0.9075711910179395,
+          "recall": 0.9073514046177503,
+          "boundary_f1": 0.3382868548761555,
+          "hd95_pixels": 14.575882753260345,
+          "hd95_diagonal": 0.040260568502384506
+        },
+        "pooled": {
+          "dice": 0.8983896790356746,
+          "iou": 0.8155240214609136,
+          "precision": 0.9110920726665138,
+          "recall": 0.8860366072720673
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.7020997375328084,
+          "0.9": 0.3464566929133858
+        },
+        "threshold_jaccard_065": 0.767720145540069,
+        "counts": {
+          "tp": 10696210,
+          "fp": 1043778,
+          "fn": 1375763,
+          "tn": 36822681
+        },
+        "severe_undercoverage": 19
+      },
+      "reinitialized_features_keep_trained_scale": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8916541716484537,
+          "iou": 0.8200674527426374,
+          "precision": 0.9075558326721923,
+          "recall": 0.9073453118815239,
+          "boundary_f1": 0.3383227099067355,
+          "hd95_pixels": 14.57409618707206,
+          "hd95_diagonal": 0.04025563376384242
+        },
+        "pooled": {
+          "dice": 0.8983859043677693,
+          "iou": 0.8155178005889384,
+          "precision": 0.9110878118473434,
+          "recall": 0.8860332938120389
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.7020997375328084,
+          "0.9": 0.34776902887139105
+        },
+        "threshold_jaccard_065": 0.7668582690334829,
+        "counts": {
+          "tp": 10696170,
+          "fp": 1043829,
+          "fn": 1375803,
+          "tn": 36822630
+        },
+        "severe_undercoverage": 19
+      },
+      "trained_to_bypass": {
+        "macro_dice_delta": 2.4155115771462785e-05,
+        "image_bootstrap95": [
+          2.5530107464268328e-06,
+          4.884630434107074e-05
+        ],
+        "improved": 337,
+        "worsened": 321,
+        "gains_over5pp": 0,
+        "losses_over5pp": 0,
+        "net_reduced_fn": 347,
+        "net_added_fp": -250,
+        "severe_undercoverage": [
+          19,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "trained_to_reinit_features": {
+        "macro_dice_delta": 1.2898709341173248e-05,
+        "image_bootstrap95": [
+          -9.239089166827853e-06,
+          3.711628900593878e-05
+        ],
+        "improved": 331,
+        "worsened": 333,
+        "gains_over5pp": 0,
+        "losses_over5pp": 0,
+        "net_reduced_fn": 307,
+        "net_added_fp": -199,
+        "severe_undercoverage": [
+          19,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    },
+    "conv_control": {
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage50_mamba_spatial_adapter/conv_control/results/conv_control_best_dice.pth",
+      "sha256": "11098254ded4a654476dbeaf20dde5f1c72e177a3b687c0a35ec9b5367645682",
+      "epoch": 39,
+      "trained": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8916478179501051,
+          "iou": 0.8200536977144883,
+          "precision": 0.9044289716675177,
+          "recall": 0.910547328194318,
+          "boundary_f1": 0.33565076410103684,
+          "hd95_pixels": 14.667953005777386,
+          "hd95_diagonal": 0.04051487904887028
+        },
+        "pooled": {
+          "dice": 0.8985834852470003,
+          "iou": 0.8158434826524403,
+          "precision": 0.9057928303451004,
+          "recall": 0.8914879945473702
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.7034120734908137,
+          "0.9": 0.33727034120734906
+        },
+        "threshold_jaccard_065": 0.7675099546090852,
+        "counts": {
+          "tp": 10762019,
+          "fp": 1119306,
+          "fn": 1309954,
+          "tn": 36747153
+        },
+        "severe_undercoverage": 18
+      },
+      "scale_abs_mean": 0.002995472401380539,
+      "scale_abs_max": 0.014620022848248482,
+      "branch_relative_to_mlp_median": 0.001050955557730049,
+      "branch_relative_to_mlp_p95": 0.0015463198476936666,
+      "branch_relative_to_norm2_input_median": 0.0012047849595546722,
+      "layer_parameter_changes": {
+        "cab.0.weight": {
+          "norm": 6.9798229256776105,
+          "change_norm": 2.3456472269564013,
+          "relative_change": 0.3587051034329652
+        },
+        "cab.0.bias": {
+          "norm": 0.11483798663827595,
+          "change_norm": 0.0121506224157479,
+          "relative_change": 0.10555537311005186
+        },
+        "cab.2.weight": {
+          "norm": 11.445700588070705,
+          "change_norm": 1.724785933271804,
+          "relative_change": 0.15238807422148692
+        },
+        "cab.2.bias": {
+          "norm": 0.3408059754587609,
+          "change_norm": 0.03204753422176903,
+          "relative_change": 0.09155259579599014
+        }
+      },
+      "bypass": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8916517204845539,
+          "iou": 0.8200546383155698,
+          "precision": 0.9044377438707222,
+          "recall": 0.9105391735282938,
+          "boundary_f1": 0.3356650090421685,
+          "hd95_pixels": 14.661501793143156,
+          "hd95_diagonal": 0.040497059923086914
+        },
+        "pooled": {
+          "dice": 0.8985868574574907,
+          "iou": 0.815849042243301,
+          "precision": 0.9057887374679334,
+          "recall": 0.8914985976194613
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.7034120734908137,
+          "0.9": 0.3359580052493438
+        },
+        "threshold_jaccard_065": 0.7675034480801561,
+        "counts": {
+          "tp": 10762147,
+          "fp": 1119373,
+          "fn": 1309826,
+          "tn": 36747086
+        },
+        "severe_undercoverage": 18
+      },
+      "reinitialized_features_keep_trained_scale": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8916380401680775,
+          "iou": 0.8200398011246649,
+          "precision": 0.9044361260386535,
+          "recall": 0.9105266146048729,
+          "boundary_f1": 0.3356979816662578,
+          "hd95_pixels": 14.66903065085678,
+          "hd95_diagonal": 0.04051785565099275
+        },
+        "pooled": {
+          "dice": 0.8985779525238284,
+          "iou": 0.8158343612086343,
+          "precision": 0.9057798764248707,
+          "recall": 0.8914896512773844
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.7034120734908137,
+          "0.9": 0.3346456692913386
+        },
+        "threshold_jaccard_065": 0.7675010637866462,
+        "counts": {
+          "tp": 10762039,
+          "fp": 1119478,
+          "fn": 1309934,
+          "tn": 36746981
+        },
+        "severe_undercoverage": 18
+      },
+      "trained_to_bypass": {
+        "macro_dice_delta": 3.9025344487484704e-06,
+        "image_bootstrap95": [
+          -1.7795208380781897e-05,
+          2.4931012185704586e-05
+        ],
+        "improved": 331,
+        "worsened": 323,
+        "gains_over5pp": 0,
+        "losses_over5pp": 0,
+        "net_reduced_fn": 128,
+        "net_added_fp": 67,
+        "severe_undercoverage": [
+          18,
+          18
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "trained_to_reinit_features": {
+        "macro_dice_delta": -9.777782027573149e-06,
+        "image_bootstrap95": [
+          -3.071300437060552e-05,
+          1.0723107489448561e-05
+        ],
+        "improved": 327,
+        "worsened": 309,
+        "gains_over5pp": 0,
+        "losses_over5pp": 0,
+        "net_reduced_fn": 20,
+        "net_added_fp": 172,
+        "severe_undercoverage": [
+          18,
+          18
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "interpretation": "Fixed-checkpoint interventions are conditional contribution checks, not retraining ablations.",
+  "complete": true,
+  "completed_utc": "2026-11-12T15:06:20.993415+00:00"
+}

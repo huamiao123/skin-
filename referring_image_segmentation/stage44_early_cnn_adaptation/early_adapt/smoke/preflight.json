@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": {
+    "early_adapt": {
+      "initial_model_state_exact": true,
+      "initial_forward_exact": true,
+      "normalized_FP32_input_cache_exact": true,
+      "early_features_require_grad": true,
+      "early_parameter_changes": {
+        "encoder.model.patch_embed.": true,
+        "encoder.model.levels.0.": true,
+        "encoder.model.levels.1.": true
+      },
+      "gradient_norms": {
+        "decoder": 0.9078037738800049,
+        "encoder": 0.22771471738815308,
+        "early_encoder": 6.462949752807617
+      },
+      "loss": 1.2133872509002686,
+      "frozen_parameters_and_all_buffers_unchanged": true,
+      "replay_loss_exact": true,
+      "replay_update": {
+        "early_encoder": {
+          "relative_l2": 0.00028077810992324057,
+          "max_abs": 1.1920928955078125e-07
+        },
+        "encoder": {
+          "relative_l2": 9.06413843062972e-05,
+          "max_abs": 1.1175870895385742e-06
+        },
+        "decoder": {
+          "relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      }
+    }
+  }
+}

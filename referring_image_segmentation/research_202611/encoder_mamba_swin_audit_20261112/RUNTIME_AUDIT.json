@@ -1,0 +1,68 @@
+{
+  "utc": "2026-11-12T08:48:49.596328+00:00",
+  "input_hw": [
+    256,
+    256
+  ],
+  "runtime_forward_checked": true,
+  "source": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage14_mambavision_s_isic2018_seed42/official/hf/modeling_mambavision.py",
+  "source_sha256": "292edfdeeb8d145ec3a292911ce825fc7d35bd9df756e183c315c16d9f9dce5a",
+  "runtime_source": "/home/featurize/.cache/huggingface/modules/transformers_modules/hf/modeling_mambavision.py",
+  "runtime_sha256": "292edfdeeb8d145ec3a292911ce825fc7d35bd9df756e183c315c16d9f9dce5a",
+  "mamba_parameters_already_trainable": true,
+  "mamba_architecture_previously_unchanged": true,
+  "stage3": {
+    "blocks": [
+      "MambaVisionMixer",
+      "MambaVisionMixer",
+      "MambaVisionMixer",
+      "MambaVisionMixer",
+      "Attention",
+      "Attention",
+      "Attention"
+    ],
+    "input_hw": [
+      16,
+      16
+    ],
+    "window": 14,
+    "padded_hw": [
+      28,
+      28
+    ],
+    "padded_slot_fraction": 0.673469387755102
+  },
+  "stage4": {
+    "blocks": [
+      "MambaVisionMixer",
+      "MambaVisionMixer",
+      "MambaVisionMixer",
+      "Attention",
+      "Attention"
+    ],
+    "input_hw": [
+      8,
+      8
+    ],
+    "window": 7,
+    "padded_hw": [
+      14,
+      14
+    ],
+    "padded_slot_fraction": 0.673469387755102
+  },
+  "attention": {
+    "fixed_windows": true,
+    "shifted_windows": false,
+    "relative_position_bias": false,
+    "explicit_padding_mask": false
+  },
+  "sources": [
+    "https://github.com/NVlabs/MambaVision/blob/7860a506b2eb844eaaae676f08461ce8c3c26f43/mambavision/models/mamba_vision.py",
+    "https://arxiv.org/abs/2103.14030",
+    "https://github.com/microsoft/Swin-Transformer/blob/main/models/swin_transformer.py",
+    "https://arxiv.org/abs/2401.10166"
+  ],
+  "inference": "Padding/window communication is an inspectable hypothesis, not demonstrated cause of segmentation errors. Window adaptation affects both mixer types if changed stage-wide; separate size, shift and relative bias controls.",
+  "training_launched": false
+}

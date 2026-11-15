@@ -1,0 +1,159 @@
+{
+  "arm": "native_fixed",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "native_fixed",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage47_original_window_swin/native_fixed/smoke/native_fixed_best_dice.pth",
+    "sha256": "b1292594f2968a3000490ed4cfb92bed8e166103abf4989fa7c8b9f0152b3c8d",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8382142895754824,
+        "iou": 0.7374538849822495,
+        "precision": 0.7745759246470738,
+        "recall": 0.9573534914978985
+      },
+      "pooled": {
+        "dice": 0.8732413395413987,
+        "iou": 0.7750029977013723,
+        "precision": 0.8209376042660719,
+        "recall": 0.9326633682828813
+      },
+      "prec_at": {
+        "0.5": 0.926509186351706,
+        "0.6": 0.84251968503937,
+        "0.7": 0.6876640419947506,
+        "0.8": 0.4225721784776903,
+        "0.9": 0.06692913385826772
+      },
+      "threshold_jaccard_065": 0.6309251355316754,
+      "counts": {
+        "tp": 11259087,
+        "fp": 2455825,
+        "fn": 812886,
+        "tn": 35410634
+      },
+      "loss": 0.6746996670883159,
+      "diagnostics": {
+        "bce_soft": 0.2564052135299823,
+        "soft_dice_loss": 0.41829446184979335,
+        "wrong_pixels": 3268711,
+        "wrong_mean_confidence": 0.6970828175010456,
+        "wrong_confidence_gt99_fraction": 9.759198656595826e-05
+      }
+    }
+  },
+  "validation": {
+    "native_fixed": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8382142895754824,
+        "iou": 0.7374538849822495,
+        "precision": 0.7745759246470738,
+        "recall": 0.9573534914978985,
+        "boundary_f1": 0.11947213046778965,
+        "hd95_pixels": 20.101394435436642,
+        "hd95_diagonal": 0.05552278248672962
+      },
+      "pooled": {
+        "dice": 0.8732413395413987,
+        "iou": 0.7750029977013723,
+        "precision": 0.8209376042660719,
+        "recall": 0.9326633682828813
+      },
+      "prec_at": {
+        "0.5": 0.926509186351706,
+        "0.6": 0.84251968503937,
+        "0.7": 0.6876640419947506,
+        "0.8": 0.4225721784776903,
+        "0.9": 0.06692913385826772
+      },
+      "threshold_jaccard_065": 0.6309251355316754,
+      "counts": {
+        "tp": 11259087,
+        "fp": 2455825,
+        "fn": 812886,
+        "tn": 35410634
+      },
+      "severe_undercoverage": 6,
+      "epoch": 2,
+      "checkpoint_sha256": "b1292594f2968a3000490ed4cfb92bed8e166103abf4989fa7c8b9f0152b3c8d"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_native_fixed": {
+        "macro_dice_delta": -0.05459241155883583,
+        "image_bootstrap95": [
+          -0.06164512547315032,
+          -0.04674881807173136
+        ],
+        "improved": 177,
+        "worsened": 585,
+        "gains_over5pp": 82,
+        "losses_over5pp": 389,
+        "net_reduced_fn": 528609,
+        "net_added_fp": 1398686,
+        "severe_undercoverage": [
+          21,
+          6
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Original-window attention implementation, relative bias and shifted-window comparisons",
+  "archived_reference_caveat": "Stage45 UPer64 reference matches decoder/init/data/recipe and14/7 windows; native_fixed controls attention implementation; position_bias enables relative bias learning; shifted_windows adds cyclic shift and native boundary mask including interactions with original padding",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": {
+    "initial_shared_weights_identical": true,
+    "initial_logits_identical": true,
+    "official_encoder_features_identical": true,
+    "fusion_capacity_matched": true,
+    "control": {
+      "loss": 1.4853212237358093,
+      "gradient_norms": {
+        "decoder": 2.7263617515563965,
+        "encoder": 0.4405813217163086
+      },
+      "frozen_unchanged": true,
+      "resume_loss_exact": true,
+      "resume_decoder_exact": true,
+      "encoder_replay_relative_l2": 0.0002241360526027383,
+      "encoder_replay_max_abs": 1.8015503883361816e-05
+    },
+    "local_fusion": {
+      "loss": 1.4919087290763855,
+      "gradient_norms": {
+        "decoder": 2.7593495845794678,
+        "encoder": 0.43875229358673096
+      },
+      "frozen_unchanged": true,
+      "resume_loss_exact": true,
+      "resume_decoder_exact": true,
+      "encoder_replay_relative_l2": 0.0002576580152766977,
+      "encoder_replay_max_abs": 2.3543834686279297e-05
+    },
+    "anchor_fusion": {
+      "loss": 1.4915847182273865,
+      "gradient_norms": {
+        "decoder": 2.762453079223633,
+        "encoder": 0.4403839409351349
+      },
+      "frozen_unchanged": true,
+      "resume_loss_exact": true,
+      "resume_decoder_exact": true,
+      "encoder_replay_relative_l2": 0.0002944575427871268,
+      "encoder_replay_max_abs": 2.4080276489257812e-05
+    }
+  }
+}

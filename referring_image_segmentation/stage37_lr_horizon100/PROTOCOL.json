@@ -1,0 +1,56 @@
+{
+  "stage": "stage37_lr_horizon100",
+  "status": "fixed_before_preflight",
+  "seed": 42,
+  "arms": [
+    "swin_control",
+    "uct_cca"
+  ],
+  "rationale": "User approved proposed matched2x2 comparison. Existing100-epoch runs used300-horizon decay and ended at75.7% initial LR; validation loss diverged from training loss. Test schedule hypothesis without adding modules.",
+  "changes": {
+    "swin_control": "Identical to Stage36/swin_control; only cosine denominator300->100. Start again from identical official pretrained encoder and original decoder initialization, not from trained Stage36 checkpoint.",
+    "uct_cca": "Identical to Stage36/uct_cca; only cosine denominator300->100. Start again from identical official pretrained encoder and original decoder initialization, not from trained Stage36 checkpoint."
+  },
+  "authors_internal_code_modified": false,
+  "pretrained_reinitialization": false,
+  "training": {
+    "epochs": 100,
+    "lr_horizon": 100,
+    "lr_formula": "0.01+0.99*(1+cos(pi*(epoch-1)/100))/2",
+    "lr_note": "Epoch1 factor1, epoch100 factor0.010244252618963, asymptotic floor0.01; one-based epochs retained. Smoke2epochs uses same100-horizon schedule.",
+    "micro_batch": 64,
+    "effective_batch": 64,
+    "evaluation_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW,betas(.9,.999),eps1e-8; separate group clipping1",
+    "precision": "BF16 forward FP32 loss",
+    "encoder": "Stage3/4 parameters trainable; entire encoder eval; native CCA Conv-BN-ReLU modules train with decoder",
+    "loss": "unchanged single-output BCE+per-image softDice",
+    "resolution": 256,
+    "augmentation": "same seed42 flips/rotations and sample order",
+    "determinism": "determinism requested warn_only, unchanged native CUDA kernels; no bitwise training guarantee"
+  },
+  "split": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "Maximum validation per-image macro foreground Dice; earliest tie; fixed threshold0.5",
+  "comparison": "Use existing Stage36 controls and newStage37 arms as2x2 grid; report schedule effect per architecture, CCA effect per schedule, and difference-of-differences.",
+  "references": "Matched Stage36 same4090, same physical64, same data and initialization. Old runs/checkpoints/results unchanged.",
+  "completion": "Verify unchanged function AST, exact initialization and LR rates; replay both old validation checkpoints; each new arm real-data gradient and2epoch actual process restart; both100epoch trainings before both fixed full867test evaluations.",
+  "metrics": "Common evaluation.py macro/pooled Dice IoU precision recall, Prec@.5-.9, boundaryF1, HD95pixels/diagonal, thresholdJaccard and per-image rows.",
+  "retention": "Keep best validation-Dice weights. Latest optimizer state retained until finished; remove own smoke/latest only after fixed test complete.",
+  "advance_rule": "Use validation comparisons to choose further work. Attribute improvement to scheduler if both architectures improve similarly; CCA needs advantage vs same-schedule baseline and subsequent matched-seed confirmation.",
+  "limitations": [
+    "Single seed",
+    "Existing test exposed; descriptive comparison, no independent final confirmation",
+    "Early validation peak does not prove LR is the cause",
+    "Calibration/threshold diagnostic did not change threshold or loss"
+  ],
+  "created_utc": "2026-11-12T04:27:35.742573+00:00"
+}

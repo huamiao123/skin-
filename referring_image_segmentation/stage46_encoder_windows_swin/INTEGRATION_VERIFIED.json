@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "all_old_pretrained_tensors_exact": true,
+  "identical_uper64_initialization": true,
+  "native_swin_source_hashes_verified": true,
+  "no_shift_zero_bias_fp32_max_error": 1.1444091796875e-05,
+  "cross_window_perturbation": {
+    "fixed": 0.0,
+    "shifted": 0.005355119705200195,
+    "wrapped": 0.0
+  },
+  "runtime_shapes": {
+    "window8": {
+      "stage3_map": [
+        2,
+        384,
+        16,
+        16
+      ],
+      "stage3_mamba": [
+        8,
+        64,
+        384
+      ],
+      "stage4_map": [
+        2,
+        768,
+        8,
+        8
+      ],
+      "stage4_mamba": [
+        2,
+        64,
+        768
+      ]
+    },
+    "swin8": {
+      "stage3_map": [
+        2,
+        384,
+        16,
+        16
+      ],
+      "stage3_mamba": [
+        8,
+        64,
+        384
+      ],
+      "stage3_swin0": [
+        2,
+        256,
+        384
+      ],
+      "stage3_swin1": [
+        2,
+        256,
+        384
+      ],
+      "stage3_swin2": [
+        2,
+        256,
+        384
+      ],
+      "stage4_map": [
+        2,
+        768,
+        8,
+        8
+      ],
+      "stage4_mamba": [
+        2,
+        64,
+        768
+      ],
+      "stage4_swin0": [
+        2,
+        64,
+        768
+      ],
+      "stage4_swin1": [
+        2,
+        64,
+        768
+      ]
+    }
+  },
+  "zero_padding_with8_windows": true,
+  "encoder_eval": true,
+  "test_images_read": false
+}

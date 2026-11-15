@@ -1,0 +1,14 @@
+Stage29 已完成：三组统一100轮，验证762张、测试867张。
+本次沿用原300轮余弦曲线，在用户要求下截断到100轮；不是从头采用100轮余弦的实验。
+所有权重按验证集逐图平均前景Dice选定；训练、恢复、验证重放和测试均已完成。
+
+control: 最佳第7轮，验证macro Dice 88.7147%，测试macro Dice 89.5344%，测试pooled Dice 89.1884%，测试严重漏分22张。
+local_fusion: 最佳第7轮，验证macro Dice 88.8176%，测试macro Dice 89.8266%，测试pooled Dice 89.6192%，测试严重漏分20张。
+anchor_fusion: 最佳第24轮，验证macro Dice 88.8611%，测试macro Dice 89.2027%，测试pooled Dice 89.2960%，测试严重漏分13张。
+
+结论：普通局部融合在这次单种子对照中取得小幅提升；还不能称为跨种子稳定收益。
+深层直达融合在测试中减少严重漏分（22→13），但增加651476个假阳性像素，同时减少556882个假阴性像素；测试macro Dice下降0.3317个百分点。说明存在覆盖与误检的权衡，不支持整体优化成功。
+两种改动的验证集图像bootstrap差值区间均跨0；图像bootstrap不代表种子或患者不确定性。
+预先规定的anchor相对两组均提高0.20个百分点的验证门槛未达到。没有根据测试分数自动选新配置或追加训练。
+测试子集已曝光，不是完整官方测试或已验证患者独立划分。
+当前训练停止，GPU空闲。详细结果：/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/summary.json

@@ -1,0 +1,68 @@
+Stage30：通道选择与自适应尺度融合（2026-11-11）
+当前状态：实现与预检阶段；正式效果以results/DONE.json及完整验证/测试结果为准。
+
+问题来自开发验证集，而非只看测试分数
+Stage29的anchor相对local：762张验证图像中，427张增加FP，473张减少FN，367张同时增加FP、减少FN。
+合计增加254713个FP，减少242964个FN；macro Dice仅增加0.04345个百分点。
+anchor验证precision90.4667%、recall90.6239%；local分别91.6946%、89.2598%。
+观察支持“范围与误检的权衡”，不证明某个通道是噪声。
+关掉已训练anchor残差或换成local上下文的开发集推理干预没有改善precision；模型存在共同适应，不能说只要删除深层通道就一定会好。
+
+候选与前作
+ECA官方代码：https://github.com/BangguWu/ECANet/blob/master/models/eca_module.py
+论文：https://arxiv.org/abs/1910.03151
+已核对GAP -> 通道维1D卷积 -> sigmoid -> 逐通道乘法。保存了原始源码及SHA256。
+本轮eca_channel采用相同核心路径，但使用2*sigmoid及零初始化，使初始增益为1；明确标为ECA式适配，不是原论文完整复现。
+
+Selective Kernel论文：https://arxiv.org/abs/1903.06586
+借鉴多卷积分支的softmax选择机制。原论文不是本轮MambaVision/皮肤任务证据，不搬用论文成绩，也不声称完整复现SKNet。
+条件通道MLP、选择核以及空间门控都已有前作；组合是否有效必须由实验回答，不预先承诺新颖性。
+
+本轮三组新模型
+1. eca_channel：Stage29 anchor结构，在深层context与skip拼接前，用context自身GAP描述预测64个通道增益。
+2. cross_channel：相同深层残差路径，联合context和skip的GAP描述，经过LayerNorm128、Linear128->16、GELU、Linear16->64，生成64个增益。
+3. cross_channel_scale：保留2的全部通道选择，增加Linear16->64，reshape为2×32，softmax产生3×3与5×5分支的逐隐藏通道权重。
+保留原空间残差门控及原主路径；不更换backbone、Swin解码器主体、损失、数据增强或微调范围。
+现阶段通道/尺度权重每张图共享空间位置；空间选择仍由原残差门控完成。不能把这些权重解释为校准后的可靠性或具体病理类别。
+两种条件版本共享部分权重初值完全相同；所有版本起始输出与原anchor精确一致。
+标准ECA式对照与条件版本参数量不同，不能把两者差异解释为参数量严格匹配下的条件信息因果效应。
+
+参数
+原Stage29 anchor总参数50663276，decoder522692。
+eca_channel：总参数50663285，decoder522701（比anchor增加9）。
+cross_channel：总参数50673500，decoder532916（比anchor增加10224）。
+cross_channel_scale：总参数50676764，decoder536180（比anchor增加13488）。
+每组encoder可训练参数45989760；第一、二阶段冻结，第三、四阶段微调。
+
+对照复用与预算
+复用Stage29的control/local_fusion/anchor_fusion，避免重训旧基线。
+新模型仍从官方预训练初始化，不接着旧最佳模型训练。
+100个完整epoch；seed42；有效batch64、microbatch48、eval batch64。
+为复用已有对照，本轮明确保留原300轮余弦曲线的前100轮，与Stage29实际轨迹一致。这是训练日程默认值的有理由例外；不在比较模块时同时改变学习率。
+旧3个checkpoint的哈希和验证confusion counts均需重放核对；已安装Mamba CUDA反向不严格逐位确定，单种子和历史对照仍有限制。
+
+预检与训练完成标准
+检查共享初值、原始encoder输出、通道/尺度分支非零梯度、冻结参数不变、模型/优化器/RNG精确恢复，以及解码更新重放。
+三组参考checkpoint在相同环境重放验证，确保旧分数可复用。
+执行真实停止/恢复的2轮smoke，再从初值正式训练100轮。
+固定每组验证macro Dice最佳权重，先重放验证，随后评估867张筛查测试子集；旧参考测试指标从已核对文件复用。
+不会把完成训练等同于实验完成，必须有新3组测试结果。
+测试已曝光，结果不称为全新独立确认；不是完整官方benchmark，也未验证患者独立。
+
+预先固定的开发集筛选要求
+新模型相对local的macro Dice至少+0.20个百分点；
+相对anchor的FP至少减少5%；
+相对anchor的macro recall最多下降0.50个百分点；
+严重漏分数量不超过local。
+这些是实用筛选门槛，不是统计显著性保证。无论是否达标，都报告全部结果。
+同时报告macro/pooled Dice/IoU/precision/recall、Prec@、threshold Jaccard、boundary F1、HD95、逐图变化和面积分组。
+不因测试成绩好看而更换轮次、阈值、损失或自动追加参数扫描。
+
+文件
+source/referring_image_segmentation/stage30_channel_fusion/channel_fusion.py：通道与尺度机制
+train.py：继承已验证训练流程
+evaluate.py：新3组全评估＋旧3组参考＋两种推理干预
+REFERENCE_MODELS.json：旧checkpoint与指标来源
+PROTOCOL.json：事前方案
+research/channel_attention_20261111/validation_diagnosis.json：问题统计
+所有新文件仅在服务器。

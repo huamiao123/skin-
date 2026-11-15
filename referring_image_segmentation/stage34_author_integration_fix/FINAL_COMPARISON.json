@@ -1,0 +1,57 @@
+{
+  "stage": "stage34_author_integration_fix",
+  "complete": true,
+  "rows": [
+    {
+      "arm": "swin_cga_author_init",
+      "best_epoch": 48,
+      "validation_macro_dice": 0.887963619104883,
+      "validation_pooled_dice": 0.8933814790819437,
+      "test_macro_dice": 0.8894204623541015,
+      "test_pooled_dice": 0.8924966406056275,
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix/swin_cga_author_init/results/swin_cga_author_init_best_dice.pth",
+      "checkpoint_sha256": "c0b2660dfc2a6f70308bf83bd6486979b1aeeafde7d56f869799f8b279b30f83"
+    },
+    {
+      "arm": "emcad64_exp2",
+      "best_epoch": 79,
+      "validation_macro_dice": 0.8886753141244464,
+      "validation_pooled_dice": 0.8941963764692518,
+      "test_macro_dice": 0.8870784264160438,
+      "test_pooled_dice": 0.8891637903976544,
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix/emcad64_exp2/results/emcad64_exp2_best_dice.pth",
+      "checkpoint_sha256": "b4eb7975e9308fb567c92ab0ea8a70ea0430fa3324a01f86939d1a524210647f"
+    },
+    {
+      "arm": "control",
+      "validation_macro_dice": 0.8871472195886223,
+      "test_macro_dice": 0.8953441399173208,
+      "test_pooled_dice": 0.8918838604761421
+    },
+    {
+      "arm": "local_fusion",
+      "validation_macro_dice": 0.8881762105082028,
+      "test_macro_dice": 0.898265960059352,
+      "test_pooled_dice": 0.8961916447370869
+    }
+  ],
+  "deltas": {
+    "swin_cga_author_init": {
+      "primary_reference": "stage33_swin_cga",
+      "validation_macro_delta_pp": -0.15465623478557733,
+      "test_macro_delta_pp": 0.08766447964315693,
+      "test_vs_control_pp": -0.592367756321921
+    },
+    "emcad64_exp2": {
+      "primary_reference": "stage33_emcad64",
+      "validation_macro_delta_pp": 0.13181025897718301,
+      "test_macro_delta_pp": -0.2637704283329212,
+      "test_vs_control_pp": -0.8265713501276917
+    }
+  },
+  "test_n_per_arm": 867,
+  "validation_n": 762,
+  "seed": 42,
+  "new_training_active": false,
+  "updated_utc": "2026-11-11T16:15:04.400951+00:00"
+}

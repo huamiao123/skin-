@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-11",
+  "task": "Audit fusion adaptation against official complete runtime; search primary literature; diagnostic evaluation only.",
+  "baseline": [
+    "emcad64",
+    "swin_cga"
+  ],
+  "test_data_read": false,
+  "new_training": false,
+  "production_files_modified": false,
+  "validation_n": 762,
+  "train_bn_calibration_n": 1886,
+  "interventions": [
+    "CGA: gates output unchanged baseline",
+    "CGA: replace gated skip by original skip",
+    "CGA: spatially uniform attention preserving per-image attention mean",
+    "Both: train-image-only BatchNorm running-stat recalibration, no gradients/optimizer; eval on validation only"
+  ],
+  "calibration": "One fixed pass of unaugmented training RGB, batch32, cumulative BN running stats; only decoder BN set to train; all other modules eval; clone/reload original weights for each diagnostic.",
+  "limits": [
+    "Post-training interventions are out-of-distribution to the trained network and not independently retrained ablations.",
+    "Validation improvements do not establish test generalization or causal failure mechanism.",
+    "No test-set threshold/BN statistics/selection.",
+    "Same 64-channel budget adaptation is not the full paper reproduction."
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "pretrained_tensors_exact": true,
+  "decoder_init_exact": true,
+  "fixed_vs_position_initial_model_values_and_logits_exact": true,
+  "original_mamba_outputs": {
+    "3": {
+      "shape": [
+        8,
+        196,
+        384
+      ],
+      "bitwise_equal_all_arms": true,
+      "padded_tokens_nonzero_fraction": 1.0
+    },
+    "4": {
+      "shape": [
+        8,
+        49,
+        768
+      ],
+      "bitwise_equal_all_arms": true,
+      "padded_tokens_nonzero_fraction": 1.0
+    }
+  },
+  "native_vs_original_full_bf16_max_difference": 0.5,
+  "native_vs_original_attention_fp32_max_error": {
+    "3": {
+      "stage": 3,
+      "max_abs_fp32": 1.1444091796875e-05,
+      "max_abs_fp64": 0.0,
+      "relative_l2_fp32": 4.857790463137068e-07,
+      "original_fp32_vs_fp64": 4.92570690346435e-07,
+      "native_fp32_vs_fp64": 3.428677153017139e-07,
+      "output_max_abs": 24.804832458496094,
+      "tf32_matmul": false
+    },
+    "4": {
+      "stage": 4,
+      "max_abs_fp32": 0.000213623046875,
+      "max_abs_fp64": 0.0,
+      "relative_l2_fp32": 8.181413733557247e-07,
+      "original_fp32_vs_fp64": 8.602395716624429e-07,
+      "native_fp32_vs_fp64": 4.671709914894948e-07,
+      "output_max_abs": 202.74290466308594,
+      "tf32_matmul": false
+    }
+  },
+  "cross_window_interaction": {
+    "3": {
+      "fixed": 0.0,
+      "shifted": 0.008487045764923096,
+      "cyclic_wrap": 0.0,
+      "other_sample": 0.0
+    },
+    "4": {
+      "fixed": 0.0,
+      "shifted": 0.8719120025634766,
+      "cyclic_wrap": 0.0,
+      "other_sample": 0.0
+    }
+  },
+  "runtime_shapes": {
+    "native_fixed": {
+      "stage3_mamba": [
+        8,
+        196,
+        384
+      ],
+      "stage3_attention": [
+        2,
+        784,
+        384
+      ],
+      "stage4_mamba": [
+        8,
+        49,
+        768
+      ],
+      "stage4_attention": [
+        2,
+        196,
+        768
+      ]
+    },
+    "position_bias": {
+      "stage3_mamba": [
+        8,
+        196,
+        384
+      ],
+      "stage3_attention": [
+        2,
+        784,
+        384
+      ],
+      "stage4_mamba": [
+        8,
+        49,
+        768
+      ],
+      "stage4_attention": [
+        2,
+        196,
+        768
+      ]
+    },
+    "shifted_windows": {
+      "stage3_mamba": [
+        8,
+        196,
+        384
+      ],
+      "stage3_attention": [
+        2,
+        784,
+        384
+      ],
+      "stage4_mamba": [
+        8,
+        49,
+        768
+      ],
+      "stage4_attention": [
+        2,
+        196,
+        768
+      ]
+    }
+  },
+  "test_read": false
+}

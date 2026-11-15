@@ -1,0 +1,38 @@
+{
+  "stage": 48,
+  "utc": "2026-11-12T11:47:36.435928+00:00",
+  "pipeline": {
+    "pid": 28798,
+    "utc": "2026-11-12T11:45:34.353035+00:00",
+    "command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/run_pipeline.py"
+    ],
+    "arms": [
+      "cfam",
+      "conv_control"
+    ],
+    "status": "pipeline_started_checks_before_formal_training"
+  },
+  "protocol": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/PROTOCOL.json",
+  "reference_validation_replay": {
+    "passed": true,
+    "n": 762,
+    "binary_predictions_exact": true,
+    "macro_dice": 0.8928067011343184,
+    "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08",
+    "test_read": false
+  },
+  "diagnosis": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/diagnosis/SUMMARY.json",
+  "mask_audit": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/diagnosis/MASK_AUDIT.json",
+  "visual_review": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/diagnosis/VISUAL_REVIEW.json",
+  "integration": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/INTEGRATION_VERIFIED.json",
+  "intended_runs": [
+    "cfam",
+    "conv_control"
+  ],
+  "best_checkpoint_selection": "validation only",
+  "final_evaluation": "Full867 fixed test images for both validation-best checkpoints; already exposed test",
+  "memory_policy": "Actual physical64 kept to match baseline and BatchNorm; CFAM measured smoke epoch peak13.38GiB; no padding allocation to artificially fill GPU",
+  "status": "Pipeline continues autonomously after successful checks, no additional modules scheduled"
+}

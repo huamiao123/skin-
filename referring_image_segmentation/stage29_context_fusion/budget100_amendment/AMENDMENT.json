@@ -1,0 +1,15 @@
+{
+  "requested_at_utc": "2026-11-11T06:00:07.998499+00:00",
+  "user_request": "Uniformly cap current three-arm experiment at 100 epochs to reduce compute",
+  "observed_epoch_when_requested": 88,
+  "original_planned_epochs": 300,
+  "actual_target_epochs": 100,
+  "lr_schedule_horizon": 300,
+  "lr_schedule_changed": false,
+  "restart_from_scratch": false,
+  "selection": "best validation macro Dice among epochs 1..100; earliest tie",
+  "test": "all three selected checkpoints evaluated after training",
+  "disclosure": "Budget changed after observing validation learning curves; not prospectively a 100-epoch cosine run. No test results of this stage were available.",
+  "original_pipeline_pid": 3885,
+  "training_pid_at_handoff": 4169
+}

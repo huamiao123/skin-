@@ -1,0 +1,260 @@
+{
+  "swin_control": {
+    "restored_tensor_state_exact": true,
+    "repeated_losses": [
+      1.203891396522522,
+      1.203891396522522,
+      1.203891396522522
+    ],
+    "comparisons": [
+      {
+        "encoder": {
+          "relative_update_l2": 4.0094835184431026e-05,
+          "worst": [
+            [
+              6.007030606269836e-07,
+              "encoder.model.levels.2.blocks.0.mlp.fc1.weight"
+            ],
+            [
+              4.4330954551696777e-07,
+              "encoder.model.levels.2.blocks.0.mlp.fc2.weight"
+            ],
+            [
+              3.725290298461914e-07,
+              "encoder.model.levels.2.blocks.0.mixer.out_proj.weight"
+            ],
+            [
+              3.582099452614784e-07,
+              "encoder.model.levels.2.blocks.0.mixer.in_proj.weight"
+            ],
+            [
+              3.427267074584961e-07,
+              "encoder.model.levels.2.blocks.1.mixer.in_proj.weight"
+            ],
+            [
+              3.129243850708008e-07,
+              "encoder.model.levels.2.blocks.1.mlp.fc1.weight"
+            ],
+            [
+              3.0547380447387695e-07,
+              "encoder.model.levels.2.blocks.1.mixer.x_proj.weight"
+            ],
+            [
+              2.942979335784912e-07,
+              "encoder.model.levels.2.blocks.0.mixer.x_proj.weight"
+            ]
+          ]
+        },
+        "decoder": {
+          "relative_update_l2": 0.0,
+          "worst": []
+        }
+      },
+      {
+        "encoder": {
+          "relative_update_l2": 3.071003210003681e-05,
+          "worst": [
+            [
+              8.866190910339355e-07,
+              "encoder.model.levels.2.blocks.0.mixer.in_proj.weight"
+            ],
+            [
+              5.550682544708252e-07,
+              "encoder.model.levels.2.blocks.0.mlp.fc2.weight"
+            ],
+            [
+              4.246830940246582e-07,
+              "encoder.model.levels.2.blocks.0.mlp.fc1.weight"
+            ],
+            [
+              3.129243850708008e-07,
+              "encoder.model.levels.2.blocks.0.mixer.out_proj.weight"
+            ],
+            [
+              3.082677721977234e-07,
+              "encoder.model.levels.2.blocks.1.mlp.fc1.weight"
+            ],
+            [
+              2.849847078323364e-07,
+              "encoder.model.levels.2.blocks.1.mixer.in_proj.weight"
+            ],
+            [
+              2.8405338525772095e-07,
+              "encoder.model.levels.2.blocks.1.mixer.out_proj.weight"
+            ],
+            [
+              2.4959444999694824e-07,
+              "encoder.model.levels.2.blocks.0.mixer.x_proj.weight"
+            ]
+          ]
+        },
+        "decoder": {
+          "relative_update_l2": 0.0,
+          "worst": []
+        }
+      }
+    ]
+  },
+  "madg_mfms": {
+    "restored_tensor_state_exact": true,
+    "repeated_losses": [
+      0.5316783785820007,
+      0.5316783785820007,
+      0.5316783785820007
+    ],
+    "comparisons": [
+      {
+        "encoder": {
+          "relative_update_l2": 0.006484073685774981,
+          "worst": [
+            [
+              0.00010982155799865723,
+              "encoder.model.levels.2.blocks.6.mixer.qkv.bias"
+            ],
+            [
+              0.00010466575622558594,
+              "encoder.model.levels.2.blocks.5.mixer.qkv.bias"
+            ],
+            [
+              0.00010228157043457031,
+              "encoder.model.levels.3.blocks.4.mixer.qkv.bias"
+            ],
+            [
+              9.635277092456818e-05,
+              "encoder.model.levels.3.blocks.1.mlp.fc1.weight"
+            ],
+            [
+              9.337067604064941e-05,
+              "encoder.model.levels.3.blocks.3.mixer.qkv.bias"
+            ],
+            [
+              9.227506234310567e-05,
+              "encoder.model.levels.3.blocks.0.mlp.fc1.weight"
+            ],
+            [
+              8.791685104370117e-05,
+              "encoder.model.levels.2.blocks.4.mixer.qkv.bias"
+            ],
+            [
+              8.509866893291473e-05,
+              "encoder.model.levels.3.blocks.0.mlp.fc2.weight"
+            ]
+          ]
+        },
+        "decoder": {
+          "relative_update_l2": 0.001368037845997681,
+          "worst": [
+            [
+              0.001008443534374237,
+              "probe.decoder.baseline.blocks.3.blocks.0.attn.qkv.bias"
+            ],
+            [
+              0.0007706061005592346,
+              "probe.decoder.baseline.blocks.3.blocks.1.attn.qkv.bias"
+            ],
+            [
+              0.0005112290382385254,
+              "probe.decoder.baseline.blocks.2.blocks.1.attn.qkv.bias"
+            ],
+            [
+              0.0004699602723121643,
+              "probe.decoder.baseline.blocks.2.blocks.0.attn.qkv.bias"
+            ],
+            [
+              0.00010562688112258911,
+              "probe.decoder.baseline.blocks.1.blocks.0.attn.qkv.bias"
+            ],
+            [
+              2.771615982055664e-05,
+              "probe.decoder.baseline.blocks.1.blocks.1.attn.qkv.bias"
+            ],
+            [
+              1.9719824194908142e-05,
+              "probe.decoder.author_blocks.0.conv1.0.bias"
+            ],
+            [
+              1.4867633581161499e-05,
+              "probe.adapter.3.0.weight"
+            ]
+          ]
+        }
+      },
+      {
+        "encoder": {
+          "relative_update_l2": 0.006591233346435712,
+          "worst": [
+            [
+              0.00011491775512695312,
+              "encoder.model.levels.2.blocks.6.mixer.qkv.bias"
+            ],
+            [
+              0.00010797381401062012,
+              "encoder.model.levels.2.blocks.5.mixer.qkv.bias"
+            ],
+            [
+              0.00010311603546142578,
+              "encoder.model.levels.3.blocks.3.mixer.qkv.bias"
+            ],
+            [
+              9.85264778137207e-05,
+              "encoder.model.levels.2.blocks.4.mixer.qkv.bias"
+            ],
+            [
+              9.644031524658203e-05,
+              "encoder.model.levels.3.blocks.4.mixer.qkv.bias"
+            ],
+            [
+              9.598582983016968e-05,
+              "encoder.model.levels.3.blocks.0.mlp.fc1.weight"
+            ],
+            [
+              9.331107139587402e-05,
+              "encoder.model.levels.3.blocks.2.mlp.fc1.weight"
+            ],
+            [
+              9.180605411529541e-05,
+              "encoder.model.levels.3.blocks.1.mlp.fc2.weight"
+            ]
+          ]
+        },
+        "decoder": {
+          "relative_update_l2": 0.0014155185690605536,
+          "worst": [
+            [
+              0.0009860359132289886,
+              "probe.decoder.baseline.blocks.3.blocks.0.attn.qkv.bias"
+            ],
+            [
+              0.0007695257663726807,
+              "probe.decoder.baseline.blocks.3.blocks.1.attn.qkv.bias"
+            ],
+            [
+              0.0005284585058689117,
+              "probe.decoder.baseline.blocks.2.blocks.0.attn.qkv.bias"
+            ],
+            [
+              0.0004780963063240051,
+              "probe.decoder.baseline.blocks.2.blocks.1.attn.qkv.bias"
+            ],
+            [
+              0.0001653730869293213,
+              "probe.decoder.baseline.blocks.1.blocks.0.attn.qkv.bias"
+            ],
+            [
+              3.217160701751709e-05,
+              "probe.decoder.baseline.blocks.1.blocks.1.attn.qkv.bias"
+            ],
+            [
+              1.8786638975143433e-05,
+              "probe.decoder.baseline.blocks.3.blocks.1.attn.relative_position_bias_table"
+            ],
+            [
+              1.8185004591941833e-05,
+              "probe.decoder.author_blocks.0.conv1.0.bias"
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

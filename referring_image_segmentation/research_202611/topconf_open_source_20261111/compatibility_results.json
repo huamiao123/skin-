@@ -1,0 +1,813 @@
+{
+  "purpose": "Random-tensor interface/finite-gradient checks only; no accuracy, convergence or fair performance benchmark. Author module source unchanged. Imports isolated for MFMS/LoMix using original AST definitions. Batch 2 is not a full training batch.",
+  "torch": "2.2.2+cu121",
+  "gpu": "NVIDIA RTX A4000",
+  "source_sha256": {
+    "EMCAD": "4b36981117376ea005aed8844f4ea9c846f432286695b85c1530797a20157a18",
+    "CGA": "e62b5b00136b10abef4729740cec7cacdfcd53d4d8247cf2ce680065e67bc535",
+    "MFMS": "8f1b4f8ac95313bc7d8043237cc161d529d5ee44d7a81eacbcd6e9526da61b03",
+    "GAB": "c9ae22ca5c6c13a74bb9f0b72958c35708e8b0853541f42e400df6c28ebfc310",
+    "LoMix": "2209334a51b93aacd5a24362f6984a4df6b8b4a27c284faba46e87de1fec5ecf"
+  },
+  "cases": [
+    {
+      "module": "LGAG",
+      "height": 16,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 4.77001953125,
+      "single_unwarmed_check_seconds": 0.7215862890006974
+    },
+    {
+      "module": "LGAG",
+      "height": 16,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 1.1171875,
+      "single_unwarmed_check_seconds": 0.16771063199848868
+    },
+    {
+      "module": "LGAG",
+      "height": 32,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 4.28369140625,
+      "single_unwarmed_check_seconds": 0.02800305200071307
+    },
+    {
+      "module": "LGAG",
+      "height": 32,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 131.0263671875,
+      "single_unwarmed_check_seconds": 0.12413765100063756
+    },
+    {
+      "module": "LGAG",
+      "height": 64,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 17.08056640625,
+      "single_unwarmed_check_seconds": 0.022235083000850864
+    },
+    {
+      "module": "LGAG",
+      "height": 64,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 1379,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 140.0380859375,
+      "single_unwarmed_check_seconds": 0.08769442500124569
+    },
+    {
+      "module": "CGA",
+      "height": 16,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 144.65625,
+      "single_unwarmed_check_seconds": 0.38048392499695183
+    },
+    {
+      "module": "CGA",
+      "height": 16,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 149.1181640625,
+      "single_unwarmed_check_seconds": 0.2217477689991938
+    },
+    {
+      "module": "CGA",
+      "height": 32,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 176.2822265625,
+      "single_unwarmed_check_seconds": 0.0902389460025006
+    },
+    {
+      "module": "CGA",
+      "height": 32,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 37.6181640625,
+      "single_unwarmed_check_seconds": 0.12952930599931278
+    },
+    {
+      "module": "CGA",
+      "height": 64,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 275.666015625,
+      "single_unwarmed_check_seconds": 0.10107492300085141
+    },
+    {
+      "module": "CGA",
+      "height": 64,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 68611,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 213.53173828125,
+      "single_unwarmed_check_seconds": 0.0918279879988404
+    },
+    {
+      "module": "MFMS",
+      "height": 16,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 221.2353515625,
+      "single_unwarmed_check_seconds": 0.1792510539999057
+    },
+    {
+      "module": "MFMS",
+      "height": 16,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 269.5322265625,
+      "single_unwarmed_check_seconds": 0.15262830299980124
+    },
+    {
+      "module": "MFMS",
+      "height": 32,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 227.2939453125,
+      "single_unwarmed_check_seconds": 0.11821227600012207
+    },
+    {
+      "module": "MFMS",
+      "height": 32,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 273.1005859375,
+      "single_unwarmed_check_seconds": 0.09095618600258604
+    },
+    {
+      "module": "MFMS",
+      "height": 64,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 251.6533203125,
+      "single_unwarmed_check_seconds": 0.07464868999886676
+    },
+    {
+      "module": "MFMS",
+      "height": 64,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 86148,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 286.9404296875,
+      "single_unwarmed_check_seconds": 0.06837468500089017
+    },
+    {
+      "module": "GAB",
+      "height": 16,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 147.1484375,
+      "single_unwarmed_check_seconds": 0.026906981998763513
+    },
+    {
+      "module": "GAB",
+      "height": 16,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          16,
+          16
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 146.45458984375,
+      "single_unwarmed_check_seconds": 0.03187052000066615
+    },
+    {
+      "module": "GAB",
+      "height": 32,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 146.25048828125,
+      "single_unwarmed_check_seconds": 0.02774454800237436
+    },
+    {
+      "module": "GAB",
+      "height": 32,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          32,
+          32
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 145.94580078125,
+      "single_unwarmed_check_seconds": 0.029222535998997046
+    },
+    {
+      "module": "GAB",
+      "height": 64,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 189.1259765625,
+      "single_unwarmed_check_seconds": 0.027851007002027472
+    },
+    {
+      "module": "GAB",
+      "height": 64,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 14520,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 178.15380859375,
+      "single_unwarmed_check_seconds": 0.029895335999754025
+    },
+    {
+      "module": "EMCAD_full",
+      "height": 0,
+      "batch": 2,
+      "precision": "fp32",
+      "parameters": 10289723,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          768,
+          8,
+          8
+        ],
+        [
+          2,
+          384,
+          16,
+          16
+        ],
+        [
+          2,
+          192,
+          32,
+          32
+        ],
+        [
+          2,
+          96,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 549.228515625,
+      "single_unwarmed_check_seconds": 0.3444900430004054
+    },
+    {
+      "module": "EMCAD_full",
+      "height": 0,
+      "batch": 2,
+      "precision": "bf16",
+      "parameters": 10289723,
+      "status": "pass",
+      "output_shapes": [
+        [
+          2,
+          768,
+          8,
+          8
+        ],
+        [
+          2,
+          384,
+          16,
+          16
+        ],
+        [
+          2,
+          192,
+          32,
+          32
+        ],
+        [
+          2,
+          96,
+          64,
+          64
+        ]
+      ],
+      "output_finite": true,
+      "input_grad_finite": true,
+      "parameter_grad_finite": true,
+      "parameters_without_gradient": [],
+      "peak_allocated_MiB": 461.474609375,
+      "single_unwarmed_check_seconds": 0.31930420199932996
+    },
+    {
+      "module": "EMCAD_full_64",
+      "precision": "fp32",
+      "batch": 2,
+      "status": "pass",
+      "parameters": 284043,
+      "output_shapes": [
+        [
+          2,
+          64,
+          8,
+          8
+        ],
+        [
+          2,
+          64,
+          16,
+          16
+        ],
+        [
+          2,
+          64,
+          32,
+          32
+        ],
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "all_output_inputgrad_paramgrad_finite": true,
+      "parameters_without_gradient": []
+    },
+    {
+      "module": "EMCAD_full_64",
+      "precision": "bf16",
+      "batch": 2,
+      "status": "pass",
+      "parameters": 284043,
+      "output_shapes": [
+        [
+          2,
+          64,
+          8,
+          8
+        ],
+        [
+          2,
+          64,
+          16,
+          16
+        ],
+        [
+          2,
+          64,
+          32,
+          32
+        ],
+        [
+          2,
+          64,
+          64,
+          64
+        ]
+      ],
+      "all_output_inputgrad_paramgrad_finite": true,
+      "parameters_without_gradient": []
+    }
+  ],
+  "audit_LoMix": {
+    "module": "LoMix_concat_repeatability",
+    "author_code_unchanged": true,
+    "concat": {
+      "return_type": "list",
+      "tensor_count": 1,
+      "max_abs_repeat_difference": 2.4030728340148926,
+      "state_dict_keys": [
+        "original_weights.0",
+        "original_weights.1",
+        "synthesized_weights.concat.0",
+        "weighted_fusion_modules.2.weight_convs.0.weight",
+        "weighted_fusion_modules.2.weight_convs.0.bias",
+        "weighted_fusion_modules.2.weight_convs.1.weight",
+        "weighted_fusion_modules.2.weight_convs.1.bias"
+      ]
+    },
+    "add": {
+      "return_type": "list",
+      "tensor_count": 1,
+      "max_abs_repeat_difference": 0.0,
+      "state_dict_keys": [
+        "original_weights.0",
+        "original_weights.1",
+        "synthesized_weights.add.0",
+        "weighted_fusion_modules.2.weight_convs.0.weight",
+        "weighted_fusion_modules.2.weight_convs.0.bias",
+        "weighted_fusion_modules.2.weight_convs.1.weight",
+        "weighted_fusion_modules.2.weight_convs.1.bias"
+      ]
+    }
+  },
+  "audit_UACA_context_layout": {
+    "source_expression": "f = x.view(b, h * w, -1)",
+    "BCHW_example": [
+      [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        [
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            9,
+            10,
+            11
+          ]
+        ]
+      ]
+    ],
+    "actual_rows": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          11
+        ]
+      ]
+    ],
+    "spatial_pixel_rows": [
+      [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          11
+        ]
+      ]
+    ],
+    "equal": false,
+    "interpretation": "The direct view does not create per-pixel channel vectors from contiguous BCHW. This is a source-layout concern, not proof that the complete published method is ineffective."
+  }
+}

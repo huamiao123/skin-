@@ -1,0 +1,122 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "shifted_windows": 1.1944205792559546
+    },
+    "validation": {
+      "shifted_windows": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.734740322267616,
+          "iou": 0.6080508200081215,
+          "precision": 0.6257125093598409,
+          "recall": 0.9777947563514698
+        },
+        "pooled": {
+          "dice": 0.8144681232638735,
+          "iou": 0.6870065151737428,
+          "precision": 0.7080374551153852,
+          "recall": 0.9585562360021845
+        },
+        "prec_at": {
+          "0.5": 0.7309711286089239,
+          "0.6": 0.5774278215223098,
+          "0.7": 0.38976377952755903,
+          "0.8": 0.16272965879265092,
+          "0.9": 0.01706036745406824
+        },
+        "threshold_jaccard_065": 0.37380485328215257,
+        "counts": {
+          "tp": 11571665,
+          "fp": 4771630,
+          "fn": 500308,
+          "tn": 33094829
+        },
+        "loss": 0.9419267765806103,
+        "diagnostics": {
+          "bce_soft": 0.42008346092356785,
+          "soft_dice_loss": 0.5218433254347072,
+          "wrong_pixels": 5271938,
+          "wrong_mean_confidence": 0.6544287977416523,
+          "wrong_confidence_gt99_fraction": 0.0
+        }
+      }
+    },
+    "gradient_norms": {
+      "shifted_windows": {
+        "decoder": 1.4423619508743286,
+        "encoder": 0.07741561532020569
+      }
+    },
+    "learning_rates": {
+      "shifted_windows": {
+        "decoder": 0.001,
+        "encoder": 0.0001
+      }
+    },
+    "seconds": 8.192391738000879,
+    "peak_allocated_gib": 14.090678691864014
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "shifted_windows": 0.8093454029375523
+    },
+    "validation": {
+      "shifted_windows": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8247607809317968,
+          "iou": 0.7186337608889113,
+          "precision": 0.7455851596021309,
+          "recall": 0.9679650374605662
+        },
+        "pooled": {
+          "dice": 0.8635080497825681,
+          "iou": 0.7598012899408245,
+          "precision": 0.7908173444159944,
+          "recall": 0.9509146516480778
+        },
+        "prec_at": {
+          "0.5": 0.9120734908136483,
+          "0.6": 0.8149606299212598,
+          "0.7": 0.636482939632546,
+          "0.8": 0.36351706036745407,
+          "0.9": 0.051181102362204724
+        },
+        "threshold_jaccard_065": 0.5932855122378581,
+        "counts": {
+          "tp": 11479416,
+          "fp": 3036472,
+          "fn": 592557,
+          "tn": 34829987
+        },
+        "loss": 0.7156212306398106,
+        "diagnostics": {
+          "bce_soft": 0.28109045987679887,
+          "soft_dice_loss": 0.4345307642706423,
+          "wrong_pixels": 3629029,
+          "wrong_mean_confidence": 0.70603214306828,
+          "wrong_confidence_gt99_fraction": 0.0003731025571854069
+        }
+      }
+    },
+    "gradient_norms": {
+      "shifted_windows": {
+        "decoder": 0.9960632920265198,
+        "encoder": 0.13670967519283295
+      }
+    },
+    "learning_rates": {
+      "shifted_windows": {
+        "decoder": 0.0009997557473810372,
+        "encoder": 9.997557473810371e-05
+      }
+    },
+    "seconds": 8.96500714099966,
+    "peak_allocated_gib": 14.095149517059326
+  }
+]

@@ -1,0 +1,15 @@
+Stage26: frozen-checkpoint linear coverage probes, 2026-11-10
+Purpose: localize recurring severe extent undercoverage without presupposing a new module.
+Source models: Stage22 seed42 and Stage24 seed43, frozen and finetune34 best-Dice checkpoints as already selected. Never reselect their checkpoints.
+Data: unchanged 1886 training / 762 development validation. No held-out test data or scores.
+Readouts: encoder f3, encoder f4, decoder coarsest Swin block output, decoder final Swin block output. All are area-pooled to 8x8, then use a channel-linear logistic readout shared across positions.
+Targets: exact 8x8 foreground occupancy (area average of the binary 256x256 training annotation).
+Only new readout parameters train. All source encoder and decoder parameters and buffers must remain unchanged.
+Feature standardization uses training mean/std only. No augmentation for this diagnostic probe. Initialize weights to zero and bias to training foreground log odds. L2=1e-4 on standardized weights, no penalty on intercept.
+Optimization: deterministic full-batch float64 L-BFGS, strong Wolfe, up to 1000 iterations (50 calls with max_iter=20). Stop on max absolute objective gradient <=1e-5. Save all training-only diagnostics; do not inspect validation during optimization. A nonconverged probe is reported and cannot support a clean negative conclusion.
+Probe output size and penalty are matched at the same feature location across frozen/fine and seeds. Different feature locations have different channel counts, so comparisons between locations are descriptive, not capacity-matched.
+Validation primary diagnostic: 8x8 occupancy mean squared error and per-image absolute/signed area error. Supplement: 256x256 upsampled-logit masks, threshold 0.5, standard macro/pooled Dice/IoU, precision/recall, Prec@ thresholds, threshold Jaccard, BF1 and HD95.
+Controls: archived full decoder predictions, training-only spatial foreground prior, and per-image all-foreground Dice reference. Never deploy GT-derived threshold or mask. The three recurrent IDs 305/581/791 are prespecified descriptive cases; all 762 cases and fixed GT area quartiles remain reported.
+Verification: exact split/data audit, checkpoint/source hashes, original prediction reproduction at archived batch size 64, source model hash before/after, synthetic linear soft-target recovery, cached feature dimensions, convergence, no test read. Pipeline serializes smoke then full run.
+A successful probe is a witness of accessible information, not proof that adding this probe as an auxiliary head will improve the full model. A failed linear probe is not proof of information absence. These development analyses cannot establish test generalization or paper novelty.
+All source, logs, checkpoints and reports remain on the server.

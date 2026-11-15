@@ -1,0 +1,159 @@
+{
+  "arm": "window8",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "window8",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage46_encoder_windows_swin/window8/smoke/window8_best_dice.pth",
+    "sha256": "70cfaed4c15813321c20abf0eff4adff01537eef83aad0d81137f6fab7d74ee9",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8139925960185411,
+        "iou": 0.7059483858732486,
+        "precision": 0.7360518597161639,
+        "recall": 0.9626565542617634
+      },
+      "pooled": {
+        "dice": 0.8516237183851041,
+        "iou": 0.741589435465799,
+        "precision": 0.7701765512504818,
+        "recall": 0.9523343035972661
+      },
+      "prec_at": {
+        "0.5": 0.884514435695538,
+        "0.6": 0.7979002624671916,
+        "0.7": 0.594488188976378,
+        "0.8": 0.3530183727034121,
+        "0.9": 0.049868766404199474
+      },
+      "threshold_jaccard_065": 0.5669573442048489,
+      "counts": {
+        "tp": 11496554,
+        "fp": 3430613,
+        "fn": 575419,
+        "tn": 34435846
+      },
+      "loss": 0.6870364365302358,
+      "diagnostics": {
+        "bce_soft": 0.2681575943165877,
+        "soft_dice_loss": 0.4188788417443203,
+        "wrong_pixels": 4006032,
+        "wrong_mean_confidence": 0.7083601607262744,
+        "wrong_confidence_gt99_fraction": 8.112765948948984e-05
+      }
+    }
+  },
+  "validation": {
+    "window8": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8139925960185411,
+        "iou": 0.7059483858732486,
+        "precision": 0.7360518597161639,
+        "recall": 0.9626565542617634,
+        "boundary_f1": 0.10426707413298947,
+        "hd95_pixels": 26.344179799144865,
+        "hd95_diagonal": 0.0727662038311445
+      },
+      "pooled": {
+        "dice": 0.8516237183851041,
+        "iou": 0.741589435465799,
+        "precision": 0.7701765512504818,
+        "recall": 0.9523343035972661
+      },
+      "prec_at": {
+        "0.5": 0.884514435695538,
+        "0.6": 0.7979002624671916,
+        "0.7": 0.594488188976378,
+        "0.8": 0.3530183727034121,
+        "0.9": 0.049868766404199474
+      },
+      "threshold_jaccard_065": 0.5669573442048489,
+      "counts": {
+        "tp": 11496554,
+        "fp": 3430613,
+        "fn": 575419,
+        "tn": 34435846
+      },
+      "severe_undercoverage": 6,
+      "epoch": 2,
+      "checkpoint_sha256": "70cfaed4c15813321c20abf0eff4adff01537eef83aad0d81137f6fab7d74ee9"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_window8": {
+        "macro_dice_delta": -0.07881410511577713,
+        "image_bootstrap95": [
+          -0.08806642377677133,
+          -0.06891976538525536
+        ],
+        "improved": 144,
+        "worsened": 618,
+        "gains_over5pp": 79,
+        "losses_over5pp": 454,
+        "net_reduced_fn": 766076,
+        "net_added_fp": 2373474,
+        "severe_undercoverage": [
+          21,
+          6
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Encoder window8 and native Swin8 versus unchanged Stage45 UPer64",
+  "archived_reference_caveat": "Stage45 UPer64 reference matches decoder/init/data/recipe; window8 changes both Mamba and Attention geometry; swin8 adds native shifted attention and relative bias, not isolated single-mechanism proof",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

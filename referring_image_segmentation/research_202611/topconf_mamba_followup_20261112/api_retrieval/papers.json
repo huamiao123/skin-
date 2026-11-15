@@ -1,0 +1,2524 @@
+[
+  {
+    "title": "Spatial-Mamba: Effective Visual State Space Models via Structure-aware State Fusion",
+    "authors": [
+      "Chaodong Xiao",
+      "Minghan Li",
+      "Zhengqiang Zhang",
+      "Deyu Meng",
+      "Lei Zhang"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2410.15091",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2410.15091",
+    "abstract": "Selective state space models (SSMs), such as Mamba, highly excel at capturing long-range dependencies in 1D sequential data, while their applications to 2D vision tasks still face challenges. Current visual SSMs often convert images into 1D sequences and employ various scanning patterns to incorporate local spatial dependencies. However, these methods are limited in effectively capturing the complex image spatial structures and the increased computational cost caused by the lengthened scanning paths. To address these limitations, we propose Spatial-Mamba, a novel approach that establishes neighborhood connectivity directly in the state space. Instead of relying solely on sequential state transitions, we introduce a structure-aware state fusion equation, which leverages dilated convolutions to capture image spatial structural dependencies, significantly enhancing the flow of visual contextual information. Spatial-Mamba proceeds in three stages: initial state computation in a unidirectional scan, spatial context acquisition through structure-aware state fusion, and final state computation using the observation equation. Our theoretical analysis shows that Spatial-Mamba unifies the original Mamba and linear attention under the same matrix multiplication framework, providing a deeper understanding of our method. Experimental results demonstrate that Spatial-Mamba, even with a single scan, attains or surpasses the state-of-the-art SSM-based models in image classification, detection and segmentation. Source codes and trained models can be found at https://github.com/EdwardChasel/Spatial-Mamba.",
+    "source": "openalex",
+    "citation_count": 45,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2410.15091",
+    "publication_type": "preprint",
+    "keywords": [
+      "Algorithm",
+      "Computer science",
+      "Computer vision",
+      "Fusion",
+      "Geography",
+      "Linguistics",
+      "Space (punctuation)",
+      "State (computer science)"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.8241
+  },
+  {
+    "title": "MambaOut: Do We Really Need Mamba for Vision?",
+    "authors": [
+      "Weihao Yu",
+      "Xinchao Wang"
+    ],
+    "year": 2025,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52734.2025.00423",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52734.2025.00423",
+    "abstract": "Mamba, an architecture with RNN-like token mixer of state space model (SSM), was recently introduced to address the quadratic complexity of the attention mechanism and subsequently applied to vision tasks. Nevertheless, the performance of Mamba for vision is often underwhelming when compared with convolutional and attention-based models. In this paper, we delve into the essence of Mamba, and conceptually conclude that Mamba is ideally suited for tasks with long-sequence and autoregressive characteristics. For vision tasks, as image classification on ImageNet does not align with either characteristic, we hypothesize that Mamba is not necessary for this task; Detection and segmentation tasks on COCO or ADE20K are also not autoregressive, yet they adhere to the long-sequence characteristic, so we believe it is still worthwhile to explore Mamba’s potential for these tasks. To empirically verify our hypotheses, we construct a series of models named MambaOut through stacking Mamba blocks while removing their core token mixer, SSM. Experimental results strongly support our hypotheses. Specifically, our MambaOut model surpasses all visual Mamba models on ImageNet image classification, indicating that Mamba is indeed unnecessary for this task. As for detection and segmentation, MambaOut cannot match the performance of state-of-the-art visual Mamba models, demonstrating the potential of Mamba for long-sequence visual tasks.",
+    "source": "openalex",
+    "citation_count": 376,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.07992",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Computer vision"
+    ],
+    "score": 0.815,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Mamba as a Bridge: Where Vision Foundation Models Meet Vision Language Models for Domain-Generalized Semantic Segmentation",
+    "authors": [
+      "Xin Zhang",
+      "Robby T. Tan"
+    ],
+    "year": 2025,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52734.2025.01354",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52734.2025.01354",
+    "abstract": "Vision Foundation Models (VFMs) and Vision-Language Models (VLMs) have gained traction in Domain Generalized Semantic Segmentation (DGSS) due to their strong generalization capabilities1. However, existing DGSS methods often rely exclusively on either VFMs or VLMs, overlooking their complementary strengths. VFMs (e.g., DINOv2) excel at capturing fine-grained features, while VLMs (e.g., CLIP) provide robust text alignment but struggle with coarse granularity. Despite their complementary strengths, effectively integrating VFMs and VLMs with attention mechanisms is challenging, as the increased patch tokens complicate long-sequence modeling. To address this, we propose MFuser, a novel Mamba-based fusion framework that efficiently combines the strengths of VFMs and VLMs while maintaining linear scalability in sequence length. MFuser consists of two key components: MVFuser, which acts as a co-adapter to jointly fine-tune the two models by capturing both sequential and spatial dynamics; and MTEnhancer, a hybrid attention-Mamba module that refines text embeddings by incorporating image priors. Our approach achieves precise feature locality and strong text alignment without incurring significant computational overhead. Extensive experiments demonstrate that MFuser significantly outperforms state-of-the-art DGSS methods, achieving 68.20 mIoU on synthetic-to-real and 71.87 mIoU on real-to-real benchmarks. The code is available at https://github.com/devinxzhang/MFuser.",
+    "source": "openalex",
+    "citation_count": 26,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2504.03193",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Bridge (graph theory)",
+      "Segmentation",
+      "Foundation (evidence)",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Domain (mathematical analysis)",
+      "Natural language processing"
+    ],
+    "score": 0.8061,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "A Survey on Visual Mamba",
+    "authors": [
+      "Hanwei Zhang",
+      "Ying Zhu",
+      "Dan Wang",
+      "Lijun Zhang",
+      "Tianxiang Chen",
+      "Ziyang Wang",
+      "Zi Ye"
+    ],
+    "year": 2024,
+    "venue": "Applied Sciences",
+    "doi": "10.3390/app14135683",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/app14135683",
+    "abstract": "State space models (SSM) with selection mechanisms and hardware-aware architectures, namely Mamba, have recently shown significant potential in long-sequence modeling. Since the complexity of transformers’ self-attention mechanism is quadratic with image size, as well as increasing computational demands, researchers are currently exploring how to adapt Mamba for computer vision tasks. This paper is the first comprehensive survey that aims to provide an in-depth analysis of Mamba models within the domain of computer vision. It begins by exploring the foundational concepts contributing to Mamba’s success, including the SSM framework, selection mechanisms, and hardware-aware design. Then, we review these vision Mamba models by categorizing them into foundational models and those enhanced with techniques including convolution, recurrence, and attention to improve their sophistication. Furthermore, we investigate the widespread applications of Mamba in vision tasks, which include their use as a backbone in various levels of vision processing. This encompasses general visual tasks, medical visual tasks (e.g., 2D/3D segmentation, classification, image registration, etc.), and remote sensing visual tasks. In particular, we introduce general visual tasks from two levels: high/mid-level vision (e.g., object detection, segmentation, video classification, etc.) and low-level vision (e.g., image super-resolution, image restoration, visual generation, etc.). We hope this endeavor will spark additional interest within the community to address current challenges and further apply Mamba models in computer vision.",
+    "source": "openalex",
+    "citation_count": 265,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2076-3417/14/13/5683/pdf?version=1720078850",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Domain (mathematical analysis)",
+      "Human–computer interaction",
+      "Segmentation",
+      "Social science",
+      "Sophistication"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.8032
+  },
+  {
+    "title": "Sigma-Fusion: Synergistic Semantic Segmentation of Optical and SAR Remote Sensing Images Based on a Siamese Mamba Architecture",
+    "authors": [
+      "Lun Ma",
+      "Yanqi Zhao",
+      "Yuhuan Niu"
+    ],
+    "year": 2026,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-981-92-3520-9_42",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-981-92-3520-9_42",
+    "abstract": "In the field of multi-modal remote sensing semantic segmentation, synergistically utilizing optical and Synthetic Aperture Radar (SAR) images can significantly improve interpretation accuracy in complex scenes. However, existing methods face challenges when processing high-resolution heterogeneous data, including excessively high computational complexity, difficulties in maintaining the geometric consistency of long-span continuous ground objects (such as road networks), and obstacles in aligning modal features. This paper proposes Sigma-Fusion, a novel multi-modal segmentation framework based on the Mamba architecture. Firstly, the framework automatically suppresses speckle noise using a lightweight SAR Adapter. Subsequently, it constructs a Siamese Visual State Space Model (VSSM) that extracts long-range contextual dependencies for optical and SAR images separately. By capturing spatial structural features across the entire image at a linear computational cost, this model fundamentally alleviates the fragmentation of elongated objects -a problem inherent to traditional local convolutions. Finally, a multi-level Cross-Mamba Fusion mechanism is utilized to achieve bidirectional feature routing and deep calibration between modalities at multiple scales. Experiments on the WHU-OPT-SAR dataset demonstrate that Sigma-Fusion improves the standard mIoU and OA metrics by 2.72% and 1.00% compared to mainstream methods. To rigorously verify the core advantage of our model in geometric integrity, we introduce Boundary IoU as a key evaluation metric. Experimental results show that Sigma-Fusion achieves significant gains in boundary fidelity, fully validating its excellent efficacy with the help of Mamba’s global receptive field in high-resolution scenarios.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1007/978-981-92-3520-9_42.pdf",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Computer vision",
+      "Segmentation",
+      "Remote sensing",
+      "Synthetic aperture radar",
+      "Speckle noise",
+      "Image segmentation"
+    ],
+    "score": 0.785,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "PlainMamba: Improving Non-Hierarchical Mamba in Visual Recognition",
+    "authors": [
+      "Chenhongyi Yang",
+      "Zehui Chen",
+      "Miguel Espinosa",
+      "Linus Ericsson",
+      "Zhenyu Wang",
+      "Jiaming Liu",
+      "Elliot J. Crowley"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2403.17695",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2403.17695",
+    "abstract": "We present PlainMamba: a simple non-hierarchical state space model (SSM) designed for general visual recognition. The recent Mamba model has shown how SSMs can be highly competitive with other architectures on sequential data and initial attempts have been made to apply it to images. In this paper, we further adapt the selective scanning process of Mamba to the visual domain, enhancing its ability to learn features from two-dimensional images by (i) a continuous 2D scanning process that improves spatial continuity by ensuring adjacency of tokens in the scanning sequence, and (ii) direction-aware updating which enables the model to discern the spatial relations of tokens by encoding directional information. Our architecture is designed to be easy to use and easy to scale, formed by stacking identical PlainMamba blocks, resulting in a model with constant width throughout all layers. The architecture is further simplified by removing the need for special tokens. We evaluate PlainMamba on a variety of visual recognition tasks, achieving performance gains over previous non-hierarchical models and is competitive with hierarchical alternatives. For tasks requiring high-resolution inputs, in particular, PlainMamba requires much less computing while maintaining high performance. Code and models are available at: https://github.com/ChenhongyiYang/PlainMamba .",
+    "source": "openalex",
+    "citation_count": 183,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.17695",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science"
+    ],
+    "score": 0.7808,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Mamba-Adaptor: State Space Model Adaptor for Visual Recognition",
+    "authors": [
+      "Fei Xie",
+      "Jiahao Nie",
+      "Yong Tan",
+      "Wenkang Zhang",
+      "Hongshen Zhao"
+    ],
+    "year": 2025,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52734.2025.01874",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52734.2025.01874",
+    "abstract": "Recent State Space Models (SSM), especially Mamba, have demonstrated impressive performance in visual modeling and possess superior model efficiency. However, the application of Mamba to visual tasks suffers inferior performance due to three main constraints existing in the sequential model: 1) Casual computing is incapable of accessing global context; 2) Long-range forgetting when computing the current hidden states; 3) Weak spatial structural modeling due to the transformed sequential input. To address these issues, we investigate a simple yet powerful vision task adapter for Mamba models, which consists of two functional modules: Adaptor-T and Adapator-S. When solving the hidden states for SSM, we apply a lightweight prediction module Adaptor-T to select a set of learnable locations as memory augmentations to ease long-range forgetting issues. Moreover, we leverage Adapator-S, composed of multi-scale dilated convolutional kernels, to enhance the spatial modeling and introduce the image inductive bias into the feature output. Both modules can enlarge the context modeling in casual computing, as the output is enhanced by the inaccessible features. We explore three usages of Mamba-Adaptor: A general visual backbone for various vision tasks; A booster module to raise the performance of pretrained backbones; A highly efficient fine-tuning module that adapts the base model for transfer learning tasks. Extensive experiments verify the effectiveness of Mamba-Adapter in three settings. Notably, our Mamba-Adapter achieves state-of-the-art performance on the ImageNet and COCO benchmarks.",
+    "source": "openalex",
+    "citation_count": 8,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2505.12685",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Signal transducing adaptor protein",
+      "Computer science",
+      "Space (punctuation)",
+      "Artificial intelligence",
+      "Computer vision",
+      "Medicine",
+      "Operating system",
+      "Internal medicine"
+    ],
+    "score": 0.7691,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Semi-Mamba-UNet: Pixel-level contrastive and cross-supervised visual Mamba-based UNet for semi-supervised medical image segmentation",
+    "authors": [
+      "Chao Ma",
+      "Ziyang Wang"
+    ],
+    "year": 2024,
+    "venue": "Knowledge-Based Systems",
+    "doi": "10.1016/j.knosys.2024.112203",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.knosys.2024.112203",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 127,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S0950705124008372?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7564,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A Comprehensive Survey of Mamba Architectures for Medical Image Analysis: Classification, Segmentation, Restoration and Beyond",
+    "authors": [
+      "Shubhi Bansal",
+      "Sreeharish Arikrishnan",
+      "J. Madhava Prasath",
+      "S Manikandan",
+      "Sreekanth Madisetty",
+      "Mohammad Zia Ur Rehman",
+      "Chandravardhan Singh Raghaw",
+      "Gaurav Duggal",
+      "Nagendra Kumar"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2410.02362",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2410.02362",
+    "abstract": "Mamba, a special case of the State Space Model, is gaining popularity as an alternative to template-based deep learning approaches in medical image analysis. While transformers are powerful architectures, they have drawbacks, including quadratic computational complexity and an inability to address long-range dependencies efficiently. This limitation affects the analysis of large and complex datasets in medical imaging, where there are many spatial and temporal relationships. In contrast, Mamba offers benefits that make it well-suited for medical image analysis. It has linear time complexity, which is a significant improvement over transformers. Mamba processes longer sequences without attention mechanisms, enabling faster inference and requiring less memory. Mamba also demonstrates strong performance in merging multimodal data, improving diagnosis accuracy and patient outcomes. The organization of this paper allows readers to appreciate the capabilities of Mamba in medical imaging step by step. We begin by defining core concepts of SSMs and models, including S4, S5, and S6, followed by an exploration of Mamba architectures such as pure Mamba, U-Net variants, and hybrid models with convolutional neural networks, transformers, and Graph Neural Networks. We also cover Mamba optimizations, techniques and adaptations, scanning, datasets, applications, experimental results, and conclude with its challenges and future directions in medical imaging. This review aims to demonstrate the transformative potential of Mamba in overcoming existing barriers within medical imaging while paving the way for innovative advancements in the field. A comprehensive list of Mamba architectures applied in the medical field, reviewed in this work, is available at Github.",
+    "source": "openalex",
+    "citation_count": 48,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2410.02362",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Artificial intelligence",
+      "Data science"
+    ],
+    "score": 0.7362,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Vision Mamba: A Comprehensive Survey and Taxonomy",
+    "authors": [
+      "Xiao Liu",
+      "Chenxu Zhang",
+      "Fuxiang Huang",
+      "Shuyin Xia",
+      "Guoyin Wang",
+      "Lei Zhang"
+    ],
+    "year": 2025,
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "doi": "10.1109/tnnls.2025.3610435",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tnnls.2025.3610435",
+    "abstract": "State space model (SSM) is a mathematical model used to describe and analyze the behavior of dynamic systems. This model has witnessed numerous applications in several fields, including control theory, signal processing, economics, and machine learning. In the field of deep learning, SSMs are used to process sequence data, such as time series analysis, natural language processing (NLP), and video understanding. By mapping sequence data to state space, long-term dependencies in the data can be better captured. In particular, modern SSMs have shown strong representational capabilities in NLP, especially in long sequence modeling, while maintaining linear time complexity. In particular, based on the latest SSMs, Mamba merges time-varying parameters into SSMs toward efficient training and inference. Given its impressive efficiency and strong long-range dependency modeling capability, Mamba is expected to become a new AI architecture that may be capable of surpassing Transformer. Recently, a number of works attempt to study the potential of Mamba in various fields, such as general vision, multimodal learning, medical image analysis, and remote sensing image analysis, by extending Mamba from natural language domain to visual domain. To fully understand Mamba in the visual domain, we conduct a comprehensive survey and present a taxonomy study. This survey focuses on Mamba's application to a variety of visual tasks and data types, and discusses its predecessors, recent advances, and far-reaching impact on a wide range of domains.",
+    "source": "openalex",
+    "citation_count": 262,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.04404",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Data science",
+      "Field (mathematics)",
+      "Human visual system model",
+      "Sequence (biology)",
+      "Taxonomy (biology)",
+      "Variety (cybernetics)"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.7329
+  },
+  {
+    "title": "SAM-Mamba: Mamba Guided SAM Architecture for Generalized Zero-Shot Polyp Segmentation",
+    "authors": [
+      "Tapas Kumar Dutta",
+      "Snehashis Majhi",
+      "Deepak Ranjan Nayak",
+      "Debesh Jha"
+    ],
+    "year": 2025,
+    "venue": "IEEE Winter Conference on Applications of Computer Vision",
+    "doi": "10.1109/wacv61041.2025.00457",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/wacv61041.2025.00457",
+    "abstract": "Polyp segmentation in colonoscopy is crucial for detecting colorectal cancer. However, it is challenging due to variations in the structure, color, and size of polyps, as well as the lack of clear boundaries with surrounding tissues. Traditional segmentation models based on Convolutional Neural Networks (CNNs) struggle to capture detailed patterns and global context, limiting their performance. Vision Transformer (ViT)-based models address some of these issues but have difficulties in capturing local context and lack strong zero-shot generalization. To this end, we propose the Mamba-guided Segment Anything Model (SAM-Mamba††Code, Modes:https://github.com/TapasKumarDuttal/SAM_Mamba_2025) for efficient polyp segmentation. Our approach introduces a Mamba-Prior module in the encoder to bridge the gap between the general pre-trained representation of SAM and polyp-relevant trivial clues. It injects salient cues of polyp images into the SAM image encoder as a domain prior while capturing global dependencies at various scales, leading to more accurate segmentation results. Extensive experiments on five benchmark datasets show that SAM-Mamba outper-forms traditional CNN, ViT, and Adapter-based models in both quantitative and qualitative measures. Additionally, SAM-Mamba demonstrates excellent adaptability to unseen datasets, making it highly suitable for real-time clinical use.",
+    "source": "openalex",
+    "citation_count": 19,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2412.08482",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Shot (pellet)",
+      "Curry",
+      "Zero (linguistics)",
+      "Chemistry",
+      "Linguistics",
+      "Programming language",
+      "Philosophy"
+    ],
+    "score": 0.716,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Frequency-Assisted Mamba for Remote Sensing Image Super-Resolution",
+    "authors": [
+      "Yi Xiao",
+      "Qiangqiang Yuan",
+      "Kui Jiang",
+      "Yuzeng Chen",
+      "Qiang Zhang",
+      "Chia‐Wen Lin"
+    ],
+    "year": 2024,
+    "venue": "IEEE Transactions on Multimedia",
+    "doi": "10.1109/tmm.2024.3521798",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmm.2024.3521798",
+    "abstract": "Recent progress in remote sensing image (RSI) super-resolution (SR) has exhibited remarkable performance using deep neural networks, e.g., Convolutional Neural Networks and Transformers. However, existing SR methods often suffer from either a limited receptive field or quadratic computational overhead, resulting in sub-optimal global representation and unacceptable computational costs in large-scale RSI. To alleviate these issues, we develop the first attempt to integrate the Vision State Space Model (Mamba) for RSI-SR, which specializes in processing large-scale RSI by capturing long-range dependency with linear complexity. To achieve better SR reconstruction, building upon Mamba, we devise a Frequency-assisted Mamba framework, dubbed FMSR, to explore the spatial and frequent correlations. In particular, our FMSR features a multi-level fusion architecture equipped with the Frequency Selection Module (FSM), Vision State Space Module (VSSM), and Hybrid Gate Module (HGM) to grasp their merits for effective spatial-frequency fusion. Considering that global and local dependencies are complementary and both beneficial for SR, we further recalibrate these multi-level features for accurate feature fusion via learnable scaling adaptors. Extensive experiments on AID, DOTA, and DIOR benchmarks demonstrate that our FMSR outperforms state-of-the-art Transformer-based methods HAT-L in terms of PSNR by 0.11 dB on average, while consuming only 28.05% and 19.08% of its memory consumption and complexity, respectively.",
+    "source": "openalex",
+    "citation_count": 282,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.04964",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Remote sensing",
+      "Computer vision",
+      "Image resolution",
+      "Artificial intelligence",
+      "Geology"
+    ],
+    "score": 0.7153,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MFil-Mamba: Multi-Filter Scanning for Spatial Redundancy-Aware Visual State Space Models",
+    "authors": [
+      "Puskal Khadka",
+      "KC Santosh"
+    ],
+    "year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2603.20074",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2603.20074",
+    "abstract": "State Space Models (SSMs), especially recent Mamba architecture, have achieved remarkable success in sequence modeling tasks. However, extending SSMs to computer vision remains challenging due to the non-sequential structure of visual data and its complex 2D spatial dependencies. Although several early studies have explored adapting selective SSMs for vision applications, most approaches primarily depend on employing various traversal strategies over the same input. This introduces redundancy and distorts the intricate spatial relationships within images. To address these challenges, we propose MFil-Mamba, a novel visual state space architecture built on a multi-filter scanning backbone. Unlike fixed multi-directional traversal methods, our design enables each scan to capture unique and contextually relevant spatial information while minimizing redundancy. Furthermore, we incorporate an adaptive weighting mechanism to effectively fuse outputs from multiple scans in addition to architectural enhancements. MFil-Mamba achieves superior performance over existing state-of-the-art models across various benchmarks that include image classification, object detection, instance segmentation, and semantic segmentation. For example, our tiny variant attains 83.2% top-1 accuracy on ImageNet-1K, 47.3% box AP and 42.7% mask AP on MS COCO, and 48.5% mIoU on the ADE20K dataset. Code and models are available at https://github.com/puskal-khadka/MFil-Mamba.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2603.20074",
+    "publication_type": "preprint",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Fuse (electrical)",
+      "Object (grammar)",
+      "Redundancy (engineering)",
+      "Tree traversal",
+      "Weighting"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.715
+  },
+  {
+    "title": "A Hybrid Mamba-SAM Architecture for Efficient 3D Medical Image Segmentation",
+    "authors": [
+      "Mohammadreza Gholipour Shahraki",
+      "Mehdi Rezaeian",
+      "Mohammad Ghasemzadeh"
+    ],
+    "year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2602.00650",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2602.00650",
+    "abstract": "Accurate segmentation of 3D medical images such as MRI and CT is essential for clinical diagnosis and treatment planning. Foundation models like the Segment Anything Model (SAM) provide powerful general-purpose representations but struggle in medical imaging due to domain shift, their inherently 2D design, and the high computational cost of fine-tuning. To address these challenges, we propose Mamba-SAM, a novel and efficient hybrid architecture that combines a frozen SAM encoder with the linear-time efficiency and long-range modeling capabilities of Mamba-based State Space Models (SSMs). We investigate two parameter-efficient adaptation strategies. The first is a dual-branch architecture that explicitly fuses general features from a frozen SAM encoder with domain-specific representations learned by a trainable VMamba encoder using cross-attention. The second is an adapter-based approach that injects lightweight, 3D-aware Tri-Plane Mamba (TPMamba) modules into the frozen SAM ViT encoder to implicitly model volumetric context. Within this framework, we introduce Multi-Frequency Gated Convolution (MFGC), which enhances feature representation by jointly analyzing spatial and frequency-domain information via 3D discrete cosine transforms and adaptive gating. Extensive experiments on the ACDC cardiac MRI dataset demonstrate the effectiveness of the proposed methods. The dual-branch Mamba-SAM-Base model achieves a mean Dice score of 0.906, comparable to UNet++ (0.907), while outperforming all baselines on Myocardium (0.910) and Left Ventricle (0.971) segmentation. The adapter-based TP MFGC variant offers superior inference speed (4.77 FPS) with strong accuracy (0.880 Dice). These results show that hybridizing foundation models with efficient SSM-based architectures provides a practical and effective solution for 3D medical image segmentation.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2602.00650",
+    "publication_type": "preprint",
+    "keywords": [
+      "Encoder",
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Medical imaging",
+      "Convolution (computer science)",
+      "Inference",
+      "Domain (mathematical analysis)"
+    ],
+    "score": 0.705,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "3D Segment Anything Model With Visual Mamba for Diagnosing Placenta Accreta Spectrum",
+    "authors": [
+      "Yuliang Zhang",
+      "Fang He",
+      "Lulu Peng",
+      "Tianyu Yan",
+      "Pingping Zhang",
+      "Ting Song",
+      "Lili Du",
+      "Dunjin Chen"
+    ],
+    "year": 2026,
+    "venue": "IEEE Transactions on Image Processing",
+    "doi": "10.1109/tip.2026.3694185",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tip.2026.3694185",
+    "abstract": "Placenta Accreta Spectrum (PAS) is a rare but highly dangerous obstetric disease. Early and accurate PAS diagnosis is critical for maternal health. Traditional PAS diagnosis relies on experienced doctors by analyzing the cesarean history and Magnetic Resonance Imaging (MRI) data. However, district-level hospitals often lack the expertise and resources for accurate PAS diagnosis. To address these challenges, we establish the first MRI-based PAS dataset, which includes both fine-grained segmentation and classification annotations. Meanwhile, diagnosing PAS can be significantly enhanced by segmenting lesion areas from MRI images of the uterus. To achieve automatic PAS diagnosis, we propose 3DSAMba, a novel feature learning framework for effective lesion segmentation. More specifically, we first design a 3D Segment Anything Model (SAM) and incorporate medical domain information into the model through an efficient adapter mechanism. In addition, we introduce a Multi-Level Aggregation Mamba (MLAM) to aggregate feature maps across different levels and a Fusion State Space Model (FSSM) to fuse multi-scale features from both the encoder and decoder. Finally, we apply segmentation masks to the original MRI images through element-wise multiplication, effectively isolating lesion areas for more accurate PAS diagnosis. Extensive experiments validate that our framework significantly improves the PAS diagnostic performance. To facilitate further research in PAS diagnosis, we have released the dataset and source code at https://github.com/Drchip61/PASD.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2606.00489",
+    "publication_type": "article",
+    "keywords": [
+      "Medicine",
+      "Placenta accreta",
+      "Radiology",
+      "Surgery",
+      "Placenta",
+      "Image processing",
+      "Pattern analysis",
+      "Anatomy"
+    ],
+    "score": 0.705,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "ACM-UNet: Adaptive integration of CNNs and Mamba for efficient medical image segmentation",
+    "authors": [
+      "Jing Huang",
+      "Yongkang Zhao",
+      "Yuhan Li",
+      "Zhitao Dai",
+      "Cheng Chen",
+      "Qiying Lai"
+    ],
+    "year": 2026,
+    "venue": "Biomedical Signal Processing and Control",
+    "doi": "10.1016/j.bspc.2026.110587",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.bspc.2026.110587",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 12,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2505.24481",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Convolutional neural network",
+      "Pattern recognition (psychology)",
+      "Adapter (computing)",
+      "Feature extraction",
+      "Image segmentation"
+    ],
+    "score": 0.7043,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter",
+    "authors": [
+      "Yaohua Zha",
+      "Yanzi Wang",
+      "Hang Guo",
+      "Jinpeng Wang",
+      "Tao Dai",
+      "Bin Chen",
+      "Zhihao Ouyang",
+      "Xue Yuerong",
+      "Ke Chen",
+      "Shu‐Tao Xia"
+    ],
+    "year": 2025,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52734.2025.01582",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52734.2025.01582",
+    "abstract": "Applying pre-trained models to assist point cloud understanding has recently become a mainstream paradigm in 3D perception. However, existing application strategies are straightforward, utilizing only the final output of the pre-trained model for various task heads. It neglects the rich complementary information in the intermediate layer, thereby failing to fully unlock the potential of pre-trained models. To overcome this limitation, we propose an orthogonal solution: Point Mamba Adapter (PMA), which constructs an ordered feature sequence from all layers of the pre-trained model and leverages Mamba to fuse all complementary semantics, thereby promoting comprehensive point cloud understanding. Constructing this ordered sequence is non-trivial due to the inherent isotropy of 3D space. Therefore, we further propose a geometry-constrained gate prompt generator (G2PG) shared across different layers, which applies shared geometric constraints to the output gates of the Mamba and dynamically optimizes the spatial order, thus enabling more effective integration of multi-layer information. Extensive experiments conducted on challenging point cloud datasets across various tasks demonstrate that our PMA elevates the capability for point cloud understanding to a new level by fusing diverse complementary intermediate features. Code is available at https://github.com/zyh16143998882/PMA.",
+    "source": "openalex",
+    "citation_count": 12,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2505.20941",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Adapter (computing)",
+      "Computer science",
+      "Point (geometry)",
+      "Point cloud",
+      "Mathematics",
+      "Operating system",
+      "Artificial intelligence",
+      "Geometry"
+    ],
+    "score": 0.7015,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Weak-Mamba-UNet: Visual Mamba Makes CNN and ViT Work Better for Scribble-based Medical Image Segmentation",
+    "authors": [
+      "Ziyang Wang",
+      "Chao Ma"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2402.10887v1",
+    "url": "http://arxiv.org/abs/2402.10887v1",
+    "abstract": "Medical image segmentation is increasingly reliant on deep learning techniques, yet the promising performance often come with high annotation costs. This paper introduces Weak-Mamba-UNet, an innovative weakly-supervised learning (WSL) framework that leverages the capabilities of Convolutional Neural Network (CNN), Vision Transformer (ViT), and the cutting-edge Visual Mamba (VMamba) architecture for medical image segmentation, especially when dealing with scribble-based annotations. The proposed WSL strategy incorporates three distinct architecture but same symmetrical encoder-decoder networks: a CNN-based UNet for detailed local feature extraction, a Swin Transformer-based SwinUNet for comprehensive global context understanding, and a VMamba-based Mamba-UNet for efficient long-range dependency modeling. The key concept of this framework is a collaborative and cross-supervisory mechanism that employs pseudo labels to facilitate iterative learning and refinement across the networks. The effectiveness of Weak-Mamba-UNet is validated on a publicly available MRI cardiac segmentation dataset with processed scribble annotations, where it surpasses the performance of a similar WSL framework utilizing only UNet or SwinUNet. This highlights its potential in scenarios with sparse or imprecise annotations. The source code is made publicly accessible.",
+    "source": "arxiv",
+    "citation_count": 16,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2402.10887v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "sources": [
+      "arxiv",
+      "crossref"
+    ],
+    "score": 0.6984
+  },
+  {
+    "title": "VMUnet-MSADI： Visual Mamba UNet Fusion Multi-Scale Attention and Detail Infusion for Unsound Corn Kernels Segmentation",
+    "authors": [
+      "Kuibin Zhao",
+      "Qinghui Zhang",
+      "Chenxia Wan",
+      "Quan Pan",
+      "Yao Qin"
+    ],
+    "year": 2024,
+    "venue": "",
+    "doi": "10.21203/rs.3.rs-5170853/v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-5170853/v1",
+    "abstract": "Abstract Corn seed breeding is a global issue, and has attracted great attention in recent years. Deploying autonomous robots for corn kernel recognition and classification has great potential in terms of constructing environment friendly agriculture, and saving manpower. Existing segmentation methods that utilize U-shaped architectures typically operate by processing images in discrete pixel-based segments. This approach often overlooks the finer pixel-level structural details within these segments, leading to models that struggle to preserve the continuity of target edges effectively. In this paper, we propose a new framework for corn seed image segmentation, called VMUnet-MSADI, which aims to integrate MSADI module into the encoder and decoder of the VMUnet architecture. Our VMUnet-MSADI model benefits from self-attention computation in VMUnet and multiscale coding to efficiently model non-local dependencies and multiscale contexts to improve the segmentation quality of different images. Unlike previous Unet-based improvement schemes, the proposed VMUnet-MSADI adopts a multiscale convolutional attention module coding mechanism at the depth level and an efficient multiscale deep convolutional decoder at the spatial level to extract coarse-grained features and fine-grained features at different semantic scales and effectively avoid the loss of information at the target boundary to improve the quality and accuracy of target segmentation. In addition, we introduce a Visual State Space (VSS) block to capture a wide range of contextual information and a Detail Infusion Block (DIB) to enhance the fusion of low-level and high-level features, which further fills in the remote contextual information during the up-sampling process. Comprehensive experiments were conducted on open-source datasets and the results demonstrate that the VMUnet-MSADI model excels in the task of corn kernel segmentation. The model achieved a segmentation accuracy of 95.96%, surpassing the leading method by 0.9%. Compared to other segmentation models, our method exhibits superior performance in both accuracy and loss metrics. Extensive comparative experiments conducted on various benchmark datasets further substantiate that our approach outperforms the state-of-the-art models. Code, pre-trained models and data processing protocols are available at https://github.com/corbining/VMUnet-MSADI",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://www.researchsquare.com/article/rs-5170853/v1",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6962,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Visual Mamba: A Survey and New Outlooks",
+    "authors": [
+      "Rui Xu",
+      "Shu Yang",
+      "Yihui Wang",
+      "Yu Cai",
+      "Bo Du",
+      "Hao Chen"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2404.18861",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2404.18861",
+    "abstract": "Mamba, a recent selective structured state space model, excels in long sequence modeling, which is vital in the large model era. Long sequence modeling poses significant challenges, including capturing long-range dependencies within the data and handling the computational demands caused by their extensive length. Mamba addresses these challenges by overcoming the local perception limitations of convolutional neural networks and the quadratic computational complexity of Transformers. Given its advantages over these mainstream foundation architectures, Mamba exhibits great potential to be a visual foundation architecture. Since January 2024, Mamba has been actively applied to diverse computer vision tasks, yielding numerous contributions. To help keep pace with the rapid advancements, this paper reviews visual Mamba approaches, analyzing over 200 papers. This paper begins by delineating the formulation of the original Mamba model. Subsequently, it delves into representative backbone networks, and applications categorized using different modalities, including image, video, point cloud, and multi-modal data. Particularly, we identify scanning techniques as critical for adapting Mamba to vision tasks, and decouple these scanning techniques to clarify their functionality and enhance their flexibility across various applications. Finally, we discuss the challenges and future directions, providing insights into new outlooks in this fast evolving area. A comprehensive list of visual Mamba models reviewed in this work is available at https://github.com/Ruixxxx/Awesome-Vision-Mamba-Models.",
+    "source": "openalex",
+    "citation_count": 157,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2404.18861",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science"
+    ],
+    "score": 0.6957,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Hyperspectral Object Detection Based on Spatial–Spectral Fusion and Visual Mamba",
+    "authors": [
+      "Wenjun Li",
+      "Fuqiang Yuan",
+      "Hongkun Zhang",
+      "Zhiwen Lv",
+      "Beiqi Wu"
+    ],
+    "year": 2024,
+    "venue": "Remote Sensing",
+    "doi": "10.3390/rs16234482",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/rs16234482",
+    "abstract": "Hyperspectral object-detection algorithms based on deep learning have been receiving increasing attention due to their ability to operate without relying on prior spectral information about the target and their strong real-time inference performance. However, current methods are unable to efficiently extract both spatial and spectral information from hyperspectral image data simultaneously. In this study, an innovative hyperspectral object-detection algorithm is proposed that improves the detection accuracy compared to benchmark algorithms and state-of-the-art hyperspectral object-detection algorithms. Specifically, to achieve the integration of spectral and spatial information, we propose an innovative edge-preserving dimensionality reduction (EPDR) module. This module applies edge-preserving dimensionality reduction, based on spatial texture-weighted fusion, to the raw hyperspectral data, producing hyperspectral data that integrate both spectral and spatial information. Subsequently, to enhance the network’s perception of aggregated spatial and spectral data, we integrate a CNN with Visual Mamba to construct a spatial feature enhancement module (SFEM) with linear complexity. The experimental results demonstrate the effectiveness of our method.",
+    "source": "crossref",
+    "citation_count": 16,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2072-4292/16/23/4482/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6955,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "LKM-UNet: Large Kernel Vision Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Jinhong Wang",
+      "Jintai Chen",
+      "Danny Z. Chen",
+      "Jian Wu"
+    ],
+    "year": 2024,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-031-72111-3_34",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-72111-3_34",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 161,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.07332",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Kernel (algebra)",
+      "Computer vision",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Segmentation",
+      "Mathematics",
+      "Combinatorics"
+    ],
+    "score": 0.6894,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "AVS-Mamba: Exploring Temporal and Multi-modal Mamba for Audio-Visual Segmentation",
+    "authors": [
+      "Sitong Gong",
+      "Yunzhi Zhuge",
+      "Lu Zhang",
+      "Yifan Wang",
+      "Pingping Zhang",
+      "Lijun Wang",
+      "Huchuan Lu"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2501.07810v1",
+    "url": "http://arxiv.org/abs/2501.07810v1",
+    "abstract": "The essence of audio-visual segmentation (AVS) lies in locating and delineating sound-emitting objects within a video stream. While Transformer-based methods have shown promise, their handling of long-range dependencies struggles due to quadratic computational costs, presenting a bottleneck in complex scenarios. To overcome this limitation and facilitate complex multi-modal comprehension with linear complexity, we introduce AVS-Mamba, a selective state space model to address the AVS task. Our framework incorporates two key components for video understanding and cross-modal learning: Temporal Mamba Block for sequential video processing and Vision-to-Audio Fusion Block for advanced audio-vision integration. Building on this, we develop the Multi-scale Temporal Encoder, aimed at enhancing the learning of visual features across scales, facilitating the perception of intra- and inter-frame information. To perform multi-modal fusion, we propose the Modality Aggregation Decoder, leveraging the Vision-to-Audio Fusion Block to integrate visual features into audio features across both frame and temporal levels. Further, we adopt the Contextual Integration Pyramid to perform audio-to-vision spatial-temporal context collaboration. Through these innovative contributions, our approach achieves new state-of-the-art results on the AVSBench-object and AVSBench-semantic datasets. Our source code and model weights are available at AVS-Mamba.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2501.07810v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6779,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Mamba-Sea: A Mamba-Based Framework With Global-to-Local Sequence Augmentation for Generalizable Medical Image Segmentation",
+    "authors": [
+      "Zihan Cheng",
+      "Jintao Guo",
+      "Jian Zhang",
+      "Lei Qi",
+      "Luping Zhou",
+      "Yinghuan Shi",
+      "Yang Gao"
+    ],
+    "year": 2025,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2025.3564765",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2025.3564765",
+    "abstract": "To segment medical images with distribution shifts, domain generalization (DG) has emerged as a promising setting to train models on source domains that can generalize to unseen target domains. Existing DG methods are mainly based on CNN or ViT architectures. Recently, advanced state space models, represented by Mamba, have shown promising results in various supervised medical image segmentation. The success of Mamba is primarily owing to its ability to capture long-range dependencies while keeping linear complexity with input sequence length, making it a promising alternative to CNNs and ViTs. Inspired by the success, in the paper, we explore the potential of the Mamba architecture to address distribution shifts in DG for medical image segmentation. Specifically, we propose a novel Mamba-based framework, Mamba-Sea, incorporating global-to-local sequence augmentation to improve the model's generalizability under domain shift issues. Our Mamba-Sea introduces a global augmentation mechanism designed to simulate potential variations in appearance across different sites, aiming to suppress the model's learning of domain-specific information. At the local level, we propose a sequence-wise augmentation along input sequences, which perturbs the style of tokens within random continuous sub-sequences by modeling and resampling style statistics associated with domain shifts. To our best knowledge, Mamba-Sea is the first work to explore the generalization of Mamba for medical image segmentation, providing an advanced and promising Mamba-based architecture with strong robustness to domain shifts. Remarkably, our proposed method is the first to surpass a Dice coefficient of 90% on the Prostate dataset, which exceeds previous SOTA of 88.61%. The code is available at https://github.com/orange-czh/Mamba-Sea.",
+    "source": "openalex",
+    "citation_count": 44,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2504.17515",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Image segmentation",
+      "Medical imaging",
+      "Segmentation",
+      "Sequence (biology)"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.6733
+  },
+  {
+    "title": "MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation",
+    "authors": [
+      "Fuqiang Gu",
+      "Yuanke Li",
+      "Xianlei Long",
+      "Kangping Ji",
+      "Chao Chen",
+      "Qingyi Gu",
+      "Zhenliang Ni"
+    ],
+    "year": 2026,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "doi": "10.1609/aaai.v40i6.42427",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1609/aaai.v40i6.42427",
+    "abstract": "Semantic segmentation is a fundamental task in computer vision with wide-ranging applications, including autonomous driving and robotics. While RGB-based methods have achieved strong performance with CNNs and Transformers, their effectiveness degrades under fast motion, low-light, or high dynamic range conditions due to limitations of frame cameras. Event cameras offer complementary advantages such as high temporal resolution and low latency, yet lack color and texture, making them insufficient on their own. To address this, recent research has explored multimodal fusion of RGB and event data; however, many existing approaches are computationally expensive and focus primarily on spatial fusion, neglecting the temporal dynamics inherent in event streams. In this work, we propose MambaSeg, a novel dual-branch semantic segmentation framework that employs parallel Mamba encoders to efficiently model RGB images and event streams. To reduce cross-modal ambiguity, we introduce the Dual-Dimensional Interaction Module (DDIM), comprising a Cross-Spatial Interaction Module (CSIM) and a Cross-Temporal Interaction Module (CTIM), which jointly perform fine-grained fusion along both spatial and temporal dimensions. This design improves cross-modal alignment, reduces ambiguity, and leverages the complementary properties of each modality. Extensive experiments on the DDD17 and DSEC datasets demonstrate that MambaSeg achieves state-of-the-art segmentation performance while significantly reducing computational cost, showcasing its promise for efficient, scalable, and robust multimodal perception.",
+    "source": "openalex",
+    "citation_count": 3,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1609/aaai.v40i6.42427",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Encoder",
+      "Event (particle physics)",
+      "Focus (optics)",
+      "RGB color model",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex"
+    ],
+    "score": 0.6717
+  },
+  {
+    "title": "FSE-Mamba: A novel Frequency-Spatial Entanglement Mamba model for retinal vessel segmentation",
+    "authors": [
+      "Xutao Sun",
+      "Junwen Liu",
+      "Xiaolu Xu",
+      "Jingyi Zhou",
+      "Yonggong Ren"
+    ],
+    "year": 2025,
+    "venue": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2025.110776",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.compbiomed.2025.110776",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 6,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S0010482525011278?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6685,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mamba-UNet: UNet-Like Pure Visual Mamba for Medical Image Segmentation",
+    "authors": [
+      "Ziyang Wang",
+      "Jian-Qing Zheng",
+      "Yichi Zhang",
+      "Ge Cui",
+      "Lei Li"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2402.05079v2",
+    "url": "http://arxiv.org/abs/2402.05079v2",
+    "abstract": "In recent advancements in medical image analysis, Convolutional Neural Networks (CNN) and Vision Transformers (ViT) have set significant benchmarks. While the former excels in capturing local features through its convolution operations, the latter achieves remarkable global context understanding by leveraging self-attention mechanisms. However, both architectures exhibit limitations in efficiently modeling long-range dependencies within medical images, which is a critical aspect for precise segmentation. Inspired by the Mamba architecture, known for its proficiency in handling long sequences and global contextual information with enhanced computational efficiency as a State Space Model (SSM), we propose Mamba-UNet, a novel architecture that synergizes the U-Net in medical image segmentation with Mamba's capability. Mamba-UNet adopts a pure Visual Mamba (VMamba)-based encoder-decoder structure, infused with skip connections to preserve spatial information across different scales of the network. This design facilitates a comprehensive feature learning process, capturing intricate details and broader semantic contexts within medical images. We introduce a novel integration mechanism within the VMamba blocks to ensure seamless connectivity and information flow between the encoder and decoder paths, enhancing the segmentation performance. We conducted experiments on publicly available ACDC MRI Cardiac segmentation dataset, and Synapse CT Abdomen segmentation dataset. The results show that Mamba-UNet outperforms several types of UNet in medical image segmentation under the same hyper-parameter setting. The source code and baseline implementations are available.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2402.05079v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6679,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Mamba meets crack segmentation",
+    "authors": [
+      "Zhili He",
+      "Yu-Hsing Wang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2407.15714v1",
+    "url": "http://arxiv.org/abs/2407.15714v1",
+    "abstract": "Cracks pose safety risks to infrastructure and cannot be overlooked. The prevailing structures in existing crack segmentation networks predominantly consist of CNNs or Transformers. However, CNNs exhibit a deficiency in global modeling capability, hindering the representation to entire crack features. Transformers can capture long-range dependencies but suffer from high and quadratic complexity. Recently, Mamba has garnered extensive attention due to its linear spatial and computational complexity and its powerful global perception. This study explores the representation capabilities of Mamba to crack features. Specifically, this paper uncovers the connection between Mamba and the attention mechanism, providing a profound insight, an attention perspective, into interpreting Mamba and devising a novel Mamba module following the principles of attention blocks, namely CrackMamba. We compare CrackMamba with the most prominent visual Mamba modules, Vim and Vmamba, on two datasets comprising asphalt pavement and concrete pavement cracks, and steel cracks, respectively. The quantitative results show that CrackMamba stands out as the sole Mamba block consistently enhancing the baseline model's performance across all evaluation measures, while reducing its parameters and computational costs. Moreover, this paper substantiates that Mamba can achieve global receptive fields through both theoretical analysis and visual interpretability. The discoveries of this study offer a dual contribution. First, as a plug-and-play and simple yet effective Mamba module, CrackMamba exhibits immense potential for integration into various crack segmentation models. Second, the proposed innovative Mamba design concept, integrating Mamba with the attention mechanism, holds significant reference value for all Mamba-based computer vision models, not limited to crack segmentation networks, as investigated in this study.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2407.15714v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6679,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Interactive Segmentation for Medical Images Using Spatial Modeling Mamba",
+    "authors": [
+      "Yuxin Tang",
+      "Yu Li",
+      "Hua Zou",
+      "Xuedong Zhang"
+    ],
+    "year": 2024,
+    "venue": "Information",
+    "doi": "10.3390/info15100633",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/info15100633",
+    "abstract": "Interactive segmentation methods utilize user-provided positive and negative clicks to guide the model in accurately segmenting target objects. Compared to fully automatic medical image segmentation, these methods can achieve higher segmentation accuracy with limited image data, demonstrating significant potential in clinical applications. Typically, for each new click provided by the user, conventional interactive segmentation methods reprocess the entire network by re-inputting the click into the segmentation model, which greatly increases the user’s interaction burden and deviates from the intended goal of interactive segmentation tasks. To address this issue, we propose an efficient segmentation network, ESM-Net, for interactive medical image segmentation. It obtains high-quality segmentation masks based on the user’s initial clicks, reducing the complexity of subsequent refinement steps. Recent studies have demonstrated the strong performance of the Mamba model in various vision tasks; however, its application in interactive segmentation remains unexplored. In our study, we incorporate the Mamba module into our framework for the first time and enhance its spatial representation capabilities by developing a Spatial Augmented Convolution (SAC) module. These components are combined as the fundamental building blocks of our network. Furthermore, we designed a novel and efficient segmentation head to fuse multi-scale features extracted from the encoder, optimizing the generation of the predicted segmentation masks. Through comprehensive experiments, our method achieved state-of-the-art performance on three medical image datasets. Specifically, we achieved 1.43 NoC@90 on the Kvasir-SEG dataset, 1.57 NoC@90 on the CVC-ClinicDB polyp segmentation dataset, and 1.03 NoC@90 on the ADAM retinal disk segmentation dataset. The assessments on these three medical image datasets highlight the effectiveness of our approach in interactive medical image segmentation.",
+    "source": "crossref",
+    "citation_count": 6,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2078-2489/15/10/633/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6656,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "FMTNet: A Fourier‐Mamba–Transformer Enhanced Network for Medical Image Segmentation",
+    "authors": [
+      "Shaoqiang Wang",
+      "Guiling Shi",
+      "Yuanyuan Zhang",
+      "Sibo Qiao",
+      "Yue Wang",
+      "Yue Wang",
+      "Yawu Zhao",
+      "Xiaochun Cheng"
+    ],
+    "year": 2026,
+    "venue": "CAAI Transactions on Intelligence Technology",
+    "doi": "10.1049/cit2.70141",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/cit2.70141",
+    "abstract": "ABSTRACT Models based on U‐shaped networks have achieved widespread success in the field of medical image segmentation, but their performance is generally limited by structural bottlenecks in the network. At this stage, feature maps experience a sharp decline in spatial resolution due to continuous downsampling, resulting in significant loss of critical boundaries and structural details. Additionally, the local receptive fields of convolutions limit the effective modelling of global context. To address this core issue, we propose a novel enhanced segmentation network called FMTNet. FMTNet fundamentally enhances the expressive power of deep features by integrating an innovative composite enhancement module at the bottleneck of the U‐Net. This module consists of three synergistically working submodules: the Fourier spatial fusion module, which introduces a frequency‐domain perspective to compensate for and reconstruct high‐frequency structural information lost in the spatial domain; the hybrid mamba–transformer module, which efficiently captures cross‐regional long‐range dependencies to establish global context and the multi‐scale context Aggregation module, which fuses features of different scales to adapt to objects of varying sizes. We conducted extensive experiments on multiple public multi‐modal datasets, including colonoscopy polyps, dermatoscopy lesions, breast ultrasound and dental X‐rays. The results demonstrate that FMTNet comprehensively outperforms SOTA methods across all key metrics, showcasing exceptional segmentation accuracy and generalisation capabilities. Our research study demonstrates that by synergistically enhancing deep features across three dimensions—frequency, global, and multi‐scale—FMTNet provides a general and efficient solution to address the bottleneck issues of U‐Net, significantly enhancing the accuracy and robustness of medical image segmentation. The source code and pre‐trained weights are available at https://github.com/shiguiling0‐has/FMTNet .",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1049/cit2.70141",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Bottleneck",
+      "Segmentation",
+      "Robustness (evolution)",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Context (archaeology)",
+      "Boosting (machine learning)"
+    ],
+    "score": 0.662,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "CVMFusion: ConvNeXtV2 and Visual Mamba Fusion for Remote Sensing Segmentation",
+    "authors": [
+      "Zelin Wang",
+      "Li Qin",
+      "Cheng Xu",
+      "Dexi Liu",
+      "Zeyu Guo",
+      "Yu Hu",
+      "Tianyu Yang"
+    ],
+    "year": 2026,
+    "venue": "Sensors",
+    "doi": "10.3390/s26020640",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/s26020640",
+    "abstract": "In recent years, extracting coastlines from high-resolution remote sensing imagery has proven difficult due to complex details and variable targets. Current methods struggle with the fact that CNNs cannot model long-range dependencies, while Transformers incur high computational costs. To address these issues, we propose CVMFusion: a land–sea segmentation network based on a U-shaped encoder–decoder structure, whereby both the encoder and decoder are hierarchically organized. This architecture integrates the local feature extraction capabilities of CNNs with the global interaction efficiency of Mamba. The encoder uses parallel ConvNeXtV2 and VMamba branches to capture fine-grained details and long-range context, respectively. This network incorporates Dynamic Multi-Scale Attention (DyMSA) and Dynamic Weighted Cross-Attention (DyWCA) modules, which replace the traditional concatenation with an adaptive fusion mechanism to effectively fuse the features from the dual-branch encoder and utilize skip connections to complete the fusion between the encoder and decoder. Experiments on two public datasets demonstrate that CVMFusion attained MIoU accuracies of 98.05% and 96.28%, outperforming existing methods. It performs particularly well in segmenting small objects and intricate boundary regions.",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/1424-8220/26/2/640/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.657,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Automated Pneumothorax Segmentation with a Spatial Prior Contrast Adapter",
+    "authors": [
+      "Yiming Jia",
+      "Essam A. Rashed"
+    ],
+    "year": 2025,
+    "venue": "Applied Sciences",
+    "doi": "10.3390/app15126598",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/app15126598",
+    "abstract": "Pneumothorax is a critical condition that requires rapid and accurate diagnosis from standard chest radiographs. Identifying and segmenting the location of the pneumothorax are essential for developing an effective treatment plan. nnUNet is a self-configuring, deep learning-based framework for medical image segmentation. Despite adjusting its parameters automatically through data-driven optimization strategies and offering robust feature extraction and segmentation capabilities across diverse datasets, our initial experiments revealed that nnUNet alone struggled to achieve consistently accurate segmentation for pneumothorax, particularly in challenging scenarios where subtle intensity variations and anatomical noise obscure the target regions. This study aims to enhance the accuracy and robustness of pneumothorax segmentation in low-contrast chest radiographs by integrating spatial prior information and attention mechanism into the nnUNet framework. In this study, we introduce the spatial prior contrast adapter (SPCA)-enhanced nnUNet by implementing two modules. First, we integrate an SPCA utilizing the MedSAM foundation model to incorporate spatial prior information of the lung region, effectively guiding the segmentation network to focus on anatomically relevant areas. In the meantime, a probabilistic atlas, which shows the probability of an area prone to pneumothorax, is generated based on the ground truth masks. Both the lung segmentation results and the probabilistic atlas are used as attention maps in nnUNet. Second, we combine the two attention maps as additional input into nnUNet and integrate an attention mechanism into standard nnUNet by using a convolutional block attention module (CBAM). We validate our method by experimenting on the dataset CANDID-PTX, a benchmark dataset representing 19,237 chest radiographs. By introducing spatial awareness and intensity adjustments, the model reduces false positives and improves the precision of boundary delineations, ultimately overcoming many of the limitations associated with low-contrast radiographs. Compared with standard nnUNet, SPCA-enhanced nnUNet achieves an average Dice coefficient of 0.81, which indicates an improvement of standard nnUNet by 15%. This study provides a novel approach toward enhancing the segmentation performance of pneumothorax with low contrast in chest X-ray radiographs.",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2076-3417/15/12/6598/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.647,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "HLSM-UNet:Hybrid Local Spatial Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Xude Zhang",
+      "Xiaoping Wu",
+      "Changzhen Zhang",
+      "Yumin Tang",
+      "Dihong Luo",
+      "Houbing Tang"
+    ],
+    "year": 2024,
+    "venue": "2024 International Conference on Neuromorphic Computing (ICNC)",
+    "doi": "10.1109/icnc64304.2024.10987734",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icnc64304.2024.10987734",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/10985940/10987574/10987734.pdf?arnumber=10987734",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6299,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A Survey of Mamba",
+    "authors": [
+      "Haohao Qu",
+      "Liangbo Ning",
+      "Rui An",
+      "Wenqi Fan",
+      "Tyler Derr",
+      "Hui Liu",
+      "Xu Xin",
+      "Qing Li"
+    ],
+    "year": 2026,
+    "venue": "ACM Transactions on Intelligent Systems and Technology",
+    "doi": "10.1145/3819582",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3819582",
+    "abstract": "Deep learning (DL), as a vital technique, has sparked a notable revolution in AI, resulting in a great change in human lifestyles. As one of the most representative DL techniques, the Transformer architecture has empowered numerous advanced models, especially the large language models (LLMs) that comprise billions of parameters, becoming a cornerstone in deep learning. Despite the impressive achievements, Transformers still face inherent limitations, particularly the time-consuming inference resulting from the quadratic computation complexity of attention calculation. Recently, a novel architecture named Mamba , drawing inspiration from classical state space models (SSMs), has emerged as a promising alternative for building foundation models, delivering comparable modeling abilities to Transformers while preserving near-linear scalability concerning sequence length. This has sparked an increasing number of studies actively exploring Mamba’s potential to achieve impressive performance across diverse domains. Given such rapid evolution, there is a critical need for a systematic review that consolidates existing Mamba-empowered models, offering a comprehensive understanding of this emerging model architecture. In this survey, we therefore conduct an in-depth investigation of recent Mamba-associated studies, covering three main aspects: the advancements of Mamba-based models , the techniques of adapting Mamba to diverse data , and the applications where Mamba can excel . Specifically, we first review the foundational knowledge of various representative deep learning models and the details of Mamba-1&2 as preliminaries. Then, to showcase the significance of Mamba for AI, we comprehensively review the related studies focusing on Mamba models’ architecture design, data adaptability, and applications. Finally, we present a discussion of current limitations and explore various promising research directions to provide deeper insights for future investigations.",
+    "source": "openalex",
+    "citation_count": 127,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1145/3819582",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Architecture",
+      "Scalability",
+      "Deep learning",
+      "Transformer",
+      "Artificial intelligence",
+      "Inference",
+      "Data science"
+    ],
+    "score": 0.6286,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "UIS-Mamba: Exploring Mamba for Underwater Instance Segmentation via Dynamic Tree Scan and Hidden State Weaken",
+    "authors": [
+      "Runmin Cong",
+      "Zongji Yu",
+      "Hao Fang",
+      "Haoyan Sun",
+      "Sam Kwong"
+    ],
+    "year": 2025,
+    "venue": "ACM International Conference on Multimedia (ACM MM)",
+    "doi": "10.1145/3746027.3755131",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3746027.3755131",
+    "abstract": "Underwater Instance Segmentation (UIS) tasks are crucial for underwater complex scene detection. Mamba, as an emerging state space model with inherently linear complexity and global receptive fields, is highly suitable for processing image segmentation tasks with long sequence features. However, due to the particularity of underwater scenes, there are many challenges in applying Mamba to UIS. The existing fixed-patch scanning mechanism cannot maintain the internal continuity of scanned instances in the presence of severely underwater color distortion and blurred instance boundaries, and the hidden state of the complex underwater background can also inhibit the understanding of instance objects. In this work, we propose the first Mamba-based underwater instance segmentation model UIS-Mamba, and design two innovative modules, Dynamic Tree Scan (DTS) and Hidden State Weaken (HSW), to migrate Mamba to the underwater task. DTS module maintains the continuity of the internal features of the instance objects by allowing the patches to dynamically offset and scale, thereby guiding the minimum spanning tree and providing dynamic local receptive fields. HSW module suppresses the interference of complex backgrounds and effectively focuses the information flow of state propagation to the instances themselves through the Ncut-based hidden state weakening mechanism. Experimental results show that UIS-Mamba achieves state-of-the-art performance on both UIIS and USIS10K datasets, while maintaining a low number of parameters and computational complexity. Code is available at https://github.com/Maricalce/UIS-Mamba.",
+    "source": "openalex",
+    "citation_count": 14,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2508.00421",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Segmentation",
+      "Computer science",
+      "Computer vision",
+      "State (computer science)",
+      "Underwater",
+      "Tree (set theory)",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.6263,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Segment Anything Model Based Context Guided Mamba Unet for Medical Image Segmentation",
+    "authors": [
+      "Chenchen Wang"
+    ],
+    "year": 2026,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2610.40029",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2610.40029",
+    "abstract": "Medical image segmentation is crucial for clinical diagnosis and treatment planning, requiring both global contextual understanding and fine-grained structural precision. While the Segment Anything Model (SAM) demonstrates strong generalization capabilities, its direct application to medical images often lacks domain-specific adaptability. Meanwhile, State Space Models (SSMs)-based methods, such as Mamba, efficiently capture long-range dependencies but may struggle with preserving fine anatomical details. To address these challenges, we propose a segment anything model based context guided mamba unet, SAMBA-UNet, a novel framework that integrates SAM's context knowledge with Mamba's hierarchical feature learning to enhance both global representation and local detail refinement. Specifically, we introduce the Hierarchical Context Enhancement Module (HCEM), an attention-based fusion module that deeply incorporates the multi-level features of SAM and Mamba to improve detail perception and segmentation precision. Additionally, we employ LoRA and Adapter-based fine-tuning to adapt SAM to medical imaging tasks, further enhancing its domain-specific segmentation capability and robustness. We conducted a comprehensive study on several medical segmentation datasets, including Synapse, ISIC17, and ISIC18, evaluating our method across multiple metrics. Experimental results demonstrate that SAMBA-UNet achieves state-of-the-art performance, effectively balancing generalization, segmentation accuracy, and computational efficiency. Our code will be released upon acceptance.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2610.40029",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Artificial intelligence",
+      "Context (archaeology)",
+      "Representation (politics)",
+      "Image segmentation",
+      "Feature (linguistics)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.625,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Video Mamba Suite: State Space Model as a Versatile Alternative for Video Understanding",
+    "authors": [
+      "Guo Chen",
+      "Yifei Huang",
+      "Jilan Xu",
+      "Baoqi Pei",
+      "Jiahao Wang",
+      "Zhe Chen",
+      "Zhiqi Li",
+      "Tong Lu",
+      "Limin Wang"
+    ],
+    "year": 2025,
+    "venue": "International Journal of Computer Vision",
+    "doi": "10.1007/s11263-025-02597-y",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11263-025-02597-y",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 176,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.09626",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Suite",
+      "Transformer",
+      "Artificial intelligence",
+      "Video recording",
+      "Video processing",
+      "Real-time computing",
+      "Computer vision"
+    ],
+    "score": 0.6224,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Demystify Mamba in Vision: A Linear Attention Perspective",
+    "authors": [
+      "Dongchen Han",
+      "Ziyi Wang",
+      "Zhuofan Xia",
+      "Yizeng Han",
+      "Yifan Pu",
+      "Chunjiang Ge",
+      "Shiji Song",
+      "Shiji Song",
+      "Bo Zheng",
+      "Gao Huang"
+    ],
+    "year": 2024,
+    "venue": "neural information processing systems",
+    "doi": "10.52202/079017-4039",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.52202/079017-4039",
+    "abstract": "Mamba is an effective state space model with linear computation complexity. It has recently shown impressive efficiency in dealing with high-resolution inputs across various vision tasks. In this paper, we reveal that the powerful Mamba model shares surprising similarities with linear attention Transformer, which typically underperform conventional Transformer in practice. By exploring the similarities and disparities between the effective Mamba and subpar linear attention Transformer, we provide comprehensive analyses to demystify the key factors behind Mamba's success. Specifically, we reformulate the selective state space model and linear attention within a unified formulation, rephrasing Mamba as a variant of linear attention Transformer with six major distinctions: input gate, forget gate, shortcut, no attention normalization, single-head, and modified block design. For each design, we meticulously analyze its pros and cons, and empirically evaluate its impact on model performance in vision tasks. Interestingly, the results highlight the forget gate and block design as the core contributors to Mamba's success, while the other four designs are less crucial. Based on these findings, we propose a Mamba-Inspired Linear Attention (MILA) model by incorporating the merits of these two key designs into linear attention. The resulting model outperforms various vision Mamba models in both image classification and high-resolution dense prediction tasks, while enjoying parallelizable computation and fast inference speed. Code is available at https://github.com/LeapLabTHU/MLLA.",
+    "source": "openalex",
+    "citation_count": 187,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.16605",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Perspective (graphical)",
+      "Psychology",
+      "Epistemology",
+      "Cognitive psychology",
+      "Social psychology",
+      "Aesthetics",
+      "Action (physics)",
+      "Computer science"
+    ],
+    "score": 0.6215,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "DST-Mamba: Spatial–Temporal Adapter with Boundary-Aware Mamba for Video Temporal Action Detection",
+    "authors": [
+      "Yicheng Qiu",
+      "Keiji Yanai"
+    ],
+    "year": 2026,
+    "venue": "Big Data and Cognitive Computing",
+    "doi": "10.3390/bdcc10070231",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/bdcc10070231",
+    "abstract": "Temporal Action Detection (TAD) localizes and classifies action instances within long videos and underlies many downstream video understanding applications. Transformer-based detectors scale poorly to long sequences due to quadratic self-attention, while existing SSM-based variants tend to dilute fine-grained boundary cues during global modeling. To address these limitations, we propose DST-Mamba, a Decoupled Spatial–Temporal Mamba Adapter inserted into a frozen video backbone for parameter-efficient end-to-end TAD. DST-Mamba decouples spatial and temporal modeling into two cooperating branches and explicitly fuses them through cross-branch interaction. Within the temporal branch, we introduce a Temporal Boundary-aware SSM (TB-SSM) with direction-specific forward/backward state-transition matrices, providing a stronger inductive bias for asymmetric action boundaries. Across multiple benchmarks, DST-Mamba consistently outperforms competitive Transformer- and SSM-based baselines while being more computationally efficient.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2504-2289/10/7/231/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.62,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A comprehensive analysis of Mamba for 3D volumetric medical image segmentation",
+    "authors": [
+      "Chaohan Wang",
+      "Yutong Xie",
+      "Qi Chen",
+      "Yuyin Zhou",
+      "Qi Wu"
+    ],
+    "year": 2025,
+    "venue": "Pattern Recognition",
+    "doi": "10.1016/j.patcog.2025.112701",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.patcog.2025.112701",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 14,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2503.19308",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Boosting (machine learning)",
+      "Benchmark (surveying)",
+      "Image segmentation",
+      "Block (permutation group theory)",
+      "Computer vision"
+    ],
+    "score": 0.6192,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Efficient Medical Image Segmentation in Multisensor Imaging: A Survey in the Era of Mamba and Foundation Models",
+    "authors": [
+      "Xiu Shu",
+      "Youqiang Xiong",
+      "Zhangli Ma",
+      "Xinming Zhang",
+      "Di Yuan"
+    ],
+    "year": 2026,
+    "venue": "Sensors",
+    "doi": "10.3390/s26082558",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/s26082558",
+    "abstract": "Deep learning has revolutionized medical image segmentation; however, the clinical deployment of state-of-the-art models is severely impeded by their quadratic computational complexity and substantial resource demands, particularly in multisensor and multimodal imaging scenarios. In response, the field is undergoing a paradigm shift towards efficiency, characterized by the rise of linear-complexity architectures and the optimization of foundation models. This paper presents a comprehensive survey of efficient medical image segmentation methodologies, systematically reviewing the evolution from heavy, accuracy-driven models to lightweight, deployment-ready paradigms. In particular, we highlight the growing importance of efficient segmentation in multisensor medical imaging, where heterogeneous data sources such as CT, MRI, ultrasound, and infrared imaging introduce additional challenges in scalability and computational cost. We propose a novel taxonomy that categorizes these advancements into four distinct streams: (1) Mamba and State Space Models, which leverage selective scanning mechanisms to achieve global receptive fields with linear complexity; (2) Efficient Adaptation of Foundation Models, focusing on parameter-efficient fine-tuning and knowledge distillation to tailor the Segment Anything Model (SAM) for medical domains; (3) Advanced Lightweight Architectures, covering the resurgence of large-kernel CNNs and the emergence of Kolmogorov-Arnold Networks (KANs); and (4) Data-Efficient Strategies, including semi-supervised and federated learning to address annotation scarcity. Furthermore, we conduct a rigorous comparative analysis of representative algorithms on mainstream benchmarks, providing a granular evaluation of the trade-offs between segmentation accuracy and computational overhead. The survey also discusses key challenges in multisensor and multimodal settings, including modality heterogeneity, data fusion complexity, and resource constraints. Finally, we identify critical challenges and outline future research directions, serving as a roadmap for the development of next-generation efficient and scalable medical image analysis systems.",
+    "source": "openalex",
+    "citation_count": 8,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.3390/s26082558",
+    "publication_type": "review",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Leverage (statistics)",
+      "Machine learning",
+      "Image segmentation",
+      "Field (mathematics)",
+      "Biometrics"
+    ],
+    "score": 0.6191,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "3D Abdominal Multi-Organ Segmentation Based on Mamba and Channel-Spatial Cross Attention",
+    "authors": [
+      "Yazhu Shi",
+      "Jing Zhou"
+    ],
+    "year": 2024,
+    "venue": "2024 7th International Conference on Pattern Recognition and Artificial Intelligence (PRAI)",
+    "doi": "10.1109/prai62207.2024.10827623",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/prai62207.2024.10827623",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/10826573/10826588/10827623.pdf?arnumber=10827623",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6162,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "PF-Mamba-UNet: An Anatomical-Prior-Guided Medical Image Segmentation Network Based on Mamba and Spatial-Channel Collaborative Attention Fusion",
+    "authors": [
+      "Leyi Xiao",
+      "Kangshun Liao",
+      "Baoxian Zhou",
+      "Chaodong Fan"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7553347",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7553347",
+    "abstract": "Medical image segmentation plays a pivotal role in clinical diagnosis assistance, lesion detection, and computer-aided medicine. However, factors such as complex organ boundary morphologies, multi-scale structural variations, and low contrast continue to pose challenges for accurate segmentation. To address this, this paper proposes an efficient segmentation network based on the fusion of anatomical prior and features—Anatomical-prior-guided Fusion Mamba-UNet (PF-Mamba-UNet). Firstly, the CR-VSS module is designed. Within the VSS module, a convolutional refinement branch is constructed to enhance local detail modeling. An integrated CSS2D module enables multi-directional scanning along horizontal, vertical, diagonal, and anti-diagonal paths, boosting the model&apos;s multi-directional perception and feature capture capabilities for complex geometries. Secondly, the Coordinated Spatial-Channel Fusion Attention (CSCFA) module is designed and embedded in the skip-connection layers of the encoder and decoder. Through a spatial-first mechanism, it synergistically enhances spatial and channel features, thereby highlighting critical anatomical regions while suppressing redundant background noise. Finally, an anatomical prior regularization is constructed to balance boundary smoothing and regional consistency. The former ensures continuity and smoothness of segmentation edges, while the latter guarantees structural consistency within regions. Collectively, they ensure the anatomical plausibility and structural continuity of segmentation results. Medical image segmentation results demonstrate that PF-Mamba-UNet exhibits significant performance advantages over mainstream models including U-Net, SwinUNet, Mamba-UNet, Mamba-Sea, KM-Unet and CSWin-Unet.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SILVA-Mamba: Spatial Integrity for Landslide Segmentation via Vectorized Hilbert Scanning and Adaptive Mamba",
+    "authors": [
+      "Yi-Tang Hsieh",
+      "Jun-Wei Hsieh",
+      "Chih-Chung Hsu",
+      "Xin Li",
+      "Ming-Ching Chang"
+    ],
+    "year": 2026,
+    "venue": "2026 IEEE International Conference on Image Processing (ICIP)",
+    "doi": "10.1109/icip61757.2026.11630416",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icip61757.2026.11630416",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11629556/11629860/11630416.pdf?arnumber=11630416",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "CS-MUNet: A Channel-Spatial Dual-Stream Mamba Network for Multi-Organ Segmentation",
+    "authors": [
+      "Yuyang Zheng",
+      "Mingda Zhang",
+      "Jianglong Qin",
+      "Qi Mo",
+      "Jingdan Pan",
+      "Haozhe Hu",
+      "Hongyi Huang"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.6508553",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.6508553",
+    "abstract": "Recently Mamba-based methods have shown promise in abdominal organ segmentation.However, existing approaches neglect cross-channel anatomical semantic collaboration and lack explicit boundary-aware feature fusion mechanisms.To address these limitations, we propose CS-MUNet with two purpose-built modules. The Boundary-Aware State Mamba module employs a Bayesian-attention framework to generate pixel-level boundary posterior maps, injected directly into Mamba&apos;s core scan parameters to embed boundary awareness into the SSM state transition mechanism, while dual-branch weight allocation enables complementary modulation between global and local structural representations.The Channel Mamba State Aggregation module redefines the channel dimension as the SSM sequence dimension to explicitly model cross-channel anatomical semantic collaboration in a data-driven manner. Experiments on two public benchmarks demonstrate that CS-MUNet consistently outperforms state-of-the-art methods across multiple metrics, establishing a new SSM modeling paradigm that jointly addresses channel semantic collaboration and boundary-aware feature fusion for abdominal multi-organ segmentation.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.researchsquare.com/article/rs-9339303/v1",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.6129
+  },
+  {
+    "title": "SFMamba3D: A Spatial-Frequency Dual-Branch Mamba Network for 3D Medical Image Segmentation",
+    "authors": [
+      "Chenyu Li",
+      "Xingchun Ru"
+    ],
+    "year": 2026,
+    "venue": "2026 Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR)",
+    "doi": "10.1109/cvippr69607.2026.11604503",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvippr69607.2026.11604503",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11604031/11604489/11604503.pdf?arnumber=11604503",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "DM-UNet: Enhancing Spatial Awareness via Dynamic Mamba for Lightweight Brain Tumor Segmentation",
+    "authors": [
+      "Chengcheng Jin",
+      "Nor Safira Elaina Mohd Noor",
+      "Haidi Ibrahim"
+    ],
+    "year": 2026,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2026.3699348",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2026.3699348",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/6287639/11323511/11544093.pdf?arnumber=11544093",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A Spatial-Frequency Fusion and Mamba for Real-Time Semantic Segmentation",
+    "authors": [
+      "Jianjun Jiao",
+      "Yi Xie",
+      "He Zhang",
+      "Yixiao Lin"
+    ],
+    "year": 2026,
+    "venue": "2026 3rd International Conference on Image Processing and Artificial Intelligence (ICIPAI)",
+    "doi": "10.1109/icipai70034.2026.11605479",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icipai70034.2026.11605479",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11605411/11605435/11605479.pdf?arnumber=11605479",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "BMC-Mamba: Bi-Stream Multi-Representation Cross-Mamba with Boundary-Guided Refinement for Temporal Action Segmentation",
+    "authors": [
+      "Yujie Song",
+      "Chenglong Wang"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7556855",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7556855",
+    "abstract": "Temporal action segmentation (TAS) requires frame-wise recognition of long untrimmed videos while preserving coherent action segments and accurate temporal boundaries. Most TAS pipelines operate on a single pre-extracted representation, although frame-level appearance features and clip-level spatiotemporal features provide complementary cues whose usefulness can vary over time. We propose BMC-Mamba, a bi-stream temporal segmentation framework that jointly models DINOv2 appearance representations and VideoMAE spatiotemporal representations. The two streams are projected into a common latent space and processed by stacked CMMamba blocks that combine global bidirectional Mamba modeling, local temporal convolution, sparse bidirectional Mamba modeling, directional cross-stream gates, and inter-layer fused-state propagation. The final streams are combined by entropy-guided adaptive fusion, followed by explicit action-boundary estimation and three stages of boundary-guided prediction refinement. Under a fixed 60-epoch four-split GTEA protocol, BMC-Mamba obtains segmental F1 scores of 92.6, 91.7, and 84.8 at IoU thresholds of 0.10, 0.25, and 0.50, respectively, together with 88.8 Edit and 81.4 frame accuracy. Under the same training and inference protocol, early concatenation and fixed mean fusion obtain 82.3 and 82.9 F1@50, while controlled component ablations support the roles of boundary guidance and multi-stage refinement. These results support structured interaction and adaptive weighting of heterogeneous visual representations for TAS.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "DAP-Mamba: Dynamic Anchor Prompting with Bi-Phasic Mamba for Referring Video Object Segmentation",
+    "authors": [
+      "Wei He",
+      "Jiaqing Fan",
+      "Zhengtong Zhu",
+      "Fanzhang Li"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7549571",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7549571",
+    "abstract": "Existing two-stage referring video object segmentation (RVOS) methods are prone to semantic hijacking, mainly due to inadequate sampling strategies and isolated feature extraction. As linguistic priors dominate visual evidence, local distractors can override the target identity and cause persistent drift during mask propagation. To address this, we propose DAP-Mamba (Dynamic Anchor Prompting with Bi-Phasic Mamba), a spatiotemporal synergistic framework for RVOS. Specifically, we first introduce Dynamic High-Fidelity Anchor Sampling, which adaptively selects reliable anchor frames via macro-temporal windowing and joint multimodal scoring. Furthermore, we develop a Bi-Phasic Mamba Synergy mechanism for robust spatiotemporal modeling. To prevent feature homogenization in long-sequence modeling, we decouple the feature space into a macro-temporal phase for global trajectory tracking and a micro-motion phase for short-term motion modeling. Additionally, Trajectory-Aware Gated Prompting is developed to refine anchor features using global video priors and trajectory-aware positional encodings to facilitate cross-frame interaction, producing reliable prompts that reduce semantic ambiguity and mitigate error propagation. Extensive experiments across five benchmarks demonstrate the effectiveness of DAP-Mamba and the proposed modules, showing strong performance in scenarios with complex motion and multiple similar objects. The code is available in https://github.com/1vue/DAP-Mamba.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Spatial Prompt and Wavelet Mamba-Based Multi-Scale Cross-Domain Feature Fusion Network for Segmentation of Mining-Disturbed Land",
+    "authors": [
+      "Jianing Song",
+      "Jiangyuan Wang",
+      "Yanyan Qin",
+      "Zhe Liu",
+      "Jian Feng",
+      "Xianju Li"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.20944/preprints202607.0597.v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.20944/preprints202607.0597.v1",
+    "abstract": "Segmentation of mining-disturbed land is of great significance for eco-geological environment monitoring. Although existing methods possess strong segmentation capabilities, mining-land exhibits irregular edges, different spatial size, and global texture variability, which lead to difficulties in extracting discriminative features, thereby limiting the accuracy performance. This study first built an RGB-based binary semantic segmentation dataset, covering typical mining-lands in Fujian Province of China. Then a spatial prompt and wavelet Mamba-based multi-scale cross-domain feature fusion network (SWDF-Net) was proposed. (1) Wavelet Mamba-based dual-frequency collaborative enhancement module: high-low frequency information was decoupled by wavelet transform, and further collaboratively enhanced by fusion of multiple local details and Mamba-guided global information. It can highlight mining-lands&#039; high-frequency edge features and low-frequency texture patterns. (2) Cross-domain feature alignment and fusion module: cross-domain statistical calibration and channel conditional modulation were used to narrow spatial-frequency feature distribution gap, which facilitates cross-domain feature alignment and effective fusion. (3) Spatial prompt-based multi-scale feature weighted fusion module: pixel-level weight maps were generated by spatial prior prompt that derived from a spatial decoder and edge gate-based branch, which adaptively fuses former multi-scale dual-domain features. The SWDF-Net achieved best Intersection over Union of 72.22% for mining-land and performed competitively on the ISPRS Vaihingen dataset.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SF-Mamba: Rethinking State Space Model for Vision",
+    "authors": [
+      "Masakazu Yoshimura",
+      "Teruaki Hayashi",
+      "Yuki Hoshino",
+      "Wei-Yao Wang",
+      "Takeshi Ohashi"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2603.16423v2",
+    "url": "http://arxiv.org/abs/2603.16423v2",
+    "abstract": "Visual Mamba models have recently emerged as alternatives to Vision Transformers (ViTs), which suffer from quadratic complexity. While the recurrent scanning mechanism of Mamba offers computational efficiency, it inherently limits non-causal interactions between image patches. Prior works have attempted to address this limitation through various multi-scan strategies; however, these approaches suffer from inefficiencies due to suboptimal scan designs and frequent data rearrangement. Moreover, Mamba exhibits relatively slow computational speed under short token lengths, commonly used in visual tasks. In pursuit of a truly efficient vision encoder, we rethink the scan operation for vision and the computational efficiency of Mamba. To this end, we propose SF-Mamba, a novel visual Mamba with two key proposals: auxiliary patch \\textbf{swapping} for encoding bidirectional information flow under an unidirectional scan and batch \\textbf{folding} with periodic state reset for advanced GPU parallelism. Extensive experiments on image classification, object detection, and instance and semantic segmentation consistently demonstrate that our proposed SF-Mamba significantly outperforms state-of-the-art baselines while improving throughput across different model sizes. The source code is available at: https://github.com/sony/SF-Mamba.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2603.16423v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "SFF-Mamba: Spatial–Frequency Fusion with Mamba for 3D Brain Tumor Segmentation",
+    "authors": [
+      "Quanzong Xu",
+      "Kaizhi Chen",
+      "Zuoyong Li",
+      "Haiping Xu"
+    ],
+    "year": 2025,
+    "venue": "2025 2nd International Conference on Image Processing, Multimedia Technology and Machine Learning (IPMML)",
+    "doi": "10.1109/ipmml68499.2025.11407373",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ipmml68499.2025.11407373",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11406210/11406903/11407373.pdf?arnumber=11407373",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6029,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "AS-Mamba: Multimodal Semantic Segmentation via Mamba with Asymmetric Cross and Spatial Perception",
+    "authors": [
+      "Guohao Shen",
+      "Hongzhao Li",
+      "Hao Yang",
+      "Xianglong Shen",
+      "Jingya Dong",
+      "Shupan Li"
+    ],
+    "year": 2025,
+    "venue": "2025 IEEE 31th International Conference on Parallel and Distributed Systems (ICPADS)",
+    "doi": "10.1109/icpads67057.2025.11323107",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icpads67057.2025.11323107",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11322805/11322871/11323107.pdf?arnumber=11323107",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6029,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "LMVMamba: A Hybrid U-Shape Mamba for Remote Sensing Segmentation with Adaptation Fine-Tuning",
+    "authors": [
+      "Fan Li",
+      "Xiao Wang",
+      "Haochen Wang",
+      "Hamed Karimian",
+      "Juan Shi",
+      "Guozhen Zha"
+    ],
+    "year": 2025,
+    "venue": "Remote Sensing",
+    "doi": "10.3390/rs17193367",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/rs17193367",
+    "abstract": "High-precision semantic segmentation of remote sensing imagery is crucial in geospatial analysis. It plays an immeasurable role in fields such as urban governance, environmental monitoring, and natural resource management. However, when confronted with complex objects (such as winding roads and dispersed buildings), existing semantic segmentation methods still suffer from inadequate target recognition capabilities and multi-scale representation issues. This paper proposes a neural network model, LMVMamba (LoRA Multi-scale Vision Mamba), for semantic segmentation of remote sensing images. This model integrates the advantages of convolutional neural networks (CNNs), Transformers, and state-space models (Mamba) with a multi-scale feature fusion strategy. It simultaneously captures global contextual information and fine-grained local features. Specifically, in the encoder stage, the ResT Transformer serves as the backbone network, employing a LoRA fine-tuning strategy to effectively enhance model accuracy by training only the introduced low-rank matrix pairs. The extracted features are then passed to the decoder, where a U-shaped Mamba decoder is designed. In this stage, a Multi-Scale Post-processing Block (MPB) is introduced, consisting of depthwise separable convolutions and residual concatenation. This block effectively extracts multi-scale features and enhances local detail extraction after the VSS block. Additionally, a Local Enhancement and Fusion Attention Module (LAS) is added at the end of each decoder block. LAS integrates the SimAM attention mechanism, further enhancing the model’s multi-scale feature fusion capability and local detail segmentation capability. Through extensive comparative experiments, it was found that LMVMamba achieves superior performance on the OpenEarthMap dataset (mIoU 52.3%, OA 69.8%, mF1: 68.0%) and LoveDA (mIoU 67.9%, OA 80.3%, mF1: 80.5%) datasets. Ablation experiments validated the effectiveness of each module. The final results indicate that this model is highly suitable for high-precision land-cover classification tasks in remote sensing imagery. LMVMamba provides an effective solution for precise semantic segmentation of high-resolution remote sensing imagery.",
+    "source": "openalex",
+    "citation_count": 6,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2072-4292/17/19/3367/pdf?version=1759660738",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Encoder",
+      "Convolutional neural network",
+      "Block (permutation group theory)",
+      "Remote sensing",
+      "Computer vision"
+    ],
+    "score": 0.6006,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "A parallel UNet integrating KAN and mamba for medical image segmentation",
+    "authors": [
+      "Jiayi Liu",
+      "Jiabao Wu",
+      "Liming Xu",
+      "Wenxu Shi",
+      "Bochuan Zheng"
+    ],
+    "year": 2026,
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-026-43127-1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41598-026-43127-1",
+    "abstract": "Medical image segmentation is fundamental for delineating lesion and organ boundaries in clinical workflows. While UNet-based models remain widely used, CNN-dominant designs are limited in modeling long-range context, and Transformer-based variants often introduce substantial computational overhead due to quadratic attention. To address this issue, we propose KMP-UNet, a parallel U-shaped framework that combines a Mamba-based state-space branch for linear-complexity contextual modeling and a Kolmogorov-Arnold Network (KAN) branch for nonlinear feature representation. We further introduce a task-oriented fusion block and a skip refinement module to better exploit hierarchical encoder-decoder features. KMP-UNet has a compact model size (about 1.0M parameters in our implementation). We evaluate the proposed method on four public datasets (ISIC2017, ISIC2018, CVC-ClinicDB, and BUSI) using standard segmentation metrics. On ISIC2018, KMP-UNet achieves 0.9038 DSC and 0.9600 accuracy under our protocol. Extensive comparisons and targeted ablations are conducted to analyze the contribution of each component.",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1038/s41598-026-43127-1",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Block (permutation group theory)",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Exploit",
+      "Pattern recognition (psychology)",
+      "Overhead (engineering)"
+    ],
+    "score": 0.5993,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Mamba Guided Boundary Prior Matters: A New Perspective for Generalized Polyp Segmentation",
+    "authors": [
+      "Tapas K. Dutta",
+      "Snehashis Majhi",
+      "Deepak Ranjan Nayak",
+      "Debesh Jha"
+    ],
+    "year": 2025,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-032-05141-7_37",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-032-05141-7_37",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 7,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2507.01509",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Perspective (graphical)",
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Boundary (topology)",
+      "Computer vision",
+      "Image segmentation",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.598,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SRMA-Mamba: Spatial Reverse Mamba Attention Network for Pathological Liver Segmentation in MRI Volumes",
+    "authors": [
+      "Jun Zeng",
+      "Quoc-Huy Trinh",
+      "Deepak Ranjan Nayak",
+      "Nikhil Kumar Tomar",
+      "Ulas Bagci",
+      "Debesh Jha"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2508.12410v3",
+    "url": "http://arxiv.org/abs/2508.12410v3",
+    "abstract": "Liver cirrhosis plays a critical role in the prognosis of chronic liver disease. Early detection and timely intervention are essential for reducing mortality rates. However, the intricate anatomical architecture and diverse pathological changes of liver tissue complicate the accurate detection and characterization of pathological liver structures in clinical settings. Existing methods underutilize spatial anatomical details in volumetric MRI data, thereby hindering their clinical effectiveness and explainability. To address this challenge, we introduce a novel Mamba-based network, SRMA-Mamba, designed to model the spatial relationships within complex anatomical structures of MRI volumes. By integrating the Spatial Anatomy-Based Mamba module (SABMamba), SRMA-Mamba performs selective Mamba scans within pathological liver tissues and combines anatomical information from the sagittal, coronal, and axial planes to construct a global spatial context representation, enabling efficient volumetric segmentation of pathological liver structures. Furthermore, we introduce the Spatial Reverse Mamba Attention module (SRMA), designed to progressively refine boundary details in the segmentation map, utilizing both the coarse segmentation map and hierarchical encoding features. Extensive experiments demonstrate that SRMA-Mamba surpasses state-of-the-art methods, delivering exceptional performance in 3D pathological liver segmentation. The source code is available at https://github.com/JunZengz/SRMA-Mamba.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2508.12410v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5979,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Research on breast tumor segmentation based on the Mamba architecture",
+    "authors": [
+      "Weihao Wei",
+      "Jiacheng Wu",
+      "Guangming Shao"
+    ],
+    "year": 2025,
+    "venue": "Frontiers in Oncology",
+    "doi": "10.3389/fonc.2025.1672274",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3389/fonc.2025.1672274",
+    "abstract": "Medical image segmentation is fundamental for disease diagnosis, particularly in the context of breast cancer, a prevalent malignancy affecting women. The accuracy of lesion localization and preservation of image details are essential for ensuring the integrity of lesion segmentation. However, the low resolution of breast tumor B-mode ultrasound images poses challenges in precisely identifying lesion sites. To address this issue, this study introduces the Mamba architecture model, which combines three foundational models with the long-sequence processing model Mamba to develop a novel segmentation model for breast tumor ultrasound images. The selective mechanism and hardware-aware algorithm of the Mamba model enable longer sequence inputs and faster computing speeds. Moreover, integrating a complete chain of VMamba blocks into the basic model enhances segmentation accuracy and image detail processing capabilities. Experimental segmentation was performed on two benchmark ultrasound datasets (BUSI and BUS-BRA) using both the baseline and improved models. The results were compared using metrics such as Dice and IoU, with additional evaluations conducted under small-sample training conditions. This study is intended to provide guidance for the future development of medical image segmentation. Moreover, the experimental results demonstrate that the model incorporating the Mamba architecture achieves superior performance on breast ultrasound images.",
+    "source": "openalex",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "https://public-pages-files-2025.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1672274/pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Context (archaeology)",
+      "Benchmark (surveying)",
+      "Breast ultrasound",
+      "Image segmentation",
+      "Computer vision"
+    ],
+    "score": 0.5954,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Lightweight Foreground Segmentation with the Visual Mamba Model",
+    "authors": [
+      "Xuan Qi",
+      "Yuanlin Jiang"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the 2024 International Conference on Image Processing, Intelligent Control and Computer Engineering",
+    "doi": "10.1145/3691016.3691045",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3691016.3691045",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://dl.acm.org/doi/10.1145/3691016.3691045",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Vision Mamba: Efficient Visual Representation Learning with Bidirectional State Space Model",
+    "authors": [
+      "Lianghui Zhu",
+      "Bencheng Liao",
+      "Qian Zhang",
+      "Xinlong Wang",
+      "Wenyu Liu",
+      "Xinggang Wang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2401.09417v3",
+    "url": "http://arxiv.org/abs/2401.09417v3",
+    "abstract": "Recently the state space models (SSMs) with efficient hardware-aware designs, i.e., the Mamba deep learning model, have shown great potential for long sequence modeling. Meanwhile building efficient and generic vision backbones purely upon SSMs is an appealing direction. However, representing visual data is challenging for SSMs due to the position-sensitivity of visual data and the requirement of global context for visual understanding. In this paper, we show that the reliance on self-attention for visual representation learning is not necessary and propose a new generic vision backbone with bidirectional Mamba blocks (Vim), which marks the image sequences with position embeddings and compresses the visual representation with bidirectional state space models. On ImageNet classification, COCO object detection, and ADE20k semantic segmentation tasks, Vim achieves higher performance compared to well-established vision transformers like DeiT, while also demonstrating significantly improved computation & memory efficiency. For example, Vim is 2.8$\\times$ faster than DeiT and saves 86.8% GPU memory when performing batch inference to extract features on images with a resolution of 1248$\\times$1248. The results demonstrate that Vim is capable of overcoming the computation & memory constraints on performing Transformer-style understanding for high-resolution images and it has great potential to be the next-generation backbone for vision foundation models. Code is available at https://github.com/hustvl/Vim.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2401.09417v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5879,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "SAM-FireAdapter: An adapter for fire segmentation with SAM",
+    "authors": [
+      "Yanan Wu",
+      "Chaoqun Hong",
+      "Yongfeng Chen",
+      "Haixi Cheng"
+    ],
+    "year": 2026,
+    "venue": "Journal of Visual Communication and Image Representation",
+    "doi": "10.1016/j.jvcir.2025.104678",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.jvcir.2025.104678",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S1047320325002925?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5871,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mamba-based brain tumor segmentation of incomplete multi-modal MR images",
+    "authors": [
+      "Changyong Liu",
+      "Xiao-Long Li",
+      "Daqiang Xu",
+      "Haosen Wang",
+      "Jianxin Jiang"
+    ],
+    "year": 2026,
+    "venue": "Quantitative Imaging in Medicine and Surgery",
+    "doi": "10.21037/qims-2025-1913",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21037/qims-2025-1913",
+    "abstract": "Background: Deep learning excels at multi-modal medical image segmentation, but its performance often drops with incomplete modalities, a frequent challenge in clinical settings. Accurate brain tumor segmentation from magnetic resonance imaging (MRI) scans is vital for diagnosis, treatment planning, and therapy assessment, yet, incomplete MRI data are common due to various clinical factors. The aim of this study is to improve brain tumor segmentation of incomplete MRI data. Methods: To tackle this, we introduce a novel Mamba fusion (MF) network specifically designed to maintain segmentation performance even when MRI modalities are absent or incomplete. Our network utilizes multi-modal encoders to extract features from all available modalities. We have developed cross-level MF blocks that leverage a contextual learning mechanism to capture global features from low-level data. Additionally, a cross-level uncertainty (CU) constraint is applied to each class of the final predicted tumor, enhancing reliability. Results: Extensive experiments on the BraTS2018 and BraTS2020 datasets demonstrate that our method consistently outperforms existing state-of-the-art techniques across various incomplete multi-modal settings, and improves mean dice similarity coefficient (DSC) by about one point over the strongest baseline across whole tumor (WT)/tumor core (TC)/enhancing tumor (ET) on both datasets. Conclusions: The proposed method allows to foster the learning of absent modality features, leading to a more comprehensive representation of multi-modal magnetic resonance (MR) images for tumor segmentation, mitigating the challenges associated with feature incompleteness due to absent modalities and enhancing the model's capability to navigate these complex situations.",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.21037/qims-2025-1913",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Modality (human–computer interaction)",
+      "Feature (linguistics)",
+      "Magnetic resonance imaging",
+      "Artificial intelligence",
+      "Modalities",
+      "Representation (politics)"
+    ],
+    "score": 0.5684,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "FEAST-Mamba: FEAture and SpaTial Aware Mamba Network with Bidirectional Orthogonal Fusion for Cross-Modal Point Cloud Segmentation",
+    "authors": [
+      "Chade Li",
+      "Pengju Zhang",
+      "Bo Liu",
+      "Hao Wei",
+      "Yihong Wu"
+    ],
+    "year": 2025,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "doi": "10.1609/aaai.v39i5.32489",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1609/aaai.v39i5.32489",
+    "abstract": "Point cloud segmentation has a wide range of applications in autonomous driving, augmented reality and virtual reality. Multi-modal fusion strategies have received increasing attention in point cloud segmentation recently. Despite the success, existing methods usually generate unnecessary information loss or redundancy. In this paper, we propose FEAST-Mamba, a novel FEAture and SpaTial aware Mamba network to tackle multi-modal point cloud segmentation. To exploit the complementarity between different modals, we propose a bidirectional orthogonal attention module, where features are first bidirectionally interacted with each other through cross-modal attention, and then orthogonal fusion is used to reduce feature redundancy. Furthermore, a reordering strategy is proposed for the Mamba architecture that takes into account both spatial and semantic information during cross-modal feature ordering. Experiments on indoor datasets, S3DIS and ScanNet, and outdoor datasets, nuScenes and SemanticKITTI, show that the proposed method achieves state-of-the-art performances.",
+    "source": "crossref",
+    "citation_count": 4,
+    "is_open_access": false,
+    "open_access_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32489/34644",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5643,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Explainable Segmentation-Guided Mamba-Transformer Framework for Automated Cardiovascular Disease Detection",
+    "authors": [
+      "Ghada Emam Atteia",
+      "Abdulaziz Altamimi",
+      "Nihal Esam Abuzinadah",
+      "Khaled Alnowaiser",
+      "Muhammad Umer",
+      "Yunyoung Nam",
+      "Yongwon Cho"
+    ],
+    "year": 2026,
+    "venue": "Computer Modeling in Engineering & Sciences",
+    "doi": "10.32604/cmes.2026.078510",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.32604/cmes.2026.078510",
+    "abstract": "Cardiovascular diseases (CVD) remain the leading cause of global mortality, making early and accurate diagnosis essential for improving patient outcomes. However, most existing deep learning approaches address cardiac image s... | Find, read and cite all the research you need on Tech Science Press",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-147-1/TSP_CMES_78510/TSP_CMES_78510.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Medicine",
+      "Artificial intelligence",
+      "Disease",
+      "Deep learning",
+      "Computer science",
+      "Key (lock)",
+      "Feature (linguistics)",
+      "Medical imaging"
+    ],
+    "score": 0.545,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "A Lightweight CNN–Mamba Hybrid Architecture for Efficient Crack Segmentation",
+    "authors": [
+      "Masaya Shimasaki",
+      "Mitsuteru Sakamoto",
+      "Toshiaki Satoh"
+    ],
+    "year": 2026,
+    "venue": "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+    "doi": "10.5194/isprs-archives-xlix-b2-2026-1107-2026",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.5194/isprs-archives-xlix-b2-2026-1107-2026",
+    "abstract": "Abstract. Pavement crack segmentation is important for road infrastructure inspection, but practical deployment remains challenging because many high-performance deep learning models require substantial computational resources. This issue is particularly critical in large-scale Mobile Mapping System (MMS)-based workflows, where large volumes of road surface images must be processed efficiently. To address this problem, this study proposes a lightweight CNN-Mamba hybrid architecture for crack segmentation as a deployment-oriented redesign of CT-CrackSeg. The proposed method replaces the original MobileViT-based global modelling modules with EfficientViM-inspired blocks based on hidden-state mixer-based state space duality (HSM-SSD), while preserving the overall encoder-decoder structure and refining the boundary enhancement branch with DCNv2-based deformable convolution. Experiments on the publicly available GAPs384 and CamCrack789 datasets show that the proposed model maintains competitive topology-aware segmentation performance while substantially improving computational efficiency. Compared with CT-CrackSeg, the proposed model increases inference speed from 1.49 to 4.44 FPS on GAPs384 and from 1.32 to 3.92 FPS on CamCrack789, while reducing peak memory consumption from 2827 MB to 355 MB on both datasets. At the same time, the clDice score remains comparable, changing from 0.760 to 0.758 on GAPs384 and from 0.921 to 0.922 on CamCrack789. These results indicate that the proposed architecture provides a favourable balance between crack segmentation quality and deployment efficiency, making it a practical option for large-scale pavement inspection and photogrammetric infrastructure monitoring.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://isprs-archives.copernicus.org/articles/XLIX-B2-2026/1107/2026/isprs-archives-XLIX-B2-2026-1107-2026.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.54,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Visual Boosting Techniques for Spatiotemporal Dense Pixel Visualizations",
+    "authors": [
+      "Julius Rauscher",
+      "Frederik L. Dennig",
+      "Udo Schlegel",
+      "Daniel A. Keim",
+      "Tobias Schreck"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "10.2312/eurova.20261004",
+    "arxiv_id": "2604.25298v1",
+    "url": "http://arxiv.org/abs/2604.25298v1",
+    "abstract": "The analysis of spatiotemporal data is essential in domains such as epidemiology and environmental monitoring, where understanding the interplay between spatially distributed phenomena and their temporal evolution is critical. Dense pixel visualizations offer a compact, effective overview of spatiotemporal dynamics. However, the necessary linearization of 2D geographic space into a 1D ordering inevitably introduces structural distortions that manifest as visual artifacts. We propose a measure-driven visual analytics approach that captures visual artifacts through neighborhood preservation measures for 1D orderings and renders them using visual boosting techniques such as glyphs, halos, and hatching. We demonstrate our approach through a usage scenario analyzing COVID-19 incidence data across German districts, showing that interactive, measure-driven boosting enables analysts to reliably distinguish genuine spatial patterns from linearization artifacts.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2604.25298v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.535,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "How Far are VLMs from Visual Spatial Intelligence? A Benchmark-Driven Perspective",
+    "authors": [
+      "Songsong Yu",
+      "Yuxin Chen",
+      "Hao Ju",
+      "Lianjie Jia",
+      "Fuxi Zhang",
+      "Shaofei Huang",
+      "Yuhan Wu",
+      "Rundi Cui",
+      "Binghao Ran",
+      "Zaibin Zhang",
+      "Zhedong Zheng",
+      "Zhipeng Zhang",
+      "Yifan Wang",
+      "Lin Song",
+      "Lijun Wang",
+      "Yanwei Li",
+      "Ying Shan",
+      "Huchuan Lu"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2509.18905v2",
+    "url": "http://arxiv.org/abs/2509.18905v2",
+    "abstract": "Visual Spatial Reasoning (VSR) is a core human cognitive ability and a critical requirement for advancing embodied intelligence and autonomous systems. Despite recent progress in Vision-Language Models (VLMs), achieving human-level VSR remains highly challenging due to the complexity of representing and reasoning over three-dimensional space. In this paper, we present a systematic investigation of VSR in VLMs, encompassing a review of existing methodologies across input modalities, model architectures, training strategies, and reasoning mechanisms. Furthermore, we categorize spatial intelligence into three levels of capability, ie, basic perception, spatial understanding, spatial planning, and curate SIBench, a spatial intelligence benchmark encompassing nearly 20 open-source datasets across 23 task settings. Experiments with state-of-the-art VLMs reveal a pronounced gap between perception and reasoning, as models show competence in basic perceptual tasks but consistently underperform in understanding and planning tasks, particularly in numerical estimation, multi-view reasoning, temporal dynamics, and spatial imagination. These findings underscore the substantial challenges that remain in achieving spatial intelligence, while providing both a systematic roadmap and a comprehensive benchmark to drive future research in the field. The related resources of this study are accessible at https://sibench.github.io/Awesome-Visual-Spatial-Reasoning/.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2509.18905v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5179,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Large-Kernel Spatial-Frequency Fusion Deep Mamba Network for Remote Sensing Image Segmentation",
+    "authors": [
+      "ChenZhe Xia",
+      "Eziz Tursun"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.6190562",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.6190562",
+    "abstract": "Semantic segmentation of remote sensing images is a fundamental task in geospatial informationanalysis. Unlike natural images, the complex background in high-resolution remote sensing imagesposes significant challenges for object segmentation, such as occlusion and intra-class variations, oftenleading to fragmented and mis-segmented results. To address these challenges, we proposed LargeKernel Spatial-Frequency Fusion Deep Mamba Network (Mamba-LSFDNet), a remote sensingsemantic segmentation network that combines large-kernel attention with the state-space modelMamba. Specifically, we first designed a Large-Kernel Spatial-Frequency Hybrid Module (LSFModule) , by expanding the receptive field and jointly using spatial and frequency domain cues,the global information modeling of large-scale remote sensing scenes is enhanced, the occlusionbetween targets is alleviated, and the computational overhead of self-attention is reduced. Next, weproposed a Depthwise Separable Convolution Mamba Module (DSC-Mamba Module) , this modulefurther endows the network with powerful global modeling capabilities through a selective state spacemodel, and embeds deep separable convolution and attention mechanisms into the backbone network.Dramatically reduce memory consumption while mitigating intra-class variation. Extensive ablationand comparative experiments on the ISPRS Vaihingen dataset and LoveDA dataset demonstrate thatMamba-LSFDNet achieves excellent performance in both accuracy and efficiency, reaching the stateof-the-art level for remote sensing semantic segmentation.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.5129
+  },
+  {
+    "title": "DEVA Mamba: dual encoder visual attention mamba for medical image segmentation",
+    "authors": [
+      "Jingwen Zhang",
+      "Dongxu Cheng",
+      "Qiwei Dong"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Computational Intelligence and Image Analysis (ICCIIA 2026)",
+    "doi": "10.1117/12.3113089",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3113089",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MSA-VMUNet: multi-scale augmented visual Mamba UNet for medical image segmentation",
+    "authors": [
+      "Chenhang He",
+      "Weijie Ge",
+      "Zhongfeng Kang"
+    ],
+    "year": 2026,
+    "venue": "Ninth International Conference on Computer Graphics and Virtuality (ICCGV 2026)",
+    "doi": "10.1117/12.3117804",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3117804",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mamba-based Segmentation Model for Speaker Diarization",
+    "authors": [
+      "Alexis Plaquet",
+      "Naohiro Tawara",
+      "Marc Delcroix",
+      "Shota Horiguchi",
+      "Atsushi Ando",
+      "Shoko Araki"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2410.06459v2",
+    "url": "http://arxiv.org/abs/2410.06459v2",
+    "abstract": "Mamba is a newly proposed architecture which behaves like a recurrent neural network (RNN) with attention-like capabilities. These properties are promising for speaker diarization, as attention-based models have unsuitable memory requirements for long-form audio, and traditional RNN capabilities are too limited. In this paper, we propose to assess the potential of Mamba for diarization by comparing the state-of-the-art neural segmentation of the pyannote pipeline with our proposed Mamba-based variant. Mamba's stronger processing capabilities allow usage of longer local windows, which significantly improve diarization quality by making the speaker embedding extraction more reliable. We find Mamba to be a superior alternative to both traditional RNN and the tested attention-based model. Our proposed Mamba-based system achieves state-of-the-art performance on three widely used diarization datasets.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2410.06459v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MiM-ISTD: Mamba-in-Mamba for Efficient Infrared Small Target Detection",
+    "authors": [
+      "Tianxiang Chen",
+      "Zi Ye",
+      "Zhentao Tan",
+      "Tao Gong",
+      "Yue Wu",
+      "Qi Chu",
+      "Bin Liu",
+      "Nenghai Yu",
+      "Jieping Ye"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2403.02148v4",
+    "url": "http://arxiv.org/abs/2403.02148v4",
+    "abstract": "Recently, infrared small target detection (ISTD) has made significant progress, thanks to the development of basic models. Specifically, the models combining CNNs with transformers can successfully extract both local and global features. However, the disadvantage of the transformer is also inherited, i.e., the quadratic computational complexity to sequence length. Inspired by the recent basic model with linear complexity for long-distance modeling, Mamba, we explore the potential of this state space model for ISTD task in terms of effectiveness and efficiency in the paper. However, directly applying Mamba achieves suboptimal performances due to the insufficient harnessing of local features, which are imperative for detecting small targets. Instead, we tailor a nested structure, Mamba-in-Mamba (MiM-ISTD), for efficient ISTD. It consists of Outer and Inner Mamba blocks to adeptly capture both global and local features. Specifically, we treat the local patches as \"visual sentences\" and use the Outer Mamba to explore the global information. We then decompose each visual sentence into sub-patches as \"visual words\" and use the Inner Mamba to further explore the local information among words in the visual sentence with negligible computational costs. By aggregating the visual word and visual sentence features, our MiM-ISTD can effectively explore both global and local information. Experiments on NUAA-SIRST and IRSTD-1k show the superior accuracy and efficiency of our method. Specifically, MiM-ISTD is $8 \\times$ faster than the SOTA method and reduces GPU memory usage by 62.2$\\%$ when testing on $2048 \\times 2048$ images, overcoming the computation and memory constraints on high-resolution infrared images.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.02148v4",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Mfvm-Unet: Multi-Scale Feature-Guided Visual Mamba Unet for Pediatric Pneumonia Ct Image Segmentation",
+    "authors": [
+      "Jia Lu",
+      "Zhaojun Wu",
+      "Mingkai Yu",
+      "Ling He",
+      "Xin Chen"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5157685",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5157685",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.4957,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Dualserp-Mamba: Synergizing Visual State Space and Topological Constraints for Medical Tubular Structure Segmentation",
+    "authors": [
+      "Zixuan Liu",
+      "Yao Cheng",
+      "Zhaoqin Huang",
+      "Wanqiang Cai",
+      "Dengwang Li",
+      "Hua Lu"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5324706",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5324706",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.4957,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Beyond Visual Prompt: Unlocking Black-Box Adapter for Continual Test-Time Adaptation in Medical Image Segmentation",
+    "authors": [
+      "Xiang Li",
+      "Huihui Fang",
+      "Mingsi Liu",
+      "Jinghao Wang",
+      "Lixin Duan",
+      "Yuqi Fang",
+      "Yanwu Xu"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5732940",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5732940",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.4957,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mamba Sequence Modeling meets Model Predictive Control",
+    "authors": [
+      "Michiel Cevaal",
+      "Thomas de Jong",
+      "Mircea Lazar"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "10.1109/ojcsys.2026.3724785",
+    "arxiv_id": "2604.13857v2",
+    "url": "http://arxiv.org/abs/2604.13857v2",
+    "abstract": "In this paper, we consider the design of Model Predictive Control (MPC) algorithms based on Mamba neural networks. Mamba is a neural network architecture capable of sub-quadratic computational scaling in sequence length with state-of-the-art modeling capabilities. We provide a consistent and complete mathematical description of the Mamba neural network is provided. Then, adjustments and optimizations are made to construct a decoder-only Mamba multi-step predictor for MPC and an input-output formulation is given for sequence-to-sequence modeling of dynamical systems. The performance of Mamba-MPC is evaluated on several numerical examples and compared to a Long-Short-Term-Memory based MPC (LSTM-MPC) equivalent. First, a Single-Input-Single-Output (SISO) Van der Pol oscillator is considered, where stability, reference tracking, and noise robustness are evaluated. Then, a MIMO Four Tank setup is introduced where Multiple-Input-Multiple-Output (MIMO) reference tracking is evaluated. Lastly, Mamba-MPC is implemented on a physical Quanser Aero2 setup for closed-loop reference tracking. The results demonstrate that Mamba-MPC is able to stabilize and track a reference for SISO and MIMO systems, both in simulation and on a physical setup. Moreover, Mamba-MPC consistently outperforms LSTM-MPC in predictive control and is significantly computationally faster.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2604.13857v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.455,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "3D Segmentation in the Clinic: A Grand Challenge",
+    "authors": [
+      "Bram van Ginneken",
+      "Tobias Heimann",
+      "Martin Styner"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2611.10728v1",
+    "url": "http://arxiv.org/abs/2611.10728v1",
+    "abstract": "This paper describes the set-up of a segmentation competition for automatic and semi-automatic extraction of the liver from computed tomography scans and the caudate nucleus from brain MRI data. This competition was held in the form of a workshop at the 2007 Medical Image Computing and Computer Assisted Intervention conference. The rationale for organizing the competition is discussed, the training and test data sets for both segmentation tasks are described and the scoring system used to evaluate the segmentation is presented.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2611.10728v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4479,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Attention to Mamba: A Recipe for Cross-Architecture Distillation",
+    "authors": [
+      "Abhinav Moudgil",
+      "Ningyuan Huang",
+      "Eeshan Gunesh Dhekane",
+      "Pau Rodríguez",
+      "Luca Zappella",
+      "Federico Danieli"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2604.14191v2",
+    "url": "http://arxiv.org/abs/2604.14191v2",
+    "abstract": "State Space Models (SSMs) such as Mamba have become a popular alternative to Transformer models, due to their reduced memory consumption and higher throughput at generation compared to their Attention-based counterparts. On the other hand, the community has built up a considerable body of knowledge on how to train Transformers, and many pretrained Transformer models are readily available. To facilitate the adoption of SSMs while leveraging existing pretrained Transformers, we aim to identify an effective recipe to distill an Attention-based model into a Mamba-like architecture. In prior work on cross-architecture distillation, however, it has been shown that a naïve distillation procedure from Transformers to Mamba fails to preserve the original teacher performance, a limitation often overcome with hybrid solutions combining Attention and SSM blocks. The key argument from our work is that, by equipping Mamba with a principled initialization, we can recover an overall better recipe for cross-architectural distillation. To this end, we propose a principled two-stage approach: first, we distill knowledge from a traditional Transformer into a linearized version of Attention, using an adaptation of the kernel trick. Then, we distill the linearized version into an adapted Mamba model that does not use any Attention block. Overall, the distilled Mamba model retains most of the original Pythia-1B Transformer performance, reaching a perplexity of 14.01 close to the teacher's 13.86. This largely carries over to downstream tasks, although some gaps appear on tasks relying more on in-context recall. To show the efficacy of our recipe, we conduct thorough ablations at 1B scale with 10B tokens varying sequence mixer architecture, scaling analysis on model sizes and total distillation tokens, and a sensitivity analysis on tokens allocation between stages.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2604.14191v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4479,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Differential Mamba",
+    "authors": [
+      "Nadav Schneider",
+      "Itamar Zimerman",
+      "Eliya Nachmani"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2507.06204v2",
+    "url": "http://arxiv.org/abs/2507.06204v2",
+    "abstract": "Sequence models like Transformers and RNNs often overallocate attention to irrelevant context, leading to noisy intermediate representations. This degrades LLM capabilities by promoting hallucinations, weakening long-range and retrieval abilities, and reducing robustness. Recent work has shown that differential design can mitigate this issue in Transformers, improving their effectiveness across various applications. In this paper, we explore whether these techniques, originally developed for Transformers, can be applied to Mamba, a recent architecture based on selective state-space layers that achieves Transformer-level performance with greater efficiency. We show that a naive adaptation of differential design to Mamba is insufficient and requires careful architectural modifications. To address this, we introduce a novel differential mechanism for Mamba, empirically validated on language modeling benchmarks, demonstrating improved retrieval capabilities and superior performance over vanilla Mamba. Finally, we conduct extensive ablation studies and empirical analyses to justify our design choices and provide evidence that our approach effectively mitigates the overallocation problem in Mamba-based models. Our code is publicly available: https://github.com/NadavSc/Diff-Mamba",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2507.06204v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4379,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Mamba based Adapter Fine-tuning Approach for Financial Sentiment Analysis",
+    "authors": [
+      "Jin Gam Park",
+      "Doguk Kim"
+    ],
+    "year": 2025,
+    "venue": "Korean Institute of Smart Media",
+    "doi": "10.30693/smj.2025.14.10.118",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.30693/smj.2025.14.10.118",
+    "abstract": "Sentiment analysis of financial text is a critical area for investment decisions and market forecasting, and recent advances in large-scale language models (LLMs) have led to the development of domain-specific models, such as FinBERT, that achieve high performance. However, financial texts often contain a large amount of specialized terminology and numerical information, and if not handled with an appropriate structure, their performance may be inferior to general domain models. In this paper, we propose a method for efficiently learning from financial text by freezing the parameters of FinBERT and introducing a Mamba block-based adapter and a gating network. Our model achieves 91.03% accuracy and 0.9017 F1 score on the Financial PhraseBank dataset, improving 6.18%p and 0.0721 over the previous best model (LSTM-XGBoost), and 66.06% accuracy with 0.6394 F1 score on FiQA 2018 Task1, showing 3.64%p and 0.0393 improvements respectively. These results outperform both fully fine-tuned FinBERT and other PEFT techniques.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.43,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Exploring the Limitations of Mamba in COPY and CoT Reasoning",
+    "authors": [
+      "Ruifeng Ren",
+      "Zhicong Li",
+      "Yong Liu"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2410.03810v3",
+    "url": "http://arxiv.org/abs/2410.03810v3",
+    "abstract": "Transformers have become the backbone of modern Large Language Models (LLMs); however, their inference overhead grows linearly with the sequence length, posing challenges for modeling long sequences. In light of this, Mamba has attracted attention for maintaining a constant inference size, with empirical evidence demonstrating that it can match Transformer performance in sequence modeling while significantly reducing computational costs. However, an open question remains: can Mamba always bring savings while achieving performance comparable to Transformers? In this paper, we focus on analyzing the expressive ability of Mamba to perform our defined COPY operation and Chain of Thought (CoT) reasoning. First, inspired by the connection between Mamba and linear attention, we show that constant-sized Mamba may struggle to perform COPY operations while Transformers can handle them more easily. However, when the size of Mamba grows linearly with the input sequence length, it can accurately perform COPY, but in this case, Mamba no longer provides overhead savings. Based on this observation, we further analyze Mamba's ability to tackle CoT tasks, which can be described by the Dynamic Programming (DP) problems. Our findings suggest that to solve arbitrary DP problems, the total cost of Mamba is still comparable to standard Transformers. However, similar to efficient Transformers, when facing DP problems with favorable properties such as locality, Mamba can provide savings in overhead. Our experiments on the copy and CoT tasks further demonstrate Mamba's limitations compared to Transformers in learning these tasks.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2410.03810v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4279,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Bi-Mamba+: Bidirectional Mamba for Time Series Forecasting",
+    "authors": [
+      "Aobo Liang",
+      "Xingguo Jiang",
+      "Yan Sun",
+      "Xiaohou Shi",
+      "Ke Li"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2404.15772v3",
+    "url": "http://arxiv.org/abs/2404.15772v3",
+    "abstract": "Long-term time series forecasting (LTSF) provides longer insights into future trends and patterns. Over the past few years, deep learning models especially Transformers have achieved advanced performance in LTSF tasks. However, LTSF faces inherent challenges such as long-term dependencies capturing and sparse semantic characteristics. Recently, a new state space model (SSM) named Mamba is proposed. With the selective capability on input data and the hardware-aware parallel computing algorithm, Mamba has shown great potential in balancing predicting performance and computational efficiency compared to Transformers. To enhance Mamba's ability to preserve historical information in a longer range, we design a novel Mamba+ block by adding a forget gate inside Mamba to selectively combine the new features with the historical features in a complementary manner. Furthermore, we apply Mamba+ both forward and backward and propose Bi-Mamba+, aiming to promote the model's ability to capture interactions among time series elements. Additionally, multivariate time series data in different scenarios may exhibit varying emphasis on intra- or inter-series dependencies. Therefore, we propose a series-relation-aware decider that controls the utilization of channel-independent or channel-mixing tokenization strategy for specific datasets. Extensive experiments on 8 real-world datasets show that our model achieves more accurate predictions compared with state-of-the-art methods.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2404.15772v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4279,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Deep Mamba Multi-modal Learning",
+    "authors": [
+      "Jian Zhu",
+      "Xin Zou",
+      "Yu Cui",
+      "Zhangmin Huang",
+      "Chenshu Hu",
+      "Bo Lyu"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2406.18007v1",
+    "url": "http://arxiv.org/abs/2406.18007v1",
+    "abstract": "Inspired by the excellent performance of Mamba networks, we propose a novel Deep Mamba Multi-modal Learning (DMML). It can be used to achieve the fusion of multi-modal features. We apply DMML to the field of multimedia retrieval and propose an innovative Deep Mamba Multi-modal Hashing (DMMH) method. It combines the advantages of algorithm accuracy and inference speed. We validated the effectiveness of DMMH on three public datasets and achieved state-of-the-art results.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2406.18007v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4279,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Mamba-FSCIL: Dynamic Adaptation with Selective State Space Model for Few-Shot Class-Incremental Learning",
+    "authors": [
+      "Xiaojie Li",
+      "Yibo Yang",
+      "Jianlong Wu",
+      "Yue Yu",
+      "Ming-Hsuan Yang",
+      "Liqiang Nie",
+      "Min Zhang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2407.06136v4",
+    "url": "http://arxiv.org/abs/2407.06136v4",
+    "abstract": "Few-shot class-incremental learning (FSCIL) aims to incrementally learn novel classes from limited examples while preserving knowledge of previously learned classes. Existing methods face a critical dilemma: static architectures rely on a constant parameter space to learn from data that arrive sequentially, making them prone to overfitting to the current session, while dynamic architectures continually expand the parameter space, leading to increased complexity. In this study, we explore the potential of Selective State Space Models (SSMs) for FSCIL. Mamba leverages its input-dependent parameters to dynamically adjust its processing patterns and generate content-aware scan patterns without session-wise projector expansion. This enables it to configure distinct processing for base and novel classes, helping preserve existing knowledge while adapting to new ones. To leverage Mamba's potential for FSCIL, we design two key modules: First, we propose a dual selective SSM projector that generates input-conditioned state-space parameters from intermediate features for dynamic adaptation. The dual design structurally decouples base and novel-class processing, employing a frozen base branch to maintain stable base-class features and a dynamic incremental branch that adaptively learns distinctive feature shifts for novel classes. Second, we develop a class-sensitive selective scan mechanism to guide dynamic adaptation of the incremental branch. It reduces the disruption to base-class representations caused by training on novel data, and meanwhile, encourages the selective scan to perform in distinct patterns between base and novel classes. Extensive experiments on miniImageNet, CIFAR-100, and CUB-200 demonstrate that Mamba-FSCIL achieves state-of-the-art performance.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2407.06136v4",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4279,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Audio Mamba: Bidirectional State Space Model for Audio Representation Learning",
+    "authors": [
+      "Mehmet Hamza Erol",
+      "Arda Senocak",
+      "Jiu Feng",
+      "Joon Son Chung"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2406.03344v1",
+    "url": "http://arxiv.org/abs/2406.03344v1",
+    "abstract": "Transformers have rapidly become the preferred choice for audio classification, surpassing methods based on CNNs. However, Audio Spectrogram Transformers (ASTs) exhibit quadratic scaling due to self-attention. The removal of this quadratic self-attention cost presents an appealing direction. Recently, state space models (SSMs), such as Mamba, have demonstrated potential in language and vision tasks in this regard. In this study, we explore whether reliance on self-attention is necessary for audio classification tasks. By introducing Audio Mamba (AuM), the first self-attention-free, purely SSM-based model for audio classification, we aim to address this question. We evaluate AuM on various audio datasets - comprising six different benchmarks - where it achieves comparable or better performance compared to well-established AST model.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2406.03344v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4279,
+    "sources": [
+      "arxiv"
+    ]
+  }
+]

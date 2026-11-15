@@ -1,0 +1,20 @@
+Stage30 通道与尺度融合实验结果
+状态：训练、验证、测试全部完成。三个新模型各训练100轮，seed42。
+协议：训练1886，验证762，测试867；测试为经过身份筛查的官方测试子集，不是完整1000张测试集。按验证集逐图宏平均Dice选最佳权重，测试不参与本轮选权重。测试集此前已查看，不能作为全新独立确认集。沿用300轮余弦调度的前100轮，以复用Stage29匹配对照。
+数值全部是百分数、逐图宏平均Dice：
+模型 | 最佳轮次 | 验证 | 测试
+control | 7 | 88.714722 | 89.534414
+local_fusion | 7 | 88.817621 | 89.826596
+anchor_fusion | 24 | 88.861068 | 89.202713
+eca_channel | 18 | 88.831076 | 89.480074
+cross_channel | 7 | 88.690930 | 89.509183
+cross_channel_scale | 24 | 88.893775 | 89.406626
+前三项为Stage29既有参考结果；后三项为本轮新增，均加在anchor_fusion结构上。
+
+结论：
+三个新增通道/尺度版本均未满足预先规定的验证集推进标准。测试Dice均未超过control和local_fusion，但均高于未加通道的anchor_fusion。单种子结果只能说明本次实现未建立稳定优势，不能否定整个通道注意力方向。
+验证集诊断：ECA相对local的Dice仅+0.013455个百分点；cross_channel相对local为-0.126691个百分点，减少FP但召回比anchor低0.967841个百分点；cross_channel_scale相对local为+0.076154个百分点，FP相对anchor增加30086。
+在cross_channel_scale最佳权重上做验证集推理干预：原Dice88.893775%；尺度固定均分88.898229%；通道固定为1时88.893006%。这些变化很小，当前没有强证据表明学习出的动态权重提供了必要增益。此为训练后干预，不是独立重训消融，也不能排除训练阶段的影响。
+当前不因本轮结果自动扩大模块或随机种子扫描。应先核查权重变化幅度、输入敏感性、残差实际贡献，再决定是否更换具体机制。所有原始结果与检查点保留。
+结果：source/referring_image_segmentation/stage30_channel_fusion/results/summary.json
+对照表：source/referring_image_segmentation/stage30_channel_fusion/results/validation_test_comparison.csv

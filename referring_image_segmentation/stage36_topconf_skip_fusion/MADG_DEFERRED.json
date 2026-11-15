@@ -1,0 +1,12 @@
+{
+  "status": "deferred_before_formal_training",
+  "reason": "Did not pass original real-data restored-update tolerance even with FP32 upblock. Repeated predictions changed1060-1068 of4194304 pixels. Formal100-epoch training withheld; no performance claim.",
+  "invalid_diagnostic": "INVALID_DIAGNOSIS_shared_CPU_optimizer_step.json: first temporary diagnostic reused CPU optimizer step tensors; INVALID, superseded by deepcopied optimizer snapshots.",
+  "valid_evidence": [
+    "POOL_PRECISION_DIAGNOSIS.json",
+    "GPU_REPEAT_UPDATE_DIAGNOSIS.json",
+    "KEYBIAS_NUMERICS_DIAGNOSIS.json"
+  ],
+  "thresholds_unchanged": true,
+  "formal_training_epochs": 0
+}

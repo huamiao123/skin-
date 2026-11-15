@@ -1,0 +1,76 @@
+{
+  "stage": 49,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "frozen",
+    "lora8"
+  ],
+  "question": "Does restricting pretrained-encoder updates improve generalization relative to late-stage full tuning?",
+  "changes": {
+    "frozen": "Freeze all original encoder parameters; train unchanged UPer64.",
+    "lora8": "Freeze all original encoder parameters; rank8 alpha8 native LoRA on late Mamba in/out projections, attention qkv/proj, and every late-block MLP fc1/fc2. Train unchanged UPer64."
+  },
+  "target_count": 48,
+  "lora": {
+    "rank": 8,
+    "alpha": 8,
+    "scaling": 1.0,
+    "dropout": 0.0,
+    "merge_weights": false,
+    "init": "Native Kaiming A and zero B; isolated CPU seed142; original weights retained exactly."
+  },
+  "unchanged_encoder_components": [
+    "CNN prefix",
+    "SSM A_log,D,x_proj,dt_proj and convolutions",
+    "LayerNorm",
+    "stage downsample",
+    "original14/7 windows"
+  ],
+  "training": {
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "clip_per_group": 1.0,
+    "cosine_horizon": 100,
+    "epochs": 100,
+    "physical_batch": 64,
+    "effective_batch": 64,
+    "evaluation_batch": 64,
+    "precision": "BF16_forward_FP32_loss",
+    "loss": "unchanged BCE + per-image soft Dice with original soft masks",
+    "encoder_mode": "eval throughout; LoRA gradients enabled; no dropout or merge on eval",
+    "initial_encoder": "Official ImageNet pretrained MambaVision-S; not a segmentation checkpoint",
+    "initialization": "Common seed42 UPer64 head state exact"
+  },
+  "data": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "input": 256,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "reference": "Completed Stage45 UPer64; exact762validation replay before reuse.",
+  "selection": "Maximum validation macro Dice with earliest tie; complete100epochs. All arms trained before fixed867test per arm.",
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "validation_only": true,
+    "paired_lora_vs_frozen_report": true,
+    "screen_not_significance_test": true
+  },
+  "interpretation_limits": [
+    "Single seed pilot, not novel method or full MambaPEFT reproduction.",
+    "Fixed rank, fixed placement, same encoder LR as reference; no LoRA-specific hyperparameter optimization. Failure does not exclude all PEFT.",
+    "Frozen vs LoRA tests adaptation package; original versus LoRA changes update subspace and trainable parameter count.",
+    "No patient-disjointness guarantee; exposed test is not untouched confirmation."
+  ],
+  "evidence": {
+    "previous_stage": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement",
+    "training_pattern": "Training loss continues falling after best-validation epoch; overfitting is a hypothesis, not established unique cause.",
+    "previous_freezing": "Earlier Swin experiments favored late fine-tuning over fully frozen in two seeds; matched UPer64 control needed."
+  },
+  "software": "Pinned microsoft/LoRA Linear used without edits or installation; Sony MambaPEFT informs research question only."
+}

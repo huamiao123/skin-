@@ -1,0 +1,27 @@
+{
+  "status": "fixed_before_inference",
+  "training": false,
+  "test_read": false,
+  "validation_n": 762,
+  "checkpoints": [
+    "stage36_topconf_skip_fusion/uct_cca/results/uct_cca_best_dice.pth",
+    "stage37_lr_horizon100/uct_cca/results/uct_cca_best_dice.pth"
+  ],
+  "controls": [
+    "unaltered native model reproduces saved full binary predictions",
+    "replay captured same-image raw gate logits must reproduce native full predictions"
+  ],
+  "interventions": [
+    "all raw gate logits replaced by label-free validation-wide channel means",
+    "three independent fixed no-self derangements of native raw gates; same image permutation across all levels",
+    "replace only one level with mean logits, levels2/1/0",
+    "replace only decoder-derived MLP logits by their mean in all levels",
+    "replace only skip-derived MLP logits by their mean in all levels",
+    "unit gate weights with native final ReLU retained"
+  ],
+  "thresholds": "fixed0.5; no threshold or checkpoint search",
+  "metrics": "same common evaluation.py all metrics and per-image records; exploratory paired image bootstrap",
+  "interpretation": "Post-training interventions, not retrained ablations. Mean and shuffled gates preserve some but not all activation statistics. Identity changes amplitude and is not alone evidence of a bug. Label-free means use this validation cohort and are not a deployable calibrated model. No claim about all MambaVision or original UCTransNet.",
+  "stopping_rule": "One bounded audit; do not add attention families or launch new100epoch training automatically.",
+  "created_utc": "2026-11-12T05:15:54.588749+00:00"
+}

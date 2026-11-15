@@ -1,0 +1,159 @@
+{
+  "arm": "lora8",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "lora8",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage49_peft_adaptation/lora8/smoke/lora8_best_dice.pth",
+    "sha256": "c8fda43b73fae93f6d9c0582d5548e6f295f34a3c6ce9f4c6dd1d3ff0424e37c",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.7975346676683781,
+        "iou": 0.6848005989345459,
+        "precision": 0.7359205411125809,
+        "recall": 0.9382846701346782
+      },
+      "pooled": {
+        "dice": 0.833760031497878,
+        "iou": 0.7149129287420414,
+        "precision": 0.7691369859983755,
+        "recall": 0.9102384506658522
+      },
+      "prec_at": {
+        "0.5": 0.847769028871391,
+        "0.6": 0.7388451443569554,
+        "0.7": 0.5564304461942258,
+        "0.8": 0.3031496062992126,
+        "0.9": 0.047244094488188976
+      },
+      "threshold_jaccard_065": 0.5108896934260982,
+      "counts": {
+        "tp": 10988374,
+        "fp": 3298254,
+        "fn": 1083599,
+        "tn": 34568205
+      },
+      "loss": 0.7782190318495583,
+      "diagnostics": {
+        "bce_soft": 0.30904114238546276,
+        "soft_dice_loss": 0.46917788844721836,
+        "wrong_pixels": 4381853,
+        "wrong_mean_confidence": 0.6814081885701834,
+        "wrong_confidence_gt99_fraction": 0.00036537054072786104
+      }
+    }
+  },
+  "validation": {
+    "lora8": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.7975346676683781,
+        "iou": 0.6848005989345459,
+        "precision": 0.7359205411125809,
+        "recall": 0.9382846701346782,
+        "boundary_f1": 0.11718033650160757,
+        "hd95_pixels": 34.941408004776996,
+        "hd95_diagonal": 0.09651291618899893
+      },
+      "pooled": {
+        "dice": 0.833760031497878,
+        "iou": 0.7149129287420414,
+        "precision": 0.7691369859983755,
+        "recall": 0.9102384506658522
+      },
+      "prec_at": {
+        "0.5": 0.847769028871391,
+        "0.6": 0.7388451443569554,
+        "0.7": 0.5564304461942258,
+        "0.8": 0.3031496062992126,
+        "0.9": 0.047244094488188976
+      },
+      "threshold_jaccard_065": 0.5108896934260982,
+      "counts": {
+        "tp": 10988374,
+        "fp": 3298254,
+        "fn": 1083599,
+        "tn": 34568205
+      },
+      "severe_undercoverage": 19,
+      "epoch": 2,
+      "checkpoint_sha256": "c8fda43b73fae93f6d9c0582d5548e6f295f34a3c6ce9f4c6dd1d3ff0424e37c"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_lora8": {
+        "macro_dice_delta": -0.09527203346594024,
+        "image_bootstrap95": [
+          -0.10431196131930426,
+          -0.08532440514740793
+        ],
+        "improved": 126,
+        "worsened": 636,
+        "gains_over5pp": 55,
+        "losses_over5pp": 463,
+        "net_reduced_fn": 257896,
+        "net_added_fp": 2241115,
+        "severe_undercoverage": [
+          21,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Frozen or low-rank adapted encoder versus late-full-tuned native UPer64",
+  "archived_reference_caveat": "Stage45 UPer64 shares original pretraining, head, data and schedule; trainable encoder subspace differs",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

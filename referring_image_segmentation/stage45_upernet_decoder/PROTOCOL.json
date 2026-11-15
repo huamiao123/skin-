@@ -1,0 +1,83 @@
+{
+  "stage": 45,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "uper64",
+    "uper128"
+  ],
+  "changes": {
+    "uper64": "Replace original64channel adapter+Swin decoder with pinned native UPerHead receiving raw96/192/384/768 features; UPer width64",
+    "uper128": "Same native UPerHead and raw feature inputs; width128 instead of64"
+  },
+  "question": "Can standard pyramid-pooling/FPN decoding better use existing multi-scale encoder features? Width pair separates UPer internal capacity.",
+  "controls": "Reuse Stage37 Swin late-only baseline; same ImageNet initialization, seed,data,geometry,batch64,optimizer/lrs/schedule and selection.",
+  "encoder": "Only stages3/4 trainable; complete encoder eval; early CNN frozen. No Stage44 shallow adaptation.",
+  "native_head": {
+    "source": "OpenMMLab MMSegmentation v1.2.2 UPerHead, PPM, BaseDecodeHead",
+    "in_channels": [
+      96,
+      192,
+      384,
+      768
+    ],
+    "in_index": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "pool_scales": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "norm": "SyncBN; single-GPU native fallback to BatchNorm",
+    "activation": "ReLU",
+    "dropout_ratio": 0.1,
+    "num_classes": 2,
+    "out_channels": 1,
+    "threshold": 0.5,
+    "align_corners": false,
+    "initialization": "Native ConvModule initializers plus BaseModule.init_weights/conv_seg Normal(std=.01)"
+  },
+  "training": {
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "clip_per_group": 1.0,
+    "cosine_horizon": 100,
+    "physical_batch": 64,
+    "effective_batch": 64,
+    "eval_batch": 64,
+    "loss": "Unchanged original single-output BCE+per-image softDice with original soft mask values"
+  },
+  "data": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "input": 256,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "max validation macro Dice, earliest tie; all100epochs then complete867test evaluation for both arms",
+  "adaptations": [
+    "Official ADE20K head is width512; this controlled pilot uses64/128",
+    "No official FCN auxiliary head or ADE20K loss/training/data recipe; only main decoder is transplanted",
+    "Forward uses complete untouched author AST core and actual mmcv ConvModule/mmengine BaseModule",
+    "Binary one-logit output and final256 resize; existing project training/evaluation interfaces retained"
+  ],
+  "attribution_limits": [
+    "Swin-vs-UPer compares decoder packages, including input projection, normalization and activation; not isolated proof that64compression caused errors",
+    "UPer64vs128 primarily isolates internal width; report parameter counts, memory and time",
+    "Single seed and already exposed test; no SOTA/novelty claim"
+  ],
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "validation_only": true
+  },
+  "capacity": "Require physical64 for both arms before any formal training; do not silently lower batch"
+}

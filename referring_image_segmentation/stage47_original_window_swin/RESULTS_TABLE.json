@@ -1,0 +1,54 @@
+[
+  {
+    "arm": "stage45_uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919
+  },
+  {
+    "arm": "native_fixed",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8923471207079491,
+    "test_macro_dice": 0.8945423745997376,
+    "test_pooled_dice": 0.8966331715003184,
+    "parameters": {
+      "total": 51252577,
+      "trainable": 47078849,
+      "decoder": 1089089,
+      "encoder_trainable": 45989760
+    },
+    "max_peak_allocated_gib": 14.093108177185059,
+    "mean_epoch_seconds": 7.814784835269747
+  },
+  {
+    "arm": "position_bias",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8922177732238006,
+    "test_macro_dice": 0.8942705200273041,
+    "test_pooled_dice": 0.8968007413583651,
+    "parameters": {
+      "total": 51252577,
+      "trainable": 47101753,
+      "decoder": 1089089,
+      "encoder_trainable": 46012664
+    },
+    "max_peak_allocated_gib": 14.093281745910645,
+    "mean_epoch_seconds": 7.922952155519961
+  },
+  {
+    "arm": "shifted_windows",
+    "best_epoch": 21,
+    "val_macro_dice": 0.8907131764735765,
+    "test_macro_dice": 0.891026607559167,
+    "test_pooled_dice": 0.8939835385559438,
+    "parameters": {
+      "total": 51252577,
+      "trainable": 47101753,
+      "decoder": 1089089,
+      "encoder_trainable": 46012664
+    },
+    "max_peak_allocated_gib": 14.093608379364014,
+    "mean_epoch_seconds": 7.953871673190042
+  }
+]

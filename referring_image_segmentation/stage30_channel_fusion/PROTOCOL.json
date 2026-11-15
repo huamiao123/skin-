@@ -1,0 +1,62 @@
+{
+  "stage": "stage30_channel_fusion",
+  "date": "2026-11-11",
+  "status": "fixed_before_smoke_training",
+  "problem": "Stage29 validation deep-context fusion reduces FN but increases FP; channel/scale selection may improve this tradeoff. No claim that noise channels are already identified.",
+  "arms": {
+    "eca_channel": "Stage29 anchor residual path with ECA-like channel gating of context before fusion",
+    "cross_channel": "Same path; joint globally pooled context+skip descriptor predicts 64 per-image context channel weights",
+    "cross_channel_scale": "cross_channel plus conditional per-hidden-channel softmax selection of 3x3/5x5 branches"
+  },
+  "ablation_structure": "ECA vs condition-aware channel gating; conditioned gating vs conditioned gating+scale selection. Common backbone, decoder path and loss unchanged.",
+  "initialization": "All old shared weights copied by deterministic construction; channel gains 2*sigmoid initialized1, scale weights .5/.5, original zero residual projection retained. Formal models start from official pretrained weights, not trained Stage29 checkpoints.",
+  "eca_adaptation": "Global spatial mean + Conv1d(kernel3); multiplier2 and zero init differ from standard sigmoid ECA to ensure exact identity at initialization. Original implementation retained in research folder for attribution.",
+  "cross_gate": {
+    "descriptor": "LayerNorm(concat(GAP(context64),GAP(skip64))) -> Linear128to16 -> GELU",
+    "channel_head": "Linear16to64 -> 2sigmoid",
+    "scale_head": "optional Linear16to64 -> reshape(2,32) -> softmax across2"
+  },
+  "selection_scope": "Channel and kernel-scale weights are per image, not per spatial location; existing spatial residual gate remains. No interpretation as calibrated reliability or named anatomical channels.",
+  "training": {
+    "epochs": 100,
+    "seed": 42,
+    "effective_batch": 64,
+    "micro_batch": 48,
+    "validation_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "lr_schedule_horizon": 300,
+    "lr_schedule_note": "Explicit exception to new100-epoch schedule default: reuse exact Stage29 first100-of300 curve so historical controls remain protocol-matched; do not change LR simultaneously with modules.",
+    "loss": "unchanged BCE+softDice",
+    "encoder": "levels2/3 trainable, encoder eval, no DropPath",
+    "resolution": 256,
+    "augmentation": "same seeded flips and rotations"
+  },
+  "references": "Stage29 control/local_fusion/anchor_fusion, already completed100 actual epochs; reuse best weights and metrics after source/checkpoint hashes and validation replay. No repeat baseline training.",
+  "data": {
+    "train": 1886,
+    "validation": 762,
+    "test": 867,
+    "partition": "identical byte-for-byte",
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "checkpoint_selection": "maximum validation per-image mean foreground Dice; earliest tie; test never used for epoch/hyperparameter selection",
+  "evaluation": "all3 fixed selected new checkpoints get full validation replay and all867 test images; report old3 references separately; no comparison using last checkpoint",
+  "metrics": "common evaluation.py macro/pooled Dice/IoU/precision/recall, Prec@ thresholds, threshold Jaccard, boundaryF1,HD95,per-image records; severe recall<.5 and area quartiles",
+  "development_screen": {
+    "macro_dice_gain_vs_local_reference_at_least": 0.002,
+    "FP_reduction_vs_anchor_reference_at_least_fraction": 0.05,
+    "macro_recall_drop_vs_anchor_at_most": 0.005,
+    "severe_undercoverage_at_most": "local_fusion reference",
+    "note": "Practical validation-only screening, not proof of statistical significance. Results outside these thresholds still fully reported."
+  },
+  "limitations": [
+    "One seed; historical references subject to nondeterministic CUDA training variability",
+    "ECA and conditional variants have different parameter counts; cannot claim a capacity-matched isolation of conditioning",
+    "Observed test set is not a fresh independent confirmation",
+    "No channel or selective-kernel novelty claim; mechanism adaptation must earn evidence"
+  ],
+  "completion": "Done only after training and validation+test for all3 new models; no automatic parameter or seed sweep"
+}

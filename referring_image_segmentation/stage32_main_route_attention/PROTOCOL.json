@@ -1,0 +1,60 @@
+{
+  "stage": "stage32_main_route_attention",
+  "status": "fixed_before_smoke",
+  "seed": 42,
+  "hypothesis": "Stage31 shows the residual path is used, but learned image-specific channel/scale weights have negligible inference value. Does moving the same channel weights to main decoder context improve functional use and validation precision/coverage balance?",
+  "evidence": {
+    "audit": "../stage31_attention_diagnosis/results/summary.json",
+    "precision_control": "../stage31_attention_diagnosis/fp32_results/summary.json",
+    "validation_only": true,
+    "complex_residual_removal_dice_delta": -0.007866042974167353,
+    "complex_joint_permutation_dice_delta": 0.00007589108987017862,
+    "interpretation": "Does not prove the original route is the cause; this experiment tests that hypothesis."
+  },
+  "arms": {
+    "main_context_channel": "Same Stage30 cross_channel_scale parameters; apply channel gains to upsampled main decoder x before skip addition, and remove those gains from residual anchor input. Adaptive scale remains in residual."
+  },
+  "matched_reference": "Stage30 cross_channel_scale reused; same parameter count, seed, initialization, data order, batch, optimizer, learning-rate curve, checkpoint selection. Stage29 control/local/anchor also reported as archived context.",
+  "unchanged": [
+    "MambaVision-S official initialization",
+    "late two encoder stages trainable; all encoder modules eval",
+    "Swin decoder, residual blocks, channel and scale head architectures",
+    "BCE+softDice",
+    "all original parameter values at initialization",
+    "no new regularization or auxiliary supervision"
+  ],
+  "training": {
+    "epochs": 100,
+    "lr_schedule_horizon": 300,
+    "lr_note": "First100 of original300 cosine retained solely for matching existing references.",
+    "effective_batch": 64,
+    "micro_batch": 48,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "precision": "BF16 forward, FP32 loss",
+    "resolution": 256
+  },
+  "data": {
+    "train": 1886,
+    "validation": 762,
+    "test": 867,
+    "patient_disjointness_verified": false,
+    "test_already_exposed": true
+  },
+  "selection": "maximum validation per-image foreground Dice, earliest tie. All fixed weights receive full867-image test evaluation after100epochs.",
+  "metrics": "All common evaluation.py macro/pooled metrics and per-image outputs; post-training validation fixed-channel/fixed-scale interventions for mechanism.",
+  "development_screen": {
+    "macro_dice_gain_vs_local_min": 0.002,
+    "FP_reduction_vs_anchor_min_fraction": 0.05,
+    "macro_recall_drop_vs_anchor_max": 0.005,
+    "severe_undercoverage_at_most": "local_fusion"
+  },
+  "matched_reference_additional_reporting": "Paired image Dice delta versus cross_channel_scale, FP/FN, precision/recall and channel intervention sensitivity. Statistical/bootstrap results exploratory, one seed.",
+  "completion": "Actual smoke stop/restart and validation replay before formal training. Training completion includes validation and test for new model. No automatic sweeps.",
+  "limitations": [
+    "Attention placement is an existing design choice, not itself a novelty claim.",
+    "One seed and CUDA training nondeterminism.",
+    "Already observed test does not provide fresh independent confirmation."
+  ]
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "guo2017",
+    "title": "On Calibration of Modern Neural Networks",
+    "year": 2017,
+    "url": "https://proceedings.mlr.press/v70/guo17a/guo17a.pdf",
+    "kind": "ICML paper",
+    "evidence": "Figure 3 and section 3: NLL can worsen while classification error improves.",
+    "limit": "Classification evidence; our combined BCE+Dice loss needs decomposition."
+  },
+  {
+    "id": "mehrtash2020",
+    "title": "Confidence Calibration and Predictive Uncertainty Estimation for Deep Medical Image Segmentation",
+    "year": 2020,
+    "url": "https://arxiv.org/html/1911.13273v1",
+    "doi": "10.1109/TMI.2020.3006437",
+    "kind": "TMI paper, accessible 2019 preprint",
+    "evidence": "Brain/heart/prostate segmentation; compares CE and Dice calibration; VI-A uses validation DSC checkpoint selection and plateau LR reduction.",
+    "limit": "Different organs/models; ours uses combined BCE+Dice."
+  },
+  {
+    "id": "kumar2022",
+    "title": "Fine-Tuning can Distort Pretrained Features and Underperform Out-of-Distribution",
+    "year": 2022,
+    "url": "https://arxiv.org/html/2202.10054v1",
+    "kind": "ICLR paper",
+    "evidence": "LP-FT can mitigate feature distortion under studied classification distribution shifts.",
+    "limit": "Does not establish catastrophic forgetting in MambaVision/ISIC; our fine-tuning outperforms frozen control."
+  },
+  {
+    "id": "li2018",
+    "title": "Explicit Inductive Bias for Transfer Learning with Convolutional Networks",
+    "year": 2018,
+    "url": "https://proceedings.mlr.press/v80/li18a.html",
+    "kind": "ICML paper",
+    "evidence": "L2-SP regularizes weights towards pretrained initialization.",
+    "limit": "Ordinary AdamW weight decay is not this regularizer; benefit here untested."
+  },
+  {
+    "id": "budget2020",
+    "title": "Budgeted Training: Rethinking Deep Neural Network Training Under Resource Constraints",
+    "year": 2020,
+    "url": "https://arxiv.org/html/1905.04753v3",
+    "kind": "Research paper",
+    "evidence": "Budget-aware LR schedules compared on classification, detection and segmentation; truncating a long schedule differs from a schedule matched to a short budget.",
+    "limit": "Does not prove our encoder needs a particular decay horizon."
+  },
+  {
+    "id": "dominic2023",
+    "title": "Improving Data-Efficiency and Robustness of Medical Imaging Segmentation Using Inpainting-Based Self-Supervised Learning",
+    "year": 2023,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9951871/",
+    "doi": "10.3390/bioengineering10020207",
+    "kind": "Medical segmentation paper",
+    "evidence": "Appendix B compares transfer choices and LRs; immediate encoder fine-tuning at 1e-3 was preferred in their setup; too small LR also underperformed.",
+    "limit": "Counterevidence to universally prescribing warmup or ever-smaller LR; absolute LR not portable."
+  },
+  {
+    "id": "gu2025",
+    "title": "How to build the best medical image segmentation algorithm using foundation models: a comprehensive empirical study with Segment Anything Model",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2404.09957",
+    "kind": "MELBA paper, 2024 preprint",
+    "evidence": "18 adaptation combinations on 17 medical datasets; parameter-efficient adaptation strong in their comparisons.",
+    "limit": "SAM-specific study, not proof adapters outperform our MambaVision baseline."
+  },
+  {
+    "id": "rousseau2025",
+    "title": "Post hoc calibration of medical segmentation models",
+    "year": 2025,
+    "url": "https://link.springer.com/article/10.1007/s42452-025-06587-0",
+    "doi": "10.1007/s42452-025-06587-0",
+    "kind": "Medical segmentation paper",
+    "evidence": "Calibration can improve without a matching Dice improvement; some methods/tasks lose Dice.",
+    "limit": "Calibration diagnosis is not a guaranteed segmentation remedy."
+  },
+  {
+    "id": "huang2016",
+    "title": "Deep Networks with Stochastic Depth",
+    "year": 2016,
+    "url": "https://arxiv.org/abs/1603.09382",
+    "kind": "ECCV paper",
+    "evidence": "Random residual branch dropping during training is a regularization/training technique.",
+    "limit": "Original ResNet study; no guaranteed benefit for this small-data fine-tuning."
+  },
+  {
+    "id": "pytorch_eval",
+    "title": "PyTorch Autograd mechanics: Evaluation Mode",
+    "url": "https://docs.pytorch.org/docs/stable/notes/autograd",
+    "kind": "Official documentation",
+    "evidence": "eval is orthogonal to gradient disabling; training-mode-dependent modules change behavior.",
+    "limit": "Current web docs checked against local Torch 2.2.2 and actual model."
+  },
+  {
+    "id": "timm_drop",
+    "title": "timm DropPath implementation",
+    "url": "https://github.com/huggingface/pytorch-image-models/blob/main/timm/layers/drop.py",
+    "kind": "Official source",
+    "evidence": "DropPath returns identity when training=False.",
+    "limit": "Local installed timm 1.0.22 source also checked; runtime_mode_audit.json confirms."
+  },
+  {
+    "id": "nnunet_epochs",
+    "title": "nnU-Net trainer defaults",
+    "url": "https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py",
+    "kind": "Official source",
+    "evidence": "Default 1000 epochs, 250 iterations/epoch; epoch counts cannot be compared across recipes directly.",
+    "limit": "Not an argument to train our transfer model for 1000 epochs."
+  }
+]

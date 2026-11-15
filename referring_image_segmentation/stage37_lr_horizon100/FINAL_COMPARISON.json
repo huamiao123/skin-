@@ -1,0 +1,174 @@
+{
+  "primary_comparison": "Matched2x2 architecture and learning-rate-horizon comparison",
+  "paired": {
+    "validation": {
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": -0.0006697226444590051,
+        "image_bootstrap95": [
+          -0.0052356350064851325,
+          0.0040821970295986465
+        ],
+        "improved": 389,
+        "worsened": 373,
+        "gains_over5pp": 54,
+        "losses_over5pp": 56,
+        "net_reduced_fn": 279407,
+        "net_added_fp": 316245,
+        "severe_undercoverage": [
+          28,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "swin_control_minus_stage36_swin_control": {
+        "macro_dice_delta": 0.0001024803210515625,
+        "image_bootstrap95": [
+          -0.0030304665332808243,
+          0.0037182967715807223
+        ],
+        "improved": 331,
+        "worsened": 431,
+        "gains_over5pp": 38,
+        "losses_over5pp": 32,
+        "net_reduced_fn": -154976,
+        "net_added_fp": -147891,
+        "severe_undercoverage": [
+          22,
+          28
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_stage36_uct_cca": {
+        "macro_dice_delta": -0.0014048845389340377,
+        "image_bootstrap95": [
+          -0.004071390256888222,
+          0.0011383741314029458
+        ],
+        "improved": 361,
+        "worsened": 401,
+        "gains_over5pp": 26,
+        "losses_over5pp": 31,
+        "net_reduced_fn": 6087,
+        "net_added_fp": 72120,
+        "severe_undercoverage": [
+          19,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "stage36_uct_cca_minus_stage36_swin_control": {
+        "macro_dice_delta": 0.0008376422155265947,
+        "image_bootstrap95": [
+          -0.0021621870002751426,
+          0.004325330474939703
+        ],
+        "improved": 395,
+        "worsened": 366,
+        "gains_over5pp": 36,
+        "losses_over5pp": 51,
+        "net_reduced_fn": 118344,
+        "net_added_fp": 96234,
+        "severe_undercoverage": [
+          22,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "schedule_by_module_interaction": {
+        "macro_dice_delta": -0.0015073648599855998,
+        "image_bootstrap95": [
+          -0.00582037895233468,
+          0.0024139861221162354
+        ],
+        "definition": "(CCA100-Swin100)-(CCA300first100-Swin300first100)",
+        "note": "Single seed; exploratory paired image bootstrap, not seed/patient uncertainty."
+      }
+    },
+    "test": {
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": -0.007819007531991535,
+        "image_bootstrap95": [
+          -0.011994668018102719,
+          -0.003646235572999271
+        ],
+        "improved": 323,
+        "worsened": 544,
+        "gains_over5pp": 57,
+        "losses_over5pp": 98,
+        "net_reduced_fn": 642130,
+        "net_added_fp": 883337,
+        "severe_undercoverage": [
+          21,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "swin_control_minus_stage36_swin_control": {
+        "macro_dice_delta": -0.0030174667381308107,
+        "image_bootstrap95": [
+          -0.006029294055525632,
+          -0.00015833658868906624
+        ],
+        "improved": 400,
+        "worsened": 467,
+        "gains_over5pp": 35,
+        "losses_over5pp": 47,
+        "net_reduced_fn": -363942,
+        "net_added_fp": -281474,
+        "severe_undercoverage": [
+          19,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_stage36_uct_cca": {
+        "macro_dice_delta": -0.005785988067922671,
+        "image_bootstrap95": [
+          -0.008004456807348721,
+          -0.0036127311348452414
+        ],
+        "improved": 308,
+        "worsened": 559,
+        "gains_over5pp": 33,
+        "losses_over5pp": 42,
+        "net_reduced_fn": 68296,
+        "net_added_fp": 213806,
+        "severe_undercoverage": [
+          15,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "stage36_uct_cca_minus_stage36_swin_control": {
+        "macro_dice_delta": -0.005050486202199674,
+        "image_bootstrap95": [
+          -0.00872772008198286,
+          -0.0015942825914222766
+        ],
+        "improved": 411,
+        "worsened": 456,
+        "gains_over5pp": 32,
+        "losses_over5pp": 69,
+        "net_reduced_fn": 209892,
+        "net_added_fp": 388057,
+        "severe_undercoverage": [
+          19,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "schedule_by_module_interaction": {
+        "macro_dice_delta": -0.002768521329791861,
+        "image_bootstrap95": [
+          -0.006403050945029976,
+          0.0010473450451210075
+        ],
+        "definition": "(CCA100-Swin100)-(CCA300first100-Swin300first100)",
+        "note": "Single seed; exploratory paired image bootstrap, not seed/patient uncertainty."
+      }
+    }
+  },
+  "seed": 42,
+  "test_n_per_arm": 867,
+  "complete": true
+}

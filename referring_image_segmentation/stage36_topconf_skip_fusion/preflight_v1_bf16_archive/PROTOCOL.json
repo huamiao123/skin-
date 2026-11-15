@@ -1,0 +1,66 @@
+{
+  "stage": "stage36_topconf_skip_fusion",
+  "status": "fixed_before_preflight",
+  "seed": 42,
+  "arms": [
+    "swin_control",
+    "uct_concat",
+    "uct_cca",
+    "madg_concat",
+    "madg_mfms"
+  ],
+  "rationale": "Explicit user request to try published top-conference modules. Stage35 showed that recovering more foreground did not establish better segmentation. Test conditional skip filtering and multi-frequency/multi-scale local refinement separately with matched surrounding convolutions; mechanism remains a hypothesis, not a diagnosed cause.",
+  "changes": {
+    "swin_control": "Exact previous MambaVision-S + Swin add-skip architecture, newly trained on same4090 physical batch64.",
+    "uct_concat": "At three skip levels use original UCTransNet UpBlock_attention(128,64,2), replacing only CCA with ReLU(skip); same native nearest upsampling, concatenation and two Conv-BN-ReLU layers; then original shared Swin level.",
+    "uct_cca": "Same three UpBlocks with unmodified author CCA. Paired surrounding weights identical; no CCT/ChannelTransformer integration. No additional root initialization exists on this UCTransNet runtime path.",
+    "madg_concat": "Replace only finest64x64 skip fusion with original MADGNet UpsampleBlock(64,64,64), bypass MFMSAttentionBlock with Identity; native bilinear upsampling, concat, conv1/conv2 retained, followed by existing shared Swin.",
+    "madg_mfms": "Same finest UpsampleBlock with unmodified MFMS attention (two scales,16 top frequencies,groups32,minchannel64,minresolution8). Native C64 DCT56x56 remains;64x64 pooled to56, lower32x32 branch internally uses author adaptive pooling. Do not broadcast block to lower decoder resolutions."
+  },
+  "authors_internal_code_modified": false,
+  "extra_supervision": false,
+  "training": {
+    "epochs": 100,
+    "lr_horizon": 300,
+    "lr_note": "First100 of archived300 cosine kept to match archived controls; not an optimized100-epoch cosine.",
+    "micro_batch": 64,
+    "effective_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "precision": "BF16 forward FP32 loss",
+    "encoder": "late two stages trainable, all encoder modules eval; author decoder BN remains train in training",
+    "determinism": "Request deterministic algorithms, warn rather than abort for unsupported author adaptive_max_pool2d backward; fixed seeds/cudnn deterministic maintained; no bitwise training guarantee.",
+    "micro_batch_note": "Physical and effective batch64 for all five fresh controls/treatments on4090; archived48+16 runs secondary."
+  },
+  "split": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "max validation per-image foreground Dice, earliest tie; threshold0.5 fixed",
+  "completion": "Author code/provenance and initialization audit; replay historical control on validation; real-data gradient and restart checks for all5 arms; train all5x100 epochs; fixed validation-best full867-image test for every arm.",
+  "retention": "Keep best-Dice model; latest optimizer state only while unfinished. Best-loss value recorded without extra model copy. Remove smoke model files after final success.",
+  "metrics": "Common evaluation.py macro and pooled Dice/IoU/precision/recall, Prec@ thresholds, boundary F1, HD95, threshold Jaccard and per-image rows.",
+  "references": "Fresh same4090 Swin is common reference; UCTrans and MADG each have a matching surrounding-convolution control. Historical A4000 references secondary.",
+  "next_step_screen": "Assess fixed paired validation effects including Dice, boundary metrics and false positives; do not combine families automatically. Test results descriptive because already exposed.",
+  "created_utc": "2026-11-12T02:57:42.278782+00:00",
+  "primary_reference": {
+    "uct_cca": "uct_concat",
+    "madg_mfms": "madg_concat",
+    "uct_concat": "swin_control",
+    "madg_concat": "swin_control"
+  },
+  "exclusions": [
+    "No auxiliary heads or loss change",
+    "No CCT or E-SDM full-network reproduction claim",
+    "No pretrained reinitialization",
+    "No test-based epoch/threshold choice",
+    "No cross-family stacking"
+  ],
+  "pretrained_reinitialization": false,
+  "hardware": "RTX4090 24GB; all five arms trained here",
+  "loss_normalization": "Common single-output BCE+per-image softDice for every arm."
+}

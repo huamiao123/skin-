@@ -1,0 +1,437 @@
+{
+  "state": "complete",
+  "generated_utc": "2026-11-09T15:55:54.505819+00:00",
+  "stages": [
+    {
+      "stage": "stage22_partial_finetune",
+      "seed": 42,
+      "encoder_lr": 0.0001,
+      "macro_dice": {
+        "frozen": 0.8811519388480832,
+        "finetune34": 0.8876332753278046
+      },
+      "largest_quartile": {
+        "frozen": {
+          "n": 191,
+          "macro_dice": 0.8919420724587218,
+          "macro_iou": 0.821890120592615,
+          "macro_precision": 0.9282384091685496,
+          "macro_recall": 0.8886607526629943,
+          "counts": {
+            "tp": 6117135,
+            "fp": 531179,
+            "fn": 818334,
+            "tn": 5050728
+          },
+          "pooled": {
+            "dice": 0.9006526385175617,
+            "iou": 0.8192611999387142,
+            "precision": 0.920103202105075,
+            "recall": 0.882007402815873
+          },
+          "oracle_macro_dice": 0.9425111867833569,
+          "oracle_mean_gain_over_point5": 0.05056911432463507,
+          "fn_p_lt_01": 580876,
+          "fn_p_lt_01_fraction_of_fn": 0.7098275276354153,
+          "fn_interior3": 652202,
+          "fn_interior3_fraction_of_fn": 0.796987538095692,
+          "fn_interior8": 478730,
+          "fn_interior8_fraction_of_fn": 0.5850056333966327,
+          "fn_interior8_p_lt_01": 354389,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.43306156166064225,
+          "interior8_false_negative_rate": 0.08249117027595332,
+          "mean_pred_to_gt_area": 0.971354163037834,
+          "severe_undercoverage_n": 8
+        },
+        "finetune34": {
+          "n": 191,
+          "macro_dice": 0.8823003667809968,
+          "macro_iou": 0.8135971615391038,
+          "macro_precision": 0.9575269502291616,
+          "macro_recall": 0.8521110301785098,
+          "counts": {
+            "tp": 5816698,
+            "fp": 298114,
+            "fn": 1118771,
+            "tn": 5283793
+          },
+          "pooled": {
+            "dice": 0.8914287745987999,
+            "iou": 0.8041240419858319,
+            "precision": 0.9512472337661403,
+            "recall": 0.8386884866762435
+          },
+          "oracle_macro_dice": 0.9466159287181152,
+          "oracle_mean_gain_over_point5": 0.0643155619371184,
+          "fn_p_lt_01": 763760,
+          "fn_p_lt_01_fraction_of_fn": 0.6826776882847339,
+          "fn_interior3": 903520,
+          "fn_interior3_fraction_of_fn": 0.8076004830300392,
+          "fn_interior8": 669283,
+          "fn_interior8_fraction_of_fn": 0.5982305583537649,
+          "fn_interior8_p_lt_01": 469015,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.4192234156945434,
+          "interior8_false_negative_rate": 0.1153258369348085,
+          "mean_pred_to_gt_area": 0.8975994474094325,
+          "severe_undercoverage_n": 14
+        }
+      },
+      "largest_quartile_checkpoint_deltas": {
+        "best_dice": -0.009641705677725043,
+        "best_loss": -0.005380181836901032,
+        "last": 0.007576410286898594
+      },
+      "largest_quartile_tail": {
+        "n": 191,
+        "mean_delta": -0.009641705677725024,
+        "median_delta": 0.0023393175024369883,
+        "improved": 101,
+        "worsened": 90,
+        "losses_over_5pp": 28,
+        "losses_over_20pp": 7,
+        "worst5": [
+          {
+            "id": "431",
+            "delta_dice": -0.8695248491136893,
+            "recall_frozen": 0.8361094302366318,
+            "recall_finetune": 0.017962355489028314
+          },
+          {
+            "id": "791",
+            "delta_dice": -0.5662649692062742,
+            "recall_frozen": 0.8551738248916501,
+            "recall_finetune": 0.21247744647607
+          },
+          {
+            "id": "581",
+            "delta_dice": -0.351064025162931,
+            "recall_frozen": 0.8092493946731235,
+            "recall_finetune": 0.32857142857142857
+          },
+          {
+            "id": "305",
+            "delta_dice": -0.3261599160340427,
+            "recall_frozen": 0.6998708855834026,
+            "recall_finetune": 0.32883496347653834
+          },
+          {
+            "id": "403",
+            "delta_dice": -0.30131516423341087,
+            "recall_frozen": 0.8024944558384607,
+            "recall_finetune": 0.4113684491354443
+          }
+        ],
+        "sensitivity_only_mean_excluding_worst5": 0.0030793717166928414,
+        "note": "All cases remain in official metrics; exclusion is a post hoc concentration diagnostic only."
+      },
+      "best_grid_threshold": {
+        "frozen": {
+          "threshold": 0.75,
+          "macro_dice": 0.8827737163752241,
+          "gain_over_point5": 0.0016217775271408774
+        },
+        "finetune34": {
+          "threshold": 0.4000000059604645,
+          "macro_dice": 0.8877520808292246,
+          "gain_over_point5": 0.00011880550142007174
+        }
+      }
+    },
+    {
+      "stage": "stage23_encoder_lr3e5",
+      "seed": 42,
+      "encoder_lr": 3e-05,
+      "macro_dice": {
+        "frozen": 0.8811519388480832,
+        "finetune34": 0.8836073261343957
+      },
+      "largest_quartile": {
+        "frozen": {
+          "n": 191,
+          "macro_dice": 0.8919420724587218,
+          "macro_iou": 0.821890120592615,
+          "macro_precision": 0.9282384091685496,
+          "macro_recall": 0.8886607526629943,
+          "counts": {
+            "tp": 6117135,
+            "fp": 531179,
+            "fn": 818334,
+            "tn": 5050728
+          },
+          "pooled": {
+            "dice": 0.9006526385175617,
+            "iou": 0.8192611999387142,
+            "precision": 0.920103202105075,
+            "recall": 0.882007402815873
+          },
+          "oracle_macro_dice": 0.9425111867833569,
+          "oracle_mean_gain_over_point5": 0.05056911432463507,
+          "fn_p_lt_01": 580876,
+          "fn_p_lt_01_fraction_of_fn": 0.7098275276354153,
+          "fn_interior3": 652202,
+          "fn_interior3_fraction_of_fn": 0.796987538095692,
+          "fn_interior8": 478730,
+          "fn_interior8_fraction_of_fn": 0.5850056333966327,
+          "fn_interior8_p_lt_01": 354389,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.43306156166064225,
+          "interior8_false_negative_rate": 0.08249117027595332,
+          "mean_pred_to_gt_area": 0.971354163037834,
+          "severe_undercoverage_n": 8
+        },
+        "finetune34": {
+          "n": 191,
+          "macro_dice": 0.8886180196234909,
+          "macro_iou": 0.8198106738278473,
+          "macro_precision": 0.9507432043532549,
+          "macro_recall": 0.8647606901761318,
+          "counts": {
+            "tp": 5920575,
+            "fp": 350247,
+            "fn": 1014894,
+            "tn": 5231660
+          },
+          "pooled": {
+            "dice": 0.8966294927167666,
+            "iou": 0.8126277499699411,
+            "precision": 0.9441465568628802,
+            "recall": 0.8536661327445916
+          },
+          "oracle_macro_dice": 0.9460029086645235,
+          "oracle_mean_gain_over_point5": 0.05738488904103267,
+          "fn_p_lt_01": 601644,
+          "fn_p_lt_01_fraction_of_fn": 0.5928146190636657,
+          "fn_interior3": 814210,
+          "fn_interior3_fraction_of_fn": 0.8022611228364736,
+          "fn_interior8": 595834,
+          "fn_interior8_fraction_of_fn": 0.5870898832784508,
+          "fn_interior8_p_lt_01": 358920,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.3536526967348314,
+          "interior8_false_negative_rate": 0.10266965502517572,
+          "mean_pred_to_gt_area": 0.9185401213799883,
+          "severe_undercoverage_n": 15
+        }
+      },
+      "largest_quartile_checkpoint_deltas": {
+        "best_dice": -0.0033240528352309617,
+        "best_loss": -0.0021839442723284863,
+        "last": 0.004609373852590082
+      },
+      "largest_quartile_tail": {
+        "n": 191,
+        "mean_delta": -0.0033240528352307596,
+        "median_delta": 0.0007232620235601006,
+        "improved": 96,
+        "worsened": 95,
+        "losses_over_5pp": 26,
+        "losses_over_20pp": 6,
+        "worst5": [
+          {
+            "id": "431",
+            "delta_dice": -0.4931305450332986,
+            "recall_frozen": 0.8361094302366318,
+            "recall_finetune": 0.25919615274371793
+          },
+          {
+            "id": "559",
+            "delta_dice": -0.328611241371501,
+            "recall_frozen": 0.8279196670638416,
+            "recall_finetune": 0.40254537291267334
+          },
+          {
+            "id": "305",
+            "delta_dice": -0.3137624697188556,
+            "recall_frozen": 0.6998708855834026,
+            "recall_finetune": 0.3398715930596579
+          },
+          {
+            "id": "390",
+            "delta_dice": -0.21589281772596663,
+            "recall_frozen": 0.7125569925156998,
+            "recall_finetune": 0.3509305193129355
+          },
+          {
+            "id": "581",
+            "delta_dice": -0.20845412996491852,
+            "recall_frozen": 0.8092493946731235,
+            "recall_finetune": 0.46760290556900724
+          }
+        ],
+        "sensitivity_only_mean_excluding_worst5": 0.00497288770045949,
+        "note": "All cases remain in official metrics; exclusion is a post hoc concentration diagnostic only."
+      },
+      "best_grid_threshold": {
+        "frozen": {
+          "threshold": 0.75,
+          "macro_dice": 0.8827737163752241,
+          "gain_over_point5": 0.0016217775271408774
+        },
+        "finetune34": {
+          "threshold": 0.44999998807907104,
+          "macro_dice": 0.8836827536818436,
+          "gain_over_point5": 7.542754744782609e-05
+        }
+      }
+    },
+    {
+      "stage": "stage24_seed43_confirmation",
+      "seed": 43,
+      "encoder_lr": 0.0001,
+      "macro_dice": {
+        "frozen": 0.882076328758065,
+        "finetune34": 0.8899376893373019
+      },
+      "largest_quartile": {
+        "frozen": {
+          "n": 191,
+          "macro_dice": 0.8855138550229967,
+          "macro_iou": 0.813449944706297,
+          "macro_precision": 0.9280353679541667,
+          "macro_recall": 0.879704561193128,
+          "counts": {
+            "tp": 6037682,
+            "fp": 514576,
+            "fn": 897787,
+            "tn": 5067331
+          },
+          "pooled": {
+            "dice": 0.8952853212405619,
+            "iou": 0.8104222189261944,
+            "precision": 0.9214658519246343,
+            "recall": 0.8705513642985067
+          },
+          "oracle_macro_dice": 0.9424406017303402,
+          "oracle_mean_gain_over_point5": 0.056926746707343434,
+          "fn_p_lt_01": 604068,
+          "fn_p_lt_01_fraction_of_fn": 0.6728411081915866,
+          "fn_interior3": 734338,
+          "fn_interior3_fraction_of_fn": 0.8179423404437801,
+          "fn_interior8": 550837,
+          "fn_interior8_fraction_of_fn": 0.6135497618031894,
+          "fn_interior8_p_lt_01": 376837,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.41973987148399344,
+          "interior8_false_negative_rate": 0.09491610879054017,
+          "mean_pred_to_gt_area": 0.9602236082777215,
+          "severe_undercoverage_n": 9
+        },
+        "finetune34": {
+          "n": 191,
+          "macro_dice": 0.891680410079158,
+          "macro_iou": 0.8233971528731943,
+          "macro_precision": 0.9447404329453954,
+          "macro_recall": 0.8742639664743229,
+          "counts": {
+            "tp": 6003481,
+            "fp": 400833,
+            "fn": 931988,
+            "tn": 5181074
+          },
+          "pooled": {
+            "dice": 0.9000867555341793,
+            "iou": 0.8183252270694418,
+            "precision": 0.9374120319522122,
+            "recall": 0.8656200467481002
+          },
+          "oracle_macro_dice": 0.9465765999822704,
+          "oracle_mean_gain_over_point5": 0.0548961899031124,
+          "fn_p_lt_01": 549105,
+          "fn_p_lt_01_fraction_of_fn": 0.5891760408932304,
+          "fn_interior3": 745702,
+          "fn_interior3_fraction_of_fn": 0.800119744031039,
+          "fn_interior8": 545754,
+          "fn_interior8_fraction_of_fn": 0.5855805010364941,
+          "fn_interior8_p_lt_01": 324293,
+          "fn_interior8_p_lt_01_fraction_of_fn": 0.34795834281128085,
+          "interior8_false_negative_rate": 0.09404024427711367,
+          "mean_pred_to_gt_area": 0.9353877033355383,
+          "severe_undercoverage_n": 11
+        }
+      },
+      "largest_quartile_checkpoint_deltas": {
+        "best_dice": 0.00616655505616126,
+        "best_loss": 0.015095294743842969,
+        "last": 0.006168267928466364
+      },
+      "largest_quartile_tail": {
+        "n": 191,
+        "mean_delta": 0.006166555056161286,
+        "median_delta": 0.0039087341830905675,
+        "improved": 105,
+        "worsened": 86,
+        "losses_over_5pp": 12,
+        "losses_over_20pp": 5,
+        "worst5": [
+          {
+            "id": "791",
+            "delta_dice": -0.4508314745367303,
+            "recall_frozen": 0.8011011699931176,
+            "recall_finetune": 0.27674336414873235
+          },
+          {
+            "id": "305",
+            "delta_dice": -0.28693210931489654,
+            "recall_frozen": 0.572684341781779,
+            "recall_finetune": 0.28316737119510427
+          },
+          {
+            "id": "390",
+            "delta_dice": -0.22506338322009378,
+            "recall_frozen": 0.6852005849797838,
+            "recall_finetune": 0.3584721704470507
+          },
+          {
+            "id": "581",
+            "delta_dice": -0.21474474914393005,
+            "recall_frozen": 0.8472881355932204,
+            "recall_finetune": 0.5017675544794189
+          },
+          {
+            "id": "126",
+            "delta_dice": -0.2086898816373442,
+            "recall_frozen": 0.13861886125489206,
+            "recall_finetune": 0.017706097714934983
+          }
+        ],
+        "sensitivity_only_mean_excluding_worst5": 0.01378534200849355,
+        "note": "All cases remain in official metrics; exclusion is a post hoc concentration diagnostic only."
+      },
+      "best_grid_threshold": {
+        "frozen": {
+          "threshold": 0.699999988079071,
+          "macro_dice": 0.8836051957279885,
+          "gain_over_point5": 0.0015288669699234925
+        },
+        "finetune34": {
+          "threshold": 0.5,
+          "macro_dice": 0.8899376893373019,
+          "gain_over_point5": 0.0
+        }
+      }
+    }
+  ],
+  "decision": "No module selected automatically. Distinguish a reproducible error from its unproven cause.",
+  "limitations": "Development-only, same images across seeds; no threshold, checkpoint, or sample exclusion changes to official results.",
+  "test_evaluated": false,
+  "seed_replication": {
+    "overall_dice_deltas": [
+      0.006481336479721378,
+      0.00786136057923692
+    ],
+    "largest_quartile_deltas": [
+      -0.009641705677725024,
+      0.006166555056161286
+    ],
+    "largest_quartile_severe_regression_counts": [
+      7,
+      5
+    ],
+    "largest_quartile_low_recall_counts": [
+      14,
+      11
+    ],
+    "worst5_id_overlap": [
+      "305",
+      "581",
+      "791"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "arm": "stage45_uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919
+  },
+  {
+    "arm": "frozen",
+    "best_epoch": 32,
+    "val_macro_dice": 0.8611154255881309,
+    "test_macro_dice": 0.8752486696124129,
+    "test_pooled_dice": 0.8768278531023334,
+    "parameters": {
+      "total": 51229673,
+      "trainable": 1089089,
+      "decoder": 1089089,
+      "encoder_trainable": 0
+    },
+    "max_peak_allocated_gib": 5.871705532073975,
+    "mean_epoch_seconds": 4.593126425869632
+  },
+  {
+    "arm": "lora8",
+    "best_epoch": 78,
+    "val_macro_dice": 0.8782623407042304,
+    "test_macro_dice": 0.8727746077450065,
+    "test_pooled_dice": 0.8730338833599388,
+    "parameters": {
+      "total": 52003817,
+      "trainable": 1863233,
+      "decoder": 1089089,
+      "encoder_trainable": 774144
+    },
+    "max_peak_allocated_gib": 12.170153141021729,
+    "mean_epoch_seconds": 8.870390967010245
+  }
+]

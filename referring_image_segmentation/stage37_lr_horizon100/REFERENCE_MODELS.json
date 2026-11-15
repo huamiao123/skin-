@@ -1,0 +1,169 @@
+{
+  "models": [
+    {
+      "arm": "stage36_swin_control",
+      "source_stage": "stage36_topconf_skip_fusion",
+      "source_arm": "swin_control",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/swin_control/results/swin_control_best_dice.pth",
+      "sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0",
+      "epoch": 18,
+      "validation": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8874855631757186,
+          "iou": 0.8144439082388005,
+          "precision": 0.9080372797948729,
+          "recall": 0.9008703795450006,
+          "boundary_f1": 0.3344323818905524,
+          "hd95_pixels": 15.204981876730823,
+          "hd95_diagonal": 0.041998225753339544
+        },
+        "pooled": {
+          "dice": 0.8939380508072474,
+          "iou": 0.8082169822944171,
+          "precision": 0.9091766554137111,
+          "recall": 0.8792018504348875
+        },
+        "prec_at": {
+          "0.5": 0.9514435695538058,
+          "0.6": 0.910761154855643,
+          "0.7": 0.847769028871391,
+          "0.8": 0.6981627296587927,
+          "0.9": 0.3188976377952756
+        },
+        "threshold_jaccard_065": 0.7642906246826802,
+        "counts": {
+          "tp": 10613701,
+          "fp": 1060269,
+          "fn": 1458272,
+          "tn": 36806190
+        },
+        "severe_undercoverage": 22,
+        "epoch": 18,
+        "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+      },
+      "test": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 867,
+        "macro": {
+          "dice": 0.8969779775708917,
+          "iou": 0.8253593189965627,
+          "precision": 0.8745277804084243,
+          "recall": 0.9460196457531069,
+          "boundary_f1": 0.25454158051656545,
+          "hd95_pixels": 16.10152648954899,
+          "hd95_diagonal": 0.04447460378208951
+        },
+        "pooled": {
+          "dice": 0.896442808384947,
+          "iou": 0.8123211150235046,
+          "precision": 0.8832896621916022,
+          "recall": 0.9099936054103226
+        },
+        "prec_at": {
+          "0.5": 0.9607843137254902,
+          "0.6": 0.9354094579008074,
+          "0.7": 0.8765859284890427,
+          "0.8": 0.7220299884659747,
+          "0.9": 0.31833910034602075
+        },
+        "threshold_jaccard_065": 0.7858816559721779,
+        "counts": {
+          "tp": 14750100,
+          "fp": 1948952,
+          "fn": 1458915,
+          "tn": 38661745
+        },
+        "severe_undercoverage": 19,
+        "epoch": 18,
+        "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+      },
+      "val_rows": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/swin_control/results/swin_control_validation_per_image.csv",
+      "test_rows": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/swin_control/results/swin_control_test_per_image.csv"
+    },
+    {
+      "arm": "stage36_uct_cca",
+      "source_stage": "stage36_topconf_skip_fusion",
+      "source_arm": "uct_cca",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/uct_cca/results/uct_cca_best_dice.pth",
+      "sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55",
+      "epoch": 25,
+      "validation": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883232053912451,
+          "iou": 0.8153283351583066,
+          "precision": 0.9033775422882865,
+          "recall": 0.9063147167647425,
+          "boundary_f1": 0.3400523592911849,
+          "hd95_pixels": 16.005421192176378,
+          "hd95_diagonal": 0.04420914789349529
+        },
+        "pooled": {
+          "dice": 0.8958106545345988,
+          "iou": 0.8112835522398801,
+          "precision": 0.9027212574655878,
+          "recall": 0.8890050532750529
+        },
+        "prec_at": {
+          "0.5": 0.9553805774278216,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.6902887139107612,
+          "0.9": 0.3215223097112861
+        },
+        "threshold_jaccard_065": 0.7637930433011869,
+        "counts": {
+          "tp": 10732045,
+          "fp": 1156503,
+          "fn": 1339928,
+          "tn": 36709956
+        },
+        "severe_undercoverage": 19,
+        "epoch": 25,
+        "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+      },
+      "test": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 867,
+        "macro": {
+          "dice": 0.8919274913686919,
+          "iou": 0.8179995100033548,
+          "precision": 0.8602707313090547,
+          "recall": 0.9534604662417708,
+          "boundary_f1": 0.2586659653913569,
+          "hd95_pixels": 17.50923089310078,
+          "hd95_diagonal": 0.04836287460106466
+        },
+        "pooled": {
+          "dice": 0.8929734887012529,
+          "iou": 0.8066414666561414,
+          "precision": 0.8648893527843353,
+          "recall": 0.9229426957776274
+        },
+        "prec_at": {
+          "0.5": 0.9642445213379469,
+          "0.6": 0.9273356401384083,
+          "0.7": 0.8535178777393311,
+          "0.8": 0.6828143021914648,
+          "0.9": 0.31141868512110726
+        },
+        "threshold_jaccard_065": 0.7653711444250515,
+        "counts": {
+          "tp": 14959992,
+          "fp": 2337009,
+          "fn": 1249023,
+          "tn": 38273688
+        },
+        "severe_undercoverage": 15,
+        "epoch": 25,
+        "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+      },
+      "val_rows": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/uct_cca/results/uct_cca_validation_per_image.csv",
+      "test_rows": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage36_topconf_skip_fusion/uct_cca/results/uct_cca_test_per_image.csv"
+    }
+  ],
+  "comparison": "same architecture, only LR horizon differs"
+}

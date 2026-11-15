@@ -1,0 +1,164 @@
+{
+  "coarse_direct": {
+    "metrics": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28
+    },
+    "primary_minus_policy": {
+      "macro_dice_delta": -0.0007687087443553964,
+      "image_bootstrap95": [
+        -0.00217005716857105,
+        0.0005905376457653868
+      ],
+      "improved": 329,
+      "worsened": 432,
+      "gains_over5pp": 8,
+      "losses_over5pp": 10,
+      "net_reduced_fn": 238116,
+      "net_added_fp": 277100,
+      "severe_undercoverage": [
+        28,
+        20
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    }
+  },
+  "coarse_stepwise": {
+    "metrics": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8876310361195712,
+        "iou": 0.8139229505083133,
+        "precision": 0.9175165551168881,
+        "recall": 0.8907384322425347,
+        "boundary_f1": 0.3292128035989023,
+        "hd95_pixels": 15.30720214085321,
+        "hd95_diagonal": 0.04228057201090056
+      },
+      "pooled": {
+        "dice": 0.8923033685343595,
+        "iou": 0.8055485077658088,
+        "precision": 0.9195898949447737,
+        "recall": 0.8665894961826042
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30577427821522307
+      },
+      "threshold_jaccard_065": 0.7625720813666392,
+      "counts": {
+        "tp": 10461445,
+        "fp": 914762,
+        "fn": 1610528,
+        "tn": 36951697
+      },
+      "severe_undercoverage": 28
+    },
+    "primary_minus_policy": {
+      "macro_dice_delta": -0.000811701367156172,
+      "image_bootstrap95": [
+        -0.00219027490795641,
+        0.000538460430304942
+      ],
+      "improved": 331,
+      "worsened": 430,
+      "gains_over5pp": 8,
+      "losses_over5pp": 9,
+      "net_reduced_fn": 235396,
+      "net_added_fp": 274716,
+      "severe_undercoverage": [
+        28,
+        20
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    }
+  },
+  "random": {
+    "metrics": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8876536622001454,
+        "iou": 0.8138775993859682,
+        "precision": 0.9164184252365423,
+        "recall": 0.8917798413323043,
+        "boundary_f1": 0.3294125795272442,
+        "hd95_pixels": 15.16192462598107,
+        "hd95_diagonal": 0.04187929577683798
+      },
+      "pooled": {
+        "dice": 0.8924556545280316,
+        "iou": 0.8057967684785758,
+        "precision": 0.9182107224316478,
+        "recall": 0.8681059840011239
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9199475065616798,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6929133858267716,
+        "0.9": 0.3005249343832021
+      },
+      "threshold_jaccard_065": 0.7623791567755446,
+      "counts": {
+        "tp": 10479752,
+        "fp": 933480,
+        "fn": 1592221,
+        "tn": 36932979
+      },
+      "severe_undercoverage": 27
+    },
+    "primary_minus_policy": {
+      "macro_dice_delta": -0.0008343274477306434,
+      "image_bootstrap95": [
+        -0.0021190523066813892,
+        0.00042608949425596243
+      ],
+      "improved": 328,
+      "worsened": 434,
+      "gains_over5pp": 7,
+      "losses_over5pp": 8,
+      "net_reduced_fn": 217089,
+      "net_added_fp": 255998,
+      "severe_undercoverage": [
+        27,
+        20
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "stage": 41,
+  "training": false,
+  "test_read": false,
+  "split": "val",
+  "n": 762,
+  "threshold": 0.5,
+  "seed": 42,
+  "checkpoints": [
+    "point_uncertain",
+    "point_random"
+  ],
+  "selection": "reuse Stage40 fixed max_val_Dice checkpoints, no reselect",
+  "primary_modes": [
+    "coarse_direct",
+    "coarse_stepwise",
+    "uncertain",
+    "random"
+  ],
+  "secondary_modes": [
+    "random_alt41001",
+    "random_alt41002"
+  ],
+  "purpose": "Separate coarse-network changes from inference point substitution with same frozen weights; cross trained head x inference selection",
+  "preserved": "All Stage40 source, checkpoints, original formal metrics untouched",
+  "caveats": [
+    "Coarse-vs-baseline comparison includes training trajectory and checkpoint selection; not isolated causal effect of point CE",
+    "Policy swaps are post-training interventions and may create train-inference mismatch",
+    "Per-stage point correctness uses native nearest label sampling; final full-mask metrics are primary",
+    "Two extra fixed random grids diagnose dependence on original spatial draw",
+    "Validation-only diagnostic; no additional test access or hyperparameter selection"
+  ]
+}

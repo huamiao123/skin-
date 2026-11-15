@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-11",
+  "retrieval": "targeted web supplement, separate from API candidate records",
+  "sources": [
+    {
+      "method": "U-Net",
+      "paper": "https://arxiv.org/html/1505.04597v1",
+      "evidence": "Architecture section: concatenate skip then learned convolutions"
+    },
+    {
+      "method": "Attention U-Net",
+      "paper": "https://arxiv.org/html/1804.03999v3",
+      "code": "https://github.com/ozan-oktay/Attention-Gated-Networks",
+      "evidence": "Method section: coarse-context conditioned spatial skip gates",
+      "code_inspection_this_audit": "Repository landing page only; not full runtime"
+    },
+    {
+      "method": "FPN",
+      "paper": "https://arxiv.org/html/1612.03144v2",
+      "evidence": "Section 3: 1x1 lateral projection, upsample, elementwise add, 3x3 smoothing; object detection context"
+    },
+    {
+      "method": "UCTransNet",
+      "paper": "https://arxiv.org/abs/2109.04335",
+      "code": "https://github.com/McGregorWwww/UCTransNet/blob/main/nets/UCTransNet.py",
+      "evidence": "CCT/CCA division; UpBlock_attention lines81-92 uses CCA+concat+conv"
+    },
+    {
+      "method": "TransFuse",
+      "paper": "https://miccai2021.org/openaccess/paperlinks/2021/09/01/496-Paper0016.html",
+      "code": "https://github.com/Rayicer/TransFuse/blob/main/lib/TransFuse.py",
+      "evidence": "BiFusion lines20-71 and independent branch setting"
+    },
+    {
+      "method": "EMCAD",
+      "paper": "https://arxiv.org/html/2405.06880v1",
+      "venue": "https://openaccess.thecvf.com/content/CVPR2024/html/Rahman_EMCAD_Efficient_Multi-scale_Convolutional_Attention_Decoding_for_Medical_Image_Segmentation_CVPR_2024_paper.html",
+      "code": [
+        "https://github.com/SLDGroup/EMCAD/blob/main/lib/decoders.py",
+        "https://github.com/SLDGroup/EMCAD/blob/main/lib/networks.py",
+        "https://github.com/SLDGroup/EMCAD/blob/main/train_polyp.py"
+      ],
+      "evidence": "Complete decoder path, native constructor vs binary CLI configuration, 5-term binary supervision"
+    },
+    {
+      "method": "MambaLiteUNet",
+      "paper": "https://arxiv.org/html/2604.20286v1",
+      "venue": "https://openaccess.thecvf.com/content/CVPR2026/html/Rahman_MambaLiteUNet_Cross-Gated_Adaptive_Feature_Fusion_for_Robust_Skin_Lesion_Segmentation_CVPR_2026_paper.html",
+      "code": "https://github.com/maklachur/MambaLiteUNet/blob/main/models/MambaLiteUNet.py",
+      "evidence": "CGA class, top-level initializer lines510-524, original GN/GELU/gate/add forward sequence"
+    }
+  ],
+  "excluded": [
+    "arXiv 1703.03130 is a sentence-embedding paper, opened by mistaken ID and excluded",
+    "PyTorch redirect/mirror pages not used as medical fusion evidence"
+  ]
+}

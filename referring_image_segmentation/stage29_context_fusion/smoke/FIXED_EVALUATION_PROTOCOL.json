@@ -1,0 +1,145 @@
+{
+  "models": [
+    {
+      "arm": "control",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/smoke/control_best_dice.pth",
+      "checkpoint_sha256": "8d3a94bf5e7d6e9ca3bb6be71b430d93ac1cc252a785e757de17bb01b874e12f",
+      "epoch": 2,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8734976072174653,
+          "iou": 0.7902344864118424,
+          "precision": 0.8631665881783521,
+          "recall": 0.9196806924792449
+        },
+        "pooled": {
+          "dice": 0.8854528004582705,
+          "iou": 0.7944506978460345,
+          "precision": 0.8700400251147381,
+          "recall": 0.9014214992031543
+        },
+        "prec_at": {
+          "0.5": 0.9435695538057742,
+          "0.6": 0.910761154855643,
+          "0.7": 0.8346456692913385,
+          "0.8": 0.6338582677165354,
+          "0.9": 0.16535433070866143
+        },
+        "threshold_jaccard_065": 0.733139970162599,
+        "counts": {
+          "tp": 10881936,
+          "fp": 1625461,
+          "fn": 1190037,
+          "tn": 36240998
+        },
+        "loss": 0.3141488994513284,
+        "diagnostics": {
+          "bce_soft": 0.1613153663520112,
+          "soft_dice_loss": 0.1528335218354473,
+          "wrong_pixels": 2815498,
+          "wrong_mean_confidence": 0.8196060481361802,
+          "wrong_confidence_gt99_fraction": 0.11758559231794873
+        }
+      }
+    },
+    {
+      "arm": "local_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/smoke/local_fusion_best_dice.pth",
+      "checkpoint_sha256": "a8fbb88653c85d4be7e5f6feaac65edd9577cddd56e9c97a56d17cfb151f7e03",
+      "epoch": 2,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.87548325512999,
+          "iou": 0.7935297472170914,
+          "precision": 0.8701856033784332,
+          "recall": 0.9159383089878814
+        },
+        "pooled": {
+          "dice": 0.8865474782950804,
+          "iou": 0.796214891082736,
+          "precision": 0.8773001636686698,
+          "recall": 0.8959918150910378
+        },
+        "prec_at": {
+          "0.5": 0.9461942257217848,
+          "0.6": 0.9081364829396326,
+          "0.7": 0.8385826771653543,
+          "0.8": 0.6404199475065617,
+          "0.9": 0.17585301837270342
+        },
+        "threshold_jaccard_065": 0.7380330217882187,
+        "counts": {
+          "tp": 10816389,
+          "fp": 1512788,
+          "fn": 1255584,
+          "tn": 36353671
+        },
+        "loss": 0.3101980309160988,
+        "diagnostics": {
+          "bce_soft": 0.159212152124077,
+          "soft_dice_loss": 0.15098588407196084,
+          "wrong_pixels": 2768372,
+          "wrong_mean_confidence": 0.8196793818141195,
+          "wrong_confidence_gt99_fraction": 0.12110980749696934
+        }
+      }
+    },
+    {
+      "arm": "anchor_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/smoke/anchor_fusion_best_dice.pth",
+      "checkpoint_sha256": "a3e8794464f0bebaea701a94623597d34a92642e6c2c362701af8e28355c352b",
+      "epoch": 2,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8755201147988135,
+          "iou": 0.7935847373874606,
+          "precision": 0.8710467572907723,
+          "recall": 0.9150083637219142
+        },
+        "pooled": {
+          "dice": 0.8866361782689002,
+          "iou": 0.7963579927451971,
+          "precision": 0.8765258571674651,
+          "recall": 0.8969824568030429
+        },
+        "prec_at": {
+          "0.5": 0.9461942257217848,
+          "0.6": 0.910761154855643,
+          "0.7": 0.8346456692913385,
+          "0.8": 0.6404199475065617,
+          "0.9": 0.1732283464566929
+        },
+        "threshold_jaccard_065": 0.7388815309324103,
+        "counts": {
+          "tp": 10828348,
+          "fp": 1525364,
+          "fn": 1243625,
+          "tn": 36341095
+        },
+        "loss": 0.30994102225841813,
+        "diagnostics": {
+          "bce_soft": 0.15879562246830758,
+          "soft_dice_loss": 0.15114540581315208,
+          "wrong_pixels": 2768989,
+          "wrong_mean_confidence": 0.8191391616419779,
+          "wrong_confidence_gt99_fraction": 0.11904164299677608
+        }
+      }
+    }
+  ],
+  "partition_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+  "threshold": 0.5,
+  "input_resolution": 256,
+  "selection": "validation_macro_dice_earliest_tie",
+  "evaluation_batch": 64,
+  "test_already_exposed": true,
+  "test_used_for_selection": false,
+  "test_subset": true,
+  "patient_disjointness_verified": false
+}

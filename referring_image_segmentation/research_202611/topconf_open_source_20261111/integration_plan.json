@@ -1,0 +1,82 @@
+{
+  "status": "original_module_wiring_prototypes_verified_not_trained",
+  "date": "2026-11-11",
+  "new_original_modules": false,
+  "production_model_modified": false,
+  "project": "/home/waas/mambavision_stage22/source/referring_image_segmentation",
+  "common_protocol": "Same pretrained backbone, stage3/4 fine tuning, 64-channel adapters, train/val/test split, loss, LR trajectory and checkpoint selection. Native author normalization/initialization retained. No test-driven architecture selection.",
+  "arms": [
+    {
+      "id": "R0",
+      "name": "MambaVision-S + existing Swin",
+      "change": "control",
+      "reuse_prior_checkpoint_only_if_protocol_identical": true
+    },
+    {
+      "id": "R1",
+      "name": "MambaVision-S + original EMCAD decoder",
+      "source_repo": "SLDGroup/EMCAD",
+      "module": "EMCAD",
+      "kwargs": {
+        "channels": [
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      "input_order": [
+        "adapter3_8x8",
+        "adapter2_16x16",
+        "adapter1_32x32",
+        "adapter0_64x64"
+      ],
+      "output": "d1 -> existing 64-to-1 head -> 256x256",
+      "replaces_swin": true,
+      "decoder_module_parameters": 284043
+    },
+    {
+      "id": "R2",
+      "name": "MambaVision-S + Swin + original CGA",
+      "source_repo": "maklachur/MambaLiteUNet",
+      "module": "CrossGatedAttentionGate",
+      "kwargs": {
+        "F_g": 64,
+        "F_l": 64,
+        "F_int": 32
+      },
+      "locations": [
+        16,
+        32,
+        64
+      ],
+      "routing": "SwinLevel(g + CGA(g,skip)); g=upsampled decoder feature",
+      "additional_module_parameters": 205833
+    },
+    {
+      "id": "R3",
+      "name": "MambaVision-S + Swin + original MFMS",
+      "source_repo": "Inha-CVAI/MADGNet",
+      "module": "MFMSAttentionBlock",
+      "kwargs": {
+        "in_channels": 64
+      },
+      "locations": [
+        16,
+        32,
+        64
+      ],
+      "routing": "MFMS after skip adapter before original decoder addition",
+      "additional_module_parameters": 258444
+    }
+  ],
+  "conditional_next_steps": [
+    "Use validation evidence to select stable single-module improvements.",
+    "Repeat promising comparisons with three fixed seeds.",
+    "Only combine modules if separate effects are complementary.",
+    "Report all locked best-checkpoint full-test results; acknowledge existing test exposure."
+  ],
+  "research_wiring_prototypes": "integration_prototypes.py",
+  "integration_checks": "integration_checks.json",
+  "full_encoder_integration_tested": false
+}

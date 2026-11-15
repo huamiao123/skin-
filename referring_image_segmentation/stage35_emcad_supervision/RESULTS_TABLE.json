@@ -1,0 +1,63 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "arm": "emcad_single",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8893552330720317,
+      "validation_pooled_dice": 0.8956937962381681,
+      "test_macro_dice": 0.8899909012867578,
+      "test_pooled_dice": 0.892357338716953,
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision/emcad_single/results/emcad_single_best_dice.pth",
+      "sha256": "7adeed1989a402841d64d9d9d90fb0f4d127ac054b240e64a856114677121eae"
+    },
+    {
+      "arm": "emcad_deep",
+      "best_epoch": 43,
+      "validation_macro_dice": 0.8898716205321374,
+      "validation_pooled_dice": 0.8968716350020958,
+      "test_macro_dice": 0.8838321438610338,
+      "test_pooled_dice": 0.8882787926847194,
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision/emcad_deep/results/emcad_deep_best_dice.pth",
+      "sha256": "a4732669114185ddcc8f00d77e16fcf6fc5c556fdc83575e94d3a971c1b74dc7"
+    }
+  ],
+  "paired": {
+    "validation": {
+      "macro_dice_delta": 0.0005163874601055994,
+      "image_bootstrap95": [
+        -0.0019946883120025077,
+        0.002968305275436668
+      ],
+      "improved": 371,
+      "worsened": 390,
+      "gains_over5pp": 40,
+      "losses_over5pp": 29,
+      "net_reduced_fn": 158633,
+      "net_added_fp": 163723,
+      "severe_undercoverage": [
+        21,
+        18
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    },
+    "test": {
+      "macro_dice_delta": -0.006158757425724038,
+      "image_bootstrap95": [
+        -0.008480158986206868,
+        -0.0038174328033278465
+      ],
+      "improved": 344,
+      "worsened": 523,
+      "gains_over5pp": 33,
+      "losses_over5pp": 67,
+      "net_reduced_fn": 94879,
+      "net_added_fp": 271834,
+      "severe_undercoverage": [
+        17,
+        11
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    }
+  }
+}

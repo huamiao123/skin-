@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "epochs": 300,
+  "updates": {
+    "original": 9000,
+    "scaled_original": 9000,
+    "background_supervised": 9000
+  },
+  "smoke_only": false,
+  "resumed": false,
+  "encoder_hashes": {
+    "mambavision": "0648fd9831dff929596b4c8b74e3fe499098014f354a47b3359a6f333b4c6f26"
+  },
+  "encoder_unchanged": true,
+  "selectors": {
+    "original": {
+      "best_dice": {
+        "epoch": 85,
+        "score": 0.8842250288446242
+      },
+      "best_loss": {
+        "epoch": 18,
+        "score": 0.2944704477149661
+      }
+    },
+    "scaled_original": {
+      "best_dice": {
+        "epoch": 18,
+        "score": 0.8824759284691436
+      },
+      "best_loss": {
+        "epoch": 18,
+        "score": 0.29762873378130467
+      }
+    },
+    "background_supervised": {
+      "best_dice": {
+        "epoch": 159,
+        "score": 0.8872485157101255
+      },
+      "best_loss": {
+        "epoch": 17,
+        "score": 0.3018878137711251
+      }
+    }
+  },
+  "active_training_seconds": 3350.7475862339998
+}

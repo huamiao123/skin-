@@ -1,0 +1,25 @@
+{
+  "stage": 49,
+  "pid": 31760,
+  "created_utc": "2026-11-12T13:23:46.354123+00:00",
+  "command": [
+    "/home/waas/mambavision_stage22/env/bin/python",
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage49_peft_adaptation/run_pipeline.py"
+  ],
+  "cwd": "/home/waas/mambavision_stage22/source/referring_image_segmentation",
+  "arms": [
+    "frozen",
+    "lora8"
+  ],
+  "protocol_sha256": "9fffe6c0d69ce833dcb4724a693baee414146573d6b133f2e056f83ba896f2f3",
+  "reference": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage45_upernet_decoder",
+  "source_hashes": {
+    "verify_reference.py": "0ff06ef5b54bee24d6107451fc6c2bf9145bd04ad5da72b9175f035f2288164b",
+    "run_pipeline.py": "bc10d38c678c4e6078b379bad06ca9154d44e0be7e467e867a0a3366c40b8853",
+    "verify_integration.py": "dfefa6279088c79ffda4af45458b3b9e41d991d15db164440531e417ef5b5ea9",
+    "author_modules.py": "4bcd90db65f636523455f87f8858a130b02149d08507bf26d6b0f63e09fcece2",
+    "post_analysis.py": "ef0e9fac7916d6c8f256f3856a1159f35d6db1431bd40990c7baf7f9b22c7cf9",
+    "train.py": "07c44befff3d13598752bd73962ef146326b61e6eba93c75fa269a274fe33262",
+    "evaluate.py": "35bec3a4b563b32d28d9efc618262999e3a4516ab8841206a43cb23af247ec86"
+  }
+}

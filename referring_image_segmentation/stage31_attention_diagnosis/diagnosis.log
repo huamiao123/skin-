@@ -1,0 +1,46 @@
+{"state": "auditing_model", "time_utc": "2026-11-11T09:07:11.674086+00:00", "model": "eca_channel"}
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+{"state": "intervention", "time_utc": "2026-11-11T09:07:20.181311+00:00", "model": "eca_channel", "mode": "channel_identity"}
+RESULT eca_channel channel_identity 88.830755 delta_pp -0.000321
+{"state": "intervention", "time_utc": "2026-11-11T09:07:24.121057+00:00", "model": "eca_channel", "mode": "channel_mean"}
+RESULT eca_channel channel_mean 88.830615 delta_pp -0.000461
+{"state": "intervention", "time_utc": "2026-11-11T09:07:27.953796+00:00", "model": "eca_channel", "mode": "channel_permuted"}
+RESULT eca_channel channel_permuted 88.831978 delta_pp 0.000902
+{"state": "intervention", "time_utc": "2026-11-11T09:07:31.781798+00:00", "model": "eca_channel", "mode": "residual_off"}
+RESULT eca_channel residual_off 88.343563 delta_pp -0.487514
+{"state": "auditing_model", "time_utc": "2026-11-11T09:07:36.271468+00:00", "model": "cross_channel"}
+{"state": "intervention", "time_utc": "2026-11-11T09:07:43.536876+00:00", "model": "cross_channel", "mode": "channel_identity"}
+RESULT cross_channel channel_identity 88.692336 delta_pp 0.001406
+{"state": "intervention", "time_utc": "2026-11-11T09:07:47.485997+00:00", "model": "cross_channel", "mode": "channel_mean"}
+RESULT cross_channel channel_mean 88.691642 delta_pp 0.000712
+{"state": "intervention", "time_utc": "2026-11-11T09:07:51.299853+00:00", "model": "cross_channel", "mode": "channel_permuted"}
+RESULT cross_channel channel_permuted 88.691377 delta_pp 0.000447
+{"state": "intervention", "time_utc": "2026-11-11T09:07:55.376509+00:00", "model": "cross_channel", "mode": "residual_off"}
+RESULT cross_channel residual_off 88.516849 delta_pp -0.174081
+{"state": "auditing_model", "time_utc": "2026-11-11T09:07:59.859147+00:00", "model": "cross_channel_scale"}
+{"state": "intervention", "time_utc": "2026-11-11T09:08:06.985068+00:00", "model": "cross_channel_scale", "mode": "channel_identity"}
+RESULT cross_channel_scale channel_identity 88.893006 delta_pp -0.000768
+{"state": "intervention", "time_utc": "2026-11-11T09:08:10.905402+00:00", "model": "cross_channel_scale", "mode": "channel_mean"}
+RESULT cross_channel_scale channel_mean 88.892743 delta_pp -0.001032
+{"state": "intervention", "time_utc": "2026-11-11T09:08:14.861666+00:00", "model": "cross_channel_scale", "mode": "channel_permuted"}
+RESULT cross_channel_scale channel_permuted 88.892097 delta_pp -0.001678
+{"state": "intervention", "time_utc": "2026-11-11T09:08:18.901429+00:00", "model": "cross_channel_scale", "mode": "residual_off"}
+RESULT cross_channel_scale residual_off 88.107171 delta_pp -0.786604
+{"state": "intervention", "time_utc": "2026-11-11T09:08:22.833518+00:00", "model": "cross_channel_scale", "mode": "scale_equal"}
+RESULT cross_channel_scale scale_equal 88.898217 delta_pp 0.004442
+{"state": "intervention", "time_utc": "2026-11-11T09:08:26.791070+00:00", "model": "cross_channel_scale", "mode": "scale_mean"}
+RESULT cross_channel_scale scale_mean 88.897604 delta_pp 0.003829
+{"state": "intervention", "time_utc": "2026-11-11T09:08:30.984263+00:00", "model": "cross_channel_scale", "mode": "scale_permuted"}
+RESULT cross_channel_scale scale_permuted 88.902642 delta_pp 0.008868
+{"state": "intervention", "time_utc": "2026-11-11T09:08:35.012880+00:00", "model": "cross_channel_scale", "mode": "joint_permuted"}
+RESULT cross_channel_scale joint_permuted 88.901364 delta_pp 0.007589
+{"state": "intervention", "time_utc": "2026-11-11T09:08:38.913450+00:00", "model": "cross_channel_scale", "mode": "residual_off_level0"}
+RESULT cross_channel_scale residual_off_level0 88.00835 delta_pp -0.885425
+{"state": "intervention", "time_utc": "2026-11-11T09:08:42.850769+00:00", "model": "cross_channel_scale", "mode": "residual_off_level1"}
+RESULT cross_channel_scale residual_off_level1 88.853673 delta_pp -0.040102
+{"state": "intervention", "time_utc": "2026-11-11T09:08:46.976236+00:00", "model": "cross_channel_scale", "mode": "residual_off_level2"}
+RESULT cross_channel_scale residual_off_level2 88.763925 delta_pp -0.12985
+{"state": "complete", "time_utc": "2026-11-11T09:08:51.940454+00:00", "models": 3, "validation_n": 762, "test_read": false}

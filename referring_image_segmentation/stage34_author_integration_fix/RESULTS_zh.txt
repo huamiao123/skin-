@@ -1,0 +1,15 @@
+Stage34 接入修正实验结果
+完成时间：2026-11-12 00:12（北京时间）
+两组均100轮，seed42；训练1886、验证762、测试867。按验证macro Dice选权重，测试阈值0.5。
+
+swin_cga_author_init: best epoch=48; val macro=88.7964%; test macro=88.9420%; test pooled=89.2497%
+与修正前同方法的变化：{"primary_reference": "stage33_swin_cga", "validation_macro_delta_pp": -0.15465623478557733, "test_macro_delta_pp": 0.08766447964315693, "test_vs_control_pp": -0.592367756321921}
+emcad64_exp2: best epoch=79; val macro=88.8675%; test macro=88.7078%; test pooled=88.9164%
+与修正前同方法的变化：{"primary_reference": "stage33_emcad64", "validation_macro_delta_pp": 0.13181025897718301, "test_macro_delta_pp": -0.2637704283329212, "test_vs_control_pp": -0.8265713501276917}
+control: val macro=88.7147%; test macro=89.5344%; test pooled=89.1884%
+local_fusion: val macro=88.8176%; test macro=89.8266%; test pooled=89.6192%
+
+结论：修正后两方法测试macro仍低于control及已有local_fusion。CGA相对自身旧版微升，EMCAD相对自身旧版下降；单seed不支持稳定收益结论。
+预设验证筛选均未通过，未自动启动更多模块或种子实验。
+最佳权重、完整指标、逐图记录和预测保留；临时续训及smoke权重按协议清理。
+已确认原有测试集曾被查看，不将其称为完全未触及的独立最终验证。

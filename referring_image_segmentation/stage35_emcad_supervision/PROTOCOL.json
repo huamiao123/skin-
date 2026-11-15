@@ -1,0 +1,58 @@
+{
+  "stage": "stage35_emcad_supervision",
+  "status": "fixed_before_preflight",
+  "seed": 42,
+  "arms": [
+    "emcad_single",
+    "emcad_deep"
+  ],
+  "rationale": "Stage34 initialization/expansion repairs did not establish a validation gain over strongest reference. Audit identified removed native multi-output supervision. Test this one remaining adaptation independently; no new fusion family.",
+  "changes": {
+    "emcad_single": "EMCAD64 expansion2 relu6, final output only. Fresh same-GPU/microbatch control.",
+    "emcad_deep": "Same encoder/adapters/decoder/final head initial tensors; add three 1x1 auxiliary heads on original EMCAD intermediate outputs. Training loss is arithmetic mean of BCE+per-image softDice at each of four outputs plus sum of four logits. Inference only finest output."
+  },
+  "authors_internal_code_modified": false,
+  "extra_supervision": false,
+  "training": {
+    "epochs": 100,
+    "lr_horizon": 300,
+    "lr_note": "First100 of archived300 cosine kept to match archived controls; not an optimized100-epoch cosine.",
+    "micro_batch": 64,
+    "effective_batch": 64,
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "precision": "BF16 forward FP32 loss",
+    "encoder": "late two stages trainable, all encoder modules eval; author decoder BN remains train in training",
+    "determinism": "Request deterministic algorithms, warn rather than abort for unsupported author adaptive_max_pool2d backward; fixed seeds/cudnn deterministic maintained; no bitwise training guarantee.",
+    "micro_batch_note": "Effective batch remains64. New GPU uses physical64 instead of old48+16; same for both fresh arms, so no BN microbatch confound within the primary comparison."
+  },
+  "split": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "max validation per-image foreground Dice, earliest tie; threshold0.5 fixed",
+  "completion": "Verify shared initialization, validation asset and hardware replay; real-data gradients and two-epoch process restart; train both100 epochs; evaluate fixed val-best weights on full867 test.",
+  "retention": "Keep best-Dice model; latest optimizer state only while unfinished. Best-loss value recorded without extra model copy. Remove smoke model files after final success.",
+  "metrics": "Common evaluation.py macro and pooled Dice/IoU/precision/recall, Prec@ thresholds, boundary F1, HD95, threshold Jaccard and per-image rows.",
+  "references": "Fresh same4090 control is primary; historical checkpoints verified, original exp2 val replay measured for hardware numerical drift, not selected by test.",
+  "next_step_screen": "No automatic follow-up. Assess paired validation macro Dice and severe undercoverage; full fixed test is descriptive. Single seed cannot establish stability.",
+  "created_utc": "2026-11-12T02:11:33.282896+00:00",
+  "primary_reference": {
+    "emcad_deep": "emcad_single",
+    "emcad_single": "fresh_matched_control"
+  },
+  "exclusions": [
+    "No native structure_loss change",
+    "No channel-width change",
+    "No BN recalibration",
+    "No additional fusion modules",
+    "No test-based epoch or threshold selection"
+  ],
+  "pretrained_reinitialization": false,
+  "hardware": "RTX4090 24GB; both arms trained here",
+  "loss_normalization": "Mean of5 equally weighted terms rather than native sum, to avoid a trivial fivefold multiplier. Per-term common BCE+Dice is retained; original weightedBCE+weightedIoU is NOT restored in this experiment."
+}

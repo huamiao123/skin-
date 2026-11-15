@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "seed": 42,
+  "epochs": 300,
+  "updates_per_model": 9000,
+  "models": [
+    "original",
+    "scaled_original",
+    "background_supervised"
+  ],
+  "n_val": 808,
+  "fixed_dice_selection_verified": true,
+  "per_image_counts_and_full_metrics_verified": true,
+  "routing_audit_verified": true,
+  "encoder_frozen_including_buffers": true,
+  "interpretation": "single seed; development validation is not independent test"
+}

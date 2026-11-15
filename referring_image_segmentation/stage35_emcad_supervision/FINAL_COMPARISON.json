@@ -1,0 +1,44 @@
+{
+  "primary_comparison": "emcad_deep minus same4090 emcad_single",
+  "paired": {
+    "validation": {
+      "macro_dice_delta": 0.0005163874601055994,
+      "image_bootstrap95": [
+        -0.0019946883120025077,
+        0.002968305275436668
+      ],
+      "improved": 371,
+      "worsened": 390,
+      "gains_over5pp": 40,
+      "losses_over5pp": 29,
+      "net_reduced_fn": 158633,
+      "net_added_fp": 163723,
+      "severe_undercoverage": [
+        21,
+        18
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    },
+    "test": {
+      "macro_dice_delta": -0.006158757425724038,
+      "image_bootstrap95": [
+        -0.008480158986206868,
+        -0.0038174328033278465
+      ],
+      "improved": 344,
+      "worsened": 523,
+      "gains_over5pp": 33,
+      "losses_over5pp": 67,
+      "net_reduced_fn": 94879,
+      "net_added_fp": 271834,
+      "severe_undercoverage": [
+        17,
+        11
+      ],
+      "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+    }
+  },
+  "seed": 42,
+  "test_n_per_arm": 867,
+  "complete": true
+}

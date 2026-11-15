@@ -1,0 +1,164 @@
+{
+  "models": [
+    {
+      "arm": "eca_channel",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage30_channel_fusion/results/eca_channel_best_dice.pth",
+      "checkpoint_sha256": "dbfd7188a90ae45cb598c256420f83812b36a3b413d83efd373e1d4ff3f6b9de",
+      "epoch": 18,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8883107620482493,
+          "iou": 0.8156939773078091,
+          "precision": 0.9049157069410931,
+          "recall": 0.9053660270661938
+        },
+        "pooled": {
+          "dice": 0.8950019016615426,
+          "iou": 0.8099578659975271,
+          "precision": 0.9035158996044766,
+          "recall": 0.8866468637728067
+        },
+        "prec_at": {
+          "0.5": 0.9540682414698163,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8582677165354331,
+          "0.8": 0.6955380577427821,
+          "0.9": 0.3215223097112861
+        },
+        "threshold_jaccard_065": 0.7650935935339696,
+        "counts": {
+          "tp": 10703577,
+          "fp": 1143007,
+          "fn": 1368396,
+          "tn": 36723452
+        },
+        "loss": 0.3097792011233452,
+        "diagnostics": {
+          "bce_soft": 0.18959312129208422,
+          "soft_dice_loss": 0.1201860831165564,
+          "wrong_pixels": 2511403,
+          "wrong_mean_confidence": 0.8669145359277206,
+          "wrong_confidence_gt99_fraction": 0.28893371553669406
+        }
+      }
+    },
+    {
+      "arm": "cross_channel",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage30_channel_fusion/results/cross_channel_best_dice.pth",
+      "checkpoint_sha256": "10302f1215d47cbba3602ae5b76a9e640f39a3371adb7d4797c6a9863762b738",
+      "epoch": 7,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8869093007813966,
+          "iou": 0.8129275781679995,
+          "precision": 0.9106972586503794,
+          "recall": 0.8965605376123167
+        },
+        "pooled": {
+          "dice": 0.8915421959703422,
+          "iou": 0.8043086464178011,
+          "precision": 0.9116963649106888,
+          "recall": 0.8722598203292867
+        },
+        "prec_at": {
+          "0.5": 0.952755905511811,
+          "0.6": 0.916010498687664,
+          "0.7": 0.8464566929133859,
+          "0.8": 0.699475065616798,
+          "0.9": 0.29658792650918636
+        },
+        "threshold_jaccard_065": 0.7681435702735246,
+        "counts": {
+          "tp": 10529897,
+          "fp": 1019888,
+          "fn": 1542076,
+          "tn": 36846571
+        },
+        "loss": 0.29652279365094003,
+        "diagnostics": {
+          "bce_soft": 0.17091910396348148,
+          "soft_dice_loss": 0.1256036844466302,
+          "wrong_pixels": 2561964,
+          "wrong_mean_confidence": 0.8448776191587509,
+          "wrong_confidence_gt99_fraction": 0.21817168391124933
+        }
+      }
+    },
+    {
+      "arm": "cross_channel_scale",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage30_channel_fusion/results/cross_channel_scale_best_dice.pth",
+      "checkpoint_sha256": "0b35a0780c85df7cf53f363ebd4b6210723d4e8596024b3a64cf940fcb69a7cd",
+      "epoch": 24,
+      "validation_record": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8889377488830879,
+          "iou": 0.8155364588446583,
+          "precision": 0.9015635121726783,
+          "recall": 0.9089241575239762
+        },
+        "pooled": {
+          "dice": 0.8945268778924588,
+          "iou": 0.809180123879519,
+          "precision": 0.8985462270154576,
+          "recall": 0.8905433270932598
+        },
+        "prec_at": {
+          "0.5": 0.9501312335958005,
+          "0.6": 0.910761154855643,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6929133858267716,
+          "0.9": 0.32545931758530183
+        },
+        "threshold_jaccard_065": 0.7625442236837439,
+        "counts": {
+          "tp": 10750615,
+          "fp": 1213839,
+          "fn": 1321358,
+          "tn": 36652620
+        },
+        "loss": 0.3224110207532647,
+        "diagnostics": {
+          "bce_soft": 0.20541857789194803,
+          "soft_dice_loss": 0.11699243558673408,
+          "wrong_pixels": 2535197,
+          "wrong_mean_confidence": 0.8827135168638527,
+          "wrong_confidence_gt99_fraction": 0.3310906410823301
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "arm": "control",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/control_best_dice.pth",
+      "checkpoint_sha256": "cf03ea076c34157d565df093ed0f71eddabf06fc3eae5d3212174bef170d0df4"
+    },
+    {
+      "arm": "local_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/local_fusion_best_dice.pth",
+      "checkpoint_sha256": "d6d7be7b72c7e7a9e24bd81800e425fa64ba9f7a0c7d661c862736c97b6dc896"
+    },
+    {
+      "arm": "anchor_fusion",
+      "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage29_context_fusion/results/anchor_fusion_best_dice.pth",
+      "checkpoint_sha256": "fc95065a0aee546ee3f6ea0586acf06dd27d151de3bdbcc11c03864daa8534c3"
+    }
+  ],
+  "epochs": 100,
+  "partition_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+  "threshold": 0.5,
+  "input_resolution": 256,
+  "selection": "validation_macro_dice_earliest_tie",
+  "evaluation_batch": 64,
+  "test_already_exposed": true,
+  "test_used_for_selection": false,
+  "test_subset": true,
+  "patient_disjointness_verified": false,
+  "lr_schedule_horizon": 300
+}

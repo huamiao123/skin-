@@ -1,0 +1,159 @@
+{
+  "arm": "frozen",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "frozen",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage49_peft_adaptation/frozen/smoke/frozen_best_dice.pth",
+    "sha256": "e9856c5b4d40b14f01f8118392030d0715aa420e4fc9efcffe8efddd56859af2",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.7830652973065235,
+        "iou": 0.6669423044413708,
+        "precision": 0.7183737078808909,
+        "recall": 0.937280398440284
+      },
+      "pooled": {
+        "dice": 0.8197709396044289,
+        "iou": 0.6945863028738427,
+        "precision": 0.7459735495653075,
+        "recall": 0.9097725781858524
+      },
+      "prec_at": {
+        "0.5": 0.8110236220472441,
+        "0.6": 0.7086614173228346,
+        "0.7": 0.5183727034120735,
+        "0.8": 0.27034120734908135,
+        "0.9": 0.048556430446194225
+      },
+      "threshold_jaccard_065": 0.4853981345458233,
+      "counts": {
+        "tp": 10982750,
+        "fp": 3739957,
+        "fn": 1089223,
+        "tn": 34126502
+      },
+      "loss": 0.8012277355657162,
+      "diagnostics": {
+        "bce_soft": 0.32401282322688363,
+        "soft_dice_loss": 0.4772149275919897,
+        "wrong_pixels": 4829180,
+        "wrong_mean_confidence": 0.6808711493928741,
+        "wrong_confidence_gt99_fraction": 0.0002499389130245715
+      }
+    }
+  },
+  "validation": {
+    "frozen": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.7830652973065235,
+        "iou": 0.6669423044413708,
+        "precision": 0.7183737078808909,
+        "recall": 0.937280398440284,
+        "boundary_f1": 0.11061414457835476,
+        "hd95_pixels": 38.17467055313512,
+        "hd95_diagonal": 0.10544362663157911
+      },
+      "pooled": {
+        "dice": 0.8197709396044289,
+        "iou": 0.6945863028738427,
+        "precision": 0.7459735495653075,
+        "recall": 0.9097725781858524
+      },
+      "prec_at": {
+        "0.5": 0.8110236220472441,
+        "0.6": 0.7086614173228346,
+        "0.7": 0.5183727034120735,
+        "0.8": 0.27034120734908135,
+        "0.9": 0.048556430446194225
+      },
+      "threshold_jaccard_065": 0.4853981345458233,
+      "counts": {
+        "tp": 10982750,
+        "fp": 3739957,
+        "fn": 1089223,
+        "tn": 34126502
+      },
+      "severe_undercoverage": 22,
+      "epoch": 2,
+      "checkpoint_sha256": "e9856c5b4d40b14f01f8118392030d0715aa420e4fc9efcffe8efddd56859af2"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_frozen": {
+        "macro_dice_delta": -0.10974140382779474,
+        "image_bootstrap95": [
+          -0.1203177474375953,
+          -0.09897919410011298
+        ],
+        "improved": 123,
+        "worsened": 639,
+        "gains_over5pp": 54,
+        "losses_over5pp": 489,
+        "net_reduced_fn": 252272,
+        "net_added_fp": 2682818,
+        "severe_undercoverage": [
+          21,
+          22
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Frozen or low-rank adapted encoder versus late-full-tuned native UPer64",
+  "archived_reference_caveat": "Stage45 UPer64 shares original pretraining, head, data and schedule; trainable encoder subspace differs",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "scope": "Exact author AST definitions; isolated module synthetic forward/backward only. No segmentation training; no full-network validation. Imports unrelated to selected definitions bypassed.",
+  "results": [
+    {
+      "module": "CENet CFAModule",
+      "amp_bf16": false,
+      "shape": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "parameters": 68213,
+      "output_finite": true,
+      "gradients_finite": true,
+      "max_init_change": 4.291534423828125e-06,
+      "peak_allocated_gib": 1.340846061706543
+    },
+    {
+      "module": "CENet CFAModule",
+      "amp_bf16": true,
+      "shape": [
+        64,
+        64,
+        32,
+        32
+      ],
+      "parameters": 68213,
+      "output_finite": true,
+      "gradients_finite": true,
+      "max_init_change": 4.291534423828125e-06,
+      "peak_allocated_gib": 1.2648396492004395
+    },
+    {
+      "module": "MambaIR CAB default",
+      "shape": [
+        2,
+        384,
+        16,
+        16
+      ],
+      "parameters": 894860,
+      "output_finite": true,
+      "gradients_finite": true
+    }
+  ],
+  "dseb_layout_check": {
+    "nchw_view_b_l_c_matches_correct_permute": false,
+    "note": "Pinned DSEBlock.apply_diffattn uses view without permute; tokens are not per-pixel channel vectors under the NCHW input contract. Static/reindexing finding, not a reimplementation or paper-result refutation."
+  }
+}

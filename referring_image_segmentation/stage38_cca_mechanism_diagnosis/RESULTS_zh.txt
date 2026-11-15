@@ -1,0 +1,33 @@
+Stage38：CCA门控机制诊断；仅762张验证图像，不训练，不读取测试图像。
+两组原始模型和缓存门控回放均与存档二值预测逐像素一致。
+变化为逐图macro Dice百分点，相对各自原始模型：
+old_lr:
+  mean_all: +0.06642
+  decoder_mean_all: +0.07363
+  skip_mean_all: -0.00728
+  mean_level2: -0.00244
+  mean_level1: +0.02657
+  mean_level0: +0.05667
+  permute_3801: -0.03714
+  permute_3802: +0.02736
+  permute_3803: -0.01084
+  identity_all: -1.69545
+new_lr:
+  mean_all: +0.04605
+  decoder_mean_all: +0.05180
+  skip_mean_all: -0.01733
+  mean_level2: -0.00660
+  mean_level1: +0.02391
+  mean_level0: +0.04112
+  permute_3801: -0.07712
+  permute_3802: -0.01526
+  permute_3803: -0.05780
+  identity_all: -1.12490
+结论：未发现明显门控接线/计算公式错误；固定门控没有损害总体指标，解码器条件项取均值略有改善。逐图条件门控的稳定总体收益未被支持。
+门控置1会明显掉分，但会改变输入幅值/已训练下游统计，不能单凭它证明动态注意力有效。
+这些是训练后的干预，均值来自无标签验证特征；不是重新训练的消融，也不是可部署新方法或新测试分数。
+决策：结束当前CCA接法的优化，不再为微小均值收益追加100轮。后续候选优先考虑原Swin输出上的空间点细化，并先做错误覆盖诊断。
+候选PointRend（CVPR2020）官方实现读取coarse logits和fine features，预测并回写选中点；目前仅核对接口，未移植或训练。
+在验证集上先检查作者不确定性选择能覆盖多少错误；高置信度错区域不应假设能被PointRend解决。
+若覆盖足够，再比较同一coarse模型、同预算随机点与不确定性选点，保持作者point head/采样/细分过程；需要完整处理2类logits与训练点监督。
+源码：https://raw.githubusercontent.com/facebookresearch/detectron2/main/projects/PointRend/point_rend/semantic_seg.py

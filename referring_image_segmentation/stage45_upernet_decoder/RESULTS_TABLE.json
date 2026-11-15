@@ -1,0 +1,39 @@
+[
+  {
+    "arm": "stage37_swin_control",
+    "best_epoch": 8,
+    "val_macro_dice": 0.8875880434967702,
+    "test_macro_dice": 0.8939605108327608,
+    "test_pooled_dice": 0.8918149968519326
+  },
+  {
+    "arm": "uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919,
+    "parameters": {
+      "total": 51229673,
+      "trainable": 47078849,
+      "decoder": 1089089,
+      "encoder_trainable": 45989760
+    },
+    "max_peak_allocated_gib": 12.670898914337158,
+    "mean_epoch_seconds": 6.844060532320254
+  },
+  {
+    "arm": "uper128",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8886597814425354,
+    "test_macro_dice": 0.8941345276047787,
+    "test_pooled_dice": 0.8941223210634449,
+    "parameters": {
+      "total": 53129769,
+      "trainable": 48978945,
+      "decoder": 2989185,
+      "encoder_trainable": 45989760
+    },
+    "max_peak_allocated_gib": 13.548450946807861,
+    "mean_epoch_seconds": 8.909647996239801
+  }
+]

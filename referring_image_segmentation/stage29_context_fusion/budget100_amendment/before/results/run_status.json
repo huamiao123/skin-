@@ -1,0 +1,32 @@
+{
+  "state": "running",
+  "stage": "stage29_context_fusion",
+  "epoch": 88,
+  "total_epochs": 300,
+  "updates_per_arm": 2640,
+  "micro_batch": 48,
+  "effective_batch": 64,
+  "validation_macro_dice": {
+    "control": 0.8847969288274016,
+    "local_fusion": 0.8839237094450405,
+    "anchor_fusion": 0.8829252266180712
+  },
+  "best": {
+    "control": {
+      "best_dice": 0.8871472195886223,
+      "best_loss": 0.2967413635704461
+    },
+    "local_fusion": {
+      "best_dice": 0.8881762105082028,
+      "best_loss": 0.2921600502932791
+    },
+    "anchor_fusion": {
+      "best_dice": 0.8886106767892384,
+      "best_loss": 0.293210477966649
+    }
+  },
+  "seconds": 70.26776161900125,
+  "peak_allocated_gib": 14.388320446014404,
+  "reserved_gib": 15.09765625,
+  "pid": 4169
+}

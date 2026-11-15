@@ -1,0 +1,252 @@
+{
+  "arm": "early_adapt",
+  "seed": 42,
+  "epochs": 100,
+  "selection": {
+    "arm": "early_adapt",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage44_early_cnn_adaptation/early_adapt/results/early_adapt_best_dice.pth",
+    "sha256": "5e4aeb5c1bd8dce2baf25556bfc07bc98f81c534ddfbd8efd1353d53d773ef6d",
+    "epoch": 5,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.888550016434322,
+        "iou": 0.8148143099852189,
+        "precision": 0.8985965444818418,
+        "recall": 0.9101622217958331
+      },
+      "pooled": {
+        "dice": 0.898954780613369,
+        "iou": 0.816455822871796,
+        "precision": 0.8923568090291891,
+        "recall": 0.905651048092967
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9278215223097113,
+        "0.7": 0.8451443569553806,
+        "0.8": 0.6837270341207349,
+        "0.9": 0.29396325459317585
+      },
+      "threshold_jaccard_065": 0.7672923338998711,
+      "counts": {
+        "tp": 10932995,
+        "fp": 1318825,
+        "fn": 1138978,
+        "tn": 36547634
+      },
+      "loss": 0.2795465199027474,
+      "diagnostics": {
+        "bce_soft": 0.15263916221581733,
+        "soft_dice_loss": 0.12690736302553512,
+        "wrong_pixels": 2457803,
+        "wrong_mean_confidence": 0.8291045558232973,
+        "wrong_confidence_gt99_fraction": 0.17619882472273002
+      }
+    }
+  },
+  "validation": {
+    "early_adapt": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.888550016434322,
+        "iou": 0.8148143099852189,
+        "precision": 0.8985965444818418,
+        "recall": 0.9101622217958331,
+        "boundary_f1": 0.3252370836693544,
+        "hd95_pixels": 15.546885932033872,
+        "hd95_diagonal": 0.04294261120654253
+      },
+      "pooled": {
+        "dice": 0.898954780613369,
+        "iou": 0.816455822871796,
+        "precision": 0.8923568090291891,
+        "recall": 0.905651048092967
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9278215223097113,
+        "0.7": 0.8451443569553806,
+        "0.8": 0.6837270341207349,
+        "0.9": 0.29396325459317585
+      },
+      "threshold_jaccard_065": 0.7672923338998711,
+      "counts": {
+        "tp": 10932995,
+        "fp": 1318825,
+        "fn": 1138978,
+        "tn": 36547634
+      },
+      "severe_undercoverage": 14,
+      "epoch": 5,
+      "checkpoint_sha256": "5e4aeb5c1bd8dce2baf25556bfc07bc98f81c534ddfbd8efd1353d53d773ef6d"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "test": {
+    "early_adapt": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8945511255998679,
+        "iou": 0.8220443565914263,
+        "precision": 0.8639267320238389,
+        "recall": 0.9526330048471289,
+        "boundary_f1": 0.2576710185715918,
+        "hd95_pixels": 17.450621551597735,
+        "hd95_diagonal": 0.048200987636933076
+      },
+      "pooled": {
+        "dice": 0.8943415373655115,
+        "iou": 0.8088768526535172,
+        "precision": 0.8668367054783381,
+        "recall": 0.923649031110157
+      },
+      "prec_at": {
+        "0.5": 0.9665513264129181,
+        "0.6": 0.9250288350634371,
+        "0.7": 0.8638985005767013,
+        "0.8": 0.7151095732410612,
+        "0.9": 0.2964244521337947
+      },
+      "threshold_jaccard_065": 0.771516754153318,
+      "counts": {
+        "tp": 14971441,
+        "fp": 2299910,
+        "fn": 1237574,
+        "tn": 38310787
+      },
+      "severe_undercoverage": 10,
+      "epoch": 5,
+      "checkpoint_sha256": "5e4aeb5c1bd8dce2baf25556bfc07bc98f81c534ddfbd8efd1353d53d773ef6d"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8939605108327608,
+        "iou": 0.8212834862427795,
+        "precision": 0.8811951612105414,
+        "recall": 0.9339140678872623,
+        "boundary_f1": 0.2520583696007701,
+        "hd95_pixels": 16.74292252504131,
+        "hd95_diagonal": 0.04624622677475664
+      },
+      "pooled": {
+        "dice": 0.8918149968519326,
+        "iou": 0.8047528114155277,
+        "precision": 0.8961308204571226,
+        "recall": 0.8875405445673288
+      },
+      "prec_at": {
+        "0.5": 0.9653979238754326,
+        "0.6": 0.9331026528258363,
+        "0.7": 0.8731257208765859,
+        "0.8": 0.7277970011534025,
+        "0.9": 0.28143021914648214
+      },
+      "threshold_jaccard_065": 0.7774066189547868,
+      "counts": {
+        "tp": 14386158,
+        "fp": 1667478,
+        "fn": 1822857,
+        "tn": 38943219
+      },
+      "severe_undercoverage": 21,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "comparisons": {
+    "validation": {
+      "stage37_swin_control_vs_early_adapt": {
+        "macro_dice_delta": 0.0009619729375517407,
+        "image_bootstrap95": [
+          -0.003279245700955179,
+          0.00505443735997181
+        ],
+        "improved": 350,
+        "worsened": 411,
+        "gains_over5pp": 48,
+        "losses_over5pp": 37,
+        "net_reduced_fn": 474270,
+        "net_added_fp": 406447,
+        "severe_undercoverage": [
+          28,
+          14
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    },
+    "test": {
+      "stage37_swin_control_vs_early_adapt": {
+        "macro_dice_delta": 0.0005906147671073014,
+        "image_bootstrap95": [
+          -0.0025908076888101635,
+          0.0038297143057285377
+        ],
+        "improved": 469,
+        "worsened": 397,
+        "gains_over5pp": 44,
+        "losses_over5pp": 47,
+        "net_reduced_fn": 585283,
+        "net_added_fp": 632432,
+        "severe_undercoverage": [
+          21,
+          10
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": true,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 867,
+  "normalization": "encoder BN buffers fixed; stem and all used stages trainable",
+  "lr_horizon": 100,
+  "primary_comparison": "Early CNN adaptation versus matched late-only baseline",
+  "archived_reference_caveat": "Stage37 baseline matches architecture, initialization, hardware,batch64,loss,data and schedule; early weights added at1e-5",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

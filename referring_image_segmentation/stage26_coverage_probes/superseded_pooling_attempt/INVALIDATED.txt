@@ -1,0 +1,1 @@
+The original decoder coarse coverage statistics used CUDA adaptive_avg_pool2d on a NumPy-derived channel-zero-stride tensor. Independent CPU arithmetic found incorrect results. Full resolution segmentation parity passed. This entire diagnostic output is superseded by the corrected and independently checked run; do not use it to select an intervention.

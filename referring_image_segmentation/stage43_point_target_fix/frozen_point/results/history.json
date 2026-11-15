@@ -1,0 +1,5802 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "frozen_point": 0.2819824925251503
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8845772212952708,
+          "iou": 0.8076645218963057,
+          "precision": 0.8849394638327611,
+          "recall": 0.9173363274630015
+        },
+        "pooled": {
+          "dice": 0.8914757776142401,
+          "iou": 0.8042005394303525,
+          "precision": 0.8890802106547941,
+          "recall": 0.8938842888399435
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.678477690288714,
+          "0.9": 0.24803149606299213
+        },
+        "threshold_jaccard_065": 0.7586480229980165,
+        "counts": {
+          "tp": 10790947,
+          "fp": 1346256,
+          "fn": 1281026,
+          "tn": 36520203
+        },
+        "loss": 0.3029145551478769,
+        "diagnostics": {
+          "bce_soft": 0.1705378387074458,
+          "soft_dice_loss": 0.1323767266874238,
+          "wrong_pixels": 2627282,
+          "wrong_mean_confidence": 0.8434565286091239,
+          "wrong_confidence_gt99_fraction": 0.2061898951083287
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.43683886528015137
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.001
+      }
+    },
+    "seconds": 2.8539734210025927,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "frozen_point": 0.17051365932060578
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852487094675624,
+          "iou": 0.8088513900688389,
+          "precision": 0.8885904278168881,
+          "recall": 0.9148204449811753
+        },
+        "pooled": {
+          "dice": 0.8918710239855479,
+          "iou": 0.8048440599336121,
+          "precision": 0.8908611305014623,
+          "recall": 0.8928832097288488
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7606491267455432,
+        "counts": {
+          "tp": 10778862,
+          "fp": 1320512,
+          "fn": 1293111,
+          "tn": 36545947
+        },
+        "loss": 0.30020002305038335,
+        "diagnostics": {
+          "bce_soft": 0.1718715367902295,
+          "soft_dice_loss": 0.12832847573938644,
+          "wrong_pixels": 2613623,
+          "wrong_mean_confidence": 0.848430872267565,
+          "wrong_confidence_gt99_fraction": 0.21275983567637718
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.20422445237636566
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009997557473810372
+      }
+    },
+    "seconds": 2.547975237997889,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 3,
+    "train_loss": {
+      "frozen_point": 0.16783092059550583
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856368277672869,
+          "iou": 0.8095016968150978,
+          "precision": 0.8911291270990297,
+          "recall": 0.9129104059813857
+        },
+        "pooled": {
+          "dice": 0.8921408576482793,
+          "iou": 0.8052836534385384,
+          "precision": 0.8928543367271801,
+          "recall": 0.8914285179398596
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7620908261088725,
+        "counts": {
+          "tp": 10761301,
+          "fp": 1291394,
+          "fn": 1310672,
+          "tn": 36575065
+        },
+        "loss": 0.29941877183013077,
+        "diagnostics": {
+          "bce_soft": 0.1724201729447823,
+          "soft_dice_loss": 0.12699859552183176,
+          "wrong_pixels": 2602066,
+          "wrong_mean_confidence": 0.8493119015018884,
+          "wrong_confidence_gt99_fraction": 0.2170894204835696
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.2581898868083954
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009990232305719944
+      }
+    },
+    "seconds": 2.5050283070013393,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 4,
+    "train_loss": {
+      "frozen_point": 0.16677937263964596
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853427490640711,
+          "iou": 0.8090018556740545,
+          "precision": 0.8897392236718407,
+          "recall": 0.9138165602432808
+        },
+        "pooled": {
+          "dice": 0.8919200962293009,
+          "iou": 0.8049239889597987,
+          "precision": 0.8915193060699677,
+          "recall": 0.8923212469080241
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6876640419947506,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7615996586819194,
+        "counts": {
+          "tp": 10772078,
+          "fp": 1310754,
+          "fn": 1299895,
+          "tn": 36555705
+        },
+        "loss": 0.3003819309507455,
+        "diagnostics": {
+          "bce_soft": 0.17095183098097172,
+          "soft_dice_loss": 0.1294300995786672,
+          "wrong_pixels": 2610649,
+          "wrong_mean_confidence": 0.8421689838597141,
+          "wrong_confidence_gt99_fraction": 0.21215452556050238
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1494949460029602
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009978031724785245
+      }
+    },
+    "seconds": 2.500601394000114,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 5,
+    "train_loss": {
+      "frozen_point": 0.16365191759195966
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8864128879742926,
+          "iou": 0.810949561427493,
+          "precision": 0.8963752714083896,
+          "recall": 0.9090274311608922
+        },
+        "pooled": {
+          "dice": 0.8926847545532438,
+          "iou": 0.8061703821237304,
+          "precision": 0.8966004645446289,
+          "recall": 0.888803097886319
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.2650918635170604
+        },
+        "threshold_jaccard_065": 0.7635680114300366,
+        "counts": {
+          "tp": 10729607,
+          "fp": 1237381,
+          "fn": 1342366,
+          "tn": 36629078
+        },
+        "loss": 0.2989840784410792,
+        "diagnostics": {
+          "bce_soft": 0.17020526266317043,
+          "soft_dice_loss": 0.12877882043207725,
+          "wrong_pixels": 2579747,
+          "wrong_mean_confidence": 0.8417379019816029,
+          "wrong_confidence_gt99_fraction": 0.21478307756535817
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.21159878373146057
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009960967771506667
+      }
+    },
+    "seconds": 2.501005938000162,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 6,
+    "train_loss": {
+      "frozen_point": 0.16300795487229922
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861988027714265,
+          "iou": 0.8105140971502383,
+          "precision": 0.8946740221670776,
+          "recall": 0.9103408070530832
+        },
+        "pooled": {
+          "dice": 0.8925195739402352,
+          "iou": 0.8059009919621556,
+          "precision": 0.895317261831379,
+          "recall": 0.8897393160173569
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.2664041994750656
+        },
+        "threshold_jaccard_065": 0.7622340120872836,
+        "counts": {
+          "tp": 10740909,
+          "fp": 1255854,
+          "fn": 1331064,
+          "tn": 36610605
+        },
+        "loss": 0.2989995063446325,
+        "diagnostics": {
+          "bce_soft": 0.17138527865641387,
+          "soft_dice_loss": 0.12761422279938625,
+          "wrong_pixels": 2586918,
+          "wrong_mean_confidence": 0.8464110276523991,
+          "wrong_confidence_gt99_fraction": 0.21651749301678677
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1275871843099594
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009939057285945933
+      }
+    },
+    "seconds": 2.4926419800031,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 7,
+    "train_loss": {
+      "frozen_point": 0.16293355741973647
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8859216607170468,
+          "iou": 0.8100600051356627,
+          "precision": 0.892792225768624,
+          "recall": 0.9117914461978919
+        },
+        "pooled": {
+          "dice": 0.8923384626958762,
+          "iou": 0.8056057131564662,
+          "precision": 0.893518835360445,
+          "recall": 0.8911612045520645
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.26115485564304464
+        },
+        "threshold_jaccard_065": 0.7626722949696046,
+        "counts": {
+          "tp": 10758074,
+          "fp": 1282046,
+          "fn": 1313899,
+          "tn": 36584413
+        },
+        "loss": 0.3004273091714213,
+        "diagnostics": {
+          "bce_soft": 0.17013644659769503,
+          "soft_dice_loss": 0.13029084618636003,
+          "wrong_pixels": 2595945,
+          "wrong_mean_confidence": 0.8400759243145269,
+          "wrong_confidence_gt99_fraction": 0.21147135243620338
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.16836971044540405
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000991232189110701
+      }
+    },
+    "seconds": 2.5544616949991905,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 8,
+    "train_loss": {
+      "frozen_point": 0.16312697202694126
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852382973978951,
+          "iou": 0.8088304967842685,
+          "precision": 0.8892572293358636,
+          "recall": 0.9141353986881449
+        },
+        "pooled": {
+          "dice": 0.8917964441266887,
+          "iou": 0.8047225975772252,
+          "precision": 0.8906486083061661,
+          "recall": 0.8929472423438986
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.761434253741675,
+        "counts": {
+          "tp": 10779635,
+          "fp": 1323494,
+          "fn": 1292338,
+          "tn": 36542965
+        },
+        "loss": 0.3005013517507418,
+        "diagnostics": {
+          "bce_soft": 0.17256662934001663,
+          "soft_dice_loss": 0.12793471979031099,
+          "wrong_pixels": 2615832,
+          "wrong_mean_confidence": 0.8497740220085856,
+          "wrong_confidence_gt99_fraction": 0.21440329501282956
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.24205680191516876
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00098807879715968
+      }
+    },
+    "seconds": 2.5049003690000973,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 9,
+    "train_loss": {
+      "frozen_point": 0.16838729952008702
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852084072203005,
+          "iou": 0.808768529140612,
+          "precision": 0.8889500052986385,
+          "recall": 0.9144017547612633
+        },
+        "pooled": {
+          "dice": 0.8918406214926906,
+          "iou": 0.8047945438083102,
+          "precision": 0.8904852331094021,
+          "recall": 0.8932001421805699
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7613534136740071,
+        "counts": {
+          "tp": 10782688,
+          "fp": 1326090,
+          "fn": 1289285,
+          "tn": 36540369
+        },
+        "loss": 0.30100209271813944,
+        "diagnostics": {
+          "bce_soft": 0.1713991849206564,
+          "soft_dice_loss": 0.1296029126863154,
+          "wrong_pixels": 2615375,
+          "wrong_mean_confidence": 0.8449221131342043,
+          "wrong_confidence_gt99_fraction": 0.21137810065478183
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.14114560186862946
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009844486647586726
+      }
+    },
+    "seconds": 2.509652742999606,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 10,
+    "train_loss": {
+      "frozen_point": 0.16857576556701295
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885426501252061,
+          "iou": 0.8091451581906177,
+          "precision": 0.8901519113151368,
+          "recall": 0.9135590051570274
+        },
+        "pooled": {
+          "dice": 0.8919632688669353,
+          "iou": 0.8049943145430069,
+          "precision": 0.8910824304144318,
+          "recall": 0.892845850467028
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7616823139214015,
+        "counts": {
+          "tp": 10778411,
+          "fp": 1317452,
+          "fn": 1293562,
+          "tn": 36549007
+        },
+        "loss": 0.3012493714259991,
+        "diagnostics": {
+          "bce_soft": 0.17170324491390718,
+          "soft_dice_loss": 0.12954614481588048,
+          "wrong_pixels": 2611014,
+          "wrong_mean_confidence": 0.8469405727865411,
+          "wrong_confidence_gt99_fraction": 0.21175298179174834
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09898566454648972
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009803453744100868
+      }
+    },
+    "seconds": 2.534001624000666,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 11,
+    "train_loss": {
+      "frozen_point": 0.16962541557635127
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852337467717906,
+          "iou": 0.808796608590377,
+          "precision": 0.889226146253345,
+          "recall": 0.9141450098191625
+        },
+        "pooled": {
+          "dice": 0.8918429374884864,
+          "iou": 0.8047983157434602,
+          "precision": 0.8905870270522991,
+          "recall": 0.8931023951097307
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7613394939087742,
+        "counts": {
+          "tp": 10781508,
+          "fp": 1324561,
+          "fn": 1290465,
+          "tn": 36541898
+        },
+        "loss": 0.30135604684434225,
+        "diagnostics": {
+          "bce_soft": 0.17136953329163898,
+          "soft_dice_loss": 0.12998651144072765,
+          "wrong_pixels": 2615026,
+          "wrong_mean_confidence": 0.8443031209471903,
+          "wrong_confidence_gt99_fraction": 0.21111071170994095
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09919055551290512
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009757729755661011
+      }
+    },
+    "seconds": 2.512863597999967,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 12,
+    "train_loss": {
+      "frozen_point": 0.16982208968220183
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8860359826151012,
+          "iou": 0.8102034916361096,
+          "precision": 0.8935149770247921,
+          "recall": 0.9112184230854485
+        },
+        "pooled": {
+          "dice": 0.8923955643454833,
+          "iou": 0.8056987996966083,
+          "precision": 0.8941271759843098,
+          "recall": 0.8906706467948529
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7618824654578119,
+        "counts": {
+          "tp": 10752152,
+          "fp": 1273153,
+          "fn": 1319821,
+          "tn": 36593306
+        },
+        "loss": 0.29990585426020183,
+        "diagnostics": {
+          "bce_soft": 0.17132940157035517,
+          "soft_dice_loss": 0.12857644482860414,
+          "wrong_pixels": 2592974,
+          "wrong_mean_confidence": 0.8457917996956347,
+          "wrong_confidence_gt99_fraction": 0.21458526001417677
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.4150560200214386
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009707359806323417
+      }
+    },
+    "seconds": 2.5082232610002393,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 13,
+    "train_loss": {
+      "frozen_point": 0.168283559121231
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852651818058174,
+          "iou": 0.8088309867355739,
+          "precision": 0.8893791545683515,
+          "recall": 0.9140267970742556
+        },
+        "pooled": {
+          "dice": 0.8918941725753604,
+          "iou": 0.8048817635480007,
+          "precision": 0.8907562073979722,
+          "recall": 0.8930350490346524
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7613582375085762,
+        "counts": {
+          "tp": 10780695,
+          "fp": 1322162,
+          "fn": 1291278,
+          "tn": 36544297
+        },
+        "loss": 0.30080306592575834,
+        "diagnostics": {
+          "bce_soft": 0.17204088019573782,
+          "soft_dice_loss": 0.12876219136195546,
+          "wrong_pixels": 2613440,
+          "wrong_mean_confidence": 0.8475404863429952,
+          "wrong_confidence_gt99_fraction": 0.2132101750948941
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.17207743227481842
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009652393605146844
+      }
+    },
+    "seconds": 2.5417724380022264,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 14,
+    "train_loss": {
+      "frozen_point": 0.16794177000178764
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8863472726162301,
+          "iou": 0.810818212034152,
+          "precision": 0.8964414921615629,
+          "recall": 0.9088301351279521
+        },
+        "pooled": {
+          "dice": 0.8926217906413376,
+          "iou": 0.8060676859067861,
+          "precision": 0.8965682650319906,
+          "recall": 0.8887099068230189
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7634038281386327,
+        "counts": {
+          "tp": 10728482,
+          "fp": 1237681,
+          "fn": 1343491,
+          "tn": 36628778
+        },
+        "loss": 0.29954058573314835,
+        "diagnostics": {
+          "bce_soft": 0.16983131250840786,
+          "soft_dice_loss": 0.1297092822593028,
+          "wrong_pixels": 2581172,
+          "wrong_mean_confidence": 0.8389754382217852,
+          "wrong_confidence_gt99_fraction": 0.213653720093043
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.17003405094146729
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009592885397135707
+      }
+    },
+    "seconds": 2.537541934998444,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 15,
+    "train_loss": {
+      "frozen_point": 0.16785135542853385
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8849444961473337,
+          "iou": 0.8082748285078623,
+          "precision": 0.8879052777126264,
+          "recall": 0.9149542380608285
+        },
+        "pooled": {
+          "dice": 0.8916608523986789,
+          "iou": 0.8045018118582389,
+          "precision": 0.8894238460523417,
+          "recall": 0.893909139790157
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6863517060367454,
+          "0.9": 0.24540682414698162
+        },
+        "threshold_jaccard_065": 0.760797642637834,
+        "counts": {
+          "tp": 10791247,
+          "fp": 1341604,
+          "fn": 1280726,
+          "tn": 36524855
+        },
+        "loss": 0.3016098670446341,
+        "diagnostics": {
+          "bce_soft": 0.17219483023240498,
+          "soft_dice_loss": 0.12941504260060668,
+          "wrong_pixels": 2622330,
+          "wrong_mean_confidence": 0.8480102832263628,
+          "wrong_confidence_gt99_fraction": 0.21162477643927347
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0451519675552845
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009528893909706797
+      }
+    },
+    "seconds": 2.5126174880024337,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 16,
+    "train_loss": {
+      "frozen_point": 0.16706581597047546
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852782431401993,
+          "iou": 0.808879528350553,
+          "precision": 0.8899709233858097,
+          "recall": 0.9134619393008508
+        },
+        "pooled": {
+          "dice": 0.8918608748037873,
+          "iou": 0.8048275297976416,
+          "precision": 0.8911978777741641,
+          "recall": 0.8925248590267721
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7614321482885267,
+        "counts": {
+          "tp": 10774536,
+          "fp": 1315412,
+          "fn": 1297437,
+          "tn": 36551047
+        },
+        "loss": 0.3007162257129439,
+        "diagnostics": {
+          "bce_soft": 0.17133669699896664,
+          "soft_dice_loss": 0.12937951416481197,
+          "wrong_pixels": 2612849,
+          "wrong_mean_confidence": 0.8437455470123781,
+          "wrong_confidence_gt99_fraction": 0.21261963473587644
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.034209590405225754
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009460482294732421
+      }
+    },
+    "seconds": 2.502094749997923,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 17,
+    "train_loss": {
+      "frozen_point": 0.16873458988593215
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.88628188637634,
+          "iou": 0.8106676037544108,
+          "precision": 0.8954280189185974,
+          "recall": 0.909728632469625
+        },
+        "pooled": {
+          "dice": 0.8926213694185021,
+          "iou": 0.8060669989177738,
+          "precision": 0.895944653096268,
+          "recall": 0.8893226484187796
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.26115485564304464
+        },
+        "threshold_jaccard_065": 0.762373589943835,
+        "counts": {
+          "tp": 10735879,
+          "fp": 1246869,
+          "fn": 1336094,
+          "tn": 36619590
+        },
+        "loss": 0.2996666825662448,
+        "diagnostics": {
+          "bce_soft": 0.17099003220011244,
+          "soft_dice_loss": 0.12867664696350498,
+          "wrong_pixels": 2582963,
+          "wrong_mean_confidence": 0.8447329209721293,
+          "wrong_confidence_gt99_fraction": 0.21530273565668576
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.11828429996967316
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009387718066217125
+      }
+    },
+    "seconds": 2.5354695370006084,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 18,
+    "train_loss": {
+      "frozen_point": 0.1680657176077682
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854961279718788,
+          "iou": 0.8092544283319069,
+          "precision": 0.8906518837042703,
+          "recall": 0.9131683564941391
+        },
+        "pooled": {
+          "dice": 0.8920904067796596,
+          "iou": 0.8052014462539645,
+          "precision": 0.8918667199866204,
+          "recall": 0.8923142058054636
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7618010064526715,
+        "counts": {
+          "tp": 10771993,
+          "fp": 1306037,
+          "fn": 1299980,
+          "tn": 36560422
+        },
+        "loss": 0.30128434151802164,
+        "diagnostics": {
+          "bce_soft": 0.17056808955087435,
+          "soft_dice_loss": 0.13071624359746617,
+          "wrong_pixels": 2606017,
+          "wrong_mean_confidence": 0.8416827247173236,
+          "wrong_confidence_gt99_fraction": 0.21056309302663798
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.05944855883717537
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009310673033669522
+      }
+    },
+    "seconds": 2.53439145199809,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 19,
+    "train_loss": {
+      "frozen_point": 0.16809041851841128
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856414630589553,
+          "iou": 0.8095368578290199,
+          "precision": 0.8913972139929638,
+          "recall": 0.9126861632095339
+        },
+        "pooled": {
+          "dice": 0.8921211314930169,
+          "iou": 0.8052515097569024,
+          "precision": 0.8921285216347259,
+          "recall": 0.8921137414737426
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7621113417040254,
+        "counts": {
+          "tp": 10769573,
+          "fp": 1302200,
+          "fn": 1302400,
+          "tn": 36564259
+        },
+        "loss": 0.30024822490421804,
+        "diagnostics": {
+          "bce_soft": 0.17225430315247983,
+          "soft_dice_loss": 0.12799392534991888,
+          "wrong_pixels": 2604600,
+          "wrong_mean_confidence": 0.849665196240589,
+          "wrong_confidence_gt99_fraction": 0.21510788604776165
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.351949006319046
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009229423231234974
+      }
+    },
+    "seconds": 2.536838443000306,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 20,
+    "train_loss": {
+      "frozen_point": 0.1684131031324603
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8850335444930248,
+          "iou": 0.808469210275437,
+          "precision": 0.8884056790099625,
+          "recall": 0.914635877169096
+        },
+        "pooled": {
+          "dice": 0.8917126001817103,
+          "iou": 0.8045860670507594,
+          "precision": 0.8898108215603736,
+          "recall": 0.8936225254976962
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.24934383202099739
+        },
+        "threshold_jaccard_065": 0.7610432848257382,
+        "counts": {
+          "tp": 10787787,
+          "fp": 1335899,
+          "fn": 1284186,
+          "tn": 36530560
+        },
+        "loss": 0.30222818576131905,
+        "diagnostics": {
+          "bce_soft": 0.17077338261397804,
+          "soft_dice_loss": 0.1314548016220253,
+          "wrong_pixels": 2620085,
+          "wrong_mean_confidence": 0.8410230056126103,
+          "wrong_confidence_gt99_fraction": 0.2091531381615482
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.23433853685855865
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009144048842659081
+      }
+    },
+    "seconds": 2.5150353150020237,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 21,
+    "train_loss": {
+      "frozen_point": 0.16754659352980136
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8847865276238734,
+          "iou": 0.8080461996070524,
+          "precision": 0.886928701342481,
+          "recall": 0.9157210962811079
+        },
+        "pooled": {
+          "dice": 0.8915482162764772,
+          "iou": 0.8043184461137128,
+          "precision": 0.8885323044217708,
+          "recall": 0.8945846714534567
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2440944881889764
+        },
+        "threshold_jaccard_065": 0.7614936954437359,
+        "counts": {
+          "tp": 10799402,
+          "fp": 1354801,
+          "fn": 1272571,
+          "tn": 36511658
+        },
+        "loss": 0.30188629664774014,
+        "diagnostics": {
+          "bce_soft": 0.17216346672982993,
+          "soft_dice_loss": 0.1297228364493903,
+          "wrong_pixels": 2627372,
+          "wrong_mean_confidence": 0.847611722822775,
+          "wrong_confidence_gt99_fraction": 0.2110393960200535
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03458874300122261
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000905463412215599
+      }
+    },
+    "seconds": 2.536209271998814,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 22,
+    "train_loss": {
+      "frozen_point": 0.1679911728976008
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852038997797667,
+          "iou": 0.8087546634170675,
+          "precision": 0.889008231534594,
+          "recall": 0.9143260151686635
+        },
+        "pooled": {
+          "dice": 0.8917783136834584,
+          "iou": 0.8046930724190318,
+          "precision": 0.8903272597927884,
+          "recall": 0.8932341051458614
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7613256605711793,
+        "counts": {
+          "tp": 10783098,
+          "fp": 1328289,
+          "fn": 1288875,
+          "tn": 36538170
+        },
+        "loss": 0.3008826533014693,
+        "diagnostics": {
+          "bce_soft": 0.17193685331213193,
+          "soft_dice_loss": 0.12894579838580034,
+          "wrong_pixels": 2617164,
+          "wrong_mean_confidence": 0.8470684493319159,
+          "wrong_confidence_gt99_fraction": 0.2127107815941225
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.15895485877990723
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008961267311259666
+      }
+    },
+    "seconds": 2.512250335999852,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 23,
+    "train_loss": {
+      "frozen_point": 0.16759656199025957
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861843831434622,
+          "iou": 0.8105238028644113,
+          "precision": 0.8951524623544771,
+          "recall": 0.909854711335817
+        },
+        "pooled": {
+          "dice": 0.8924993158880421,
+          "iou": 0.8058679589924469,
+          "precision": 0.8953357967109116,
+          "recall": 0.8896807506113541
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.26115485564304464
+        },
+        "threshold_jaccard_065": 0.7622562908991068,
+        "counts": {
+          "tp": 10740202,
+          "fp": 1255523,
+          "fn": 1331771,
+          "tn": 36610936
+        },
+        "loss": 0.29927695611017585,
+        "diagnostics": {
+          "bce_soft": 0.16983978657584803,
+          "soft_dice_loss": 0.12943716906499989,
+          "wrong_pixels": 2587294,
+          "wrong_mean_confidence": 0.8381882682190693,
+          "wrong_confidence_gt99_fraction": 0.21462114471722193
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.11038213223218918
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008864040551740157
+      }
+    },
+    "seconds": 2.5334933160011133,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 24,
+    "train_loss": {
+      "frozen_point": 0.1674837688594456
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8858211761646096,
+          "iou": 0.8098223744036517,
+          "precision": 0.8922638704835064,
+          "recall": 0.9121051517659127
+        },
+        "pooled": {
+          "dice": 0.8923049635911593,
+          "iou": 0.8055511077164538,
+          "precision": 0.8927907837253362,
+          "recall": 0.8918196718962178
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7614847554967115,
+        "counts": {
+          "tp": 10766023,
+          "fp": 1292819,
+          "fn": 1305950,
+          "tn": 36573640
+        },
+        "loss": 0.29980594733255744,
+        "diagnostics": {
+          "bce_soft": 0.17117609787644364,
+          "soft_dice_loss": 0.12862983979578094,
+          "wrong_pixels": 2598769,
+          "wrong_mean_confidence": 0.8451708127743267,
+          "wrong_confidence_gt99_fraction": 0.21420641850045155
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07687053084373474
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008763049794670776
+      }
+    },
+    "seconds": 2.5354484199997387,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 25,
+    "train_loss": {
+      "frozen_point": 0.16740382060582412
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8845860071494075,
+          "iou": 0.8076588672253541,
+          "precision": 0.8861354485532065,
+          "recall": 0.9161417937326558
+        },
+        "pooled": {
+          "dice": 0.891407454253266,
+          "iou": 0.8040893452452587,
+          "precision": 0.8878798173809581,
+          "recall": 0.8949632342617069
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.2388451443569554
+        },
+        "threshold_jaccard_065": 0.7610395952552363,
+        "counts": {
+          "tp": 10803972,
+          "fp": 1364310,
+          "fn": 1268001,
+          "tn": 36502149
+        },
+        "loss": 0.30339097867174725,
+        "diagnostics": {
+          "bce_soft": 0.17211929440811238,
+          "soft_dice_loss": 0.13127167659794564,
+          "wrong_pixels": 2632311,
+          "wrong_mean_confidence": 0.8466269583127063,
+          "wrong_confidence_gt99_fraction": 0.20894985432952262
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.13112345337867737
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008658394705735987
+      }
+    },
+    "seconds": 2.5092821559992444,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 26,
+    "train_loss": {
+      "frozen_point": 0.16725747960432968
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855862680194881,
+          "iou": 0.809447825635912,
+          "precision": 0.8918285819515844,
+          "recall": 0.9121490561611564
+        },
+        "pooled": {
+          "dice": 0.8920028814890849,
+          "iou": 0.8050588459001462,
+          "precision": 0.8924972753898751,
+          "recall": 0.8915090350185508
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7611538066726189,
+        "counts": {
+          "tp": 10762273,
+          "fp": 1296333,
+          "fn": 1309700,
+          "tn": 36570126
+        },
+        "loss": 0.30034871755309617,
+        "diagnostics": {
+          "bce_soft": 0.1702264665071107,
+          "soft_dice_loss": 0.13012226281829392,
+          "wrong_pixels": 2606033,
+          "wrong_mean_confidence": 0.8391658084237952,
+          "wrong_confidence_gt99_fraction": 0.2119259426108572
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.13106215000152588
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000855017856687341
+      }
+    },
+    "seconds": 2.5306843830003345,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 27,
+    "train_loss": {
+      "frozen_point": 0.1671803009440512
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.883786082774174,
+          "iou": 0.8063336938873695,
+          "precision": 0.8826966371328022,
+          "recall": 0.9182804903202537
+        },
+        "pooled": {
+          "dice": 0.8908409904110103,
+          "iou": 0.803167970245421,
+          "precision": 0.8853420677794986,
+          "recall": 0.8964086483626165
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.6706036745406824,
+          "0.9": 0.24015748031496062
+        },
+        "threshold_jaccard_065": 0.7581281943511626,
+        "counts": {
+          "tp": 10821421,
+          "fp": 1401449,
+          "fn": 1250552,
+          "tn": 36465010
+        },
+        "loss": 0.3036805389747219,
+        "diagnostics": {
+          "bce_soft": 0.17214958412753628,
+          "soft_dice_loss": 0.1315309383424874,
+          "wrong_pixels": 2652001,
+          "wrong_mean_confidence": 0.8458408003048747,
+          "wrong_confidence_gt99_fraction": 0.20702518588793895
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10407763719558716
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008438508174347009
+      }
+    },
+    "seconds": 2.5583499540007324,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 28,
+    "train_loss": {
+      "frozen_point": 0.1689736240741936
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8864574106839626,
+          "iou": 0.8109729457139243,
+          "precision": 0.8966639736587784,
+          "recall": 0.9087935822112334
+        },
+        "pooled": {
+          "dice": 0.8927166858524246,
+          "iou": 0.8062224675892172,
+          "precision": 0.8965783228525649,
+          "recall": 0.8888881709725494
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.926509186351706,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6771653543307087,
+          "0.9": 0.2650918635170604
+        },
+        "threshold_jaccard_065": 0.7635135284618776,
+        "counts": {
+          "tp": 10730634,
+          "fp": 1237795,
+          "fn": 1341339,
+          "tn": 36628664
+        },
+        "loss": 0.298762763891946,
+        "diagnostics": {
+          "bce_soft": 0.17084432790285647,
+          "soft_dice_loss": 0.12791844115169657,
+          "wrong_pixels": 2579134,
+          "wrong_mean_confidence": 0.8445207773322765,
+          "wrong_confidence_gt99_fraction": 0.21684487893998527
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.20969544351100922
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008323493733352076
+      }
+    },
+    "seconds": 2.534811374000128,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 29,
+    "train_loss": {
+      "frozen_point": 0.16933501414630725
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8849996122260833,
+          "iou": 0.8083744387811024,
+          "precision": 0.8880458934719144,
+          "recall": 0.9149256132452416
+        },
+        "pooled": {
+          "dice": 0.8916714159487793,
+          "iou": 0.8045190106795723,
+          "precision": 0.8894770182377798,
+          "recall": 0.8938766678818781
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.24278215223097113
+        },
+        "threshold_jaccard_065": 0.7617426242581269,
+        "counts": {
+          "tp": 10790855,
+          "fp": 1340830,
+          "fn": 1281118,
+          "tn": 36525629
+        },
+        "loss": 0.30176218319439824,
+        "diagnostics": {
+          "bce_soft": 0.1720823837625073,
+          "soft_dice_loss": 0.12967979407373062,
+          "wrong_pixels": 2621948,
+          "wrong_mean_confidence": 0.8469803806916009,
+          "wrong_confidence_gt99_fraction": 0.21163806452301875
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1759592592716217
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008205248749256015
+      }
+    },
+    "seconds": 2.5148318559986365,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 30,
+    "train_loss": {
+      "frozen_point": 0.16637832743302383
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.886165856119127,
+          "iou": 0.8104601089207423,
+          "precision": 0.8948926827111012,
+          "recall": 0.9100624187946765
+        },
+        "pooled": {
+          "dice": 0.8925527818994071,
+          "iou": 0.8059551437857635,
+          "precision": 0.8949439340099916,
+          "recall": 0.8901743733190921
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8556430446194225,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7621300964278522,
+        "counts": {
+          "tp": 10746161,
+          "fp": 1261475,
+          "fn": 1325812,
+          "tn": 36604984
+        },
+        "loss": 0.2996851984910139,
+        "diagnostics": {
+          "bce_soft": 0.17053033258971267,
+          "soft_dice_loss": 0.12915486676173574,
+          "wrong_pixels": 2587287,
+          "wrong_mean_confidence": 0.8430768775257211,
+          "wrong_confidence_gt99_fraction": 0.21412042807775095
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.20939646661281586
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0008083889915582234
+      }
+    },
+    "seconds": 2.503303698998934,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 31,
+    "train_loss": {
+      "frozen_point": 0.1684061896573448
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855240424599985,
+          "iou": 0.8093004515359802,
+          "precision": 0.891288164370099,
+          "recall": 0.912553793318269
+        },
+        "pooled": {
+          "dice": 0.8921013715460768,
+          "iou": 0.8052193121594596,
+          "precision": 0.892285565828761,
+          "recall": 0.8919172532940556
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7618125510733016,
+        "counts": {
+          "tp": 10767201,
+          "fp": 1299789,
+          "fn": 1304772,
+          "tn": 36566670
+        },
+        "loss": 0.30128752168395073,
+        "diagnostics": {
+          "bce_soft": 0.1699682335293512,
+          "soft_dice_loss": 0.13131928303110318,
+          "wrong_pixels": 2604561,
+          "wrong_mean_confidence": 0.83826377991014,
+          "wrong_confidence_gt99_fraction": 0.21036366589225594
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10729710012674332
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007959536998847743
+      }
+    },
+    "seconds": 2.503781086001254,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 32,
+    "train_loss": {
+      "frozen_point": 0.16632777133271145
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885696595998185,
+          "iou": 0.8096185135951346,
+          "precision": 0.891746933876078,
+          "recall": 0.912419233528633
+        },
+        "pooled": {
+          "dice": 0.8921911645459017,
+          "iou": 0.8053656334851189,
+          "precision": 0.892364911276972,
+          "recall": 0.8920174854599161
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7612929894846574,
+        "counts": {
+          "tp": 10768411,
+          "fp": 1298862,
+          "fn": 1303562,
+          "tn": 36567597
+        },
+        "loss": 0.30035904980707046,
+        "diagnostics": {
+          "bce_soft": 0.17085656574548386,
+          "soft_dice_loss": 0.12950248543045964,
+          "wrong_pixels": 2602424,
+          "wrong_mean_confidence": 0.8435361889878871,
+          "wrong_confidence_gt99_fraction": 0.21252954937396826
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03554955869913101
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007832312720368048
+      }
+    },
+    "seconds": 2.50414185399859,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 33,
+    "train_loss": {
+      "frozen_point": 0.1665211714496036
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856626426403601,
+          "iou": 0.8095590544252722,
+          "precision": 0.8916811634857441,
+          "recall": 0.9124163284055272
+        },
+        "pooled": {
+          "dice": 0.8921847768971451,
+          "iou": 0.8053552237693979,
+          "precision": 0.8925184878092414,
+          "recall": 0.8918513154394895
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7612501880952227,
+        "counts": {
+          "tp": 10766405,
+          "fp": 1296544,
+          "fn": 1305568,
+          "tn": 36569915
+        },
+        "loss": 0.30060718097086025,
+        "diagnostics": {
+          "bce_soft": 0.17012313794432662,
+          "soft_dice_loss": 0.1304840337573074,
+          "wrong_pixels": 2602112,
+          "wrong_mean_confidence": 0.8395761633321389,
+          "wrong_confidence_gt99_fraction": 0.21144939187859707
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.046169083565473557
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007702342635146033
+      }
+    },
+    "seconds": 2.5106660630008264,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 34,
+    "train_loss": {
+      "frozen_point": 0.16719838003464998
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853381696332376,
+          "iou": 0.8089553494909452,
+          "precision": 0.8896661235139951,
+          "recall": 0.9138678420785143
+        },
+        "pooled": {
+          "dice": 0.8919419806859273,
+          "iou": 0.8049596367147555,
+          "precision": 0.8907020212329287,
+          "recall": 0.8931853972834433
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7614540078538061,
+        "counts": {
+          "tp": 10782510,
+          "fp": 1323121,
+          "fn": 1289463,
+          "tn": 36543338
+        },
+        "loss": 0.3008659460100289,
+        "diagnostics": {
+          "bce_soft": 0.17207020227833997,
+          "soft_dice_loss": 0.12879572343325676,
+          "wrong_pixels": 2612584,
+          "wrong_mean_confidence": 0.8484324955036986,
+          "wrong_confidence_gt99_fraction": 0.21320692463859536
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.26713210344314575
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007569755007964338
+      }
+    },
+    "seconds": 2.5104610939997656,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 35,
+    "train_loss": {
+      "frozen_point": 0.16744826229986431
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8865206987454939,
+          "iou": 0.8111039632682312,
+          "precision": 0.897346389154012,
+          "recall": 0.908220941381112
+        },
+        "pooled": {
+          "dice": 0.8927678063231406,
+          "iou": 0.8063058601633206,
+          "precision": 0.8974464699873338,
+          "recall": 0.888137672276106
+        },
+        "prec_at": {
+          "0.5": 0.958005249343832,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.2637795275590551
+        },
+        "threshold_jaccard_065": 0.7636960377151215,
+        "counts": {
+          "tp": 10721574,
+          "fp": 1225182,
+          "fn": 1350399,
+          "tn": 36641277
+        },
+        "loss": 0.29891291378051277,
+        "diagnostics": {
+          "bce_soft": 0.17017045550615456,
+          "soft_dice_loss": 0.12874245737481305,
+          "wrong_pixels": 2575581,
+          "wrong_mean_confidence": 0.8415726190984923,
+          "wrong_confidence_gt99_fraction": 0.21563600601184743
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1997763216495514
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000743468068680349
+      }
+    },
+    "seconds": 2.512573632000567,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 36,
+    "train_loss": {
+      "frozen_point": 0.16667748651094932
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856104212191932,
+          "iou": 0.809449160345171,
+          "precision": 0.8909501024799068,
+          "recall": 0.9130603581531103
+        },
+        "pooled": {
+          "dice": 0.8920981912324499,
+          "iou": 0.8052141301446525,
+          "precision": 0.8920815647364245,
+          "recall": 0.8921148183482518
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7620080195844879,
+        "counts": {
+          "tp": 10769586,
+          "fp": 1302837,
+          "fn": 1302387,
+          "tn": 36563622
+        },
+        "loss": 0.3009389665496005,
+        "diagnostics": {
+          "bce_soft": 0.1705304165602982,
+          "soft_dice_loss": 0.13040855159283937,
+          "wrong_pixels": 2605224,
+          "wrong_mean_confidence": 0.8410510871139176,
+          "wrong_confidence_gt99_fraction": 0.2113514999094128
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.17581163346767426
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007297252973710757
+      }
+    },
+    "seconds": 2.5103153590025613,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 37,
+    "train_loss": {
+      "frozen_point": 0.1669725773664446
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8859629815961281,
+          "iou": 0.8100571637058047,
+          "precision": 0.8929665071300381,
+          "recall": 0.9116364009465491
+        },
+        "pooled": {
+          "dice": 0.892414365386653,
+          "iou": 0.8057294510669513,
+          "precision": 0.8935264037538069,
+          "recall": 0.8913050915537999
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7617050101851015,
+        "counts": {
+          "tp": 10759811,
+          "fp": 1282151,
+          "fn": 1312162,
+          "tn": 36584308
+        },
+        "loss": 0.2998598440112717,
+        "diagnostics": {
+          "bce_soft": 0.17115138134774888,
+          "soft_dice_loss": 0.1287084681781258,
+          "wrong_pixels": 2594313,
+          "wrong_mean_confidence": 0.8454724365313123,
+          "wrong_confidence_gt99_fraction": 0.21436387976315888
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.08263144642114639
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007157607493247111
+      }
+    },
+    "seconds": 2.5101365859991347,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 38,
+    "train_loss": {
+      "frozen_point": 0.16852914743433575
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8844177641945646,
+          "iou": 0.8073515588369788,
+          "precision": 0.8852213797762093,
+          "recall": 0.9167687263724749
+        },
+        "pooled": {
+          "dice": 0.8912975071176581,
+          "iou": 0.803910438408516,
+          "precision": 0.887394641269174,
+          "recall": 0.8952348551475389
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.24015748031496062
+        },
+        "threshold_jaccard_065": 0.7607469914022694,
+        "counts": {
+          "tp": 10807251,
+          "fp": 1371379,
+          "fn": 1264722,
+          "tn": 36495080
+        },
+        "loss": 0.3033061778451514,
+        "diagnostics": {
+          "bce_soft": 0.17262257326619207,
+          "soft_dice_loss": 0.13068359542706506,
+          "wrong_pixels": 2636101,
+          "wrong_mean_confidence": 0.848587387728565,
+          "wrong_confidence_gt99_fraction": 0.20945479706581804
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.5949724912643433
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0007015882058642164
+      }
+    },
+    "seconds": 2.5118102359992918,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 39,
+    "train_loss": {
+      "frozen_point": 0.16857393627960635
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8860298963086163,
+          "iou": 0.8102003291318877,
+          "precision": 0.8936308444951185,
+          "recall": 0.9110951830890854
+        },
+        "pooled": {
+          "dice": 0.8924098575890945,
+          "iou": 0.8057221019018594,
+          "precision": 0.8941742416644254,
+          "recall": 0.8906524227646964
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7618979411206765,
+        "counts": {
+          "tp": 10751932,
+          "fp": 1272494,
+          "fn": 1320041,
+          "tn": 36593965
+        },
+        "loss": 0.29974254535564915,
+        "diagnostics": {
+          "bce_soft": 0.16996746625643702,
+          "soft_dice_loss": 0.12977507483615025,
+          "wrong_pixels": 2592535,
+          "wrong_mean_confidence": 0.8397973576024444,
+          "wrong_confidence_gt99_fraction": 0.21316394957059404
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.22639961540699005
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0006872216535789157
+      }
+    },
+    "seconds": 2.5107219839992467,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 40,
+    "train_loss": {
+      "frozen_point": 0.1672163990781517
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8849479333379504,
+          "iou": 0.8083057376595522,
+          "precision": 0.8878916974750812,
+          "recall": 0.915013521778058
+        },
+        "pooled": {
+          "dice": 0.8916073930856863,
+          "iou": 0.8044147782326498,
+          "precision": 0.8894157125823726,
+          "recall": 0.8938099016623049
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.24803149606299213
+        },
+        "threshold_jaccard_065": 0.7617446980938063,
+        "counts": {
+          "tp": 10790049,
+          "fp": 1341566,
+          "fn": 1281924,
+          "tn": 36524893
+        },
+        "loss": 0.30206394821327187,
+        "diagnostics": {
+          "bce_soft": 0.17099156318687078,
+          "soft_dice_loss": 0.13107239855868924,
+          "wrong_pixels": 2623490,
+          "wrong_mean_confidence": 0.8423598083882814,
+          "wrong_confidence_gt99_fraction": 0.2090840826532596
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10449559986591339
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0006726752705214193
+      }
+    },
+    "seconds": 2.51153565000277,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 41,
+    "train_loss": {
+      "frozen_point": 0.16628179278062738
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855238210886458,
+          "iou": 0.8092884953043077,
+          "precision": 0.8906629703763208,
+          "recall": 0.9131994472598999
+        },
+        "pooled": {
+          "dice": 0.8920459138290603,
+          "iou": 0.8051289534135369,
+          "precision": 0.8914295674018284,
+          "recall": 0.8926631131464592
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7609387664220769,
+        "counts": {
+          "tp": 10776205,
+          "fp": 1312473,
+          "fn": 1295768,
+          "tn": 36553986
+        },
+        "loss": 0.30096262067634605,
+        "diagnostics": {
+          "bce_soft": 0.17184710486980248,
+          "soft_dice_loss": 0.12911550501200159,
+          "wrong_pixels": 2608241,
+          "wrong_mean_confidence": 0.8478825039680586,
+          "wrong_confidence_gt99_fraction": 0.21273916022330758
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03724897652864456
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000657963412215599
+      }
+    },
+    "seconds": 2.5118239089970302,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 42,
+    "train_loss": {
+      "frozen_point": 0.16609077269363504
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852716787140406,
+          "iou": 0.80884189792314,
+          "precision": 0.8893915812823249,
+          "recall": 0.9140411524222647
+        },
+        "pooled": {
+          "dice": 0.8918509276450278,
+          "iou": 0.8048113289935979,
+          "precision": 0.8905490967901316,
+          "recall": 0.8931565701811958
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9225721784776902,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24671916010498687
+        },
+        "threshold_jaccard_065": 0.7613688312107066,
+        "counts": {
+          "tp": 10782162,
+          "fp": 1325157,
+          "fn": 1289811,
+          "tn": 36541302
+        },
+        "loss": 0.301804639535939,
+        "diagnostics": {
+          "bce_soft": 0.17131281540462664,
+          "soft_dice_loss": 0.13049181803004947,
+          "wrong_pixels": 2614968,
+          "wrong_mean_confidence": 0.8447288867141914,
+          "wrong_confidence_gt99_fraction": 0.2103880429894362
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.037220899015665054
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0006431005974894185
+      }
+    },
+    "seconds": 2.511788478001108,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 43,
+    "train_loss": {
+      "frozen_point": 0.16765048815488562
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852848569427353,
+          "iou": 0.8088665582772222,
+          "precision": 0.8893504920313566,
+          "recall": 0.9141081596134936
+        },
+        "pooled": {
+          "dice": 0.8919234700121387,
+          "iou": 0.8049294844480728,
+          "precision": 0.890334223761379,
+          "recall": 0.8935184000163022
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24671916010498687
+        },
+        "threshold_jaccard_065": 0.7622106157617292,
+        "counts": {
+          "tp": 10786530,
+          "fp": 1328617,
+          "fn": 1285443,
+          "tn": 36537842
+        },
+        "loss": 0.30097514312724116,
+        "diagnostics": {
+          "bce_soft": 0.17177424706968422,
+          "soft_dice_loss": 0.12920089343714275,
+          "wrong_pixels": 2614060,
+          "wrong_mean_confidence": 0.8474756890108647,
+          "wrong_confidence_gt99_fraction": 0.2122728629029173
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.050979986786842346
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000628101494146603
+      }
+    },
+    "seconds": 2.5120619459994487,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 44,
+    "train_loss": {
+      "frozen_point": 0.16741274063369754
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8859521119845529,
+          "iou": 0.8100246213070005,
+          "precision": 0.8930336952781945,
+          "recall": 0.9115395481342621
+        },
+        "pooled": {
+          "dice": 0.8924104529091332,
+          "iou": 0.8057230724622574,
+          "precision": 0.8935422863847804,
+          "recall": 0.8912814831510971
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7607850870369949,
+        "counts": {
+          "tp": 10759526,
+          "fp": 1281903,
+          "fn": 1312447,
+          "tn": 36584556
+        },
+        "loss": 0.2999976266400395,
+        "diagnostics": {
+          "bce_soft": 0.17153458344185446,
+          "soft_dice_loss": 0.1284630458185992,
+          "wrong_pixels": 2594350,
+          "wrong_mean_confidence": 0.8473047828723712,
+          "wrong_confidence_gt99_fraction": 0.21477826815965465
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.16197419166564941
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0006129809044912887
+      }
+    },
+    "seconds": 2.511320485999022,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 45,
+    "train_loss": {
+      "frozen_point": 0.16695294138103375
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8846963954186327,
+          "iou": 0.807840761105149,
+          "precision": 0.8864962334512431,
+          "recall": 0.9159698569357878
+        },
+        "pooled": {
+          "dice": 0.8914579029839332,
+          "iou": 0.8041714476910955,
+          "precision": 0.8880275531005458,
+          "recall": 0.8949148577452916
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.24015748031496062
+        },
+        "threshold_jaccard_065": 0.7612186515250288,
+        "counts": {
+          "tp": 10803388,
+          "fp": 1362212,
+          "fn": 1268585,
+          "tn": 36504247
+        },
+        "loss": 0.30249125485032247,
+        "diagnostics": {
+          "bce_soft": 0.17285819508115763,
+          "soft_dice_loss": 0.12963306325001353,
+          "wrong_pixels": 2630797,
+          "wrong_mean_confidence": 0.8511378893689526,
+          "wrong_confidence_gt99_fraction": 0.2108361078410839
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03219429776072502
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005977537507199337
+      }
+    },
+    "seconds": 2.511779345000832,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 46,
+    "train_loss": {
+      "frozen_point": 0.1658271761771098
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856359311530719,
+          "iou": 0.8094827578407559,
+          "precision": 0.8913752410779279,
+          "recall": 0.9126693360452187
+        },
+        "pooled": {
+          "dice": 0.8921157816202885,
+          "iou": 0.8052427923605717,
+          "precision": 0.8921225435498795,
+          "recall": 0.892109019793202
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7620041193380186,
+        "counts": {
+          "tp": 10769516,
+          "fp": 1302274,
+          "fn": 1302457,
+          "tn": 36564185
+        },
+        "loss": 0.30063217330792447,
+        "diagnostics": {
+          "bce_soft": 0.1714937244969716,
+          "soft_dice_loss": 0.12913843152404145,
+          "wrong_pixels": 2604731,
+          "wrong_mean_confidence": 0.8466369888579317,
+          "wrong_confidence_gt99_fraction": 0.21302468469872704
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.20710010826587677
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005824350601949143
+      }
+    },
+    "seconds": 2.511470792000182,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 47,
+    "train_loss": {
+      "frozen_point": 0.1672343517538093
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854622325792926,
+          "iou": 0.8091720742586183,
+          "precision": 0.8905667119868986,
+          "recall": 0.9131826127787418
+        },
+        "pooled": {
+          "dice": 0.8919907883504167,
+          "iou": 0.8050391449565998,
+          "precision": 0.8914842982176122,
+          "recall": 0.8924978543275404
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.761684054193828,
+        "counts": {
+          "tp": 10774210,
+          "fp": 1311488,
+          "fn": 1297763,
+          "tn": 36554971
+        },
+        "loss": 0.30106326257150007,
+        "diagnostics": {
+          "bce_soft": 0.17099771896998087,
+          "soft_dice_loss": 0.1300655290523539,
+          "wrong_pixels": 2609251,
+          "wrong_mean_confidence": 0.8444110559509445,
+          "wrong_confidence_gt99_fraction": 0.21122191770741872
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07499013096094131
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005670399506143308
+      }
+    },
+    "seconds": 2.5118938079976942,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 48,
+    "train_loss": {
+      "frozen_point": 0.16705808489092588
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861801720541338,
+          "iou": 0.8104973209529633,
+          "precision": 0.8957448799862968,
+          "recall": 0.9092277771145877
+        },
+        "pooled": {
+          "dice": 0.8925082765508346,
+          "iou": 0.8058825701841025,
+          "precision": 0.8957070616055857,
+          "recall": 0.8893322574528622
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9278215223097113,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.678477690288714,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7630468554234713,
+        "counts": {
+          "tp": 10735995,
+          "fp": 1250061,
+          "fn": 1335978,
+          "tn": 36616398
+        },
+        "loss": 0.29956643975625824,
+        "diagnostics": {
+          "bce_soft": 0.17021384956486268,
+          "soft_dice_loss": 0.1293525811568333,
+          "wrong_pixels": 2586039,
+          "wrong_mean_confidence": 0.8417198646457814,
+          "wrong_confidence_gt99_fraction": 0.21428795157381617
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.23504991829395294
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005515836150926646
+      }
+    },
+    "seconds": 2.5136311810019834,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 49,
+    "train_loss": {
+      "frozen_point": 0.1665925876428062
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856890703020593,
+          "iou": 0.8095724512685717,
+          "precision": 0.8917713290806836,
+          "recall": 0.912358865798465
+        },
+        "pooled": {
+          "dice": 0.8922134252009569,
+          "iou": 0.8054019117922675,
+          "precision": 0.8923503445274547,
+          "recall": 0.8920765478849232
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.762911875165618,
+        "counts": {
+          "tp": 10769124,
+          "fp": 1299145,
+          "fn": 1302849,
+          "tn": 36567314
+        },
+        "loss": 0.3002049624137678,
+        "diagnostics": {
+          "bce_soft": 0.17069832526949133,
+          "soft_dice_loss": 0.1295066278750502,
+          "wrong_pixels": 2601994,
+          "wrong_mean_confidence": 0.8434648538512979,
+          "wrong_confidence_gt99_fraction": 0.21275760051714185
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.060005705803632736
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005360813071670102
+      }
+    },
+    "seconds": 2.511890304998815,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 50,
+    "train_loss": {
+      "frozen_point": 0.1663770445900024
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854256248717101,
+          "iou": 0.809107512684343,
+          "precision": 0.8902914710009735,
+          "recall": 0.9133899389849945
+        },
+        "pooled": {
+          "dice": 0.8919758992428248,
+          "iou": 0.8050148896881282,
+          "precision": 0.8912159267266313,
+          "recall": 0.892737168978095
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7616253357696383,
+        "counts": {
+          "tp": 10777099,
+          "fp": 1315480,
+          "fn": 1294874,
+          "tn": 36550979
+        },
+        "loss": 0.30072253082055117,
+        "diagnostics": {
+          "bce_soft": 0.1714013533720507,
+          "soft_dice_loss": 0.1293211696654793,
+          "wrong_pixels": 2610354,
+          "wrong_mean_confidence": 0.8459340417224223,
+          "wrong_confidence_gt99_fraction": 0.21239111630070098
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.06092057377099991
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0005205483257436735
+      }
+    },
+    "seconds": 2.51119809499869,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 51,
+    "train_loss": {
+      "frozen_point": 0.16627548130926373
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885347538782181,
+          "iou": 0.8089571535163544,
+          "precision": 0.8896490425803298,
+          "recall": 0.9139008925399053
+        },
+        "pooled": {
+          "dice": 0.8919322485857684,
+          "iou": 0.8049437838502125,
+          "precision": 0.8907893098491109,
+          "recall": 0.8930781240150222
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7614535010758217,
+        "counts": {
+          "tp": 10781215,
+          "fp": 1321776,
+          "fn": 1290758,
+          "tn": 36544683
+        },
+        "loss": 0.3015938825181776,
+        "diagnostics": {
+          "bce_soft": 0.17181416031882518,
+          "soft_dice_loss": 0.12977971054437593,
+          "wrong_pixels": 2612534,
+          "wrong_mean_confidence": 0.8473056137972649,
+          "wrong_confidence_gt99_fraction": 0.21169561812401294
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.14114196598529816
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.000505
+      }
+    },
+    "seconds": 2.5104624350024096,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 52,
+    "train_loss": {
+      "frozen_point": 0.16680308094017074
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885270905728316,
+          "iou": 0.8088295645882039,
+          "precision": 0.8893622802971777,
+          "recall": 0.9140600628277226
+        },
+        "pooled": {
+          "dice": 0.8918427036636233,
+          "iou": 0.8047979349250326,
+          "precision": 0.8904087939831477,
+          "recall": 0.8932812391147661
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24934383202099739
+        },
+        "threshold_jaccard_065": 0.7613432670819265,
+        "counts": {
+          "tp": 10783667,
+          "fp": 1327250,
+          "fn": 1288306,
+          "tn": 36539209
+        },
+        "loss": 0.301288189537569,
+        "diagnostics": {
+          "bce_soft": 0.1717333187033811,
+          "soft_dice_loss": 0.12955486618001943,
+          "wrong_pixels": 2615556,
+          "wrong_mean_confidence": 0.8473968194520365,
+          "wrong_confidence_gt99_fraction": 0.21163569046122507
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.12049806863069534
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0004894516742563266
+      }
+    },
+    "seconds": 2.5110391009984596,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 53,
+    "train_loss": {
+      "frozen_point": 0.1674111337101725
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8861224970342605,
+          "iou": 0.810346128510991,
+          "precision": 0.8939142362610198,
+          "recall": 0.9109632553744409
+        },
+        "pooled": {
+          "dice": 0.8925462978756676,
+          "iou": 0.8059445701103112,
+          "precision": 0.8943488489828467,
+          "recall": 0.8907509982005427
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6811023622047244,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7611478937557059,
+        "counts": {
+          "tp": 10753122,
+          "fp": 1270287,
+          "fn": 1318851,
+          "tn": 36596172
+        },
+        "loss": 0.29962287565541706,
+        "diagnostics": {
+          "bce_soft": 0.17091833903720685,
+          "soft_dice_loss": 0.12870454365812886,
+          "wrong_pixels": 2589138,
+          "wrong_mean_confidence": 0.8449820405864098,
+          "wrong_confidence_gt99_fraction": 0.21469462037172218
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1291327178478241
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00047391869283298986
+      }
+    },
+    "seconds": 2.5093988410008023,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 54,
+    "train_loss": {
+      "frozen_point": 0.16692071778587167
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8864114162794132,
+          "iou": 0.8108837756316833,
+          "precision": 0.8964253584324287,
+          "recall": 0.9089474095581728
+        },
+        "pooled": {
+          "dice": 0.8927065915357293,
+          "iou": 0.806206001690052,
+          "precision": 0.896423669625949,
+          "recall": 0.889020212354683
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9291338582677166,
+          "0.7": 0.8517060367454068,
+          "0.8": 0.678477690288714,
+          "0.9": 0.26115485564304464
+        },
+        "threshold_jaccard_065": 0.7634190950369435,
+        "counts": {
+          "tp": 10732228,
+          "fp": 1240044,
+          "fn": 1339745,
+          "tn": 36626415
+        },
+        "loss": 0.2990503547385609,
+        "diagnostics": {
+          "bce_soft": 0.17028715893665325,
+          "soft_dice_loss": 0.12876319494147312,
+          "wrong_pixels": 2579789,
+          "wrong_mean_confidence": 0.8421602842341096,
+          "wrong_confidence_gt99_fraction": 0.21568198019295376
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1129690632224083
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00045841638490733545
+      }
+    },
+    "seconds": 2.5125151069987623,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 55,
+    "train_loss": {
+      "frozen_point": 0.16723811403627992
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8858426829304847,
+          "iou": 0.8098327786730367,
+          "precision": 0.8924444325840976,
+          "recall": 0.9119434815583632
+        },
+        "pooled": {
+          "dice": 0.8922871445777214,
+          "iou": 0.8055220630598954,
+          "precision": 0.8930275476909505,
+          "recall": 0.891547968173885
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7623191390270263,
+        "counts": {
+          "tp": 10762743,
+          "fp": 1289229,
+          "fn": 1309230,
+          "tn": 36577230
+        },
+        "loss": 0.3002040514482914,
+        "diagnostics": {
+          "bce_soft": 0.17118511816335164,
+          "soft_dice_loss": 0.12901895346603995,
+          "wrong_pixels": 2598459,
+          "wrong_mean_confidence": 0.8457626750201848,
+          "wrong_confidence_gt99_fraction": 0.2135973667469835
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0915381982922554
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0004429600493856695
+      }
+    },
+    "seconds": 2.5136018689991033,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 56,
+    "train_loss": {
+      "frozen_point": 0.16508560743842626
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854045643426283,
+          "iou": 0.8090694682436518,
+          "precision": 0.8899367435152042,
+          "recall": 0.9137213775022027
+        },
+        "pooled": {
+          "dice": 0.8919711812617391,
+          "iou": 0.8050072039438905,
+          "precision": 0.8908689574067901,
+          "recall": 0.8930761359390051
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7615820379941659,
+        "counts": {
+          "tp": 10781191,
+          "fp": 1320691,
+          "fn": 1290782,
+          "tn": 36545768
+        },
+        "loss": 0.30076910035190935,
+        "diagnostics": {
+          "bce_soft": 0.17209009650185353,
+          "soft_dice_loss": 0.128679011750409,
+          "wrong_pixels": 2611473,
+          "wrong_mean_confidence": 0.8492322109760193,
+          "wrong_confidence_gt99_fraction": 0.21321453447920005
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04762042313814163
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00042756493980508576
+      }
+    },
+    "seconds": 2.511910301000171,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 57,
+    "train_loss": {
+      "frozen_point": 0.1654367090251261
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856828586740393,
+          "iou": 0.809570597226124,
+          "precision": 0.8914620315898909,
+          "recall": 0.9126727709510559
+        },
+        "pooled": {
+          "dice": 0.8921579395620735,
+          "iou": 0.8053114892653617,
+          "precision": 0.8921102770642866,
+          "recall": 0.8922056071530312
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7620931994694026,
+        "counts": {
+          "tp": 10770682,
+          "fp": 1302581,
+          "fn": 1301291,
+          "tn": 36563878
+        },
+        "loss": 0.3007552678503702,
+        "diagnostics": {
+          "bce_soft": 0.17184799217333005,
+          "soft_dice_loss": 0.1289072714139783,
+          "wrong_pixels": 2603872,
+          "wrong_mean_confidence": 0.8487913891750871,
+          "wrong_confidence_gt99_fraction": 0.21323283172137494
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03252815827727318
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0004122462492800663
+      }
+    },
+    "seconds": 2.5117304750019684,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 58,
+    "train_loss": {
+      "frozen_point": 0.16613387133953805
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885849340467431,
+          "iou": 0.8098638298647667,
+          "precision": 0.8927036705690601,
+          "recall": 0.9117055146769332
+        },
+        "pooled": {
+          "dice": 0.8923219321290734,
+          "iou": 0.8055787669825492,
+          "precision": 0.8931763065508055,
+          "recall": 0.8914691906617087
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8543307086614174,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7606573109155287,
+        "counts": {
+          "tp": 10761792,
+          "fp": 1287108,
+          "fn": 1310181,
+          "tn": 36579351
+        },
+        "loss": 0.3001389866425922,
+        "diagnostics": {
+          "bce_soft": 0.17085633733923353,
+          "soft_dice_loss": 0.12928264378875573,
+          "wrong_pixels": 2597289,
+          "wrong_mean_confidence": 0.8443877347230495,
+          "wrong_confidence_gt99_fraction": 0.21321000473955729
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09782460331916809
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0003970190955087116
+      }
+    },
+    "seconds": 2.5133073309989413,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 59,
+    "train_loss": {
+      "frozen_point": 0.16749132234180467
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856609820704326,
+          "iou": 0.8095334073633442,
+          "precision": 0.8916132677368483,
+          "recall": 0.9124835714416489
+        },
+        "pooled": {
+          "dice": 0.8921841600034333,
+          "iou": 0.8053542184468118,
+          "precision": 0.8923232933735238,
+          "recall": 0.8920450700146529
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7620439197409172,
+        "counts": {
+          "tp": 10768744,
+          "fp": 1299465,
+          "fn": 1303229,
+          "tn": 36566994
+        },
+        "loss": 0.3010467265847474,
+        "diagnostics": {
+          "bce_soft": 0.17097672131743644,
+          "soft_dice_loss": 0.1300700105081393,
+          "wrong_pixels": 2602694,
+          "wrong_mean_confidence": 0.8441879444031243,
+          "wrong_confidence_gt99_fraction": 0.2118551009069833
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10399100929498672
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00038189850585339686
+      }
+    },
+    "seconds": 2.5036208290002833,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 60,
+    "train_loss": {
+      "frozen_point": 0.1666579155186201
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8851528403957267,
+          "iou": 0.8086413859657303,
+          "precision": 0.8886630864441503,
+          "recall": 0.9145773550905459
+        },
+        "pooled": {
+          "dice": 0.8917916075675281,
+          "iou": 0.8047147212178045,
+          "precision": 0.8899832127890366,
+          "recall": 0.893607366418066
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.24540682414698162
+        },
+        "threshold_jaccard_065": 0.7611875112169424,
+        "counts": {
+          "tp": 10787604,
+          "fp": 1333528,
+          "fn": 1284369,
+          "tn": 36532931
+        },
+        "loss": 0.3016427171824798,
+        "diagnostics": {
+          "bce_soft": 0.1710959797299753,
+          "soft_dice_loss": 0.1305467264232986,
+          "wrong_pixels": 2617897,
+          "wrong_mean_confidence": 0.8439912755084531,
+          "wrong_confidence_gt99_fraction": 0.2102397458723548
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.11009342223405838
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00036689940251058157
+      }
+    },
+    "seconds": 2.509762445999513,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 61,
+    "train_loss": {
+      "frozen_point": 0.1669051739153149
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8857443996843575,
+          "iou": 0.8096926169496133,
+          "precision": 0.8918287293943122,
+          "recall": 0.9124161482085066
+        },
+        "pooled": {
+          "dice": 0.8922223900159031,
+          "iou": 0.8054165222103665,
+          "precision": 0.8924871767583282,
+          "recall": 0.8919577603429033
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7622352959441581,
+        "counts": {
+          "tp": 10767690,
+          "fp": 1297122,
+          "fn": 1304283,
+          "tn": 36569337
+        },
+        "loss": 0.3006145284557593,
+        "diagnostics": {
+          "bce_soft": 0.17094166420419699,
+          "soft_dice_loss": 0.12967286084893495,
+          "wrong_pixels": 2601405,
+          "wrong_mean_confidence": 0.8448685643989506,
+          "wrong_confidence_gt99_fraction": 0.21214958839550166
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03062559850513935
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0003520365877844012
+      }
+    },
+    "seconds": 2.5104680309996183,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 62,
+    "train_loss": {
+      "frozen_point": 0.1654702266194282
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8859920294648529,
+          "iou": 0.8101365616047973,
+          "precision": 0.8937964059952302,
+          "recall": 0.9108565080832235
+        },
+        "pooled": {
+          "dice": 0.8923829713197015,
+          "iou": 0.8056782698465338,
+          "precision": 0.8942459348154711,
+          "recall": 0.890527753831126
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9251968503937008,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6797900262467191,
+          "0.9": 0.25984251968503935
+        },
+        "threshold_jaccard_065": 0.7626907820345142,
+        "counts": {
+          "tp": 10750427,
+          "fp": 1271352,
+          "fn": 1321546,
+          "tn": 36595107
+        },
+        "loss": 0.3000220356025095,
+        "diagnostics": {
+          "bce_soft": 0.1701481094354094,
+          "soft_dice_loss": 0.12987392765330516,
+          "wrong_pixels": 2592898,
+          "wrong_mean_confidence": 0.8406896886159285,
+          "wrong_confidence_gt99_fraction": 0.21307008605814806
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0891704186797142
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0003373247294785808
+      }
+    },
+    "seconds": 2.511217007002415,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 63,
+    "train_loss": {
+      "frozen_point": 0.16659523709454946
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856109717293214,
+          "iou": 0.8094383705445286,
+          "precision": 0.8911351184493034,
+          "recall": 0.9128736740202147
+        },
+        "pooled": {
+          "dice": 0.8921086517983023,
+          "iou": 0.8052311747414144,
+          "precision": 0.892072998304141,
+          "recall": 0.892144308142505
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7619778553106309,
+        "counts": {
+          "tp": 10769942,
+          "fp": 1302996,
+          "fn": 1302031,
+          "tn": 36563463
+        },
+        "loss": 0.3005980520736514,
+        "diagnostics": {
+          "bce_soft": 0.1715152943384616,
+          "soft_dice_loss": 0.12908275186859092,
+          "wrong_pixels": 2605027,
+          "wrong_mean_confidence": 0.8465776551454197,
+          "wrong_confidence_gt99_fraction": 0.21309376064048471
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03269848972558975
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00032277834642108455
+      }
+    },
+    "seconds": 2.507918186001916,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 64,
+    "train_loss": {
+      "frozen_point": 0.16681740729262695
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856241665246863,
+          "iou": 0.8094668039377129,
+          "precision": 0.8912411765104581,
+          "recall": 0.9127934783687368
+        },
+        "pooled": {
+          "dice": 0.8921379102405552,
+          "iou": 0.8052788505781159,
+          "precision": 0.8920997063946041,
+          "recall": 0.8921761173587781
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7619947604503029,
+        "counts": {
+          "tp": 10770326,
+          "fp": 1302681,
+          "fn": 1301647,
+          "tn": 36563778
+        },
+        "loss": 0.30037569170548845,
+        "diagnostics": {
+          "bce_soft": 0.17109256462631575,
+          "soft_dice_loss": 0.12928311483753635,
+          "wrong_pixels": 2604328,
+          "wrong_mean_confidence": 0.8449520213096204,
+          "wrong_confidence_gt99_fraction": 0.21281151990071911
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.05027604103088379
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0003084117941357836
+      }
+    },
+    "seconds": 2.507160060999013,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 65,
+    "train_loss": {
+      "frozen_point": 0.16578329892578206
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856928017884003,
+          "iou": 0.8095797406589628,
+          "precision": 0.8916732439343522,
+          "recall": 0.912473405942534
+        },
+        "pooled": {
+          "dice": 0.8921751689925933,
+          "iou": 0.8053395663475866,
+          "precision": 0.8923825679701497,
+          "recall": 0.8919678663959901
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7620901892793815,
+        "counts": {
+          "tp": 10767812,
+          "fp": 1298551,
+          "fn": 1304161,
+          "tn": 36567908
+        },
+        "loss": 0.30080272409859604,
+        "diagnostics": {
+          "bce_soft": 0.17103978702089606,
+          "soft_dice_loss": 0.12976295006243888,
+          "wrong_pixels": 2602712,
+          "wrong_mean_confidence": 0.8447292385031023,
+          "wrong_confidence_gt99_fraction": 0.21217253388004512
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07039417326450348
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0002942392506752891
+      }
+    },
+    "seconds": 2.506326425002044,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 66,
+    "train_loss": {
+      "frozen_point": 0.16697432920889788
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853954448021415,
+          "iou": 0.8090572126940397,
+          "precision": 0.8900211359174419,
+          "recall": 0.9136217121096827
+        },
+        "pooled": {
+          "dice": 0.8920008073146881,
+          "iou": 0.8050554668301365,
+          "precision": 0.89107658641481,
+          "recall": 0.8929269474012244
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25065616797900264
+        },
+        "threshold_jaccard_065": 0.7615775994277295,
+        "counts": {
+          "tp": 10779390,
+          "fp": 1317651,
+          "fn": 1292583,
+          "tn": 36548808
+        },
+        "loss": 0.3011698187805536,
+        "diagnostics": {
+          "bce_soft": 0.17130484453492903,
+          "soft_dice_loss": 0.12986497710070272,
+          "wrong_pixels": 2610234,
+          "wrong_mean_confidence": 0.8456359647602932,
+          "wrong_confidence_gt99_fraction": 0.21158064755880124
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0458008237183094
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00028027470262892434
+      }
+    },
+    "seconds": 2.508430818001216,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 67,
+    "train_loss": {
+      "frozen_point": 0.16605991919940755
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855392398106297,
+          "iou": 0.8093242698885054,
+          "precision": 0.8907536931722917,
+          "recall": 0.9131485881044826
+        },
+        "pooled": {
+          "dice": 0.8921090645508333,
+          "iou": 0.8052318472929376,
+          "precision": 0.8916909288025622,
+          "recall": 0.8925275926312957
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.761860605716457,
+        "counts": {
+          "tp": 10774569,
+          "fp": 1308731,
+          "fn": 1297404,
+          "tn": 36557728
+        },
+        "loss": 0.30085199977469257,
+        "diagnostics": {
+          "bce_soft": 0.17100231693642032,
+          "soft_dice_loss": 0.12984968999552288,
+          "wrong_pixels": 2606135,
+          "wrong_mean_confidence": 0.8443263636031098,
+          "wrong_confidence_gt99_fraction": 0.2118831142669125
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07648555934429169
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0002665319313196509
+      }
+    },
+    "seconds": 2.5073128330004693,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 68,
+    "train_loss": {
+      "frozen_point": 0.1661162201319115
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8857212722992334,
+          "iou": 0.8096443872280293,
+          "precision": 0.8918579237912646,
+          "recall": 0.9123450616156975
+        },
+        "pooled": {
+          "dice": 0.8921980068963394,
+          "iou": 0.8053767843445769,
+          "precision": 0.8926208942551495,
+          "recall": 0.8917755200413388
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7621839989103448,
+        "counts": {
+          "tp": 10765490,
+          "fp": 1295050,
+          "fn": 1306483,
+          "tn": 36571409
+        },
+        "loss": 0.30051054760539936,
+        "diagnostics": {
+          "bce_soft": 0.171037008404106,
+          "soft_dice_loss": 0.12947354197815023,
+          "wrong_pixels": 2601533,
+          "wrong_mean_confidence": 0.8447685310055703,
+          "wrong_confidence_gt99_fraction": 0.2126830603340415
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04557027295231819
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0002530244992035662
+      }
+    },
+    "seconds": 2.5069921530011925,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 69,
+    "train_loss": {
+      "frozen_point": 0.16579220880885645
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856441209919077,
+          "iou": 0.8094968864513897,
+          "precision": 0.8912898154529243,
+          "recall": 0.9127810756157898
+        },
+        "pooled": {
+          "dice": 0.89215802933214,
+          "iou": 0.8053116355524105,
+          "precision": 0.8921373743304222,
+          "recall": 0.8921786852903001
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7620203659858138,
+        "counts": {
+          "tp": 10770357,
+          "fp": 1302175,
+          "fn": 1301616,
+          "tn": 36564284
+        },
+        "loss": 0.3007240675565765,
+        "diagnostics": {
+          "bce_soft": 0.17115508892091866,
+          "soft_dice_loss": 0.12956897339482945,
+          "wrong_pixels": 2603791,
+          "wrong_mean_confidence": 0.8453064308341941,
+          "wrong_confidence_gt99_fraction": 0.21235921009021078
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09323541074991226
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00023976573648539656
+      }
+    },
+    "seconds": 2.505582507001236,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 70,
+    "train_loss": {
+      "frozen_point": 0.1653214829281557
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852500864401504,
+          "iou": 0.8088186245880038,
+          "precision": 0.8892315445565782,
+          "recall": 0.9141767637969784
+        },
+        "pooled": {
+          "dice": 0.8918581718229647,
+          "iou": 0.8048231274602538,
+          "precision": 0.8905596722883223,
+          "recall": 0.8931604634967292
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24934383202099739
+        },
+        "threshold_jaccard_065": 0.7622325421594286,
+        "counts": {
+          "tp": 10782209,
+          "fp": 1325019,
+          "fn": 1289764,
+          "tn": 36541440
+        },
+        "loss": 0.3014499682766872,
+        "diagnostics": {
+          "bce_soft": 0.1708916116339641,
+          "soft_dice_loss": 0.13055836137511287,
+          "wrong_pixels": 2614783,
+          "wrong_mean_confidence": 0.8429972587907815,
+          "wrong_confidence_gt99_fraction": 0.21049930338387546
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.16217085719108582
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0002267687279631953
+      }
+    },
+    "seconds": 2.5063559869995515,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 71,
+    "train_loss": {
+      "frozen_point": 0.16484458687639186
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853875000769836,
+          "iou": 0.8090444468167367,
+          "precision": 0.8898132151802555,
+          "recall": 0.9138202601441595
+        },
+        "pooled": {
+          "dice": 0.8919503594952545,
+          "iou": 0.8049732853926543,
+          "precision": 0.8909387948196181,
+          "recall": 0.8929642238265444
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7615853618872583,
+        "counts": {
+          "tp": 10779840,
+          "fp": 1319577,
+          "fn": 1292133,
+          "tn": 36546882
+        },
+        "loss": 0.3011098713699601,
+        "diagnostics": {
+          "bce_soft": 0.1719531328894022,
+          "soft_dice_loss": 0.12915675924831801,
+          "wrong_pixels": 2611710,
+          "wrong_mean_confidence": 0.8482889355328997,
+          "wrong_confidence_gt99_fraction": 0.21252819034272566
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.08815988898277283
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00021404630011522585
+      }
+    },
+    "seconds": 2.5065273149994027,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 72,
+    "train_loss": {
+      "frozen_point": 0.16365225180146045
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855627290351183,
+          "iou": 0.8093520915926113,
+          "precision": 0.8908561379486797,
+          "recall": 0.9130696423708999
+        },
+        "pooled": {
+          "dice": 0.8920583486649877,
+          "iou": 0.8051492130385238,
+          "precision": 0.8918374751220282,
+          "recall": 0.8922793316386642
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7619004814854325,
+        "counts": {
+          "tp": 10771572,
+          "fp": 1306382,
+          "fn": 1300401,
+          "tn": 36560077
+        },
+        "loss": 0.3006143821818935,
+        "diagnostics": {
+          "bce_soft": 0.17165858542981735,
+          "soft_dice_loss": 0.12895580336177756,
+          "wrong_pixels": 2606783,
+          "wrong_mean_confidence": 0.8472091527949757,
+          "wrong_confidence_gt99_fraction": 0.2132317879930934
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04540214687585831
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0002016110084417766
+      }
+    },
+    "seconds": 2.505713400998502,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 73,
+    "train_loss": {
+      "frozen_point": 0.16702264975578635
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885690417602706,
+          "iou": 0.8095753216661961,
+          "precision": 0.8916353954970513,
+          "recall": 0.9125039712255589
+        },
+        "pooled": {
+          "dice": 0.8921679016519923,
+          "iou": 0.8053277233818983,
+          "precision": 0.8925398010946353,
+          "recall": 0.8917963120030172
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7621068360318481,
+        "counts": {
+          "tp": 10765741,
+          "fp": 1296176,
+          "fn": 1306232,
+          "tn": 36570283
+        },
+        "loss": 0.30053170568986826,
+        "diagnostics": {
+          "bce_soft": 0.1710875686306966,
+          "soft_dice_loss": 0.12944414218266806,
+          "wrong_pixels": 2602408,
+          "wrong_mean_confidence": 0.844908863724541,
+          "wrong_confidence_gt99_fraction": 0.21273797190909344
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07221930474042892
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0001894751250743986
+      }
+    },
+    "seconds": 2.5074292520002928,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 74,
+    "train_loss": {
+      "frozen_point": 0.1649365189345998
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856227087937135,
+          "iou": 0.8094544644847869,
+          "precision": 0.8912883154076212,
+          "recall": 0.9127332430133588
+        },
+        "pooled": {
+          "dice": 0.8921252854281548,
+          "iou": 0.8052582784804598,
+          "precision": 0.8922045208759792,
+          "recall": 0.8920460640526615
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7619789052020359,
+        "counts": {
+          "tp": 10768756,
+          "fp": 1301073,
+          "fn": 1303217,
+          "tn": 36565386
+        },
+        "loss": 0.30078694404266637,
+        "diagnostics": {
+          "bce_soft": 0.17130413913507786,
+          "soft_dice_loss": 0.12948282356337298,
+          "wrong_pixels": 2604290,
+          "wrong_mean_confidence": 0.8458811046012663,
+          "wrong_confidence_gt99_fraction": 0.21253393439286716
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.16879500448703766
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0001776506266647924
+      }
+    },
+    "seconds": 2.5065680849984346,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 75,
+    "train_loss": {
+      "frozen_point": 0.16542452456842424
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855879987626067,
+          "iou": 0.8093978983746494,
+          "precision": 0.8911018247270416,
+          "recall": 0.9128658284706456
+        },
+        "pooled": {
+          "dice": 0.8921321459815225,
+          "iou": 0.8052694576754486,
+          "precision": 0.8920374987525399,
+          "recall": 0.8922268132972133
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7619240538656241,
+        "counts": {
+          "tp": 10770938,
+          "fp": 1303597,
+          "fn": 1301035,
+          "tn": 36562862
+        },
+        "loss": 0.30072989207240225,
+        "diagnostics": {
+          "bce_soft": 0.17133011725630973,
+          "soft_dice_loss": 0.1293997808391341,
+          "wrong_pixels": 2604632,
+          "wrong_mean_confidence": 0.8458722616076706,
+          "wrong_confidence_gt99_fraction": 0.21271718999075492
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.11625304073095322
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0001661491825652991
+      }
+    },
+    "seconds": 2.5066121960007877,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 76,
+    "train_loss": {
+      "frozen_point": 0.16533750877147768
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856583094562923,
+          "iou": 0.8095262905930982,
+          "precision": 0.8915828530353057,
+          "recall": 0.9125029574900001
+        },
+        "pooled": {
+          "dice": 0.8921809864125329,
+          "iou": 0.8053490466131012,
+          "precision": 0.8924805402444588,
+          "recall": 0.8918816335987497
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7620609409693639,
+        "counts": {
+          "tp": 10766771,
+          "fp": 1297101,
+          "fn": 1305202,
+          "tn": 36569358
+        },
+        "loss": 0.30062722064691577,
+        "diagnostics": {
+          "bce_soft": 0.17091832116363556,
+          "soft_dice_loss": 0.12970890773562935,
+          "wrong_pixels": 2602303,
+          "wrong_mean_confidence": 0.8442084849850708,
+          "wrong_confidence_gt99_fraction": 0.2124556594677868
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.15002046525478363
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00015498214331265904
+      }
+    },
+    "seconds": 2.506171617998916,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 77,
+    "train_loss": {
+      "frozen_point": 0.16538772734389703
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853413163297132,
+          "iou": 0.8089527828727038,
+          "precision": 0.8895741563494938,
+          "recall": 0.9139707143106297
+        },
+        "pooled": {
+          "dice": 0.8919495134562251,
+          "iou": 0.8049719072263478,
+          "precision": 0.8908577933970202,
+          "recall": 0.8930439125402285
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24934383202099739
+        },
+        "threshold_jaccard_065": 0.761475391014313,
+        "counts": {
+          "tp": 10780802,
+          "fp": 1320795,
+          "fn": 1291171,
+          "tn": 36545664
+        },
+        "loss": 0.30150718310373664,
+        "diagnostics": {
+          "bce_soft": 0.17170340933511888,
+          "soft_dice_loss": 0.12980377940055265,
+          "wrong_pixels": 2611966,
+          "wrong_mean_confidence": 0.8471372845924097,
+          "wrong_confidence_gt99_fraction": 0.21164517455433954
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0872020348906517
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0001441605294264014
+      }
+    },
+    "seconds": 2.504685623000114,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 78,
+    "train_loss": {
+      "frozen_point": 0.16557592894656786
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856271525412306,
+          "iou": 0.8094604769958793,
+          "precision": 0.8912669055563188,
+          "recall": 0.912764568511537
+        },
+        "pooled": {
+          "dice": 0.8921430501049149,
+          "iou": 0.8052872261074876,
+          "precision": 0.8921993705453708,
+          "recall": 0.8920867367745107
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7619769379903247,
+        "counts": {
+          "tp": 10769247,
+          "fp": 1301202,
+          "fn": 1302726,
+          "tn": 36565257
+        },
+        "loss": 0.3008826788016192,
+        "diagnostics": {
+          "bce_soft": 0.17121746130972085,
+          "soft_dice_loss": 0.12966520908310658,
+          "wrong_pixels": 2603928,
+          "wrong_mean_confidence": 0.8455053052069654,
+          "wrong_confidence_gt99_fraction": 0.21226239742419914
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09748799353837967
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0001336950205329225
+      }
+    },
+    "seconds": 2.504353378997621,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 79,
+    "train_loss": {
+      "frozen_point": 0.16557320290317212
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853723858944132,
+          "iou": 0.8090202299658226,
+          "precision": 0.8898963810069527,
+          "recall": 0.9137084754884808
+        },
+        "pooled": {
+          "dice": 0.8919734248138749,
+          "iou": 0.8050108587549375,
+          "precision": 0.8909773174567542,
+          "recall": 0.892971761948109
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7615503182137453,
+        "counts": {
+          "tp": 10779931,
+          "fp": 1319065,
+          "fn": 1292042,
+          "tn": 36547394
+        },
+        "loss": 0.30129361668909627,
+        "diagnostics": {
+          "bce_soft": 0.17163732327188408,
+          "soft_dice_loss": 0.1296562890368184,
+          "wrong_pixels": 2611107,
+          "wrong_mean_confidence": 0.8471871244623941,
+          "wrong_confidence_gt99_fraction": 0.21181054625490262
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.08596328645944595
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00012359594482598438
+      }
+    },
+    "seconds": 2.504293575999327,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 80,
+    "train_loss": {
+      "frozen_point": 0.16494367749668254
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856888041480351,
+          "iou": 0.8095684090146666,
+          "precision": 0.8917545469980449,
+          "recall": 0.9123777706462124
+        },
+        "pooled": {
+          "dice": 0.8921868439901631,
+          "iou": 0.8053585924215554,
+          "precision": 0.8925168178860239,
+          "recall": 0.8918571139945393
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7629258062159157,
+        "counts": {
+          "tp": 10766475,
+          "fp": 1296575,
+          "fn": 1305498,
+          "tn": 36569884
+        },
+        "loss": 0.3005003523951753,
+        "diagnostics": {
+          "bce_soft": 0.17121484953900334,
+          "soft_dice_loss": 0.12928548556926056,
+          "wrong_pixels": 2602073,
+          "wrong_mean_confidence": 0.8457181579028674,
+          "wrong_confidence_gt99_fraction": 0.21299556161568103
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10489822924137115
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00011387326887403324
+      }
+    },
+    "seconds": 2.5100412409992714,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 81,
+    "train_loss": {
+      "frozen_point": 0.16570250373946016
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852441623638425,
+          "iou": 0.808783984260863,
+          "precision": 0.8892522457032866,
+          "recall": 0.9141282487953881
+        },
+        "pooled": {
+          "dice": 0.891872044772205,
+          "iou": 0.8048457225220578,
+          "precision": 0.8904653963242308,
+          "recall": 0.8932831443542825
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.24540682414698162
+        },
+        "threshold_jaccard_065": 0.7613013263670539,
+        "counts": {
+          "tp": 10783690,
+          "fp": 1326483,
+          "fn": 1288283,
+          "tn": 36539976
+        },
+        "loss": 0.3013785001174046,
+        "diagnostics": {
+          "bce_soft": 0.17165320251244573,
+          "soft_dice_loss": 0.1297252882184006,
+          "wrong_pixels": 2614766,
+          "wrong_mean_confidence": 0.8469148466264499,
+          "wrong_confidence_gt99_fraction": 0.21150114388821026
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.08034375309944153
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.00010453658778440106
+      }
+    },
+    "seconds": 2.509543336000206,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 82,
+    "train_loss": {
+      "frozen_point": 0.16566322649081464
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.885400413722663,
+          "iou": 0.8090636151953906,
+          "precision": 0.8901449103323577,
+          "recall": 0.9135049791804304
+        },
+        "pooled": {
+          "dice": 0.8919813139070359,
+          "iou": 0.8050237104324409,
+          "precision": 0.8912234354421683,
+          "recall": 0.8927404824381234
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7615840320868201,
+        "counts": {
+          "tp": 10777139,
+          "fp": 1315383,
+          "fn": 1294834,
+          "tn": 36551076
+        },
+        "loss": 0.3011097132064539,
+        "diagnostics": {
+          "bce_soft": 0.17135380478355827,
+          "soft_dice_loss": 0.1297559096744367,
+          "wrong_pixels": 2610217,
+          "wrong_mean_confidence": 0.8458298602941714,
+          "wrong_confidence_gt99_fraction": 0.2117785609395694
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04516468197107315
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 9.559511573409196e-05
+      }
+    },
+    "seconds": 2.5112264529998356,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 83,
+    "train_loss": {
+      "frozen_point": 0.16542096146849533
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855636891658113,
+          "iou": 0.809342251526299,
+          "precision": 0.8910784924867915,
+          "recall": 0.9128407755705287
+        },
+        "pooled": {
+          "dice": 0.8921105657042029,
+          "iou": 0.805234293322105,
+          "precision": 0.892023824776565,
+          "recall": 0.8921973235029601
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2585301837270341
+        },
+        "threshold_jaccard_065": 0.7618413850436706,
+        "counts": {
+          "tp": 10770582,
+          "fp": 1303739,
+          "fn": 1301391,
+          "tn": 36562720
+        },
+        "loss": 0.30079059791690094,
+        "diagnostics": {
+          "bce_soft": 0.1712338297855197,
+          "soft_dice_loss": 0.12955677274643906,
+          "wrong_pixels": 2605130,
+          "wrong_mean_confidence": 0.8454590824563782,
+          "wrong_confidence_gt99_fraction": 0.21238940091281433
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.040892958641052246
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 8.705767687650265e-05
+      }
+    },
+    "seconds": 2.5120154670003103,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 84,
+    "train_loss": {
+      "frozen_point": 0.16663803632666424
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856074909500007,
+          "iou": 0.8094212791773551,
+          "precision": 0.8913298985782209,
+          "recall": 0.9126633667547924
+        },
+        "pooled": {
+          "dice": 0.8921191690452603,
+          "iou": 0.8052483120196762,
+          "precision": 0.8922404350032298,
+          "recall": 0.8919979360457483
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7619323311013804,
+        "counts": {
+          "tp": 10768175,
+          "fp": 1300517,
+          "fn": 1303798,
+          "tn": 36565942
+        },
+        "loss": 0.3006788592326047,
+        "diagnostics": {
+          "bce_soft": 0.17122601731399226,
+          "soft_dice_loss": 0.12945285869708525,
+          "wrong_pixels": 2604315,
+          "wrong_mean_confidence": 0.8453180435048215,
+          "wrong_confidence_gt99_fraction": 0.21263940805931694
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.06933682411909103
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 7.893269663304783e-05
+      }
+    },
+    "seconds": 2.5118009020006866,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 85,
+    "train_loss": {
+      "frozen_point": 0.16595809005224565
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855250801899167,
+          "iou": 0.8092726434663864,
+          "precision": 0.8908843841183368,
+          "recall": 0.9129631811658666
+        },
+        "pooled": {
+          "dice": 0.8920557119305742,
+          "iou": 0.805144917065249,
+          "precision": 0.891913731385628,
+          "recall": 0.8921977376854637
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.761788518754747,
+        "counts": {
+          "tp": 10770587,
+          "fp": 1305230,
+          "fn": 1301386,
+          "tn": 36561229
+        },
+        "loss": 0.3008661839592801,
+        "diagnostics": {
+          "bce_soft": 0.17122579845074282,
+          "soft_dice_loss": 0.1296403883636154,
+          "wrong_pixels": 2606616,
+          "wrong_mean_confidence": 0.8450484734583998,
+          "wrong_confidence_gt99_fraction": 0.2122759930883567
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.0711589828133583
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 7.122819337828752e-05
+      }
+    },
+    "seconds": 2.5131905779999215,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 86,
+    "train_loss": {
+      "frozen_point": 0.16607478755592414
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855820189688265,
+          "iou": 0.8093758065925659,
+          "precision": 0.8912898453385182,
+          "recall": 0.9126568775785213
+        },
+        "pooled": {
+          "dice": 0.8920935753534424,
+          "iou": 0.8052066090672203,
+          "precision": 0.8922524754977637,
+          "recall": 0.8919347317957056
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7618931332229093,
+        "counts": {
+          "tp": 10767412,
+          "fp": 1300262,
+          "fn": 1304561,
+          "tn": 36566197
+        },
+        "loss": 0.3008198523771732,
+        "diagnostics": {
+          "bce_soft": 0.17107518940303582,
+          "soft_dice_loss": 0.12974466097949372,
+          "wrong_pixels": 2604823,
+          "wrong_mean_confidence": 0.8444834503712259,
+          "wrong_confidence_gt99_fraction": 0.21225088998369562
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04511557146906853
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 6.395177052675794e-05
+      }
+    },
+    "seconds": 2.513449378999212,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 87,
+    "train_loss": {
+      "frozen_point": 0.1662145130423195
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853701818090627,
+          "iou": 0.8090050990688521,
+          "precision": 0.8900791039302998,
+          "recall": 0.9135106611262934
+        },
+        "pooled": {
+          "dice": 0.8919383327772277,
+          "iou": 0.8049536945112156,
+          "precision": 0.8912696428259781,
+          "recall": 0.8926080268734862
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25065616797900264
+        },
+        "threshold_jaccard_065": 0.761532757753225,
+        "counts": {
+          "tp": 10775540,
+          "fp": 1314561,
+          "fn": 1296433,
+          "tn": 36551898
+        },
+        "loss": 0.301264097058554,
+        "diagnostics": {
+          "bce_soft": 0.1714452097187518,
+          "soft_dice_loss": 0.12981888847401135,
+          "wrong_pixels": 2610994,
+          "wrong_mean_confidence": 0.8456640475750367,
+          "wrong_confidence_gt99_fraction": 0.21176647667516663
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.18391627073287964
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 5.7110609029320425e-05
+      }
+    },
+    "seconds": 2.5124874059983995,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 88,
+    "train_loss": {
+      "frozen_point": 0.16596609360339912
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8853998278300728,
+          "iou": 0.8090605811960827,
+          "precision": 0.8901768207980759,
+          "recall": 0.9134690261074913
+        },
+        "pooled": {
+          "dice": 0.8919757678598219,
+          "iou": 0.8050146756600686,
+          "precision": 0.8913051713493759,
+          "recall": 0.892647374211324
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7615893133281071,
+        "counts": {
+          "tp": 10776015,
+          "fp": 1314137,
+          "fn": 1295958,
+          "tn": 36552322
+        },
+        "loss": 0.30110903017789986,
+        "diagnostics": {
+          "bce_soft": 0.17135104200658524,
+          "soft_dice_loss": 0.129757973778592,
+          "wrong_pixels": 2610095,
+          "wrong_mean_confidence": 0.8455768470523978,
+          "wrong_confidence_gt99_fraction": 0.21181949316021065
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04708932340145111
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 5.071146028642945e-05
+      }
+    },
+    "seconds": 2.511934559999645,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 89,
+    "train_loss": {
+      "frozen_point": 0.16396739122913093
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854645646129358,
+          "iou": 0.8091743922536563,
+          "precision": 0.890453091894896,
+          "recall": 0.9133053568060642
+        },
+        "pooled": {
+          "dice": 0.8920230848667994,
+          "iou": 0.8050917602011235,
+          "precision": 0.8914536984119998,
+          "recall": 0.8925931991398589
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2532808398950131
+        },
+        "threshold_jaccard_065": 0.7616996781714745,
+        "counts": {
+          "tp": 10775361,
+          "fp": 1312043,
+          "fn": 1296612,
+          "tn": 36554416
+        },
+        "loss": 0.30100623000012294,
+        "diagnostics": {
+          "bce_soft": 0.1713878435725615,
+          "soft_dice_loss": 0.12961839518834914,
+          "wrong_pixels": 2608655,
+          "wrong_mean_confidence": 0.845979661290438,
+          "wrong_confidence_gt99_fraction": 0.21208975506534977
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07304559648036957
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 4.4760639485315584e-05
+      }
+    },
+    "seconds": 2.511730014000932,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 90,
+    "train_loss": {
+      "frozen_point": 0.16522809834647154
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855208898654783,
+          "iou": 0.809271658297969,
+          "precision": 0.89075484593959,
+          "recall": 0.9130974570708233
+        },
+        "pooled": {
+          "dice": 0.892058913381643,
+          "iou": 0.8051501331215843,
+          "precision": 0.8916863873589811,
+          "recall": 0.8924317507999728
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7617934984307783,
+        "counts": {
+          "tp": 10773412,
+          "fp": 1308652,
+          "fn": 1298561,
+          "tn": 36557807
+        },
+        "loss": 0.30092664199864144,
+        "diagnostics": {
+          "bce_soft": 0.1713941971382757,
+          "soft_dice_loss": 0.12953243183651622,
+          "wrong_pixels": 2607213,
+          "wrong_mean_confidence": 0.8461955812645313,
+          "wrong_confidence_gt99_fraction": 0.21227533001714857
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1559627652168274
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 3.92640193676584e-05
+      }
+    },
+    "seconds": 2.5033360249981342,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 91,
+    "train_loss": {
+      "frozen_point": 0.16638697239778708
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856523718903653,
+          "iou": 0.8095101462433908,
+          "precision": 0.8916259005103714,
+          "recall": 0.9124473261686685
+        },
+        "pooled": {
+          "dice": 0.892157918406655,
+          "iou": 0.805311454791026,
+          "precision": 0.892418616548039,
+          "recall": 0.8918973725338849
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7620306423665469,
+        "counts": {
+          "tp": 10766961,
+          "fp": 1297961,
+          "fn": 1305012,
+          "tn": 36568498
+        },
+        "loss": 0.30072109092251836,
+        "diagnostics": {
+          "bce_soft": 0.17103923876767396,
+          "soft_dice_loss": 0.12968185942942703,
+          "wrong_pixels": 2602973,
+          "wrong_mean_confidence": 0.8447857891659342,
+          "wrong_confidence_gt99_fraction": 0.2123783074200155
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.1533285677433014
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 3.4227024433899005e-05
+      }
+    },
+    "seconds": 2.5118966449990694,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 92,
+    "train_loss": {
+      "frozen_point": 0.16574795956576238
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8854785214638736,
+          "iou": 0.8091968025085743,
+          "precision": 0.8905588150950929,
+          "recall": 0.9132230465389995
+        },
+        "pooled": {
+          "dice": 0.8920352374890311,
+          "iou": 0.8051115592046637,
+          "precision": 0.8915158205560659,
+          "recall": 0.8925552600225332
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7617133359204284,
+        "counts": {
+          "tp": 10774903,
+          "fp": 1311145,
+          "fn": 1297070,
+          "tn": 36555314
+        },
+        "loss": 0.3011000442692614,
+        "diagnostics": {
+          "bce_soft": 0.17131930171191848,
+          "soft_dice_loss": 0.12978075292166763,
+          "wrong_pixels": 2608215,
+          "wrong_mean_confidence": 0.8457280788864049,
+          "wrong_confidence_gt99_fraction": 0.21188475643303945
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07418645918369293
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 2.965462558991324e-05
+      }
+    },
+    "seconds": 2.5123637309989135,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 93,
+    "train_loss": {
+      "frozen_point": 0.16476774673952405
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855263418707391,
+          "iou": 0.8092800127098189,
+          "precision": 0.8908428876539596,
+          "recall": 0.9130184473661958
+        },
+        "pooled": {
+          "dice": 0.892074228522423,
+          "iou": 0.8051750861727089,
+          "precision": 0.8917625670775853,
+          "recall": 0.8923861078880809
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7617947737566929,
+        "counts": {
+          "tp": 10772861,
+          "fp": 1307553,
+          "fn": 1299112,
+          "tn": 36558906
+        },
+        "loss": 0.30095756538896734,
+        "diagnostics": {
+          "bce_soft": 0.1713549290976812,
+          "soft_dice_loss": 0.12960262952514207,
+          "wrong_pixels": 2606665,
+          "wrong_mean_confidence": 0.8459903426694105,
+          "wrong_confidence_gt99_fraction": 0.21222481600052173
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.03779047355055809
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 2.5551335241327675e-05
+      }
+    },
+    "seconds": 2.5114664819993777,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 94,
+    "train_loss": {
+      "frozen_point": 0.16560652768308512
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855527265491401,
+          "iou": 0.8093276497475044,
+          "precision": 0.890989804267109,
+          "recall": 0.9129153289575884
+        },
+        "pooled": {
+          "dice": 0.8920903300674592,
+          "iou": 0.8052013212609449,
+          "precision": 0.8918990911018666,
+          "recall": 0.8922816510606841
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.761844367968166,
+        "counts": {
+          "tp": 10771600,
+          "fp": 1305551,
+          "fn": 1300373,
+          "tn": 36560908
+        },
+        "loss": 0.3009130530782885,
+        "diagnostics": {
+          "bce_soft": 0.17125476595610772,
+          "soft_dice_loss": 0.12965828086447528,
+          "wrong_pixels": 2605924,
+          "wrong_mean_confidence": 0.8455467707809738,
+          "wrong_confidence_gt99_fraction": 0.21220726314351454
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.07129491120576859
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 2.1921202840320074e-05
+      }
+    },
+    "seconds": 2.5104409720006515,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 95,
+    "train_loss": {
+      "frozen_point": 0.16581466686561278
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855264516378795,
+          "iou": 0.809279641870848,
+          "precision": 0.8908166449782342,
+          "recall": 0.9130451406223675
+        },
+        "pooled": {
+          "dice": 0.8920636137768573,
+          "iou": 0.8051577914304479,
+          "precision": 0.8917476392387057,
+          "recall": 0.8923798123140269
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7617989199794364,
+        "counts": {
+          "tp": 10772785,
+          "fp": 1307746,
+          "fn": 1299188,
+          "tn": 36558713
+        },
+        "loss": 0.3009706471222905,
+        "diagnostics": {
+          "bce_soft": 0.1713401535990357,
+          "soft_dice_loss": 0.12963049039440205,
+          "wrong_pixels": 2606934,
+          "wrong_mean_confidence": 0.845876563336953,
+          "wrong_confidence_gt99_fraction": 0.21217261349922936
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.10442443192005157
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.8767810889299082e-05
+      }
+    },
+    "seconds": 2.511682328000461,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 96,
+    "train_loss": {
+      "frozen_point": 0.16588872419877623
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855152900406289,
+          "iou": 0.809261783779646,
+          "precision": 0.8907843472123241,
+          "recall": 0.9130591707061957
+        },
+        "pooled": {
+          "dice": 0.8920599693242517,
+          "iou": 0.8051518535530949,
+          "precision": 0.8917152934338489,
+          "recall": 0.8924049117737424
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2545931758530184
+        },
+        "threshold_jaccard_065": 0.7617816288109536,
+        "counts": {
+          "tp": 10773088,
+          "fp": 1308221,
+          "fn": 1298885,
+          "tn": 36558238
+        },
+        "loss": 0.3009781585590733,
+        "diagnostics": {
+          "bce_soft": 0.17135047200783657,
+          "soft_dice_loss": 0.1296276906969666,
+          "wrong_pixels": 2607106,
+          "wrong_mean_confidence": 0.8459310279629816,
+          "wrong_confidence_gt99_fraction": 0.21216513636192774
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.035825155675411224
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.609427140540686e-05
+      }
+    },
+    "seconds": 2.5119955869995465,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 97,
+    "train_loss": {
+      "frozen_point": 0.1650670564882576
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855925779521898,
+          "iou": 0.8094004766581424,
+          "precision": 0.891262106301113,
+          "recall": 0.9127108967967683
+        },
+        "pooled": {
+          "dice": 0.8921156802236,
+          "iou": 0.8052426271396748,
+          "precision": 0.8921198555980603,
+          "recall": 0.8921115048882233
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6824146981627297,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7619170121496697,
+        "counts": {
+          "tp": 10769546,
+          "fp": 1302314,
+          "fn": 1302427,
+          "tn": 36564145
+        },
+        "loss": 0.30081230089107525,
+        "diagnostics": {
+          "bce_soft": 0.17125126136725968,
+          "soft_dice_loss": 0.12956104050158201,
+          "wrong_pixels": 2604741,
+          "wrong_mean_confidence": 0.8456212982633605,
+          "wrong_confidence_gt99_fraction": 0.21241651281259827
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.15358616411685944
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.3903222849333507e-05
+      }
+    },
+    "seconds": 2.5117721870010428,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 98,
+    "train_loss": {
+      "frozen_point": 0.1641957885798063
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8856020449303986,
+          "iou": 0.8094170767891431,
+          "precision": 0.8913287492622941,
+          "recall": 0.9126584137885624
+        },
+        "pooled": {
+          "dice": 0.8921234953432934,
+          "iou": 0.8052553615799733,
+          "precision": 0.8921812190156574,
+          "recall": 0.8920657791398308
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.2572178477690289
+        },
+        "threshold_jaccard_065": 0.7619349452771064,
+        "counts": {
+          "tp": 10768994,
+          "fp": 1301417,
+          "fn": 1302979,
+          "tn": 36565042
+        },
+        "loss": 0.3007876513198292,
+        "diagnostics": {
+          "bce_soft": 0.1712481500752016,
+          "soft_dice_loss": 0.12953951915730955,
+          "wrong_pixels": 2604396,
+          "wrong_mean_confidence": 0.8456090765325589,
+          "wrong_confidence_gt99_fraction": 0.2124719128734647
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.08921842277050018
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.2196827521475402e-05
+      }
+    },
+    "seconds": 2.5116547449979407,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 99,
+    "train_loss": {
+      "frozen_point": 0.16628474254686532
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8855642820426883,
+          "iou": 0.8093475756395814,
+          "precision": 0.8910494936611361,
+          "recall": 0.9128753862606236
+        },
+        "pooled": {
+          "dice": 0.892095615411469,
+          "iou": 0.8052099331142082,
+          "precision": 0.8919462435337744,
+          "recall": 0.8922450373273698
+        },
+        "prec_at": {
+          "0.5": 0.9619422572178478,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7618639265051995,
+        "counts": {
+          "tp": 10771158,
+          "fp": 1304859,
+          "fn": 1300815,
+          "tn": 36561600
+        },
+        "loss": 0.3008837692068005,
+        "diagnostics": {
+          "bce_soft": 0.1713218713604559,
+          "soft_dice_loss": 0.12956189874588975,
+          "wrong_pixels": 2605674,
+          "wrong_mean_confidence": 0.8458833377778666,
+          "wrong_confidence_gt99_fraction": 0.21236501573105462
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.04360395669937134
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.0976769428005579e-05
+      }
+    },
+    "seconds": 2.512390965999657,
+    "peak_allocated_gib": 4.587902069091797
+  },
+  {
+    "epoch": 100,
+    "train_loss": {
+      "frozen_point": 0.16475937950838662
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.88554888849412,
+          "iou": 0.8093207299106736,
+          "precision": 0.8909487181134741,
+          "recall": 0.9129482678698173
+        },
+        "pooled": {
+          "dice": 0.8920837100092721,
+          "iou": 0.8051905347620965,
+          "precision": 0.8918657462508927,
+          "recall": 0.8923017803303569
+        },
+        "prec_at": {
+          "0.5": 0.9606299212598425,
+          "0.6": 0.9238845144356955,
+          "0.7": 0.8530183727034121,
+          "0.8": 0.6850393700787402,
+          "0.9": 0.2559055118110236
+        },
+        "threshold_jaccard_065": 0.7618392927810443,
+        "counts": {
+          "tp": 10771843,
+          "fp": 1306032,
+          "fn": 1300130,
+          "tn": 36560427
+        },
+        "loss": 0.3009313651583013,
+        "diagnostics": {
+          "bce_soft": 0.17132505774497986,
+          "soft_dice_loss": 0.12960629513257443,
+          "wrong_pixels": 2606162,
+          "wrong_mean_confidence": 0.8458737927919401,
+          "wrong_confidence_gt99_fraction": 0.2122638577340933
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.09013698995113373
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 1.024425261896286e-05
+      }
+    },
+    "seconds": 2.5114943070002482,
+    "peak_allocated_gib": 4.587902069091797
+  }
+]

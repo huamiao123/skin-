@@ -1,0 +1,118 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "frozen_point": 0.2819824925251503
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8845772212952708,
+          "iou": 0.8076645218963057,
+          "precision": 0.8849394638327611,
+          "recall": 0.9173363274630015
+        },
+        "pooled": {
+          "dice": 0.8914757776142401,
+          "iou": 0.8042005394303525,
+          "precision": 0.8890802106547941,
+          "recall": 0.8938842888399435
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9199475065616798,
+          "0.7": 0.8490813648293963,
+          "0.8": 0.678477690288714,
+          "0.9": 0.24803149606299213
+        },
+        "threshold_jaccard_065": 0.7586480229980165,
+        "counts": {
+          "tp": 10790947,
+          "fp": 1346256,
+          "fn": 1281026,
+          "tn": 36520203
+        },
+        "loss": 0.3029145551478769,
+        "diagnostics": {
+          "bce_soft": 0.1705378387074458,
+          "soft_dice_loss": 0.1323767266874238,
+          "wrong_pixels": 2627282,
+          "wrong_mean_confidence": 0.8434565286091239,
+          "wrong_confidence_gt99_fraction": 0.2061898951083287
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.43683886528015137
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.001
+      }
+    },
+    "seconds": 2.5178173200001766,
+    "peak_allocated_gib": 4.588390350341797
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "frozen_point": 0.17051365932060578
+    },
+    "validation": {
+      "frozen_point": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.8852487094675624,
+          "iou": 0.8088513900688389,
+          "precision": 0.8885904278168881,
+          "recall": 0.9148204449811753
+        },
+        "pooled": {
+          "dice": 0.8918710239855479,
+          "iou": 0.8048440599336121,
+          "precision": 0.8908611305014623,
+          "recall": 0.8928832097288488
+        },
+        "prec_at": {
+          "0.5": 0.9593175853018373,
+          "0.6": 0.9212598425196851,
+          "0.7": 0.8503937007874016,
+          "0.8": 0.6837270341207349,
+          "0.9": 0.25196850393700787
+        },
+        "threshold_jaccard_065": 0.7606491267455432,
+        "counts": {
+          "tp": 10778862,
+          "fp": 1320512,
+          "fn": 1293111,
+          "tn": 36545947
+        },
+        "loss": 0.30020002305038335,
+        "diagnostics": {
+          "bce_soft": 0.1718715367902295,
+          "soft_dice_loss": 0.12832847573938644,
+          "wrong_pixels": 2613623,
+          "wrong_mean_confidence": 0.848430872267565,
+          "wrong_confidence_gt99_fraction": 0.21275983567637718
+        }
+      }
+    },
+    "gradient_norms": {
+      "frozen_point": {
+        "decoder": 0.20422445237636566
+      }
+    },
+    "learning_rates": {
+      "frozen_point": {
+        "decoder": 0.0009997557473810372
+      }
+    },
+    "seconds": 2.819365530998766,
+    "peak_allocated_gib": 4.587902069091797
+  }
+]

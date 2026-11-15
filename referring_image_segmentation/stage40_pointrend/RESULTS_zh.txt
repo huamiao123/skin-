@@ -1,0 +1,24 @@
+PointRend作者模块适配与随机选点对照，各100轮，验证集选权重，测试集867张；单seed，测试集已暴露。
+[
+  {
+    "arm": "stage37_swin_control",
+    "best_epoch": 8,
+    "val_macro_dice": 0.8875880434967702,
+    "test_macro_dice": 0.8939605108327608,
+    "test_pooled_dice": 0.8918149968519326
+  },
+  {
+    "arm": "point_uncertain",
+    "best_epoch": 4,
+    "val_macro_dice": 0.885630023482703,
+    "test_macro_dice": 0.8928688730608328,
+    "test_pooled_dice": 0.8937532209336304
+  },
+  {
+    "arm": "point_random",
+    "best_epoch": 4,
+    "val_macro_dice": 0.885452136090253,
+    "test_macro_dice": 0.8970182905467556,
+    "test_pooled_dice": 0.8934959385949744
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "validation_only": true,
+  "baseline": {
+    "tp": 10730478,
+    "fp": 1057139,
+    "fn": 1341495,
+    "fp_near3": 443544,
+    "fp_far3": 613595,
+    "disconnected_fp": 13455,
+    "connected_fp": 1043684,
+    "fn_boundary3": 352517,
+    "fn_deep3": 988978,
+    "macro_dice": 0.8928067011343184,
+    "severe_undercoverage": 21,
+    "disconnected_fp_fraction": 0.01272774914178741,
+    "far_fp_fraction": 0.5804298204871828,
+    "deep_fn_fraction": 0.7372207872560091
+  },
+  "arms": {
+    "cab": {
+      "totals": {
+        "tp": 10695863,
+        "fp": 1044028,
+        "fn": 1376110,
+        "fp_near3": 452051,
+        "fp_far3": 591977,
+        "disconnected_fp": 12521,
+        "connected_fp": 1031507,
+        "fn_boundary3": 352202,
+        "fn_deep3": 1023908,
+        "macro_dice": 0.8916412729391126,
+        "severe_undercoverage": 19
+      },
+      "delta_vs_baseline": {
+        "tp": -34615,
+        "fp": -13111,
+        "fn": 34615,
+        "fp_near3": 8507,
+        "fp_far3": -21618,
+        "disconnected_fp": -934,
+        "connected_fp": -12177,
+        "fn_boundary3": -315,
+        "fn_deep3": 34930
+      }
+    },
+    "conv_control": {
+      "totals": {
+        "tp": 10762019,
+        "fp": 1119306,
+        "fn": 1309954,
+        "fp_near3": 470360,
+        "fp_far3": 648946,
+        "disconnected_fp": 12611,
+        "connected_fp": 1106695,
+        "fn_boundary3": 338676,
+        "fn_deep3": 971278,
+        "macro_dice": 0.8916478179501051,
+        "severe_undercoverage": 18
+      },
+      "delta_vs_baseline": {
+        "tp": 31541,
+        "fp": 62167,
+        "fn": -31541,
+        "fp_near3": 26816,
+        "fp_far3": 35351,
+        "disconnected_fp": -844,
+        "connected_fp": 63011,
+        "fn_boundary3": -13841,
+        "fn_deep3": -17700
+      }
+    }
+  },
+  "rule": "Fixed same3pixel and component definitions from pretraining diagnosis; all762 retained."
+}

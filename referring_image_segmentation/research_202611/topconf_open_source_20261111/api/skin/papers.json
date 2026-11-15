@@ -1,0 +1,2960 @@
+[
+  {
+    "title": "UltraLight VM-UNet: Parallel Vision Mamba significantly reduces parameters for skin lesion segmentation",
+    "authors": [
+      "Renkai Wu",
+      "Yinghao Liu",
+      "Guochen Ning",
+      "Pengchen Liang",
+      "Qing Chang"
+    ],
+    "year": 2025,
+    "venue": "Patterns",
+    "doi": "10.1016/j.patter.2025.101298",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.patter.2025.101298",
+    "abstract": "Previously, medical image segmentation models were often constrained by computational resources and memory, limiting their application in mobile medical devices or resource-constrained environments. In contrast, the UltraLight VM-UNet model proposed in this study, with its low parameter count and computational complexity, is able to reduce the requirements on device resources without sacrificing performance. This means that it can conveniently assist doctors in diagnosing diseases in more scenarios, such as on medical devices in remote areas or in emergency medical rescue for fast processing of medical image data. In the long run, the ambition of this research is to promote the popularization and efficiency of medical image segmentation technology. It is hoped that accurate medical image diagnosis will no longer be limited to high-end equipment in large hospitals, but can be extended to all kinds of primary healthcare organizations, and even portable medical equipment, so that more patients can be diagnosed in a timely and accurate manner. Moreover, the lightweight module proposed in this study is plug-and-play, which can simply replace the redundant modules in other technology models, reducing the requirements on equipment resources while maintaining excellent performance. This will promote the rapid development of lightweight medical image processing, improve the overall quality and popularity of medical services, and bring positive social impacts.",
+    "source": "openalex",
+    "citation_count": 293,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1016/j.patter.2025.101298",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Lesion",
+      "Medicine",
+      "Segmentation",
+      "Surgery"
+    ],
+    "sources": [
+      "openalex",
+      "crossref",
+      "arxiv"
+    ],
+    "score": 0.8634
+  },
+  {
+    "title": "SkinMamba: A Precision Skin Lesion Segmentation Architecture with Cross-Scale Global State Modeling and Frequency Boundary Guidance",
+    "authors": [
+      "Shun Zou",
+      "Zhang, Mingya",
+      "Fan, Bingjian",
+      "Zhou, Zhengyi",
+      "Xiuguo Zou"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2409.10890",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2409.10890",
+    "abstract": "Skin lesion segmentation is a crucial method for identifying early skin cancer. In recent years, both convolutional neural network (CNN) and Transformer-based methods have been widely applied. Moreover, combining CNN and Transformer effectively integrates global and local relationships, but remains limited by the quadratic complexity of Transformer. To address this, we propose a hybrid architecture based on Mamba and CNN, called SkinMamba. It maintains linear complexity while offering powerful long-range dependency modeling and local feature extraction capabilities. Specifically, we introduce the Scale Residual State Space Block (SRSSB), which captures global contextual relationships and cross-scale information exchange at a macro level, enabling expert communication in a global state. This effectively addresses challenges in skin lesion segmentation related to varying lesion sizes and inconspicuous target areas. Additionally, to mitigate boundary blurring and information loss during model downsampling, we introduce the Frequency Boundary Guided Module (FBGM), providing sufficient boundary priors to guide precise boundary segmentation, while also using the retained information to assist the decoder in the decoding process. Finally, we conducted comparative and ablation experiments on two public lesion segmentation datasets (ISIC2017 and ISIC2018), and the results demonstrate the strong competitiveness of SkinMamba in skin lesion segmentation tasks. The code is available at https://github.com/zs1314/SkinMamba.",
+    "source": "openalex",
+    "citation_count": 22,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2409.10890",
+    "publication_type": "preprint",
+    "keywords": [
+      "Architecture",
+      "Artificial intelligence",
+      "Boundary (topology)",
+      "Computer science",
+      "Lesion",
+      "Scale (ratio)",
+      "Segmentation",
+      "State (computer science)"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.8624
+  },
+  {
+    "title": "SGNet: A Structure-Guided Network with Dual-Domain Boundary Enhancement and Semantic Fusion for Skin Lesion Segmentation",
+    "authors": [
+      "Haijiao Yun",
+      "Qingyu Du",
+      "Ziqing Han",
+      "Mingjing Li",
+      "Le Yang",
+      "Xinyang Liu",
+      "Chao Wang",
+      "Weixin Ma"
+    ],
+    "year": 2025,
+    "venue": "Sensors",
+    "doi": "10.3390/s25154652",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/s25154652",
+    "abstract": "Segmentation of skin lesions in dermoscopic images is critical for the accurate diagnosis of skin cancers, particularly malignant melanoma, yet it is hindered by irregular lesion shapes, blurred boundaries, low contrast, and artifacts, such as hair interference. Conventional deep learning methods, typically based on UNet or Transformer architectures, often face limitations in regard to fully exploiting lesion features and incur high computational costs, compromising precise lesion delineation. To overcome these challenges, we propose SGNet, a structure-guided network, integrating a hybrid CNN-Mamba framework for robust skin lesion segmentation. The SGNet employs the Visual Mamba (VMamba) encoder to efficiently extract multi-scale features, followed by the Dual-Domain Boundary Enhancer (DDBE), which refines boundary representations and suppresses noise through spatial and frequency-domain processing. The Semantic-Texture Fusion Unit (STFU) adaptively integrates low-level texture with high-level semantic features, while the Structure-Aware Guidance Module (SAGM) generates coarse segmentation maps to provide global structural guidance. The Guided Multi-Scale Refiner (GMSR) further optimizes boundary details through a multi-scale semantic attention mechanism. Comprehensive experiments based on the ISIC2017, ISIC2018, and PH2 datasets demonstrate SGNet's superior performance, with average improvements of 3.30% in terms of the mean Intersection over Union (mIoU) value and 1.77% in regard to the Dice Similarity Coefficient (DSC) compared to state-of-the-art methods. Ablation studies confirm the effectiveness of each component, highlighting SGNet's exceptional accuracy and robust generalization for computer-aided dermatological diagnosis.",
+    "source": "openalex",
+    "citation_count": 7,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/1424-8220/25/15/4652/pdf?version=1753603953",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Segmentation",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Computer vision",
+      "Deep learning",
+      "Encoder",
+      "Operating system"
+    ],
+    "score": 0.8329,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "AttmNet: a hybrid Transformer integrating self-attention, Mamba, and multi-layer convolution for enhanced lesion segmentation",
+    "authors": [
+      "Hancan Zhu",
+      "Yibing Huang",
+      "Kelin Yao",
+      "Jin Shang",
+      "Keli Hu",
+      "Zhong Li",
+      "Guanghua He"
+    ],
+    "year": 2025,
+    "venue": "Quantitative Imaging in Medicine and Surgery",
+    "doi": "10.21037/qims-2024-2561",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21037/qims-2024-2561",
+    "abstract": "Background: Accurate lesion segmentation is critical for cancer diagnosis and treatment. Convolutional neural networks (CNNs) are widely used for medical image segmentation but struggle to capture long-range dependencies. Transformers mitigate this limitation but come with high computational costs. Mamba, a state-space model (SSM), efficiently models long-range dependencies but lacks precision in fine details. To address these challenges, this study aimed to develop a novel segmentation approach that combines the strengths of CNNs, Transformers, and Mamba, enhancing both global context understanding and local feature extraction in medical image segmentation. Methods: We propose AttmNet, a U-shaped network designed for medical image segmentation, which incorporates a novel structure called MAM (Multiscale-Convolution, Self-Attention, and Mamba). The MAM block integrates multi-layer convolution for multi-scale feature learning with an Att-Mamba component that combines self-attention and Mamba to effectively capture global context while preserving fine details. We evaluated AttmNet on four public datasets for breast, skin, and lung lesion segmentation. Results: AttmNet outperformed state-of-the-art methods in terms of intersection over union (IoU) and Dice similarity coefficients. On the breast ultrasound (BUS) dataset, AttmNet achieved a 3.38% improvement in IoU and a 4.54% increase in Dice over the next best method. On the breast ultrasound images (BUSI) dataset, AttmNet's IoU and Dice coefficients were 1.17% and 3.21% higher than the closest competitor, respectively. In the PH2 Dermoscopy Image dataset, AttmNet surpassed the next best model by 0.25% in both IoU and Dice. On the larger coronavirus disease 2019 (COVID-19) Lung dataset, AttmNet maintained strong performance, achieving higher IoU and Dice scores than the next best models, SegMamba and TransUNet. Conclusions: AttmNet is a powerful and efficient tool for medical image segmentation, addressing the limitations of existing methods through its advanced design. The MAM block significantly enhances segmentation accuracy while maintaining computational efficiency, making AttmNet highly suitable for clinical applications. The code is available at https://github.com/hyb2840/AttmNet.",
+    "source": "openalex",
+    "citation_count": 6,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.21037/qims-2024-2561",
+    "publication_type": "article",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Lesion",
+      "Transformer",
+      "Artificial intelligence",
+      "Pattern recognition (psychology)",
+      "Medicine",
+      "Pathology"
+    ],
+    "score": 0.8292,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "VM-UNet: Vision Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Jiacheng Ruan",
+      "Jincheng Li",
+      "Suncheng Xiang"
+    ],
+    "year": 2025,
+    "venue": "ACM Transactions on Multimedia Computing Communications and Applications",
+    "doi": "10.1145/3767748",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3767748",
+    "abstract": "In the realm of medical image segmentation, both CNN-based and Transformer-based models have been extensively explored. However, CNNs exhibit limitations in long-range modeling capabilities, whereas Transformers are hampered by their quadratic computational complexity. Recently, State Space Models (SSMs), exemplified by Mamba, have emerged as a promising approach. They not only excel in modeling long-range interactions but also maintain a linear computational complexity. In this paper, leveraging state space models, we propose a U-shape architecture model for medical image segmentation, named Vision Mamba UNet (VM-UNet). Specifically, the Visual State Space (VSS) block is introduced as the foundation block to capture extensive contextual information, and an asymmetrical encoder-decoder structure is constructed with fewer convolution layers to save calculation cost. We conduct comprehensive experiments on the ISIC17, ISIC18, and Synapse datasets, and the results indicate that VM-UNet performs competitively in medical image segmentation tasks, e.g. obtaining 89.03, 89.71 and 81.08 in terms of DSC score on three datasets respectively. To our best knowledge, this is the first medical image segmentation model constructed based on the pure SSM-based model. We aim to establish a baseline and provide valuable insights for the future development of more efficient and effective SSM-based segmentation systems. Our code is available at https://github.com/JCruan519/VM-UNet .",
+    "source": "openalex",
+    "citation_count": 1308,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2402.02491",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Image segmentation",
+      "Block (permutation group theory)",
+      "Computer vision",
+      "Image (mathematics)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.815,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "VML-UNet: Fusing Vision Mamba and Lightweight Attention Mechanism for Skin Lesion Segmentation",
+    "authors": [
+      "Tang Tang",
+      "Haihui Wang",
+      "Qiang Rao",
+      "Ke Zuo",
+      "Wen Gan"
+    ],
+    "year": 2025,
+    "venue": "Electronics",
+    "doi": "10.3390/electronics14142866",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/electronics14142866",
+    "abstract": "Deep learning has advanced medical image segmentation, yet existing methods struggle with complex anatomical structures. Mainstream models, such as CNN, Transformer, and hybrid architectures, face challenges including insufficient information representation and redundant complexity, which limit their clinical deployment. Developing efficient and lightweight networks is crucial for accurate lesion localization and optimized clinical workflows. We propose the VML-UNet, a lightweight segmentation network with core innovations including the CPMamba module and the multi-scale local supervision module (MLSM). The CPMamba module integrates the visual state space (VSS) block and a channel prior attention mechanism to enable efficient modeling of spatial relationships with linear computational complexity through dynamic channel-space weight allocation, while preserving channel feature integrity. The MLSM enhances local feature perception and reduces the inference burden. Comparative experiments were conducted on three public datasets, including ISIC2017, ISIC2018, and PH2, with ablation experiments performed on ISIC2017. VML-UNet achieves 0.53 M parameters, 2.18 MB memory usage, and 1.24 GFLOPs time complexity, with its performance on the datasets outperforming comparative networks, validating its effectiveness. This study provides valuable references for developing lightweight, high-performance skin lesion segmentation networks, advancing the field of skin lesion segmentation.",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.3390/electronics14142866",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Deep learning",
+      "FLOPS",
+      "Inference",
+      "Image segmentation",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.8056,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "HC-Mamba: Vision MAMBA with Hybrid Convolutional Techniques for Medical Image Segmentation",
+    "authors": [
+      "Jiashu Xu"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2405.05007",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2405.05007",
+    "abstract": "Automatic medical image segmentation technology has the potential to expedite pathological diagnoses, thereby enhancing the efficiency of patient care. However, medical images often have complex textures and structures, and the models often face the problem of reduced image resolution and information loss due to downsampling. To address this issue, we propose HC-Mamba, a new medical image segmentation model based on the modern state space model Mamba. Specifically, we introduce the technique of dilated convolution in the HC-Mamba model to capture a more extensive range of contextual information without increasing the computational cost by extending the perceptual field of the convolution kernel. In addition, the HC-Mamba model employs depthwise separable convolutions, significantly reducing the number of parameters and the computational power of the model. By combining dilated convolution and depthwise separable convolutions, HC-Mamba is able to process large-scale medical image data at a much lower computational cost while maintaining a high level of performance. We conduct comprehensive experiments on segmentation tasks including organ segmentation and skin lesion, and conduct extensive experiments on Synapse, ISIC17 and ISIC18 to demonstrate the potential of the HC-Mamba model in medical image segmentation. The experimental results show that HC-Mamba exhibits competitive performance on all these datasets, thereby proving its effectiveness and usefulness in medical image segmentation.",
+    "source": "openalex",
+    "citation_count": 72,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.05007",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Computer vision",
+      "Segmentation"
+    ],
+    "score": 0.8046,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "HBTMNet: A Tri-Hybrid Boundary-Aware Transformer Mamba Network for Precise Skin Lesion Segmentation",
+    "authors": [
+      "Sanjyoti Kumari Tarai",
+      "Renuka Arora"
+    ],
+    "year": 2026,
+    "venue": "International Journal of Drug Delivery Technology",
+    "doi": "10.25258/ijddt.16.74s.27",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.25258/ijddt.16.74s.27",
+    "abstract": "Accurate automated segmentation of melanoma from dermoscopic images remains a critical challenge in computer-aided diagnosis pipelines due to high intra-class diversity, fuzzy lesion boundaries, and structural artifacts. Conventional deep learning frameworks, including convolutional neural networks, vision transformers, and standard hybrid models, struggle to reconcile localized textural feature extraction, long-range global context modelling, and sharp edge delineation. We propose HBTMNet, a Tri-Hybrid Boundary-Aware Transformer Mamba Network unified within an end-to-end encoderdecoder paradigm. The architecture integrates a linear-complexity Swin-UMamba backbone using 2D selective-scan visual state-space blocks to capture global context without the quadratic memory overhead of self-attention. This is coupled with an encoder-side Global-Local Refinement block that implicitly models feature-level boundary uncertainty, alongside an explicit edge-guided pipeline using Difference Attention and Edge Generation Modules driven by offline Canny-derived geometric priors. Evaluated across four benchmark datasets – ISIC 2016, ISIC 2017, ISIC 2018, and ISIC 2019 – HBTMNet outperforms existing baselines. On ISIC 2017, it achieves a Dice similarity coefficient of 94.71% and an Intersection-over-Union of 93.48%, while substantially reducing boundary outlier errors as measured by the 95thpercentile Hausdorff Distance. These results support combining implicit, distribution-based boundary detection with explicit geometric edge guidance as an effective strategy for clinically reliable lesion segmentation",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.25258/ijddt.16.74s.27",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Convolutional neural network",
+      "Deep learning",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.795
+  },
+  {
+    "title": "A Deep Feature Fusion Visual Mamba for Skin Lesion Segmentation",
+    "authors": [
+      "Sisi Yan",
+      "Hao Zheng",
+      "Yaru Fu",
+      "Yuhui Ren",
+      "Yanyuan Hu",
+      "Shangwang Liu"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Image, Signal Processing and Pattern Recognition (ISPP)",
+    "doi": "10.1109/ispp69262.2026.11542987",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ispp69262.2026.11542987",
+    "abstract": "Skin lesion segmentation is a critical task in medical image analysis, particularly for early detection of skin cancer. Existing deep learning methods, including Convolutional Neural Networks and Transformer-based architectures, face challenges in balancing computational efficiency and long-range dependency modeling. To address these issues, we propose a Deep Feature Fusion Visual Mamba for accurate and efficient skin lesion segmentation. Our core contribution is a cooperative design between the bottleneck Visual Mamba and the proposed Dual Feature Fusion Module (DFM), where Mamba efficiently models longrange dependencies and DFM integrates attention-guided multiscale feature fusion to jointly achieve global context modeling and fine-grained segmentation. Extensive experiments on three public skin lesion datasets demonstrate that our method outperforms state-of-the-art approaches in terms of$\\mathbf{F 1}$-score, Intersection over Union, Hausdorff Distance, and Average Symmetric Surface Distance, achieving significant improvements over baseline methods.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1109/ispp69262.2026.11542987",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Feature (linguistics)",
+      "Fusion",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.795
+  },
+  {
+    "title": "An Adaptive Multi-Scale Fusion Model Based on Mamba for Skin Lesion Image Segmentation",
+    "authors": [
+      "Li Yan",
+      "Bo Peng",
+      "Qiang Li",
+      "Bo Li"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Computer Supported Cooperative Work in Design (CSCWD)",
+    "doi": "10.1109/cscwd68734.2026.11582186",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cscwd68734.2026.11582186",
+    "abstract": "Accurately capturing lesion regions is crucial in skin lesion image segmentation. While existing CNN and Transformer segmentation models have made significant progress in this field, achieving a balance between segmentation accuracy and computational efficiency remains challenging. To address this issue, we propose a lightweight Mamba-based Adaptive Multi-Scale Fusion UNet (AMF-UNet) model for skin lesion image segmentation. We design a Local Enhanced Residual Mamba (LERM) Block, which combines depthwise separable convolutions with a Mamba-based parallel processing module, effectively reducing the number of model parameters while maintaining the ability to model both global and local features. Furthermore, we design three skip connection modules: Linear Skip, Edge-Enhanced Skip, and Adaptive Skip Fusion Gate. Through a multi-level skip connection mechanism, we achieve adaptive feature fusion of lesion regions. AMF-UNet was compared with nine state-of-the-art models on the ISIC2017 and ISIC2018 datasets. Experimental results show that AMF-UNet can still achieve excellent skin lesion segmentation performance with only 0.05M parameters and only 0.02 GFLOPs of computation.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1109/cscwd68734.2026.11582186",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Fusion",
+      "Image fusion",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.795
+  },
+  {
+    "title": "AC-MambaSeg: An Adaptive Convolution and Mamba-Based Architecture for Enhanced Skin Lesion Segmentation",
+    "authors": [
+      "Nguyen Viet Thanh",
+      "Van-Truong Pham",
+      "Thi-Thao Tran"
+    ],
+    "year": 2024,
+    "venue": "Lecture notes in networks and systems",
+    "doi": "10.1007/978-3-031-76197-3_2",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-76197-3_2",
+    "abstract": "Skin lesion segmentation is a critical task in computer-aided diagnosis systems for dermatological diseases. Accurate segmentation of skin lesions from medical images is essential for early detection, diagnosis, and treatment planning. In this paper, we propose a new model for skin lesion segmentation namely AC-MambaSeg, an enhanced model that has the hybrid CNN-Mamba backbone, and integrates advanced components such as Convolutional Block Attention Module (CBAM), Attention Gate, and Selective Kernel Bottleneck. AC-MambaSeg leverages the Vision Mamba framework for efficient feature extraction, while CBAM and Selective Kernel Bottleneck enhance its ability to focus on informative regions and suppress background noise. We evaluate the performance of AC-MambaSeg on diverse datasets of skin lesion images including ISIC-2018 and PH2; then compare it against existing segmentation methods. Our model shows promising potential for improving computer-aided diagnosis systems and facilitating early detection and treatment of dermatological diseases. Our source code will be made available at: https://github.com/vietthanh2710/AC-MambaSeg.",
+    "source": "openalex",
+    "citation_count": 34,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.03011",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Archaeology",
+      "Architecture",
+      "Artificial intelligence",
+      "Computer science",
+      "Convolution (computer science)",
+      "Geography",
+      "Medicine",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.7941
+  },
+  {
+    "title": "MUCM-Net: a Mamba powered UCM-Net for skin lesion segmentation",
+    "authors": [
+      "Chunyu Yuan",
+      "Dongfang Zhao",
+      "Sos С. Agaian"
+    ],
+    "year": 2024,
+    "venue": "Exploration of Medicine",
+    "doi": "10.37349/emed.2024.00250",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.37349/emed.2024.00250",
+    "abstract": "Aim: Skin lesion segmentation is critical for early skin cancer detection. Challenges in automatic segmentation from dermoscopic images include variations in color, texture, and artifacts of indistinct lesion boundaries. This study aims to develop and evaluate MUCM-Net, a lightweight and efficient model for skin lesion segmentation, leveraging Mamba state-space models integrated with UCM-Net architecture optimized for mobile deployment and early skin cancer detection. Methods: MUCM-Net combines Convolutional Neural Networks (CNNs), multi-layer perceptions (MLPs), and Mamba elements into a hybrid feature learning module. Results: The model was trained and tested on the International Skin Imaging Collaboration (ISIC) 2017 and ISIC2018 datasets, consisting of 2,000 and 2,594 dermoscopic images, respectively. Critical metrics for evaluation included Dice Similarity Coefficient (DSC), sensitivity (SE), specificity (SP), and accuracy (ACC). The model’s computational efficiency was also assessed by measuring Giga Floating-point Operations Per Second (GFLOPS) and the number of parameters. MUCM-Net demonstrated superior performance in skin lesion segmentation with an average DSC of 0.91 on the ISIC2017 dataset and 0.89 on the ISIC2018 dataset, outperforming existing models. It achieved high SE (0.93), SP (0.95), and ACC (0.92) with low computational demands (0.055–0.064 GFLOPS). Conclusions: The model’s innovative Mamba-UCM layer significantly enhanced feature learning while maintaining efficiency that is suitable for mobile devices. MUCM-Net establishes a new standard in lightweight skin lesion segmentation, balancing exceptional ACC with efficient computational performance. Its ability to perform well on mobile devices makes it a scalable tool for early skin cancer detection in resource-limited settings. The open-source availability of MUCM-Net supports further research and collaboration, promoting advances in mobile health diagnostics and the fight against skin cancer. MUCM-Net source code will be posted on https://github.com/chunyuyuan/MUCM-Net.",
+    "source": "openalex",
+    "citation_count": 30,
+    "is_open_access": true,
+    "open_access_url": "https://www.explorationpub.com/uploads/Article/A1001250/1001250.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Geometry",
+      "Lesion",
+      "Mathematics",
+      "Medicine",
+      "Net (polyhedron)",
+      "Surgery"
+    ],
+    "sources": [
+      "openalex",
+      "crossref",
+      "arxiv"
+    ],
+    "score": 0.7907
+  },
+  {
+    "title": "ScaleFusionNet: transformer-guided multi-scale feature fusion for skin lesion segmentation",
+    "authors": [
+      "Saqib Qamar",
+      "Syed Furqan Qadri",
+      "Roobaea Alroobaea",
+      "Goram Mufarah Alshmrani",
+      "Mohd Fazil",
+      "Richard Jiang"
+    ],
+    "year": 2025,
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-025-17300-x",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41598-025-17300-x",
+    "abstract": "Abstract Melanoma is a malignant tumor that originates from skin cell lesions. Accurate and efficient segmentation of skin lesions is essential for quantitative analysis but remains a challenge owing to blurred lesion boundaries, gradual color changes, and irregular shapes. To address this, we propose ScaleFusionNet, a hybrid model that integrates a Cross-Attention Transformer Module (CATM) and adaptive fusion block (AFB) to enhance feature extraction and fusion by capturing both local and global features. We introduce CATM, which utilizes Swin transformer blocks and Cross Attention Fusion (CAF) to adaptively refine feature fusion and reduce semantic gaps in the encoder-decoder to improve segmentation accuracy. Additionally, the AFB uses Swin Transformer-based attention and deformable convolution-based adaptive feature extraction to help the model gather local and global contextual information through parallel pathways. This enhancement refines the lesion boundaries and preserves fine-grained details. ScaleFusionNet achieves Dice scores of 92.94%, 91.80%, and 95.37% on the ISIC-2016, ISIC-2018, and HAM10000 datasets, respectively, demonstrating its effectiveness in skin lesion analysis. Simultaneously, independent validation experiments were conducted on the PH 2 dataset using the pretrained model weights. The results show that ScaleFusionNet demonstrates significant performance improvements compared with other state-of-the-art methods. Our code implementation is publicly available at https://github.com/sqbqamar/ScaleFusionNet .",
+    "source": "openalex",
+    "citation_count": 18,
+    "is_open_access": true,
+    "open_access_url": "https://www.nature.com/articles/s41598-025-17300-x.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Feature (linguistics)",
+      "Feature extraction",
+      "Fusion",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.7871
+  },
+  {
+    "title": "Seg-MambaDiff: Skin Lesion Segmentation Based on Mamba and Diffusion Model",
+    "authors": [
+      "Jiacheng Zheng",
+      "Xinghong Chen",
+      "Weilin Wu",
+      "Guannan Chen"
+    ],
+    "year": 2025,
+    "venue": "International Conference on Computer Graphics, Image and Virtualization (ICCGIV)",
+    "doi": "10.1109/iccgiv65419.2025.11085387",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/iccgiv65419.2025.11085387",
+    "abstract": "With the advancement of medical imaging, skin lesion segmentation has become essential in clinical diagnosis and treatment, especially for early detection of dermatological conditions. Although CNNs and Transformer architectures have been widely adopted for medical image segmentation tasks, they still struggle to accurately capture subtle details. Recently, both diffusion models and Mamba models have each shown notable advancements in image segmentation tasks, however, an efficient hybrid model is still lacking, and the diffusion model continues to face the challenge of high complexity. To address these challenges, we propose Seg-MambaDiff, a novel framework for skin lesions segmenting that integrates the diffusion architecture with Mamba model. This framework combines the noise handling capabilities of the diffusion model with the efficient modeling strengths of the Mamba model. Additionally, a conditional model is incorporated for feature fusion, and the global and local feature extraction modules are introduced. Evaluations on public datasets show that Seg-MambaDiff achieves superior segmentation accuracy, significantly improving mIoU and DSC scores. Furthermore, the model achieves fewer parameters. These advancements highlight the potential of Seg-MambaDiff in addressing existing challenges and enhancing both segmentation accuracy and processing speed.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11085145/11085079/11085387.pdf?arnumber=11085387",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Diffusion",
+      "Lesion",
+      "Medicine",
+      "Pathology",
+      "Physics",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.785
+  },
+  {
+    "title": "MambaU-Lite: A Lightweight Model Based on Mamba and Integrated Channel-Spatial Attention for Skin Lesion Segmentation",
+    "authors": [
+      "Thi-Nhu-Quynh Nguyen",
+      "Quang-Huy Ho",
+      "Duy-Thai Nguyen",
+      "Hoang-Minh-Quang Le",
+      "Van-Truong Pham",
+      "Thi-Thao Tran"
+    ],
+    "year": 2025,
+    "venue": "Lecture notes in networks and systems",
+    "doi": "10.1007/978-981-95-1746-6_6",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-981-95-1746-6_6",
+    "abstract": "Early detection of skin abnormalities plays a crucial role in diagnosing and treating skin cancer. Segmentation of affected skin regions using AI-powered devices is relatively common and supports the diagnostic process. However, achieving high performance remains a significant challenge due to the need for high-resolution images and the often unclear boundaries of individual lesions. At the same time, medical devices require segmentation models to have a small memory foot-print and low computational cost. Based on these requirements, we introduce a novel lightweight model called MambaU-Lite, which combines the strengths of Mamba and CNN architectures, featuring just over 400K parameters and a computational cost of more than 1G flops. To enhance both global context and local feature extraction, we propose the P-Mamba block, a novel component that incorporates VSS blocks along-side multiple pooling layers, enabling the model to effectively learn multiscale features and enhance segmentation performance. We evaluate the model's performance on two skin datasets, ISIC2018 and PH2, yielding promising results. Our source code will be made publicly available at: https://github.com/nqnguyen812/MambaU-Lite.",
+    "source": "openalex",
+    "citation_count": 15,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2412.01405",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Code (set theory)",
+      "Computer science",
+      "Computer vision",
+      "Convolutional neural network",
+      "Identification (biology)",
+      "Pooling",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.7823
+  },
+  {
+    "title": "Skin-lesion segmentation using boundary-aware segmentation network and classification based on a mixture of convolutional and transformer neural networks",
+    "authors": [
+      "Javaria Amin",
+      "Marium Azhar",
+      "Habiba Arshad",
+      "Amad Zafar",
+      "Seong-Han Kim"
+    ],
+    "year": 2025,
+    "venue": "Frontiers in Medicine",
+    "doi": "10.3389/fmed.2025.1524146",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3389/fmed.2025.1524146",
+    "abstract": "Background Skin cancer is one of the most prevalent cancers worldwide. In the clinical domain, skin lesions such as melanoma detection are still a challenge due to occlusions, poor contrast, poor image quality, and similarities between skin lesions. Deep-/machine-learning methods are used for the early, accurate, and efficient detection of skin lesions. Therefore, we propose a boundary-aware segmentation network (BASNet) model comprising prediction and residual refinement modules. Materials and methods The prediction module works like a U-Net and is densely supervised by an encoder and decoder. A hybrid loss function is used, which has the potential to help in the clinical domain of dermatology. BASNet handles these challenges by providing robust outcomes, even in suboptimal imaging environments. This leads to accurate early diagnosis, improved treatment outcomes, and efficient clinical workflows. We further propose a compact convolutional transformer model (CCTM) based on convolution and transformers for classification. This was designed on a selected number of layers and hyperparameters having two convolutions, two transformers, 64 projection dimensions, tokenizer, position embedding, sequence pooling, MLP, 64 batch size, two heads, 0.1 stochastic depth, 0.001 learning rate, 0.0001 weight decay, and 100 epochs. Results The CCTM model was evaluated on six skin-lesion datasets, namely MED-NODE, PH2, ISIC-2019, ISIC-2020, HAM10000, and DermNet datasets, achieving over 98% accuracy. Conclusion The proposed model holds significant potential in the clinical domain. Its ability to combine local feature extraction and global context understanding makes it ideal for tasks like medical image analysis and disease diagnosis.",
+    "source": "crossref",
+    "citation_count": 25,
+    "is_open_access": true,
+    "open_access_url": "https://www.frontiersin.org/articles/10.3389/fmed.2025.1524146/full",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7808,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Transformer-based multi-attention hybrid networks for skin lesion segmentation",
+    "authors": [
+      "Zhiwei Dong",
+      "Jinjiang Li",
+      "Zhen Hua"
+    ],
+    "year": 2024,
+    "venue": "Expert Systems with Applications",
+    "doi": "10.1016/j.eswa.2023.123016",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.eswa.2023.123016",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 45,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S0957417423035182?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7795,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "KM-UNet: medical image segmentation with selective-scan Mamba and Kolmogorov-Arnold networks",
+    "authors": [
+      "Yibo Zhang",
+      "Jingwen Zhao",
+      "Xiang Liu",
+      "Xian Tang",
+      "Yunyu Shi",
+      "Lina Wei",
+      "Guyue Zhang"
+    ],
+    "year": 2026,
+    "venue": "PeerJ Computer Science",
+    "doi": "10.7717/peerj-cs.3727",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.7717/peerj-cs.3727",
+    "abstract": "Biomedical image segmentation plays a crucial role in aiding diagnosis and treatment planning. However, constructing effective frameworks remains challenging due to the variable size and irregular shape of target structures. U-Net has become a cornerstone in this field, but integrating it with Transformer or Multilayer Perceptron (MLP) models faces limitations such as quadratic computational complexity and insufficient interpretability. To address these challenges, we propose KM-UNet, a novel structure inspired by state-space models (SSMs) ( e.g ., Mamba) and the Kolmogorov-Arnold network (KAN). KM-UNet leverages nonlinear, learnable activation functions, rooted in the Kolmogorov-Arnold representation theorem, to enhance interpretability and efficiency. By combining the strengths of state-space models and Kolmogorov-Arnold networks, KM-UNet achieves a balance between accuracy and computational performance. Experiments on five public datasets demonstrate its superiority. On the BUSI dataset, KM-UNet achieved an Intersection over Union (IoU) of 65.21% and an F1-score (F1) of 78.43%, improving IoU by 1.83% over state-of-the-art methods. It also achieved the highest IoUs on the Glas (87.31%) and CVC (85.22%) datasets and delivered the best overall performance on the ISIC series datasets. These results highlight KM-UNet’s ability to effectively integrate global and local information while maintaining interpretability. With its powerful feature extraction capabilities and computational efficiency, KM-UNet emerges as a versatile and reliable framework for medical image segmentation across diverse biomedical applications. The source code is available at https://github.com/2760613195/KM_UNet .",
+    "source": "openalex",
+    "citation_count": 190,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.7717/peerj-cs.3727",
+    "publication_type": "article",
+    "keywords": [
+      "Interpretability",
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Image segmentation",
+      "Feature extraction",
+      "Pattern recognition (psychology)",
+      "Machine learning"
+    ],
+    "score": 0.7714,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SUTrans-NET: a hybrid transformer approach to skin lesion segmentation",
+    "authors": [
+      "Yaqin Li",
+      "Tonghe Tian",
+      "Jing Hu",
+      "Cao Yuan"
+    ],
+    "year": 2024,
+    "venue": "PeerJ Computer Science",
+    "doi": "10.7717/peerj-cs.1935",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.7717/peerj-cs.1935",
+    "abstract": "Melanoma is a malignant skin tumor that threatens human life and health. Early detection is essential for effective treatment. However, the low contrast between melanoma lesions and normal skin and the irregularity in size and shape make skin lesions difficult to detect with the naked eye in the early stages, making the task of skin lesion segmentation challenging. Traditional encoder-decoder built with U-shaped networks using convolutional neural network (CNN) networks have limitations in establishing long-term dependencies and global contextual connections, while the Transformer architecture is limited in its application to small medical datasets. To address these issues, we propose a new skin lesion segmentation network, SUTrans-NET, which combines CNN and Transformer in a parallel fashion to form a dual encoder, where both CNN and Transformer branches perform dynamic interactive fusion of image information in each layer. At the same time, we introduce our designed multi-grouping module SpatialGroupAttention (SGA) to complement the spatial and texture information of the Transformer branch, and utilize the Focus idea of YOLOV5 to construct the Patch Embedding module in the Transformer to prevent the loss of pixel accuracy. In addition, we design a decoder with full-scale information fusion capability to fully fuse shallow and deep features at different stages of the encoder. The effectiveness of our method is demonstrated on the ISIC 2016, ISIC 2017, ISIC 2018 and PH2 datasets and its advantages over existing methods are verified.",
+    "source": "crossref",
+    "citation_count": 25,
+    "is_open_access": true,
+    "open_access_url": "https://peerj.com/articles/cs-1935.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7708,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Intelligent skin lesion segmentation using deformable attention Transformer U‐Net with bidirectional attention mechanism in skin cancer images",
+    "authors": [
+      "Lili Cai",
+      "Keke Hou",
+      "Su Zhou"
+    ],
+    "year": 2024,
+    "venue": "Skin Research and Technology",
+    "doi": "10.1111/srt.13783",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1111/srt.13783",
+    "abstract": "Abstract Background In recent years, the increasing prevalence of skin cancers, particularly malignant melanoma, has become a major concern for public health. The development of accurate automated segmentation techniques for skin lesions holds immense potential in alleviating the burden on medical professionals. It is of substantial clinical importance for the early identification and intervention of skin cancer. Nevertheless, the irregular shape, uneven color, and noise interference of the skin lesions have presented significant challenges to the precise segmentation. Therefore, it is crucial to develop a high‐precision and intelligent skin lesion segmentation framework for clinical treatment. Methods A precision‐driven segmentation model for skin cancer images is proposed based on the Transformer U‐Net, called BiADATU‐Net, which integrates the deformable attention Transformer and bidirectional attention blocks into the U‐Net. The encoder part utilizes deformable attention Transformer with dual attention block, allowing adaptive learning of global and local features. The decoder part incorporates specifically tailored scSE attention modules within skip connection layers to capture image‐specific context information for strong feature fusion. Additionally, deformable convolution is aggregated into two different attention blocks to learn irregular lesion features for high‐precision prediction. Results A series of experiments are conducted on four skin cancer image datasets (i.e., ISIC2016, ISIC2017, ISIC2018, and PH2). The findings show that our model exhibits satisfactory segmentation performance, all achieving an accuracy rate of over 96%. Conclusion Our experiment results validate the proposed BiADATU‐Net achieves competitive performance supremacy compared to some state‐of‐the‐art methods. It is potential and valuable in the field of skin lesion segmentation.",
+    "source": "crossref",
+    "citation_count": 19,
+    "is_open_access": true,
+    "open_access_url": "https://onlinelibrary.wiley.com/doi/pdf/10.1111/srt.13783",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7635,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "UltraLBM-UNet: Ultralight bidirectional mamba-based model for skin lesion segmentation",
+    "authors": [
+      "范琳煊",
+      "Juntao Jiang",
+      "Weixuan Liu",
+      "Zhucun Xue",
+      "Jiajun Lv",
+      "Jiangning Zhang",
+      "Yong Liu"
+    ],
+    "year": 2026,
+    "venue": "Neurocomputing",
+    "doi": "10.1016/j.neucom.2026.134608",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.neucom.2026.134608",
+    "abstract": "Skin lesion segmentation is a crucial step in dermatology for guiding clinical decision-making. However, existing methods for accurate, robust, and resource-efficient lesion analysis have limitations, including low performance and high computational complexity. To address these limitations, we propose UltraLBM-UNet, a lightweight U-Net variant that integrates a bidirectional Mamba-based global modeling mechanism with multi-branch local feature perception. The proposed architecture integrates efficient local feature injection with bidirectional state-space modeling, enabling richer contextual interaction across spatial dimensions while maintaining computational compactness suitable for point-of-care deployment. Extensive experiments on the ISIC 2017, ISIC 2018, and PH2 datasets demonstrate that our model consistently achieves state-of-the-art segmentation accuracy, outperforming existing lightweight and Mamba counterparts with only 0.034M parameters and 0.060 GFLOPs. In addition, we introduce a hybrid knowledge distillation strategy to train an ultra-compact student model, where the distilled variant UltraLBM-UNet-T, with only 0.011M parameters and 0.019 GFLOPs, achieves competitive segmentation performance. These results highlight the suitability of UltraLBM-UNet for point-of-care deployment, where accurate and robust lesion analyses are essential. The source code is publicly available at https://github.com/LinLinLin-X/UltraLBM-UNet.",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2512.21584",
+    "publication_type": "article",
+    "keywords": [
+      "Anatomy",
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Lesion",
+      "Medicine",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref",
+      "arxiv"
+    ],
+    "score": 0.7598
+  },
+  {
+    "title": "Deep Skin Lesion Segmentation with Transformer-CNN Fusion: Toward Intelligent Skin Cancer Analysis",
+    "authors": [
+      "Xin Wang",
+      "Xiaopei Zhang",
+      "Xingang Wang"
+    ],
+    "year": 2025,
+    "venue": "2025 6th International Conference on Internet of Things, Artificial Intelligence and Mechanical Automation (IoTAIMA)",
+    "doi": "10.1109/iotaima66468.2025.11212688",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/iotaima66468.2025.11212688",
+    "abstract": "This paper proposes a high-precision semantic segmentation method based on an improved TransUNet architecture to address the challenges of complex lesion structures, blurred boundaries, and significant scale variations in skin lesion images. The method integrates a transformer module into the traditional encoder-decoder framework to model global semantic information, while retaining a convolutional branch to preserve local texture and edge features. This enhances the model's ability to perceive fine-grained structures. A boundary-guided attention mechanism and multi-scale upsampling path are also designed to improve lesion boundary localization and segmentation consistency. To verify the effectiveness of the approach, a series of experiments were conducted, including comparative studies, hyperparameter sensitivity analysis, data augmentation effects, input resolution variation, and training data split ratio tests. Experimental results show that the proposed model outperforms existing representative methods in mIoU, mDice, and mAcc, demonstrating stronger lesion recognition accuracy and robustness. In particular, the model achieves better boundary reconstruction and structural recovery in complex scenarios, making it well-suited for the key demands of automated segmentation tasks in skin lesion analysis.",
+    "source": "crossref",
+    "citation_count": 7,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11211527/11212649/11212688.pdf?arnumber=11212688",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "sources": [
+      "crossref",
+      "arxiv"
+    ],
+    "score": 0.7579
+  },
+  {
+    "title": "Semi-Supervised Skin Lesion Segmentation With Coupling CNN and Transformer Features",
+    "authors": [
+      "Mohammad D. Alahmadi",
+      "Wajdi Alghamdi"
+    ],
+    "year": 2022,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2022.3224005",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2022.3224005",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 42,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/6287639/9668973/09957055.pdf?arnumber=9957055",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7577,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "LightM-UNet: Mamba Assists in Lightweight UNet for Medical Image Segmentation",
+    "authors": [
+      "Weibin Liao",
+      "Yinghao Zhu",
+      "Xinyuan Wang",
+      "Chengwei Pan",
+      "Yasha Wang",
+      "Liantao Ma"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2403.05246",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2403.05246",
+    "abstract": "UNet and its variants have been widely used in medical image segmentation. However, these models, especially those based on Transformer architectures, pose challenges due to their large number of parameters and computational loads, making them unsuitable for mobile health applications. Recently, State Space Models (SSMs), exemplified by Mamba, have emerged as competitive alternatives to CNN and Transformer architectures. Building upon this, we employ Mamba as a lightweight substitute for CNN and Transformer within UNet, aiming at tackling challenges stemming from computational resource limitations in real medical settings. To this end, we introduce the Lightweight Mamba UNet (LightM-UNet) that integrates Mamba and UNet in a lightweight framework. Specifically, LightM-UNet leverages the Residual Vision Mamba Layer in a pure Mamba fashion to extract deep semantic features and model long-range spatial dependencies, with linear computational complexity. Extensive experiments conducted on two real-world 2D/3D datasets demonstrate that LightM-UNet surpasses existing state-of-the-art literature. Notably, when compared to the renowned nnU-Net, LightM-UNet achieves superior segmentation performance while drastically reducing parameter and computation costs by 116x and 21x, respectively. This highlights the potential of Mamba in facilitating model lightweighting. Our code implementation is publicly available at https://github.com/MrBlankness/LightM-UNet.",
+    "source": "openalex",
+    "citation_count": 233,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.05246",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Artificial intelligence"
+    ],
+    "score": 0.757,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "U-SwinTrans: Automated Skin Lesion Segmentation Using Swin Transformer",
+    "authors": [
+      "Aaditya Lochan Sharma",
+      "Kalpana Sharma",
+      "Utkarsh Prakash Srivastava",
+      "Palash Ghosal"
+    ],
+    "year": 2025,
+    "venue": "2025 3rd International Conference on Intelligent Systems, Advanced Computing and Communication (ISACC)",
+    "doi": "10.1109/isacc65211.2025.10969397",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/isacc65211.2025.10969397",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 9,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/10969142/10969157/10969397.pdf?arnumber=10969397",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.747,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MCM-UNet: Mamba convolutional mixing network for skin lesion image segmentation",
+    "authors": [
+      "Minchen Yang",
+      "Nur Intan Raihana Ruhaiyem"
+    ],
+    "year": 2026,
+    "venue": "Biomedical Signal Processing and Control",
+    "doi": "10.1016/j.bspc.2025.108791",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.bspc.2025.108791",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S1746809425013023?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7428,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "FFM-Net: Fusing Frequency Selection Information with Mamba for Skin Lesion Segmentation",
+    "authors": [
+      "Lifang Chen",
+      "Entao Yu",
+      "Qi Ping Cao",
+      "Ke Hu"
+    ],
+    "year": 2025,
+    "venue": "Information",
+    "doi": "10.3390/info16121102",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/info16121102",
+    "abstract": "Accurate segmentation of lesion regions is essential for skin cancer diagnosis. As dermoscopic images of skin lesions demonstrate different sizes, diverse shapes, fuzzy boundaries, and so on, accurate segmentation still faces great challenges. To address these issues, we propose a new dermatologic image segmentation network, FFM-Net. In FFM-Net, we design a new FM block encoder based on state space models (SSMs), which integrates a low-frequency information extraction module (LEM) and an edge detail extraction module (EEM) to extract broader overall structural information and more accurate edge detail information, respectively. At the same time, we dynamically adjust the input channel ratios of the two module branches at different stages of our network, so that the model can learn the correlation relationship between the overall structure and edge detail features more effectively. Furthermore, we designed the cross-channel spatial attention (CCSA) module to improve the model’s sensitivity to channel and spatial dimensions. We deploy a multi-level feature fusion module (MFFM) at the bottleneck layer to aggregate rich multi-scale contextual representations. Finally, we conducted extensive experiments on three publicly available skin lesion segmentation datasets, ISIC2017, ISIC2018, and PH2, and the experimental results show that the FFM-Net model outperforms most existing skin lesion segmentation methods.",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2078-2489/16/12/1102/pdf?version=1765616172",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Block (permutation group theory)",
+      "Computer science",
+      "Computer vision",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Scale-space segmentation",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.7356
+  },
+  {
+    "title": "TrUNet: Dual-Branch Network by Fusing CNN and Transformer for Skin Lesion Segmentation",
+    "authors": [
+      "Wei Chen",
+      "Qian Mu",
+      "Jie Qi"
+    ],
+    "year": 2024,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2024.3463713",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2024.3463713",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 8,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/6287639/10380310/10684202.pdf?arnumber=10684202",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7341,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "BEFNet: A Hybrid CNN-Mamba Architecture for Accurate Skin Lesion Image Segmentation",
+    "authors": [
+      "Wei Wang",
+      "Yuewen Luo",
+      "Xin Wang"
+    ],
+    "year": 2024,
+    "venue": "2024 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+    "doi": "10.1109/bibm62325.2024.10822106",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/bibm62325.2024.10822106",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/10821710/10821711/10822106.pdf?arnumber=10822106",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.7228,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "VMPANet: Vision Mamba Skin Lesion Image Segmentation Model Based on Prompt and Attention Mechanism Fusion",
+    "authors": [
+      "Zinuo Peng",
+      "Shuxian Liu",
+      "Chenhao Li"
+    ],
+    "year": 2025,
+    "venue": "Journal of Imaging",
+    "doi": "10.3390/jimaging11120443",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/jimaging11120443",
+    "abstract": "In the realm of medical image processing, the segmentation of dermatological lesions is a pivotal technique for the early detection of skin cancer. However, existing methods for segmenting images of skin lesions often encounter limitations when dealing with intricate boundaries and diverse lesion shapes. To address these challenges, we propose VMPANet, designed to accurately localize critical targets and capture edge structures. VMPANet employs an inverted pyramid convolution to extract multi-scale features while utilizing the visual Mamba module to capture long-range dependencies among image features. Additionally, we leverage previously extracted masks as cues to facilitate efficient feature propagation. Furthermore, VMPANet integrates parallel depthwise separable convolutions to enhance feature extraction and introduces innovative mechanisms for edge enhancement, spatial attention, and channel attention to adaptively extract edge information and complex spatial relationships. Notably, VMPANet refines a novel cross-attention mechanism, which effectively facilitates the interaction between deep semantic cues and shallow texture details, thereby generating comprehensive feature representations while reducing computational load and redundancy. We conducted comparative and ablation experiments on two public skin lesion datasets (ISIC2017 and ISIC2018). The results demonstrate that VMPANet outperforms existing mainstream methods. On the ISIC2017 dataset, its mIoU and DSC metrics are 1.38% and 0.83% higher than those of VM-Unet respectively; on the ISIC2018 dataset, these metrics are 1.10% and 0.67% higher than those of EMCAD, respectively. Moreover, VMPANet boasts a parameter count of only 0.383 M and a computational load of 1.159 GFLOPs.",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2313-433X/11/12/443/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7206,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "When Mamba Meets xLSTM: An Efficient and Precise Method with the xLSTM-VMUNet Model for Skin lesion Segmentation",
+    "authors": [
+      "Fang, Zhuoyi",
+      "Liu, Jiajia",
+      "Shi, Kexuan",
+      "Qiang Han"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2411.09363",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2411.09363",
+    "abstract": "Automatic melanoma segmentation is essential for early skin cancer detection, yet challenges arise from the heterogeneity of melanoma, as well as interfering factors like blurred boundaries, low contrast, and imaging artifacts. While numerous algorithms have been developed to address these issues, previous approaches have often overlooked the need to jointly capture spatial and sequential features within dermatological images. This limitation hampers segmentation accuracy, especially in cases with indistinct borders or structurally similar lesions. Additionally, previous models lacked both a global receptive field and high computational efficiency. In this work, we present the xLSTM-VMUNet Model, which jointly capture spatial and sequential features within dermatological images successfully. xLSTM-VMUNet can not only specialize in extracting spatial features from images, focusing on the structural characteristics of skin lesions, but also enhance contextual understanding, allowing more effective handling of complex medical image structures. Experiment results on the ISIC2018 dataset demonstrate that xLSTM-VMUNet outperforms VMUNet by 4.85% on DSC and 6.41% on IoU on the ISIC2017 dataset, by 1.25% on DSC and 2.07% on IoU on the ISIC2018 dataset, with faster convergence and consistently high segmentation performance. Our code is available at https://github.com/FangZhuoyi/XLSTM-VMUNet.",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2411.09363",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Lesion",
+      "Artificial intelligence",
+      "Computer science",
+      "Medicine",
+      "Surgery"
+    ],
+    "score": 0.7156,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Lesion-Aware Vision Transformer and Mamba Fusion for Lightweight Dermoscopic Skin Cancer Classification",
+    "authors": [
+      "Tanzila Saba"
+    ],
+    "year": 2026,
+    "venue": "Journal of Intelligent Decision Making and Information Science",
+    "doi": "10.17762/jidmis.v3.5754",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.17762/jidmis.v3.5754",
+    "abstract": "Skin cancer is one of the most destructive malignancies of the current decade and the fifth most common cancer. Automated dermoscopic skin lesion diagnosis is a foundational task in computer-aided diagnosis (CAD). Early clinical detection of melanoma drastically increases the 5-year patient survival rate from below 15% in advanced Stage IV to over 98% in localized Stage IA. To address these challenges while maintaining parameter efficiency suitable for edge-device deployment, this work proposes the Lesion-Aware Fusion MambaFormer (LAF-MambaFormer), a streamlined, three-stage hybrid architecture engineered for robust binary classification (Benign vs. Malignant). With a compact budget of exactly 15.85M trainable parameters, the model combines local inductive bias, global multi-head self-attention, selective state-space sequence modeling, and lesion-aware boundary refinement. Stage 1 leverages a pre-trained ConvNeXt-Nano Multi-Scale Feature Encoder (MSFE) to extract hierarchical feature maps. Stage 2 unites Transformer self-attention (TGCM) and Mamba Selective State-Space (MLDM) sequence modeling with cross-modal Hadamard interaction. Stage 3 enriches features via the Lesion-Aware Fusion Module (LAFM) and a Boundary Detail Enhancement Module (BDEM) using a discrete Laplacian edge extraction cascade. Results thus obtained confirm that the proposed model provides reliable classification with minimal false negatives, offering practical advantages for clinical dermatology.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://jidmis.org/index.php/jidmis/article/download/5754/2467",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Encoder",
+      "Feature extraction",
+      "Pattern recognition (psychology)",
+      "Skin cancer",
+      "Transformer"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.715
+  },
+  {
+    "title": "An Ultra-Lightweight Cross-scale Attention Mamba Network for Accurate Skin Lesion Segmentation",
+    "authors": [
+      "Razan Alharith",
+      "Jiashu Zhang",
+      "Chengqiang Zhao"
+    ],
+    "year": 2026,
+    "venue": "IEEE Journal of Biomedical and Health Informatics",
+    "doi": "10.1109/jbhi.2026.3708901",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/jbhi.2026.3708901",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/6221020/6363502/11592366.pdf?arnumber=11592366",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7122,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "FSM-UNet: An ultra-lightweight frequency-spatial Mamba network for skin lesion segmentation",
+    "authors": [
+      "Heshi Zheng",
+      "Xiaohong Huang",
+      "Yanlei Ge",
+      "Zhao Zhang",
+      "Xiaoyue Zhang",
+      "Ronghan Zhang"
+    ],
+    "year": 2026,
+    "venue": "Image and Vision Computing",
+    "doi": "10.1016/j.imavis.2026.106179",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.imavis.2026.106179",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S0262885626002866?httpAccept=text/xml",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Dice",
+      "Enhanced Data Rates for GSM Evolution",
+      "Image segmentation",
+      "Noise (video)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.7079
+  },
+  {
+    "title": "Mamba-EdgeNet: learnable edge-guided state space model for skin lesion segmentation",
+    "authors": [
+      "JiaMing Xu",
+      "Qi Mao",
+      "Lei Qiu",
+      "Yu Chen",
+      "Gongshuang Tao"
+    ],
+    "year": 2026,
+    "venue": "Biomedical Physics & Engineering Express",
+    "doi": "10.1088/2057-1976/aeada8",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1088/2057-1976/aeada8",
+    "abstract": "Skin lesion segmentation is one of the key tasks in computer-aided diagnosis. However, accurate boundary delineation remains challenging because of low contrast, irregular boundaries, and visual artifacts in skin lesion areas. To address these problems, we developed Mamba-EdgeNet. Mamba-EdgeNet is a hybrid encoder-decoder framework that selectively integrates ResNet50 with EfficientMamba2D state-space blocks. A resolution-adaptive scanning strategy dynamically alternates between multi-directional and sequential spatial scanning, enabling long-range contextual modeling with linear complexity relative to sequence length. To delineate fuzzy borders, a learnable edge-guidance branch is constructed. Structural priors are generated using a learnable edge enhancer and a shallow edge extractor and are subsequently refined through interactions with deep semantic features. A gated fusion decoder adaptively integrates these edge-aware cues with hierarchical semantic features to resolve feature ambiguity and restore fine-grained contours. Evaluations on the official ISIC 2016 and ISIC 2018 splits, together with an internal evaluation using a nonstandard custom partition of ISIC 2017, indicate that the proposed architecture achieves competitive segmentation performance relative to recent representative models across multiple evaluation metrics. Controlled ablation studies further support the contributions of the functional components and loss supervision strategies. Additionally, in-domain evaluation on PH2 and bidirectional cross-dataset transfer between PH2 and ISIC 2018 provide complementary assessments of segmentation performance in within-dataset and cross-dataset settings. These findings indicate that Mamba-EdgeNet is a competitive approach for automated skin lesion segmentation with improved boundary representation.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://iopscience.iop.org/article/10.1088/2057-1976/aeada8/pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Segmentation",
+      "Artificial intelligence",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Ambiguity",
+      "Computer vision",
+      "Image segmentation",
+      "Feature (linguistics)"
+    ],
+    "score": 0.705,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Transformer and CNN-Based Deep Learning Models for Skin Lesion Segmentation",
+    "authors": [
+      "Abdelkader Alrabai",
+      "Amira Echtioui",
+      "Fathi Kallel"
+    ],
+    "year": 2025,
+    "venue": "2025 IEEE International Conference on Advanced Systems and Emergent Technologies (IC_ASET)",
+    "doi": "10.1109/ic_aset65966.2025.11232106",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ic_aset65966.2025.11232106",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11231794/11231774/11232106.pdf?arnumber=11232106",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.7022,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "S³-Mamba: Small-Size-Sensitive Mamba for Lesion Segmentation",
+    "authors": [
+      "Gui Wang",
+      "Yuexiang Li",
+      "Wenting Chen",
+      "Meidan Ding",
+      "Wooi Ping Cheah",
+      "Rong Qu",
+      "Jianfeng Ren",
+      "Linlin Shen"
+    ],
+    "year": 2025,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "doi": "10.1609/aaai.v39i7.32824",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1609/aaai.v39i7.32824",
+    "abstract": "Small lesions play a critical role in early disease diagnosis and intervention of severe infections. Popular models often face challenges in segmenting small lesions, as it occupies only a minor portion of an image, while down-sampling operations may inevitably lose focus on local features of small lesions. To tackle the challenges, we propose a Small-Size-Sensitive Mamba (S³-Mamba), which promotes the sensitivity to small lesions across three dimensions: channel, spatial, and training strategy. Specifically, an Enhanced Visual State Space block is designed to focus on small lesions through multiple residual connections to preserve local features, and selectively amplify important details while suppressing irrelevant ones through channel-wise attention. A Tensor-based Cross-feature Multi-scale Attention is designed to integrate input image features and intermediate-layer features with edge features and exploit the attentive support of features across multiple scales, thereby retaining spatial details of small lesions at various granularities. Finally, we introduce a novel regularized curriculum learning to automatically assess lesion size and sample difficulty, and gradually focus from easy samples to hard ones like small lesions. Extensive experiments on three medical image segmentation datasets show the superiority of our S³-Mamba, especially in segmenting small lesions.",
+    "source": "openalex",
+    "citation_count": 21,
+    "is_open_access": true,
+    "open_access_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32824/34979",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Lesion",
+      "Medicine",
+      "Surgery"
+    ],
+    "score": 0.7011,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "LSF-Mamba: A Lightweight Skin Lesion Segmentation Network with Local Structural Compensation and Frequency-Domain Residual Supplementation",
+    "authors": [
+      "Jinsong Zhang",
+      "Wei Liang",
+      "Guanqiu Qi",
+      "Zhiqin Zhu"
+    ],
+    "year": 2026,
+    "venue": "Algorithms",
+    "doi": "10.3390/a19060444",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/a19060444",
+    "abstract": "Accurate skin lesion segmentation remains a significant challenge for lightweight models, as they often struggle to effectively balance global context understanding with stable local structural representation. Shallow skip connections can introduce redundant background noise into the decoder, while lightweight Mamba-based backbones have limited ability to preserve two-dimensional local continuity during sequential scanning. Additionally, direct enhancement in the frequency domain may amplify high-frequency components that are irrelevant to lesion discrimination, thereby compromising representation stability. To address these issues, this paper proposes LSF-Mamba, a lightweight skin lesion segmentation framework that integrates spatial-domain local compensation and frequency-domain residual supplementation. Specifically, a Local Context Recalibration (LCR) module is designed to reinforce shallow structural features through local neighborhood aggregation and channel-wise recalibration. In parallel, a Frequency Residual Enhancement (FRE) module is introduced to selectively incorporate structure-aware multi-band information using locally aligned wavelet decomposition and gated residual injection. Extensive experiments on the ISIC2017, ISIC2018, and PH2 datasets demonstrate that the proposed method achieves competitive performance with only 0.0491 M parameters and 0.028 G FLOPs, while producing more complete lesion segmentation and more accurate boundary delineation.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/1999-4893/19/6/444/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mscmamba-Unet: A Lightweight Multi-Scale Mamba Network for Skin Lesion Segmentation",
+    "authors": [
+      "Shouming Hou",
+      "Jianchao Hou",
+      "Yuteng Pang",
+      "Aoyu Xia",
+      "Beibei Hou"
+    ],
+    "year": 2025,
+    "venue": "SSRN Electronic Journal",
+    "doi": "10.2139/ssrn.5197807",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5197807",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.2139/ssrn.5197807",
+    "publication_type": "preprint",
+    "keywords": [
+      "Artificial intelligence",
+      "Cartography",
+      "Computer science",
+      "Geography",
+      "Lesion",
+      "Medicine",
+      "Scale (ratio)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.6979
+  },
+  {
+    "title": "FCMamba: frequency-aware CNN-Mamba hybrid model for skin lesion segmentation",
+    "authors": [
+      "Wenxuan Liu",
+      "Zexuan Ji"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Graphics and Image Processing (ICGIP)",
+    "doi": "10.1117/12.3094276",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3094276",
+    "abstract": "To address the challenge of balancing global context modeling and local detail capture in skin lesion segmentation, this paper proposes Frequency-Aware CNN-Mamba (FCMamba), a novel hybrid architecture that integrates spatial-frequency collaborative modeling for high-precision medical image segmentation. Existing methods, such as CNNs, lack global dependency modeling, while Transformers and pure Mamba models suffer from high computational complexity or local detail loss. FCMamba introduces a dual-branch encoder: a CNN branch extracts multi-scale local texture features, and a Mamba branch captures global structural information through selective state space modeling. Innovatively, discrete wavelet transform (DWT) decomposes features from both branches into high- and low-frequency components. Attention mechanisms selectively fuse high-frequency edge details and low-frequency semantic information, while cross-modal skip connections optimize feature interaction. Additionally, the Mixer Mamba Conv Block (MMCB) alternates convolutional and state space operations to enhance local-global fusion.Experiments on the ISIC2017, ISIC2018, and PH2 datasets demonstrate FCMamba's superiority, achieving mIoU scores of 81.07%, 81.73%, and 86.45%, and DSC scores of 89.54%, 89.94%, and 92.73%, respectively, outperforming CNN-, Transformer-, and Mamba-based baselines. Ablation studies validate the effectiveness of frequency-domain fusion and dual-branch design, highlighting FCMamba's robustness in handling complex boundaries and small lesions.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image segmentation",
+      "Lesion",
+      "Medicine",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.695
+  },
+  {
+    "title": "DPFF-net: dual-path feature fusion network with vision Mamba for skin lesion segmentation",
+    "authors": [
+      "Yongquan Xiao",
+      "Xiaomei Tian",
+      "Hongwei Deng",
+      "Yong Mei Deng",
+      "Aojian Yi",
+      "Houcheng Guo"
+    ],
+    "year": 2025,
+    "venue": "Physica Scripta",
+    "doi": "10.1088/1402-4896/ae10e9",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1088/1402-4896/ae10e9",
+    "abstract": "Abstract Accurate segmentation of skin lesions is crucial for the early screening and treatment of skin cancer. In recent years, Convolutional Neural Networks (CNNs) and Transformer-based approaches have achieved remarkable progress in image segmentation tasks. However, convolutional neural networks are limited in their ability to model long-range dependencies, which limits their effectiveness in capturing fine-grained details within medical images, while Transformers are constrained by their quadratic computational complexity. Recent studies have demonstrated that State Space Models (SSMs), particularly those represented by the Mamba architecture, can efficiently model long-range interactions with linear computational complexity. Inspired by the Mamba architecture, this paper proposes a lightweight medical image segmentation network, DPFF-Net, which integrates Mamba into a dual-path framework. The core of this network is the Dual Path Feature Fusion Module (DPFFM), which achieve efficient extraction and fusion of local and global features through a convolutional branch and an SSM branch. The Parallel Vision Mamba (PVM) layer further enhances the modeling of spatial dependencies, while the Detail Aware Convolution Block (DACB) employs various differential convolution strategies to reinforce boundary feature extraction. In addition, the Attention-Integrated Feature Aggregation Module (AIFAM) combines attention mechanisms with feature aggregation to promote deep interaction between local and global representations. The results of comparison and ablation studies on the ISIC2017 and ISIC2018 datasets indicate that DPFF-Net exhibits strong competitiveness in the skin lesion segmentation task. Compared with UltraLight VM-UNet, on the ISIC2017 dataset, DPFF-Net improves mIoU and DSC by 2.61% and 1.63% respectively. On the ISIC2018 dataset, mIoU and DSC increase by 1.62% and 1.00% respectively.",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Convolutional neural network",
+      "Pattern recognition (psychology)",
+      "Convolution (computer science)",
+      "Feature (linguistics)",
+      "Image segmentation"
+    ],
+    "score": 0.6943,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "FITrans: Skin Lesion Segmentation Based on Feature Integration and Transformer",
+    "authors": [
+      "Likun Zhang"
+    ],
+    "year": 2023,
+    "venue": "2023 3rd International Conference on Neural Networks, Information and Communication Engineering (NNICE)",
+    "doi": "10.1109/nnice58320.2023.10105777",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/nnice58320.2023.10105777",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/10105556/10105661/10105777.pdf?arnumber=10105777",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6935,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MaxCAT-Net: Hybrid transformer-based skin lesion classification and lightweight segmentation with calibration and cross-dataset validation",
+    "authors": [
+      "Sadek Al Prince",
+      "Israt Fatema Shorna"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.64898/2026.11.01.763389",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.64898/2026.11.01.763389",
+    "abstract": "Abstract Class imbalance, poor calibration of confidence and poor generalisation under different imaging conditions are restrictions of automated analysis of dermoscopic skin lesions. We propose a hybrid classifier MaxCAT-Net (MaxViT + CBAM + Attention Transformer), which consists of a pre-trained MaxViT-Tiny backbone and the combination of CBAM and two-layer lightweight Transformer encoder and evaluate four encoder-decoder networks for lesion segmentation as a separate task on ISIC 2018 Task 1. All the images of exact/near duplicate were removed and the remaining 10,012 images were distributed lesion-wise (72/14/14) without two or more images having the same type of lesion in HAM10000. On the test set ( n = 1,405), MaxCAT-Net outperformed the baselines of ResNet152-CBAM, MobileNetV3-CBAM, GhostNet-hybrid and single MaxViT-Tiny-CBAM with an accuracy of 0.869 (95% CI 0.847–0.890), balanced accuracy of 0.742, macro-F1 of 0.751 and macro-AUC of 0.944, although ablation gains in macro-F1 (0.017–0.022) were not statistically conclusive. By scaling the temperature, the ECE was decreased from 0.099 to 0.038. In the case of the PAD-UFES-20 dataset, however, the accuracy fell to 0.341 and the melanoma recall rate to 0.096 while for the HAM10000 dataset, the melanoma recall rate was only 0.587. A Swin-T-encoder U-Net was able to achieve a Dice score of 0.903 in segmentation (520 test images), whereas a FasterNet-T0 U-Net (1/10th of the number of parameters) had a Dice score of 0.901 (Holm adjusted p < 0.002), and a standard U-Net had a significantly lower Dice score of 0.888. All results are based on one seed and show trends—not definite improvement.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://syndication.highwire.org/content/doi/10.64898/2026.11.01.763389",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MambaSegNet: Global Context Modeling with Mamba for Skin Lesion Segmentation",
+    "authors": [
+      "Anitha Setti",
+      "Saladi Saritha",
+      "Yepuganti Karuna",
+      "Sankati Ramakrishna"
+    ],
+    "year": 2026,
+    "venue": "2026 International Conference on Cognitive Computing and Networking Systems (ICC-CNS)",
+    "doi": "10.1109/icc-cns70518.2026.11606064",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icc-cns70518.2026.11606064",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11605975/11605982/11606064.pdf?arnumber=11606064",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Attn-UNTER: Attention-Guided Hierarchical Transformer for Skin Lesion Segmentation",
+    "authors": [
+      "M.A.Rafi"
+    ],
+    "year": 2026,
+    "venue": "2026 5th International Conference on Electrical, Computer &amp;amp; Telecommunication Engineering (ICECTE)",
+    "doi": "10.1109/icecte69292.2026.11429363",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icecte69292.2026.11429363",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11429158/11429170/11429363.pdf?arnumber=11429363",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "HPFT-Net: Hierarchical Perception-Fusion Transformer for Skin Lesion Segmentation",
+    "authors": [
+      "Guodong Zhang",
+      "Jiayi Zhu",
+      "Wei Guo",
+      "Ronghui Ju"
+    ],
+    "year": 2026,
+    "venue": "2026 International Conference on Image, Signal Processing and Pattern Recognition (ISPP)",
+    "doi": "10.1109/ispp69262.2026.11543133",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ispp69262.2026.11543133",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11542212/11542821/11543133.pdf?arnumber=11543133",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Skin Lesion Segmentation and Cancer Classification using U -Net and Vision Transformer Models",
+    "authors": [
+      "Shantini K",
+      "Shalini V",
+      "E Ahila Devi"
+    ],
+    "year": 2026,
+    "venue": "2026 6th International Conference on Pervasive Computing and Social Networking (ICPCSN)",
+    "doi": "10.1109/icpcsn68523.2026.11543712",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icpcsn68523.2026.11543712",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11543500/11543501/11543712.pdf?arnumber=11543712",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Skin Lesion Segmentation using Vision Transformer and UNet",
+    "authors": [
+      "Bibat Thokar"
+    ],
+    "year": 2025,
+    "venue": "International Journal on Engineering Technology and Infrastructure Development",
+    "doi": "10.3126/injet-indev.v2i1.82195",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3126/injet-indev.v2i1.82195",
+    "abstract": "Medical images play a crucial role in diagnosing and analyzing serious illnesses. To make the typically lengthy process of reviewing these images more efficient, an automated approach for segmenting abnormal features is essential. Due to the limited availability of medical image data, deep learning frameworks for multi-class image segmentation have been developed. However, many current deep learning frameworks lack flexibility. To address the problem, advanced architectures have been added to improve segmentation performance. In particular, the UNet model has been enhanced with a Vision Transformer (ViT), enabling it to better capture structural features in medical images. The ISIC dataset has been preprocessed through methods like image augmentation; contrast limited adaptive histogram equalization (CLAHE), and normalization. The dataset has been then split into training, validation, and testing sets for optimal use. The training set has been used to train the model, with the adaptive moment estimation (Adam) optimizer aiding in optimization. The model performance has been evaluated using categorical cross-entropy to assess loss. The model has shown accuracy of 0.9378, a precision of 0.8713, a sensitivity of 0.8345, and an F1-Score of 0.8525 for the ISIC dataset.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.nepjol.info/index.php/injetindev/article/download/82195/62904",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.69,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Research Review of Deep Learning in Skin Lesions Image Segmentation",
+    "authors": [
+      "MENG Xiangfu, LI Jiaxun, YU Chunlin, LU Yunxuan"
+    ],
+    "year": 2026,
+    "venue": "DOAJ (DOAJ: Directory of Open Access Journals)",
+    "doi": "10.3778/j.issn.1673-9418.2504019",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3778/j.issn.1673-9418.2504019",
+    "abstract": "Skin lesions exhibit a wide variety of types and complex clinical manifestations, ranging from benign conditions to malignant melanomas. Early detection and accurate segmentation of these lesions are critical for the diagnosis and treatment of skin cancer, particularly in the early identification and localization of high-risk lesions such as malignant melanoma, which can significantly improve patient survival rates. In recent years, deep learning techniques have achieved remarkable progress in skin lesion image segmentation, greatly enhancing both accuracy and efficiency. This paper presents a comprehensive review of deep learning research in the field of skin lesion image segmentation. First, various skin lesion imaging modalities and commonly used public datasets are introduced, along with a summary of standard evaluation metrics. Then, addressing the prevalent issues of noise and artifacts in images, a detailed discussion on various image preprocessing and augmentation techniques is provided. Subsequently, deep learning-based segmentation methods are elaborated, covering U-Net, Transformer, SAM (segment anything model), Mamba, and multi-network fusion models. The main architectural designs, advantages, limitations, and segmentation performance of these models are comparatively analyzed. Finally, the current challenges and issues in this field are examined, and future research directions are proposed, aiming to provide valuable insights for the continued development of skin lesion image segmentation.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Deep learning",
+      "Artificial intelligence",
+      "Segmentation",
+      "Preprocessor",
+      "Computer science",
+      "Skin lesion",
+      "Lesion",
+      "Field (mathematics)"
+    ],
+    "score": 0.685,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Algorithm design for skin lesion image segmentation based on improved VM-Unet",
+    "authors": [
+      "Mingyuan Gao",
+      "Yuchao Wang",
+      "Zhengzhu Wen"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Image Processing and Intelligent Control (IPIC)",
+    "doi": "10.1117/12.3119214",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3119214",
+    "abstract": "CNNs struggle with long-range dependencies, while Transformers face quadratic complexity in high-resolution skin lesion segmentation. Recently, State Space Models (SSMs) like Mamba have offered efficient linear-complexity alternatives; however, they often lack local inductive bias, leading to background noise retention and semantic-detail misalignment. To address these issues, we propose ACS-VMUNet, incorporating a \"calibration-then-fusion\" strategy. A Convolutional Block Attention Module (CBAM) is embedded in shallow layers to suppress artifacts such as hair textures, while an Adaptive Fusion of Semantic and Detail Integration (AF-SDI) module aligns multi-scale features via cross-scale interaction and non-linear projection. Systematic experiments on ISIC 2017 and 2018 datasets demonstrate that ACSVMUNet outperforms state-of-the-art CNN, Transformer, and SSM baselines across key metrics, including mIoU, Dice coefficient, and sensitivity.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-abstract",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Computer vision",
+      "Dice",
+      "Block (permutation group theory)",
+      "Pattern recognition (psychology)",
+      "Noise (video)"
+    ],
+    "score": 0.685,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "H-vmunet: High-order Vision Mamba UNet for medical image segmentation",
+    "authors": [
+      "Renkai Wu",
+      "Yinghao Liu",
+      "Pengchen Liang",
+      "Qing Chang"
+    ],
+    "year": 2025,
+    "venue": "Neurocomputing",
+    "doi": "10.1016/j.neucom.2025.129447",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.neucom.2025.129447",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 276,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.13642",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer vision",
+      "Computer science",
+      "Image (mathematics)",
+      "Segmentation",
+      "Order (exchange)",
+      "Pattern recognition (psychology)",
+      "Mathematics"
+    ],
+    "score": 0.6846,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "UCMViT: Enhancing Skin Lesion Segmentation with Efficient Transformer-Based Feature Fusion and Small Lesion Cropping",
+    "authors": [
+      "Zahra Ghorbani",
+      "Farzaneh Koohestani",
+      "Nader Karimi",
+      "Shahram Shirani",
+      "Pejman Khadivi",
+      "Shadrokh Samavi"
+    ],
+    "year": 2025,
+    "venue": "2025 IEEE World AI IoT Congress (AIIoT)",
+    "doi": "10.1109/aiiot65859.2025.11105228",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/aiiot65859.2025.11105228",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11105078/11105210/11105228.pdf?arnumber=11105228",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6829,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Multiple Hyperparameter Optimization in Image Processing Employing Swin Transformer for Enhanced Skin Lesion Segmentation",
+    "authors": [
+      "Praveena S",
+      "Veeramakali T"
+    ],
+    "year": 2025,
+    "venue": "2025 International Conference on Computational Robotics, Testing and Engineering Evaluation (ICCRTEE)",
+    "doi": "10.1109/iccrtee64519.2025.11053082",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/iccrtee64519.2025.11053082",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11052894/11052854/11053082.pdf?arnumber=11053082",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6829,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Emerging Semi-Supervised Skin Lesion Segmentation using Unlabelled Samples with GAN and Transformer Representations",
+    "authors": [
+      "M. Megala",
+      "T.R. Nisha Dayana"
+    ],
+    "year": 2025,
+    "venue": "2025 9th International Conference on Electronics, Communication and Aerospace Technology (ICECA)",
+    "doi": "10.1109/iceca66444.2025.11382863",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/iceca66444.2025.11382863",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11382209/11382544/11382863.pdf?arnumber=11382863",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6829,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "HMT-UNet: A hybird Mamba-Transformer Vision UNet for Medical Image Segmentation",
+    "authors": [
+      "Zhang, Mingya",
+      "Chen, Zhihao",
+      "Yiyuan Ge",
+      "Xianping Tao"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2408.11289",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2408.11289",
+    "abstract": "In the field of medical image segmentation, models based on both CNN and Transformer have been thoroughly investigated. However, CNNs have limited modeling capabilities for long-range dependencies, making it challenging to exploit the semantic information within images fully. On the other hand, the quadratic computational complexity poses a challenge for Transformers. State Space Models (SSMs), such as Mamba, have been recognized as a promising method. They not only demonstrate superior performance in modeling long-range interactions, but also preserve a linear computational complexity. The hybrid mechanism of SSM (State Space Model) and Transformer, after meticulous design, can enhance its capability for efficient modeling of visual features. Extensive experiments have demonstrated that integrating the self-attention mechanism into the hybrid part behind the layers of Mamba's architecture can greatly improve the modeling capacity to capture long-range spatial dependencies. In this paper, leveraging the hybrid mechanism of SSM, we propose a U-shape architecture model for medical image segmentation, named Hybird Transformer vision Mamba UNet (HTM-UNet). We conduct comprehensive experiments on the ISIC17, ISIC18, CVC-300, CVC-ClinicDB, Kvasir, CVC-ColonDB, ETIS-Larib PolypDB public datasets and ZD-LCI-GIM private dataset. The results indicate that HTM-UNet exhibits competitive performance in medical image segmentation tasks. Our code is available at https://github.com/simzhangbest/HMT-Unet.",
+    "source": "openalex",
+    "citation_count": 14,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.11289",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science",
+      "Computer vision",
+      "Artificial intelligence"
+    ],
+    "score": 0.6805,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "ASP-VMUNet: Atrous Shifted Parallel Vision Mamba U-Net for Skin Lesion Segmentation",
+    "authors": [
+      "Muyi Bao",
+      "Shuchang Lyu",
+      "Zhaoyang Xu",
+      "Qi Zhao",
+      "Changyu Zeng",
+      "Wenpei Bai",
+      "Guangliang Cheng"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2503.19427v1",
+    "url": "http://arxiv.org/abs/2503.19427v1",
+    "abstract": "Skin lesion segmentation is a critical challenge in computer vision, and it is essential to separate pathological features from healthy skin for diagnostics accurately. Traditional Convolutional Neural Networks (CNNs) are limited by narrow receptive fields, and Transformers face significant computational burdens. This paper presents a novel skin lesion segmentation framework, the Atrous Shifted Parallel Vision Mamba UNet (ASP-VMUNet), which integrates the efficient and scalable Mamba architecture to overcome limitations in traditional CNNs and computationally demanding Transformers. The framework introduces an atrous scan technique that minimizes background interference and expands the receptive field, enhancing Mamba's scanning capabilities. Additionally, the inclusion of a Parallel Vision Mamba (PVM) layer and a shift round operation optimizes feature segmentation and fosters rich inter-segment information exchange. A supplementary CNN branch with a Selective-Kernel (SK) Block further refines the segmentation by blending local and global contextual information. Tested on four benchmark datasets (ISIC16/17/18 and PH2), ASP-VMUNet demonstrates superior performance in skin lesion segmentation, validated by comprehensive ablation studies. This approach not only advances medical image segmentation but also highlights the benefits of hybrid architectures in medical imaging technology. Our code is available at https://github.com/BaoBao0926/ASP-VMUNet/tree/main.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2503.19427v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6779,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "LiteMamba-Bound: A lightweight Mamba-based model with boundary-aware and normalized active contour loss for skin lesion segmentation",
+    "authors": [
+      "Quang-Huy Ho",
+      "Thi-Nhu-Quynh Nguyen",
+      "Thi-Thao Tran",
+      "Van-Truong Pham"
+    ],
+    "year": 2025,
+    "venue": "Methods",
+    "doi": "10.1016/j.ymeth.2025.01.008",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.ymeth.2025.01.008",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 23,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Segmentation",
+      "Active contour model",
+      "Lesion",
+      "Artificial intelligence",
+      "Boundary (topology)",
+      "Computer science",
+      "Skin lesion",
+      "Computer vision"
+    ],
+    "score": 0.6764,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MF-Mamba: An Efficient Multi-Feature Fusion Mamba Model for Medical Image Segmentation",
+    "authors": [
+      "Weitong Xing",
+      "Jun Geng",
+      "Xiaojuan Yao",
+      "Mengran Liu",
+      "Yuxin Xie",
+      "Min Yuan"
+    ],
+    "year": 2025,
+    "venue": "IEEE International Conference on High Performance Computing and Communications; IEEE International Conference on Smart City; IEEE International Conference on Data Science and Systems (HPCC/SmartCity/DSS)",
+    "doi": "10.1109/hpcc67675.2025.00061",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/hpcc67675.2025.00061",
+    "abstract": "Traditional CNN and Transformer show good performance in medical image segmentation, but both have problems. CNN capture local features with convolution operations but have trouble modeling long-range dependencies. Transformers use self-attention to understand global context but are very computationally expensive. In medical images, lesions have big changes in shape and size, requiring models to include both general shapes and specific local boundaries. This makes it important to combine local and global features well. To solve these problems, we suggest the Multi-Feature Fusion Mamba model (MF-Mamba). The model uses a Multi-Scale Channel Fusion Network (MCFN) to get object features at different scales and capture local context, helping the model segment lesions of different sizes. It also adds a Direction Perception Attention (DPA) module to capture long-range context, improving the network's capability to model long-range interdependencies. Tests on the ISIC2017, ISIC2018, and Synapse public datasets demonstrate that MF-Mamba works much better in skin lesion segmentation tasks, proving it has a strong edge.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Convolutional neural network",
+      "Computer vision",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Transformer"
+    ],
+    "score": 0.675,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SkinFormer: Learning Statistical Texture Representation with Transformer for Skin Lesion Segmentation",
+    "authors": [
+      "Rongtao Xu",
+      "Changwei Wang",
+      "Jiguang Zhang",
+      "Shibiao Xu",
+      "Weiliang Meng",
+      "Xiaopeng Zhang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2409.08652v1",
+    "url": "http://arxiv.org/abs/2409.08652v1",
+    "abstract": "Accurate skin lesion segmentation from dermoscopic images is of great importance for skin cancer diagnosis. However, automatic segmentation of melanoma remains a challenging task because it is difficult to incorporate useful texture representations into the learning process. Texture representations are not only related to the local structural information learned by CNN, but also include the global statistical texture information of the input image. In this paper, we propose a trans\\textbf{Former} network (\\textbf{SkinFormer}) that efficiently extracts and fuses statistical texture representation for \\textbf{Skin} lesion segmentation. Specifically, to quantify the statistical texture of input features, a Kurtosis-guided Statistical Counting Operator is designed. We propose Statistical Texture Fusion Transformer and Statistical Texture Enhance Transformer with the help of Kurtosis-guided Statistical Counting Operator by utilizing the transformer's global attention mechanism. The former fuses structural texture information and statistical texture information, and the latter enhances the statistical texture of multi-scale features. {Extensive experiments on three publicly available skin lesion datasets validate that our SkinFormer outperforms other SOAT methods, and our method achieves 93.2\\% Dice score on ISIC 2018. It can be easy to extend SkinFormer to segment 3D images in the future.} Our code is available at https://github.com/Rongtao-Xu/SkinFormer.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2409.08652v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6679,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "TESL-Net: A Transformer-Enhanced CNN for Accurate Skin Lesion Segmentation",
+    "authors": [
+      "Shahzaib Iqbal",
+      "Muhammad Zeeshan",
+      "Mehwish Mehmood",
+      "Tariq M. Khan",
+      "Imran Razzak"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2408.09687v1",
+    "url": "http://arxiv.org/abs/2408.09687v1",
+    "abstract": "Early detection of skin cancer relies on precise segmentation of dermoscopic images of skin lesions. However, this task is challenging due to the irregular shape of the lesion, the lack of sharp borders, and the presence of artefacts such as marker colours and hair follicles. Recent methods for melanoma segmentation are U-Nets and fully connected networks (FCNs). As the depth of these neural network models increases, they can face issues like the vanishing gradient problem and parameter redundancy, potentially leading to a decrease in the Jaccard index of the segmentation model. In this study, we introduced a novel network named TESL-Net for the segmentation of skin lesions. The proposed TESL-Net involves a hybrid network that combines the local features of a CNN encoder-decoder architecture with long-range and temporal dependencies using bi-convolutional long-short-term memory (Bi-ConvLSTM) networks and a Swin transformer. This enables the model to account for the uncertainty of segmentation over time and capture contextual channel relationships in the data. We evaluated the efficacy of TESL-Net in three commonly used datasets (ISIC 2016, ISIC 2017, and ISIC 2018) for the segmentation of skin lesions. The proposed TESL-Net achieves state-of-the-art performance, as evidenced by a significantly elevated Jaccard index demonstrated by empirical results.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.09687v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6679,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "VM-UNET-V2: Rethinking Vision Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Mingya Zhang",
+      "Yue Yu",
+      "Jin Sun",
+      "Limei Gu",
+      "Tingsheng Ling",
+      "Xianping Tao"
+    ],
+    "year": 2024,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-981-97-5128-0_27",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-981-97-5128-0_27",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 213,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.09157",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Computer vision",
+      "Artificial intelligence",
+      "Segmentation",
+      "Image segmentation",
+      "Computer graphics (images)"
+    ],
+    "score": 0.6674,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Skin Lesion Segmentation Improved by Transformer-based Networks with Inter-scale Dependency Modeling",
+    "authors": [
+      "Sania Eskandari",
+      "Janet Lumpp",
+      "Luis Sanchez Giraldo"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2310.13604v1",
+    "url": "http://arxiv.org/abs/2310.13604v1",
+    "abstract": "Melanoma, a dangerous type of skin cancer resulting from abnormal skin cell growth, can be treated if detected early. Various approaches using Fully Convolutional Networks (FCNs) have been proposed, with the U-Net architecture being prominent To aid in its diagnosis through automatic skin lesion segmentation. However, the symmetrical U-Net model's reliance on convolutional operations hinders its ability to capture long-range dependencies crucial for accurate medical image segmentation. Several Transformer-based U-Net topologies have recently been created to overcome this limitation by replacing CNN blocks with different Transformer modules to capture local and global representations. Furthermore, the U-shaped structure is hampered by semantic gaps between the encoder and decoder. This study intends to increase the network's feature re-usability by carefully building the skip connection path. Integrating an already calculated attention affinity within the skip connection path improves the typical concatenation process utilized in the conventional skip connection path. As a result, we propose a U-shaped hierarchical Transformer-based structure for skin lesion segmentation and an Inter-scale Context Fusion (ISCF) method that uses attention correlations in each stage of the encoder to adaptively combine the contexts from each stage to mitigate semantic gaps. The findings from two skin lesion segmentation benchmarks support the ISCF module's applicability and effectiveness. The code is publicly available at \\url{https://github.com/saniaesk/skin-lesion-segmentation}",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2310.13604v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6579,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Inter-Scale Dependency Modeling for Skin Lesion Segmentation with Transformer-based Networks",
+    "authors": [
+      "Sania Eskandari",
+      "Janet Lumpp"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2310.13727v1",
+    "url": "http://arxiv.org/abs/2310.13727v1",
+    "abstract": "Melanoma is a dangerous form of skin cancer caused by the abnormal growth of skin cells. Fully Convolutional Network (FCN) approaches, including the U-Net architecture, can automatically segment skin lesions to aid diagnosis. The symmetrical U-Net model has shown outstanding results, but its use of a convolutional operation limits its ability to capture long-range dependencies, which are essential for accurate medical image segmentation. In addition, the U-shaped structure suffers from the semantic gaps between the encoder and decoder. In this study, we developed and evaluated a U-shaped hierarchical Transformer-based structure for skin lesion segmentation while we proposed an Inter-scale Context Fusion (ISCF) to utilize the attention correlations in each stage of the encoder to adaptively combine the contexts coming from each stage to hinder the semantic gaps. The preliminary results of the skin lesion segmentation benchmark endorse the applicability and efficacy of the ISCF module.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2310.13727v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6579,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "AViT: Adapting Vision Transformers for Small Skin Lesion Segmentation Datasets",
+    "authors": [
+      "Siyi Du",
+      "Nourhan Bayasi",
+      "Ghassan Hamarneh",
+      "Rafeef Garbi"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2307.13897v2",
+    "url": "http://arxiv.org/abs/2307.13897v2",
+    "abstract": "Skin lesion segmentation (SLS) plays an important role in skin lesion analysis. Vision transformers (ViTs) are considered an auspicious solution for SLS, but they require more training data compared to convolutional neural networks (CNNs) due to their inherent parameter-heavy structure and lack of some inductive biases. To alleviate this issue, current approaches fine-tune pre-trained ViT backbones on SLS datasets, aiming to leverage the knowledge learned from a larger set of natural images to lower the amount of skin training data needed. However, fully fine-tuning all parameters of large backbones is computationally expensive and memory intensive. In this paper, we propose AViT, a novel efficient strategy to mitigate ViTs' data-hunger by transferring any pre-trained ViTs to the SLS task. Specifically, we integrate lightweight modules (adapters) within the transformer layers, which modulate the feature representation of a ViT without updating its pre-trained weights. In addition, we employ a shallow CNN as a prompt generator to create a prompt embedding from the input image, which grasps fine-grained information and CNN's inductive biases to guide the segmentation task on small datasets. Our quantitative experiments on 4 skin lesion datasets demonstrate that AViT achieves competitive, and at times superior, performance to SOTA but with significantly fewer trainable parameters. Our code is available at https://github.com/siyi-wind/AViT.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2307.13897v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6579,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "DermoMamba: a cross-scale Mamba-based model with guide fusion loss for skin lesion segmentation in dermoscopy images",
+    "authors": [
+      "Ngoc-Khai Hoang",
+      "Dinh-Hieu Nguyen",
+      "Thi-Thao Tran",
+      "Van-Truong Pham"
+    ],
+    "year": 2025,
+    "venue": "Pattern Analysis and Applications",
+    "doi": "10.1007/s10044-025-01506-w",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s10044-025-01506-w",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 7,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Segmentation",
+      "Computer vision",
+      "Lesion",
+      "Fusion",
+      "Pattern recognition (psychology)",
+      "Computer science",
+      "Dermatology"
+    ],
+    "score": 0.6458,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Boundary-aware Transformers for Skin Lesion Segmentation",
+    "authors": [
+      "Jiacheng Wang",
+      "Lan Wei",
+      "Liansheng Wang",
+      "Qichao Zhou",
+      "Lei Zhu",
+      "Jing Qin"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "10.1007/978-3-030-87193-2_20",
+    "arxiv_id": "2110.03864v1",
+    "url": "http://arxiv.org/abs/2110.03864v1",
+    "abstract": "Skin lesion segmentation from dermoscopy images is of great importance for improving the quantitative analysis of skin cancer. However, the automatic segmentation of melanoma is a very challenging task owing to the large variation of melanoma and ambiguous boundaries of lesion areas. While convolutional neutral networks (CNNs) have achieved remarkable progress in this task, most of existing solutions are still incapable of effectively capturing global dependencies to counteract the inductive bias caused by limited receptive fields. Recently, transformers have been proposed as a promising tool for global context modeling by employing a powerful global attention mechanism, but one of their main shortcomings when applied to segmentation tasks is that they cannot effectively extract sufficient local details to tackle ambiguous boundaries. We propose a novel boundary-aware transformer (BAT) to comprehensively address the challenges of automatic skin lesion segmentation. Specifically, we integrate a new boundary-wise attention gate (BAG) into transformers to enable the whole network to not only effectively model global long-range dependencies via transformers but also, simultaneously, capture more local details by making full use of boundary-wise prior knowledge. Particularly, the auxiliary supervision of BAG is capable of assisting transformers to learn position embedding as it provides much spatial information. We conducted extensive experiments to evaluate the proposed BAT and experiments corroborate its effectiveness, consistently outperforming state-of-the-art methods in two famous datasets.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2110.03864v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.645,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "WVM-UNet: A Wavelet–Vision Mamba Framework for Enhanced Medical Image Segmentation",
+    "authors": [
+      "Yulong Yang",
+      "Wen Gao",
+      "Zhengguo Wu",
+      "Chuanghua Yang"
+    ],
+    "year": 2026,
+    "venue": "Journal of Imaging",
+    "doi": "10.3390/jimaging12080375",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/jimaging12080375",
+    "abstract": "Accurate segmentation of skin lesions and gastrointestinal polyps is essential for early diagnosis and treatment planning. Currently, Convolutional Neural Networks (CNNs) are limited by local receptive fields, missing small lesions. While Transformers model global context, their quadratic computational complexity incurs high costs. To address these limitations, we propose the Wavelet-Vision Mamba UNet (WVM-UNet), integrating State Space Models (SSMs) for linear-complexity long-range dependencies and wavelet transforms for fine-grained feature extraction. The network employs a Wavelet-based Residual State Space (WRSS) block, combining the multi-scale decomposition of discrete wavelet transforms with Vision Mamba to efficiently capture global features. A Fused Channel-Spatial Attention (FCSA) mechanism is incorporated to adaptively recalibrate feature representations. Additionally, we construct an Encoder-Decoder Semantic Connection (EDSC) to replace traditional skip connections, effectively bridging the semantic gap between cross-level features. Experimental results on multiple public datasets demonstrate the competitive performance of our method. Specifically, on the ISIC 2017 dataset, WVM-UNet achieves an mIoU of 82.94% and a DSC of 90.67%, outperforming the Mamba-based VM-UNet by 2.71% in mIoU. These results indicate our architecture effectively captures discriminative features for precise medical image segmentation.",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.3390/jimaging12080375",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Discriminative model",
+      "Segmentation",
+      "Convolutional neural network",
+      "Wavelet",
+      "Image segmentation"
+    ],
+    "score": 0.6443,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SegUMamba: Integrating Mamba with U_net for Medical Image Segmentation",
+    "authors": [
+      "Yue Zhao",
+      "Chenxuan Liu",
+      "Xuemeng Zhou",
+      "Xinyu Zhang"
+    ],
+    "year": 2024,
+    "venue": "International Conference on Image Processing, Computer Vision and Machine Learning (ICICML)",
+    "doi": "10.1109/icicml63543.2024.10958038",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icicml63543.2024.10958038",
+    "abstract": "In medical image segmentation, capturing long-range dependencies is critical for precise segmentation. Convolutional Neural Networks(CNNs)excel at local features, while Transformers comprehend global context, but both struggle with long-range dependencies. Mamba addresses this with its selection mechanism and dynamic matrix. By integrating Mamba with U-Net, we developed the SegUMamba model, which effectively captures local lesion details as well as distant interactions between lesions and surrounding skin. The encoder-decoder architecture, built on VMamba and utilizing skip connections, merges shallow and deep-level information, enhancing segmentation accuracy. We designed a flexible integration mechanism that enables feature exchange between the encoder and decoder while restoring features within the decoder, achieving efficient and lossless multiplexing. Experiments on the ISIC2018 Task1 dataset show that, with the same system configuration and hyperparameter settings, our model significantly outperforms others in accuracy, completeness and efficiency, making it promising for complex medical image segmentation tasks.",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Image segmentation",
+      "Computer vision",
+      "Artificial intelligence",
+      "Image (mathematics)",
+      "Net (polyhedron)",
+      "Mathematics",
+      "Geometry"
+    ],
+    "score": 0.6156,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "DMPB-Net: A Mamba-Driven Semi-Supervised Network for Precise Breast Ultrasound Lesion Segmentation",
+    "authors": [
+      "Haiyang Sun",
+      "Xuanbo Xu",
+      "Li Wang"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.21203/rs.3.rs-10095241/v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-10095241/v1",
+    "abstract": "Abstract Accurate segmentation of breast lesions in ultrasound images is critical for early cancer diagnosis, yet it remains challenging due to speckle noise, acoustic artifacts, and blurred boundaries. In this paper, we propose DMPB-Net, a novel semi-supervised framework designed for precise breast lesion segmentation under limited supervision. The framework utilizes a Mamba-driven encoder to capture long-range global dependencies, effectively overcoming the receptive field limitations of conventional CNNs. To mitigate ultrasound-specific interference, we introduce a Semantic Decoupling (SD) module that separates lesion-related features from task-irrelevant background noise. Furthermore, a Confidence-Ranked Prototype Attention (CR-PA) module is developed to facilitate robust semantic alignment by dynamically filtering high-confidence prototypes. To address boundary ambiguity, a Boundary Iterative Refinement (BIR) module is employed to progressively polish masks through a generative denoising process. Finally, a composite loss function comprising Consistency, Fuzzy Rough Set Boundary (FRSB), and Structural Similarity Contrastive (SSC) losses is introduced to supervise both local details and global topology. Extensive experiments on BUSI and UDIAT datasets demonstrate that DMPB-Net significantly outperforms state-of-the-art methods, achieving a Dice score of 83.20% and 91.51% respectively, showcasing its high clinical potential for computer-aided diagnosis. Code is available at https://github.com/HengfanLi/DMPB-Net2.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.researchsquare.com/article/rs-10095241/v1",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MSG-Mamba: Multi-Scale State Gated Mamba Network for 3D Breast MRI Lesion Segmentation",
+    "authors": [
+      "Jiayi Wu",
+      "Xiyang Zhao",
+      "Chunli Kong"
+    ],
+    "year": 2026,
+    "venue": "2026 41st Youth Academic Annual Conference of Chinese Association of Automation (YAC)",
+    "doi": "10.1109/yac71005.2026.11615919",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/yac71005.2026.11615919",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11615321/11615325/11615919.pdf?arnumber=11615919",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6129,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Privileged Lesion-Context Relational Distillation for Mask-Free Skin Lesion Classification",
+    "authors": [
+      "Abu Mukaddim Rahi",
+      "Md Mithun Hossain",
+      "Md Zulficar Hasan Joy",
+      "M. F. Mridha",
+      "Md. Jakir Hossen"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2607.18773v1",
+    "url": "http://arxiv.org/abs/2607.18773v1",
+    "abstract": "Accurate skin lesion classification can benefit from lesion segmentation masks, but requiring masks or an auxiliary segmentation model during inference reduces clinical practicality and increases computational complexity. This work introduces Privileged Lesion-Context Relational Distillation (PLCRD), a teacher-student framework that exploits lesion masks exclusively during training while preserving image-only inference. The privileged teacher jointly analyzes the original dermoscopic image and its mask-guided lesion region to learn lesion-specific and contextual diagnostic representations. An image-only student is then trained through complementary knowledge-transfer mechanisms that convey the teacher's diagnostic distribution, lesion-focused attention, inter-lesion relational geometry, and lesion-context structure. PLCRD decomposes deep representations into lesion and contextual embeddings and transfers their relational organization through inter-lesion similarity alignment, lesion-context affinity matching, separation regularization, and class-aware relational learning. This formulation avoids direct feature matching between heterogeneous teacher and student architectures and enables the student to internalize mask-informed diagnostic structure without accessing masks at deployment. The framework was evaluated on HAM10000 using lesion-disjoint data partitioning and externally validated on ISIC 2018 without retraining. PLCRD achieved a lesion-level macro-F1 of 0.773 +/- 0.018, balanced accuracy of 0.764 +/- 0.023, and macro-AUROC of 0.976 +/- 0.002 on HAM10000, together with a macro-F1 of 0.732 +/- 0.008 on ISIC 2018. The results indicate that privileged lesion annotations can be transformed into transferable relational knowledge, yielding a practical and interpretable approach to mask-free skin lesion classification.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2607.18773v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Automated Detection of Multiple Sclerosis Lesions on 7-tesla MRI Using U-net and Transformer-based Segmentation",
+    "authors": [
+      "Michael Maynord",
+      "Minghui Liu",
+      "Cornelia Fermüller",
+      "Seongjin Choi",
+      "Yuxin Zeng",
+      "Shishir Dahal",
+      "Daniel M. Harrison"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2604.00469v1",
+    "url": "http://arxiv.org/abs/2604.00469v1",
+    "abstract": "Ultra-high field 7-tesla (7T) MRI improves visualization of multiple sclerosis (MS) white matter lesions (WML) but differs sufficiently in contrast and artifacts from 1.5-3T imaging - suggesting that widely used automated segmentation tools may not translate directly. We analyzed 7T FLAIR scans and generated reference WML masks from Lesion Segmentation Tool (LST) outputs followed by expert manual revision. As external comparators, we applied LST-LPA and the more recent LST-AI ensemble, both originally developed on lower-field data. We then trained 3D UNETR and SegFormer transformer-based models on 7T FLAIR at multiple resolutions (0.5x0.5x0.5^3, 1.0x1.0x1.0^3, and 1.5x1.5x2.0^3) and evaluated all methods using voxel-wise and lesion-wise metrics from the BraTS 2023 framework. On the held-out test set at native 0.5x0.5x0.5^3 resolution, 7T-trained transformers achieved competitive overlap with LST-AI while recovering additional small lesions that were missed by classical methods, at the cost of some boundary variability and occasional artifact-related false positives. On a held-out 7 T test set, our best transformer model (SegFormer) achieved a voxel-wise Dice of 0.61 and lesion-wise Dice of 0.20, improving on the classical LST-LPA tool (Dice 0.39, lesion-wise Dice 0.02). Performance decreased for models trained on downsampled images, underscoring the value of native 7T resolution for small-lesion detection. By releasing our 7T-trained models, we aim to provide a reproducible, ready-to-use resource for automated lesion quantification in ultra-high field MS research (https://github.com/maynord/7T-MS-lesion-segmentation).",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2604.00469v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Exploring the Impact of Skin Color on Skin Lesion Segmentation",
+    "authors": [
+      "Kuniko Paxton",
+      "Medina Kapo",
+      "Amila Akagić",
+      "Koorosh Aslansefat",
+      "Dhavalkumar Thakker",
+      "Yiannis Papadopoulos"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2603.29694v1",
+    "url": "http://arxiv.org/abs/2603.29694v1",
+    "abstract": "Skin cancer, particularly melanoma, remains a major cause of morbidity and mortality, making early detection critical. AI-driven dermatology systems often rely on skin lesion segmentation as a preprocessing step to delineate the lesion from surrounding skin and support downstream analysis. While fairness concerns regarding skin tone have been widely studied for lesion classification, the influence of skin tone on the segmentation stage remains under-quantified and is frequently assessed using coarse, discrete skin tone categories. In this work, we evaluate three strong segmentation architectures (UNet, DeepLabV3 with a ResNet50 backbone, and DINOv2) on two public dermoscopic datasets (HAM10000 and ISIC2017) and introduce a continuous pigment or contrast analysis that treats pixel-wise ITA values as distributions. Using Wasserstein distances between within-image distributions for skin-only, lesion-only, and whole-image regions, we quantify lesion skin contrast and relate it to segmentation performance across multiple metrics. Within the range represented in these datasets, global skin tone metrics (Fitzpatrick grouping or mean ITA) show weak association with segmentation quality. In contrast, low lesion-skin contrast is consistently associated with larger segmentation errors in models, indicating that boundary ambiguity and low contrast are key drivers of failure. These findings suggest that fairness improvements in dermoscopic segmentation should prioritize robust handling of low-contrast lesions, and the distribution-based pigment measures provide a more informative audit signal than discrete skin-tone categories.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2603.29694v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.6079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "ELM-UNet: An efficient and lightweight Vision Mamba UNet for skin lesion segmentation",
+    "authors": [
+      "Songling Xia",
+      "Hongwei Deng",
+      "Feng Chen"
+    ],
+    "year": 2025,
+    "venue": "Journal of Computational Science",
+    "doi": "10.1016/j.jocs.2025.102743",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.jocs.2025.102743",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Segmentation",
+      "Artificial intelligence",
+      "Computer science",
+      "Boosting (machine learning)",
+      "Pattern recognition (psychology)",
+      "Skin lesion",
+      "Lesion",
+      "Computer vision"
+    ],
+    "score": 0.6072,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Mamba-Constrained Inter-Slice Consistency Network for Stroke Lesion Segmentation",
+    "authors": [
+      "Lukas Schneider",
+      "Hannah Weber",
+      "Jonas Richter"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.20944/preprints202512.2518.v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.20944/preprints202512.2518.v1",
+    "abstract": "Conventional 2D or pseudo-3D models often produce anatomically inconsistent stroke lesion masks across slices due to the lack of explicit inter-slice dependency modeling. MSC-Mamba addresses this problem by introducing a bidirectional Mamba backbone tailored to capture long-range interactions along the slice axis. The model encourages coherent lesion boundaries across adjacent slices and reduces abrupt fluctuations caused by noise or low contrast. A topology-aware decoder further improves structural continuity and prevents fragmentation. Experiments on ATLAS v2 (655 subjects; 520 for training and 135 for testing) show that MSC-Mamba achieves a Dice score of 0.856, outperforming nnUNet (0.806, +6.2%) and TransBTS (0.821, +4.3%). HD95 is reduced from 17.1 mm to 10.5 mm (−38.6%), and slice-to-slice contour variance decreases by 19.4%. On a low-contrast subset of 182 cases, MSC-Mamba maintains a Dice of 0.812, which is 9.1% higher than TransBTS. Testing on a secondary clinical cohort reveals a 7.6% Dice improvement and a 13.2% reduction in lesion fragmentation.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6029,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Hybrid Transformer Encoder-Decoder Framework with Collective Deep Learning for Semantic Skin-Lesion Segmentation",
+    "authors": [
+      "Bushra Al-Saadi"
+    ],
+    "year": 2026,
+    "venue": "Journal of Al-Farabi for Engineering Sciences",
+    "doi": "10.59746/ftn10q41",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.59746/ftn10q41",
+    "abstract": "Accurate skin-lesion segmentation remains difficult because dermoscopic images often contain low contrast, irregular borders, hair, illumination variation, and heterogeneous lesion appearance. This study proposes a hybrid Transformer encoder-decoder framework with collective deep learning to combine global contextual modeling with local boundary recovery and complementary prediction fusion. The pipeline uses Wiener filtering and dynamic histogram equalization, patch embedding, hierarchical Swin/Transformer encoding, skip-connected decoding, attention refinement, and normalized validation-based fusion of complementary prediction branches. The framework is evaluated on an internal 70%/15%/15% split of the 2,594 annotated ISIC 2018 Task 1 images using Dice, IoU, accuracy, sensitivity, specificity, computational profiling, component ablation, and descriptive multi-run variability. The proposed model achieved 95.28% Dice, 91.74% IoU, 97.88% accuracy, 95.11% sensitivity, and 98.14% specificity. The available ablation results show progressive gains from Wiener filtering, dynamic histogram equalization, hierarchical Transformer encoding, and attention refinement. The results support the value of integrating image enhancement, hierarchical contextual encoding, boundary-aware reconstruction, and collective prediction within a single lesion-segmentation pipeline. Because the present evidence is limited to an internal ISIC 2018 evaluation and does not include an independent external dataset, generalization claims are deliberately restricted to the evaluated benchmark.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SMC-UNet: Spiral-Scan Mamba and CNN Fusing UNet for Skin Lesion Segmentation",
+    "authors": [
+      "Jiahao Chen",
+      "Weihang Liu",
+      "Jiake Lv"
+    ],
+    "year": 2026,
+    "venue": "Communications in computer and information science",
+    "doi": "10.1007/978-981-92-3531-5_14",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-981-92-3531-5_14",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Convolutional neural network",
+      "Segmentation",
+      "Pattern recognition (psychology)",
+      "Leverage (statistics)",
+      "Kernel (algebra)",
+      "Pooling"
+    ],
+    "score": 0.5979,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "What Can We Learn from Inter-Annotator Variability in Skin Lesion Segmentation?",
+    "authors": [
+      "Kumar Abhishek",
+      "Jeremy Kawahara",
+      "Ghassan Hamarneh"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2508.09381v1",
+    "url": "http://arxiv.org/abs/2508.09381v1",
+    "abstract": "Medical image segmentation exhibits intra- and inter-annotator variability due to ambiguous object boundaries, annotator preferences, expertise, and tools, among other factors. Lesions with ambiguous boundaries, e.g., spiculated or infiltrative nodules, or irregular borders per the ABCD rule, are particularly prone to disagreement and are often associated with malignancy. In this work, we curate IMA++, the largest multi-annotator skin lesion segmentation dataset, on which we conduct an in-depth study of variability due to annotator, malignancy, tool, and skill factors. We find a statistically significant (p<0.001) association between inter-annotator agreement (IAA), measured using Dice, and the malignancy of skin lesions. We further show that IAA can be accurately predicted directly from dermoscopic images, achieving a mean absolute error of 0.108. Finally, we leverage this association by utilizing IAA as a \"soft\" clinical feature within a multi-task learning objective, yielding a 4.2% improvement in balanced accuracy averaged across multiple model architectures and across IMA++ and four public dermoscopic datasets. The code is available at https://github.com/sfu-mial/skin-IAV.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2508.09381v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5979,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "DiffMamba: Leveraging Mamba for Effective Fusion of Noise and Conditional Features in Diffusion Models for Skin Lesion Segmentation",
+    "authors": [
+      "Amit Shakya",
+      "Shruti S. Phutke",
+      "Chetan Gupta",
+      "Rupesh Kumar",
+      "Lalit Sharma",
+      "Chetan Arora"
+    ],
+    "year": 2025,
+    "venue": "Communications in computer and information science",
+    "doi": "10.1007/978-3-031-93703-3_5",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-93703-3_5",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Segmentation",
+      "Noise (video)",
+      "Diffusion",
+      "Fusion",
+      "Computer science",
+      "Artificial intelligence",
+      "Lesion",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.5879,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Segmentation Style Discovery: Application to Skin Lesion Images",
+    "authors": [
+      "Kumar Abhishek",
+      "Jeremy Kawahara",
+      "Ghassan Hamarneh"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2408.02787v1",
+    "url": "http://arxiv.org/abs/2408.02787v1",
+    "abstract": "Variability in medical image segmentation, arising from annotator preferences, expertise, and their choice of tools, has been well documented. While the majority of multi-annotator segmentation approaches focus on modeling annotator-specific preferences, they require annotator-segmentation correspondence. In this work, we introduce the problem of segmentation style discovery, and propose StyleSeg, a segmentation method that learns plausible, diverse, and semantically consistent segmentation styles from a corpus of image-mask pairs without any knowledge of annotator correspondence. StyleSeg consistently outperforms competing methods on four publicly available skin lesion segmentation (SLS) datasets. We also curate ISIC-MultiAnnot, the largest multi-annotator SLS dataset with annotator correspondence, and our results show a strong alignment, using our newly proposed measure AS2, between the predicted styles and annotator preferences. The code and the dataset are available at https://github.com/sfu-mial/StyleSeg.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.02787v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5879,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "A Region of Interest Focused Triple UNet Architecture for Skin Lesion Segmentation",
+    "authors": [
+      "Guoqing Liu",
+      "Yu Guo",
+      "Caiying Wu",
+      "Guoqing Chen",
+      "Barintag Saheya",
+      "Qiyu Jin"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1002/ima.23090",
+    "arxiv_id": "2311.12581v1",
+    "url": "http://arxiv.org/abs/2311.12581v1",
+    "abstract": "Skin lesion segmentation is of great significance for skin lesion analysis and subsequent treatment. It is still a challenging task due to the irregular and fuzzy lesion borders, and diversity of skin lesions. In this paper, we propose Triple-UNet to automatically segment skin lesions. It is an organic combination of three UNet architectures with suitable modules. In order to concatenate the first and second sub-networks more effectively, we design a region of interest enhancement module (ROIE). The ROIE enhances the target object region of the image by using the predicted score map of the first UNet. The features learned by the first UNet and the enhanced image help the second UNet obtain a better score map. Finally, the results are fine-tuned by the third UNet. We evaluate our algorithm on a publicly available dataset of skin lesion segmentation. Experiments show that Triple-UNet outperforms the state-of-the-art on skin lesion segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2311.12581v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.585,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Advancements in Semantic Skin Lesion Segmentation: A Comparative Study with YOLOv8 for Accurate Skin Lesion Segmentation",
+    "authors": [
+      "Vishnudeep M R",
+      "Prateeth Rao",
+      "Lakshmeesha"
+    ],
+    "year": 2023,
+    "venue": "2023 Global Conference on Information Technologies and Communications (GCITC)",
+    "doi": "10.1109/gcitc60406.2023.10425934",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/gcitc60406.2023.10425934",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/10424963/10425791/10425934.pdf?arnumber=10425934",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5829,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Dpms-Unet: Dual-Path Multi-Scale Unet with Parallel Cnn-Mamba Aggregation for Skin Lesion Segmentation",
+    "authors": [
+      "焱 刘",
+      "XunLi Fan",
+      "YingFan Li"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5312894",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5312894",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5757,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Cross-Axis Transformer and Multi-Level Adaptive Feature Fusion Guided U-Net for Skin Lesion Segmentation",
+    "authors": [
+      "zhihui liu",
+      "Jianwen Yang",
+      "Jie Hu"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5885567",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5885567",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5757,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A Survey on Deep Learning for Skin Lesion Segmentation",
+    "authors": [
+      "Zahra Mirikharaji",
+      "Kumar Abhishek",
+      "Alceu Bissoto",
+      "Catarina Barata",
+      "Sandra Avila",
+      "Eduardo Valle",
+      "M. Emre Celebi",
+      "Ghassan Hamarneh"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2023.102863",
+    "arxiv_id": "2206.00356v3",
+    "url": "http://arxiv.org/abs/2206.00356v3",
+    "abstract": "Skin cancer is a major public health problem that could benefit from computer-aided diagnosis to reduce the burden of this common disease. Skin lesion segmentation from images is an important step toward achieving this goal. However, the presence of natural and artificial artifacts (e.g., hair and air bubbles), intrinsic factors (e.g., lesion shape and contrast), and variations in image acquisition conditions make skin lesion segmentation a challenging task. Recently, various researchers have explored the applicability of deep learning models to skin lesion segmentation. In this survey, we cross-examine 177 research papers that deal with deep learning-based segmentation of skin lesions. We analyze these works along several dimensions, including input data (datasets, preprocessing, and synthetic data generation), model design (architecture, modules, and losses), and evaluation aspects (data annotation requirements and segmentation performance). We discuss these dimensions both from the viewpoint of select seminal works, and from a systematic viewpoint, examining how those choices have influenced current trends, and how their limitations should be addressed. To facilitate comparisons, we summarize all examined works in a comprehensive table as well as an interactive table available online at https://github.com/sfu-mial/skin-lesion-segmentation-survey.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2206.00356v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.575,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Accurate and Robust Lesion RECIST Diameter Prediction and Segmentation with Transformers",
+    "authors": [
+      "Youbao Tang",
+      "Ning Zhang",
+      "Yirui Wang",
+      "Shenghua He",
+      "Mei Han",
+      "Jing Xiao",
+      "Ruei-Sung Lin"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2208.13113v1",
+    "url": "http://arxiv.org/abs/2208.13113v1",
+    "abstract": "Automatically measuring lesion/tumor size with RECIST (Response Evaluation Criteria In Solid Tumors) diameters and segmentation is important for computer-aided diagnosis. Although it has been studied in recent years, there is still space to improve its accuracy and robustness, such as (1) enhancing features by incorporating rich contextual information while keeping a high spatial resolution and (2) involving new tasks and losses for joint optimization. To reach this goal, this paper proposes a transformer-based network (MeaFormer, Measurement transFormer) for lesion RECIST diameter prediction and segmentation (LRDPS). It is formulated as three correlative and complementary tasks: lesion segmentation, heatmap prediction, and keypoint regression. To the best of our knowledge, it is the first time to use keypoint regression for RECIST diameter prediction. MeaFormer can enhance high-resolution features by employing transformers to capture their long-range dependencies. Two consistency losses are introduced to explicitly build relationships among these tasks for better optimization. Experiments show that MeaFormer achieves the state-of-the-art performance of LRDPS on the large-scale DeepLesion dataset and produces promising results of two downstream clinic-relevant tasks, i.e., 3D lesion segmentation and RECIST assessment in longitudinal studies.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2208.13113v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5679,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Attmnet: A Composite Attention Mamba Network for Skin Lesion Segmentation",
+    "authors": [
+      "Pengchong Ma",
+      "Guanglei Wang",
+      "Yelin Zhang",
+      "Yan Li"
+    ],
+    "year": 2024,
+    "venue": "",
+    "doi": "10.2139/ssrn.4953297",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.4953297",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5657,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Lesion Boundary Detection for Skin Lesion Segmentation Based on Boundary Sensing and Cnn-Transformer Fusion Networks",
+    "authors": [
+      "XuZhen Huang",
+      "Yuliang Ma",
+      "Xiajin Mei",
+      "Zizhuo Wu",
+      "Mingxu Sun",
+      "Qingshan She"
+    ],
+    "year": 2024,
+    "venue": "",
+    "doi": "10.2139/ssrn.4970410",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.4970410",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5657,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Skin lesion segmentation by fusing local and global features using axial shift and spatial state model",
+    "authors": [
+      "Guangju Li",
+      "Qinghua Huang",
+      "Wei Wang",
+      "Longzhong Liu"
+    ],
+    "year": 2025,
+    "venue": "Applied Soft Computing",
+    "doi": "10.1016/j.asoc.2025.113261",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.asoc.2025.113261",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 6,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Segmentation",
+      "Artificial intelligence",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Computer vision",
+      "Mean-shift",
+      "State (computer science)",
+      "Algorithm"
+    ],
+    "score": 0.5621,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MT-TransUNet: Mediating Multi-Task Tokens in Transformers for Skin Lesion Segmentation and Classification",
+    "authors": [
+      "Jingye Chen",
+      "Jieneng Chen",
+      "Zongwei Zhou",
+      "Bin Li",
+      "Alan Yuille",
+      "Yongyi Lu"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2112.01767v1",
+    "url": "http://arxiv.org/abs/2112.01767v1",
+    "abstract": "Recent advances in automated skin cancer diagnosis have yielded performance on par with board-certified dermatologists. However, these approaches formulated skin cancer diagnosis as a simple classification task, dismissing the potential benefit from lesion segmentation. We argue that an accurate lesion segmentation can supplement the classification task with additive lesion information, such as asymmetry, border, intensity, and physical size; in turn, a faithful lesion classification can support the segmentation task with discriminant lesion features. To this end, this paper proposes a new multi-task framework, named MT-TransUNet, which is capable of segmenting and classifying skin lesions collaboratively by mediating multi-task tokens in Transformers. Furthermore, we have introduced dual-task and attended region consistency losses to take advantage of those images without pixel-level annotation, ensuring the model's robustness when it encounters the same image with an account of augmentation. Our MT-TransUNet exceeds the previous state of the art for lesion segmentation and classification tasks in ISIC-2017 and PH2; more importantly, it preserves compelling computational efficiency regarding model parameters (48M~vs.~130M) and inference speed (0.17s~vs.~2.02s per image). Code will be available at https://github.com/JingyeChen/MT-TransUNet.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2112.01767v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5579,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Less is More: Sample Selection and Label Conditioning Improve Skin Lesion Segmentation",
+    "authors": [
+      "Vinicius Ribeiro",
+      "Sandra Avila",
+      "Eduardo Valle"
+    ],
+    "year": 2020,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2004.13856v1",
+    "url": "http://arxiv.org/abs/2004.13856v1",
+    "abstract": "Segmenting skin lesions images is relevant both for itself and for assisting in lesion classification, but suffers from the challenge in obtaining annotated data. In this work, we show that segmentation may improve with less data, by selecting the training samples with best inter-annotator agreement, and conditioning the ground-truth masks to remove excessive detail. We perform an exhaustive experimental design considering several sources of variation, including three different test sets, two different deep-learning architectures, and several replications, for a total of 540 experimental runs. We found that sample selection and detail removal may have impacts corresponding, respectively, to 12% and 16% of the one obtained by picking a better deep-learning model.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2004.13856v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5479,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MVCA-UNet: A Multi-scale Visual Convolutional Attention Architecture for Skin Lesion Segmentation",
+    "authors": [
+      "Zhaohui Wang",
+      "Runzhi Xu",
+      "Jiyong Xu",
+      "Changfang Chen",
+      "Ruixia Liu"
+    ],
+    "year": 2025,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-981-95-0036-9_18",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-981-95-0036-9_18",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 1,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Architecture",
+      "Artificial intelligence",
+      "Scale (ratio)",
+      "Computer vision",
+      "Pattern recognition (psychology)",
+      "Cartography"
+    ],
+    "score": 0.5272,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Lesion Elevation Prediction from Skin Images Improves Diagnosis",
+    "authors": [
+      "Kumar Abhishek",
+      "Ghassan Hamarneh"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2408.02792v1",
+    "url": "http://arxiv.org/abs/2408.02792v1",
+    "abstract": "While deep learning-based computer-aided diagnosis for skin lesion image analysis is approaching dermatologists' performance levels, there are several works showing that incorporating additional features such as shape priors, texture, color constancy, and illumination further improves the lesion diagnosis performance. In this work, we look at another clinically useful feature, skin lesion elevation, and investigate the feasibility of predicting and leveraging skin lesion elevation labels. Specifically, we use a deep learning model to predict image-level lesion elevation labels from 2D skin lesion images. We test the elevation prediction accuracy on the derm7pt dataset, and use the elevation prediction model to estimate elevation labels for images from five other datasets: ISIC 2016, 2017, and 2018 Challenge datasets, MSK, and DermoFit. We evaluate cross-domain generalization by using these estimated elevation labels as auxiliary inputs to diagnosis models, and show that these improve the classification performance, with AUROC improvements of up to 6.29% and 2.69% for dermoscopic and clinical images, respectively. The code is publicly available at https://github.com/sfu-mial/LesionElevation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.02792v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Exploring the Limitations of Mamba in COPY and CoT Reasoning",
+    "authors": [
+      "Ruifeng Ren",
+      "Zhicong Li",
+      "Yong Liu"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2410.03810v3",
+    "url": "http://arxiv.org/abs/2410.03810v3",
+    "abstract": "Transformers have become the backbone of modern Large Language Models (LLMs); however, their inference overhead grows linearly with the sequence length, posing challenges for modeling long sequences. In light of this, Mamba has attracted attention for maintaining a constant inference size, with empirical evidence demonstrating that it can match Transformer performance in sequence modeling while significantly reducing computational costs. However, an open question remains: can Mamba always bring savings while achieving performance comparable to Transformers? In this paper, we focus on analyzing the expressive ability of Mamba to perform our defined COPY operation and Chain of Thought (CoT) reasoning. First, inspired by the connection between Mamba and linear attention, we show that constant-sized Mamba may struggle to perform COPY operations while Transformers can handle them more easily. However, when the size of Mamba grows linearly with the input sequence length, it can accurately perform COPY, but in this case, Mamba no longer provides overhead savings. Based on this observation, we further analyze Mamba's ability to tackle CoT tasks, which can be described by the Dynamic Programming (DP) problems. Our findings suggest that to solve arbitrary DP problems, the total cost of Mamba is still comparable to standard Transformers. However, similar to efficient Transformers, when facing DP problems with favorable properties such as locality, Mamba can provide savings in overhead. Our experiments on the copy and CoT tasks further demonstrate Mamba's limitations compared to Transformers in learning these tasks.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2410.03810v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5079,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Fuzzy Information Seeded Region Growing for Automated Lesions After Stroke Segmentation in MR Brain Images",
+    "authors": [
+      "Mario Pascual González"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2311.11742v1",
+    "url": "http://arxiv.org/abs/2311.11742v1",
+    "abstract": "In the realm of medical imaging, precise segmentation of stroke lesions from brain MRI images stands as a critical challenge with significant implications for patient diagnosis and treatment. Addressing this, our study introduces an innovative approach using a Fuzzy Information Seeded Region Growing (FISRG) algorithm. Designed to effectively delineate the complex and irregular boundaries of stroke lesions, the FISRG algorithm combines fuzzy logic with Seeded Region Growing (SRG) techniques, aiming to enhance segmentation accuracy. The research involved three experiments to optimize the FISRG algorithm's performance, each focusing on different parameters to improve the accuracy of stroke lesion segmentation. The highest Dice score achieved in these experiments was 94.2\\%, indicating a high degree of similarity between the algorithm's output and the expert-validated ground truth. Notably, the best average Dice score, amounting to 88.1\\%, was recorded in the third experiment, highlighting the efficacy of the algorithm in consistently segmenting stroke lesions across various slices. Our findings reveal the FISRG algorithm's strengths in handling the heterogeneity of stroke lesions. However, challenges remain in areas of abrupt lesion topology changes and in distinguishing lesions from similar intensity brain regions. The results underscore the potential of the FISRG algorithm in contributing significantly to advancements in medical imaging analysis for stroke diagnosis and treatment.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2311.11742v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4979,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "SCM-UNet: Spatial-channel Mamba UNet for medical image segmentation",
+    "authors": [
+      "Haijie Yan",
+      "Qiuhong Hong",
+      "Shoulin Wei",
+      "Xiangliang Zhang",
+      "Jibin Yin"
+    ],
+    "year": 2025,
+    "venue": "Digital Signal Processing",
+    "doi": "10.1016/j.dsp.2025.105550",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.dsp.2025.105550",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 8,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Channel (broadcasting)",
+      "Computer vision",
+      "Artificial intelligence",
+      "Telecommunications"
+    ],
+    "score": 0.4891,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Artifact-Based Domain Generalization of Skin Lesion Models",
+    "authors": [
+      "Alceu Bissoto",
+      "Catarina Barata",
+      "Eduardo Valle",
+      "Sandra Avila"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2208.09756v1",
+    "url": "http://arxiv.org/abs/2208.09756v1",
+    "abstract": "Deep Learning failure cases are abundant, particularly in the medical area. Recent studies in out-of-distribution generalization have advanced considerably on well-controlled synthetic datasets, but they do not represent medical imaging contexts. We propose a pipeline that relies on artifacts annotation to enable generalization evaluation and debiasing for the challenging skin lesion analysis context. First, we partition the data into levels of increasingly higher biased training and test sets for better generalization assessment. Then, we create environments based on skin lesion artifacts to enable domain generalization methods. Finally, after robust training, we perform a test-time debiasing procedure, reducing spurious features in inference images. Our experiments show our pipeline improves performance metrics in biased cases, and avoids artifacts when using explanation methods. Still, when evaluating such models in out-of-distribution data, they did not prefer clinically-meaningful features. Instead, performance only improved in test sets that present similar artifacts from training, suggesting models learned to ignore the known set of artifacts. Our results raise a concern that debiasing models towards a single aspect may not be enough for fair skin lesion analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2208.09756v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4879,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Team NeuroPoly: Description of the Pipelines for the MICCAI 2021 MS New Lesions Segmentation Challenge",
+    "authors": [
+      "Uzay Macar",
+      "Enamundram Naga Karthik",
+      "Charley Gros",
+      "Andréanne Lemay",
+      "Julien Cohen-Adad"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2109.05409v2",
+    "url": "http://arxiv.org/abs/2109.05409v2",
+    "abstract": "This paper gives a detailed description of the pipelines used for the 2nd edition of the MICCAI 2021 Challenge on Multiple Sclerosis Lesion Segmentation. An overview of the data preprocessing steps applied is provided along with a brief description of the pipelines used, in terms of the architecture and the hyperparameters. Our code for this work can be found at: https://github.com/ivadomed/ms-challenge-2021.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2109.05409v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4779,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Analysis of skin lesion images with deep learning",
+    "authors": [
+      "Josef Steppan",
+      "Sten Hanke"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2101.03814v1",
+    "url": "http://arxiv.org/abs/2101.03814v1",
+    "abstract": "Skin cancer is the most common cancer worldwide, with melanoma being the deadliest form. Dermoscopy is a skin imaging modality that has shown an improvement in the diagnosis of skin cancer compared to visual examination without support. We evaluate the current state of the art in the classification of dermoscopic images based on the ISIC-2019 Challenge for the classification of skin lesions and current literature. Various deep neural network architectures pre-trained on the ImageNet data set are adapted to a combined training data set comprised of publicly available dermoscopic and clinical images of skin lesions using transfer learning and model fine-tuning. The performance and applicability of these models for the detection of eight classes of skin lesions are examined. Real-time data augmentation, which uses random rotation, translation, shear, and zoom within specified bounds is used to increase the number of available training samples. Model predictions are multiplied by inverse class frequencies and normalized to better approximate actual probability distributions. Overall prediction accuracy is further increased by using the arithmetic mean of the predictions of several independently trained models. The best single model has been published as a web service.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2101.03814v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4779,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Improved skin lesion recognition by a Self-Supervised Curricular Deep Learning approach",
+    "authors": [
+      "Kirill Sirotkin",
+      "Marcos Escudero-Viñolo",
+      "Pablo Carballeira",
+      "Juan Carlos SanMiguel"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2112.12086v1",
+    "url": "http://arxiv.org/abs/2112.12086v1",
+    "abstract": "State-of-the-art deep learning approaches for skin lesion recognition often require pretraining on larger and more varied datasets, to overcome the generalization limitations derived from the reduced size of the skin lesion imaging datasets. ImageNet is often used as the pretraining dataset, but its transferring potential is hindered by the domain gap between the source dataset and the target dermatoscopic scenario. In this work, we introduce a novel pretraining approach that sequentially trains a series of Self-Supervised Learning pretext tasks and only requires the unlabeled skin lesion imaging data. We present a simple methodology to establish an ordering that defines a pretext task curriculum. For the multi-class skin lesion classification problem, and ISIC-2019 dataset, we provide experimental evidence showing that: i) a model pretrained by a curriculum of pretext tasks outperforms models pretrained by individual pretext tasks, and ii) a model pretrained by the optimal pretext task curriculum outperforms a model pretrained on ImageNet. We demonstrate that this performance gain is related to the fact that the curriculum of pretext tasks better focuses the attention of the final model on the skin lesion. Beyond performance improvement, this strategy allows for a large reduction in the training time with respect to ImageNet pretraining, which is especially advantageous for network architectures tailored for a specific problem.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2112.12086v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4779,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MAMBA-Based Weakly Supervised Medical Image Segmentation with Cross-Modal Textual Information",
+    "authors": [
+      "Zhen Kuan Pan",
+      "Wenhui Huang",
+      "Yuanjie Zheng"
+    ],
+    "year": 2025,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-032-04984-1_29",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-032-04984-1_29",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Segmentation",
+      "Computer vision",
+      "Pattern recognition (psychology)",
+      "Image (mathematics)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.4585,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "CMambaFuse: Circular mamba feature fusion for medical image segmentation",
+    "authors": [
+      "Xudong Wu",
+      "Baohua Yuan",
+      "Juxiao Zhang",
+      "Lin Xiang",
+      "Jin Ma",
+      "Teng Fang",
+      "Dehao Xiao",
+      "Ning Li",
+      "Gaochao Yang",
+      "Lin Shi"
+    ],
+    "year": 2025,
+    "venue": "Signal Image and Video Processing",
+    "doi": "10.1007/s11760-025-04789-y",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11760-025-04789-y",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Segmentation",
+      "Computer science",
+      "Pattern recognition (psychology)",
+      "Image segmentation",
+      "Computer vision",
+      "Feature (linguistics)",
+      "Context (archaeology)"
+    ],
+    "score": 0.4279,
+    "sources": [
+      "openalex"
+    ]
+  }
+]

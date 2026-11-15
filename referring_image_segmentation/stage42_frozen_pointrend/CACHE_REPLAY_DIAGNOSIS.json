@@ -1,0 +1,118 @@
+{
+  "fine": {
+    "equal": false,
+    "max_abs": 0.026480674743652344,
+    "mean_abs": 0.0005453195772133768,
+    "different": 16776436,
+    "shape": [
+      64,
+      64,
+      64,
+      64
+    ],
+    "dtype_a": "torch.bfloat16",
+    "dtype_b": "torch.float32",
+    "stride_a": [
+      262144,
+      4096,
+      64,
+      1
+    ],
+    "stride_b": [
+      262144,
+      4096,
+      64,
+      1
+    ]
+  },
+  "coarse": {
+    "equal": true,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "different": 0,
+    "shape": [
+      64,
+      2,
+      64,
+      64
+    ],
+    "dtype_a": "torch.bfloat16",
+    "dtype_b": "torch.bfloat16",
+    "stride_a": [
+      8192,
+      4096,
+      64,
+      1
+    ],
+    "stride_b": [
+      8192,
+      4096,
+      64,
+      1
+    ]
+  },
+  "output": {
+    "equal": false,
+    "max_abs": 0.4375,
+    "mean_abs": 1.753821925376542e-05,
+    "different": 42312,
+    "shape": [
+      64,
+      1,
+      256,
+      256
+    ],
+    "dtype_a": "torch.bfloat16",
+    "dtype_b": "torch.bfloat16",
+    "stride_a": [
+      65536,
+      65536,
+      256,
+      1
+    ],
+    "stride_b": [
+      65536,
+      65536,
+      256,
+      1
+    ]
+  },
+  "direct_vs_head": {
+    "equal": true,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "different": 0,
+    "shape": [
+      64,
+      1,
+      256,
+      256
+    ],
+    "dtype_a": "torch.bfloat16",
+    "dtype_b": "torch.bfloat16",
+    "stride_a": [
+      65536,
+      65536,
+      256,
+      1
+    ],
+    "stride_b": [
+      65536,
+      65536,
+      256,
+      1
+    ]
+  },
+  "binary_different": 29,
+  "trainable": [
+    "probe.decoder.author_head.point_head.fc1.weight",
+    "probe.decoder.author_head.point_head.fc1.bias",
+    "probe.decoder.author_head.point_head.fc2.weight",
+    "probe.decoder.author_head.point_head.fc2.bias",
+    "probe.decoder.author_head.point_head.fc3.weight",
+    "probe.decoder.author_head.point_head.fc3.bias",
+    "probe.decoder.author_head.point_head.predictor.weight",
+    "probe.decoder.author_head.point_head.predictor.bias"
+  ],
+  "training_modules": []
+}

@@ -1,0 +1,53 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "effective_batch": 64,
+  "encoder_lr": 0.0001,
+  "decoder_lr": 0.001,
+  "weight_decay": 0.01,
+  "selection": "max_validation_macro_dice_earliest_tie",
+  "data_manifest_sha256": "7da7552edb88e4b11fd5a8ee65817c93410f1208be9af70abb2a1e878ece5bdd",
+  "weights_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+  "sources": {
+    "stage27_coverage_supervision/train.py": "819b524496da23747b57c7428b874dc14d11cc48c3a5fb7e8ab7e016ac30ba1b",
+    "stage27_coverage_supervision/PROTOCOL.md": "57ae4ac714ffa2c017cf79043ca37d15a0ecce72549d0eeadf839f362ed839ca",
+    "stage27_coverage_supervision/coverage_aux.py": "8cf863b111cc8cb25f0327b886c83b2bd251e7372eb413800c2c547f4b3e7b60",
+    "stage27_coverage_supervision/DECISION.json": "50d8c6b52999bef0d7104e57044198d578854f600a3d4dab51c8e21bde090824",
+    "stage27_coverage_supervision/analyze.py": "5228b1cf1de7fc98d21400b7c97198309bd5696ba31316b2df18ddc6031a58cb",
+    "stage27_coverage_supervision/run_pipeline.py": "5a336a51718c5a1afea7c164270b359d9edc69add5b2c01ef66515fc40f162ae",
+    "stage27_coverage_supervision/test_protocol.json": "1efb479478e2dcb7564f80e8838e881c12a1feaf687afbf1676e205bb48a29e5",
+    "stage27_coverage_supervision/identity_partition.json": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+    "evaluation.py": "0c94d3fb67d9ce6d749e7fe44c75058c8f44328e6c56bbdaed3dd81541b57223",
+    "stage1_visual/data.py": "3cd157300310ce8fe8850a5f8ceb702d8931b18584d3c65332f76dd71e815c9c",
+    "stage1_visual/models.py": "b9fc9e9a59670243e14d6dfb48e68b1457b16724cc0f402bea993e7e5196eb3b",
+    "stage2_decoder/models.py": "97b0a01be7138de7976d6d221436a17aad90ecd16cf8dcc830dc0bac1098ec2c",
+    "stage3_confirmation/models.py": "c4bcb5d9d4e9599e6ba0f89406ab17f05153b225bd5d20b08cd631190fc520ea",
+    "stage3_confirmation/data.py": "51e92937ab7b5ad85e615c018d96a24fe400e8d3ff685a770c5518b60e9cbfbb",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/configuration_mambavision.py": "5dabf456c3cd4fff9059705ee9deb444e42660ae93cd225763258a43d58e47c0",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/hf_model.py": "fca4ad917b713f1bab9b83e816ecf2447768db0fbc9f1e1fa68839a68061e337",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/mamba_vision.py": "d8d3d60b30cd4e013e351ed23caac0484bc970851ee79f741651f160d66ee2b6",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/modeling_mambavision.py": "292edfdeeb8d145ec3a292911ce825fc7d35bd9df756e183c315c16d9f9dce5a",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/config.json": "0fb65bbc82a2f17ecb3a1df1f4d9ca8c67f8e4e997284df07a0203d2bb86f48d"
+  },
+  "encoder_eval_both": true,
+  "precision": "BF16_autocast_FP32_loss",
+  "deterministic_algorithms": true,
+  "cublas_workspace_config": ":4096:8",
+  "partition_counts": {
+    "train": 1886,
+    "val": 762,
+    "test": 867
+  },
+  "partition": "image_identity_screened_v1",
+  "arms": [
+    "control",
+    "coverage_aux"
+  ],
+  "both_train_late_encoder": true,
+  "coverage_weight": 0.2,
+  "coverage_head_trainable_parameters": {
+    "control": 0,
+    "coverage_aux": 769
+  },
+  "inference_coverage_head": false
+}

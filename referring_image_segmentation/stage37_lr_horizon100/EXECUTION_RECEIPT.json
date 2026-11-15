@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-12T04:31:38.273482+00:00",
+  "formal_training_verified": true,
+  "observed_epoch": 7,
+  "pipeline_pid": 10829,
+  "training_pid": 11516,
+  "arms": [
+    "swin_control",
+    "uct_cca"
+  ],
+  "epochs_per_arm": 100,
+  "lr_horizon": 100,
+  "both_restart_audits_passed": true,
+  "both_stage36_reference_validation_replays_exact": true,
+  "logged_actual_lrs_verified": true,
+  "selection": "max_validation_macro_dice_earliest_tie",
+  "threshold": 0.5,
+  "train_n": 1886,
+  "val_n": 762,
+  "test_n": 867,
+  "test_scheduled_after_both_trainings": true,
+  "server_only": true
+}

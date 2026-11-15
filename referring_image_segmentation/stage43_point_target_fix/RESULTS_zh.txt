@@ -1,0 +1,25 @@
+Stage43：固定已训练基线，只训练点头100轮。原始粗分割经完整验证/测试复现。按验证集选最佳点头，再测试867张。仅保存点头权重，依赖记录的原基线。
+[
+  {
+    "arm": "stage37_swin_control",
+    "best_epoch": 8,
+    "val_macro_dice": 0.8875880434967702,
+    "test_macro_dice": 0.8939605108327608,
+    "test_pooled_dice": 0.8918149968519326
+  },
+  {
+    "arm": "frozen_point",
+    "best_epoch": 35,
+    "val_macro_dice": 0.8865206987454939,
+    "test_macro_dice": 0.8863423114380884,
+    "test_pooled_dice": 0.8872875662190675
+  }
+]
+{
+  "validation_dice_gain_pp": -0.10673447512763445,
+  "validation_boundary_f1_delta": -0.03154321120072601,
+  "rule": "macro Dice gain >=0.1pp and boundaryF1 nondecrease; validation only",
+  "test_used_for_screen": false,
+  "passed": false,
+  "decision": "stop_current_PointRend_adaptation_no_validated_screen_pass"
+}

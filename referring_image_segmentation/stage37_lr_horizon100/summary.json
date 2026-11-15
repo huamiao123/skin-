@@ -1,0 +1,894 @@
+{
+  "complete": true,
+  "arms": {
+    "swin_control": {
+      "arm": "swin_control",
+      "seed": 42,
+      "epochs": 100,
+      "selection": {
+        "arm": "swin_control",
+        "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage37_lr_horizon100/swin_control/results/swin_control_best_dice.pth",
+        "sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526",
+        "epoch": 8,
+        "validation": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8875880434967702,
+            "iou": 0.8138607420233221,
+            "precision": 0.9175074877102842,
+            "recall": 0.8906607926413481
+          },
+          "pooled": {
+            "dice": 0.8922655883553847,
+            "iou": 0.8054869280721078,
+            "precision": 0.9197634565441892,
+            "recall": 0.8663641809006697
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9186351706036745,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6916010498687664,
+            "0.9": 0.30708661417322836
+          },
+          "threshold_jaccard_065": 0.7625283526464428,
+          "counts": {
+            "tp": 10458725,
+            "fp": 912378,
+            "fn": 1613248,
+            "tn": 36954081
+          },
+          "loss": 0.29642314594874547,
+          "diagnostics": {
+            "bce_soft": 0.17271091720563533,
+            "soft_dice_loss": 0.12371222913421671,
+            "wrong_pixels": 2525626,
+            "wrong_mean_confidence": 0.8522822815292118,
+            "wrong_confidence_gt99_fraction": 0.2321111676867438
+          }
+        }
+      },
+      "validation": {
+        "swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8875880434967702,
+            "iou": 0.8138607420233221,
+            "precision": 0.9175074877102842,
+            "recall": 0.8906607926413481,
+            "boundary_f1": 0.3315368319798511,
+            "hd95_pixels": 15.288905652229976,
+            "hd95_diagonal": 0.042230034623488864
+          },
+          "pooled": {
+            "dice": 0.8922655883553847,
+            "iou": 0.8054869280721078,
+            "precision": 0.9197634565441892,
+            "recall": 0.8663641809006697
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.9186351706036745,
+            "0.7": 0.8503937007874016,
+            "0.8": 0.6916010498687664,
+            "0.9": 0.30708661417322836
+          },
+          "threshold_jaccard_065": 0.7625283526464428,
+          "counts": {
+            "tp": 10458725,
+            "fp": 912378,
+            "fn": 1613248,
+            "tn": 36954081
+          },
+          "severe_undercoverage": 28,
+          "epoch": 8,
+          "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+        },
+        "stage36_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8874855631757186,
+            "iou": 0.8144439082388005,
+            "precision": 0.9080372797948729,
+            "recall": 0.9008703795450006,
+            "boundary_f1": 0.3344323818905524,
+            "hd95_pixels": 15.204981876730823,
+            "hd95_diagonal": 0.041998225753339544
+          },
+          "pooled": {
+            "dice": 0.8939380508072474,
+            "iou": 0.8082169822944171,
+            "precision": 0.9091766554137111,
+            "recall": 0.8792018504348875
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.910761154855643,
+            "0.7": 0.847769028871391,
+            "0.8": 0.6981627296587927,
+            "0.9": 0.3188976377952756
+          },
+          "threshold_jaccard_065": 0.7642906246826802,
+          "counts": {
+            "tp": 10613701,
+            "fp": 1060269,
+            "fn": 1458272,
+            "tn": 36806190
+          },
+          "severe_undercoverage": 22,
+          "epoch": 18,
+          "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+        },
+        "stage36_uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8883232053912451,
+            "iou": 0.8153283351583066,
+            "precision": 0.9033775422882865,
+            "recall": 0.9063147167647425,
+            "boundary_f1": 0.3400523592911849,
+            "hd95_pixels": 16.005421192176378,
+            "hd95_diagonal": 0.04420914789349529
+          },
+          "pooled": {
+            "dice": 0.8958106545345988,
+            "iou": 0.8112835522398801,
+            "precision": 0.9027212574655878,
+            "recall": 0.8890050532750529
+          },
+          "prec_at": {
+            "0.5": 0.9553805774278216,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8464566929133859,
+            "0.8": 0.6902887139107612,
+            "0.9": 0.3215223097112861
+          },
+          "threshold_jaccard_065": 0.7637930433011869,
+          "counts": {
+            "tp": 10732045,
+            "fp": 1156503,
+            "fn": 1339928,
+            "tn": 36709956
+          },
+          "severe_undercoverage": 19,
+          "epoch": 25,
+          "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+        }
+      },
+      "test": {
+        "swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8939605108327608,
+            "iou": 0.8212834862427795,
+            "precision": 0.8811951612105414,
+            "recall": 0.9339140678872623,
+            "boundary_f1": 0.2520583696007701,
+            "hd95_pixels": 16.74292252504131,
+            "hd95_diagonal": 0.04624622677475664
+          },
+          "pooled": {
+            "dice": 0.8918149968519326,
+            "iou": 0.8047528114155277,
+            "precision": 0.8961308204571226,
+            "recall": 0.8875405445673288
+          },
+          "prec_at": {
+            "0.5": 0.9653979238754326,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8731257208765859,
+            "0.8": 0.7277970011534025,
+            "0.9": 0.28143021914648214
+          },
+          "threshold_jaccard_065": 0.7774066189547868,
+          "counts": {
+            "tp": 14386158,
+            "fp": 1667478,
+            "fn": 1822857,
+            "tn": 38943219
+          },
+          "severe_undercoverage": 21,
+          "epoch": 8,
+          "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+        },
+        "stage36_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8969779775708917,
+            "iou": 0.8253593189965627,
+            "precision": 0.8745277804084243,
+            "recall": 0.9460196457531069,
+            "boundary_f1": 0.25454158051656545,
+            "hd95_pixels": 16.10152648954899,
+            "hd95_diagonal": 0.04447460378208951
+          },
+          "pooled": {
+            "dice": 0.896442808384947,
+            "iou": 0.8123211150235046,
+            "precision": 0.8832896621916022,
+            "recall": 0.9099936054103226
+          },
+          "prec_at": {
+            "0.5": 0.9607843137254902,
+            "0.6": 0.9354094579008074,
+            "0.7": 0.8765859284890427,
+            "0.8": 0.7220299884659747,
+            "0.9": 0.31833910034602075
+          },
+          "threshold_jaccard_065": 0.7858816559721779,
+          "counts": {
+            "tp": 14750100,
+            "fp": 1948952,
+            "fn": 1458915,
+            "tn": 38661745
+          },
+          "severe_undercoverage": 19,
+          "epoch": 18,
+          "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+        },
+        "stage36_uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8919274913686919,
+            "iou": 0.8179995100033548,
+            "precision": 0.8602707313090547,
+            "recall": 0.9534604662417708,
+            "boundary_f1": 0.2586659653913569,
+            "hd95_pixels": 17.50923089310078,
+            "hd95_diagonal": 0.04836287460106466
+          },
+          "pooled": {
+            "dice": 0.8929734887012529,
+            "iou": 0.8066414666561414,
+            "precision": 0.8648893527843353,
+            "recall": 0.9229426957776274
+          },
+          "prec_at": {
+            "0.5": 0.9642445213379469,
+            "0.6": 0.9273356401384083,
+            "0.7": 0.8535178777393311,
+            "0.8": 0.6828143021914648,
+            "0.9": 0.31141868512110726
+          },
+          "threshold_jaccard_065": 0.7653711444250515,
+          "counts": {
+            "tp": 14959992,
+            "fp": 2337009,
+            "fn": 1249023,
+            "tn": 38273688
+          },
+          "severe_undercoverage": 15,
+          "epoch": 25,
+          "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+        }
+      },
+      "comparisons": {
+        "validation": {
+          "stage36_swin_control_vs_swin_control": {
+            "macro_dice_delta": 0.0001024803210515625,
+            "image_bootstrap95": [
+              -0.0030304665332808243,
+              0.0037182967715807223
+            ],
+            "improved": 331,
+            "worsened": 431,
+            "gains_over5pp": 38,
+            "losses_over5pp": 32,
+            "net_reduced_fn": -154976,
+            "net_added_fp": -147891,
+            "severe_undercoverage": [
+              22,
+              28
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          },
+          "stage36_uct_cca_vs_swin_control": {
+            "macro_dice_delta": -0.0007351618944750325,
+            "image_bootstrap95": [
+              -0.004891385279265427,
+              0.0034667811020171065
+            ],
+            "improved": 331,
+            "worsened": 431,
+            "gains_over5pp": 57,
+            "losses_over5pp": 48,
+            "net_reduced_fn": -273320,
+            "net_added_fp": -244125,
+            "severe_undercoverage": [
+              19,
+              28
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        },
+        "test": {
+          "stage36_swin_control_vs_swin_control": {
+            "macro_dice_delta": -0.0030174667381308107,
+            "image_bootstrap95": [
+              -0.006029294055525632,
+              -0.00015833658868906624
+            ],
+            "improved": 400,
+            "worsened": 467,
+            "gains_over5pp": 35,
+            "losses_over5pp": 47,
+            "net_reduced_fn": -363942,
+            "net_added_fp": -281474,
+            "severe_undercoverage": [
+              19,
+              21
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          },
+          "stage36_uct_cca_vs_swin_control": {
+            "macro_dice_delta": 0.0020330194640688637,
+            "image_bootstrap95": [
+              -0.0017476409470130628,
+              0.005940326991328708
+            ],
+            "improved": 438,
+            "worsened": 429,
+            "gains_over5pp": 80,
+            "losses_over5pp": 56,
+            "net_reduced_fn": -573834,
+            "net_added_fp": -669531,
+            "severe_undercoverage": [
+              15,
+              21
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        }
+      },
+      "test_evaluated": true,
+      "complete": true,
+      "train_n": 1886,
+      "validation_n": 762,
+      "test_n": 867,
+      "normalization": "author module BatchNorm retained; all encoder modules eval",
+      "lr_horizon": 100,
+      "primary_comparison": "Same4090 2x2 architecture and LR horizon; aggregate after both new evaluations",
+      "archived_reference_caveat": "Stage36 references match hardware, physical batch, initialization and data; only lr horizon differs within each architecture",
+      "validation_only_screen": {
+        "status": "defer_to_final_paired_validation",
+        "test_used_for_selection": false
+      }
+    },
+    "uct_cca": {
+      "arm": "uct_cca",
+      "seed": 42,
+      "epochs": 100,
+      "selection": {
+        "arm": "uct_cca",
+        "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage37_lr_horizon100/uct_cca/results/uct_cca_best_dice.pth",
+        "sha256": "5a8297509afb3ddee29859e6b1bac7fc41212fe68b7894afb87dcafb5f05b5d2",
+        "epoch": 37,
+        "validation": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8869183208523113,
+            "iou": 0.812785019189993,
+            "precision": 0.8986693133196596,
+            "recall": 0.9092936220629733
+          },
+          "pooled": {
+            "dice": 0.8934026792099815,
+            "iou": 0.8073421672231831,
+            "precision": 0.8973303121857179,
+            "recall": 0.8895092790548819
+          },
+          "prec_at": {
+            "0.5": 0.9553805774278216,
+            "0.6": 0.9199475065616798,
+            "0.7": 0.8530183727034121,
+            "0.8": 0.6850393700787402,
+            "0.9": 0.2979002624671916
+          },
+          "threshold_jaccard_065": 0.7660798234505977,
+          "counts": {
+            "tp": 10738132,
+            "fp": 1228623,
+            "fn": 1333841,
+            "tn": 36637836
+          },
+          "loss": 0.3653750430567684,
+          "diagnostics": {
+            "bce_soft": 0.24812090631545058,
+            "soft_dice_loss": 0.11725412751120219,
+            "wrong_pixels": 2562464,
+            "wrong_mean_confidence": 0.9027418313414429,
+            "wrong_confidence_gt99_fraction": 0.4237522946663836
+          }
+        }
+      },
+      "validation": {
+        "uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8869183208523113,
+            "iou": 0.812785019189993,
+            "precision": 0.8986693133196596,
+            "recall": 0.9092936220629733,
+            "boundary_f1": 0.31509646390968216,
+            "hd95_pixels": 15.608638447418487,
+            "hd95_diagonal": 0.0431131800439792
+          },
+          "pooled": {
+            "dice": 0.8934026792099815,
+            "iou": 0.8073421672231831,
+            "precision": 0.8973303121857179,
+            "recall": 0.8895092790548819
+          },
+          "prec_at": {
+            "0.5": 0.9553805774278216,
+            "0.6": 0.9199475065616798,
+            "0.7": 0.8530183727034121,
+            "0.8": 0.6850393700787402,
+            "0.9": 0.2979002624671916
+          },
+          "threshold_jaccard_065": 0.7660798234505977,
+          "counts": {
+            "tp": 10738132,
+            "fp": 1228623,
+            "fn": 1333841,
+            "tn": 36637836
+          },
+          "severe_undercoverage": 21,
+          "epoch": 37,
+          "checkpoint_sha256": "5a8297509afb3ddee29859e6b1bac7fc41212fe68b7894afb87dcafb5f05b5d2"
+        },
+        "stage36_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8874855631757186,
+            "iou": 0.8144439082388005,
+            "precision": 0.9080372797948729,
+            "recall": 0.9008703795450006,
+            "boundary_f1": 0.3344323818905524,
+            "hd95_pixels": 15.204981876730823,
+            "hd95_diagonal": 0.041998225753339544
+          },
+          "pooled": {
+            "dice": 0.8939380508072474,
+            "iou": 0.8082169822944171,
+            "precision": 0.9091766554137111,
+            "recall": 0.8792018504348875
+          },
+          "prec_at": {
+            "0.5": 0.9514435695538058,
+            "0.6": 0.910761154855643,
+            "0.7": 0.847769028871391,
+            "0.8": 0.6981627296587927,
+            "0.9": 0.3188976377952756
+          },
+          "threshold_jaccard_065": 0.7642906246826802,
+          "counts": {
+            "tp": 10613701,
+            "fp": 1060269,
+            "fn": 1458272,
+            "tn": 36806190
+          },
+          "severe_undercoverage": 22,
+          "epoch": 18,
+          "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+        },
+        "stage36_uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8883232053912451,
+            "iou": 0.8153283351583066,
+            "precision": 0.9033775422882865,
+            "recall": 0.9063147167647425,
+            "boundary_f1": 0.3400523592911849,
+            "hd95_pixels": 16.005421192176378,
+            "hd95_diagonal": 0.04420914789349529
+          },
+          "pooled": {
+            "dice": 0.8958106545345988,
+            "iou": 0.8112835522398801,
+            "precision": 0.9027212574655878,
+            "recall": 0.8890050532750529
+          },
+          "prec_at": {
+            "0.5": 0.9553805774278216,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8464566929133859,
+            "0.8": 0.6902887139107612,
+            "0.9": 0.3215223097112861
+          },
+          "threshold_jaccard_065": 0.7637930433011869,
+          "counts": {
+            "tp": 10732045,
+            "fp": 1156503,
+            "fn": 1339928,
+            "tn": 36709956
+          },
+          "severe_undercoverage": 19,
+          "epoch": 25,
+          "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+        }
+      },
+      "test": {
+        "uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8861415033007691,
+            "iou": 0.8076528561659658,
+            "precision": 0.8464209854109137,
+            "recall": 0.9576019495246736,
+            "boundary_f1": 0.21124679671480126,
+            "hd95_pixels": 17.45236803710959,
+            "hd95_diagonal": 0.04820581166720135
+          },
+          "pooled": {
+            "dice": 0.8895605253894283,
+            "iou": 0.8010887092260431,
+            "precision": 0.8548950421417976,
+            "recall": 0.9271561535355479
+          },
+          "prec_at": {
+            "0.5": 0.9596309111880046,
+            "0.6": 0.9261822376009228,
+            "0.7": 0.8442906574394463,
+            "0.8": 0.6505190311418685,
+            "0.9": 0.23298731257208766
+          },
+          "threshold_jaccard_065": 0.7593525868097577,
+          "counts": {
+            "tp": 15028288,
+            "fp": 2550815,
+            "fn": 1180727,
+            "tn": 38059882
+          },
+          "severe_undercoverage": 15,
+          "epoch": 37,
+          "checkpoint_sha256": "5a8297509afb3ddee29859e6b1bac7fc41212fe68b7894afb87dcafb5f05b5d2"
+        },
+        "stage36_swin_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8969779775708917,
+            "iou": 0.8253593189965627,
+            "precision": 0.8745277804084243,
+            "recall": 0.9460196457531069,
+            "boundary_f1": 0.25454158051656545,
+            "hd95_pixels": 16.10152648954899,
+            "hd95_diagonal": 0.04447460378208951
+          },
+          "pooled": {
+            "dice": 0.896442808384947,
+            "iou": 0.8123211150235046,
+            "precision": 0.8832896621916022,
+            "recall": 0.9099936054103226
+          },
+          "prec_at": {
+            "0.5": 0.9607843137254902,
+            "0.6": 0.9354094579008074,
+            "0.7": 0.8765859284890427,
+            "0.8": 0.7220299884659747,
+            "0.9": 0.31833910034602075
+          },
+          "threshold_jaccard_065": 0.7858816559721779,
+          "counts": {
+            "tp": 14750100,
+            "fp": 1948952,
+            "fn": 1458915,
+            "tn": 38661745
+          },
+          "severe_undercoverage": 19,
+          "epoch": 18,
+          "checkpoint_sha256": "35d8968a9fb66665ce2b99f063ba1be35f62c21ae57df38224c04e2786d391b0"
+        },
+        "stage36_uct_cca": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8919274913686919,
+            "iou": 0.8179995100033548,
+            "precision": 0.8602707313090547,
+            "recall": 0.9534604662417708,
+            "boundary_f1": 0.2586659653913569,
+            "hd95_pixels": 17.50923089310078,
+            "hd95_diagonal": 0.04836287460106466
+          },
+          "pooled": {
+            "dice": 0.8929734887012529,
+            "iou": 0.8066414666561414,
+            "precision": 0.8648893527843353,
+            "recall": 0.9229426957776274
+          },
+          "prec_at": {
+            "0.5": 0.9642445213379469,
+            "0.6": 0.9273356401384083,
+            "0.7": 0.8535178777393311,
+            "0.8": 0.6828143021914648,
+            "0.9": 0.31141868512110726
+          },
+          "threshold_jaccard_065": 0.7653711444250515,
+          "counts": {
+            "tp": 14959992,
+            "fp": 2337009,
+            "fn": 1249023,
+            "tn": 38273688
+          },
+          "severe_undercoverage": 15,
+          "epoch": 25,
+          "checkpoint_sha256": "493521762cc87ab8f5869b04429cced56edc7d65d4207dd2a19da9b296c4cc55"
+        }
+      },
+      "comparisons": {
+        "validation": {
+          "stage36_swin_control_vs_uct_cca": {
+            "macro_dice_delta": -0.0005672423234074426,
+            "image_bootstrap95": [
+              -0.004453849607057633,
+              0.003656373586492248
+            ],
+            "improved": 375,
+            "worsened": 387,
+            "gains_over5pp": 49,
+            "losses_over5pp": 54,
+            "net_reduced_fn": 124431,
+            "net_added_fp": 168354,
+            "severe_undercoverage": [
+              22,
+              21
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          },
+          "stage36_uct_cca_vs_uct_cca": {
+            "macro_dice_delta": -0.0014048845389340377,
+            "image_bootstrap95": [
+              -0.004071390256888222,
+              0.0011383741314029458
+            ],
+            "improved": 361,
+            "worsened": 401,
+            "gains_over5pp": 26,
+            "losses_over5pp": 31,
+            "net_reduced_fn": 6087,
+            "net_added_fp": 72120,
+            "severe_undercoverage": [
+              19,
+              21
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        },
+        "test": {
+          "stage36_swin_control_vs_uct_cca": {
+            "macro_dice_delta": -0.010836474270122343,
+            "image_bootstrap95": [
+              -0.014633850711177315,
+              -0.00717868648719164
+            ],
+            "improved": 325,
+            "worsened": 542,
+            "gains_over5pp": 34,
+            "losses_over5pp": 80,
+            "net_reduced_fn": 278188,
+            "net_added_fp": 601863,
+            "severe_undercoverage": [
+              19,
+              15
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          },
+          "stage36_uct_cca_vs_uct_cca": {
+            "macro_dice_delta": -0.005785988067922671,
+            "image_bootstrap95": [
+              -0.008004456807348721,
+              -0.0036127311348452414
+            ],
+            "improved": 308,
+            "worsened": 559,
+            "gains_over5pp": 33,
+            "losses_over5pp": 42,
+            "net_reduced_fn": 68296,
+            "net_added_fp": 213806,
+            "severe_undercoverage": [
+              15,
+              15
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        }
+      },
+      "test_evaluated": true,
+      "complete": true,
+      "train_n": 1886,
+      "validation_n": 762,
+      "test_n": 867,
+      "normalization": "author module BatchNorm retained; all encoder modules eval",
+      "lr_horizon": 100,
+      "primary_comparison": "Same4090 2x2 architecture and LR horizon; aggregate after both new evaluations",
+      "archived_reference_caveat": "Stage36 references match hardware, physical batch, initialization and data; only lr horizon differs within each architecture",
+      "validation_only_screen": {
+        "status": "defer_to_final_paired_validation",
+        "test_used_for_selection": false
+      }
+    }
+  },
+  "paired": {
+    "validation": {
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": -0.0006697226444590051,
+        "image_bootstrap95": [
+          -0.0052356350064851325,
+          0.0040821970295986465
+        ],
+        "improved": 389,
+        "worsened": 373,
+        "gains_over5pp": 54,
+        "losses_over5pp": 56,
+        "net_reduced_fn": 279407,
+        "net_added_fp": 316245,
+        "severe_undercoverage": [
+          28,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "swin_control_minus_stage36_swin_control": {
+        "macro_dice_delta": 0.0001024803210515625,
+        "image_bootstrap95": [
+          -0.0030304665332808243,
+          0.0037182967715807223
+        ],
+        "improved": 331,
+        "worsened": 431,
+        "gains_over5pp": 38,
+        "losses_over5pp": 32,
+        "net_reduced_fn": -154976,
+        "net_added_fp": -147891,
+        "severe_undercoverage": [
+          22,
+          28
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_stage36_uct_cca": {
+        "macro_dice_delta": -0.0014048845389340377,
+        "image_bootstrap95": [
+          -0.004071390256888222,
+          0.0011383741314029458
+        ],
+        "improved": 361,
+        "worsened": 401,
+        "gains_over5pp": 26,
+        "losses_over5pp": 31,
+        "net_reduced_fn": 6087,
+        "net_added_fp": 72120,
+        "severe_undercoverage": [
+          19,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "stage36_uct_cca_minus_stage36_swin_control": {
+        "macro_dice_delta": 0.0008376422155265947,
+        "image_bootstrap95": [
+          -0.0021621870002751426,
+          0.004325330474939703
+        ],
+        "improved": 395,
+        "worsened": 366,
+        "gains_over5pp": 36,
+        "losses_over5pp": 51,
+        "net_reduced_fn": 118344,
+        "net_added_fp": 96234,
+        "severe_undercoverage": [
+          22,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "schedule_by_module_interaction": {
+        "macro_dice_delta": -0.0015073648599855998,
+        "image_bootstrap95": [
+          -0.00582037895233468,
+          0.0024139861221162354
+        ],
+        "definition": "(CCA100-Swin100)-(CCA300first100-Swin300first100)",
+        "note": "Single seed; exploratory paired image bootstrap, not seed/patient uncertainty."
+      }
+    },
+    "test": {
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": -0.007819007531991535,
+        "image_bootstrap95": [
+          -0.011994668018102719,
+          -0.003646235572999271
+        ],
+        "improved": 323,
+        "worsened": 544,
+        "gains_over5pp": 57,
+        "losses_over5pp": 98,
+        "net_reduced_fn": 642130,
+        "net_added_fp": 883337,
+        "severe_undercoverage": [
+          21,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "swin_control_minus_stage36_swin_control": {
+        "macro_dice_delta": -0.0030174667381308107,
+        "image_bootstrap95": [
+          -0.006029294055525632,
+          -0.00015833658868906624
+        ],
+        "improved": 400,
+        "worsened": 467,
+        "gains_over5pp": 35,
+        "losses_over5pp": 47,
+        "net_reduced_fn": -363942,
+        "net_added_fp": -281474,
+        "severe_undercoverage": [
+          19,
+          21
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_stage36_uct_cca": {
+        "macro_dice_delta": -0.005785988067922671,
+        "image_bootstrap95": [
+          -0.008004456807348721,
+          -0.0036127311348452414
+        ],
+        "improved": 308,
+        "worsened": 559,
+        "gains_over5pp": 33,
+        "losses_over5pp": 42,
+        "net_reduced_fn": 68296,
+        "net_added_fp": 213806,
+        "severe_undercoverage": [
+          15,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "stage36_uct_cca_minus_stage36_swin_control": {
+        "macro_dice_delta": -0.005050486202199674,
+        "image_bootstrap95": [
+          -0.00872772008198286,
+          -0.0015942825914222766
+        ],
+        "improved": 411,
+        "worsened": 456,
+        "gains_over5pp": 32,
+        "losses_over5pp": 69,
+        "net_reduced_fn": 209892,
+        "net_added_fp": 388057,
+        "severe_undercoverage": [
+          19,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "schedule_by_module_interaction": {
+        "macro_dice_delta": -0.002768521329791861,
+        "image_bootstrap95": [
+          -0.006403050945029976,
+          0.0010473450451210075
+        ],
+        "definition": "(CCA100-Swin100)-(CCA300first100-Swin300first100)",
+        "note": "Single seed; exploratory paired image bootstrap, not seed/patient uncertainty."
+      }
+    }
+  },
+  "test_n_per_arm": 867
+}

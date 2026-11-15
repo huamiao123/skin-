@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checks": {
+    "frozen_point": {
+      "point_head_only_trainable": true,
+      "trainable_names": [
+        "probe.decoder.author_head.point_head.fc1.weight",
+        "probe.decoder.author_head.point_head.fc1.bias",
+        "probe.decoder.author_head.point_head.fc2.weight",
+        "probe.decoder.author_head.point_head.fc2.bias",
+        "probe.decoder.author_head.point_head.fc3.weight",
+        "probe.decoder.author_head.point_head.fc3.bias",
+        "probe.decoder.author_head.point_head.predictor.weight",
+        "probe.decoder.author_head.point_head.predictor.bias"
+      ],
+      "frozen_hash_unchanged": "ca6cdf53455d7f4c3e679965023af1f0cb8baaf970bb2eade09c97d22ee65af8",
+      "point_head_changed": true,
+      "replayed_optimizer_update_bitwise_exact": true,
+      "replay_loss_exact": true,
+      "cache_vs_direct_logits_exact": true,
+      "all762_coarse_masks_exact": true,
+      "real_data_loss": 0.6266776323318481,
+      "gradient_norms": {
+        "decoder": 1.9140136241912842
+      }
+    }
+  }
+}

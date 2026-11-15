@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "checks": {
+    "shifted_windows": {
+      "all_pretrained_encoder_tensors_exact": true,
+      "raw_encoder_feature_cache_exact": true,
+      "original_soft_targets_exact": true,
+      "cache_vs_direct_logits_exact": true,
+      "frozen_prefix_unchanged": true,
+      "all_head_parameters_receive_gradient": true,
+      "gradient_l1": {
+        "decoder.conv_seg.weight": 7.217519760131836,
+        "decoder.conv_seg.bias": 0.14574341475963593,
+        "decoder.psp_modules.0.1.conv.weight": 0.009210001677274704,
+        "decoder.psp_modules.0.1.bn.weight": 7.387679215753451e-05,
+        "decoder.psp_modules.0.1.bn.bias": 5.272520502330735e-05,
+        "decoder.psp_modules.1.1.conv.weight": 0.008593827486038208,
+        "decoder.psp_modules.1.1.bn.weight": 5.8605135563993827e-05,
+        "decoder.psp_modules.1.1.bn.bias": 4.961120430380106e-05,
+        "decoder.psp_modules.2.1.conv.weight": 0.008981185033917427,
+        "decoder.psp_modules.2.1.bn.weight": 6.77083880873397e-05,
+        "decoder.psp_modules.2.1.bn.bias": 6.061386375222355e-05,
+        "decoder.psp_modules.3.1.conv.weight": 0.007010777480900288,
+        "decoder.psp_modules.3.1.bn.weight": 4.798081499757245e-05,
+        "decoder.psp_modules.3.1.bn.bias": 4.236298627802171e-05,
+        "decoder.bottleneck.conv.weight": 7.911110877990723,
+        "decoder.bottleneck.bn.weight": 0.012554305605590343,
+        "decoder.bottleneck.bn.bias": 0.01395547017455101,
+        "decoder.lateral_convs.0.conv.weight": 0.12967780232429504,
+        "decoder.lateral_convs.0.bn.weight": 0.0034041977487504482,
+        "decoder.lateral_convs.0.bn.bias": 0.0023483724799007177,
+        "decoder.lateral_convs.1.conv.weight": 0.3222509026527405,
+        "decoder.lateral_convs.1.bn.weight": 0.0061727710999548435,
+        "decoder.lateral_convs.1.bn.bias": 0.0046355752274394035,
+        "decoder.lateral_convs.2.conv.weight": 0.7636309862136841,
+        "decoder.lateral_convs.2.bn.weight": 0.009631776250898838,
+        "decoder.lateral_convs.2.bn.bias": 0.009093930013477802,
+        "decoder.fpn_convs.0.conv.weight": 2.6045403480529785,
+        "decoder.fpn_convs.0.bn.weight": 0.008659690618515015,
+        "decoder.fpn_convs.0.bn.bias": 0.0065228682942688465,
+        "decoder.fpn_convs.1.conv.weight": 2.9806387424468994,
+        "decoder.fpn_convs.1.bn.weight": 0.00906614400446415,
+        "decoder.fpn_convs.1.bn.bias": 0.00822354108095169,
+        "decoder.fpn_convs.2.conv.weight": 2.939359664916992,
+        "decoder.fpn_convs.2.bn.weight": 0.008760467171669006,
+        "decoder.fpn_convs.2.bn.bias": 0.007475501857697964,
+        "decoder.fpn_bottleneck.conv.weight": 11.18701171875,
+        "decoder.fpn_bottleneck.bn.weight": 0.06662826240062714,
+        "decoder.fpn_bottleneck.bn.bias": 0.05404046177864075
+      },
+      "gradient_norms": {
+        "decoder": 1.0184842348098755,
+        "encoder": 0.04456043615937233
+      },
+      "new_relative_bias_gradient_l1": {
+        "encoder.model.levels.2.blocks.4.attn.relative_position_bias_table": 0.0037212283350527287,
+        "encoder.model.levels.2.blocks.5.attn.relative_position_bias_table": 0.003898964263498783,
+        "encoder.model.levels.2.blocks.6.attn.relative_position_bias_table": 0.0025153188034892082,
+        "encoder.model.levels.3.blocks.3.attn.relative_position_bias_table": 0.002277640625834465,
+        "encoder.model.levels.3.blocks.4.attn.relative_position_bias_table": 0.001807003514841199
+      },
+      "loss": 1.295034646987915,
+      "replay_loss_exact": true,
+      "replay_update": {
+        "encoder": {
+          "relative_l2": 0.000809457004613303,
+          "max_abs": 3.1828880310058594e-05
+        },
+        "decoder": {
+          "relative_l2": 0.0,
+          "max_abs": 0.0
+        }
+      },
+      "replayed_buffers_exact": true
+    }
+  }
+}

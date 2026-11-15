@@ -1,0 +1,8 @@
+Stage37完成：新2组各100轮，复用Stage36旧2组；仅改学习率衰减分母300到100。最佳权重按验证集逐图宏平均Dice选择。
+
+stage36/swin_control, horizon=300, best_epoch=18, val_macro_Dice=0.88748556, test_macro_Dice=0.89697798, test_pooled_Dice=0.89644281
+stage36/uct_cca, horizon=300, best_epoch=25, val_macro_Dice=0.88832321, test_macro_Dice=0.89192749, test_pooled_Dice=0.89297349
+stage37/swin_control, horizon=100, best_epoch=8, val_macro_Dice=0.88758804, test_macro_Dice=0.89396051, test_pooled_Dice=0.89181500
+stage37/uct_cca, horizon=100, best_epoch=37, val_macro_Dice=0.88691832, test_macro_Dice=0.88614150, test_pooled_Dice=0.88956053
+
+分别报告训练曲线收益、同配方下CCA收益，以及两者交互。单seed；既有测试集已暴露，不能视作全新独立确认。

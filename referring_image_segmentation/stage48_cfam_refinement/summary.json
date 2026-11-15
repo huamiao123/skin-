@@ -1,0 +1,574 @@
+{
+  "complete": true,
+  "arms": {
+    "cfam": {
+      "arm": "cfam",
+      "seed": 42,
+      "epochs": 100,
+      "selection": {
+        "arm": "cfam",
+        "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/cfam/results/cfam_best_dice.pth",
+        "sha256": "1fdaacfa78abc12ac8647bc03f9ebfa6d86e94545913cae8cf852df3195e978d",
+        "epoch": 39,
+        "validation": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8915916393072942,
+            "iou": 0.8197422560367942,
+            "precision": 0.9036935311640037,
+            "recall": 0.9108516052284812
+          },
+          "pooled": {
+            "dice": 0.8987535338451851,
+            "iou": 0.8161238755056646,
+            "precision": 0.9039315997253331,
+            "recall": 0.8936344539537986
+          },
+          "prec_at": {
+            "0.5": 0.9606299212598425,
+            "0.6": 0.9199475065616798,
+            "0.7": 0.8517060367454068,
+            "0.8": 0.7060367454068242,
+            "0.9": 0.3333333333333333
+          },
+          "threshold_jaccard_065": 0.7661452699604882,
+          "counts": {
+            "tp": 10787931,
+            "fp": 1146524,
+            "fn": 1284042,
+            "tn": 36719935
+          },
+          "loss": 0.325640507101074,
+          "diagnostics": {
+            "bce_soft": 0.21241098571950057,
+            "soft_dice_loss": 0.11322953241077933,
+            "wrong_pixels": 2430566,
+            "wrong_mean_confidence": 0.9038096287278223,
+            "wrong_confidence_gt99_fraction": 0.4018837587623623
+          }
+        }
+      },
+      "validation": {
+        "cfam": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8915916393072942,
+            "iou": 0.8197422560367942,
+            "precision": 0.9036935311640037,
+            "recall": 0.9108516052284812,
+            "boundary_f1": 0.3355961952816188,
+            "hd95_pixels": 14.618508759880374,
+            "hd95_diagonal": 0.04037830732400921
+          },
+          "pooled": {
+            "dice": 0.8987535338451851,
+            "iou": 0.8161238755056646,
+            "precision": 0.9039315997253331,
+            "recall": 0.8936344539537986
+          },
+          "prec_at": {
+            "0.5": 0.9606299212598425,
+            "0.6": 0.9199475065616798,
+            "0.7": 0.8517060367454068,
+            "0.8": 0.7060367454068242,
+            "0.9": 0.3333333333333333
+          },
+          "threshold_jaccard_065": 0.7661452699604882,
+          "counts": {
+            "tp": 10787931,
+            "fp": 1146524,
+            "fn": 1284042,
+            "tn": 36719935
+          },
+          "severe_undercoverage": 18,
+          "epoch": 39,
+          "checkpoint_sha256": "1fdaacfa78abc12ac8647bc03f9ebfa6d86e94545913cae8cf852df3195e978d"
+        },
+        "stage45_uper64": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8928067011343184,
+            "iou": 0.8220574119887529,
+            "precision": 0.9101313038297763,
+            "recall": 0.9069263351367866,
+            "boundary_f1": 0.35130680589552465,
+            "hd95_pixels": 14.588496959484564,
+            "hd95_diagonal": 0.04029541065379244
+          },
+          "pooled": {
+            "dice": 0.899468767065989,
+            "iou": 0.8173041710665581,
+            "precision": 0.9103178360817118,
+            "recall": 0.8888752484784385
+          },
+          "prec_at": {
+            "0.5": 0.958005249343832,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8569553805774278,
+            "0.8": 0.7165354330708661,
+            "0.9": 0.3530183727034121
+          },
+          "threshold_jaccard_065": 0.7738263321873545,
+          "counts": {
+            "tp": 10730478,
+            "fp": 1057139,
+            "fn": 1341495,
+            "tn": 36809320
+          },
+          "severe_undercoverage": 21,
+          "epoch": 39,
+          "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+        }
+      },
+      "test": {
+        "cfam": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8905239137778529,
+            "iou": 0.8153413162641892,
+            "precision": 0.8567594356403642,
+            "recall": 0.9549641985272491,
+            "boundary_f1": 0.23871253557624095,
+            "hd95_pixels": 16.76279090325655,
+            "hd95_diagonal": 0.04630110593478468
+          },
+          "pooled": {
+            "dice": 0.8933127716415531,
+            "iou": 0.8071953382588567,
+            "precision": 0.8639746237938823,
+            "recall": 0.924713438786996
+          },
+          "prec_at": {
+            "0.5": 0.9596309111880046,
+            "0.6": 0.9296424452133795,
+            "0.7": 0.8592848904267589,
+            "0.8": 0.6585928489042676,
+            "0.9": 0.3033448673587082
+          },
+          "threshold_jaccard_065": 0.7662673395976153,
+          "counts": {
+            "tp": 14988694,
+            "fp": 2359841,
+            "fn": 1220321,
+            "tn": 38250856
+          },
+          "severe_undercoverage": 14,
+          "epoch": 39,
+          "checkpoint_sha256": "1fdaacfa78abc12ac8647bc03f9ebfa6d86e94545913cae8cf852df3195e978d"
+        },
+        "stage45_uper64": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8966259106591898,
+            "iou": 0.8251672240975944,
+            "precision": 0.8692985300242783,
+            "recall": 0.9522786887413297,
+            "boundary_f1": 0.26931478378295826,
+            "hd95_pixels": 16.26075513815394,
+            "hd95_diagonal": 0.044914414942979076
+          },
+          "pooled": {
+            "dice": 0.8979914265902919,
+            "iou": 0.8148679132430251,
+            "precision": 0.8741091432254756,
+            "recall": 0.9232153835381114
+          },
+          "prec_at": {
+            "0.5": 0.9642445213379469,
+            "0.6": 0.936562860438293,
+            "0.7": 0.8754325259515571,
+            "0.8": 0.698961937716263,
+            "0.9": 0.3402537485582468
+          },
+          "threshold_jaccard_065": 0.7838454681285856,
+          "counts": {
+            "tp": 14964412,
+            "fp": 2155203,
+            "fn": 1244603,
+            "tn": 38455494
+          },
+          "severe_undercoverage": 14,
+          "epoch": 39,
+          "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+        }
+      },
+      "comparisons": {
+        "validation": {
+          "stage45_uper64_vs_cfam": {
+            "macro_dice_delta": -0.0012150618270241164,
+            "image_bootstrap95": [
+              -0.0026157558297753604,
+              0.00026511108773244127
+            ],
+            "improved": 344,
+            "worsened": 416,
+            "gains_over5pp": 10,
+            "losses_over5pp": 14,
+            "net_reduced_fn": 57453,
+            "net_added_fp": 89385,
+            "severe_undercoverage": [
+              21,
+              18
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        },
+        "test": {
+          "stage45_uper64_vs_cfam": {
+            "macro_dice_delta": -0.0061019968813369775,
+            "image_bootstrap95": [
+              -0.007598921591503265,
+              -0.00465292173690645
+            ],
+            "improved": 253,
+            "worsened": 613,
+            "gains_over5pp": 8,
+            "losses_over5pp": 18,
+            "net_reduced_fn": 24282,
+            "net_added_fp": 204638,
+            "severe_undercoverage": [
+              14,
+              14
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        }
+      },
+      "test_evaluated": true,
+      "complete": true,
+      "train_n": 1886,
+      "validation_n": 762,
+      "test_n": 867,
+      "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+      "lr_horizon": 100,
+      "primary_comparison": "Single CFAM or parameter-matched convolution versus native UPer64",
+      "archived_reference_caveat": "Stage45 UPer64 reference shares original encoder/data/recipe and common head; one post-FPN refinement module differs",
+      "validation_only_screen": {
+        "status": "defer_to_final_paired_validation",
+        "test_used_for_selection": false
+      }
+    },
+    "conv_control": {
+      "arm": "conv_control",
+      "seed": 42,
+      "epochs": 100,
+      "selection": {
+        "arm": "conv_control",
+        "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage48_cfam_refinement/conv_control/results/conv_control_best_dice.pth",
+        "sha256": "5648753c1ba06406b36ea50ef6e9c8a02bd4b28c85e0c8904cf75a1999648407",
+        "epoch": 39,
+        "validation": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.891097187813038,
+            "iou": 0.819568308122148,
+            "precision": 0.9089325457961491,
+            "recall": 0.905672754419778
+          },
+          "pooled": {
+            "dice": 0.896985717884445,
+            "iou": 0.8132131491208326,
+            "precision": 0.9092785158160253,
+            "recall": 0.8850208661003467
+          },
+          "prec_at": {
+            "0.5": 0.958005249343832,
+            "0.6": 0.916010498687664,
+            "0.7": 0.8569553805774278,
+            "0.8": 0.7047244094488189,
+            "0.9": 0.34776902887139105
+          },
+          "threshold_jaccard_065": 0.7670977732217648,
+          "counts": {
+            "tp": 10683948,
+            "fp": 1065970,
+            "fn": 1388025,
+            "tn": 36800489
+          },
+          "loss": 0.32360874824323677,
+          "diagnostics": {
+            "bce_soft": 0.2095207189089983,
+            "soft_dice_loss": 0.11408799902347755,
+            "wrong_pixels": 2453995,
+            "wrong_mean_confidence": 0.8995220016154506,
+            "wrong_confidence_gt99_fraction": 0.3754673501779751
+          }
+        }
+      },
+      "validation": {
+        "conv_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.891097187813038,
+            "iou": 0.819568308122148,
+            "precision": 0.9089325457961491,
+            "recall": 0.905672754419778,
+            "boundary_f1": 0.3417987454555296,
+            "hd95_pixels": 14.675745107081633,
+            "hd95_diagonal": 0.040536401891338746
+          },
+          "pooled": {
+            "dice": 0.896985717884445,
+            "iou": 0.8132131491208326,
+            "precision": 0.9092785158160253,
+            "recall": 0.8850208661003467
+          },
+          "prec_at": {
+            "0.5": 0.958005249343832,
+            "0.6": 0.916010498687664,
+            "0.7": 0.8569553805774278,
+            "0.8": 0.7047244094488189,
+            "0.9": 0.34776902887139105
+          },
+          "threshold_jaccard_065": 0.7670977732217648,
+          "counts": {
+            "tp": 10683948,
+            "fp": 1065970,
+            "fn": 1388025,
+            "tn": 36800489
+          },
+          "severe_undercoverage": 21,
+          "epoch": 39,
+          "checkpoint_sha256": "5648753c1ba06406b36ea50ef6e9c8a02bd4b28c85e0c8904cf75a1999648407"
+        },
+        "stage45_uper64": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 762,
+          "macro": {
+            "dice": 0.8928067011343184,
+            "iou": 0.8220574119887529,
+            "precision": 0.9101313038297763,
+            "recall": 0.9069263351367866,
+            "boundary_f1": 0.35130680589552465,
+            "hd95_pixels": 14.588496959484564,
+            "hd95_diagonal": 0.04029541065379244
+          },
+          "pooled": {
+            "dice": 0.899468767065989,
+            "iou": 0.8173041710665581,
+            "precision": 0.9103178360817118,
+            "recall": 0.8888752484784385
+          },
+          "prec_at": {
+            "0.5": 0.958005249343832,
+            "0.6": 0.9251968503937008,
+            "0.7": 0.8569553805774278,
+            "0.8": 0.7165354330708661,
+            "0.9": 0.3530183727034121
+          },
+          "threshold_jaccard_065": 0.7738263321873545,
+          "counts": {
+            "tp": 10730478,
+            "fp": 1057139,
+            "fn": 1341495,
+            "tn": 36809320
+          },
+          "severe_undercoverage": 21,
+          "epoch": 39,
+          "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+        }
+      },
+      "test": {
+        "conv_control": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8954906060599536,
+            "iou": 0.8232718352498211,
+            "precision": 0.8697538911500498,
+            "recall": 0.949653946153327,
+            "boundary_f1": 0.2587736388348932,
+            "hd95_pixels": 16.17688760111874,
+            "hd95_diagonal": 0.044682761411107975
+          },
+          "pooled": {
+            "dice": 0.8967709165887415,
+            "iou": 0.8128601122587029,
+            "precision": 0.8780385215873292,
+            "recall": 0.9163200231476126
+          },
+          "prec_at": {
+            "0.5": 0.9653979238754326,
+            "0.6": 0.9331026528258363,
+            "0.7": 0.8742791234140715,
+            "0.8": 0.698961937716263,
+            "0.9": 0.3333333333333333
+          },
+          "threshold_jaccard_065": 0.7769215721193566,
+          "counts": {
+            "tp": 14852645,
+            "fp": 2063065,
+            "fn": 1356370,
+            "tn": 38547632
+          },
+          "severe_undercoverage": 14,
+          "epoch": 39,
+          "checkpoint_sha256": "5648753c1ba06406b36ea50ef6e9c8a02bd4b28c85e0c8904cf75a1999648407"
+        },
+        "stage45_uper64": {
+          "metric_version": "foreground_v1_20261016",
+          "n": 867,
+          "macro": {
+            "dice": 0.8966259106591898,
+            "iou": 0.8251672240975944,
+            "precision": 0.8692985300242783,
+            "recall": 0.9522786887413297,
+            "boundary_f1": 0.26931478378295826,
+            "hd95_pixels": 16.26075513815394,
+            "hd95_diagonal": 0.044914414942979076
+          },
+          "pooled": {
+            "dice": 0.8979914265902919,
+            "iou": 0.8148679132430251,
+            "precision": 0.8741091432254756,
+            "recall": 0.9232153835381114
+          },
+          "prec_at": {
+            "0.5": 0.9642445213379469,
+            "0.6": 0.936562860438293,
+            "0.7": 0.8754325259515571,
+            "0.8": 0.698961937716263,
+            "0.9": 0.3402537485582468
+          },
+          "threshold_jaccard_065": 0.7838454681285856,
+          "counts": {
+            "tp": 14964412,
+            "fp": 2155203,
+            "fn": 1244603,
+            "tn": 38455494
+          },
+          "severe_undercoverage": 14,
+          "epoch": 39,
+          "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+        }
+      },
+      "comparisons": {
+        "validation": {
+          "stage45_uper64_vs_conv_control": {
+            "macro_dice_delta": -0.0017095133212801687,
+            "image_bootstrap95": [
+              -0.0032505015167985656,
+              -0.00025180145373881834
+            ],
+            "improved": 356,
+            "worsened": 405,
+            "gains_over5pp": 9,
+            "losses_over5pp": 14,
+            "net_reduced_fn": -46530,
+            "net_added_fp": 8831,
+            "severe_undercoverage": [
+              21,
+              21
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        },
+        "test": {
+          "stage45_uper64_vs_conv_control": {
+            "macro_dice_delta": -0.0011353045992363656,
+            "image_bootstrap95": [
+              -0.0029172283197653934,
+              0.0005688486812154097
+            ],
+            "improved": 375,
+            "worsened": 491,
+            "gains_over5pp": 14,
+            "losses_over5pp": 11,
+            "net_reduced_fn": -111767,
+            "net_added_fp": -92138,
+            "severe_undercoverage": [
+              14,
+              14
+            ],
+            "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+          }
+        }
+      },
+      "test_evaluated": true,
+      "complete": true,
+      "train_n": 1886,
+      "validation_n": 762,
+      "test_n": 867,
+      "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+      "lr_horizon": 100,
+      "primary_comparison": "Single CFAM or parameter-matched convolution versus native UPer64",
+      "archived_reference_caveat": "Stage45 UPer64 reference shares original encoder/data/recipe and common head; one post-FPN refinement module differs",
+      "validation_only_screen": {
+        "status": "defer_to_final_paired_validation",
+        "test_used_for_selection": false
+      }
+    }
+  },
+  "screen": {
+    "cfam": {
+      "validation_dice_gain_pp": -0.12150618270241331,
+      "validation_boundary_f1_delta": -0.01571061061390583,
+      "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+      "test_used_for_screen": false,
+      "passed": false,
+      "decision": "no_validated_screen_pass_review_paired_validation_errors"
+    },
+    "conv_control": {
+      "validation_dice_gain_pp": -0.17095133212803315,
+      "validation_boundary_f1_delta": -0.00950806043999508,
+      "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+      "test_used_for_screen": false,
+      "passed": false,
+      "decision": "no_validated_screen_pass_review_paired_validation_errors"
+    },
+    "conv_control_vs_cfam": {
+      "validation_dice_gain_pp": 0.04944514942561984,
+      "validation_boundary_f1_delta": -0.006202550173910748,
+      "test_used": false,
+      "passed": false
+    }
+  },
+  "pairwise": {
+    "conv_control_vs_cfam": {
+      "validation": {
+        "macro_dice_delta": 0.0004944514942560521,
+        "image_bootstrap95": [
+          -0.0011145975052927583,
+          0.0021547249931473025
+        ],
+        "improved": 375,
+        "worsened": 387,
+        "gains_over5pp": 17,
+        "losses_over5pp": 14,
+        "net_reduced_fn": 103983,
+        "net_added_fp": 80554,
+        "severe_undercoverage": [
+          21,
+          18
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "test": {
+        "macro_dice_delta": -0.004966692282100612,
+        "image_bootstrap95": [
+          -0.006551637226641301,
+          -0.003419264277492671
+        ],
+        "improved": 341,
+        "worsened": 526,
+        "gains_over5pp": 12,
+        "losses_over5pp": 22,
+        "net_reduced_fn": 136049,
+        "net_added_fp": 296776,
+        "severe_undercoverage": [
+          14,
+          14
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_n_per_arm": 867
+}

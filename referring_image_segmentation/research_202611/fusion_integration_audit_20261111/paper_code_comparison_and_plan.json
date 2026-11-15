@@ -1,0 +1,83 @@
+{
+  "status": "stage35_supervision_complete_no_clear_validation_gain",
+  "main_findings": [
+    {
+      "id": "cga_root_initializer",
+      "type": "confirmed_omission",
+      "source": "MambaLiteUNet.py:510-524",
+      "current": "Standalone CGA constructor only",
+      "native": "Whole-network apply(_init_weights) also visits gate convolutions",
+      "causal_performance_effect": "unknown"
+    },
+    {
+      "id": "emcad_expansion",
+      "type": "confirmed_entrypoint_mismatch",
+      "source": "lib/decoders.py:316; lib/networks.py:11,78; train_polyp.py:181-188",
+      "current": 6,
+      "native_binary_entrypoint": 2,
+      "activation_current": "relu6",
+      "activation_native_binary_entrypoint": "relu6",
+      "causal_performance_effect": "unknown"
+    },
+    {
+      "id": "emcad_width_supervision",
+      "type": "declared_adaptation",
+      "current": "64ch; single output; common BCE+Dice",
+      "native": "encoder-native widths; 4 heads plus summed-logit loss; weighted BCE+IoU",
+      "causal_performance_effect": "unknown"
+    },
+    {
+      "id": "addition",
+      "type": "not_a_demonstrated_bug",
+      "evidence": "Both official EMCAD and MambaLiteUNet add gated skip to decoder feature"
+    }
+  ],
+  "sequence": [
+    {
+      "id": "CGA_init_only",
+      "priority": 1,
+      "change": "Apply exact native root initializer policy only to fresh CGA gates inside isolated RNG context",
+      "keep": "Existing MambaVision/Swin initial tensors, data, loss, LR schedule, batch, 100 epochs, val selection",
+      "verification": "Other initial tensors exactly equal; finite real-data forward/backward; optimizer owns gates; original checkpoint preserved",
+      "execute": true,
+      "execution": "complete_100_epochs_and_full_test"
+    },
+    {
+      "id": "EMCAD_expansion_only",
+      "priority": 2,
+      "change": "6 -> 2, explicitly preserve relu6 and all64 widths",
+      "keep": "Single-head supervision and other common settings",
+      "execute": true,
+      "execution": "complete_100_epochs_and_full_test"
+    },
+    {
+      "id": "EMCAD_supervision",
+      "priority": 3,
+      "condition": "Only if continued investigation justified",
+      "change": "Separate supervision topology from loss formula and channel-width changes",
+      "execute": true,
+      "execution": "complete_100_epochs_both_arms_and_full_test"
+    },
+    {
+      "id": "UCTransNet_complete_upblock",
+      "priority": 4,
+      "condition": "If established integration fixes insufficient",
+      "change": "Reuse author UpBlock_attention with matched concat+conv ablation; no claim full UCTransNet",
+      "execute": false
+    }
+  ],
+  "evaluation": {
+    "diagnostic_split": "val762",
+    "bn_calibration_split": "train1886",
+    "test_read_this_audit": false,
+    "new_training": false,
+    "test_previously_exposed": true,
+    "patient_disjointness_verified": false,
+    "statistics": "Single-seed findings; post-hoc ablations are not retrained controls"
+  },
+  "execution_stage": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix",
+  "updated_utc": "2026-11-11T14:43:02.745229+00:00",
+  "execution_results": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage34_author_integration_fix/FINAL_COMPARISON.json",
+  "stage35_path": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision",
+  "stage35_results": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage35_emcad_supervision/FINAL_COMPARISON.json"
+}

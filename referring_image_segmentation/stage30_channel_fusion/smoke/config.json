@@ -1,0 +1,52 @@
+{
+  "seed": 42,
+  "epochs": 2,
+  "names": [
+    "eca_channel",
+    "cross_channel",
+    "cross_channel_scale"
+  ],
+  "effective_batch": 64,
+  "evaluation_batch": 64,
+  "encoder_lr": 0.0001,
+  "decoder_lr": 0.001,
+  "weight_decay": 0.01,
+  "selection": "max_validation_macro_dice_earliest_tie",
+  "precision": "BF16_forward_FP32_loss",
+  "mode": "encoder_eval_with_late_parameters_trainable_all_arms",
+  "sources": {
+    "stage30_channel_fusion/train.py": "16c1cb32a32345fa1107d98f0d03de67097a517e690f5ebf82055e63ece14e89",
+    "stage30_channel_fusion/channel_fusion.py": "b9676cfb348ab42320dc55a96b87ae007852438f56165bd532531124be6970c3",
+    "stage30_channel_fusion/evaluate.py": "76ef70cd8eecd3dace56382488b14ca23197c865a1d03cb20aedbd055de21357",
+    "stage30_channel_fusion/run_pipeline.py": "8f631c2b274d81f1d055d77c1b4971efd1da4029dd98dbf831fa5abf1dacecee",
+    "stage30_channel_fusion/PROTOCOL.json": "17b1412eff3cbbfcbad8f542fe573e9ef252700d6d9c32d36508a49cd92a6aa0",
+    "stage30_channel_fusion/identity_partition.json": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+    "stage30_channel_fusion/REFERENCE_MODELS.json": "60e3fbcda0bd14a8f8be8af7b54171b2a84314c98c38e7b204a1c5e3ca0199ea",
+    "stage29_context_fusion/fusion.py": "efea23faa0e4128c9c927e7f4eb38b1ab3a6547ebc4491af7b6c382f764c2fdf",
+    "stage29_context_fusion/train.py": "cd173f5483e099c6a3aa0e0c254fd5cfec9470196f4e6cf8d7f76de37da0a403",
+    "stage28_drop_path/train.py": "0966cdf88612a399105e5b6642662ce2c7c12c6170a76d0d27ca52c5655a4acb",
+    "evaluation.py": "0c94d3fb67d9ce6d749e7fe44c75058c8f44328e6c56bbdaed3dd81541b57223",
+    "stage1_visual/data.py": "3cd157300310ce8fe8850a5f8ceb702d8931b18584d3c65332f76dd71e815c9c",
+    "stage1_visual/models.py": "b9fc9e9a59670243e14d6dfb48e68b1457b16724cc0f402bea993e7e5196eb3b",
+    "stage2_decoder/models.py": "97b0a01be7138de7976d6d221436a17aad90ecd16cf8dcc830dc0bac1098ec2c",
+    "stage3_confirmation/models.py": "c4bcb5d9d4e9599e6ba0f89406ab17f05153b225bd5d20b08cd631190fc520ea",
+    "stage3_confirmation/data.py": "51e92937ab7b5ad85e615c018d96a24fe400e8d3ff685a770c5518b60e9cbfbb",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/config.json": "0fb65bbc82a2f17ecb3a1df1f4d9ca8c67f8e4e997284df07a0203d2bb86f48d",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/mamba_vision.py": "d8d3d60b30cd4e013e351ed23caac0484bc970851ee79f741651f160d66ee2b6",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/configuration_mambavision.py": "5dabf456c3cd4fff9059705ee9deb444e42660ae93cd225763258a43d58e47c0",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/hf_model.py": "fca4ad917b713f1bab9b83e816ecf2447768db0fbc9f1e1fa68839a68061e337",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/modeling_mambavision.py": "292edfdeeb8d145ec3a292911ce825fc7d35bd9df756e183c315c16d9f9dce5a"
+  },
+  "partition_counts": {
+    "train": 1886,
+    "val": 762,
+    "test": 867
+  },
+  "weights_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+  "criterion": "BCE_plus_per_image_soft_Dice_unchanged",
+  "lr_schedule": "cosine_300_floor0.01",
+  "test_exposure": "867 already exposed; development only on validation; no fresh independent confirmation",
+  "evaluation_helper_sha256": "83215e91d3b516fcd9b027bf7573fb9879a7bccfc030b386c25552d8ff7fd3ff",
+  "lr_schedule_horizon": 300,
+  "reference_reuse": "Stage29 exact first100 schedule and batch matched; source validation replay verified"
+}

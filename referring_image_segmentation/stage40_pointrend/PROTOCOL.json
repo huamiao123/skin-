@@ -1,0 +1,37 @@
+{
+  "stage": 40,
+  "seed": 42,
+  "epochs": 100,
+  "train_n": 1886,
+  "val_n": 762,
+  "test_n": 867,
+  "primary_reference": "Stage37 swin_control, same hardware, physical batch64,100epoch cosine",
+  "selection": "max_validation_macro_dice_earliest_tie",
+  "threshold": 0.5,
+  "test_already_exposed": true,
+  "criterion": "unchanged coarse BCE+softDice plus native sampled point CE weight1",
+  "adaptation": {
+    "binary_logits": "[zero, foreground_logit]; final fg-bg",
+    "fine_feature": "existing stride4 64channel adapter",
+    "coarse": "unchanged Swin coarse layers at64; unchanged coarse loss at256",
+    "native_point_head": "3x256 MLP, author initialization, coarse_pred_each_layer=False",
+    "train_points": 1024,
+    "oversample_ratio": 3,
+    "importance_ratio": 0.75,
+    "subdivision_steps": 2,
+    "inference_points_per_step": 1024,
+    "precision": "existing BF16 autocast; point grid interpolation promotes to FP32 under PyTorch autocast",
+    "random_control": "same architecture, loss, point counts; training importance_ratio0; inference fixed seeded uniform unique grid points per level shared across images"
+  },
+  "changes": {
+    "point_uncertain": "Author semantic PointRend sampling+head+iterative subdivision, adapted coarse head",
+    "point_random": "Same PointRend with uniform point selection in training and inference"
+  },
+  "validation_coverage_screen": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage39_pointrend_coverage/summary.json",
+  "limits": [
+    "Not complete Detectron2 training or full original-paper reproduction",
+    "Single seed, initial method screening",
+    "Fixed random spatial draw is one control realization",
+    "Patient separation unverified; existing test already exposed"
+  ]
+}

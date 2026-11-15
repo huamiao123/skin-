@@ -1,0 +1,173 @@
+--- stage33/author_modules.py
++++ stage34/author_modules.py
+@@ -1,4 +1,4 @@
+-"""Stage33 wiring: exact author modules; existing archived training files unchanged."""
++"""Stage34 wiring: exact author modules; existing archived training files unchanged."""
+ from pathlib import Path
+ import ast,copy,importlib.util,math,sys
+ import torch
+@@ -33,18 +33,21 @@
+     """
+  def __init__(self,variant,baseline_decoder,seed=42):
+   super().__init__()
+-  if variant not in {'emcad64','swin_cga','swin_mfms'}:raise ValueError(variant)
++  if variant not in {'emcad64_exp2','swin_cga_author_init','swin_mfms'}:raise ValueError(variant)
+   self.variant=variant
+-  self.baseline=copy.deepcopy(baseline_decoder) if variant!='emcad64' else None
++  self.baseline=copy.deepcopy(baseline_decoder) if variant!='emcad64_exp2' else None
+   with torch.random.fork_rng(devices=[]):
+    torch.random.default_generator.manual_seed(seed)
+-   if variant=='emcad64':
++   if variant=='emcad64_exp2':
+     official=_import(OLD/'SLDGroup__EMCAD/lib/decoders.py','original_emcad_for_wiring')
+-    self.author_decoder=official.EMCAD(channels=[64,64,64,64])
++    self.author_decoder=official.EMCAD(channels=[64,64,64,64],expansion_factor=2,activation='relu6')
+     self.readout=copy.deepcopy(baseline_decoder.readout)
+-   elif variant=='swin_cga':
++   elif variant=='swin_cga_author_init':
+     official=_import(NEW/'maklachur__MambaLiteUNet/models/MambaLiteUNet.py','original_cga_for_wiring')
+     self.author_gates=nn.ModuleDict({str(i):official.CrossGatedAttentionGate(64,64,32) for i in (2,1,0)})
++    # The original full-network constructor applies this policy after creating gates.
++    # Restrict it to fresh CGA modules; preserve pretrained encoder and shared Swin.
++    self.author_gates.apply(lambda m: official.MambaLiteUNet._init_weights(None,m))
+    else:
+     cls=_mfms_class()
+     self.author_blocks=nn.ModuleDict({str(i):cls(64) for i in (2,1,0)})
+@@ -52,7 +55,7 @@
+   if len(pyramid)!=4:raise ValueError('Expected four feature maps')
+   for p,h in zip(pyramid,[64,32,16,8]):
+    if p.shape[1:]!=(64,h,h):raise ValueError('Expected 64-channel pyramid at 64,32,16,8')
+-  if self.variant=='emcad64':
++  if self.variant=='emcad64_exp2':
+    outputs=self.author_decoder(pyramid[3],[pyramid[2],pyramid[1],pyramid[0]])
+    return F.interpolate(self.readout(outputs[-1]),size=(256,256),mode='bilinear',align_corners=False)
+   if self.variant=='swin_mfms':
+--- stage33/train.py
++++ stage34/train.py
+@@ -1,4 +1,4 @@
+-"""Stage33: independently train original EMCAD and CGA adaptations."""
++"""Stage34: independently train original EMCAD and CGA adaptations."""
+ from pathlib import Path
+ import argparse, csv, gc, hashlib, json, os, signal, sys, time, traceback
+ from concurrent.futures import ThreadPoolExecutor
+@@ -11,7 +11,7 @@
+ import numpy as np
+ import torch
+ from torch import nn
+-ARMS = ('emcad64','swin_cga')
++ARMS = ('emcad64_exp2','swin_cga_author_init')
+ NAMES = ARMS
+ dump, save, cpu_tree, digest = base.dump, base.save, base.cpu_tree, base.digest
+ STOP = False
+@@ -24,7 +24,7 @@
+ 
+ 
+ class System(base.System):
+-    def __init__(self,arm='emcad64'):
++    def __init__(self,arm='emcad64_exp2'):
+         super().__init__(finetune=True,stochastic_depth=False)
+         assert arm in ARMS
+         self.arm=arm
+@@ -96,7 +96,7 @@
+         m.eval()
+         assert all(torch.equal(v,m.encoder.state_dict()[k]) for k,v in reference.encoder.state_dict().items())
+         assert all(torch.equal(v,m.probe.adapter.state_dict()[k]) for k,v in reference.probe.adapter.state_dict().items())
+-        if name=='swin_cga':
++        if name=='swin_cga_author_init':
+             base.assert_tree_exact(m.probe.decoder.baseline.state_dict(),reference.probe.decoder.state_dict())
+         else:
+             base.assert_tree_exact(m.probe.decoder.readout.state_dict(),reference.probe.decoder.readout.state_dict())
+@@ -119,7 +119,7 @@
+         grads={k:float(p.grad.abs().sum()) for k,p in model.probe.decoder.named_parameters() if p.requires_grad}
+         assert len(grads)==sum(p.requires_grad for p in model.probe.decoder.parameters())
+         assert all(np.isfinite(v) for v in grads.values())
+-        if name=='swin_cga':
++        if name=='swin_cga_author_init':
+             for i in (2,1,0):
+                 for group in ['mamba_g','mamba_x','combine']:
+                     assert sum(v for k,v in grads.items() if k.startswith(f'author_gates.{i}.{group}'))>0
+@@ -153,8 +153,9 @@
+ def source_hashes():
+     research=PROJECT.parent.parent/'research'
+     files=[ROOT/'train.py',ROOT/'author_modules.py',ROOT/'evaluate.py',ROOT/'run_pipeline.py',ROOT/'PROTOCOL.json',
+-           ROOT/'identity_partition.json',ROOT/'REFERENCE_MODELS.json',ROOT/'verify_reference.py',
++           ROOT/'identity_partition.json',ROOT/'REFERENCE_MODELS.json',ROOT/'verify_reference.py',ROOT/'verify_integration.py',
+            PROJECT/'stage28_drop_path/train.py',PROJECT/'evaluation.py',
++           PROJECT/'stage33_author_modules/author_modules.py',
+            PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',
+            PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',
+            PROJECT/'stage3_confirmation/data.py',base.HF/'config.json',
+@@ -180,11 +181,12 @@
+         effective_batch=64,evaluation_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
+         selection='max_validation_macro_dice_earliest_tie',precision='BF16_forward_FP32_loss',deterministic_policy='deterministic_requested_warn_only_for_unsupported_ops',
+         mode='encoder_eval_with_late_parameters_trainable_all_arms',sources=source_hashes(),
++        intervention=json.loads((ROOT/'PROTOCOL.json').read_text())['changes'][args.arm],
+         partition_counts=partition['counts'],weights_sha256=base.WEIGHT_SHA,
+         criterion='BCE_plus_per_image_soft_Dice_unchanged',lr_schedule='cosine_300_floor0.01',
+         test_exposure='867 already exposed; development only on validation; no fresh independent confirmation',
+         evaluation_helper_sha256=digest(PROJECT.parent.parent/'test_best_checkpoints_20261111/evaluate_fixed_checkpoints.py'),
+-        lr_schedule_horizon=300,reference_reuse='Stage29 control/local first100 schedule and batch matched; validation replay required before formal training')
++        lr_schedule_horizon=300,reference_reuse='Matched Stage33 uncorrected arms and Stage29 control/local; same100 epochs and cosine300; validation replay required')
+     config=json.loads(json.dumps(config))
+     if (out/'config.json').exists():assert json.loads((out/'config.json').read_text())==config
+     else:dump(out/'config.json',config)
+@@ -259,7 +261,7 @@
+              optimizers={n:cpu_tree(o.state_dict()) for n,o in opts.items()},
+              rng=base.rng(),selectors=selectors,history=history,config=config,elapsed=elapsed+time.perf_counter()-started))
+         dump(out/'history.json',history)
+-        status=dict(state='running',stage='stage33_author_modules',arm=args.arm,epoch=epoch,total_epochs=config['epochs'],
++        status=dict(state='running',stage='stage34_author_integration_fix',arm=args.arm,epoch=epoch,total_epochs=config['epochs'],
+              updates_per_arm=epoch*30,micro_batch=micro,effective_batch=64,
+              validation_macro_dice={n:record['validation'][n]['macro']['dice'] for n in NAMES},
+              best=selectors,seconds=time.perf_counter()-tick,peak_allocated_gib=record['peak_allocated_gib'],
+--- stage33/run_pipeline.py
++++ stage34/run_pipeline.py
+@@ -1,10 +1,10 @@
+-"""Serial Stage33 pipeline: validated restart -> both trainings -> both fixed tests."""
++"""Serial Stage34 pipeline: validated restart -> both trainings -> both fixed tests."""
+ from pathlib import Path
+ import datetime,fcntl,json,os,shutil,subprocess,sys,traceback
+ ROOT=Path(__file__).resolve().parent
+ PROJECT=ROOT.parent
+ RESEARCH=PROJECT.parent.parent
+-ARMS=['emcad64','swin_cga']
++ARMS=['swin_cga_author_init','emcad64_exp2']
+ ACTIVE=None
+ def dump(p,x):
+     p.parent.mkdir(parents=True,exist_ok=True)
+@@ -36,6 +36,8 @@
+     if (ROOT/'PIPELINE_DONE.json').exists():print('ALREADY_COMPLETE',flush=True);return
+     old=RESEARCH/'current_experiment.json'
+     if old.exists() and not (ROOT/'previous_experiment_status.json').exists():shutil.copy2(old,ROOT/'previous_experiment_status.json')
++    if not (ROOT/'INTEGRATION_VERIFIED.json').exists():
++        run([str(ROOT/'verify_integration.py')],ROOT/'integration_verification.log',state='integration_verification')
+     if not (ROOT/'REFERENCE_REPLAY_VERIFIED.json').exists():
+         run([str(ROOT/'verify_reference.py')],ROOT/'reference_replay.log',state='reference_validation_replay')
+     for arm in ARMS:
+--- stage33/evaluate.py
++++ stage34/evaluate.py
+@@ -1,11 +1,11 @@
+-"""Evaluate a fixed validation-selected Stage33 checkpoint with common metrics."""
++"""Evaluate a fixed validation-selected Stage34 checkpoint with common metrics."""
+ from pathlib import Path
+ import argparse,csv,gc,importlib.util,json
+ import numpy as np
+ import torch
+ from train import ROOT,PROJECT,ARMS,System,base,dump,digest
+ RESEARCH_ROOT=PROJECT.parent.parent
+-spec=importlib.util.spec_from_file_location('stage33_fixed_eval_helpers',
++spec=importlib.util.spec_from_file_location('stage34_fixed_eval_helpers',
+     RESEARCH_ROOT/'test_best_checkpoints_20261111/evaluate_fixed_checkpoints.py')
+ helpers=importlib.util.module_from_spec(spec);spec.loader.exec_module(helpers)
+ def write_rows(path,rows):
+@@ -86,6 +86,10 @@
+     assert digest(p)==sha
+     summary['complete']=True
+     m=summary['validation'][args.arm];best_ref=max((r['validation'] for r in references),key=lambda m:m['macro']['dice'])
++    primary_name=json.loads((ROOT/'PROTOCOL.json').read_text())['primary_reference'][args.arm]
++    primary=next(r for r in references if r['arm']==primary_name)
++    summary['primary_reference']=primary_name
++    summary['primary_validation_delta']=m['macro']['dice']-primary['validation']['macro']['dice']
+     summary['validation_only_screen']=dict(
+         macro_dice_delta_vs_best_reference=m['macro']['dice']-best_ref['macro']['dice'],
+         severe_delta=m['severe_undercoverage']-best_ref['severe_undercoverage'],

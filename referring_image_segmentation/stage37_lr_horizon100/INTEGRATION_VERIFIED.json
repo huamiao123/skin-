@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "only_lr_formula_constant_changed": true,
+  "archived_sources_unchanged": true,
+  "unchanged_training_functions_verified": true,
+  "original_author_wrapper_byte_identical": true,
+  "arms": {
+    "swin_control": {
+      "shared_initial_state_exact": true,
+      "initial_prediction_exact": true,
+      "learning_rates": [
+        {
+          "epoch": 1,
+          "factor": 1.0,
+          "rates": {
+            "decoder": 0.001,
+            "encoder": 0.0001
+          }
+        },
+        {
+          "epoch": 2,
+          "factor": 0.9997557473810371,
+          "rates": {
+            "decoder": 0.0009997557473810372,
+            "encoder": 9.997557473810371e-05
+          }
+        },
+        {
+          "epoch": 25,
+          "factor": 0.8658394705735987,
+          "rates": {
+            "decoder": 0.0008658394705735987,
+            "encoder": 8.658394705735987e-05
+          }
+        },
+        {
+          "epoch": 50,
+          "factor": 0.5205483257436735,
+          "rates": {
+            "decoder": 0.0005205483257436735,
+            "encoder": 5.205483257436735e-05
+          }
+        },
+        {
+          "epoch": 75,
+          "factor": 0.1661491825652991,
+          "rates": {
+            "decoder": 0.0001661491825652991,
+            "encoder": 1.661491825652991e-05
+          }
+        },
+        {
+          "epoch": 100,
+          "factor": 0.010244252618962859,
+          "rates": {
+            "decoder": 1.024425261896286e-05,
+            "encoder": 1.024425261896286e-06
+          }
+        }
+      ],
+      "total_parameters": 50640905,
+      "trainable_parameters": 46490081
+    },
+    "uct_cca": {
+      "shared_initial_state_exact": true,
+      "initial_prediction_exact": true,
+      "learning_rates": [
+        {
+          "epoch": 1,
+          "factor": 1.0,
+          "rates": {
+            "decoder": 0.001,
+            "encoder": 0.0001
+          }
+        },
+        {
+          "epoch": 2,
+          "factor": 0.9997557473810371,
+          "rates": {
+            "decoder": 0.0009997557473810372,
+            "encoder": 9.997557473810371e-05
+          }
+        },
+        {
+          "epoch": 25,
+          "factor": 0.8658394705735987,
+          "rates": {
+            "decoder": 0.0008658394705735987,
+            "encoder": 8.658394705735987e-05
+          }
+        },
+        {
+          "epoch": 50,
+          "factor": 0.5205483257436735,
+          "rates": {
+            "decoder": 0.0005205483257436735,
+            "encoder": 5.205483257436735e-05
+          }
+        },
+        {
+          "epoch": 75,
+          "factor": 0.1661491825652991,
+          "rates": {
+            "decoder": 0.0001661491825652991,
+            "encoder": 1.661491825652991e-05
+          }
+        },
+        {
+          "epoch": 100,
+          "factor": 0.010244252618962859,
+          "rates": {
+            "decoder": 1.024425261896286e-05,
+            "encoder": 1.024425261896286e-06
+          }
+        }
+      ],
+      "total_parameters": 50998793,
+      "trainable_parameters": 46847969
+    }
+  },
+  "test_read": false
+}

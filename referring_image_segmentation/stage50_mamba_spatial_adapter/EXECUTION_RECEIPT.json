@@ -1,0 +1,53 @@
+{
+  "recorded_utc": "2026-11-12T14:03:39.198519+00:00",
+  "integration_verified": true,
+  "reference_predictions_exact": true,
+  "preflight": {
+    "cab": {
+      "restart_recovery_verified": true,
+      "gradient_and_cache_checks_verified": true,
+      "mean_epoch_seconds": 7.552105461498286,
+      "peak_gib": 12.72621488571167,
+      "parameters": {
+        "total": 52124917,
+        "trainable": 47974093,
+        "decoder": 1089089,
+        "encoder_trainable": 46885004
+      }
+    },
+    "conv_control": {
+      "restart_recovery_verified": true,
+      "gradient_and_cache_checks_verified": true,
+      "mean_epoch_seconds": 7.579533971998899,
+      "peak_gib": 12.714718341827393,
+      "parameters": {
+        "total": 52115305,
+        "trainable": 47964481,
+        "decoder": 1089089,
+        "encoder_trainable": 46875392
+      }
+    }
+  },
+  "pipeline_at_receipt": {
+    "stage": "stage50_mamba_spatial_adapter",
+    "state": "formal_training",
+    "arms": [
+      "cab",
+      "conv_control"
+    ],
+    "epochs_per_arm": 100,
+    "lr_schedule_horizon": 100,
+    "pipeline_pid": 33523,
+    "updated_utc": "2026-11-12T14:02:41.775890+00:00",
+    "status_file": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage50_mamba_spatial_adapter/cab/results/run_status.json",
+    "resume_command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage50_mamba_spatial_adapter/run_pipeline.py"
+    ],
+    "training_pid": 34161,
+    "arm": "cab",
+    "completed_trainings": []
+  },
+  "all_new_artifacts_server_only": true,
+  "formal_protocol_frozen": true
+}

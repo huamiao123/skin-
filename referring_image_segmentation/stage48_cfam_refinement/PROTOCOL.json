@@ -1,0 +1,67 @@
+{
+  "stage": 48,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "cfam",
+    "conv_control"
+  ],
+  "question": "Can single-scale feature calibration reduce validation errors without sacrificing segmentation coverage? No claim that attention noise is an established cause.",
+  "changes": {
+    "cfam": "Exact CENet clean CFAModule at native UPerHead fpn_convs[1] output (B,64,32,32), before resize/concatenation. mca_rates=[1,2,4], two layer_scales=1e-6. Cast output back to input dtype.",
+    "conv_control": "Same location and interface; BN64+Conv3x3(64,59)+GELU+Conv3x3(59,64), residual channel scale1e-6. 68,283 vs CFAM68,213 parameters; not equal FLOPs or equal latency."
+  },
+  "reference": "Reuse completed Stage45 UPer64 after exact 762 validation replay; not a new fresh backbone pretraining.",
+  "author": {
+    "repository": "https://github.com/xmindflow/cenet",
+    "commit": "c57b43f9494d8cb24534a00cbdba1476b1ae4d93",
+    "variant": "clean cenet CFAM, not cenet_org; module adaptation, not full-paper reproduction"
+  },
+  "insertion": "After top-down FPN fusion AND fpn_convs[1], before upsampling output to64x64 and head concatenation. Other FPN branches unchanged.",
+  "encoder": "Original MambaVision-S pretrained weights, original14/7 windows, only stages3/4 trainable; all encoder modules eval. No Stage46/47 modifications.",
+  "initialization": "Existing encoder and UPer64 states bitwise match common initialization. New modules isolated CPU RNG seed142; default author init retained except explicitly configured LayerScale1e-6. No warm start from segmentation checkpoint.",
+  "training": {
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "clip_per_group": 1,
+    "cosine_horizon": 100,
+    "physical_batch": 64,
+    "effective_batch": 64,
+    "eval_batch": 64,
+    "loss": "Unchanged BCE+per-image softDice with original soft masks",
+    "precision": "BF16 forward/FP32 loss; module output cast to common FPN dtype",
+    "epochs": 100
+  },
+  "data": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "input": 256,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "selection": "Max validation macro Dice, earliest tie. Full100epochs per arm; test only after all arms trained. Complete867 test for each fixed best validation checkpoint.",
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "validation_only": true,
+    "paired_module_vs_conv_report": true,
+    "screen_not_significance_test": true
+  },
+  "diagnosis": "Existing validation predictions only; exploratory3pixel FP/FN boundary bands,8connected components with zero GT overlap, per-image review. No test data used for diagnostic choice.",
+  "adaptations": [
+    "Isolated exact author AST definitions; unused monai imports bypassed without changing chosen classes.",
+    "No DSEB, no auxiliary heads, no imported optimizer/loss/data recipe.",
+    "CFAM chosen single stride8 position; other stages not tuned in this pilot.",
+    "No dependency installations; preserve current numerical environment."
+  ],
+  "capacity": "Require actual physical64 plus both caches before formal training. No silent batch reduction. Report real wall time and peak memory.",
+  "attribution_limits": [
+    "Single seed screen; multi-seed needed for robust claims.",
+    "Module vs ordinary convolution compares entire module packages, not isolation of each attention component.",
+    "Existing test exposed; cannot claim new independent confirmation.",
+    "CFAM forward/backward smoke is not evidence of improved segmentation."
+  ]
+}

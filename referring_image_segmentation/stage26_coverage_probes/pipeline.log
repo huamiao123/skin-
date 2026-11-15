@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run_pipeline.py", line 9, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run_pipeline.py", line 7, in main
+    subprocess.run([sys.executable,'-u',str(ROOT/'run.py')]+args,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,check=True)
+  File "/home/waas/mambavision_stage22/env/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/waas/mambavision_stage22/env/bin/python', '-u', '/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run.py', '--smoke']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run_pipeline.py", line 9, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run_pipeline.py", line 7, in main
+    subprocess.run([sys.executable,'-u',str(ROOT/'run.py')]+args,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,check=True)
+  File "/home/waas/mambavision_stage22/env/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/waas/mambavision_stage22/env/bin/python', '-u', '/home/waas/mambavision_stage22/source/referring_image_segmentation/stage26_coverage_probes/run.py', '--smoke']' returned non-zero exit status 1.

@@ -1,0 +1,159 @@
+{
+  "arm": "point_uncertain",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "point_uncertain",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage40_pointrend/point_uncertain/smoke/point_uncertain_best_dice.pth",
+    "sha256": "f462b5d7d6124d0b659f2b4d5883e6b07cbec8b57f34211339dd8f5d72764493",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8763963639304769,
+        "iou": 0.7958740909579622,
+        "precision": 0.9058039075899665,
+        "recall": 0.8805648170470651
+      },
+      "pooled": {
+        "dice": 0.8907601978271106,
+        "iou": 0.8030366347134323,
+        "precision": 0.9063900432584555,
+        "recall": 0.8756602586834812
+      },
+      "prec_at": {
+        "0.5": 0.9422572178477691,
+        "0.6": 0.89501312335958,
+        "0.7": 0.8162729658792651,
+        "0.8": 0.6351706036745407,
+        "0.9": 0.24540682414698162
+      },
+      "threshold_jaccard_065": 0.7357124916233533,
+      "counts": {
+        "tp": 10570947,
+        "fp": 1091744,
+        "fn": 1501026,
+        "tn": 36774715
+      },
+      "loss": 0.3101220756690959,
+      "diagnostics": {
+        "bce_soft": 0.15281265180098416,
+        "soft_dice_loss": 0.15730941420777889,
+        "wrong_pixels": 2592770,
+        "wrong_mean_confidence": 0.8180991572683975,
+        "wrong_confidence_gt99_fraction": 0.15027865950315686
+      }
+    }
+  },
+  "validation": {
+    "point_uncertain": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8763963639304769,
+        "iou": 0.7958740909579622,
+        "precision": 0.9058039075899665,
+        "recall": 0.8805648170470651,
+        "boundary_f1": 0.30722155641866644,
+        "hd95_pixels": 17.95642656998078,
+        "hd95_diagonal": 0.049598089818405106
+      },
+      "pooled": {
+        "dice": 0.8907601978271106,
+        "iou": 0.8030366347134323,
+        "precision": 0.9063900432584555,
+        "recall": 0.8756602586834812
+      },
+      "prec_at": {
+        "0.5": 0.9422572178477691,
+        "0.6": 0.89501312335958,
+        "0.7": 0.8162729658792651,
+        "0.8": 0.6351706036745407,
+        "0.9": 0.24540682414698162
+      },
+      "threshold_jaccard_065": 0.7357124916233533,
+      "counts": {
+        "tp": 10570947,
+        "fp": 1091744,
+        "fn": 1501026,
+        "tn": 36774715
+      },
+      "severe_undercoverage": 23,
+      "epoch": 2,
+      "checkpoint_sha256": "f462b5d7d6124d0b659f2b4d5883e6b07cbec8b57f34211339dd8f5d72764493"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage37_swin_control_vs_point_uncertain": {
+        "macro_dice_delta": -0.011191679566293397,
+        "image_bootstrap95": [
+          -0.016173461643771345,
+          -0.006398706554085741
+        ],
+        "improved": 255,
+        "worsened": 507,
+        "gains_over5pp": 41,
+        "losses_over5pp": 72,
+        "net_reduced_fn": 112222,
+        "net_added_fp": 179366,
+        "severe_undercoverage": [
+          28,
+          23
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "existing normalization retained; encoder eval with late trainable parameters",
+  "lr_horizon": 100,
+  "primary_comparison": "PointRend versus matched random points and archived Swin",
+  "archived_reference_caveat": "Stage37 Swin matches hardware, physical batch, initialization, data and schedule; point heads add point CE",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

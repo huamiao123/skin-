@@ -1,0 +1,159 @@
+{
+  "arm": "frozen_point",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "frozen_point",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/frozen_point/smoke/frozen_point_best_dice.pth",
+    "sha256": "44d7582a464c81201cbc027a2e97dfabe26395794419ea72398c1b71795c6646",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8868193347524149,
+        "iou": 0.811804224861021,
+        "precision": 0.9003725700320476,
+        "recall": 0.905780420210655
+      },
+      "pooled": {
+        "dice": 0.892955224020143,
+        "iou": 0.8066116596140196,
+        "precision": 0.8999288173235128,
+        "recall": 0.8860888771040161
+      },
+      "prec_at": {
+        "0.5": 0.9566929133858267,
+        "0.6": 0.926509186351706,
+        "0.7": 0.8556430446194225,
+        "0.8": 0.6811023622047244,
+        "0.9": 0.2755905511811024
+      },
+      "threshold_jaccard_065": 0.7628592315988021,
+      "counts": {
+        "tp": 10696841,
+        "fp": 1189478,
+        "fn": 1375132,
+        "tn": 36676981
+      },
+      "loss": 0.29808157479043396,
+      "diagnostics": {
+        "bce_soft": 0.16945262636568917,
+        "soft_dice_loss": 0.1286289372782069,
+        "wrong_pixels": 2564610,
+        "wrong_mean_confidence": 0.8398488809832962,
+        "wrong_confidence_gt99_fraction": 0.21661422204545722
+      }
+    }
+  },
+  "validation": {
+    "frozen_point": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8868193347524149,
+        "iou": 0.811804224861021,
+        "precision": 0.9003725700320476,
+        "recall": 0.905780420210655,
+        "boundary_f1": 0.31092881357614477,
+        "hd95_pixels": 15.29675627033026,
+        "hd95_diagonal": 0.04225171909729831
+      },
+      "pooled": {
+        "dice": 0.892955224020143,
+        "iou": 0.8066116596140196,
+        "precision": 0.8999288173235128,
+        "recall": 0.8860888771040161
+      },
+      "prec_at": {
+        "0.5": 0.9566929133858267,
+        "0.6": 0.926509186351706,
+        "0.7": 0.8556430446194225,
+        "0.8": 0.6811023622047244,
+        "0.9": 0.2755905511811024
+      },
+      "threshold_jaccard_065": 0.7628592315988021,
+      "counts": {
+        "tp": 10696841,
+        "fp": 1189478,
+        "fn": 1375132,
+        "tn": 36676981
+      },
+      "severe_undercoverage": 20,
+      "epoch": 2,
+      "checkpoint_sha256": "44d7582a464c81201cbc027a2e97dfabe26395794419ea72398c1b71795c6646"
+    },
+    "stage37_swin_control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8875880434967702,
+        "iou": 0.8138607420233221,
+        "precision": 0.9175074877102842,
+        "recall": 0.8906607926413481,
+        "boundary_f1": 0.3315368319798511,
+        "hd95_pixels": 15.288905652229976,
+        "hd95_diagonal": 0.042230034623488864
+      },
+      "pooled": {
+        "dice": 0.8922655883553847,
+        "iou": 0.8054869280721078,
+        "precision": 0.9197634565441892,
+        "recall": 0.8663641809006697
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9186351706036745,
+        "0.7": 0.8503937007874016,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.30708661417322836
+      },
+      "threshold_jaccard_065": 0.7625283526464428,
+      "counts": {
+        "tp": 10458725,
+        "fp": 912378,
+        "fn": 1613248,
+        "tn": 36954081
+      },
+      "severe_undercoverage": 28,
+      "epoch": 8,
+      "checkpoint_sha256": "5864f0ee742583b8d2d24b0347d08998c032f24567cad9cf4c16e6ba97602526"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage37_swin_control_vs_frozen_point": {
+        "macro_dice_delta": -0.0007687087443553964,
+        "image_bootstrap95": [
+          -0.00217005716857105,
+          0.0005905376457653868
+        ],
+        "improved": 329,
+        "worsened": 432,
+        "gains_over5pp": 8,
+        "losses_over5pp": 10,
+        "net_reduced_fn": 238116,
+        "net_added_fp": 277100,
+        "severe_undercoverage": [
+          28,
+          20
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "all existing baseline frozen in eval; only point MLP trained",
+  "lr_horizon": 100,
+  "primary_comparison": "Frozen baseline plus point-only training",
+  "archived_reference_caveat": "Stage37 selected baseline frozen; additional100head-onlyepochs; not equal-total-training-budget comparison",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

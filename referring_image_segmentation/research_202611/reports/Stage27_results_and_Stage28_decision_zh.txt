@@ -1,0 +1,36 @@
+已完成Stage27与置信度诊断；Stage28只检验DropPath训练策略
+
+2026-11-10，本轮不使用D盘Qwen项目，沿用服务器MambaVision工程，所有新文件保存在服务器。
+
+Stage27结论：
+辅助覆盖监督按预先指定的最佳验证宏平均Dice选模，control=88.8110%，coverage_aux=88.7960%，差值-0.0150个百分点。
+逐图召回率<0.5的严重漏分病例：21对22。既有305/581/791三例中，前两例下降，最后一例改善。
+总体、尾部和分组结果不支持当前实现已形成稳定收益。不否定所有覆盖监督方法，但本轮不追加辅助模块或调权重扫描。
+Stage27完成300轮、每组9000次更新，最终逐图指标/边界指标和辅助读出分析均已完成；保持原始产物不变。
+
+早晚检查点诊断：
+读取Stage22、Stage24的best loss、best Dice、last，共6个检查点。
+原TP/FP/FN/TN完全复现，原始总损失在2e-6以内复现，模型权重未修改。
+seed42：best Dice到last，BCE 0.19581→0.59367；soft Dice损失0.12015→0.11697；二值错误像素比例5.04%→5.33%；各自错误像素中置信度>0.99的比例31.27%→76.13%。
+seed43：BCE 0.17636→0.58052；soft Dice损失0.11801→0.11611；二值错误像素比例4.92%→5.23%；各自错误像素中置信度>0.99的比例25.07%→76.59%。
+二值标注NLL/Brier与15箱校准误差的后期变化也支持概率质量恶化。ECE依赖分箱和前景背景占比，不单独作为诊断依据。
+这些是检查点各自错误集合的统计，不意味着所有同一批像素均变得更自信，也不隔离遗忘、优化、数据限制或正则化不足的因果贡献。
+
+Stage28的唯一干预：
+在原始MambaVision-S+Swin微调架构上，仅启用levels2/3的12个DropPath模块，概率保持0.070588至0.2。
+两组均微调后两阶段；冻结前缀维持eval，BN状态不变，验证时关闭所有DropPath。候选不带Stage27辅助头。
+seed42、训练1886/验证762、256x256、batch64、AdamW、原始两组学习率、300轮余弦、几何增强、损失和选模协议均保留。
+新增验证日志分解BCE/softDice并统计错误像素置信度，但不用于选模。
+先验证相同初始状态和eval输出、训练随机性、RNG重放、梯度及冻结参数、真实停止/恢复；全部通过才正式训练。
+训练后自动完成逐图配对、区域面积分组、严重漏分和置信度变化分析。当前不自动追加学习率扫描或多种子扫描，先判断本项干预结果。
+
+关键路径：
+source/referring_image_segmentation/stage27_coverage_supervision/results/analysis.json
+research/early_peak_20261110/calibration_audit/results.json
+source/referring_image_segmentation/stage28_drop_path/PROTOCOL.md
+source/referring_image_segmentation/stage28_drop_path/DECISION.json
+source/referring_image_segmentation/stage28_drop_path/smoke/preflight.json
+source/referring_image_segmentation/stage28_drop_path/smoke/RESUME_AUDIT.json
+source/referring_image_segmentation/stage28_drop_path/results/run_status.json
+
+所有正式效果结论须等待Stage28完成；开启DropPath是训练设置对照，不是新方法创新。

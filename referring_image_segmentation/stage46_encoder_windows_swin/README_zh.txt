@@ -1,0 +1,1 @@
+第46轮：固定UPerHead64，仅检查编码器窗口适配与原生Swin注意力。window8将后两阶段窗口设为8/8；swin8在此基础上替换5个Attention block，stage3采用0/4/0移窗，stage4单窗口不移窗。保留兼容预训练参数，新增相对位置偏置零初始化。以Stage45 UPer64为主参照，100轮、batch64、原soft BCE+Dice与数据划分不变。两组训练完成后各评估867测试图。窗口适配同时影响Mamba和Attention，不能归因于Mamba核心修改；Swin包内机制尚未逐项消融。

@@ -1,0 +1,43 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting fvcore==0.1.5.post20221221
+  Downloading fvcore-0.1.5.post20221221.tar.gz (50 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from fvcore==0.1.5.post20221221) (1.26.4)
+Collecting yacs>=0.1.6 (from fvcore==0.1.5.post20221221)
+  Downloading yacs-0.1.8-py3-none-any.whl (14 kB)
+Requirement already satisfied: pyyaml>=5.1 in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from fvcore==0.1.5.post20221221) (6.0.3)
+Requirement already satisfied: tqdm in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from fvcore==0.1.5.post20221221) (4.70.1)
+Collecting termcolor>=1.1 (from fvcore==0.1.5.post20221221)
+  Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+Requirement already satisfied: Pillow in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from fvcore==0.1.5.post20221221) (10.3.0)
+Collecting tabulate (from fvcore==0.1.5.post20221221)
+  Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+Collecting iopath>=0.1.7 (from fvcore==0.1.5.post20221221)
+  Downloading iopath-0.1.10.tar.gz (42 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: typing_extensions in /home/waas/mambavision_stage22/env/lib/python3.11/site-packages (from iopath>=0.1.7->fvcore==0.1.5.post20221221) (4.16.0)
+Collecting portalocker (from iopath>=0.1.7->fvcore==0.1.5.post20221221)
+  Downloading portalocker-4.4.2-py3-none-any.whl (129 kB)
+Building wheels for collected packages: fvcore, iopath
+  Building wheel for fvcore (pyproject.toml): started
+  Building wheel for fvcore (pyproject.toml): finished with status 'done'
+  Created wheel for fvcore: filename=fvcore-0.1.5.post20221221-py3-none-any.whl size=61447 sha256=c980814f8f196c249ca37fb0bf70e0283eba91d9ab3e9c186bbd2aba780ecb37
+  Stored in directory: /home/featurize/.cache/pip/wheels/a9/30/46/b7cb09b198d92063dc624e2a538b4d31eaa0629b56590c791c
+  Building wheel for iopath (pyproject.toml): started
+  Building wheel for iopath (pyproject.toml): finished with status 'done'
+  Created wheel for iopath: filename=iopath-0.1.10-py3-none-any.whl size=31598 sha256=7f11c471e534538c52162dbc83b7911967fd48ac4ee691d08c21ff5708cf775f
+  Stored in directory: /home/featurize/.cache/pip/wheels/34/08/79/f24d785c5011f876e8c7ae6fc636f91ad789da14b51e719c6a
+Successfully built fvcore iopath
+Installing collected packages: yacs, termcolor, tabulate, portalocker, iopath, fvcore
+
+Successfully installed fvcore-0.1.5.post20221221 iopath-0.1.10 portalocker-4.4.2 tabulate-0.10.0 termcolor-3.3.0 yacs-0.1.8

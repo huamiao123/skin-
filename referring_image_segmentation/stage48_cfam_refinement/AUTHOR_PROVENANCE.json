@@ -1,0 +1,129 @@
+{
+  "author_repository": "xmindflow/cenet",
+  "commit": "c57b43f9494d8cb24534a00cbdba1476b1ae4d93",
+  "class_definitions": {
+    "cfam": {
+      "losses/utils.py": {
+        "sha256": "6e1a8e3504aebc43d83c033209a589703c7d80df620bf065e8658c1aee129eeb",
+        "nodes": {
+          "get_class_weight": "e51ae42f41af66f162415dfc8882eb85a8ab2ff171cbe31b0dc25bf003ea3616",
+          "reduce_loss": "eb072712858b6356bd21152e9f576fe233c4825c082ea1e02a6a988e852877a0",
+          "weight_reduce_loss": "d4428801bb8e6754de321b753ea4c6318f8c989ed67a8ea3d5d6122f0b8af590",
+          "weighted_loss": "98b2cc779c9a4331d48e8ab7d446e9f5a8ea5794cb9a296d30a1e01b068cd31e"
+        }
+      },
+      "losses/cross_entropy_loss.py": {
+        "sha256": "2d2d024b5ef3a433f784a97cc282ec4b485549fbe4ade93701ac96a2a365ac7a",
+        "nodes": {
+          "cross_entropy": "98d3e2a8dc78392914936088e3e56411a58969844107bcadfccfd884e96fb1ac",
+          "_expand_onehot_labels": "428a42d57fa481d5c80701ba3223460627ab13fd8a0207e70d73afe63179dd76",
+          "binary_cross_entropy": "b3dac0a1fb61362acdb91aa8edc50159c03c49ef3be304b407edecbe6a56be20",
+          "mask_cross_entropy": "2f9f44b781c646a10d1884f5ff0611e5e7f399022d9622a9426ef2d9b119360d",
+          "CrossEntropyLoss": "8bc78f218ea0de783a5c4204073c2a4b23368e99ded1e110f4777e68405b385e"
+        }
+      },
+      "utils/wrappers.py": {
+        "sha256": "5b1f2676f506dde9b483b1aba43cb5e3b441887642ed955dfea9b75123c3fd0c",
+        "nodes": {
+          "resize": "cb6685027a6529fd7a6864338f63b0813bc21b46307ddf8b1786cf9a29117b2d"
+        }
+      },
+      "decode_heads/decode_head.py": {
+        "sha256": "cd7a2fa6d9963f2dcb51fa5c5f21433d9d7aafa56c39769f4b83ebaa88a5890e",
+        "nodes": {
+          "BaseDecodeHead": "9c804ee4b4f82de42a8be300b460bfe280309b5320843bd087e8b87cbc64f1a4"
+        }
+      },
+      "decode_heads/psp_head.py": {
+        "sha256": "c022bde96e7e6d1ff2c33d78ae553887ae0e5a8e95d712f566ede49fbcf61161",
+        "nodes": {
+          "PPM": "9f5fd128b543cccd448be4e55974ad09121a8940ee3fb7e80ebbea12e32e073f"
+        }
+      },
+      "decode_heads/uper_head.py": {
+        "sha256": "b55fc50875cc2047453e1f2bfa2a8e9de00f900a453a6daa1a75fc13e5f17206",
+        "nodes": {
+          "UPerHead": "0adc7141181757ff47eb7ca8362994d3c1f5e2878dfa129e4f4eba5e4edfe790"
+        }
+      },
+      "cenet": {
+        "src/networks/cenet/modules/blocks.py": {
+          "sha256": "5544c193d5a92aab370c9b1b290e0a333ccc9917aab26b6418871bbbb46ddf12",
+          "nodes": {
+            "_init_weights": "1e16ffca9226254439ced698ab1668ea56a80eb728c8868cbf4a0324c3b0bb0b",
+            "SepConvBN": "f511d125532005ba89920c33ebbcca70994c301d03194cfac5466b14d7e70f24"
+          }
+        },
+        "src/networks/cenet/modules/nlb.py": {
+          "sha256": "5c95642351b33ed9b492585ab9dbf2fc3d9e1ae08a505eae2cd719325dcd5c12",
+          "nodes": {
+            "Nonlocal": "0909bc1667cae581a29a40489874fed72ad633d521fb16c235b0ceaa4329b7e4"
+          }
+        },
+        "src/networks/cenet/modules/cfam.py": {
+          "sha256": "a65ebb47fe0c681b1e25fddaeb9d8867381e288c16fca4b23536b75e29c96317",
+          "nodes": {
+            "build_act_layer": "a677131ccfe3f82bd9f3824827c58582399e9d0fb8a94759a31da84f9e70395a",
+            "build_norm_layer": "a31131b0fb9884622b2154d7b317f74a8286fe7506bc202372300e6afe199477",
+            "LayerNorm": "9a3acd6e2afab80f0aa1d1fc320f79009d8f7be3bcac444d9f96c9e1a81b8376",
+            "LayerNorm2d": "a01d517e173c78b740e04dca579a669e99fe510f3c6ebda3adb314030d97a3a4",
+            "SRM": "c14787c4404162f9abeb76a463f828176601fc947609c7ed35e949e49ba1d97c",
+            "Mlp": "ba34072f7f960ad3b53cb86e7749aeb0dc56707890dcc271e01f538e9db2a0d6",
+            "MultiOrderDWConv": "062dc29cabcbdcfecc9fea70eb05c44238802fb668f63a2a76e97daf202be040",
+            "CCU": "8945752d9de9c56f6afd189c8d167583412bea6f4fa8971fa01a7afb59c04f63",
+            "MCA": "302f06dedd295ffa8ea3b74a4a497affd5802f2ffdbb5654cf6ead9aad801617",
+            "CFAModule": "61b7547b6d3319e9fb03292ab4dffdedf5f5c6c11039c3f8f6e59a82810722b8"
+          }
+        }
+      }
+    },
+    "conv_control": {
+      "losses/utils.py": {
+        "sha256": "6e1a8e3504aebc43d83c033209a589703c7d80df620bf065e8658c1aee129eeb",
+        "nodes": {
+          "get_class_weight": "e51ae42f41af66f162415dfc8882eb85a8ab2ff171cbe31b0dc25bf003ea3616",
+          "reduce_loss": "eb072712858b6356bd21152e9f576fe233c4825c082ea1e02a6a988e852877a0",
+          "weight_reduce_loss": "d4428801bb8e6754de321b753ea4c6318f8c989ed67a8ea3d5d6122f0b8af590",
+          "weighted_loss": "98b2cc779c9a4331d48e8ab7d446e9f5a8ea5794cb9a296d30a1e01b068cd31e"
+        }
+      },
+      "losses/cross_entropy_loss.py": {
+        "sha256": "2d2d024b5ef3a433f784a97cc282ec4b485549fbe4ade93701ac96a2a365ac7a",
+        "nodes": {
+          "cross_entropy": "98d3e2a8dc78392914936088e3e56411a58969844107bcadfccfd884e96fb1ac",
+          "_expand_onehot_labels": "428a42d57fa481d5c80701ba3223460627ab13fd8a0207e70d73afe63179dd76",
+          "binary_cross_entropy": "b3dac0a1fb61362acdb91aa8edc50159c03c49ef3be304b407edecbe6a56be20",
+          "mask_cross_entropy": "2f9f44b781c646a10d1884f5ff0611e5e7f399022d9622a9426ef2d9b119360d",
+          "CrossEntropyLoss": "8bc78f218ea0de783a5c4204073c2a4b23368e99ded1e110f4777e68405b385e"
+        }
+      },
+      "utils/wrappers.py": {
+        "sha256": "5b1f2676f506dde9b483b1aba43cb5e3b441887642ed955dfea9b75123c3fd0c",
+        "nodes": {
+          "resize": "cb6685027a6529fd7a6864338f63b0813bc21b46307ddf8b1786cf9a29117b2d"
+        }
+      },
+      "decode_heads/decode_head.py": {
+        "sha256": "cd7a2fa6d9963f2dcb51fa5c5f21433d9d7aafa56c39769f4b83ebaa88a5890e",
+        "nodes": {
+          "BaseDecodeHead": "9c804ee4b4f82de42a8be300b460bfe280309b5320843bd087e8b87cbc64f1a4"
+        }
+      },
+      "decode_heads/psp_head.py": {
+        "sha256": "c022bde96e7e6d1ff2c33d78ae553887ae0e5a8e95d712f566ede49fbcf61161",
+        "nodes": {
+          "PPM": "9f5fd128b543cccd448be4e55974ad09121a8940ee3fb7e80ebbea12e32e073f"
+        }
+      },
+      "decode_heads/uper_head.py": {
+        "sha256": "b55fc50875cc2047453e1f2bfa2a8e9de00f900a453a6daa1a75fc13e5f17206",
+        "nodes": {
+          "UPerHead": "0adc7141181757ff47eb7ca8362994d3c1f5e2878dfa129e4f4eba5e4edfe790"
+        }
+      }
+    }
+  },
+  "source_manifest_sha256": "9eba64561ad5d85002b93f55a36387138786220f8fac0352c34fbe5c476310b2",
+  "integration": "Unmodified author CFAM AST, fpn_convs[1] forward-output hook, cast back to FPN dtype. Full CENet not reproduced.",
+  "control": "Conventional parameter-matched 2conv residual; no attention; not FLOP-matched."
+}

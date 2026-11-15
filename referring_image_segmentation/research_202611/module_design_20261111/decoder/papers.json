@@ -1,0 +1,1000 @@
+[
+  {
+    "title": "TransAttUnet: Multi-Level Attention-Guided U-Net With Transformer for Medical Image Segmentation",
+    "authors": [
+      "Bingzhi Chen",
+      "Yishu Liu",
+      "Zheng Zhang",
+      "Guangming Lu",
+      "Adams Wai‐Kin Kong"
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+    "doi": "10.1109/tetci.2023.3309626",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tetci.2023.3309626",
+    "abstract": "Accurate segmentation of organs or lesions from medical images is crucial for reliable diagnosis of diseases and organ morphometry. In recent years, convolutional encoder-decoder solutions have achieved substantial progress in the field of automatic medical image segmentation. Due to the inherent bias in the convolution operations, prior models mainly focus on local visual cues formed by the neighboring pixels, but fail to fully model the long-range contextual dependencies. In this article, we propose a novel Transformer-based Attention Guided Network calledTransAttUnet, in which the multi-level guided attention and multi-scale skip connection are designed to jointly enhance the performance of the semantical segmentation architecture. Inspired by Transformer, the self-aware attention (SAA) module with Transformer Self Attention (TSA) and Global Spatial Attention (GSA) is incorporated into TransAttUnet to effectively learn the non-local interactions among encoder features. Moreover, we also use additional multi-scale skip connections between decoder blocks to aggregate the upsampled features with different semantic scales. In this way, the representation ability of multi-scale context information is strengthened to generate discriminative features. Benefitting from these complementary components, the proposed TransAttUnet can effectively alleviate the loss of fine details caused by the stacking of convolution layers and the consecutive sampling operations, finally improving the segmentation quality of medical images. Extensive experiments were conducted on multiple medical image segmentation datasets from various imaging modalities, which demonstrate that the proposed method consistently outperforms the existing state-of-the-art methods.",
+    "source": "openalex",
+    "citation_count": 544,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2107.05274",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Encoder",
+      "Discriminative model",
+      "Transformer",
+      "Image segmentation",
+      "Pixel"
+    ],
+    "score": 0.8754,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multi-Scale Self-Guided Attention for Medical Image Segmentation",
+    "authors": [
+      "Ashish Sinha",
+      "José Dolz"
+    ],
+    "year": 2020,
+    "venue": "IEEE Journal of Biomedical and Health Informatics",
+    "doi": "10.1109/jbhi.2020.2986926",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/jbhi.2020.2986926",
+    "abstract": "Even though convolutional neural networks (CNNs) are driving progress in medical image segmentation, standard models still have some drawbacks. First, the use of multi-scale approaches, i.e., encoder-decoder architectures, leads to a redundant use of information, where similar low-level features are extracted multiple times at multiple scales. Second, long-range feature dependencies are not efficiently modeled, resulting in non-optimal discriminative feature representations associated with each semantic class. In this paper we attempt to overcome these limitations with the proposed architecture, by capturing richer contextual dependencies based on the use of guided self-attention mechanisms. This approach is able to integrate local features with their corresponding global dependencies, as well as highlight interdependent channel maps in an adaptive manner. Further, the additional loss between different modules guides the attention mechanisms to neglect irrelevant information and focus on more discriminant regions of the image by emphasizing relevant feature associations. We evaluate the proposed model in the context of semantic segmentation on three different datasets: abdominal organs, cardiovascular structures and brain tumors. A series of ablation experiments support the importance of these attention modules in the proposed architecture. In addition, compared to other state-of-the-art segmentation networks our model yields better segmentation performance, increasing the accuracy of the predictions while reducing the standard deviation. This demonstrates the efficiency of our approach to generate precise and reliable automatic segmentations of medical images. Our code is made publicly available at: https://github.com/sinAshish/Multi-Scale-Attention.",
+    "source": "openalex",
+    "citation_count": 596,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1906.02849",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Discriminative model",
+      "Artificial intelligence",
+      "Feature (linguistics)",
+      "Context (archaeology)",
+      "Encoder",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.8478,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "EMCAD: Efficient Multi-Scale Convolutional Attention Decoding for Medical Image Segmentation",
+    "authors": [
+      "Md Mostafijur Rahman",
+      "Mustafa Munir",
+      "Radu Marculescu"
+    ],
+    "year": 2024,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52733.2024.01118",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52733.2024.01118",
+    "abstract": "An efficient and effective decoding mechanism is crucial in medical image segmentation, especially in scenarios with limited computational resources. However, these decoding mechanisms usually come with high computational costs. To address this concern, we introduce EMCAD, a new efficient multi-scale convolutional attention decoder, designed to optimize both performance and computational efficiency. EMCAD leverages a unique multi-scale depth-wise convolution block, significantly enhancing feature maps through multi-scale convolutions. EMCAD also employs channel, spatial, and grouped (large-kernel) gated attention mechanisms, which are highly effective at capturing intricate spatial relationships while focusing on salient regions. By employing group and depth-wise convolution, EMCAD is very efficient and scales well (e.g., only 1.91M parameters and 0.381G FLOPs are needed when using a standard encoder). Our rigorous evaluations across 12 datasets that belong to six medical image segmentation tasks reveal that EMCAD achieves state-of-the-art (SOTA) performance with 79.4% and 80.3% reduction in #Params and #FLOPs, respectively. Moreover, EMCAD's adaptability to different encoders and versatility across segmentation tasks further establish EMCAD as a promising tool, advancing the field towards more efficient and accurate medical image analysis. Our implementation is available at https://github.com/SLDGroupIEMCAD.",
+    "source": "openalex",
+    "citation_count": 615,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.06880",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Decoding methods",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Convolutional code",
+      "Segmentation",
+      "Scale (ratio)",
+      "Computer vision"
+    ],
+    "score": 0.8387,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MISSFormer: An Effective Transformer for 2D Medical Image Segmentation",
+    "authors": [
+      "Xiaohong Huang",
+      "Zhifang Deng",
+      "Dandan Li",
+      "Xueguang Yuan",
+      "Ying Fu"
+    ],
+    "year": 2022,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2022.3230943",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2022.3230943",
+    "abstract": "Transformer-based methods are recently popular in vision tasks because of their capability to model global dependencies alone. However, it limits the performance of networks due to the lack of modeling local context and global-local correlations of multi-scale features. In this paper, we present MISSFormer, a Medical Image Segmentation tranSFormer. MISSFormer is a hierarchical encoder-decoder network with two appealing designs: 1) a feed-forward network in transformer block of U-shaped encoder-decoder structure is redesigned, ReMix-FFN, which explore global dependencies and local context for better feature discrimination by re-integrating the local context and global dependencies; 2) a ReMixed Transformer Context Bridge is proposed to extract the correlations of global dependencies and local context in multi-scale features generated by our hierarchical transformer encoder. The MISSFormer shows a solid capacity to capture more discriminative dependencies and context in medical image segmentation. The experiments on multi-organ, cardiac segmentation and retinal vessel segmentation tasks demonstrate the superiority, effectiveness and robustness of our MISSFormer. Specifically, the experimental results of MISSFormer trained from scratch even outperform state-of-the-art methods pre-trained on ImageNet, and the core designs can be generalized to other visual segmentation tasks. The code has been released on Github: https://github.com/ZhifangDeng/MISSFormer.",
+    "source": "openalex",
+    "citation_count": 974,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2109.07162",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Encoder",
+      "Segmentation",
+      "Artificial intelligence",
+      "Transformer",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Discriminative model"
+    ],
+    "score": 0.8311,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Customized Segment Anything Model for Medical Image Segmentation",
+    "authors": [
+      "Kaidong Zhang",
+      "Dong Liu"
+    ],
+    "year": 2023,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2304.13785",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2304.13785",
+    "abstract": "We propose SAMed, a general solution for medical image segmentation. Different from the previous methods, SAMed is built upon the large-scale image segmentation model, Segment Anything Model (SAM), to explore the new research paradigm of customizing large-scale models for medical image segmentation. SAMed applies the low-rank-based (LoRA) finetuning strategy to the SAM image encoder and finetunes it together with the prompt encoder and the mask decoder on labeled medical image segmentation datasets. We also observe the warmup finetuning strategy and the AdamW optimizer lead SAMed to successful convergence and lower loss. Different from SAM, SAMed could perform semantic segmentation on medical images. Our trained SAMed model achieves 81.88 DSC and 20.64 HD on the Synapse multi-organ segmentation dataset, which is on par with the state-of-the-art methods. We conduct extensive experiments to validate the effectiveness of our design. Since SAMed only updates a small fraction of the SAM parameters, its deployment cost and storage cost are quite marginal in practical usage. The code of SAMed is available at https://github.com/hitachinsk/SAMed.",
+    "source": "openalex",
+    "citation_count": 454,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2304.13785",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Encoder",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Image (mathematics)",
+      "Code (set theory)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.8205,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Medical Image Segmentation Review: The Success of U-Net",
+    "authors": [
+      "Reza Azad",
+      "Ehsan Khodapanah Aghdam",
+      "Amelie Rauland",
+      "Yiwei Jia",
+      "Atlas Haddadi Avval",
+      "Afshin Bozorgpour",
+      "Sanaz Karimijafarbigloo",
+      "Joseph Cohen",
+      "Ehsan Adeli",
+      "Dorit Merhof"
+    ],
+    "year": 2024,
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "doi": "10.1109/tpami.2024.3435571",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tpami.2024.3435571",
+    "abstract": "Automatic medical image segmentation is a crucial topic in the medical domain and successively a critical counterpart in the computer-aided diagnosis paradigm. U-Net is the most widespread image segmentation architecture due to its flexibility, optimized modular design, and success in all medical image modalities. Over the years, the U-Net model has received tremendous attention from academic and industrial researchers who have extended it to address the scale and complexity created by medical tasks. These extensions are commonly related to enhancing the U-Net's backbone, bottleneck, or skip connections, or including representation learning, or combining it with a Transformer architecture, or even addressing probabilistic prediction of the segmentation map. Having a compendium of different previously proposed U-Net variants makes it easier for machine learning researchers to identify relevant research questions and understand the challenges of the biological tasks that challenge the model. In this work, we discuss the practical aspects of the U-Net model and organize each variant model into a taxonomy. Moreover, to measure the performance of these strategies in a clinical application, we propose fair evaluations of some unique and famous designs on well-known datasets. Furthermore, we provide a comprehensive implementation library with trained models. In addition, for ease of future studies, we created an online list of U-Net papers with their possible official implementation.",
+    "source": "openalex",
+    "citation_count": 1304,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2211.14830",
+    "publication_type": "review",
+    "keywords": [
+      "Image segmentation",
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Segmentation",
+      "Scale-space segmentation",
+      "Image processing",
+      "Image texture"
+    ],
+    "score": 0.809,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MDA-Unet: A Multi-Scale Dilated Attention U-Net for Medical Image Segmentation",
+    "authors": [
+      "Alyaa Amer",
+      "Tryphon Lambrou",
+      "Xujiong Ye"
+    ],
+    "year": 2022,
+    "venue": "Applied Sciences",
+    "doi": "10.3390/app12073676",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/app12073676",
+    "abstract": "The advanced development of deep learning methods has recently made significant improvements in medical image segmentation. Encoder–decoder networks, such as U-Net, have addressed some of the challenges in medical image segmentation with an outstanding performance, which has promoted them to be the most dominating deep learning architecture in this domain. Despite their outstanding performance, we argue that they still lack some aspects. First, there is incompatibility in U-Net’s skip connection between the encoder and decoder features due to the semantic gap between low-processed encoder features and highly processed decoder features, which adversely affects the final prediction. Second, it lacks capturing multi-scale context information and ignores the contribution of all semantic information through the segmentation process. Therefore, we propose a model named MDA-Unet, a novel multi-scale deep learning segmentation model. MDA-Unet improves upon U-Net and enhances its performance in segmenting medical images with variability in the shape and size of the region of interest. The model is integrated with a multi-scale spatial attention module, where spatial attention maps are derived from a hybrid hierarchical dilated convolution module that captures multi-scale context information. To ease the training process and reduce the gradient vanishing problem, residual blocks are deployed instead of the basic U-net blocks. Through a channel attention mechanism, the high-level decoder features are used to guide the low-level encoder features to promote the selection of meaningful context information, thus ensuring effective fusion. We evaluated our model on 2 different datasets: a lung dataset of 2628 axial CT images and an echocardiographic dataset of 2000 images, each with its own challenges. Our model has achieved a significant gain in performance with a slight increase in the number of trainable parameters in comparison with the basic U-Net model, providing a dice score of 98.3% on the lung dataset and 96.7% on the echocardiographic dataset, where the basic U-Net has achieved 94.2% on the lung dataset and 93.9% on the echocardiographic dataset.",
+    "source": "openalex",
+    "citation_count": 63,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2076-3417/12/7/3676/pdf?version=1649639786",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Encoder",
+      "Artificial intelligence",
+      "Deep learning",
+      "Context (archaeology)",
+      "Image segmentation",
+      "Process (computing)"
+    ],
+    "score": 0.8074,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MSA$^2$Net: Multi-scale Adaptive Attention-guided Network for Medical Image Segmentation",
+    "authors": [
+      "Sina Ghorbani Kolahi",
+      "S. Kamal Chaharsooghi",
+      "Toktam Khatibi",
+      "Afshin Bozorgpour",
+      "Reza Azad",
+      "Moein Heidari",
+      "Ilker Hacihaliloglu",
+      "Dorit Merhof"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2407.21640",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2407.21640",
+    "abstract": "Medical image segmentation involves identifying and separating object instances in a medical image to delineate various tissues and structures, a task complicated by the significant variations in size, shape, and density of these features. Convolutional neural networks (CNNs) have traditionally been used for this task but have limitations in capturing long-range dependencies. Transformers, equipped with self-attention mechanisms, aim to address this problem. However, in medical image segmentation it is beneficial to merge both local and global features to effectively integrate feature maps across various scales, capturing both detailed features and broader semantic elements for dealing with variations in structures. In this paper, we introduce MSA$^2$Net, a new deep segmentation framework featuring an expedient design of skip-connections. These connections facilitate feature fusion by dynamically weighting and combining coarse-grained encoder features with fine-grained decoder feature maps. Specifically, we propose a Multi-Scale Adaptive Spatial Attention Gate (MASAG), which dynamically adjusts the receptive field (Local and Global contextual information) to ensure that spatially relevant features are selectively highlighted while minimizing background distractions. Extensive evaluations involving dermatology, and radiological datasets demonstrate that our MSA$^2$Net outperforms state-of-the-art (SOTA) works or matches their performance. The source code is publicly available at https://github.com/xmindflow/MSA-2Net.",
+    "source": "openalex",
+    "citation_count": 29,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2407.21640",
+    "publication_type": "preprint",
+    "keywords": [
+      "Scale (ratio)",
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Computer vision",
+      "Image (mathematics)",
+      "Attention network",
+      "Geography"
+    ],
+    "score": 0.807,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Edge Information-Guided 3D UNet for Medical Image Segmentation",
+    "authors": [
+      "Shaolong Chen",
+      "Yicai Gong",
+      "Fei Luo",
+      "Dongchen Pan"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Artificial Intelligence and Electromechanical Automation (AIEA)",
+    "doi": "10.1109/aiea70743.2026.11632338",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/aiea70743.2026.11632338",
+    "abstract": "Medical image segmentation serves as the foundation for numerous clinical diagnoses, which aims to accurately segment anatomical structures from volumetric medical images such as MRI and CT scans. Owing to its efficient encoder-decoder architecture and skip connections, 3D UNet can capture both local details and global contextual information, and has become the mainstream approach for 3D medical image segmentation. However, traditional 3D UNet often suffers from inaccurate segmentation of edge regions, as it fails to fully exploit edge information that reflects the boundaries between target regions and the background. To address this issue, this paper proposes an edge information-guided 3D UNet (E-3D UNet) for medical image segmentation, which integrates edge information into the 3D UNet framework to enhance the model's ability to recognize edge features. We design an edge aware module (EAM) that takes the output features of the 3D UNet encoder as input for edge prediction, and employs edge labels to guide the learning of edge features. During the decoding process of 3D UNet, these learned edge features are fused with multi-scale features to guide precise boundary localization. Experiments on infrapatellar fat pad dataset (IPFP) demonstrate that E-3D UNet outperforms baseline models including UNet, 3D UNet and VNet, thus showing promising applicability for clinical medical image segmentation tasks.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1109/aiea70743.2026.11632338",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer vision",
+      "Computer science",
+      "Image segmentation",
+      "Segmentation",
+      "Scale-space segmentation",
+      "Image (mathematics)",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.785,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "DMAGNet: Dual‐path multi‐scale attention guided network for medical image segmentation",
+    "authors": [
+      "Qiulang Ji",
+      "Jihong Wang",
+      "Caifu Ding",
+      "Yuhang Wang",
+      "Zhou Wen",
+      "Zijie Liu",
+      "Chen Yang"
+    ],
+    "year": 2023,
+    "venue": "IET Image Processing",
+    "doi": "10.1049/ipr2.12904",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/ipr2.12904",
+    "abstract": "Abstract In recent years, convolutional neural networks (CNN)‐based automatic segmentation of medical images has become one of the hot topics in clinical disease diagnosis. It is still a challenging task to improve the segmentation accuracy of the network model with the large variation of pathological regions in different patients and the fuzzy boundary of pathological regions. A Dual‐path Multi‐scale Attention Guided network (DMAGNet) for medical image segmentation is proposed in this paper. First, the Dual‐path Multi‐scale Attention Fusion Module (DMAF) is proposed as a novel skip connection strategy, which is applied to encode semantic dependencies between high‐level and low‐level channels. Second, the Multi‐scale Normalized Channel Attention Module (MNCA) based on the atrous convolution, normalization channel attention mechanism, and the Depthwise Separable Convolutions (DSConv) is developed to strengthen dependencies between channels. Finally, the encoder–decoder backbone employs the DSConv, as well as the pretrained Resnet34 block is combined in the encoder part to further improve the backbone network performance. Comprehensive experiments on brain, lung, and liver segmentation tasks show that the proposed DMAGNet outperforms the original U‐Net method and other advanced methods.",
+    "source": "openalex",
+    "citation_count": 17,
+    "is_open_access": true,
+    "open_access_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1049/ipr2.12904",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Pattern recognition (psychology)",
+      "Encoder",
+      "Convolutional neural network",
+      "Backbone network",
+      "Path (computing)"
+    ],
+    "score": 0.7832,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Medical image segmentation using deep learning: A survey",
+    "authors": [
+      "Risheng Wang",
+      "Tao Lei",
+      "Ruixia Cui",
+      "Bingtao Zhang",
+      "Hongying Meng",
+      "Asoke Kumar Nandi"
+    ],
+    "year": 2022,
+    "venue": "IET Image Processing",
+    "doi": "10.1049/ipr2.12419",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/ipr2.12419",
+    "abstract": "Abstract Deep learning has been widely used for medical image segmentation and a large number of papers has been presented recording the success of deep learning in the field. A comprehensive thematic survey on medical image segmentation using deep learning techniques is presented. This paper makes two original contributions. Firstly, compared to traditional surveys that directly divide literatures of deep learning on medical image segmentation into many groups and introduce literatures in detail for each group, we classify currently popular literatures according to a multi‐level structure from coarse to fine. Secondly, this paper focuses on supervised and weakly supervised learning approaches, without including unsupervised approaches since they have been introduced in many old surveys and they are not popular currently. For supervised learning approaches, we analyse literatures in three aspects: the selection of backbone networks, the design of network blocks, and the improvement of loss functions. For weakly supervised learning approaches, we investigate literature according to data augmentation, transfer learning, and interactive segmentation, separately. Compared to existing surveys, this survey classifies the literatures very differently from before and is more convenient for readers to understand the relevant rationale and will guide them to think of appropriate improvements in medical image segmentation based on deep learning approaches.",
+    "source": "openalex",
+    "citation_count": 1020,
+    "is_open_access": true,
+    "open_access_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1049/ipr2.12419",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Segmentation",
+      "Computer vision",
+      "Deep learning",
+      "Image (mathematics)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.7823,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multi-scale Hierarchical Vision Transformer with Cascaded Attention Decoding for Medical Image Segmentation",
+    "authors": [
+      "Md. Mostafijur Rahman",
+      "Radu Mărculescu"
+    ],
+    "year": 2023,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2303.16892",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2303.16892",
+    "abstract": "Transformers have shown great success in medical image segmentation. However, transformers may exhibit a limited generalization ability due to the underlying single-scale self-attention (SA) mechanism. In this paper, we address this issue by introducing a Multi-scale hiERarchical vIsion Transformer (MERIT) backbone network, which improves the generalizability of the model by computing SA at multiple scales. We also incorporate an attention-based decoder, namely Cascaded Attention Decoding (CASCADE), for further refinement of multi-stage features generated by MERIT. Finally, we introduce an effective multi-stage feature mixing loss aggregation (MUTATION) method for better model training via implicit ensembling. Our experiments on two widely used medical image segmentation benchmarks (i.e., Synapse Multi-organ, ACDC) demonstrate the superior performance of MERIT over state-of-the-art methods. Our MERIT architecture and MUTATION loss aggregation can be used with downstream medical image and semantic segmentation tasks.",
+    "source": "openalex",
+    "citation_count": 63,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2303.16892",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science",
+      "Generalizability theory",
+      "Segmentation",
+      "Transformer",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Decoding methods",
+      "Figure of merit"
+    ],
+    "score": 0.7674,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Modality-Agnostic Domain Generalizable Medical Image Segmentation by Multi-Frequency in Multi-Scale Attention",
+    "authors": [
+      "Ju-Hyeon Nam",
+      "Nur Suriza Syazwany",
+      "Su Jung Kim",
+      "Sang‐Cheol Lee"
+    ],
+    "year": 2024,
+    "venue": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+    "doi": "10.1109/cvpr52733.2024.01091",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvpr52733.2024.01091",
+    "abstract": "Generalizability in deep neural networks plays a pivotal role in medical image segmentation. However, deep learning-based medical image analyses tend to overlook the importance of frequency variance, which is critical element for achieving a model that is both modality-agnostic and domain-generalizable. Additionally, various models fail to account for the potential information loss that can arise from multitask learning under deep supervision, a factor that can impair the model's representation ability. To address these challenges, we propose a Modality-agnostic Domain Generalizable Network (MADGNet) for medical image segmentation, which comprises two key components: a Multi-Frequency in Multi-Scale Attention (MFMSA) block and Ensemble Sub-Decoding Module (E-SDM). The MFMSA block refines the process of spatial feature extraction, particularly in capturing boundary features, by incorporating multi-frequency and multi-scale features, thereby offering informative cues for tissue outline and anatomical structures. Moreover, we propose E-SDM to mitigate information loss in multitask learning with deep supervision, especially during substantial upsampling from low resolution. We evaluate the segmentation performance of MADGNet across six modalities and fifteen datasets. Through extensive experiments, we demonstrate that MADGNet consistently outperforms state-of-the-art models across various modalities, showcasing superior segmentation performance. This affirms MADGNet as a robust solution for medical image segmentation that excels in diverse imaging scenarios. Our MADGNet code is available in GitHub Link.",
+    "source": "openalex",
+    "citation_count": 132,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.06284",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Modality (human–computer interaction)",
+      "Computer vision",
+      "Image segmentation",
+      "Segmentation",
+      "Image (mathematics)",
+      "Scale (ratio)"
+    ],
+    "score": 0.7472,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Consistency-Guided Differential Decoding for Enhancing Semi-Supervised Medical Image Segmentation",
+    "authors": [
+      "Qingjie Zeng",
+      "Yutong Xie",
+      "Zilin Lu",
+      "Mengkang Lu",
+      "Jingfeng Zhang",
+      "Yong Xia"
+    ],
+    "year": 2024,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2024.3429340",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2024.3429340",
+    "abstract": "Semi-supervised learning (SSL) has been proven beneficial for mitigating the issue of limited labeled data, especially on volumetric medical image segmentation. Unlike previous SSL methods which focus on exploring highly confident pseudo-labels or developing consistency regularization schemes, our empirical findings suggest that differential decoder features emerge naturally when two decoders strive to generate consistent predictions. Based on the observation, we first analyze the treasure of discrepancy in learning towards consistency, under both pseudo-labeling and consistency regularization settings, and subsequently propose a novel SSL method called LeFeD, which learns the feature-level discrepancies obtained from two decoders, by feeding such information as feedback signals to the encoder. The core design of LeFeD is to enlarge the discrepancies by training differential decoders, and then learn from the differential features iteratively. We evaluate LeFeD against eight state-of-the-art (SOTA) methods on three public datasets. Experiments show LeFeD surpasses competitors without any bells and whistles, such as uncertainty estimation and strong constraints, as well as setting a new state of the art for semi-supervised medical image segmentation. Code has been released at https://github.com/maxwell0027/LeFeD.",
+    "source": "openalex",
+    "citation_count": 100,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2309.14819",
+    "publication_type": "article",
+    "keywords": [
+      "Image segmentation",
+      "Decoding methods",
+      "Artificial intelligence",
+      "Consistency (knowledge bases)",
+      "Computer science",
+      "Segmentation",
+      "Computer vision",
+      "Differential (mechanical device)"
+    ],
+    "score": 0.7398,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Uncertainty-Guided Hybrid Decoder for Medical Image Segmentation",
+    "authors": [
+      "Chen Lu",
+      "Jiajie Mu"
+    ],
+    "year": 2025,
+    "venue": "IEEE International Conference on Pattern Recognition, Machine Vision and Artificial Intelligence (PRMVAI)",
+    "doi": "10.1109/prmvai65741.2025.11108450",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/prmvai65741.2025.11108450",
+    "abstract": "Medical image segmentation, a cornerstone of clinical diagnostics, faces persistent challenges in balancing global contextual understanding with precise local detail preservation. While conventional CNN-based methods excel at hierarchical feature extraction, their inherent locality constraints limit their ability to capture long-range anatomical dependencies—a critical shortcoming in complex scenarios such as vascular boundary delineation. Conversely, pure Transformer architectures, despite their global context modeling strengths, struggle with computational efficiency on high-resolution medical data and often produce suboptimal boundary localization due to the absence of spatial inductive biases. This paper introduces a novel hybrid segmentation framework designed to address these complementary limitations. Our method integrates a dual-path decoder architecture that synergistically combines Transformer-based global reasoning with CNN-based local refinement, enabling effective multi-scale feature fusion while maintaining computational feasibility. To further enhance clinical reliability, we propose an uncertainty-aware attention mechanism that dynamically prioritizes ambiguous anatomical regions during inference, mitigating overconfident predictions in low-contrast or noise-prone areas. Experimental evaluations on multi-organ CT and retinal vessel segmentation tasks demonstrate that our method achieves SOTA performance in boundary localization accuracy.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11108312/11108324/11108450.pdf?arnumber=11108450",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Image segmentation",
+      "Medical imaging",
+      "Scale-space segmentation",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.735
+  },
+  {
+    "title": "Medical image segmentation with UNet-based multi-scale context fusion",
+    "authors": [
+      "Yongqi Yuan",
+      "Yong Jun Cheng"
+    ],
+    "year": 2024,
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-024-66585-x",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41598-024-66585-x",
+    "abstract": "Histopathological examination holds a crucial role in cancer grading and serves as a significant reference for devising individualized patient treatment plans in clinical practice. Nevertheless, the distinctive features of numerous histopathological image targets frequently contribute to suboptimal segmentation performance. In this paper, we propose a UNet-based multi-scale context fusion algorithm for medical image segmentation, which extracts rich contextual information by extracting semantic information at different encoding stages and assigns different weights to the semantic information at different scales through TBSFF module to improve the learning ability of the network for features. Through multi-scale context fusion and feature selection networks, richer semantic features and detailed information are extracted. The target can be more accurately segmented without significantly increasing the extra overhead. The results demonstrate that our algorithm achieves superior Dice and IoU scores with a relatively small parameter count. Specifically, on the GlaS dataset, the Dice score is 90.56, and IoU is 83.47. For the MoNuSeg dataset, the Dice score is 79.07, and IoU is 65.98.",
+    "source": "openalex",
+    "citation_count": 82,
+    "is_open_access": true,
+    "open_access_url": "https://www.nature.com/articles/s41598-024-66585-x.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Dice",
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Pattern recognition (psychology)",
+      "Context (archaeology)",
+      "Image segmentation",
+      "Machine learning"
+    ],
+    "score": 0.7345,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "LM-Net: A light-weight and multi-scale network for medical image segmentation",
+    "authors": [
+      "Zhenkun Lu",
+      "Chaoyin She",
+      "Wei Wang",
+      "Qinghua Huang"
+    ],
+    "year": 2023,
+    "venue": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2023.107717",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.compbiomed.2023.107717",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 81,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2501.03838",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Convolutional neural network",
+      "Image segmentation",
+      "Segmentation-based object categorization",
+      "Scale-space segmentation",
+      "Feature (linguistics)"
+    ],
+    "score": 0.717,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MGFuseSeg: Attention-Guided Multi-Granularity Fusion for Medical Image Segmentation",
+    "authors": [
+      "Guoping Xu",
+      "Xuesong Leng",
+      "Chang Li",
+      "Xingwei He",
+      "Xinglong Wu"
+    ],
+    "year": 2023,
+    "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+    "doi": "10.1109/bibm58861.2023.10385461",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/bibm58861.2023.10385461",
+    "abstract": "Convolutional Neural Networks (CNNs) have been widely used in medical image segmentation to efficiently develop computer-aided diagnosis systems. Due to the locality of convolutional operations, they can be used to extract fine-grained features, but with limitations in building global context and long-range spatial relationships. Recently, shifted window-based multi-layer perceptron (Swin-MLP) methods have demonstrated the ability to learn coarse-grained spatial features in a fixed-size window, but they are not well suited to dense-prediction tasks, such as medical image segmentation. To harmonize the strengths and mitigate the weaknesses of CNNs and SwinMLP in extracting features of varying granularity, we proposed two novel granularity fusion modules that use coarse-grained features to guide the fusion of fine-grained features based on the attention mechanism. Specifically, the first fusion module, named as BGFuse (Block Granularity Fuse), could fuse various scale block-grained features from Swin-MLP. The second fusion module, termed as LGFuse (Local Granularity Fuse), could fuse semantic coarse granularity information into fine granularity features. Equipped with these two fusion modules, we present a new attention-guided encoder-decoder network architecture (termed MGFuseSeg) for medical image segmentation. Without bells and whistles, the proposed MGFuseSeg significantly boosts the performance on three challenging segmentation benchmarks including Synapse, ACDC, and ISIC. Codes are available at https://github.com/apple1986/MGFuseSeg",
+    "source": "openalex",
+    "citation_count": 5,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Granularity",
+      "Fuse (electrical)",
+      "Segmentation",
+      "Artificial intelligence",
+      "Encoder",
+      "Convolutional neural network",
+      "Block (permutation group theory)"
+    ],
+    "score": 0.7034,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MSDNet: Multi-scale decoder for few-shot semantic segmentation via transformer-guided prototyping",
+    "authors": [
+      "Amirreza Fateh",
+      "Mohammad Reza Mohammadi",
+      "Mohammad Reza Jahed-Motlagh"
+    ],
+    "year": 2025,
+    "venue": "Image and Vision Computing",
+    "doi": "10.1016/j.imavis.2025.105672",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.imavis.2025.105672",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 27,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S0262885625002604?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.703,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Medical Transformer: Gated Axial-Attention for Medical Image Segmentation",
+    "authors": [
+      "Jeya Maria Jose Valanarasu",
+      "Poojan Oza",
+      "Ilker Hacihaliloglu",
+      "Vishal M. Patel"
+    ],
+    "year": 2021,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-030-87193-2_4",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-030-87193-2_4",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 1630,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2102.10662",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Convolutional neural network",
+      "Segmentation",
+      "Transformer",
+      "Artificial intelligence",
+      "Leverage (statistics)",
+      "Deep learning",
+      "Image segmentation"
+    ],
+    "score": 0.6779,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multi-scale Representations Using Transformers for Enhanced 3D Medical Image Segmentation with CLIP-Guided Textual Prompt",
+    "authors": [
+      "Fangliang Huang",
+      "Huanqing Xu",
+      "Xian Shao",
+      "Dan Jiang"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.6602382",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.6602382",
+    "abstract": "Objective: Traditional segmentation methods that rely solely on convolutional neural networks struggle to capture complex spatial information inherent in 3D medical images. This study aims to enhance segmentation accuracy and robustness by integrating multi-scale feature fusion technology and leveraging advanced models like transformers and CLIP (Contrastive Language–Image Pre-Training) with text cues. Methods: We propose a novel 3D medical image segmentation method with several key innovations: (1) Text Prompt Auxiliary Information: Incorporating text prompts to aid the segmentation process. (2) 3D Mix Module: Designing a module to effectively capture both local and global context information. (3) Multi-Scale Feature Fusion Gate: Introducing a gate mechanism to provide richer semantic information. Results: The experiments conducted across various medical image segmentation tasks clearly demonstrate that our proposed method significantly enhances both segmentation accuracy and robustness. It consistently outperforms baseline methods and other state-of-the-art techniques, as shown by extensive and thorough experimental evaluations. Conclusion: The proposed 3D medical image segmentation method, which integrates text prompt auxiliary information, a 3D mix module, and a multi-scale feature fusion gate, demonstrates superior performance in both accuracy and robustness compared to existing methods. This advancement holds significant potential for enhancing clinical applications in medical imaging.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.6729
+  },
+  {
+    "title": "Deep semantic segmentation of natural and medical images: a review",
+    "authors": [
+      "Saeid Asgari Taghanaki",
+      "Kumar Abhishek",
+      "Joseph Cohen",
+      "Julien Cohen‐Adad",
+      "Ghassan Hamarneh"
+    ],
+    "year": 2020,
+    "venue": "Artificial Intelligence Review",
+    "doi": "10.1007/s10462-020-09854-1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s10462-020-09854-1",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 935,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1910.07655",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Image segmentation",
+      "Categorization",
+      "Context (archaeology)",
+      "Task (project management)",
+      "Segmentation-based object categorization"
+    ],
+    "score": 0.6528,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multi-decoder Networks for Semi-supervised Medical Image Segmentation",
+    "authors": [
+      "Jianjun Zhang",
+      "Zhipeng Zhao",
+      "Yixin Chen",
+      "Hanqing Liu"
+    ],
+    "year": 2023,
+    "venue": "Proceedings of the 15th International Conference on Digital Image Processing",
+    "doi": "10.1145/3604078.3604098",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3604078.3604098",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 3,
+    "is_open_access": true,
+    "open_access_url": "https://dl.acm.org/doi/10.1145/3604078.3604098",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6303,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "CSAFD: Cross-scale attention fusion decoder for medical image segmentation",
+    "authors": [
+      "Xiaoshan Pan",
+      "Bin Yao",
+      "Yuzhao Liu",
+      "Jing Guo",
+      "Gongyan Li"
+    ],
+    "year": 2026,
+    "venue": "Signal, Image and Video Processing",
+    "doi": "10.1007/s11760-026-05269-7",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11760-026-05269-7",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1007/s11760-026-05269-7.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6229,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Multi-Encoder Parse-Decoder Network for Sequential Medical Image Segmentation",
+    "authors": [
+      "Dachuan Shi",
+      "Ruiyang Liu",
+      "Linmi Tao",
+      "Zuoxiang He",
+      "Li Huo"
+    ],
+    "year": 2021,
+    "venue": "2021 IEEE International Conference on Image Processing (ICIP)",
+    "doi": "10.1109/icip42928.2021.9506463",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icip42928.2021.9506463",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/9506008/9506009/09506463.pdf?arnumber=9506463",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6213,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MAPNet: A Multi-scale Attention Pooling Network for Ultrasound Medical Image Segmentation",
+    "authors": [
+      "Shixun Wang",
+      "Mengjiao Wang"
+    ],
+    "year": 2023,
+    "venue": "",
+    "doi": "10.21203/rs.3.rs-3721034/v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.21203/rs.3.rs-3721034/v1",
+    "abstract": "Abstract Deep convolutional neural networks have achieved great success in the field of medical image segmentation and assisted diagnosis due to their excellent autonomous feature extraction capability and good feature representation ability. Traditional convolutional neural networks usually use standard convolutional layers to extract features. However, in medical image segmentation, a pixel may correspond to multiple different scale structures, such as lesion edges, organ boundaries, etc. Therefore, traditional convolutional layers may not be able to capture this complex feature. In this paper, we propose a multi-scale convolution (MC) which realizes more comprehensive feature extraction by introducing multiple differently sized convolution kernels. Additionally, a novel multi-scale attention pooling network (MAPNet) is proposed, including a multi-scale pooling convolution block that combines pooling with multi-scale attention gates to better focus and utilize feature information at different scales and achieves effective skip connections. The proposed model is evaluated on two different medical image segmentation datasets, and the results show that our model achieves good performance in terms of speed and accuracy.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://www.researchsquare.com/article/rs-3721034/v1",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5929,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "MEDU-Net+: a novel improved U-Net based on multi-scale encoder-decoder for medical image segmentation",
+    "authors": [],
+    "year": 2024,
+    "venue": "KSII Transactions on Internet and Information Systems",
+    "doi": "10.3837/tiis.2024.07.001",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3837/tiis.2024.07.001",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 3,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5832,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "GauSAM: Contour‑Guided 2D Gaussian Fields for Multi‑Scale Medical Image Segmentation with Segment Anything",
+    "authors": [
+      "Jinxuan Wu",
+      "Jiange Wang",
+      "Dongdong Zhang"
+    ],
+    "year": 2025,
+    "venue": "Advances in Neural Information Processing Systems 38",
+    "doi": "10.52202/085713-5287",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.52202/085713-5287",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5816,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A Semi-Supervised Medical Image Segmentation Framework Based on Pseudo-Label Discrepancy and Multi-Decoder Collaboration",
+    "authors": [
+      "Dongen Guo",
+      "Xin Lu",
+      "Xufan Chen",
+      "Junze Guo",
+      "Shizheng Zhang",
+      "Zhen Shen"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5397011",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5397011",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5057,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Semi-supervised multi-scale dense based encoder-decoder architecture for lung computed tomography image segmentation",
+    "authors": [
+      "Shang Gao"
+    ],
+    "year": 2022,
+    "venue": "International Conference on Optics and Machine Vision (ICOMV 2022)",
+    "doi": "10.1117/12.2634417",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.2634417",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.4829,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Encoder-decoder with multi-scale information fusion for semantic image segmentation",
+    "authors": [
+      "Xinxin Ma",
+      "Kai Liu",
+      "Chongyang Ding",
+      "Lin Yan",
+      "Meiyu Duan"
+    ],
+    "year": 2020,
+    "venue": "Eleventh International Conference on Graphics and Image Processing (ICGIP 2019)",
+    "doi": "10.1117/12.2557506",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.2557506",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.4816,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Review for \"Medical image segmentation method based on multi‐scale feature and U‐net network\"",
+    "authors": [],
+    "year": 2023,
+    "venue": "",
+    "doi": "10.1002/itl2.451/v2/review1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1002/itl2.451/v2/review1",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "peer-review",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.4786
+  },
+  {
+    "title": "Decision letter for \"Medical image segmentation method based on multi‐scale feature and U‐net network\"",
+    "authors": [],
+    "year": 2023,
+    "venue": "",
+    "doi": "10.1002/itl2.451/v1/decision1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1002/itl2.451/v1/decision1",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "peer-review",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.4786
+  }
+]

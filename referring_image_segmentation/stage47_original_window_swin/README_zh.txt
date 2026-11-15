@@ -1,0 +1,1 @@
+第47轮：保持原MambaVision后两阶段14/7窗口与补零路径、UPer64 decoder及训练配方。native_fixed使用原生Swin注意力计算，但位置偏置恒零且不移窗；position_bias仅让位置偏置可学习；shifted_windows再增加stage3的0/7/0和stage4的0/3移窗。先执行相同阶段输入下Mamba输出一致性、原注意力等价、跨窗口与循环边界测试，再进行真实batch64与断点恢复检查。各100轮，全部训练完成后分别用验证最优权重评估867测试图。仅按验证结果筛查，单seed、测试集已有历史暴露。

@@ -1,0 +1,981 @@
+[
+  {
+    "title": "Mamba-UNet: UNet-Like Pure Visual Mamba for Medical Image Segmentation",
+    "authors": [
+      "Ziyang Wang",
+      "Jian-Qing Zheng",
+      "Yichi Zhang",
+      "Cui, Ge",
+      "Li, Lei"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2402.05079",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2402.05079",
+    "abstract": "In recent advancements in medical image analysis, Convolutional Neural Networks (CNN) and Vision Transformers (ViT) have set significant benchmarks. While the former excels in capturing local features through its convolution operations, the latter achieves remarkable global context understanding by leveraging self-attention mechanisms. However, both architectures exhibit limitations in efficiently modeling long-range dependencies within medical images, which is a critical aspect for precise segmentation. Inspired by the Mamba architecture, known for its proficiency in handling long sequences and global contextual information with enhanced computational efficiency as a State Space Model (SSM), we propose Mamba-UNet, a novel architecture that synergizes the U-Net in medical image segmentation with Mamba's capability. Mamba-UNet adopts a pure Visual Mamba (VMamba)-based encoder-decoder structure, infused with skip connections to preserve spatial information across different scales of the network. This design facilitates a comprehensive feature learning process, capturing intricate details and broader semantic contexts within medical images. We introduce a novel integration mechanism within the VMamba blocks to ensure seamless connectivity and information flow between the encoder and decoder paths, enhancing the segmentation performance. We conducted experiments on publicly available ACDC MRI Cardiac segmentation dataset, and Synapse CT Abdomen segmentation dataset. The results show that Mamba-UNet outperforms several types of UNet in medical image segmentation under the same hyper-parameter setting. The source code and baseline implementations are available.",
+    "source": "openalex",
+    "citation_count": 350,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2402.05079",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer vision",
+      "Segmentation",
+      "Computer science",
+      "Artificial intelligence",
+      "Mathematics"
+    ],
+    "score": 0.8709,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "FMTNet: A Fourier‐Mamba–Transformer Enhanced Network for Medical Image Segmentation",
+    "authors": [
+      "Shaoqiang Wang",
+      "Guiling Shi",
+      "Yuanyuan Zhang",
+      "Sibo Qiao",
+      "Yue Wang",
+      "Yue Wang",
+      "Yawu Zhao",
+      "Xiaochun Cheng"
+    ],
+    "year": 2026,
+    "venue": "CAAI Transactions on Intelligence Technology",
+    "doi": "10.1049/cit2.70141",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/cit2.70141",
+    "abstract": "ABSTRACT Models based on U‐shaped networks have achieved widespread success in the field of medical image segmentation, but their performance is generally limited by structural bottlenecks in the network. At this stage, feature maps experience a sharp decline in spatial resolution due to continuous downsampling, resulting in significant loss of critical boundaries and structural details. Additionally, the local receptive fields of convolutions limit the effective modelling of global context. To address this core issue, we propose a novel enhanced segmentation network called FMTNet. FMTNet fundamentally enhances the expressive power of deep features by integrating an innovative composite enhancement module at the bottleneck of the U‐Net. This module consists of three synergistically working submodules: the Fourier spatial fusion module, which introduces a frequency‐domain perspective to compensate for and reconstruct high‐frequency structural information lost in the spatial domain; the hybrid mamba–transformer module, which efficiently captures cross‐regional long‐range dependencies to establish global context and the multi‐scale context Aggregation module, which fuses features of different scales to adapt to objects of varying sizes. We conducted extensive experiments on multiple public multi‐modal datasets, including colonoscopy polyps, dermatoscopy lesions, breast ultrasound and dental X‐rays. The results demonstrate that FMTNet comprehensively outperforms SOTA methods across all key metrics, showcasing exceptional segmentation accuracy and generalisation capabilities. Our research study demonstrates that by synergistically enhancing deep features across three dimensions—frequency, global, and multi‐scale—FMTNet provides a general and efficient solution to address the bottleneck issues of U‐Net, significantly enhancing the accuracy and robustness of medical image segmentation. The source code and pre‐trained weights are available at https://github.com/shiguiling0‐has/FMTNet .",
+    "source": "openalex",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1049/cit2.70141",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Bottleneck",
+      "Segmentation",
+      "Robustness (evolution)",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Context (archaeology)",
+      "Boosting (machine learning)"
+    ],
+    "score": 0.8156,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "VM-UNet: Vision Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Jiacheng Ruan",
+      "Jincheng Li",
+      "Suncheng Xiang"
+    ],
+    "year": 2025,
+    "venue": "ACM Transactions on Multimedia Computing Communications and Applications",
+    "doi": "10.1145/3767748",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3767748",
+    "abstract": "In the realm of medical image segmentation, both CNN-based and Transformer-based models have been extensively explored. However, CNNs exhibit limitations in long-range modeling capabilities, whereas Transformers are hampered by their quadratic computational complexity. Recently, State Space Models (SSMs), exemplified by Mamba, have emerged as a promising approach. They not only excel in modeling long-range interactions but also maintain a linear computational complexity. In this paper, leveraging state space models, we propose a U-shape architecture model for medical image segmentation, named Vision Mamba UNet (VM-UNet). Specifically, the Visual State Space (VSS) block is introduced as the foundation block to capture extensive contextual information, and an asymmetrical encoder-decoder structure is constructed with fewer convolution layers to save calculation cost. We conduct comprehensive experiments on the ISIC17, ISIC18, and Synapse datasets, and the results indicate that VM-UNet performs competitively in medical image segmentation tasks, e.g. obtaining 89.03, 89.71 and 81.08 in terms of DSC score on three datasets respectively. To our best knowledge, this is the first medical image segmentation model constructed based on the pure SSM-based model. We aim to establish a baseline and provide valuable insights for the future development of more efficient and effective SSM-based segmentation systems. Our code is available at https://github.com/JCruan519/VM-UNet .",
+    "source": "openalex",
+    "citation_count": 1323,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2402.02491",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Image segmentation",
+      "Block (permutation group theory)",
+      "Computer vision",
+      "Image (mathematics)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.8036,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "LightM-UNet: Mamba Assists in Lightweight UNet for Medical Image Segmentation",
+    "authors": [
+      "Weibin Liao",
+      "Yinghao Zhu",
+      "Xinyuan Wang",
+      "Chengwei Pan",
+      "Yasha Wang",
+      "Liantao Ma"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2403.05246",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2403.05246",
+    "abstract": "UNet and its variants have been widely used in medical image segmentation. However, these models, especially those based on Transformer architectures, pose challenges due to their large number of parameters and computational loads, making them unsuitable for mobile health applications. Recently, State Space Models (SSMs), exemplified by Mamba, have emerged as competitive alternatives to CNN and Transformer architectures. Building upon this, we employ Mamba as a lightweight substitute for CNN and Transformer within UNet, aiming at tackling challenges stemming from computational resource limitations in real medical settings. To this end, we introduce the Lightweight Mamba UNet (LightM-UNet) that integrates Mamba and UNet in a lightweight framework. Specifically, LightM-UNet leverages the Residual Vision Mamba Layer in a pure Mamba fashion to extract deep semantic features and model long-range spatial dependencies, with linear computational complexity. Extensive experiments conducted on two real-world 2D/3D datasets demonstrate that LightM-UNet surpasses existing state-of-the-art literature. Notably, when compared to the renowned nnU-Net, LightM-UNet achieves superior segmentation performance while drastically reducing parameter and computation costs by 116x and 21x, respectively. This highlights the potential of Mamba in facilitating model lightweighting. Our code implementation is publicly available at https://github.com/MrBlankness/LightM-UNet.",
+    "source": "openalex",
+    "citation_count": 238,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.05246",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Artificial intelligence"
+    ],
+    "score": 0.8031,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "U-Mamba: Enhancing Long-range Dependency for Biomedical Image Segmentation",
+    "authors": [
+      "Jun Ma",
+      "Li, Feifei",
+      "Bo Wang"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2401.04722",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2401.04722",
+    "abstract": "Convolutional Neural Networks (CNNs) and Transformers have been the most popular architectures for biomedical image segmentation, but both of them have limited ability to handle long-range dependencies because of inherent locality or computational complexity. To address this challenge, we introduce U-Mamba, a general-purpose network for biomedical image segmentation. Inspired by the State Space Sequence Models (SSMs), a new family of deep sequence models known for their strong capability in handling long sequences, we design a hybrid CNN-SSM block that integrates the local feature extraction power of convolutional layers with the abilities of SSMs for capturing the long-range dependency. Moreover, U-Mamba enjoys a self-configuring mechanism, allowing it to automatically adapt to various datasets without manual intervention. We conduct extensive experiments on four diverse tasks, including the 3D abdominal organ segmentation in CT and MR images, instrument segmentation in endoscopy images, and cell segmentation in microscopy images. The results reveal that U-Mamba outperforms state-of-the-art CNN-based and Transformer-based segmentation networks across all tasks. This opens new avenues for efficient long-range dependency modeling in biomedical image analysis. The code, models, and data are publicly available at https://wanglab.ai/u-mamba.html.",
+    "source": "openalex",
+    "citation_count": 1267,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2401.04722",
+    "publication_type": "preprint",
+    "keywords": [
+      "Segmentation",
+      "Computer science",
+      "Artificial intelligence",
+      "Convolutional neural network",
+      "Deep learning",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Scale-space segmentation"
+    ],
+    "score": 0.7924,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "DPM-UNet: A Mamba-Based Network with Dynamic Perception Feature Enhancement for Medical Image Segmentation",
+    "authors": [
+      "Shangyu Xu",
+      "Xiaohang Liu",
+      "Hongsheng Lei",
+      "Bin Hui"
+    ],
+    "year": 2025,
+    "venue": "Sensors",
+    "doi": "10.3390/s25227053",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/s25227053",
+    "abstract": "In medical image segmentation, effective integration of global and local features is crucial. Current methods struggle to simultaneously model long-range dependencies and fine local details. Convolutional Neural Networks (CNNs) excel at extracting local features but are limited by their local receptive fields for capturing long-range dependencies. While global self-attention mechanisms (e.g., in Transformers) can capture long-range spatial relationships, their quadratic computational complexity incurs high costs for high-resolution medical images. To address these limitations, State Space Models (SSMs), which maintain linear complexity while effectively establishing long-range dependencies, have been introduced to visual tasks. Leveraging the advantages of SSMs, this paper proposes DPM-UNet. The network employs a Dual-path Residual Fusion Module (DRFM) at shallow layers to extract local detailed features and a DPMamba Module at deep layers to model global semantic information, achieving effective local global feature fusion. A Multi-scale Aggregation Attention Network (MAAN) is further incorporated to enhance multi-scale representations. The proposed method collaboratively captures local details, long-range dependencies, and multi-scale information in medical images. Experiments on three public datasets demonstrate that DPM-UNet outperforms existing methods across multiple evaluation metrics.",
+    "source": "crossref",
+    "citation_count": 1,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/1424-8220/25/22/7053/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.7893,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Mamba-Sea: A Mamba-Based Framework With Global-to-Local Sequence Augmentation for Generalizable Medical Image Segmentation",
+    "authors": [
+      "Zihan Cheng",
+      "Jintao Guo",
+      "Jian Zhang",
+      "Lei Qi",
+      "Luping Zhou",
+      "Yinghuan Shi",
+      "Yang Gao"
+    ],
+    "year": 2025,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2025.3564765",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2025.3564765",
+    "abstract": "To segment medical images with distribution shifts, domain generalization (DG) has emerged as a promising setting to train models on source domains that can generalize to unseen target domains. Existing DG methods are mainly based on CNN or ViT architectures. Recently, advanced state space models, represented by Mamba, have shown promising results in various supervised medical image segmentation. The success of Mamba is primarily owing to its ability to capture long-range dependencies while keeping linear complexity with input sequence length, making it a promising alternative to CNNs and ViTs. Inspired by the success, in the paper, we explore the potential of the Mamba architecture to address distribution shifts in DG for medical image segmentation. Specifically, we propose a novel Mamba-based framework, Mamba-Sea, incorporating global-to-local sequence augmentation to improve the model's generalizability under domain shift issues. Our Mamba-Sea introduces a global augmentation mechanism designed to simulate potential variations in appearance across different sites, aiming to suppress the model's learning of domain-specific information. At the local level, we propose a sequence-wise augmentation along input sequences, which perturbs the style of tokens within random continuous sub-sequences by modeling and resampling style statistics associated with domain shifts. To our best knowledge, Mamba-Sea is the first work to explore the generalization of Mamba for medical image segmentation, providing an advanced and promising Mamba-based architecture with strong robustness to domain shifts. Remarkably, our proposed method is the first to surpass a Dice coefficient of 90% on the Prostate dataset, which exceeds previous SOTA of 88.61%. The code is available at https://github.com/orange-czh/Mamba-Sea.",
+    "source": "openalex",
+    "citation_count": 44,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2504.17515",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Image segmentation",
+      "Medical imaging",
+      "Segmentation",
+      "Sequence (biology)"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.7766
+  },
+  {
+    "title": "LKM-UNet: Large Kernel Vision Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Jinhong Wang",
+      "Jintai Chen",
+      "Danny Z. Chen",
+      "Jian Wu"
+    ],
+    "year": 2024,
+    "venue": "Lecture notes in computer science",
+    "doi": "10.1007/978-3-031-72111-3_34",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-031-72111-3_34",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 161,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2403.07332",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Kernel (algebra)",
+      "Computer vision",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Segmentation",
+      "Mathematics",
+      "Combinatorics"
+    ],
+    "score": 0.728,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "HLSM-UNet:Hybrid Local Spatial Mamba UNet for Medical Image Segmentation",
+    "authors": [
+      "Xude Zhang",
+      "Xiaoping Wu",
+      "Changzhen Zhang",
+      "Yumin Tang",
+      "Dihong Luo",
+      "Houbing Tang"
+    ],
+    "year": 2024,
+    "venue": "2024 International Conference on Neuromorphic Computing (ICNC)",
+    "doi": "10.1109/icnc64304.2024.10987734",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icnc64304.2024.10987734",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/10985940/10987574/10987734.pdf?arnumber=10987734",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.7263,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "PF-Mamba-UNet: An Anatomical-Prior-Guided Medical Image Segmentation Network Based on Mamba and Spatial-Channel Collaborative Attention Fusion",
+    "authors": [
+      "Leyi Xiao",
+      "Kangshun Liao",
+      "Baoxian Zhou",
+      "Chaodong Fan"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7553347",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7553347",
+    "abstract": "Medical image segmentation plays a pivotal role in clinical diagnosis assistance, lesion detection, and computer-aided medicine. However, factors such as complex organ boundary morphologies, multi-scale structural variations, and low contrast continue to pose challenges for accurate segmentation. To address this, this paper proposes an efficient segmentation network based on the fusion of anatomical prior and features—Anatomical-prior-guided Fusion Mamba-UNet (PF-Mamba-UNet). Firstly, the CR-VSS module is designed. Within the VSS module, a convolutional refinement branch is constructed to enhance local detail modeling. An integrated CSS2D module enables multi-directional scanning along horizontal, vertical, diagonal, and anti-diagonal paths, boosting the model&apos;s multi-directional perception and feature capture capabilities for complex geometries. Secondly, the Coordinated Spatial-Channel Fusion Attention (CSCFA) module is designed and embedded in the skip-connection layers of the encoder and decoder. Through a spatial-first mechanism, it synergistically enhances spatial and channel features, thereby highlighting critical anatomical regions while suppressing redundant background noise. Finally, an anatomical prior regularization is constructed to balance boundary smoothing and regional consistency. The former ensures continuity and smoothness of segmentation edges, while the latter guarantees structural consistency within regions. Collectively, they ensure the anatomical plausibility and structural continuity of segmentation results. Medical image segmentation results demonstrate that PF-Mamba-UNet exhibits significant performance advantages over mainstream models including U-Net, SwinUNet, Mamba-UNet, Mamba-Sea, KM-Unet and CSWin-Unet.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.7157,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "HC-Mamba: Vision MAMBA with Hybrid Convolutional Techniques for Medical Image Segmentation",
+    "authors": [
+      "Jiashu Xu"
+    ],
+    "year": 2024,
+    "venue": "arXiv (Cornell University)",
+    "doi": "10.48550/arxiv.2405.05007",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.48550/arxiv.2405.05007",
+    "abstract": "Automatic medical image segmentation technology has the potential to expedite pathological diagnoses, thereby enhancing the efficiency of patient care. However, medical images often have complex textures and structures, and the models often face the problem of reduced image resolution and information loss due to downsampling. To address this issue, we propose HC-Mamba, a new medical image segmentation model based on the modern state space model Mamba. Specifically, we introduce the technique of dilated convolution in the HC-Mamba model to capture a more extensive range of contextual information without increasing the computational cost by extending the perceptual field of the convolution kernel. In addition, the HC-Mamba model employs depthwise separable convolutions, significantly reducing the number of parameters and the computational power of the model. By combining dilated convolution and depthwise separable convolutions, HC-Mamba is able to process large-scale medical image data at a much lower computational cost while maintaining a high level of performance. We conduct comprehensive experiments on segmentation tasks including organ segmentation and skin lesion, and conduct extensive experiments on Synapse, ISIC17 and ISIC18 to demonstrate the potential of the HC-Mamba model in medical image segmentation. The experimental results show that HC-Mamba exhibits competitive performance on all these datasets, thereby proving its effectiveness and usefulness in medical image segmentation.",
+    "source": "openalex",
+    "citation_count": 74,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2405.05007",
+    "publication_type": "preprint",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Computer vision",
+      "Segmentation"
+    ],
+    "score": 0.7137,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Vision Mamba and xLSTM-UNet for medical image segmentation",
+    "authors": [
+      "Xin Zhong",
+      "Gehao Lu",
+      "Hao Li"
+    ],
+    "year": 2025,
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-025-88967-5",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41598-025-88967-5",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 32,
+    "is_open_access": true,
+    "open_access_url": "https://www.nature.com/articles/s41598-025-88967-5.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6887,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SFma-Unet: A Mamba-Based Spatial-Frequency Fusion Network for Medical Image Segmentation",
+    "authors": [
+      "Zhanpeng Liu",
+      "Yuqiang Zhang",
+      "Bin Wang",
+      "Yang Yang",
+      "Lin Cai"
+    ],
+    "year": 2025,
+    "venue": "IEEE International Conference on Acoustics Speech and Signal Processing",
+    "doi": "10.1109/icassp49660.2025.10889117",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icassp49660.2025.10889117",
+    "abstract": "Recently, Mamba-based methods have gained popularity in medical image segmentation due to their ability to model long-range dependencies with linear computational complexity. However, current segmentation methods often face challenges such as low contrast, blurred boundaries, and unclear backgrounds in medical images. Considering that perceived objects and features exhibit greater discriminative power in the frequency domain, we propose a novel mamba-based spatial and frequency domain feature fusion network, SFMa-Unet, to address these challenges. Specifically, we designed the Spatial-Frequency Interaction (SFI) module, which leverages the powerful modeling capabilities of Mamba to fuse spatial and frequency domain features, enhancing feature representation. Additionally, we developed a Mamba-based multi-scale feature channel fusion (MFCF) bridge to capture local and global dependencies across different feature scales, further improving the model’s representational capacity. We conduct comprehensive experiments on the ISIC17 and ISIC18 public datasets. Experimental results demonstrate the effectiveness and robustness of SFMa-Unet. Codes are available at https://github.com/RainCh-zyq/SFma-Unet.",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image segmentation",
+      "Image fusion",
+      "Fusion",
+      "Segmentation",
+      "Image (mathematics)"
+    ],
+    "score": 0.6626,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SFMamba3D: A Spatial-Frequency Dual-Branch Mamba Network for 3D Medical Image Segmentation",
+    "authors": [
+      "Chenyu Li",
+      "Xingchun Ru"
+    ],
+    "year": 2026,
+    "venue": "2026 Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR)",
+    "doi": "10.1109/cvippr69607.2026.11604503",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvippr69607.2026.11604503",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11604031/11604489/11604503.pdf?arnumber=11604503",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "GL-Mamba UNet: Global-to-Local Context-Guided Vision Mamba for Medical Image Segmentation",
+    "authors": [
+      "Longhui Wang",
+      "Jie Li",
+      "Yue Ruan"
+    ],
+    "year": 2026,
+    "venue": "Proceedings of the 2026 6th International Conference on Bioinformatics and Intelligent Computing",
+    "doi": "10.1145/3809986.3810131",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1145/3809986.3810131",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://dl.acm.org/doi/pdf/10.1145/3809986.3810131",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "ASRM-Net: Multi-Scale Feature Enhancement with Adaptive Spatial Recalibration for Medical Image Segmentation",
+    "authors": [
+      "Xinyang Chen"
+    ],
+    "year": 2026,
+    "venue": "2026 7th International Conference on Computer Vision, Image and Deep Learning (CVIDL)",
+    "doi": "10.1109/cvidl70130.2026.11637809",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/cvidl70130.2026.11637809",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11637372/11636348/11637809.pdf?arnumber=11637809",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SICP-Mamba: Support-Information-Conditioned Progressive State-Space Modeling for Few-Shot Medical Image Segmentation",
+    "authors": [
+      "Wenxi Wang",
+      "Wenhui Huang"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.7227878",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.7227878",
+    "abstract": "Few-shot medical image segmentation aims to delineate target organs or lesions from query images using only a few annotated support samples, which is important for reducing annotation burden in biomedical image analysis. However, reliable segmentation under limited supervision remains challenging because medical images often exhibit complex anatomical structures, large inter-patient variations, low contrast, ambiguous boundaries, and substantial intra-class morphological differences. Existing methods usually establish support--query correlations through prototype matching, feature fusion, or cross-attention. These strategies may focus on local similarities or pairwise token relations, leading to high computational cost and insufficient preservation of support priors during deep interaction. To address these challenges, we propose SICP-Mamba, a support-information-conditioned progressive state-space framework for few-shot medical image segmentation. Rather than simply replacing existing interaction modules with Mamba blocks, SICP-Mamba models support--query interaction as progressive support-state propagation and support-conditioned query refinement. Specifically, Support-State Propagation Mamba (SSPM) recurrently propagates target-related support states to alleviate support-prior attenuation, while Support-Conditioned Query Mamba (SCQM) selectively injects propagated support states into query feature refinement to enhance target-aware representations. This design enables efficient long-range cross-image dependency modeling with linear complexity while preserving structural priors and enhancing query responses, helping handle ambiguous boundaries, background interference, and morphological variations. Experiments on ABD-MRI, ABD-CT, Card-MRI, and P-MRI datasets show that SICP-Mamba achieves accurate target localization, improved boundary delineation, favorable generalization across different anatomical structures and imaging modalities, and a competitive accuracy--efficiency trade-off.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Gl-MambaNet: A global-local hybrid Mamba network for medical image segmentation",
+    "authors": [
+      "Xiaoyan Kui",
+      "Shen Jiang",
+      "Qinsong Li",
+      "Yifei Peng",
+      "Zhipeng Hu",
+      "Beiji Zou"
+    ],
+    "year": 2025,
+    "venue": "Neurocomputing",
+    "doi": "10.1016/j.neucom.2025.129580",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.neucom.2025.129580",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 31,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Image (mathematics)",
+      "Pattern recognition (psychology)",
+      "Computer vision"
+    ],
+    "score": 0.65,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "PolyMamba: Spatial-Prior Guided Mamba for Polyp Segmentation with High-Frequency Enhancement",
+    "authors": [
+      "Renyu Fu",
+      "Shurui Hu",
+      "Xiao Zheng",
+      "Chang Tang",
+      "Xinwang Liu"
+    ],
+    "year": 2026,
+    "venue": "Lecture Notes in Computer Science",
+    "doi": "10.1007/978-3-032-05141-7_44",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/978-3-032-05141-7_44",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1007/978-3-032-05141-7_44",
+    "publication_type": "book-chapter",
+    "keywords": [],
+    "score": 0.6462,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A diffusion model based on multi-scale spatial Mamba for medical image segmentation",
+    "authors": [
+      "Chun Li",
+      "Qiule Sun",
+      "Muqing Zhang",
+      "Jianxin Zhang"
+    ],
+    "year": 2025,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2025.111028",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.engappai.2025.111028",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 15,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Scale (ratio)",
+      "Segmentation",
+      "Computer vision",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Image (mathematics)",
+      "Diffusion"
+    ],
+    "score": 0.6307,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "A Local-Global Fusion Vision Mamba UNet Framework for medical image segmentation",
+    "authors": [
+      "Yanbo Li",
+      "Zihan Mao",
+      "Feiwei Qin",
+      "Yong Kang Peng",
+      "Guodao Zhang",
+      "Xugang Xi",
+      "Xiaoqin Ma",
+      "Huanhuan Yu",
+      "Yu Zhou",
+      "Zhu Zhu"
+    ],
+    "year": 2026,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2026.113987",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.engappai.2026.113987",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 6,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Feature (linguistics)",
+      "Computer vision",
+      "Context (archaeology)",
+      "Feature learning",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.6177,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SCM-UNet: Spatial-channel Mamba UNet for medical image segmentation",
+    "authors": [
+      "Haijie Yan",
+      "Qiuhong Hong",
+      "Shoulin Wei",
+      "Xiangliang Zhang",
+      "Jibin Yin"
+    ],
+    "year": 2025,
+    "venue": "Digital Signal Processing",
+    "doi": "10.1016/j.dsp.2025.105550",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.dsp.2025.105550",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 8,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Channel (broadcasting)",
+      "Computer vision",
+      "Artificial intelligence",
+      "Telecommunications"
+    ],
+    "score": 0.6147,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Rethinking Boundary Detection in Deep Learning-Based Medical Image Segmentation",
+    "authors": [
+      "Yi Lin",
+      "Dong Zhang",
+      "Xiao Fang",
+      "Yufan Chen",
+      "Kwang-Ting Cheng",
+      "Hao Chen"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2505.04652v1",
+    "url": "http://arxiv.org/abs/2505.04652v1",
+    "abstract": "Medical image segmentation is a pivotal task within the realms of medical image analysis and computer vision. While current methods have shown promise in accurately segmenting major regions of interest, the precise segmentation of boundary areas remains challenging. In this study, we propose a novel network architecture named CTO, which combines Convolutional Neural Networks (CNNs), Vision Transformer (ViT) models, and explicit edge detection operators to tackle this challenge. CTO surpasses existing methods in terms of segmentation accuracy and strikes a better balance between accuracy and efficiency, without the need for additional data inputs or label injections. Specifically, CTO adheres to the canonical encoder-decoder network paradigm, with a dual-stream encoder network comprising a mainstream CNN stream for capturing local features and an auxiliary StitchViT stream for integrating long-range dependencies. Furthermore, to enhance the model's ability to learn boundary areas, we introduce a boundary-guided decoder network that employs binary boundary masks generated by dedicated edge detection operators to provide explicit guidance during the decoding process. We validate the performance of CTO through extensive experiments conducted on seven challenging medical image segmentation datasets, namely ISIC 2016, PH2, ISIC 2018, CoNIC, LiTS17, and BTCV. Our experimental results unequivocally demonstrate that CTO achieves state-of-the-art accuracy on these datasets while maintaining competitive model complexity. The codes have been released at: https://github.com/xiaofang007/CTO.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2505.04652v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5864,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation",
+    "authors": [
+      "Fenghe Tang",
+      "Bingkun Nian",
+      "Yingtai Li",
+      "Zihang Jiang",
+      "Jie Yang",
+      "Wei Liu",
+      "S. Kevin Zhou"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103606",
+    "arxiv_id": "2408.08070v2",
+    "url": "http://arxiv.org/abs/2408.08070v2",
+    "abstract": "Recently, the state space model Mamba has demonstrated efficient long-sequence modeling capabilities, particularly for addressing long-sequence visual tasks in 3D medical imaging. However, existing generative self-supervised learning methods have not yet fully unleashed Mamba's potential for handling long-range dependencies because they overlook the inherent causal properties of state space sequences in masked modeling. To address this challenge, we propose a general-purpose pre-training framework called MambaMIM, a masked image modeling method based on a novel TOKen-Interpolation strategy (TOKI) for the selective structure state space sequence, which learns causal relationships of state space within the masked sequence. Further, MambaMIM introduces a bottom-up 3D hybrid masking strategy to maintain a masking consistency across different architectures and can be used on any single or hybrid Mamba architecture to enhance its multi-scale and long-range representation capability. We pre-train MambaMIM on a large-scale dataset of 6.8K CT scans and evaluate its performance across eight public medical segmentation benchmarks. Extensive downstream experiments reveal the feasibility and advancement of using Mamba for medical image pre-training. In particular, when we apply the MambaMIM to a customized architecture that hybridizes MedNeXt and Vision Mamba, we consistently obtain the state-of-the-art segmentation performance. The code is available at: https://github.com/FengheTan9/MambaMIM.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.08070v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5836,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MAFUNet: Mamba with adaptive fusion UNet for medical image segmentation",
+    "authors": [
+      "Minchen Yang",
+      "Ziyi Yang",
+      "Nur Intan Raihana Ruhaiyem"
+    ],
+    "year": 2025,
+    "venue": "Image and Vision Computing",
+    "doi": "10.1016/j.imavis.2025.105655",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.imavis.2025.105655",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 9,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer vision",
+      "Segmentation",
+      "Image (mathematics)",
+      "Computer science",
+      "Fusion",
+      "Image segmentation",
+      "Image fusion"
+    ],
+    "score": 0.5605,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Synergistic Mamba: Mastering Global Frequency and Local Spatial Contexts for Low-light image Enhancement",
+    "authors": [
+      "Shijun Fu",
+      "Pingping Liu",
+      "Tongshun Zhang",
+      "hongwei zhao",
+      "qiuzhan Zhou"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5736831",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5736831",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5414,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Fréchet Radiomic Distance (FRD): A Versatile Metric for Comparing Medical Imaging Datasets",
+    "authors": [
+      "Nicholas Konz",
+      "Richard Osuala",
+      "Preeti Verma",
+      "Yuwen Chen",
+      "Hanxue Gu",
+      "Haoyu Dong",
+      "Yaqian Chen",
+      "Andrew Marshall",
+      "Lidia Garrucho",
+      "Kaisar Kushibar",
+      "Daniel M. Lang",
+      "Gene S. Kim",
+      "Lars J. Grimm",
+      "John M. Lewin",
+      "James S. Duncan",
+      "Julia A. Schnabel",
+      "Oliver Diaz",
+      "Karim Lekadir",
+      "Maciej A. Mazurowski"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2026.103943",
+    "arxiv_id": "2412.01496v2",
+    "url": "http://arxiv.org/abs/2412.01496v2",
+    "abstract": "Determining whether two sets of images belong to the same or different distributions or domains is a crucial task in modern medical image analysis and deep learning; for example, to evaluate the output quality of image generative models. Currently, metrics used for this task either rely on the (potentially biased) choice of some downstream task, such as segmentation, or adopt task-independent perceptual metrics (e.g., Fréchet Inception Distance/FID) from natural imaging, which we show insufficiently capture anatomical features. To this end, we introduce a new perceptual metric tailored for medical images, FRD (Fréchet Radiomic Distance), which utilizes standardized, clinically meaningful, and interpretable image features. We show that FRD is superior to other image distribution metrics for a range of medical imaging applications, including out-of-domain (OOD) detection, the evaluation of image-to-image translation (by correlating more with downstream task performance as well as anatomical consistency and realism), and the evaluation of unconditional image generation. Moreover, FRD offers additional benefits such as stability and computational efficiency at low sample sizes, sensitivity to image corruptions and adversarial attacks, feature interpretability, and correlation with radiologist-perceived image quality. Additionally, we address key gaps in the literature by presenting an extensive framework for the multifaceted evaluation of image similarity metrics in medical imaging -- including the first large-scale comparative study of generative models for medical image translation -- and release an accessible codebase to facilitate future research. Our results are supported by thorough experiments spanning a variety of datasets, modalities, and downstream tasks, highlighting the broad potential of FRD for medical image analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2412.01496v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5264,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Test-time generative augmentation for medical image segmentation",
+    "authors": [
+      "Xiao Ma",
+      "Yuhui Tao",
+      "Zetian Zhang",
+      "Yuhan Zhang",
+      "Xi Wang",
+      "Sheng Zhang",
+      "Zexuan Ji",
+      "Yizhe Zhang",
+      "Qiang Chen",
+      "Guang Yang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103902",
+    "arxiv_id": "2406.17608v2",
+    "url": "http://arxiv.org/abs/2406.17608v2",
+    "abstract": "Medical image segmentation is critical for clinical diagnosis, treatment planning, and monitoring, yet segmentation models often struggle with uncertainties stemming from occlusions, ambiguous boundaries, and variations in imaging devices. Traditional test-time augmentation (TTA) techniques typically rely on predefined geometric and photometric transformations, limiting their adaptability and effectiveness in complex medical scenarios. In this study, we introduced Test-Time Generative Augmentation (TTGA), a novel augmentation strategy specifically tailored for medical image segmentation at inference time. Different from conventional augmentation strategies that suffer from excessive randomness or limited flexibility, TTGA leverages a domain-fine-tuned generative model to produce contextually relevant and diverse augmentations tailored to the characteristics of each test image. Built upon diffusion model inversion, a masked null-text inversion method is proposed to enable region-specific augmentations during sampling. Furthermore, a dual denoising pathway is designed to balance precise identity preservation with controlled variability. We demonstrate the efficacy of our TTGA through extensive experiments across three distinct segmentation tasks spanning nine datasets. Our results consistently demonstrate that TTGA not only improves segmentation accuracy (with DSC gains ranging from 0.1% to 2.3% over the baseline) but also offers pixel-wise error estimation (with DSC gains ranging from 1.1% to 29.0% over the baseline). The source code and demonstration are available at: https://github.com/maxiao0234/TTGA.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2406.17608v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5264,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "A Mamba-based channel attention-enhanced model for medical image segmentation",
+    "authors": [
+      "Ying Liu",
+      "Jiamin Li",
+      "Yating Zhao",
+      "Zhigang Liu",
+      "Weiwei Li"
+    ],
+    "year": 2026,
+    "venue": "Signal Image and Video Processing",
+    "doi": "10.1007/s11760-026-05555-4",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11760-026-05555-4",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Channel (broadcasting)",
+      "Computer vision",
+      "Feature (linguistics)",
+      "Image segmentation",
+      "Kernel (algebra)"
+    ],
+    "score": 0.5064,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Large-Kernel Spatial-Frequency Fusion Deep Mamba Network for Remote Sensing Image Segmentation",
+    "authors": [
+      "ChenZhe Xia",
+      "Eziz Tursun"
+    ],
+    "year": 2026,
+    "venue": "",
+    "doi": "10.2139/ssrn.6190562",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.6190562",
+    "abstract": "Semantic segmentation of remote sensing images is a fundamental task in geospatial informationanalysis. Unlike natural images, the complex background in high-resolution remote sensing imagesposes significant challenges for object segmentation, such as occlusion and intra-class variations, oftenleading to fragmented and mis-segmented results. To address these challenges, we proposed LargeKernel Spatial-Frequency Fusion Deep Mamba Network (Mamba-LSFDNet), a remote sensingsemantic segmentation network that combines large-kernel attention with the state-space modelMamba. Specifically, we first designed a Large-Kernel Spatial-Frequency Hybrid Module (LSFModule) , by expanding the receptive field and jointly using spatial and frequency domain cues,the global information modeling of large-scale remote sensing scenes is enhanced, the occlusionbetween targets is alleviated, and the computational overhead of self-attention is reduced. Next, weproposed a Depthwise Separable Convolution Mamba Module (DSC-Mamba Module) , this modulefurther endows the network with powerful global modeling capabilities through a selective state spacemodel, and embeds deep separable convolution and attention mechanisms into the backbone network.Dramatically reduce memory consumption while mitigating intra-class variation. Extensive ablationand comparative experiments on the ISPRS Vaihingen dataset and LoveDA dataset demonstrate thatMamba-LSFDNet achieves excellent performance in both accuracy and efficiency, reaching the stateof-the-art level for remote sensing semantic segmentation.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.5014
+  },
+  {
+    "title": "DEVA Mamba: dual encoder visual attention mamba for medical image segmentation",
+    "authors": [
+      "Jingwen Zhang",
+      "Dongxu Cheng",
+      "Qiwei Dong"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Computational Intelligence and Image Analysis (ICCIIA 2026)",
+    "doi": "10.1117/12.3113089",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.3113089",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5014,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Hcmunet: A Hybrid Cnn and Mamba Network for Medical Ultrasound Image Segmentation",
+    "authors": [
+      "Chong Zhang",
+      "Guohui Wei",
+      "Min Qiu"
+    ],
+    "year": 2024,
+    "venue": "",
+    "doi": "10.2139/ssrn.4920609",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.4920609",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.4743,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Selective and Multi-Scale Fusion Mamba for Medical Image Segmentation",
+    "authors": [
+      "Guangju Li",
+      "Qinghua Huang",
+      "Wei Wang",
+      "Longzhong Liu"
+    ],
+    "year": 2024,
+    "venue": "",
+    "doi": "10.2139/ssrn.4895634",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.4895634",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.4743,
+    "sources": [
+      "crossref"
+    ]
+  }
+]

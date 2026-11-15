@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "checks": {
+    "uper64": {
+      "native_head_initialized": true,
+      "deterministic_initial_state": true,
+      "native_forward_exact": true,
+      "intermediate_shapes": {
+        "lateral_0": [
+          4,
+          64,
+          64,
+          64
+        ],
+        "lateral_1": [
+          4,
+          64,
+          32,
+          32
+        ],
+        "lateral_2": [
+          4,
+          64,
+          16,
+          16
+        ],
+        "ppm_0": [
+          4,
+          64,
+          1,
+          1
+        ],
+        "ppm_1": [
+          4,
+          64,
+          2,
+          2
+        ],
+        "ppm_2": [
+          4,
+          64,
+          3,
+          3
+        ],
+        "ppm_3": [
+          4,
+          64,
+          6,
+          6
+        ],
+        "fpn_0": [
+          4,
+          64,
+          64,
+          64
+        ],
+        "fpn_1": [
+          4,
+          64,
+          32,
+          32
+        ],
+        "fpn_2": [
+          4,
+          64,
+          16,
+          16
+        ]
+      },
+      "soft_target_path_preserved": true,
+      "native_ce_not_called": true,
+      "encoder_late_only": true,
+      "all_encoder_modules_eval": true,
+      "decoder_parameters": 1089089,
+      "total_parameters": 51229673
+    },
+    "uper128": {
+      "native_head_initialized": true,
+      "deterministic_initial_state": true,
+      "native_forward_exact": true,
+      "intermediate_shapes": {
+        "lateral_0": [
+          4,
+          128,
+          64,
+          64
+        ],
+        "lateral_1": [
+          4,
+          128,
+          32,
+          32
+        ],
+        "lateral_2": [
+          4,
+          128,
+          16,
+          16
+        ],
+        "ppm_0": [
+          4,
+          128,
+          1,
+          1
+        ],
+        "ppm_1": [
+          4,
+          128,
+          2,
+          2
+        ],
+        "ppm_2": [
+          4,
+          128,
+          3,
+          3
+        ],
+        "ppm_3": [
+          4,
+          128,
+          6,
+          6
+        ],
+        "fpn_0": [
+          4,
+          128,
+          64,
+          64
+        ],
+        "fpn_1": [
+          4,
+          128,
+          32,
+          32
+        ],
+        "fpn_2": [
+          4,
+          128,
+          16,
+          16
+        ]
+      },
+      "soft_target_path_preserved": true,
+      "native_ce_not_called": true,
+      "encoder_late_only": true,
+      "all_encoder_modules_eval": true,
+      "decoder_parameters": 2989185,
+      "total_parameters": 53129769
+    }
+  },
+  "source_manifest_checked": true,
+  "existing_numerical_environment_preserved": true,
+  "test_images_read": false
+}

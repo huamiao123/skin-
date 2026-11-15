@@ -1,0 +1,23 @@
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/helpers.py:7: FutureWarning: Importing from timm.models.helpers is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+BUILDING_FROZEN_PREFIX_CACHE
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/train.py", line 268, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/train.py", line 201, in main
+    micro=calibrate(models,train_cache,out)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/train.py", line 70, in calibrate
+    base.update(m,opts[n],cache,torch.arange(64,device='cuda'),48,check=True)
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage28_drop_path/train.py", line 165, in update
+    (loss*(len(chunk)/len(ids))).backward()
+  File "/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/torch/_tensor.py", line 522, in backward
+    torch.autograd.backward(
+  File "/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/torch/autograd/__init__.py", line 266, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: adaptive_max_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True)'. You can turn off determinism just for this operation, or you can use the 'warn_only=True' option, if that's acceptable for your application. You can also file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation.

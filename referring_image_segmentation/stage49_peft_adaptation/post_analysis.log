@@ -1,0 +1,74 @@
+{
+  "validation_only": true,
+  "baseline": {
+    "tp": 10730478,
+    "fp": 1057139,
+    "fn": 1341495,
+    "fp_near3": 443544,
+    "fp_far3": 613595,
+    "disconnected_fp": 13455,
+    "connected_fp": 1043684,
+    "fn_boundary3": 352517,
+    "fn_deep3": 988978,
+    "macro_dice": 0.8928067011343184,
+    "severe_undercoverage": 21,
+    "disconnected_fp_fraction": 0.01272774914178741,
+    "far_fp_fraction": 0.5804298204871828,
+    "deep_fn_fraction": 0.7372207872560091
+  },
+  "arms": {
+    "frozen": {
+      "totals": {
+        "tp": 10345818,
+        "fp": 1478128,
+        "fn": 1726155,
+        "fp_near3": 481973,
+        "fp_far3": 996155,
+        "disconnected_fp": 44395,
+        "connected_fp": 1433733,
+        "fn_boundary3": 355617,
+        "fn_deep3": 1370538,
+        "macro_dice": 0.8611154255881309,
+        "severe_undercoverage": 38
+      },
+      "delta_vs_baseline": {
+        "tp": -384660,
+        "fp": 420989,
+        "fn": 384660,
+        "fp_near3": 38429,
+        "fp_far3": 382560,
+        "disconnected_fp": 30940,
+        "connected_fp": 390049,
+        "fn_boundary3": 3100,
+        "fn_deep3": 381560
+      }
+    },
+    "lora8": {
+      "totals": {
+        "tp": 10785860,
+        "fp": 1571424,
+        "fn": 1286113,
+        "fp_near3": 544333,
+        "fp_far3": 1027091,
+        "disconnected_fp": 15267,
+        "connected_fp": 1556157,
+        "fn_boundary3": 304208,
+        "fn_deep3": 981905,
+        "macro_dice": 0.8782623407042304,
+        "severe_undercoverage": 23
+      },
+      "delta_vs_baseline": {
+        "tp": 55382,
+        "fp": 514285,
+        "fn": -55382,
+        "fp_near3": 100789,
+        "fp_far3": 413496,
+        "disconnected_fp": 1812,
+        "connected_fp": 512473,
+        "fn_boundary3": -48309,
+        "fn_deep3": -7073
+      }
+    }
+  },
+  "rule": "Fixed same3pixel and component definitions from pretraining diagnosis; all762 retained."
+}

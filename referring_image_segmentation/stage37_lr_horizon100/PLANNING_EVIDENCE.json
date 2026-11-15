@@ -1,0 +1,41 @@
+{
+  "status": "planned_not_launched",
+  "created_utc": "2026-11-12T04:23:14.981082+00:00",
+  "rationale": "Separate training-schedule effects from author fusion effects before trying another attention family.",
+  "evidence": {
+    "current_epoch100_lr_factor": 0.7569755007964338,
+    "baseline_train_loss_epoch18": 0.127903,
+    "baseline_train_loss_epoch100": 0.052003,
+    "baseline_val_loss_epoch18": 0.310863,
+    "baseline_val_loss_epoch100": 0.466244,
+    "threshold_scope": "validation only,0.30 to0.70 step0.05; CCA optimum at upper boundary, not a global threshold optimum",
+    "cca_best_scanned_threshold_val_gain_pp": 0.06169972835639026,
+    "cca_disjoint_component_fp_fraction": 0.02532721488833146,
+    "interpretation": "Loss divergence consistent with overfitting/confidence changes, not proof of cause. Connected false positives include both small boundary extensions and distant connected oversegmentation."
+  },
+  "next_experiment": {
+    "new_training_arms": [
+      "swin_control_cosine100",
+      "uct_cca_cosine100"
+    ],
+    "reused_arms": [
+      "stage36/swin_control_cosine300_first100",
+      "stage36/uct_cca_cosine300_first100"
+    ],
+    "epochs": 100,
+    "seed": 42,
+    "micro_batch": 64,
+    "effective_batch": 64,
+    "intervention": "Change only lr_epoch cosine denominator300 to100 in BOTH new arms. Same pretrained encoder, copied initialization, input256, data order, common loss, optimizer, split, selection, native author modules.",
+    "lr_initial_encoder": 0.0001,
+    "lr_initial_decoder": 0.001,
+    "cosine_floor": 0.01,
+    "evaluation": "val macro Dice chooses checkpoint; paired val effects and FP/FN/boundary diagnostics; every locked checkpoint evaluated on all867 test images; no test-based model/threshold selection.",
+    "success_policy": "If schedule helps both, attribute gain to training, not CCA. Advance CCA only with validation advantage vs same-schedule baseline that warrants confirmation with another matched seed. If no advantage, stop this CCA adaptation.",
+    "limitations": "Existing test exposed repeatedly; not an independent final confirmation; new independent/deduplicated data required for strong final claims.",
+    "estimated_minutes": 35
+  },
+  "deferred": {
+    "MADGNet": "Original and FP32 upblock did not meet current reproducibility preflight; do not interpret as negative segmentation result. No formal training scheduled."
+  }
+}

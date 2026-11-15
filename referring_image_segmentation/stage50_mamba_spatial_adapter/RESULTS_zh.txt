@@ -1,0 +1,62 @@
+Stage50: native MambaIR CAB and fixed-channel convolution inside last stage3 Mamba block. Original SSM and14/7 windows preserved.100epochs each;762validation selection and867test per arm. Single seed; already-exposed test.\n[
+  {
+    "arm": "stage45_uper64",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8928067011343184,
+    "test_macro_dice": 0.8966259106591898,
+    "test_pooled_dice": 0.8979914265902919
+  },
+  {
+    "arm": "cab",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8916412729391126,
+    "test_macro_dice": 0.8945401006361138,
+    "test_pooled_dice": 0.8974955729399015,
+    "parameters": {
+      "total": 52124917,
+      "trainable": 47974093,
+      "decoder": 1089089,
+      "encoder_trainable": 46885004
+    },
+    "max_peak_allocated_gib": 12.726306438446045,
+    "mean_epoch_seconds": 7.003028663030563
+  },
+  {
+    "arm": "conv_control",
+    "best_epoch": 39,
+    "val_macro_dice": 0.8916478179501051,
+    "test_macro_dice": 0.8935490345594725,
+    "test_pooled_dice": 0.8964555939001847,
+    "parameters": {
+      "total": 52115305,
+      "trainable": 47964481,
+      "decoder": 1089089,
+      "encoder_trainable": 46875392
+    },
+    "max_peak_allocated_gib": 12.715221881866455,
+    "mean_epoch_seconds": 6.961059683890198
+  }
+]\n{
+  "cab": {
+    "validation_dice_gain_pp": -0.11654281952058199,
+    "validation_boundary_f1_delta": -0.012890114005208841,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "no_validated_screen_pass_review_paired_validation_errors"
+  },
+  "conv_control": {
+    "validation_dice_gain_pp": -0.11588831842133107,
+    "validation_boundary_f1_delta": -0.01565604179448782,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "no_validated_screen_pass_review_paired_validation_errors"
+  },
+  "conv_control_vs_cab": {
+    "validation_dice_gain_pp": -0.0006545010992509148,
+    "validation_boundary_f1_delta": 0.002765927789278977,
+    "test_used": false,
+    "passed": false
+  }
+}

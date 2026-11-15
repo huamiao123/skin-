@@ -1,0 +1,212 @@
+{
+  "arm": "swin_cga",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "swin_cga",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage33_author_modules/swin_cga/smoke/swin_cga_best_dice.pth",
+    "sha256": "d5fa210b0dc3435bb421a828174284f135368c648489abafd62f33899e87a9f8",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8728754611564687,
+        "iou": 0.792095454215185,
+        "precision": 0.9175544408071284,
+        "recall": 0.8663902837980773
+      },
+      "pooled": {
+        "dice": 0.879796808886272,
+        "iou": 0.785390379053965,
+        "precision": 0.925870682824862,
+        "recall": 0.838091089169931
+      },
+      "prec_at": {
+        "0.5": 0.9343832020997376,
+        "0.6": 0.8910761154855643,
+        "0.7": 0.8031496062992126,
+        "0.8": 0.6456692913385826,
+        "0.9": 0.24803149606299213
+      },
+      "threshold_jaccard_065": 0.7217244686076718,
+      "counts": {
+        "tp": 10117413,
+        "fp": 810045,
+        "fn": 1954560,
+        "tn": 37056414
+      },
+      "loss": 0.33345293967429734,
+      "diagnostics": {
+        "bce_soft": 0.18451177236914948,
+        "soft_dice_loss": 0.1489411670704839,
+        "wrong_pixels": 2764605,
+        "wrong_mean_confidence": 0.8609556126956448,
+        "wrong_confidence_gt99_fraction": 0.24193944523720387
+      }
+    }
+  },
+  "validation": {
+    "swin_cga": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8728754611564687,
+        "iou": 0.792095454215185,
+        "precision": 0.9175544408071284,
+        "recall": 0.8663902837980773,
+        "boundary_f1": 0.30156088450040985,
+        "hd95_pixels": 17.6745403375325,
+        "hd95_diagonal": 0.04881948174618906
+      },
+      "pooled": {
+        "dice": 0.879796808886272,
+        "iou": 0.785390379053965,
+        "precision": 0.925870682824862,
+        "recall": 0.838091089169931
+      },
+      "prec_at": {
+        "0.5": 0.9343832020997376,
+        "0.6": 0.8910761154855643,
+        "0.7": 0.8031496062992126,
+        "0.8": 0.6456692913385826,
+        "0.9": 0.24803149606299213
+      },
+      "threshold_jaccard_065": 0.7217244686076718,
+      "counts": {
+        "tp": 10117413,
+        "fp": 810045,
+        "fn": 1954560,
+        "tn": 37056414
+      },
+      "severe_undercoverage": 37,
+      "epoch": 2,
+      "checkpoint_sha256": "d5fa210b0dc3435bb421a828174284f135368c648489abafd62f33899e87a9f8"
+    },
+    "control": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8871472195886223,
+        "iou": 0.8131424257425875,
+        "precision": 0.9163479406292658,
+        "recall": 0.8911739774453475,
+        "boundary_f1": 0.3283615853682297,
+        "hd95_pixels": 15.446225817936611,
+        "hd95_diagonal": 0.04266457429531916
+      },
+      "pooled": {
+        "dice": 0.8903435950528586,
+        "iou": 0.8023597134063046,
+        "precision": 0.9170123384751622,
+        "recall": 0.8651821868720216
+      },
+      "prec_at": {
+        "0.5": 0.9514435695538058,
+        "0.6": 0.9146981627296588,
+        "0.7": 0.8543307086614174,
+        "0.8": 0.6916010498687664,
+        "0.9": 0.2887139107611549
+      },
+      "threshold_jaccard_065": 0.7622849926320122,
+      "counts": {
+        "tp": 10444456,
+        "fp": 945201,
+        "fn": 1627517,
+        "tn": 36921258
+      },
+      "severe_undercoverage": 26,
+      "epoch": 7,
+      "checkpoint_sha256": "cf03ea076c34157d565df093ed0f71eddabf06fc3eae5d3212174bef170d0df4"
+    },
+    "local_fusion": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8881762105082028,
+        "iou": 0.815177714868796,
+        "precision": 0.9169461046596005,
+        "recall": 0.8925984602940735,
+        "boundary_f1": 0.33768861010089335,
+        "hd95_pixels": 15.475315519361857,
+        "hd95_diagonal": 0.042744924002899164
+      },
+      "pooled": {
+        "dice": 0.8926259189583726,
+        "iou": 0.8060744189702757,
+        "precision": 0.9185682941554713,
+        "recall": 0.8681086347691467
+      },
+      "prec_at": {
+        "0.5": 0.9501312335958005,
+        "0.6": 0.9199475065616798,
+        "0.7": 0.8464566929133859,
+        "0.8": 0.6981627296587927,
+        "0.9": 0.3031496062992126
+      },
+      "threshold_jaccard_065": 0.766015553715138,
+      "counts": {
+        "tp": 10479784,
+        "fp": 929040,
+        "fn": 1592189,
+        "tn": 36937419
+      },
+      "severe_undercoverage": 23,
+      "epoch": 7,
+      "checkpoint_sha256": "d6d7be7b72c7e7a9e24bd81800e425fa64ba9f7a0c7d661c862736c97b6dc896"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "control_vs_swin_cga": {
+        "macro_dice_delta": -0.014271758432153442,
+        "image_bootstrap95": [
+          -0.018241249114690033,
+          -0.010482514577392296
+        ],
+        "improved": 266,
+        "worsened": 496,
+        "gains_over5pp": 25,
+        "losses_over5pp": 85,
+        "net_reduced_fn": -327043,
+        "net_added_fp": -135156,
+        "severe_undercoverage": [
+          26,
+          37
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "local_fusion_vs_swin_cga": {
+        "macro_dice_delta": -0.015300749351733978,
+        "image_bootstrap95": [
+          -0.019250052746636995,
+          -0.011571591433307602
+        ],
+        "improved": 244,
+        "worsened": 518,
+        "gains_over5pp": 25,
+        "losses_over5pp": 86,
+        "net_reduced_fn": -362371,
+        "net_added_fp": -118995,
+        "severe_undercoverage": [
+          23,
+          37
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "author module BatchNorm retained; all encoder modules eval",
+  "lr_horizon": 300,
+  "validation_only_screen": {
+    "macro_dice_delta_vs_best_reference": -0.015300749351734089,
+    "severe_delta": 14,
+    "qualifies_for_seed_confirmation": false
+  }
+}

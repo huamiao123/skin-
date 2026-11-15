@@ -1,0 +1,32 @@
+nohup: ignoring input
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/helpers.py:7: FutureWarning: Importing from timm.models.helpers is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+LGAG 16 fp32 pass 4.77001953125
+LGAG 16 bf16 pass 1.1171875
+LGAG 32 fp32 pass 4.28369140625
+LGAG 32 bf16 pass 131.0263671875
+LGAG 64 fp32 pass 17.08056640625
+LGAG 64 bf16 pass 140.0380859375
+CGA 16 fp32 pass 144.65625
+CGA 16 bf16 pass 149.1181640625
+CGA 32 fp32 pass 176.2822265625
+CGA 32 bf16 pass 37.6181640625
+CGA 64 fp32 pass 275.666015625
+CGA 64 bf16 pass 213.53173828125
+MFMS 16 fp32 pass 221.2353515625
+MFMS 16 bf16 pass 269.5322265625
+MFMS 32 fp32 pass 227.2939453125
+MFMS 32 bf16 pass 273.1005859375
+MFMS 64 fp32 pass 251.6533203125
+MFMS 64 bf16 pass 286.9404296875
+GAB 16 fp32 pass 147.1484375
+GAB 16 bf16 pass 146.45458984375
+GAB 32 fp32 pass 146.25048828125
+GAB 32 bf16 pass 145.94580078125
+GAB 64 fp32 pass 189.1259765625
+GAB 64 bf16 pass 178.15380859375
+EMCAD_full 0 fp32 pass 549.228515625
+EMCAD_full 0 bf16 pass 461.474609375
+DONE 26 {'module': 'LoMix_concat_repeatability', 'author_code_unchanged': True, 'concat': {'return_type': 'list', 'tensor_count': 1, 'max_abs_repeat_difference': 2.4030728340148926, 'state_dict_keys': ['original_weights.0', 'original_weights.1', 'synthesized_weights.concat.0', 'weighted_fusion_modules.2.weight_convs.0.weight', 'weighted_fusion_modules.2.weight_convs.0.bias', 'weighted_fusion_modules.2.weight_convs.1.weight', 'weighted_fusion_modules.2.weight_convs.1.bias']}, 'add': {'return_type': 'list', 'tensor_count': 1, 'max_abs_repeat_difference': 0.0, 'state_dict_keys': ['original_weights.0', 'original_weights.1', 'synthesized_weights.add.0', 'weighted_fusion_modules.2.weight_convs.0.weight', 'weighted_fusion_modules.2.weight_convs.0.bias', 'weighted_fusion_modules.2.weight_convs.1.weight', 'weighted_fusion_modules.2.weight_convs.1.bias']}}

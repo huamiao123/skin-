@@ -1,0 +1,13 @@
+第33轮：复用作者模块，2026-11-11
+
+两组独立实验：MambaVision-S + 完整EMCAD decoder；MambaVision-S + 原Swin + 三处CGA。
+保留64通道适配层、原Swin/读出初始化、Stage3/4解冻、BCE+逐图softDice、每次更新64张、微批48+16、原300轮余弦日程前100轮。作者BatchNorm保留，编码器始终eval。
+数据1886训练/762验证/867现有测试；按验证集逐图宏平均Dice选择最佳权重。所有新模型先完成训练，再统一测试。现有测试已被查看，不能称为新的盲测；患者级独立性未确认。
+
+已核验旧control/local前100轮均在第7轮最佳，并精确重放762张验证集。原作者文件SHA256与上轮核查一致。严格确定性在EMCAD自适应最大池化反向处不受支持，改为确定性优先、遇不支持算子警告；作者算子未替换。首个失败检查归档在preflight_attempts。
+
+真实训练检查包括显存容量、作者模块/晚期编码器梯度、冻结权重不变、状态精确加载、更新重放容差以及实际进程重启。两组各2轮检查通过后自动进入100轮正式训练。
+仅保留验证Dice最优模型；训练中保留latest断点，完整测试成功后清理latest和短程检查权重。原有实验不会删除。
+
+实时状态：stage33_author_modules/pipeline_status.json；各组实际epoch：<arm>/results/run_status.json；所有训练及测试完成标记：PIPELINE_DONE.json。
+启动/恢复：env/bin/python source/referring_image_segmentation/stage33_author_modules/run_pipeline.py。

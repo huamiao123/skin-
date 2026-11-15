@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-11-12T03:24:09.230714+00:00",
+  "formal_training_verified": true,
+  "observed_epoch": 9,
+  "training_pid": 8844,
+  "pipeline_pid": 7869,
+  "active_arms": [
+    "swin_control",
+    "uct_concat",
+    "uct_cca"
+  ],
+  "epochs_per_arm": 100,
+  "seed": 42,
+  "train_n": 1886,
+  "val_n": 762,
+  "test_n": 867,
+  "all_three_real_data_gradient_and_restart_audits_passed": true,
+  "selection": "max validation per-image macro Dice; earliest tie; threshold0.5",
+  "all_three_complete_before_fixed_full_test": true,
+  "madg_status": "attempted both BF16 and FP32 block; deferred after reproducibility preflight failure; no formal test score",
+  "hardware": "RTX4090 24GB",
+  "artifacts_server_only": true
+}

@@ -1,0 +1,252 @@
+{
+  "arm": "position_bias",
+  "seed": 42,
+  "epochs": 100,
+  "selection": {
+    "arm": "position_bias",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage47_original_window_swin/position_bias/results/position_bias_best_dice.pth",
+    "sha256": "b4af2399c227256d747b9fe5d5cdf8de0e2ce31e0ba4f54eddb300ff8e416b9c",
+    "epoch": 39,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8922177732238006,
+        "iou": 0.8208504149065319,
+        "precision": 0.9066197727615342,
+        "recall": 0.9090070399475388
+      },
+      "pooled": {
+        "dice": 0.9000404612837398,
+        "iou": 0.8182486987968288,
+        "precision": 0.9093455485673668,
+        "recall": 0.8909238779775269
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.926509186351706,
+        "0.7": 0.8530183727034121,
+        "0.8": 0.7034120734908137,
+        "0.9": 0.34776902887139105
+      },
+      "threshold_jaccard_065": 0.7723404480552384,
+      "counts": {
+        "tp": 10755209,
+        "fp": 1072208,
+        "fn": 1316764,
+        "tn": 36794251
+      },
+      "loss": 0.31755057407489284,
+      "diagnostics": {
+        "bce_soft": 0.20497104572498892,
+        "soft_dice_loss": 0.11257954188219206,
+        "wrong_pixels": 2388972,
+        "wrong_mean_confidence": 0.8991761327720887,
+        "wrong_confidence_gt99_fraction": 0.37942889242737043
+      }
+    }
+  },
+  "validation": {
+    "position_bias": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8922177732238006,
+        "iou": 0.8208504149065319,
+        "precision": 0.9066197727615342,
+        "recall": 0.9090070399475388,
+        "boundary_f1": 0.33699465866985745,
+        "hd95_pixels": 14.570712315891278,
+        "hd95_diagonal": 0.04024628705189479
+      },
+      "pooled": {
+        "dice": 0.9000404612837398,
+        "iou": 0.8182486987968288,
+        "precision": 0.9093455485673668,
+        "recall": 0.8909238779775269
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.926509186351706,
+        "0.7": 0.8530183727034121,
+        "0.8": 0.7034120734908137,
+        "0.9": 0.34776902887139105
+      },
+      "threshold_jaccard_065": 0.7723404480552384,
+      "counts": {
+        "tp": 10755209,
+        "fp": 1072208,
+        "fn": 1316764,
+        "tn": 36794251
+      },
+      "severe_undercoverage": 19,
+      "epoch": 39,
+      "checkpoint_sha256": "b4af2399c227256d747b9fe5d5cdf8de0e2ce31e0ba4f54eddb300ff8e416b9c"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {
+    "position_bias": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8942705200273041,
+        "iou": 0.8211266667290547,
+        "precision": 0.8670461186112928,
+        "recall": 0.9504342362427961,
+        "boundary_f1": 0.25033407596304275,
+        "hd95_pixels": 16.21822108150148,
+        "hd95_diagonal": 0.04479693009965749
+      },
+      "pooled": {
+        "dice": 0.8968007413583651,
+        "iou": 0.8129091225664822,
+        "precision": 0.877373052622061,
+        "recall": 0.9171082881964141
+      },
+      "prec_at": {
+        "0.5": 0.9619377162629758,
+        "0.6": 0.9319492502883506,
+        "0.7": 0.8696655132641292,
+        "0.8": 0.6897347174163783,
+        "0.9": 0.3206459054209919
+      },
+      "threshold_jaccard_065": 0.7755248183651037,
+      "counts": {
+        "tp": 14865422,
+        "fp": 2077681,
+        "fn": 1343593,
+        "tn": 38533016
+      },
+      "severe_undercoverage": 15,
+      "epoch": 39,
+      "checkpoint_sha256": "b4af2399c227256d747b9fe5d5cdf8de0e2ce31e0ba4f54eddb300ff8e416b9c"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 867,
+      "macro": {
+        "dice": 0.8966259106591898,
+        "iou": 0.8251672240975944,
+        "precision": 0.8692985300242783,
+        "recall": 0.9522786887413297,
+        "boundary_f1": 0.26931478378295826,
+        "hd95_pixels": 16.26075513815394,
+        "hd95_diagonal": 0.044914414942979076
+      },
+      "pooled": {
+        "dice": 0.8979914265902919,
+        "iou": 0.8148679132430251,
+        "precision": 0.8741091432254756,
+        "recall": 0.9232153835381114
+      },
+      "prec_at": {
+        "0.5": 0.9642445213379469,
+        "0.6": 0.936562860438293,
+        "0.7": 0.8754325259515571,
+        "0.8": 0.698961937716263,
+        "0.9": 0.3402537485582468
+      },
+      "threshold_jaccard_065": 0.7838454681285856,
+      "counts": {
+        "tp": 14964412,
+        "fp": 2155203,
+        "fn": 1244603,
+        "tn": 38455494
+      },
+      "severe_undercoverage": 14,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_position_bias": {
+        "macro_dice_delta": -0.0005889279105178103,
+        "image_bootstrap95": [
+          -0.0019245705365303583,
+          0.0007044938798506863
+        ],
+        "improved": 346,
+        "worsened": 416,
+        "gains_over5pp": 12,
+        "losses_over5pp": 6,
+        "net_reduced_fn": 24731,
+        "net_added_fp": 15069,
+        "severe_undercoverage": [
+          21,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    },
+    "test": {
+      "stage45_uper64_vs_position_bias": {
+        "macro_dice_delta": -0.0023553906318856755,
+        "image_bootstrap95": [
+          -0.003790306568412241,
+          -0.0010257102154528073
+        ],
+        "improved": 311,
+        "worsened": 554,
+        "gains_over5pp": 9,
+        "losses_over5pp": 10,
+        "net_reduced_fn": -98990,
+        "net_added_fp": -77522,
+        "severe_undercoverage": [
+          14,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": true,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 867,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Original-window attention implementation, relative bias and shifted-window comparisons",
+  "archived_reference_caveat": "Stage45 UPer64 reference matches decoder/init/data/recipe and14/7 windows; native_fixed controls attention implementation; position_bias enables relative bias learning; shifted_windows adds cyclic shift and native boundary mask including interactions with original padding",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

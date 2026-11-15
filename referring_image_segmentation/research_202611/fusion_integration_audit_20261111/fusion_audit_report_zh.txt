@@ -1,0 +1,112 @@
+MambaVision 医学分割：融合接入审计与下一步
+日期：2026-11-11；本报告全部保存在服务器。
+
+结论
+当前有两处需要优先处理的作者实现接入遗漏：CGA 未复用作者整网的额外初始化；EMCAD 直接采用了底层类的 expansion_factor=6，而作者二分类训练入口使用 2。它们都是已确认的实现差异，但尚未证明是精度下降的原因。此前检查“作者模块源码未改、张量尺寸正确、可以反向传播”仍不足以证明适配完整，这是前期核查的不足。
+
+没有证据认定“相加”接错。EMCAD 和 MambaLiteUNet 作者实现都使用门控 skip 与 decoder 特征相加。当前 CGA 的 g/x 角色、特征层顺序、模块注册及加法位置没有发现直接接线错误。当前实验应称为模块适配，不能称为原论文完整复现。
+
+检索与证据范围
+本轮学术 API 查询：medical image segmentation skip connections feature fusion；OpenAlex 20、Crossref 20、arXiv 19 条，去重后 55 条。它们是检索候选，不等于全文阅读了 55 篇。
+针对性核查 U-Net、Attention U-Net、FPN、TransFuse、UCTransNet、EMCAD、MambaLiteUNet 的相关方法段落；并逐项对照四个直接相关作者仓库及本项目源码。此前广泛调研目录仍为 research/topconf_open_source_20261111。
+工具自动生成的 api/topic_brief.md 混入无关多智能体连通性模板，已隔离到 quarantine/topic_brief.md，原位置标记 INVALID。原始 papers.json/csv/bib 与 search_log.md 保留。本报告依据原论文、作者源码和本地运行结果重新撰写。
+source_manifest.json 记录实际读取文件的 SHA256、类与方法行号。当前网页 main 分支可能继续更新，复核应以留存源码哈希为准。
+
+作者究竟怎样融合
+1. U-Net：上采样分支与 skip 拼接后，再用卷积学习组合；concat 本身不是最终融合能力。
+   https://arxiv.org/html/1505.04597v1
+2. FPN：侧路 1×1 投影、上采样、相加，再做 3×3 处理。这支持“相加可以有效”，不提供皮肤任务上的直接优越性证据。
+   https://arxiv.org/html/1612.03144v2
+3. Attention U-Net：由较粗尺度上下文给 skip 产生空间门控，之后进入解码过程。
+   https://arxiv.org/html/1804.03999v3
+4. UCTransNet：CCT 处理多尺度通道关系，CCA 引导 skip。作者 UpBlock_attention 实际执行：上采样 → CCA(g=up,x=skip) → concat → 卷积块。仅拿 CCA 后改为加法，并不等同于该融合块。
+   https://arxiv.org/abs/2109.04335
+   https://github.com/McGregorWwww/UCTransNet/blob/main/nets/UCTransNet.py#L55-L92
+5. TransFuse：BiFusion 同时含两路投影交互、不同注意力及拼接后的残差混合。它原来融合独立 CNN/Transformer 分支，与我们的单 backbone 编码器/解码器 skip 不同；不是最优先直接套用的对象。
+   https://miccai2021.org/openaccess/paperlinks/2021/09/01/496-Paper0016.html
+   https://github.com/Rayicer/TransFuse/blob/main/lib/TransFuse.py#L20-L71
+6. EMCAD：EUCB 上采样和处理 decoder 特征，LGAG 筛选 skip，相加后还有通道/空间注意力及多尺度卷积。不能把完整 decoder 的结果归因于一个 gate。
+   https://openaccess.thecvf.com/content/CVPR2024/html/Rahman_EMCAD_Efficient_Multi-scale_Convolutional_Attention_Decoding_for_Medical_Image_Segmentation_CVPR_2024_paper.html
+   https://github.com/SLDGroup/EMCAD/blob/main/lib/decoders.py#L315-L390
+7. MambaLiteUNet：CGA 形成空间权重并乘 skip，外部与 decoder 特征相加；门控输入来自它自己的解码、归一化和激活过程。
+   https://openaccess.thecvf.com/content/CVPR2026/html/Rahman_MambaLiteUNet_Cross-Gated_Adaptive_Feature_Fusion_for_Robust_Skin_Lesion_Segmentation_CVPR_2026_paper.html
+   https://github.com/maklachur/MambaLiteUNet/blob/main/models/MambaLiteUNet.py#L330-L378
+
+本项目与作者实现的对应关系
+A. CGA 初始化：明确遗漏，优先受控重训
+本项目 stage33_author_modules/author_modules.py:45–47 只构造独立 CrossGatedAttentionGate。
+作者 MambaLiteUNet.py:510–524 在整个网络构造后还调用 self.apply(self._init_weights)，对 Conv1d/Conv2d 等重新初始化。嵌套 MambaSSMLayer 自己的初始化并不覆盖同样的完整范围。
+CPU 检查证实同一个 gate 加上作者顶层初始化规则后，卷积权重分布发生改变。initialization_audit.json 中的“84 个张量变化”包含重新随机采样，不能理解为 84 个张量都使用了错误的分布。
+下一步只对新建 gate 复用作者初始化规则，不重置 MambaVision 预训练参数，不重置 Swin，不在已训练权重上临时重新初始化后测试。此项必须通过从头训练该实验臂来判断影响。
+源码：https://github.com/maklachur/MambaLiteUNet/blob/main/models/MambaLiteUNet.py#L510-L524
+
+B. EMCAD 扩展倍率：明确入口配置遗漏
+本项目调用 EMCAD(channels=[64,64,64,64])。
+底层 decoders.py:316 默认 expansion_factor=6、activation='relu6'。
+作者 lib/networks.py:11 默认 expansion_factor=2、activation='relu'，随后将参数显式传给底层 decoder。
+作者 train_polyp.py:181–188 的实际二分类入口为 expansion_factor=2、activation_mscb='relu6'。
+因此需要核查的配置遗漏是 6 与 2；ReLU6 与二分类训练入口一致，不能列为错误。此前中间更新把激活默认差异也列作问题，现已更正。
+源码：https://github.com/SLDGroup/EMCAD/blob/main/lib/networks.py#L10-L78
+源码：https://github.com/SLDGroup/EMCAD/blob/main/train_polyp.py#L177-L195
+
+实际构造、只数 decoder（不含 backbone、适配器与分割头）的参数：
+- 全 64 通道、扩展倍率 6：284,043；这是现有 emcad64。
+- 全 64 通道、扩展倍率 2：108,939。
+- PVT-B2 层宽 [512,320,128,64]、倍率 2：1,913,515，与论文约 1.91M 对应。
+- MambaVision 层宽 [768,384,192,96]、倍率 2：3,775,163。
+- 同一 MambaVision 层宽、倍率 6：10,289,723。
+直接按 MambaVision 原始通道接入会明显增大容量，效果不能简单归功于融合。参数详情见 decoder_parameter_counts_explicit.json。
+较大的扩展倍率并非数学错误或必然更差；其问题是前期没有明确记录偏离作者实际配置。
+
+C. EMCAD 的通道和监督：有意适配，不是证明失败的原因
+MambaVision 原始层宽为 96/192/384/768；项目使用 1×1 Conv + GN + GELU 统一到 64，以与已有 Swin 实验共享接口。这样公平控制了一部分输入条件，但不再是作者原层宽 decoder。
+项目只对最终输出使用公共 BCE + 逐图 soft Dice。作者二分类脚本为四个预测分别监督，再监督四预测的和，共五项；每项为加权 BCE + 加权 IoU。论文中的 15 种组合属于多分类，不应误搬到本任务。
+只恢复深监督而保留我们的单项 loss，是监督结构适配；同时恢复作者 structure_loss 则改变另一因素，必须另列实验。
+推理使用最后精细输出并非已发现错误；原论文/代码也采用最后阶段输出。不要把缺少四输出推理求和当作 bug。
+https://arxiv.org/html/2405.06880v1 （§3.3、§8.4）
+https://github.com/SLDGroup/EMCAD/blob/main/train_polyp.py#L20-L30
+https://github.com/SLDGroup/EMCAD/blob/main/train_polyp.py#L126-L136
+
+D. CGA 输入和上下游位置：已测差异，尚无因果证据
+原作者门控前的 decoder 与 skip 均经过其各自 GN/GELU 路径；项目 decoder 输入来自 Swin 的 LayerNorm 输出，skip 来自 Conv/GN/GELU，且当前层 Swin 在相加后执行。不同来源不自动等于不能融合。
+验证集测得从低分辨率到高分辨率，g 的 RMS 为 0.938/0.959/0.984，skip 为 0.783/0.726/0.694，门控后 skip 为 0.464/0.446/0.352。两路均值和幅度不同，但没有出现跨数量级的幅度失衡证据。
+三层注意力均值约 0.505/0.520/0.478，平均图内标准差约 0.187/0.187/0.172，未见整体塌为常数或普遍饱和。
+不能仅凭这些差异就给两路强行再加一层归一化；应先解决明确遗漏，再按需要做输入处理消融。
+
+本轮实际诊断：762 张验证图，固定阈值 0.5
+以下均是逐图平均 Dice（macro），不是测试集，也不是 pooled Dice。所有权重来自原来的验证集最佳 checkpoint；没有重新训练。
+模型 / 操作                             macro Dice    pooled Dice
+CGA 原始最佳权重                         88.9510%       89.4355%
+CGA 三层门控全部旁路，直接传 skip         88.2239%       89.4238%
+CGA 空间权重替换为逐图均值               87.6705%       89.0459%
+CGA 仅训练图像校准 BN                    88.9446%       89.4273%
+EMCAD64 原始最佳权重                     88.7357%       89.5836%
+EMCAD64 仅训练图像校准 BN                88.8606%       89.6438%
+
+解释：
+- 移除 CGA 后 macro 下降 0.727 个百分点；去掉注意力的空间差异后下降 1.2805 个百分点。当前网络已经依赖门控及空间信息，不能说 gate 完全没作用。
+- 门控旁路同时减少 225,164 个漏分像素，但增加 281,515 个误分像素；严重欠覆盖病例由 27 降至 19，整体 Dice 反而下降。改善漏分不等于改善整体分割，门控有取舍。
+- 训练后旁路会改变网络习惯的输入，以上不是独立重训的无门控消融，不能证明加 CGA 比不加更好。
+- CGA BN 校准差 -0.0064 个百分点，没有支持它是主要瓶颈。EMCAD +0.1248 个百分点，同时严重欠覆盖由 16 增到 19，也不能据此宣布已解决问题。
+- BN 只用 1886 张训练 RGB，batch32，一次累计统计；无梯度、无优化器、无测试数据；所有学习参数及原 checkpoint 文件哈希不变。校准改变的仅是临时模型 BN buffer。
+- 六组均保留完整指标、逐图 CSV 与预测。原始两组预测计数与既有 checkpoint 指标完全一致，避免把评估漂移误认成干预收益。
+
+接下来怎样做，控制实验规模
+优先级 1：现有 CGA 与“仅补作者整网初始化规则”的 CGA 对照。
+保持 encoder、Swin、三层融合位置、通道、数据、loss、训练预算、有效 batch、学习率及选模规则相同。新 gate 的初始化在独立 RNG 上下文内完成，核查其余初始参数逐元素相同。使用既有原臂，不无故再跑一遍相同基线。收益仍需后续匹配种子确认。
+
+优先级 2：EMCAD64 先只将 expansion_factor 显式改为 2，ReLU6 保持不变。
+暂不同时改通道、深监督或损失。先隔离入口遗漏。若随后测试深监督，先单独增加四输出及和输出的监督结构，再单独讨论作者 structure_loss。全原始通道版是容量对照，不能混为初始化/融合修复。
+
+若上述明确接入问题修正后仍不足，再选择一个更贴近当前 skip 场景的作者完整融合块：
+首选 UCTransNet 的 UpBlock_attention（上采样 + CCA + concat + 卷积），并对照相同上采样/卷积但不含 CCA 的 concat 版；这样才能区分收益来自聚合方式、额外卷积还是注意力。不同时堆上 BiFusion、EMCAD 和 CGA。仅移植 UpBlock 也不应命名为完整 UCTransNet，其 CCT 并未复现。
+
+训练与选模：
+继续保持既有 1886/762/867 图像划分。新配置只用 train 学习、val 选择 checkpoint/方案。确定配置后报告固定 test 指标，不能挑测试表现最好的 epoch，也不使用测试图校准 BN。
+已有 test 多次暴露，不应称为完全未触及的最终评估；发表时宜增加未用于设计的外部评估或新预留评估。尚未证实患者级完全独立。
+目前历史比较为单个 seed；小幅差异不能直接宣称稳定提升。
+目前 100 轮仍沿用原 300 轮余弦日程的前 100 轮，不等于专为 100 轮优化的学习率；修复对照先保持一致。若修改日程，要对照组同步修改。
+
+本轮状态
+仅完成文献/源码审计和验证集诊断；未启动新训练，未改变生产训练代码或原权重。下一步方案尚未执行。
+所有文件在 /home/waas/mambavision_stage22/research/fusion_integration_audit_20261111/。

@@ -1,0 +1,61 @@
+{
+  "recorded_utc": "2026-11-12T13:26:13.946701+00:00",
+  "integration_verified": true,
+  "reference_validation_predictions_exact": true,
+  "preflight": {
+    "frozen": {
+      "resume_passed": true,
+      "gradient_and_frozen_parameter_checks_passed": true,
+      "epoch_seconds": [
+        4.774445204995573,
+        5.556184680004662
+      ],
+      "peak_gib": 5.872315883636475,
+      "trainable": {
+        "total": 51229673,
+        "trainable": 1089089,
+        "decoder": 1089089,
+        "encoder_trainable": 0
+      }
+    },
+    "lora8": {
+      "resume_passed": true,
+      "gradient_and_frozen_parameter_checks_passed": true,
+      "epoch_seconds": [
+        9.042230984006892,
+        10.084574501001043
+      ],
+      "peak_gib": 12.171267032623291,
+      "trainable": {
+        "total": 52003817,
+        "trainable": 1863233,
+        "decoder": 1089089,
+        "encoder_trainable": 774144
+      }
+    }
+  },
+  "pipeline_at_receipt": {
+    "stage": "stage49_peft_adaptation",
+    "state": "formal_training",
+    "arms": [
+      "frozen",
+      "lora8"
+    ],
+    "epochs_per_arm": 100,
+    "lr_schedule_horizon": 100,
+    "pipeline_pid": 31760,
+    "updated_utc": "2026-11-12T13:25:38.905328+00:00",
+    "status_file": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage49_peft_adaptation/frozen/results/run_status.json",
+    "resume_command": [
+      "/home/waas/mambavision_stage22/env/bin/python",
+      "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage49_peft_adaptation/run_pipeline.py"
+    ],
+    "training_pid": 32392,
+    "arm": "frozen",
+    "completed_trainings": []
+  },
+  "epoch_compute_seconds_estimate": 1472.8717685004085,
+  "estimate_caveat": "Excludes process startups, checkpoint writes and full metrics; actual wall time will be longer.",
+  "all_new_artifacts_server_only": true,
+  "formal_protocol_frozen": true
+}

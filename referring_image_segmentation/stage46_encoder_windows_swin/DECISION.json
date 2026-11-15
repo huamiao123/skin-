@@ -1,0 +1,25 @@
+{
+  "window8": {
+    "validation_dice_gain_pp": -0.6457116121681206,
+    "validation_boundary_f1_delta": -0.028639435392803003,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "no_validated_screen_pass_review_paired_validation_errors"
+  },
+  "swin8": {
+    "validation_dice_gain_pp": -0.590232952507197,
+    "validation_boundary_f1_delta": -0.024559424749274528,
+    "rule": "macro Dice gain >=0.1pp and boundary F1 no decrease; single seed validation screen",
+    "test_used_for_screen": false,
+    "passed": false,
+    "decision": "no_validated_screen_pass_review_paired_validation_errors"
+  },
+  "swin_incremental": {
+    "validation_dice_gain_pp": 0.05547865966092358,
+    "validation_boundary_f1_delta": 0.0040800106435284755,
+    "test_used": false,
+    "comparison": "swin8 versus window8; package of shift and relative bias plus native attention implementation",
+    "passed": false
+  }
+}

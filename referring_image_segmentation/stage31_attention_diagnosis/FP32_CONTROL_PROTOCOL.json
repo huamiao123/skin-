@@ -1,0 +1,12 @@
+{
+  "reason": "Stage31 BF16 audit found tiny conditioning effects despite nonzero parameter changes. Check whether decoder numerical precision hides input conditioning.",
+  "scope": "Validation only, fixed cross_channel_scale best checkpoint; BF16 encoder features retained, adapter+decoder FP32, compare each intervention against its own FP32 original. Not a new model, not training, not a test-set evaluation.",
+  "modes": [
+    "original",
+    "channel_identity",
+    "scale_equal",
+    "joint_permuted",
+    "residual_off"
+  ],
+  "no_new_selection": true
+}

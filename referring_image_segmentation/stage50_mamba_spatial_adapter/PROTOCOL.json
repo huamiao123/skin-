@@ -1,0 +1,61 @@
+{
+  "stage": 50,
+  "seed": 42,
+  "epochs": 100,
+  "arms": [
+    "cab",
+    "conv_control"
+  ],
+  "question": "Does explicit 2D local refinement after stage3 SSM processing improve segmentation; does image-conditioned channel weighting add value over the same convolution?",
+  "changes": {
+    "cab": "Native MambaIR CAB(384,compress_ratio3,squeeze_factor30) on real16x16 norm2 features after last stage3 Mamba mixer; zero-initialized384channel residual scale; parallel to original MLP.",
+    "conv_control": "Exact same two3x3 convolutions and GELU, identical initial convolution weights; replace channel attention with constant0.5. Same location and residual scale."
+  },
+  "insertion": "encoder.model.levels[2].blocks[3].mlp output hook; input is norm2(post-SSM residual), before subsequent Attention blocks",
+  "mapping": "Use original native window_reverse to28x28, crop real16x16, apply local module, zero-pad back28x28, native window_partition14. No processing of artificial padding in CAB.",
+  "original_encoder": "Official MambaVision-S ImageNet initialization; original SSM equations, all MLPs, original14/7windows retained; only stages3/4 and adapter trainable, encoder.eval.",
+  "initialization": "Original encoder/head states and logits exactly match reference; native CAB init isolated CPU seed142; residual scale exactly0.",
+  "training": {
+    "encoder_lr": 0.0001,
+    "decoder_lr": 0.001,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "clip_per_group": 1.0,
+    "cosine_horizon": 100,
+    "epochs": 100,
+    "physical_batch": 64,
+    "effective_batch": 64,
+    "evaluation_batch": 64,
+    "loss": "unchanged BCE+per-image softDice",
+    "precision": "BF16_forward_FP32_loss; residual cast back to common dtype"
+  },
+  "data": {
+    "train": 1886,
+    "val": 762,
+    "test": 867,
+    "input": 256,
+    "test_already_exposed": true,
+    "patient_disjointness_verified": false
+  },
+  "reference": "Reuse Stage45 UPer64 after exact762validation replay; both new runs start from official ImageNet weights.",
+  "selection": "Max validation macroDice earliesttie; complete100epochs; full867test for every fixedbest checkpoint after both trainings.",
+  "screen": {
+    "validation_macro_gain_pp_min": 0.1,
+    "validation_boundary_f1_no_decrease": true,
+    "validation_only": true
+  },
+  "evidence": {
+    "stage49": "Both PEFT arms failed validation screen; retain stronger late-full-tuned baseline.",
+    "baseline_validation_errors": "21 severe-undercoverage cases; FN1,341,495 and FP1,057,139; mixed errors do not establish local forgetting as cause.",
+    "implementation": "Native MambaVision uses1D depthwise convolution inside flattened windows; explicit2D refinement is an untested hypothesis, not absence of spatial context.",
+    "prior_scope": "Prior CFAM was decoder stride8 refinement; this insertion is inside encoder before Attention. Cross-stage comparison does not isolate location from module."
+  },
+  "controls": "Identical convolution architecture and initialization, same spatial mapping and residual scale; channel-attention arm has9612more parameters, not strictly parameter/FLOP matched.",
+  "caveats": [
+    "Module adaptation, not full MambaIR reproduction or new CAB invention.",
+    "No change to SSM state update equation; this is a Mamba-block spatial branch.",
+    "Single seed and single location; no claim all spatial alternatives are exhausted if negative.",
+    "Rank8 PEFT failure does not exclude other PEFT ranks, learning rates or placements.",
+    "Repeatedly exposed test cannot support a new untouched-test claim."
+  ]
+}

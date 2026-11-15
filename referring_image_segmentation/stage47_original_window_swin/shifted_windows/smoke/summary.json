@@ -1,0 +1,159 @@
+{
+  "arm": "shifted_windows",
+  "seed": 42,
+  "epochs": 2,
+  "selection": {
+    "arm": "shifted_windows",
+    "checkpoint": "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage47_original_window_swin/shifted_windows/smoke/shifted_windows_best_dice.pth",
+    "sha256": "155feaff2b057037206b6cf0a1199fe48bf32d4f9b61c03705e5d0eee827f017",
+    "epoch": 2,
+    "validation": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8247607809317968,
+        "iou": 0.7186337608889113,
+        "precision": 0.7455851596021309,
+        "recall": 0.9679650374605662
+      },
+      "pooled": {
+        "dice": 0.8635080497825681,
+        "iou": 0.7598012899408245,
+        "precision": 0.7908173444159944,
+        "recall": 0.9509146516480778
+      },
+      "prec_at": {
+        "0.5": 0.9120734908136483,
+        "0.6": 0.8149606299212598,
+        "0.7": 0.636482939632546,
+        "0.8": 0.36351706036745407,
+        "0.9": 0.051181102362204724
+      },
+      "threshold_jaccard_065": 0.5932855122378581,
+      "counts": {
+        "tp": 11479416,
+        "fp": 3036472,
+        "fn": 592557,
+        "tn": 34829987
+      },
+      "loss": 0.7156212306398106,
+      "diagnostics": {
+        "bce_soft": 0.28109045987679887,
+        "soft_dice_loss": 0.4345307642706423,
+        "wrong_pixels": 3629029,
+        "wrong_mean_confidence": 0.70603214306828,
+        "wrong_confidence_gt99_fraction": 0.0003731025571854069
+      }
+    }
+  },
+  "validation": {
+    "shifted_windows": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8247607809317968,
+        "iou": 0.7186337608889113,
+        "precision": 0.7455851596021309,
+        "recall": 0.9679650374605662,
+        "boundary_f1": 0.1029706657545727,
+        "hd95_pixels": 22.26083591545897,
+        "hd95_diagonal": 0.061487453244930004
+      },
+      "pooled": {
+        "dice": 0.8635080497825681,
+        "iou": 0.7598012899408245,
+        "precision": 0.7908173444159944,
+        "recall": 0.9509146516480778
+      },
+      "prec_at": {
+        "0.5": 0.9120734908136483,
+        "0.6": 0.8149606299212598,
+        "0.7": 0.636482939632546,
+        "0.8": 0.36351706036745407,
+        "0.9": 0.051181102362204724
+      },
+      "threshold_jaccard_065": 0.5932855122378581,
+      "counts": {
+        "tp": 11479416,
+        "fp": 3036472,
+        "fn": 592557,
+        "tn": 34829987
+      },
+      "severe_undercoverage": 5,
+      "epoch": 2,
+      "checkpoint_sha256": "155feaff2b057037206b6cf0a1199fe48bf32d4f9b61c03705e5d0eee827f017"
+    },
+    "stage45_uper64": {
+      "metric_version": "foreground_v1_20261016",
+      "n": 762,
+      "macro": {
+        "dice": 0.8928067011343184,
+        "iou": 0.8220574119887529,
+        "precision": 0.9101313038297763,
+        "recall": 0.9069263351367866,
+        "boundary_f1": 0.35130680589552465,
+        "hd95_pixels": 14.588496959484564,
+        "hd95_diagonal": 0.04029541065379244
+      },
+      "pooled": {
+        "dice": 0.899468767065989,
+        "iou": 0.8173041710665581,
+        "precision": 0.9103178360817118,
+        "recall": 0.8888752484784385
+      },
+      "prec_at": {
+        "0.5": 0.958005249343832,
+        "0.6": 0.9251968503937008,
+        "0.7": 0.8569553805774278,
+        "0.8": 0.7165354330708661,
+        "0.9": 0.3530183727034121
+      },
+      "threshold_jaccard_065": 0.7738263321873545,
+      "counts": {
+        "tp": 10730478,
+        "fp": 1057139,
+        "fn": 1341495,
+        "tn": 36809320
+      },
+      "severe_undercoverage": 21,
+      "epoch": 39,
+      "checkpoint_sha256": "b2d53a7f39b0bd866f86107ae7272596b703100a518788fb41c7834baec39a08"
+    }
+  },
+  "test": {},
+  "comparisons": {
+    "validation": {
+      "stage45_uper64_vs_shifted_windows": {
+        "macro_dice_delta": -0.06804592020252156,
+        "image_bootstrap95": [
+          -0.07606741145398098,
+          -0.05938768302653837
+        ],
+        "improved": 146,
+        "worsened": 616,
+        "gains_over5pp": 83,
+        "losses_over5pp": 455,
+        "net_reduced_fn": 748938,
+        "net_added_fp": 1979333,
+        "severe_undercoverage": [
+          21,
+          5
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "test_evaluated": false,
+  "complete": true,
+  "train_n": 1886,
+  "validation_n": 762,
+  "test_n": 0,
+  "normalization": "native decoder SyncBN singleGPU fallback; encoder eval",
+  "lr_horizon": 100,
+  "primary_comparison": "Original-window attention implementation, relative bias and shifted-window comparisons",
+  "archived_reference_caveat": "Stage45 UPer64 reference matches decoder/init/data/recipe and14/7 windows; native_fixed controls attention implementation; position_bias enables relative bias learning; shifted_windows adds cyclic shift and native boundary mask including interactions with original padding",
+  "validation_only_screen": {
+    "status": "defer_to_final_paired_validation",
+    "test_used_for_selection": false
+  }
+}

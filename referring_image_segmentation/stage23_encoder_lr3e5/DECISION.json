@@ -1,0 +1,37 @@
+{
+  "previous_stage": "stage22_partial_finetune",
+  "previous_stage_complete": true,
+  "seed42_best_macro_dice": {
+    "frozen": 0.8811519388480832,
+    "finetune34": 0.8876332753278046
+  },
+  "seed42_best_macro_iou": {
+    "frozen": 0.8045997852276856,
+    "finetune34": 0.8151129560727525
+  },
+  "seed42_best_boundary_f1": {
+    "frozen": 0.32458418825287133,
+    "finetune34": 0.3460240284878818
+  },
+  "seed42_best_hd95_pixels": {
+    "frozen": 16.603339765667474,
+    "finetune34": 15.261972404337174
+  },
+  "paired_improved_cases": 403,
+  "paired_worsened_cases": 359,
+  "mean_dice_delta_largest_area_quartile": -0.009641705677725026,
+  "finetune_best_dice_epoch": 18,
+  "finetune_min_validation_loss": 0.29644318061863656,
+  "finetune_final_validation_loss": 0.7106374954301229,
+  "intervention": "Encoder initial LR 1e-4 -> 3e-5 only; decoder LR remains 1e-3",
+  "rationale": "Positive but heterogeneous development benefit and late validation-loss/boundary deterioration warrant testing weaker adaptation before adding capacity.",
+  "comparisons": "Stage23 low-LR finetune vs stage22 finetune; stage23 frozen vs stage22 frozen is an unchanged-control audit.",
+  "selection": "Maximum validation macro Dice, earliest exact tie; retain loss-selected and final checkpoints.",
+  "limits": [
+    "One seed is not evidence of seed robustness.",
+    "Loss drift is consistent with overfitting/overconfidence, not proof of learning-rate causality.",
+    "The larger-lesion observation is exploratory.",
+    "No test score enters this decision."
+  ],
+  "next_after_this_stage": "Review accuracy, boundary metrics, precision/recall and per-case regressions. Freeze a training recipe, then validate with another paired seed before architectural claims."
+}

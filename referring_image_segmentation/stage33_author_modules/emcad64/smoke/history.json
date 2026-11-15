@@ -1,0 +1,110 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": {
+      "emcad64": 0.6778332589160599
+    },
+    "validation": {
+      "emcad64": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.0,
+          "iou": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "pooled": {
+          "dice": 0.0,
+          "iou": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "prec_at": {
+          "0.5": 0.0,
+          "0.6": 0.0,
+          "0.7": 0.0,
+          "0.8": 0.0,
+          "0.9": 0.0
+        },
+        "threshold_jaccard_065": 0.0,
+        "counts": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 12071973,
+          "tn": 37866459
+        },
+        "loss": 1.5929202038472092,
+        "diagnostics": {
+          "bce_soft": 0.6911319641303515,
+          "soft_dice_loss": 0.9017882597415153,
+          "wrong_pixels": 12071973,
+          "wrong_mean_confidence": 0.9323143864659378,
+          "wrong_confidence_gt99_fraction": 0.0
+        }
+      }
+    },
+    "gradient_norms": {
+      "emcad64": {
+        "decoder": 0.7109634876251221,
+        "encoder": 0.2935163974761963
+      }
+    },
+    "seconds": 20.336352816000726,
+    "peak_allocated_gib": 13.341838359832764
+  },
+  {
+    "epoch": 2,
+    "train_loss": {
+      "emcad64": 0.2914433905327434
+    },
+    "validation": {
+      "emcad64": {
+        "metric_version": "foreground_v1_20261016",
+        "n": 762,
+        "macro": {
+          "dice": 0.864015067093018,
+          "iou": 0.7785791223166312,
+          "precision": 0.8733612822564477,
+          "recall": 0.8988695214586235
+        },
+        "pooled": {
+          "dice": 0.8700971903586718,
+          "iou": 0.7700637461330608,
+          "precision": 0.8869434116039653,
+          "recall": 0.853878980676978
+        },
+        "prec_at": {
+          "0.5": 0.9356955380577427,
+          "0.6": 0.8989501312335958,
+          "0.7": 0.8228346456692913,
+          "0.8": 0.5800524934383202,
+          "0.9": 0.15091863517060367
+        },
+        "threshold_jaccard_065": 0.7166609542494286,
+        "counts": {
+          "tp": 10308004,
+          "fp": 1313937,
+          "fn": 1763969,
+          "tn": 36552522
+        },
+        "loss": 0.39104051743279605,
+        "diagnostics": {
+          "bce_soft": 0.24264115259403318,
+          "soft_dice_loss": 0.14839936945382065,
+          "wrong_pixels": 3077906,
+          "wrong_mean_confidence": 0.871065217893882,
+          "wrong_confidence_gt99_fraction": 0.2884474054763206
+        }
+      }
+    },
+    "gradient_norms": {
+      "emcad64": {
+        "decoder": 1.4293590784072876,
+        "encoder": 0.9954326748847961
+      }
+    },
+    "seconds": 21.652641028002108,
+    "peak_allocated_gib": 13.331958293914795
+  }
+]

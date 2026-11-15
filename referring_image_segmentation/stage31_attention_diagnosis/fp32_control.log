@@ -1,0 +1,14 @@
+{"state": "auditing_model", "time_utc": "2026-11-11T09:12:30.939507+00:00", "model": "cross_channel_scale"}
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+{"state": "intervention", "time_utc": "2026-11-11T09:12:39.491363+00:00", "model": "cross_channel_scale", "mode": "channel_identity"}
+RESULT cross_channel_scale channel_identity 88.893666 delta_pp -0.000729
+{"state": "intervention", "time_utc": "2026-11-11T09:12:43.687002+00:00", "model": "cross_channel_scale", "mode": "scale_equal"}
+RESULT cross_channel_scale scale_equal 88.898849 delta_pp 0.004454
+{"state": "intervention", "time_utc": "2026-11-11T09:12:47.839573+00:00", "model": "cross_channel_scale", "mode": "joint_permuted"}
+RESULT cross_channel_scale joint_permuted 88.901227 delta_pp 0.006832
+{"state": "intervention", "time_utc": "2026-11-11T09:12:51.877936+00:00", "model": "cross_channel_scale", "mode": "residual_off"}
+RESULT cross_channel_scale residual_off 88.108371 delta_pp -0.786024
+{"state": "complete", "time_utc": "2026-11-11T09:12:56.759009+00:00", "models": 1, "validation_n": 762, "test_read": false}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "same_gpu": "RTX4090",
+  "historical_weights_and_splits_verified": true,
+  "test_images_read": false,
+  "replays": [
+    {
+      "arm": "stage36_swin_control",
+      "passed": true,
+      "validation_n": 762,
+      "macro_dice": 0.8874855631757186,
+      "confusion_counts_identical": true
+    },
+    {
+      "arm": "stage36_uct_cca",
+      "passed": true,
+      "validation_n": 762,
+      "macro_dice": 0.8883232053912451,
+      "confusion_counts_identical": true
+    }
+  ]
+}

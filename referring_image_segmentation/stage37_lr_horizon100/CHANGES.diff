@@ -1,0 +1,211 @@
+--- stage36/train.py
++++ stage37/train.py
+@@ -1,6 +1,6 @@
+-"""Stage36: independent author fusion blocks with matched convolution controls."""
++"""Stage37: independent author fusion blocks with matched convolution controls."""
+ from pathlib import Path
+-import argparse, csv, gc, hashlib, json, os, signal, sys, time, traceback
++import argparse, csv, gc, hashlib, json, os, signal, sys, time, traceback, math
+ from concurrent.futures import ThreadPoolExecutor
+ ROOT = Path(__file__).resolve().parent
+ PROJECT = ROOT.parent
+@@ -11,7 +11,7 @@
+ import numpy as np
+ import torch
+ from torch import nn
+-ARMS = ('swin_control', 'uct_concat', 'uct_cca')
++ARMS = ('swin_control', 'uct_cca')
+ NAMES = ARMS
+ dump, save, cpu_tree, digest = base.dump, base.save, base.cpu_tree, base.digest
+ STOP = False
+@@ -113,7 +113,7 @@
+     del opts;gc.collect();torch.cuda.empty_cache();setup()
+     dump(out/'capacity.json',dict(micro_batch=64,effective_batch=64,evaluation_batch=64,
+          peak_gib=peak,total_gib=total,seconds=time.perf_counter()-tick,
+-         reference_micro_batch_matched=False,matched_within_all_three_arms=True,reserve_gib=.7))
++         reference_micro_batch_matched=True,matched_within_both_new_and_old_arms=True,reserve_gib=.7))
+     return 64
+ 
+ def preflight(models,cache,data,val_cache,micro,out):
+@@ -190,11 +190,16 @@
+            PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',
+            PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',
+            PROJECT/'stage3_confirmation/data.py',base.HF/'config.json',
+-           ROOT/'AUTHOR_PROVENANCE.json',ROOT/'README_zh.txt',ROOT/'POOL_PRECISION_DIAGNOSIS.json',
++           ROOT/'AUTHOR_PROVENANCE.json',ROOT/'README_zh.txt',ROOT/'PLANNING_EVIDENCE.json',ROOT/'ARCHIVED_SOURCE_HASHES.json',PROJECT/'stage36_topconf_skip_fusion/train.py',PROJECT/'stage36_topconf_skip_fusion/author_modules.py',
+            research/'topconf_open_source_20261111/official_code/McGregorWwww__UCTransNet/nets/UCTransNet.py',
+            research/'topconf_open_source_20261111/official_code/McGregorWwww__UCTransNet/train_model.py',
+            research/'topconf_open_source_20261111/official_code/Inha-CVAI__MADGNet/IS2D_models/mfmsnet.py']+list(base.HF.glob('*.py'))
+     return {os.path.relpath(p,PROJECT):digest(p) for p in files}
++
++
++def lr_epoch(opt, epoch):
++    factor=.01+.99*(1+math.cos(math.pi*(epoch-1)/100))/2
++    for group in opt.param_groups: group['lr']=group['initial_lr']*factor
+ 
+ 
+ def main():
+@@ -212,14 +217,14 @@
+         assert digest(base.HF/row['path'])==row['sha256']
+     config=dict(seed=42,epochs=2 if args.smoke else 100,names=NAMES,
+         effective_batch=64,evaluation_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
+-        selection='max_validation_macro_dice_earliest_tie',precision='BF16_forward_FP32_loss_MADG_full_upblock_FP32_in_both_MADG_arms',deterministic_policy='deterministic_requested_warn_only_for_unsupported_ops',
++        selection='max_validation_macro_dice_earliest_tie',precision='BF16_forward_FP32_loss',deterministic_policy='deterministic_requested_warn_only_for_unsupported_ops',
+         mode='encoder_eval_with_late_parameters_trainable_all_arms',sources=source_hashes(),
+         intervention=json.loads((ROOT/'PROTOCOL.json').read_text())['changes'][args.arm],
+         partition_counts=partition['counts'],weights_sha256=base.WEIGHT_SHA,
+-        criterion='single_output_BCE_plus_per_image_softDice',lr_schedule='cosine_300_floor0.01',
++        criterion='single_output_BCE_plus_per_image_softDice',lr_schedule='cosine_100_floor0.01',
+         test_exposure='867 already exposed; development only on validation; no fresh independent confirmation',
+         evaluation_helper_sha256=digest(PROJECT.parent.parent/'test_best_checkpoints_20261111/evaluate_fixed_checkpoints.py'),
+-        lr_schedule_horizon=300,reference_reuse='Fresh4090 Swin and paired concat controls are primary; archived A4000 results are secondary historical context')
++        lr_schedule_horizon=100,reference_reuse='Reuse same4090 Stage36 Swin and CCA as matched300-horizon references; train only new100-horizon arms')
+     config=json.loads(json.dumps(config))
+     if (out/'config.json').exists():assert json.loads((out/'config.json').read_text())==config
+     else:dump(out/'config.json',config)
+@@ -267,7 +272,7 @@
+     for epoch in range(start,config['epochs']+1):
+         tick=time.perf_counter();order,matrices=data.geometry(epoch)
+         fill_cache(models[NAMES[0]],data,'train',train_cache,matrices)
+-        for n in NAMES:models[n].train();base.lr_epoch(opts[n],epoch)
++        for n in NAMES:models[n].train();lr_epoch(opts[n],epoch)
+         losses={n:0. for n in NAMES};gradients={}
+         torch.cuda.reset_peak_memory_stats()
+         for begin in range(0,len(order),64):
+@@ -276,7 +281,7 @@
+                 loss,gradients[n]=update(models[n],opts[n],train_cache,ids,micro,check=begin==0)
+                 losses[n]+=loss*len(ids)
+         record=dict(epoch=epoch,train_loss={n:losses[n]/len(order) for n in NAMES},
+-                    validation={},gradient_norms=gradients)
++                    validation={},gradient_norms=gradients,learning_rates={n:{g['name']:g['lr'] for g in opts[n].param_groups} for n in NAMES})
+         for n in NAMES:
+             metric,_=base.evaluate(models[n],val_cache,64)
+             record['validation'][n]=metric
+@@ -294,10 +299,10 @@
+              optimizers={n:cpu_tree(o.state_dict()) for n,o in opts.items()},
+              rng=base.rng(),selectors=selectors,history=history,config=config,elapsed=elapsed+time.perf_counter()-started))
+         dump(out/'history.json',history)
+-        status=dict(state='running',stage='stage36_topconf_skip_fusion',arm=args.arm,epoch=epoch,total_epochs=config['epochs'],
++        status=dict(state='running',stage='stage37_lr_horizon100',arm=args.arm,epoch=epoch,total_epochs=config['epochs'],
+              updates_per_arm=epoch*30,micro_batch=micro,effective_batch=64,
+              validation_macro_dice={n:record['validation'][n]['macro']['dice'] for n in NAMES},
+-             best=selectors,seconds=time.perf_counter()-tick,peak_allocated_gib=record['peak_allocated_gib'],
++             best=selectors,learning_rates=record['learning_rates'],seconds=time.perf_counter()-tick,peak_allocated_gib=record['peak_allocated_gib'],
+              reserved_gib=torch.cuda.memory_reserved()/base.GIB,pid=os.getpid())
+         dump(out/'run_status.json',status);print(json.dumps(status),flush=True)
+         if STOP or (args.stop_after_epoch and epoch>=args.stop_after_epoch):
+--- stage36/evaluate.py
++++ stage37/evaluate.py
+@@ -1,11 +1,11 @@
+-"""Evaluate a fixed validation-selected Stage36 checkpoint with common metrics."""
++"""Evaluate a fixed validation-selected Stage37 checkpoint with common metrics."""
+ from pathlib import Path
+ import argparse,csv,gc,importlib.util,json
+ import numpy as np
+ import torch
+ from train import ROOT,PROJECT,ARMS,System,base,dump,digest
+ RESEARCH_ROOT=PROJECT.parent.parent
+-spec=importlib.util.spec_from_file_location('stage36_fixed_eval_helpers',
++spec=importlib.util.spec_from_file_location('stage37_fixed_eval_helpers',
+     RESEARCH_ROOT/'test_best_checkpoints_20261111/evaluate_fixed_checkpoints.py')
+ helpers=importlib.util.module_from_spec(spec);spec.loader.exec_module(helpers)
+ def write_rows(path,rows):
+@@ -55,7 +55,7 @@
+     model.requires_grad_(False).eval()
+     summary=dict(arm=args.arm,seed=42,epochs=config['epochs'],selection=selection,validation={},test={},
+         comparisons={},test_evaluated=False,complete=False,train_n=1886,validation_n=762,test_n=0,
+-        normalization='author module BatchNorm retained; all encoder modules eval',lr_horizon=300)
++        normalization='author module BatchNorm retained; all encoder modules eval',lr_horizon=100)
+     for split in (['val'] if args.smoke else ['val','test']):
+         ids=partition['splits'][split]
+         if split=='val':
+@@ -86,8 +86,8 @@
+     assert digest(p)==sha
+     summary['complete']=True
+     m=summary['validation'][args.arm];best_ref=max((r['validation'] for r in references),key=lambda m:m['macro']['dice'])
+-    summary['primary_comparison']='Same4090 Swin and matched concat controls; aggregate after all three evaluations'
+-    summary['archived_reference_caveat']='Archived A4000 rows are secondary historical context, not a same-hardware causal control'
++    summary['primary_comparison']='Same4090 2x2 architecture and LR horizon; aggregate after both new evaluations'
++    summary['archived_reference_caveat']='Stage36 references match hardware, physical batch, initialization and data; only lr horizon differs within each architecture'
+     summary['validation_only_screen']=dict(status='defer_to_final_paired_validation',test_used_for_selection=False)
+     dump(out/'summary.json',summary)
+     dump(out/'DONE.json',dict(complete=True,test_evaluated=not args.smoke,test_n=0 if args.smoke else 867,arm=args.arm))
+--- stage36/run_pipeline.py
++++ stage37/run_pipeline.py
+@@ -1,16 +1,16 @@
+-"""Serial Stage36 pipeline: validated restart -> all three trainings -> fixed full test evaluations."""
++"""Serial Stage37 pipeline: validated restart -> both new trainings -> fixed full test evaluations."""
+ from pathlib import Path
+ import datetime,fcntl,json,os,shutil,subprocess,sys,traceback
+ ROOT=Path(__file__).resolve().parent
+ PROJECT=ROOT.parent
+ RESEARCH=PROJECT.parent.parent
+-ARMS=['swin_control', 'uct_concat', 'uct_cca']
++ARMS=['swin_control', 'uct_cca']
+ ACTIVE=None
+ def dump(p,x):
+     p.parent.mkdir(parents=True,exist_ok=True)
+     t=p.with_suffix('.tmp');t.write_text(json.dumps(x,indent=2,ensure_ascii=False));t.replace(p)
+ def current(state,**kw):
+-    obj=dict(stage=ROOT.name,state=state,arms=ARMS,epochs_per_arm=100,lr_schedule_horizon=300,
++    obj=dict(stage=ROOT.name,state=state,arms=ARMS,epochs_per_arm=100,lr_schedule_horizon=100,
+              pipeline_pid=os.getpid(),updated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              status_file=str(ROOT/'pipeline_status.json'),resume_command=[sys.executable,str(ROOT/'run_pipeline.py')])
+     obj.update(kw);dump(ROOT/'pipeline_status.json',obj);dump(RESEARCH/'current_experiment.json',obj)
+@@ -68,30 +68,46 @@
+         retain_best(arm)
+     summaries={a:json.loads((ROOT/a/'results/summary.json').read_text()) for a in ARMS}
+     from evaluate import refrows,compare
++    import numpy as np
+     partition=json.loads((ROOT/'identity_partition.json').read_text())
++    references=json.loads((ROOT/'REFERENCE_MODELS.json').read_text())['models']
+     paired={}
+-    pairs=[('swin_control','uct_concat'),('uct_concat','uct_cca'),('swin_control','uct_cca')]
+     for split,key in [('val','validation'),('test','test')]:
+         ids=partition['splits'][split]
+         rows={a:refrows(ROOT/a/'results'/f'{a}_{key}_per_image.csv',ids) for a in ARMS}
++        rows.update({r['arm']:refrows(r['val_rows' if split=='val' else 'test_rows'],ids) for r in references})
++        pairs=[('swin_control','uct_cca'),('stage36_swin_control','swin_control'),('stage36_uct_cca','uct_cca'),('stage36_swin_control','stage36_uct_cca')]
+         paired[key]={b+'_minus_'+a:compare(rows[a],rows[b]) for a,b in pairs}
+-    dump(ROOT/'FINAL_COMPARISON.json',dict(primary_comparison='Attention minus paired concat control; full module minus same4090 Swin',
+-         paired=paired,seed=42,test_n_per_arm=867,complete=True))
++        delta=np.array([(n1['dice']-n0['dice'])-(o1['dice']-o0['dice']) for n1,n0,o1,o0 in
++          zip(rows['uct_cca'],rows['swin_control'],rows['stage36_uct_cca'],rows['stage36_swin_control'])])
++        rng=np.random.default_rng(42)
++        boot=np.array([delta[rng.integers(len(delta),size=len(delta))].mean() for _ in range(2000)])
++        paired[key]['schedule_by_module_interaction']=dict(macro_dice_delta=float(delta.mean()),image_bootstrap95=np.quantile(boot,[.025,.975]).tolist(),
++          definition='(CCA100-Swin100)-(CCA300first100-Swin300first100)',note='Single seed; exploratory paired image bootstrap, not seed/patient uncertainty.')
++    dump(ROOT/'FINAL_COMPARISON.json',dict(primary_comparison='Matched2x2 architecture and learning-rate-horizon comparison',paired=paired,seed=42,test_n_per_arm=867,complete=True))
+     table=[]
++    for r in references:
++        table.append(dict(stage=36,arm=r['source_arm'],lr_horizon=300,best_epoch=r['epoch'],
++          val_macro_dice=r['validation']['macro']['dice'],test_macro_dice=r['test']['macro']['dice'],test_pooled_dice=r['test']['pooled']['dice']))
+     for arm,summary in summaries.items():
+-        table.append(dict(arm=arm,best_epoch=summary['selection']['epoch'],
+-            val_macro_dice=summary['validation'][arm]['macro']['dice'],
+-            test_macro_dice=summary['test'][arm]['macro']['dice'],
+-            test_pooled_dice=summary['test'][arm]['pooled']['dice']))
++        table.append(dict(stage=37,arm=arm,lr_horizon=100,best_epoch=summary['selection']['epoch'],
++          val_macro_dice=summary['validation'][arm]['macro']['dice'],test_macro_dice=summary['test'][arm]['macro']['dice'],test_pooled_dice=summary['test'][arm]['pooled']['dice']))
+     dump(ROOT/'RESULTS_TABLE.json',table)
+-    report=['Stage36 完成：3组各100轮；最佳权重只按验证集逐图宏平均Dice选择。','']
++    report=['Stage37完成：新2组各100轮，复用Stage36旧2组；仅改学习率衰减分母300到100。最佳权重按验证集逐图宏平均Dice选择。','']
+     for r in table:
+-        report.append(f"{r['arm']}: best_epoch={r['best_epoch']}, val_macro_Dice={r['val_macro_dice']:.8f}, test_macro_Dice={r['test_macro_dice']:.8f}, test_pooled_Dice={r['test_pooled_dice']:.8f}")
+-    report.extend(['','注意力贡献看各自去注意力对照；完整融合块的贡献看同设备Swin。测试集已暴露，单seed结果不构成独立确认。'])
++        report.append(f"stage{r['stage']}/{r['arm']}, horizon={r['lr_horizon']}, best_epoch={r['best_epoch']}, val_macro_Dice={r['val_macro_dice']:.8f}, test_macro_Dice={r['test_macro_dice']:.8f}, test_pooled_Dice={r['test_pooled_dice']:.8f}")
++    report.extend(['','分别报告训练曲线收益、同配方下CCA收益，以及两者交互。单seed；既有测试集已暴露，不能视作全新独立确认。'])
+     (ROOT/'RESULTS_zh.txt').write_text('\n'.join(report))
+     dump(ROOT/'summary.json',dict(complete=True,arms=summaries,paired=paired,test_n_per_arm=867))
++
+     dump(ROOT/'PIPELINE_DONE.json',dict(complete=True,trained=ARMS,test_evaluated=ARMS))
+     current('complete',training_pid=None,pipeline_pid=None,results_summary=str(ROOT/'summary.json'))
++    latest=RESEARCH/'LATEST_RESEARCH_20261112.json'
++    if latest.exists():
++        record=json.loads(latest.read_text())
++        if record.get('active_experiment')==str(ROOT):
++            record.update(active_experiment=None,active_pipeline_pid=None,active_arms=[],latest_completed_experiment=str(ROOT))
++            dump(latest,record)
+ if __name__=='__main__':
+     try:main()
+     except Exception:

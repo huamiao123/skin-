@@ -1,0 +1,82 @@
+{
+  "validation_only": true,
+  "n": 762,
+  "rules": {
+    "near_boundary": "FP distance to GT <=3 pixels; FN distance to GT exterior <=3 pixels; exploratory fixed pixel band, not official boundary-F1",
+    "disconnected": "8-connected predicted components with zero GT overlap; no minimum-size threshold",
+    "limitations": "Connectivity and distance categories are proxies, not clinical/semantic cause labels; no hair annotation used."
+  },
+  "models": {
+    "uper64": {
+      "tp": 10730478,
+      "fp": 1057139,
+      "fn": 1341495,
+      "fp_near3": 443544,
+      "fp_far3": 613595,
+      "disconnected_fp": 13455,
+      "connected_fp": 1043684,
+      "fn_boundary3": 352517,
+      "fn_deep3": 988978,
+      "macro_dice": 0.8928067011343184,
+      "severe_undercoverage": 21,
+      "disconnected_fp_fraction": 0.01272774914178741,
+      "far_fp_fraction": 0.5804298204871828,
+      "deep_fn_fraction": 0.7372207872560091
+    },
+    "position_bias": {
+      "tp": 10755209,
+      "fp": 1072208,
+      "fn": 1316764,
+      "fp_near3": 456632,
+      "fp_far3": 615576,
+      "disconnected_fp": 15342,
+      "connected_fp": 1056866,
+      "fn_boundary3": 348955,
+      "fn_deep3": 967809,
+      "macro_dice": 0.8922177732238006,
+      "severe_undercoverage": 19,
+      "disconnected_fp_fraction": 0.014308790831629684,
+      "far_fp_fraction": 0.5741199468759793,
+      "deep_fn_fraction": 0.7349904766533715
+    },
+    "shifted_windows": {
+      "tp": 10837803,
+      "fp": 1214314,
+      "fn": 1234170,
+      "fp_near3": 483308,
+      "fp_far3": 731006,
+      "disconnected_fp": 13356,
+      "connected_fp": 1200958,
+      "fn_boundary3": 334988,
+      "fn_deep3": 899182,
+      "macro_dice": 0.8907131764735765,
+      "severe_undercoverage": 19,
+      "disconnected_fp_fraction": 0.010998802616127295,
+      "far_fp_fraction": 0.6019909183291966,
+      "deep_fn_fraction": 0.7285722388325757
+    }
+  },
+  "selected_cases": {
+    "far_fp": [
+      "511",
+      "53",
+      "673",
+      "536",
+      "709",
+      "108"
+    ],
+    "undercoverage": [
+      "126",
+      "136",
+      "115",
+      "77",
+      "791",
+      "618"
+    ]
+  },
+  "source_sha256": {
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage45_upernet_decoder/uper64/results/uper64_val_predictions.npz": "d9883097fa2d34efa6112eebd7ee1d105d3de2b018acae1a65837beef5f0fc12",
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage47_original_window_swin/position_bias/results/position_bias_val_predictions.npz": "bc0e56bda06a9357d4f36fc25c57723f3d1ece97e5cd8c3c81e39b44e688d7e0",
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage47_original_window_swin/shifted_windows/results/shifted_windows_val_predictions.npz": "e3f7a53f419c4d3680aa887fb3cb91da4a7c65e28577f2850eea92b1504a2f0c"
+  }
+}

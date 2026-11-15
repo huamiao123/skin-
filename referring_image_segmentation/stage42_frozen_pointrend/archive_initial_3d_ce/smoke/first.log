@@ -1,0 +1,17 @@
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+BUILDING_FROZEN_FINE_AND_COARSE_CACHE
+/home/waas/mambavision_stage22/env/lib/python3.11/site-packages/torch/nn/functional.py:3059: UserWarning: nll_loss2d_forward_out_cuda_template does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at ../aten/src/ATen/Context.cpp:79.)
+  return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+Traceback (most recent call last):
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/train.py", line 372, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/train.py", line 306, in main
+    preflight(models,train_cache,data,val_cache,micro,out)
+  File "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage42_frozen_pointrend/train.py", line 217, in preflight
+    assert expected_loss==actual_loss
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

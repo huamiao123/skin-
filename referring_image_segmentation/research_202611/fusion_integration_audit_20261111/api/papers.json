@@ -1,0 +1,1595 @@
+[
+  {
+    "title": "UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation",
+    "authors": [
+      "Zongwei Zhou",
+      "Md Mahfuzur Rahman Siddiquee",
+      "Nima Tajbakhsh",
+      "Jianming Liang"
+    ],
+    "year": 2019,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2019.2959609",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2019.2959609",
+    "abstract": "The state-of-the-art models for medical image segmentation are variants of U-Net and fully convolutional networks (FCN). Despite their success, these models have two limitations: (1) their optimal depth is apriori unknown, requiring extensive architecture search or inefficient ensemble of models of varying depths; and (2) their skip connections impose an unnecessarily restrictive fusion scheme, forcing aggregation only at the same-scale feature maps of the encoder and decoder sub-networks. To overcome these two limitations, we propose UNet++, a new neural architecture for semantic and instance segmentation, by (1) alleviating the unknown network depth with an efficient ensemble of U-Nets of varying depths, which partially share an encoder and co-learn simultaneously using deep supervision; (2) redesigning skip connections to aggregate features of varying semantic scales at the decoder sub-networks, leading to a highly flexible feature fusion scheme; and (3) devising a pruning scheme to accelerate the inference speed of UNet++. We have evaluated UNet++ using six different medical image segmentation datasets, covering multiple imaging modalities such as computed tomography (CT), magnetic resonance imaging (MRI), and electron microscopy (EM), and demonstrating that (1) UNet++ consistently outperforms the baseline models for the task of semantic segmentation across different datasets and backbone architectures; (2) UNet++ enhances segmentation quality of varying-size objects-an improvement over the fixed-depth U-Net; (3) Mask RCNN++ (Mask R-CNN with UNet++ design) outperforms the original Mask R-CNN for the task of instance segmentation; and (4) pruned UNet++ models achieve significant speedup while showing only modest performance degradation. Our implementation and pre-trained models are available at https://github.com/MrGiovanni/UNetPlusPlus.",
+    "source": "openalex",
+    "citation_count": 4666,
+    "is_open_access": true,
+    "open_access_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7357299/",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Convolutional neural network",
+      "Encoder",
+      "Feature (linguistics)",
+      "Image segmentation",
+      "Pattern recognition (psychology)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "arxiv"
+    ],
+    "score": 0.925
+  },
+  {
+    "title": "UCTransNet: Rethinking the Skip Connections in U-Net from a Channel-Wise Perspective with Transformer",
+    "authors": [
+      "Haonan Wang",
+      "Peng Cao",
+      "Jiaqi Wang",
+      "Osmar R. Zai͏̈ane"
+    ],
+    "year": 2022,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "doi": "10.1609/aaai.v36i3.20144",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1609/aaai.v36i3.20144",
+    "abstract": "Most recent semantic segmentation methods adopt a U-Net framework with an encoder-decoder architecture. It is still challenging for U-Net with a simple skip connection scheme to model the global multi-scale context: 1) Not each skip connection setting is effective due to the issue of incompatible feature sets of encoder and decoder stage, even some skip connection negatively influence the segmentation performance; 2) The original U-Net is worse than the one without any skip connection on some datasets. Based on our findings, we propose a new segmentation framework, named UCTransNet (with a proposed CTrans module in U-Net), from the channel perspective with attention mechanism. Specifically, the CTrans (Channel Transformer) module is an alternate of the U-Net skip connections, which consists of a sub-module to conduct the multi-scale Channel Cross fusion with Transformer (named CCT) and a sub-module Channel-wise Cross-Attention (named CCA) to guide the fused multi-scale channel-wise information to effectively connect to the decoder features for eliminating the ambiguity. Hence, the proposed connection consisting of the CCT and CCA is able to replace the original skip connection to solve the semantic gaps for an accurate automatic medical image segmentation. The experimental results suggest that our UCTransNet produces more precise segmentation performance and achieves consistent improvements over the state-of-the-art for semantic segmentation across different datasets and conventional architectures involving transformer or U-shaped framework. Code: https://github.com/McGregorWwww/UCTransNet.",
+    "source": "openalex",
+    "citation_count": 1248,
+    "is_open_access": true,
+    "open_access_url": "https://doi.org/10.1609/aaai.v36i3.20144",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Segmentation",
+      "Encoder",
+      "Computer science",
+      "Transformer",
+      "Channel (broadcasting)",
+      "Artificial intelligence",
+      "Ambiguity",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.9138,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "CMUNEXT: An Efficient Medical Image Segmentation Network Based on Large Kernel and Skip Fusion",
+    "authors": [
+      "Fenghe Tang",
+      "Jianrui Ding",
+      "Quan Quan",
+      "Lingtao Wang",
+      "Chun-ping Ning",
+      "S. Kevin Zhou"
+    ],
+    "year": 2024,
+    "venue": "IEEE International Symposium on Biomedical Imaging (ISBI)",
+    "doi": "10.1109/isbi56570.2024.10635609",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/isbi56570.2024.10635609",
+    "abstract": "The u-shaped architecture has emerged as a crucial paradigm in the design of medical image segmentation networks. However, due to the inherent local limitations of convolution, a fully convolutional segmentation network with u-shaped architecture struggles to effectively extract global context information, which is vital for the precise localization of lesions. While hybrid architectures combining CNN and Transformer can address these issues, their applications are limited due to the computational resource. In addition, the inductive bias of convolution in lightweight networks adeptly fits the scarce medical data, which is lacking in the Transformer based network. To extract global context information while taking advantage of the inductive bias, we propose CMUNeXt, an efficient lightweight segmentation network, which leverages large kernel and inverted bottleneck design to thoroughly mix distant spatial and location information, efficiently extracting global context information. We also introduce the Skip-fusion block, designed to enable smooth skip-connections and ensure ample feature fusion. Experimental results demonstrate that CMUNeXt outperforms existing heavyweight and lightweight medical image segmentation networks, while offering a faster inference speed, lighter weights, and a reduced computational cost. The code is available at https://github.com/FengheTan9/CMUNeXt.",
+    "source": "openalex",
+    "citation_count": 211,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2308.01239",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Kernel (algebra)",
+      "Artificial intelligence",
+      "Image segmentation",
+      "Segmentation",
+      "Fusion",
+      "Computer vision",
+      "Image fusion"
+    ],
+    "score": 0.8918,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "SMAFormer: Synergistic Multi-Attention Transformer for Medical Image Segmentation",
+    "authors": [
+      "Fuchen Zheng",
+      "Xuhang Chen",
+      "Weihuang Liu",
+      "Haolun Li",
+      "Yingtie Lei",
+      "Jiahui He",
+      "Chi‐Man Pun",
+      "Shoujun Zhou"
+    ],
+    "year": 2024,
+    "venue": "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+    "doi": "10.1109/bibm62325.2024.10822736",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/bibm62325.2024.10822736",
+    "abstract": "In medical image segmentation, specialized computer vision techniques, notably transformers grounded in attention mechanisms and residual networks employing skip connections, have been instrumental in advancing performance. Nonetheless, previous models often falter when segmenting small, irregularly shaped tumors. To this end, we introduce SMAFormer, an efficient, Transformer-based architecture that fuses multiple attention mechanisms for enhanced segmentation of small tumors and organs. SMAFormer can capture both local and global features for medical image segmentation. The architecture comprises two pivotal components. First, a Synergistic Multi-Attention (SMA) Transformer block is proposed, which has the benefits of Pixel Attention, Channel Attention, and Spatial Attention for feature enrichment. Second, addressing the challenge of information loss incurred during attention mechanism transitions and feature fusion, we design a Feature Fusion Modulator. This module bolsters the integration between the channel and spatial attention by mitigating reshaping-induced information attrition. To evaluate our method, we conduct extensive experiments on various medical image segmentation tasks, including multi-organ, liver tumor, and bladder tumor segmentation, achieving state-of-the-art results. Code and models are available at: https://github.com/lzeeorno/SMAFormer.",
+    "source": "openalex",
+    "citation_count": 77,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2409.00346",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Image segmentation",
+      "Computer vision",
+      "Transformer",
+      "Artificial intelligence",
+      "Segmentation",
+      "Engineering",
+      "Electrical engineering"
+    ],
+    "score": 0.8681,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "U-Net V2: Rethinking the Skip Connections of U-Net for Medical Image Segmentation",
+    "authors": [
+      "Yaopeng Peng",
+      "Danny Z. Chen",
+      "Milan Sonka A"
+    ],
+    "year": 2025,
+    "venue": "IEEE International Symposium on Biomedical Imaging (ISBI)",
+    "doi": "10.1109/isbi60581.2025.10980742",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/isbi60581.2025.10980742",
+    "abstract": "In this paper, we introduce U-Net v2, a new robust and efficient U-Net variant for medical image segmentation. It aims to augment the infusion of semantic information into low-level features while simultaneously refining high-level features with finer details. For an input image, we begin by extracting multilevel features with a deep neural network encoder. Next, we enhance the feature map of each level by infusing semantic information from higher-level features and integrating finer details from lower-level features through Hadamard product. Our novel skip connections empower features of all the levels with enriched semantic characteristics and intricate details. The improved features are subsequently transmitted to the decoder for further processing and segmentation. Our method can be seamlessly integrated into any Encoder-Decoder network. We evaluate our method on several public medical image segmentation datasets for skin lesion segmentation and polyp segmentation, and the experimental results demonstrate the segmentation accuracy of our new method over state-of-the-art methods, while preserving memory and computational efficiency. Code is available at: https://github.com/yaoppeng/U-Net_v2.",
+    "source": "openalex",
+    "citation_count": 251,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2311.17791",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Image segmentation",
+      "Mathematics",
+      "Net (polyhedron)",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.8588
+  },
+  {
+    "title": "HiFormer: Hierarchical Multi-scale Representations Using Transformers for Medical Image Segmentation",
+    "authors": [
+      "Moein Heidari",
+      "Amirhossein Kazerouni",
+      "Milad Soltany",
+      "Reza Azad",
+      "Ehsan Khodapanah Aghdam",
+      "Julien Cohen‐Adad",
+      "Dorit Merhof"
+    ],
+    "year": 2023,
+    "venue": "IEEE Winter Conference on Applications of Computer Vision",
+    "doi": "10.1109/wacv56688.2023.00614",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/wacv56688.2023.00614",
+    "abstract": "Convolutional neural networks (CNNs) have been the consensus for medical image segmentation tasks. However, they suffer from the limitation in modeling long-range dependencies and spatial correlations due to the nature of convolution operation. Although transformers were first developed to address this issue, they fail to capture low-level features. In contrast, it is demonstrated that both local and global features are crucial for dense prediction, such as segmenting in challenging contexts. In this paper, we propose HiFormer, a novel method that efficiently bridges a CNN and a transformer for medical image segmentation. Specifically, we design two multi-scale feature representations using the seminal Swin Transformer module and a CNN-based encoder. To secure a fine fusion of global and local features obtained from the two aforementioned representations, we propose a Double-Level Fusion (DLF) module in the skip connection of the encoder-decoder structure. Extensive experiments on various medical image segmentation datasets demonstrate the effectiveness of HiFormer over other CNN-based, transformer-based, and hybrid methods in terms of computational complexity, quantitative and qualitative results. Our code is publicly available at GitHub.",
+    "source": "openalex",
+    "citation_count": 608,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2207.08518",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Computer science",
+      "Encoder",
+      "Segmentation",
+      "Artificial intelligence",
+      "Transformer",
+      "Convolutional neural network",
+      "Image segmentation",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.8496,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Hybrid attention mechanism of feature fusion for medical image segmentation",
+    "authors": [
+      "Shanshan Tong",
+      "Zhentao Zuo",
+      "Zuxiang Liu",
+      "Dengdi Sun",
+      "Tiangang Zhou"
+    ],
+    "year": 2023,
+    "venue": "IET Image Processing",
+    "doi": "10.1049/ipr2.12934",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/ipr2.12934",
+    "abstract": "Abstract Traditional convolution neural networks (CNN) have achieved good performance in multi‐organ segmentation of medical images. Due to the lack of ability to model long‐range dependencies and correlations between image pixels, CNN usually ignores the information of channel dimension. To further improve the performance of multi‐organ segmentation, a hybrid attention mechanism model is proposed. First, a CNN was used to extract multi‐scale feature maps and fed into the Channel Attention Enhancement Module (CAEM) to selectively pay attention to target organs in medical images, and the Transformer encoded tokenized image patches from CNN feature maps as the input sequence to model long‐range dependencies. Second, the decoder upsampled the output from Transformer and fused with the CAEM features in multi‐scale through skip connections. Finally, we introduced a Refinement Module (RM) after the decoder to improve feature correlations of the same organ and the feature discriminability between different organs. The model outperformed on dice coefficient (%) and hd95 on both the synapse multi‐organ segmentation and cardiac diagnosis challenge datasets. The hybrid attention mechanisms exhibited high efficiency and high segmentation accuracy in medical images.",
+    "source": "openalex",
+    "citation_count": 19,
+    "is_open_access": true,
+    "open_access_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1049/ipr2.12934",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Pattern recognition (psychology)",
+      "Image segmentation",
+      "Feature (linguistics)",
+      "Pixel",
+      "Scale-space segmentation"
+    ],
+    "score": 0.8259,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MAFUNet: Multi-Attention Fusion Network for Medical Image Segmentation",
+    "authors": [
+      "Lili Wang",
+      "Jiayu Zhao",
+      "Hailu Yang"
+    ],
+    "year": 2023,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2023.3320685",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2023.3320685",
+    "abstract": "The purpose of medical image segmentation is to identify target organs, tissues or lesion areas at the pixel level to help doctors evaluate and prevent diseases. Therefore, the model is required to have higher accuracy and robust representation. At present, the proposed models focus on the improvement of performance, and ignore the number of trainable parameters. This paper proposes a lightweight ECA-Residual module to build a model encoder, which can effectively extract features while reducing the number of parameters. The feature fusion of encoder and decoder using simple skip connections will produce semantic differences. Therefore, in this paper a spatial attention gating module is designed to solve this problem. The module suppresses the image irrelevant area and improves the performance of the model while ensuring the computational efficiency. The experiment is carried out on the Synapse dataset, and the results are superior to the current advanced models in terms of accuracy and parameter quantity with 84.21 % dice coefficient and 12.79 HD95. In addition, the accuracy of the model on the ACDC dataset is also better than the current advanced model, which proves the robustness and generalization of the model.",
+    "source": "openalex",
+    "citation_count": 3,
+    "is_open_access": true,
+    "open_access_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10267971.pdf",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Robustness (evolution)",
+      "Artificial intelligence",
+      "Encoder",
+      "Segmentation",
+      "Pixel",
+      "Pattern recognition (psychology)",
+      "Image segmentation"
+    ],
+    "score": 0.7878,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "ES-UNet: efficient 3D medical image segmentation with enhanced skip connections in 3D UNet",
+    "authors": [
+      "Minyoung Park",
+      "Seungtaek Oh",
+      "Junyoung Park",
+      "Taikyeong Jeong",
+      "Sungwook Yu"
+    ],
+    "year": 2025,
+    "venue": "BMC Medical Imaging",
+    "doi": "10.1186/s12880-025-01857-0",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1186/s12880-025-01857-0",
+    "abstract": "Abstract Background Deep learning has significantly advanced medical image analysis, particularly in semantic segmentation, which is essential for clinical decisions. However, existing 3D segmentation models, like the traditional 3D UNet, face challenges in balancing computational efficiency and accuracy when processing volumetric medical data. This study aims to develop an improved architecture for 3D medical image segmentation with enhanced learning strategies to improve accuracy and address challenges related to limited training data. Methods We propose ES-UNet, a 3D segmentation architecture that achieves superior segmentation performance while offering competitive efficiency across multiple computational metrics, including memory usage, inference time, and parameter count. The model builds upon the full-scale skip connection design of UNet3+ by integrating channel attention modules into each encoder-to-decoder path and incorporating full-scale deep supervision to enhance multi-resolution feature learning. We further introduce Region Specific Scaling (RSS), a data augmentation method that adaptively applies geometric transformations to annotated regions, and a Dynamically Weighted Dice (DWD) loss to improve the balance between precision and recall. The model was evaluated on the MICCAI HECKTOR dataset, and additional validation was conducted on selected tasks from the Medical Segmentation Decathlon (MSD). Results On the HECKTOR dataset, ES-UNet achieved a Dice Similarity Coefficient (DSC) of 76.87%, outperforming baseline models including 3D UNet, 3D UNet 3+, nnUNet, and Swin UNETR. Ablation studies showed that RSS and DWD contributed up to 1.22% and 1.06% improvement in DSC, respectively. A sensitivity analysis demonstrated that the chosen scaling range in RSS offered a favorable trade-off between deformation and anatomical plausibility. Cross-dataset evaluation on MSD Heart and Spleen tasks also indicated strong generalization. Computational analysis revealed that ES-UNet achieves superior segmentation performance with moderate computational demands. Specifically, the enhanced skip connection design with lightweight channel attention modules integrated throughout the network architecture enables this favorable balance between high segmentation accuracy and computational efficiency. Conclusion ES-UNet integrates architectural and algorithmic improvements to achieve robust 3D medical image segmentation. While the framework incorporates established components, its core contributions lie in the optimized skip connection strategy and supporting techniques like RSS and DWD. Future work will explore adaptive scaling strategies and broader validation across diverse imaging modalities.",
+    "source": "crossref",
+    "citation_count": 22,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1186/s12880-025-01857-0.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "sources": [
+      "crossref"
+    ],
+    "score": 0.7871
+  },
+  {
+    "title": "FFUNet: A novel feature fusion makes strong decoder for medical image segmentation",
+    "authors": [
+      "Junsong Xie",
+      "Renju Zhu",
+      "Zezhi Wu",
+      "Jinling Ouyang"
+    ],
+    "year": 2022,
+    "venue": "IET Signal Processing",
+    "doi": "10.1049/sil2.12114",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/sil2.12114",
+    "abstract": "Abstract Convolutional neural networks (CNNs) have strong ability to extract local features, but it is slightly lacking in extracting global contexts. In contrast, transformers are good at long‐distance modelling due to the global self‐attention mechanisms while its performance in localization is limited. On the other hand, the feature gap between an encoder and decoder is also challenging for a U‐shaped network, which adopts a plain skip connection. Inherited from convolutional networks and transformers, FFUNet, a hybrid network structure with a novel module named the Feature Fusion Module (FFM) is proposed for medical image segmentation. The proposed FFM consisting of Feature Attention Selection, Cross Offset Generation and Deformable Convolution Layer, aims to replace the original plain skip connection to alleviate the ambiguous semantic information between the encoder and decoder for a more powerful medical image segmentation network. Extensive experiments demonstrate that the proposed FFUNet has amazing performance in segmentation gains on the Synapse dataset. In addition, consistent improvements are also achieved across other four popular datasets and CNN‐based or transformer‐based segmentation networks, which illustrate that the proposed method has advantages in generalization and compactness.",
+    "source": "openalex",
+    "citation_count": 23,
+    "is_open_access": true,
+    "open_access_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1049/sil2.12114",
+    "publication_type": "article",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Segmentation",
+      "Pattern recognition (psychology)",
+      "Feature (linguistics)",
+      "Computer vision",
+      "Image segmentation",
+      "Fusion"
+    ],
+    "score": 0.7631,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Global and Local Feature Reconstruction for Medical Image Segmentation",
+    "authors": [
+      "Jiahuan Song",
+      "Xinjian Chen",
+      "Qianlong Zhu",
+      "Fei Shi",
+      "Dehui Xiang",
+      "Zhongyue Chen",
+      "Ying Fan",
+      "Lingjiao Pan",
+      "Weifang Zhu"
+    ],
+    "year": 2022,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "doi": "10.1109/tmi.2022.3162111",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/tmi.2022.3162111",
+    "abstract": "Learning how to capture long-range dependencies and restore spatial information of down-sampled feature maps are the basis of the encoder-decoder structure networks in medical image segmentation. U-Net based methods use feature fusion to alleviate these two problems, but the global feature extraction ability and spatial information recovery ability of U-Net are still insufficient. In this paper, we propose a Global Feature Reconstruction (GFR) module to efficiently capture global context features and a Local Feature Reconstruction (LFR) module to dynamically up-sample features, respectively. For the GFR module, we first extract the global features with category representation from the feature map, then use the different level global features to reconstruct features at each location. The GFR module establishes a connection for each pair of feature elements in the entire space from a global perspective and transfers semantic information from the deep layers to the shallow layers. For the LFR module, we use low-level feature maps to guide the up-sampling process of high-level feature maps. Specifically, we use local neighborhoods to reconstruct features to achieve the transfer of spatial information. Based on the encoder-decoder architecture, we propose a Global and Local Feature Reconstruction Network (GLFRNet), in which the GFR modules are applied as skip connections and the LFR modules constitute the decoder path. The proposed GLFRNet is applied to four different medical image segmentation tasks and achieves state-of-the-art performance.",
+    "source": "openalex",
+    "citation_count": 92,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Feature (linguistics)",
+      "Artificial intelligence",
+      "Encoder",
+      "Feature extraction",
+      "Segmentation",
+      "Context (archaeology)",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.7523,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "A Multi‐Scale Feature Interaction and Fusion Medical Image Segmentation Method",
+    "authors": [
+      "Yanjin Wang",
+      "Hualing Li",
+      "Gaizhen Liu",
+      "Jiaxin Huo",
+      "Jijie Sun",
+      "Yonglai Zhang"
+    ],
+    "year": 2025,
+    "venue": "International Journal of Imaging Systems and Technology",
+    "doi": "10.1002/ima.70207",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1002/ima.70207",
+    "abstract": "ABSTRACT To address the challenges of edge loss and low segmentation accuracy in small regions in medical image segmentation, this study proposes a novel segmentation network, MSFIF‐Net, which integrates the convolutional neural networks (CNNs) and transformer. Built upon the TransUNet architecture, our approach introduces two novel modules: the multi‐group contextual attention (MDGA) module and the multi‐scale dilated aggregation (MSDAM) module. The MDGA module enhances feature extraction across different dimensions by facilitating the interaction and fusion of multiple contextual information groups. Meanwhile, the MSDAM module optimizes feature fusion in skip connections by integrating multi‐scale dilated convolutions with global feature aggregation. For evaluation, we conduct extensive experiments on four data sets: Left Atrial Appendage and Pulmonary Vein CT(LAA & PV CT), ISIC‐2018, Chest X‐ray, and COVID‐19 CT scans. A series of ablation studies are designed to validate the effectiveness of individual components within the proposed framework. Experimental results demonstrate that MSFIF‐Net achieves superior segmentation performance compared to existing models across five quantitative metrics, effectively addressing the challenge of low segmentation accuracy in small regions within medical image analysis.",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Feature (linguistics)",
+      "Pattern recognition (psychology)",
+      "Feature extraction",
+      "Convolutional neural network",
+      "Computer vision"
+    ],
+    "score": 0.7131,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "An effective UNet using feature interaction and fusion for organ segmentation in medical image",
+    "authors": [
+      "Xiaolin Gou",
+      "Chuanlin Liao",
+      "Jizhe Zhou",
+      "Fengshuo Ye",
+      "Yi Lin"
+    ],
+    "year": 2026,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2026.113727",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.engappai.2026.113727",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2409.05324",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Artificial intelligence",
+      "Encoder",
+      "Leverage (statistics)",
+      "Pattern recognition (psychology)",
+      "Feature (linguistics)",
+      "Convolutional neural network"
+    ],
+    "score": 0.7017,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MAGE-UNet: Progressive skip-feature refinement for medical image segmentation",
+    "authors": [
+      "Yuhang Wang",
+      "Shuoyang Wang",
+      "Chengze Lv",
+      "Gongrui Wang",
+      "Zicheng Lin",
+      "Zhengxiang Ma",
+      "Weichao Pan"
+    ],
+    "year": 2026,
+    "venue": "Signal, Image and Video Processing",
+    "doi": "10.1007/s11760-026-05357-8",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11760-026-05357-8",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 4,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1007/s11760-026-05357-8.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6967,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "UNestFormer: Enhancing Decoders and Skip Connections with Nested Transformers for Medical Image Segmentation",
+    "authors": [
+      "Adnan Md Tayeb",
+      "Tae-Hyong Kim"
+    ],
+    "year": 2024,
+    "venue": "IEEE Access",
+    "doi": "10.1109/access.2024.3516079",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/access.2024.3516079",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 7,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/6287639/6514899/10795135.pdf?arnumber=10795135",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6878,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "DAC-SaNet: improved skip connections in U-Net for medical image segmentation",
+    "authors": [
+      "Zili Lei",
+      "Lin Chai",
+      "YuCheng Zhang",
+      "XinYi Bao"
+    ],
+    "year": 2025,
+    "venue": "IET conference proceedings.",
+    "doi": "10.1049/icp.2025.0032",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1049/icp.2025.0032",
+    "abstract": "Medical image segmentation plays a pivotal role in various domains, including biomedical research, clinical diagnosis, and pathological analysis. Nevertheless, the prevalent U-shaped network architecture in current medical image segmentation suffers from limitations such as inadequate fusion of hierarchical feature information through simplistic concatenation and the ineﬀiciency of all skip connections. To address these issues, we propose a lightweight DAC-SaNet framework, designed to mitigate the unequal contribution of skip connections, semantic gap, and connectivity constraints in traditional U-nets. Specifically, our framework incorporates a Spatial Channel Attention Fusion Module with Dilated Convolutions(SAFD), enhancing feature extraction across multiple spatial scales to bolster the model’s adaptability and recognition capabilities for diverse scale features in images. Additionally, a Dual Attention Fusion Channel Shuffle Module(DACS) is introduced to capture global dependencies within feature maps, fostering learnable and robust connections between the encoder and decoder. Experimental results demonstrate that our network achieves accuracy of 88.57%, 94.52%, and 74.75% on the ISBI, DSB2018, and the Esophagus and Esophageal Cancer dataset from the First Aﬀiliated Hospital of Sun Yat-sen University, respectively, outperforming state-of-the-art models(unet,unet++.attentionunet) with fewer parameters and superior evaluation scores. Our research contributes to advancing the frontier of medical image segmentation.",
+    "source": "openalex",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "conference-paper",
+    "keywords": [
+      "Artificial intelligence",
+      "Computer science",
+      "Computer vision",
+      "Image (mathematics)",
+      "Image segmentation",
+      "Segmentation"
+    ],
+    "sources": [
+      "openalex",
+      "crossref"
+    ],
+    "score": 0.685
+  },
+  {
+    "title": "Rethinking U-Net: Task-Adaptive Mixture of Skip Connections for Enhanced Medical Image Segmentation",
+    "authors": [
+      "Zichen Luo",
+      "Xinshan Zhu",
+      "Lan Zhang",
+      "Biao Sun"
+    ],
+    "year": 2025,
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "doi": "10.1609/aaai.v39i6.32627",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1609/aaai.v39i6.32627",
+    "abstract": "U-Net is a widely used model for medical image segmentation, renowned for its strong feature extraction capabilities and U-shaped design, which incorporates skip connections to preserve critical information. However, its decoders exhibit information-specific preferences for the supplementary content provided by skip connections, instead of adhering to a strict one-to-one correspondence, which limits its flexibility across diverse tasks. To address this limitation, we propose the Task-Adaptive Mixture of Skip Connections (TA-MoSC) module, inspired by the Mixture of Experts (MoE) framework. TA-MoSC innovatively reinterprets skip connections as a task allocation problem, employing a routing mechanism to adaptively select expert combinations at different decoding stages. By introducing MoE, our approach enhances the sparsity of the model, and lightweight convolutional experts are shared across all skip connection stages, with a Balanced Expert Utilization (BEU) strategy ensuring that all experts are effectively trained, maintaining training balance and preserving computational efficiency. Our approach introduces minimal additional parameters to the original U-Net but significantly enhances its performance and stability. Experiments on GlaS, MoNuSeg, Synapse, and ISIC16 datasets demonstrate state-of-the-art accuracy and better generalization across diverse tasks. Moreover, while this work focuses on medical image segmentation, the proposed method can be seamlessly extended to other segmentation tasks, offering a flexible and efficient solution for diverse applications.",
+    "source": "crossref",
+    "citation_count": 11,
+    "is_open_access": false,
+    "open_access_url": "https://ojs.aaai.org/index.php/AAAI/article/download/32627/34782",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6717,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SAttisUNet: UNet-like Swin Transformer with Attentive Skip Connections for Enhanced Medical Image Segmentation",
+    "authors": [
+      "Maryam Tavakol Elahi",
+      "WonSook Lee",
+      "Philippe Phan"
+    ],
+    "year": 2023,
+    "venue": "2023 International Conference on Machine Learning and Applications (ICMLA)",
+    "doi": "10.1109/icmla58977.2023.00301",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icmla58977.2023.00301",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 3,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/10459339/10459727/10459732.pdf?arnumber=10459732",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6614,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "KGS-UNet: KAN-Gated Skip Connections for Small-Structure Medical Image Segmentation with Limited Data",
+    "authors": [
+      "Chaolin Wu",
+      "Shun Long"
+    ],
+    "year": 2026,
+    "venue": "2026 International Joint Conference on Neural Networks (IJCNN)",
+    "doi": "10.1109/ijcnn69854.2026.11728422",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ijcnn69854.2026.11728422",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11728400/11728402/11728422.pdf?arnumber=11728422",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Dual Enhanced Swin-UNet with Adaptive Attention and Refined Skip Connections for Medical Image Segmentation",
+    "authors": [
+      "Wang Haoyu",
+      "Lan Gang"
+    ],
+    "year": 2026,
+    "venue": "2026 IEEE 2nd International Conference on Electronics, Energy Systems and Power Engineering (EESPE)",
+    "doi": "10.1109/eespe68405.2026.11648225",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/eespe68405.2026.11648225",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11648170/11648216/11648225.pdf?arnumber=11648225",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Dynamic feature fusion and weighted consistency learning for semi-supervised medical image segmentation",
+    "authors": [
+      "Longwei Wang"
+    ],
+    "year": 2026,
+    "venue": "2026 International Joint Conference on Neural Networks (IJCNN)",
+    "doi": "10.1109/ijcnn69854.2026.11729256",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/ijcnn69854.2026.11729256",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11728400/11728402/11729256.pdf?arnumber=11729256",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6586,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "A New Multilevel Feature Fusion Network for Medical Image Segmentation",
+    "authors": [
+      "Xiaojing Qiu"
+    ],
+    "year": 2021,
+    "venue": "Sensing and Imaging",
+    "doi": "10.1007/s11220-021-00346-2",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11220-021-00346-2",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "https://link.springer.com/content/pdf/10.1007/s11220-021-00346-2.pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.651,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Dual-Branch UNet: Hybrid Transformer-CNN Architecture with Enhanced Skip Connections for Medical Image Segmentation",
+    "authors": [
+      "Junren Shao"
+    ],
+    "year": 2025,
+    "venue": "2025 IEEE 7th International Conference on Power, Intelligent Computing and Systems (ICPICS)",
+    "doi": "10.1109/icpics66386.2025.11347130",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icpics66386.2025.11347130",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx8/11347105/11347093/11347130.pdf?arnumber=11347130",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.6486,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Efficient Boundary-Aware Multi-Scale Feature Fusion for Medical Image Segmentation",
+    "authors": [
+      "Youssef Ahmedm",
+      "Ruotong Luan"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.20944/preprints202511.0918.v1",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.20944/preprints202511.0918.v1",
+    "abstract": "Accurate medical image segmentation plays a crucial role in clinical diagnosis and treatment planning. Yet, existing U-Net variants often fail to effectively capture both fine anatomical details and global contextual relationships while maintaining efficiency. To overcome these challenges, we propose EB-MSF-UNet, an Efficient Boundary-aware Multi-Scale Feature Fusion U-Net that integrates global reasoning with local detail preservation. The framework employs a dual-pathway encoder combining lightweight convolutional layers for local feature extraction and Mamba-inspired modules for longrange dependency modeling, regulated by an adaptive feature gating mechanism. A cross-attentionbased multi-scale fusion module ensures consistent interaction across feature hierarchies, while a boundary-aware refinement decoder explicitly enhances structural contours through auxiliary boundary supervision. Experiments on multiple medical image benchmarks demonstrate that the proposed method achieves consistently accurate segmentation with improved boundary precision and computational efficiency.",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.6486,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Enhancing feature fusion of U-like networks with dynamic skip connections",
+    "authors": [
+      "Yue Cao",
+      "Quansong He",
+      "Kaishen Wang",
+      "Jianlong Xiong",
+      "Zhang Yi",
+      "Tao He"
+    ],
+    "year": 2026,
+    "venue": "Medical Image Analysis",
+    "doi": "10.1016/j.media.2026.104010",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.media.2026.104010",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 5,
+    "is_open_access": true,
+    "open_access_url": "https://api.elsevier.com/content/article/PII:S1361841526000794?httpAccept=text/xml",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6438,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Deep Feature-Level Sensor Fusion Using Skip Connections for Real-Time Object Detection in Autonomous Driving",
+    "authors": [
+      "Vijay John",
+      "Seiichi Mita"
+    ],
+    "year": 2021,
+    "venue": "Electronics",
+    "doi": "10.3390/electronics10040424",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.3390/electronics10040424",
+    "abstract": "Object detection is an important perception task in autonomous driving and advanced driver assistance systems. The visible camera is widely used for perception, but its performance is limited by illumination and environmental variations. For robust vision-based perception, we propose a deep learning framework for effective sensor fusion of the visible camera with complementary sensors. A feature-level sensor fusion technique, using skip connection, is proposed for the sensor fusion of the visible camera with the millimeter-wave radar and the thermal camera. The two networks are called the RV-Net and the TV-Net, respectively. These networks have two input branches and one output branch. The input branches contain separate branches for the individual sensor feature extraction, which are then fused in the output perception branch using skip connections. The RVNet and the TVNet simultaneously perform sensor-specific feature extraction, feature-level fusion and object detection within an end-to-end framework. The proposed networks are validated with baseline algorithms on public datasets. The results obtained show that the feature-level sensor fusion is better than baseline early and late fusion frameworks.",
+    "source": "crossref",
+    "citation_count": 30,
+    "is_open_access": true,
+    "open_access_url": "https://www.mdpi.com/2079-9292/10/4/424/pdf",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.6399,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "SK-VM++: Mamba assists skip-connections for medical image segmentation",
+    "authors": [
+      "Renkai Wu",
+      "Liuyue Pan",
+      "Pengchen Liang",
+      "Qing Chang",
+      "Xianjin Wang",
+      "Weihuan Fang"
+    ],
+    "year": 2025,
+    "venue": "Biomedical Signal Processing and Control",
+    "doi": "10.1016/j.bspc.2025.107646",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.bspc.2025.107646",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 35,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Segmentation",
+      "Computer vision",
+      "Image (mathematics)",
+      "Artificial intelligence",
+      "Computer graphics (images)"
+    ],
+    "score": 0.6384,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Multi-scale feature pyramid fusion network for medical image segmentation",
+    "authors": [
+      "Bing Zhang",
+      "Yang Wang",
+      "Caifu Ding",
+      "Ziqing Deng",
+      "Linwei Li",
+      "Zesheng Qin",
+      "Zhao Ding",
+      "Lifeng Bian",
+      "Chen Yang"
+    ],
+    "year": 2022,
+    "venue": "International Journal of Computer Assisted Radiology and Surgery",
+    "doi": "10.1007/s11548-022-02738-5",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1007/s11548-022-02738-5",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 52,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Pyramid (geometry)",
+      "Segmentation",
+      "Feature (linguistics)",
+      "Context (archaeology)",
+      "Artificial intelligence",
+      "Codec",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.6176,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "MF2-Net: A multipath feature fusion network for medical image segmentation",
+    "authors": [
+      "Nagaraj Yamanakkanavar",
+      "Bumshik Lee"
+    ],
+    "year": 2022,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2022.105004",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.engappai.2022.105004",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 31,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Artificial intelligence",
+      "Feature (linguistics)",
+      "Image (mathematics)",
+      "Multipath propagation",
+      "Computer vision",
+      "Image fusion",
+      "Segmentation"
+    ],
+    "score": 0.6056,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "EFFM: Rethinking feature fusion mechanisms for medical image segmentation",
+    "authors": [
+      "Xiaoyan Zhang",
+      "Zheng Zhao",
+      "Yongqin Zhang",
+      "Chunlin Yu",
+      "Xiangfu Meng",
+      "Shuai Li"
+    ],
+    "year": 2025,
+    "venue": "Biomedical Signal Processing and Control",
+    "doi": "10.1016/j.bspc.2025.109334",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.bspc.2025.109334",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 7,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Encoder",
+      "Feature (linguistics)",
+      "Segmentation",
+      "Artificial intelligence",
+      "Context (archaeology)",
+      "Field (mathematics)",
+      "Fusion mechanism"
+    ],
+    "score": 0.6028,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Tree-NET: Enhancing 2D Medical Image Segmentation Through Efficient Low-Level Feature Training",
+    "authors": [
+      "Orhan Demirci",
+      "Bulent Yilmaz"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "10.1007/s00521-026-12420-5",
+    "arxiv_id": "2501.02140v2",
+    "url": "http://arxiv.org/abs/2501.02140v2",
+    "abstract": "This paper introduces Tree-NET, a novel framework for medical image segmentation that leverages bottleneck supervision to enhance both segmentation accuracy and computational efficiency. While previous studies have applied bottleneck feature supervision to segmentation tasks, it has typically been limited to the training phase, offering no computational benefits during inference. To the best of our knowledge, this is the first framework to employ dual bottleneck supervision for segmentation, leveraging latent space features at both the input and output stages. This approach reduces input and label dimensions with minimal parameter overhead while preserving accuracy. Tree-NET features a three-component architecture: Encoder-Net and Decoder-Net, which compress input and label data via autoencoding, and Bridge-Net, a segmentation model trained on these compressed representations. By operating entirely on dense, low-dimensional features, Tree-NET improves runtime efficiency and can be integrated into existing segmentation models without modifying their internal structures or increasing model size. We evaluate Tree-NET on two key segmentation tasks: skin lesion and polyp segmentation using various backbone models, including U-NET, U-NET++, and Polyp-PVT. Experimental results show that Tree-NET reduces FLOPs by a factor of 4 to 13 and decreases memory usage while maintaining segmentation accuracy comparable to baseline models. For example, with an untrained U-NET++ backbone, Tree-NET improves the Dice score on ISIC 2018 from 0.829 to 0.862 and the IoU from 0.736 to 0.787. On CVC-ClinicDB, it achieves a Dice score of 0.946 and an IoU of 0.901 using a Polyp-PVT backbone, matching or surpassing baseline performance. These findings underscore Tree-NET's potential as a robust and efficient solution for medical image segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2501.02140v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5936,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Fréchet Radiomic Distance (FRD): A Versatile Metric for Comparing Medical Imaging Datasets",
+    "authors": [
+      "Nicholas Konz",
+      "Richard Osuala",
+      "Preeti Verma",
+      "Yuwen Chen",
+      "Hanxue Gu",
+      "Haoyu Dong",
+      "Yaqian Chen",
+      "Andrew Marshall",
+      "Lidia Garrucho",
+      "Kaisar Kushibar",
+      "Daniel M. Lang",
+      "Gene S. Kim",
+      "Lars J. Grimm",
+      "John M. Lewin",
+      "James S. Duncan",
+      "Julia A. Schnabel",
+      "Oliver Diaz",
+      "Karim Lekadir",
+      "Maciej A. Mazurowski"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2026.103943",
+    "arxiv_id": "2412.01496v2",
+    "url": "http://arxiv.org/abs/2412.01496v2",
+    "abstract": "Determining whether two sets of images belong to the same or different distributions or domains is a crucial task in modern medical image analysis and deep learning; for example, to evaluate the output quality of image generative models. Currently, metrics used for this task either rely on the (potentially biased) choice of some downstream task, such as segmentation, or adopt task-independent perceptual metrics (e.g., Fréchet Inception Distance/FID) from natural imaging, which we show insufficiently capture anatomical features. To this end, we introduce a new perceptual metric tailored for medical images, FRD (Fréchet Radiomic Distance), which utilizes standardized, clinically meaningful, and interpretable image features. We show that FRD is superior to other image distribution metrics for a range of medical imaging applications, including out-of-domain (OOD) detection, the evaluation of image-to-image translation (by correlating more with downstream task performance as well as anatomical consistency and realism), and the evaluation of unconditional image generation. Moreover, FRD offers additional benefits such as stability and computational efficiency at low sample sizes, sensitivity to image corruptions and adversarial attacks, feature interpretability, and correlation with radiologist-perceived image quality. Additionally, we address key gaps in the literature by presenting an extensive framework for the multifaceted evaluation of image similarity metrics in medical imaging -- including the first large-scale comparative study of generative models for medical image translation -- and release an accessible codebase to facilitate future research. Our results are supported by thorough experiments spanning a variety of datasets, modalities, and downstream tasks, highlighting the broad potential of FRD for medical image analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2412.01496v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5836,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "FDiff-Fusion:Denoising diffusion fusion network based on fuzzy learning for 3D medical image segmentation",
+    "authors": [
+      "Weiping Ding",
+      "Sheng Geng",
+      "Haipeng Wang",
+      "Jiashuang Huang",
+      "Tianyi Zhou"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.inffus.2024.102540",
+    "arxiv_id": "2408.02075v1",
+    "url": "http://arxiv.org/abs/2408.02075v1",
+    "abstract": "In recent years, the denoising diffusion model has achieved remarkable success in image segmentation modeling. With its powerful nonlinear modeling capabilities and superior generalization performance, denoising diffusion models have gradually been applied to medical image segmentation tasks, bringing new perspectives and methods to this field. However, existing methods overlook the uncertainty of segmentation boundaries and the fuzziness of regions, resulting in the instability and inaccuracy of the segmentation results. To solve this problem, a denoising diffusion fusion network based on fuzzy learning for 3D medical image segmentation (FDiff-Fusion) is proposed in this paper. By integrating the denoising diffusion model into the classical U-Net network, this model can effectively extract rich semantic information from input medical images, thus providing excellent pixel-level representation for medical image segmentation. ... Finally, to validate the effectiveness of FDiff-Fusion, we compare it with existing advanced segmentation networks on the BRATS 2020 brain tumor dataset and the BTCV abdominal multi-organ dataset. The results show that FDiff-Fusion significantly improves the Dice scores and HD95 distance on these two datasets, demonstrating its superiority in medical image segmentation tasks.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.02075v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5836,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Renal Medical Image Segmentation using Cross-Perceptron Deliberation and Multi- Scale Feature Fusion",
+    "authors": [
+      "Swapna J.",
+      "Roselin Kiruba R."
+    ],
+    "year": 2025,
+    "venue": "Journal of Innovative Image Processing",
+    "doi": "10.36548/jiip.2025.3.025",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.36548/jiip.2025.3.025",
+    "abstract": "Architectures based on Convolutional Neural Networks (CNNs), like U-Net, have demonstrated notable efficiency in the segmentation of renal medical images. However, because convolution processes are limited and have restricted accessible fields, they frequently have trouble capturing long-range dependencies. Recent developments have improved global context modeling by incorporating transformer modules into U-Net variations to address this issue. However, during the global fusion process, these transformers based methods run the risk of losing important local spatial information. This research introduces Multi-Scale MCPA, a unique architecture designed specifically for the segmentation of 2D renal medical images. An encoder, decoder and cross perceptron module are the three main parts of MCPATo provide rich multi-scale feature interaction, the Cross Perceptron primarily uses several Multi-Scale Cross Perceptron (MCP) modules to capture local dependencies. To efficiently model long-range dependencies, these features are spatially unfolded, concatenated, and processed by a Global Perceptron component. A Progressive Dual-Branch Structure (PDBS) is implemented to enhance segmentation performance, particularly for fine-grained structures. During training, this component guides the network to progressively transfer its attention from coarse structural elements to intricate pixel-level representations. The proposed method is specifically designed for 2D medical image segmentation tasks, given the clinical significance of 2D imaging and the high computing demands of 3D models. Experimentation of the proposed approach on multiple publicly accessible datasets from different imaging tasks and modalities, such as OCTA (ROSE), fundus images (DRIVE, CHASE_DB1, HRF), MRI (ACDC), and CT (Synapse), demonstrates that the proposed method reliably outperforms state-of-the-art segmentation methods, accomplishing enhancements of +2.1% Dice score on Synapse CT, +2.6% on ACDC MRI, and up to +3.4% on retinal fundus datasets. The effectiveness and generalizability of MCPA are established by experimental results, which show that it routinely outperforms existing techniques in segmentation accuracy.",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": false,
+    "open_access_url": "https://irojournals.com/iroiip/article/download/821/731",
+    "publication_type": "journal-article",
+    "keywords": [],
+    "score": 0.5817,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Enhanced medical image segmentation using U-Net with residual connections and dual attention mechanism",
+    "authors": [
+      "Leyi Xiao",
+      "Jiaojiao Song",
+      "Xia Xie",
+      "Chaodong Fan"
+    ],
+    "year": 2025,
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "doi": "10.1016/j.engappai.2025.110794",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.engappai.2025.110794",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 32,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Dual (grammatical number)",
+      "Segmentation",
+      "Mechanism (biology)",
+      "Residual",
+      "Artificial intelligence",
+      "Net (polyhedron)",
+      "Image segmentation"
+    ],
+    "score": 0.5792,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "UNet++: A Nested U-Net Architecture for Medical Image Segmentation",
+    "authors": [
+      "Zongwei Zhou",
+      "Md Mahfuzur Rahman Siddiquee",
+      "Nima Tajbakhsh",
+      "Jianming Liang"
+    ],
+    "year": 2018,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "1807.10165v1",
+    "url": "http://arxiv.org/abs/1807.10165v1",
+    "abstract": "In this paper, we present UNet++, a new, more powerful architecture for medical image segmentation. Our architecture is essentially a deeply-supervised encoder-decoder network where the encoder and decoder sub-networks are connected through a series of nested, dense skip pathways. The re-designed skip pathways aim at reducing the semantic gap between the feature maps of the encoder and decoder sub-networks. We argue that the optimizer would deal with an easier learning task when the feature maps from the decoder and encoder networks are semantically similar. We have evaluated UNet++ in comparison with U-Net and wide U-Net architectures across multiple medical image segmentation tasks: nodule segmentation in the low-dose CT scans of chest, nuclei segmentation in the microscopy images, liver segmentation in abdominal CT scans, and polyp segmentation in colonoscopy videos. Our experiments demonstrate that UNet++ with deep supervision achieves an average IoU gain of 3.9 and 3.4 points over U-Net and wide U-Net, respectively.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1807.10165v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5736,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "An effective CNN and Transformer complementary network for medical image segmentation",
+    "authors": [
+      "Feiniu Yuan",
+      "Zhengxiao Zhang",
+      "Zhijun Fang"
+    ],
+    "year": 2022,
+    "venue": "Pattern Recognition",
+    "doi": "10.1016/j.patcog.2022.109228",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.patcog.2022.109228",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 569,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Convolutional neural network",
+      "Segmentation",
+      "Transformer",
+      "Artificial intelligence",
+      "Encoder",
+      "Image segmentation",
+      "Pattern recognition (psychology)"
+    ],
+    "score": 0.5595,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "Segmentation Ability Map: Interpret deep features for medical image segmentation",
+    "authors": [
+      "Sheng He",
+      "Yanfang Feng",
+      "P. Ellen Grant",
+      "Yangming Ou"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2212.09206v1",
+    "url": "http://arxiv.org/abs/2212.09206v1",
+    "abstract": "Deep convolutional neural networks (CNNs) have been widely used for medical image segmentation. In most studies, only the output layer is exploited to compute the final segmentation results and the hidden representations of the deep learned features have not been well understood. In this paper, we propose a prototype segmentation (ProtoSeg) method to compute a binary segmentation map based on deep features. We measure the segmentation abilities of the features by computing the Dice between the feature segmentation map and ground-truth, named as the segmentation ability score (SA score for short). The corresponding SA score can quantify the segmentation abilities of deep features in different layers and units to understand the deep neural networks for segmentation. In addition, our method can provide a mean SA score which can give a performance estimation of the output on the test images without ground-truth. Finally, we use the proposed ProtoSeg method to compute the segmentation map directly on input images to further understand the segmentation ability of each input image. Results are presented on segmenting tumors in brain MRI, lesions in skin images, COVID-related abnormality in CT images, prostate segmentation in abdominal MRI, and pancreatic mass segmentation in CT images. Our method can provide new insights for interpreting and explainable AI systems for medical image segmentation. Our code is available on: \\url{https://github.com/shengfly/ProtoSeg}.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2212.09206v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5564,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Learning With Context Feedback Loop for Robust Medical Image Segmentation",
+    "authors": [
+      "Kibrom Berihu Girum",
+      "Gilles Créhange",
+      "Alain Lalande"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "10.1109/tmi.2021.3060497",
+    "arxiv_id": "2103.02844v1",
+    "url": "http://arxiv.org/abs/2103.02844v1",
+    "abstract": "Deep learning has successfully been leveraged for medical image segmentation. It employs convolutional neural networks (CNN) to learn distinctive image features from a defined pixel-wise objective function. However, this approach can lead to less output pixel interdependence producing incomplete and unrealistic segmentation results. In this paper, we present a fully automatic deep learning method for robust medical image segmentation by formulating the segmentation problem as a recurrent framework using two systems. The first one is a forward system of an encoder-decoder CNN that predicts the segmentation result from the input image. The predicted probabilistic output of the forward system is then encoded by a fully convolutional network (FCN)-based context feedback system. The encoded feature space of the FCN is then integrated back into the forward system's feed-forward learning process. Using the FCN-based context feedback loop allows the forward system to learn and extract more high-level image features and fix previous mistakes, thereby improving prediction accuracy over time. Experimental results, performed on four different clinical datasets, demonstrate our method's potential application for single and multi-structure medical image segmentation by outperforming the state of the art methods. With the feedback loop, deep learning methods can now produce results that are both anatomically plausible and robust to low contrast images. Therefore, formulating image segmentation as a recurrent framework of two interconnected networks via context feedback loop can be a potential method for robust and efficient medical image analysis.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2103.02844v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5536,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Hybrid-scale contextual fusion network for medical image segmentation",
+    "authors": [
+      "Hua Bao",
+      "Yuqing Zhu",
+      "Qing Li"
+    ],
+    "year": 2022,
+    "venue": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2022.106439",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1016/j.compbiomed.2022.106439",
+    "abstract": "",
+    "source": "openalex",
+    "citation_count": 33,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "article",
+    "keywords": [
+      "Computer science",
+      "Pooling",
+      "Artificial intelligence",
+      "Encoder",
+      "Segmentation",
+      "Convolutional neural network",
+      "Transformer",
+      "Embedding"
+    ],
+    "score": 0.5499,
+    "sources": [
+      "openalex"
+    ]
+  },
+  {
+    "title": "FSC-UNet: a lightweight medical image segmentation algorithm fused with skip connections",
+    "authors": [
+      "Yixin Chen",
+      "Jianjun Zhang",
+      "Xulin Zong",
+      "Zhipeng Zhao",
+      "Hanqing Liu",
+      "Ruichun Tang",
+      "Peishun Liu",
+      "Jinyu Wang"
+    ],
+    "year": 2022,
+    "venue": "Fourteenth International Conference on Digital Image Processing (ICDIP 2022)",
+    "doi": "10.1117/12.2644360",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1117/12.2644360",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 2,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.5446,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Adaptive Multi-Feature Fusion Transformer for Cardiac Medical Image Segmentation",
+    "authors": [
+      "Xiaoning Zhang",
+      "Yanjun Peng",
+      "Sijia Xing",
+      "Zengmin Zhang"
+    ],
+    "year": 2025,
+    "venue": "",
+    "doi": "10.2139/ssrn.5087203",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.2139/ssrn.5087203",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 0,
+    "is_open_access": false,
+    "open_access_url": "",
+    "publication_type": "posted-content",
+    "keywords": [],
+    "score": 0.5414,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Test-time generative augmentation for medical image segmentation",
+    "authors": [
+      "Xiao Ma",
+      "Yuhui Tao",
+      "Zetian Zhang",
+      "Yuhan Zhang",
+      "Xi Wang",
+      "Sheng Zhang",
+      "Zexuan Ji",
+      "Yizhe Zhang",
+      "Qiang Chen",
+      "Guang Yang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103902",
+    "arxiv_id": "2406.17608v2",
+    "url": "http://arxiv.org/abs/2406.17608v2",
+    "abstract": "Medical image segmentation is critical for clinical diagnosis, treatment planning, and monitoring, yet segmentation models often struggle with uncertainties stemming from occlusions, ambiguous boundaries, and variations in imaging devices. Traditional test-time augmentation (TTA) techniques typically rely on predefined geometric and photometric transformations, limiting their adaptability and effectiveness in complex medical scenarios. In this study, we introduced Test-Time Generative Augmentation (TTGA), a novel augmentation strategy specifically tailored for medical image segmentation at inference time. Different from conventional augmentation strategies that suffer from excessive randomness or limited flexibility, TTGA leverages a domain-fine-tuned generative model to produce contextually relevant and diverse augmentations tailored to the characteristics of each test image. Built upon diffusion model inversion, a masked null-text inversion method is proposed to enable region-specific augmentations during sampling. Furthermore, a dual denoising pathway is designed to balance precise identity preservation with controlled variability. We demonstrate the efficacy of our TTGA through extensive experiments across three distinct segmentation tasks spanning nine datasets. Our results consistently demonstrate that TTGA not only improves segmentation accuracy (with DSC gains ranging from 0.1% to 2.3% over the baseline) but also offers pixel-wise error estimation (with DSC gains ranging from 1.1% to 29.0% over the baseline). The source code and demonstration are available at: https://github.com/maxiao0234/TTGA.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2406.17608v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5264,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "MambaMIM: Pre-training Mamba with State Space Token Interpolation and its Application to Medical Image Segmentation",
+    "authors": [
+      "Fenghe Tang",
+      "Bingkun Nian",
+      "Yingtai Li",
+      "Zihang Jiang",
+      "Jie Yang",
+      "Wei Liu",
+      "S. Kevin Zhou"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2025.103606",
+    "arxiv_id": "2408.08070v2",
+    "url": "http://arxiv.org/abs/2408.08070v2",
+    "abstract": "Recently, the state space model Mamba has demonstrated efficient long-sequence modeling capabilities, particularly for addressing long-sequence visual tasks in 3D medical imaging. However, existing generative self-supervised learning methods have not yet fully unleashed Mamba's potential for handling long-range dependencies because they overlook the inherent causal properties of state space sequences in masked modeling. To address this challenge, we propose a general-purpose pre-training framework called MambaMIM, a masked image modeling method based on a novel TOKen-Interpolation strategy (TOKI) for the selective structure state space sequence, which learns causal relationships of state space within the masked sequence. Further, MambaMIM introduces a bottom-up 3D hybrid masking strategy to maintain a masking consistency across different architectures and can be used on any single or hybrid Mamba architecture to enhance its multi-scale and long-range representation capability. We pre-train MambaMIM on a large-scale dataset of 6.8K CT scans and evaluate its performance across eight public medical segmentation benchmarks. Extensive downstream experiments reveal the feasibility and advancement of using Mamba for medical image pre-training. In particular, when we apply the MambaMIM to a customized architecture that hybridizes MedNeXt and Vision Mamba, we consistently obtain the state-of-the-art segmentation performance. The code is available at: https://github.com/FengheTan9/MambaMIM.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2408.08070v2",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5264,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Cross-dimensional transfer learning in medical image segmentation with deep learning",
+    "authors": [
+      "Hicham Messaoudi",
+      "Ahror Belaid",
+      "Douraied Ben Salem",
+      "Pierre-Henri Conze"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2023.102868",
+    "arxiv_id": "2307.15872v1",
+    "url": "http://arxiv.org/abs/2307.15872v1",
+    "abstract": "Over the last decade, convolutional neural networks have emerged and advanced the state-of-the-art in various image analysis and computer vision applications. The performance of 2D image classification networks is constantly improving and being trained on databases made of millions of natural images. However, progress in medical image analysis has been hindered by limited annotated data and acquisition constraints. These limitations are even more pronounced given the volumetry of medical imaging data. In this paper, we introduce an efficient way to transfer the efficiency of a 2D classification network trained on natural images to 2D, 3D uni- and multi-modal medical image segmentation applications. In this direction, we designed novel architectures based on two key principles: weight transfer by embedding a 2D pre-trained encoder into a higher dimensional U-Net, and dimensional transfer by expanding a 2D segmentation network into a higher dimension one. The proposed networks were tested on benchmarks comprising different modalities: MR, CT, and ultrasound images. Our 2D network ranked first on the CAMUS challenge dedicated to echo-cardiographic data segmentation and surpassed the state-of-the-art. Regarding 2D/3D MR and CT abdominal images from the CHAOS challenge, our approach largely outperformed the other 2D-based methods described in the challenge paper on Dice, RAVD, ASSD, and MSSD scores and ranked third on the online evaluation platform. Our 3D network applied to the BraTS 2022 competition also achieved promising results, reaching an average Dice score of 91.69% (91.22%) for the whole tumor, 83.23% (84.77%) for the tumor core, and 81.75% (83.88%) for enhanced tumor using the approach based on weight (dimensional) transfer. Experimental and qualitative results illustrate the effectiveness of our methods for multi-dimensional medical image segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2307.15872v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5164,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Weakly-Supervised 3D Medical Image Segmentation using Geometric Prior and Contrastive Similarity",
+    "authors": [
+      "Hao Du",
+      "Qihua Dong",
+      "Yan Xu",
+      "Jing Liao"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1109/tmi.2023.3269523",
+    "arxiv_id": "2302.02125v1",
+    "url": "http://arxiv.org/abs/2302.02125v1",
+    "abstract": "Medical image segmentation is almost the most important pre-processing procedure in computer-aided diagnosis but is also a very challenging task due to the complex shapes of segments and various artifacts caused by medical imaging, (i.e., low-contrast tissues, and non-homogenous textures). In this paper, we propose a simple yet effective segmentation framework that incorporates the geometric prior and contrastive similarity into the weakly-supervised segmentation framework in a loss-based fashion. The proposed geometric prior built on point cloud provides meticulous geometry to the weakly-supervised segmentation proposal, which serves as better supervision than the inherent property of the bounding-box annotation (i.e., height and width). Furthermore, we propose contrastive similarity to encourage organ pixels to gather around in the contrastive embedding space, which helps better distinguish low-contrast tissues. The proposed contrastive embedding space can make up for the poor representation of the conventionally-used gray space. Extensive experiments are conducted to verify the effectiveness and the robustness of the proposed weakly-supervised segmentation framework. The proposed framework is superior to state-of-the-art weakly-supervised methods on the following publicly accessible datasets: LiTS 2017 Challenge, KiTS 2021 Challenge, and LPBA40. We also dissect our method and evaluate the performance of each component.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2302.02125v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5164,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Segment Anything Model for Medical Image Analysis: an Experimental Study",
+    "authors": [
+      "Maciej A. Mazurowski",
+      "Haoyu Dong",
+      "Hanxue Gu",
+      "Jichen Yang",
+      "Nicholas Konz",
+      "Yixin Zhang"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2023.102918",
+    "arxiv_id": "2304.10517v3",
+    "url": "http://arxiv.org/abs/2304.10517v3",
+    "abstract": "Training segmentation models for medical images continues to be challenging due to the limited availability of data annotations. Segment Anything Model (SAM) is a foundation model that is intended to segment user-defined objects of interest in an interactive manner. While the performance on natural images is impressive, medical image domains pose their own set of challenges. Here, we perform an extensive evaluation of SAM's ability to segment medical images on a collection of 19 medical imaging datasets from various modalities and anatomies. We report the following findings: (1) SAM's performance based on single prompts highly varies depending on the dataset and the task, from IoU=0.1135 for spine MRI to IoU=0.8650 for hip X-ray. (2) Segmentation performance appears to be better for well-circumscribed objects with prompts with less ambiguity and poorer in various other scenarios such as the segmentation of brain tumors. (3) SAM performs notably better with box prompts than with point prompts. (4) SAM outperforms similar methods RITM, SimpleClick, and FocalClick in almost all single-point prompt settings. (5) When multiple-point prompts are provided iteratively, SAM's performance generally improves only slightly while other methods' performance improves to the level that surpasses SAM's point-based performance. We also provide several illustrations for SAM's performance on all tested datasets, iterative segmentation, and SAM's behavior given prompt ambiguity. We conclude that SAM shows impressive zero-shot segmentation performance for certain medical imaging datasets, but moderate to poor performance for others. SAM has the potential to make a significant impact in automated medical image segmentation in medical imaging, but appropriate care needs to be applied when using it.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2304.10517v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.5164,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "CapsNet for Medical Image Segmentation",
+    "authors": [
+      "Minh Tran",
+      "Viet-Khoa Vo-Ho",
+      "Kyle Quinn",
+      "Hien Nguyen",
+      "Khoa Luu",
+      "Ngan Le"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2203.08948v1",
+    "url": "http://arxiv.org/abs/2203.08948v1",
+    "abstract": "Convolutional Neural Networks (CNNs) have been successful in solving tasks in computer vision including medical image segmentation due to their ability to automatically extract features from unstructured data. However, CNNs are sensitive to rotation and affine transformation and their success relies on huge-scale labeled datasets capturing various input variations. This network paradigm has posed challenges at scale because acquiring annotated data for medical segmentation is expensive, and strict privacy regulations. Furthermore, visual representation learning with CNNs has its own flaws, e.g., it is arguable that the pooling layer in traditional CNNs tends to discard positional information and CNNs tend to fail on input images that differ in orientations and sizes. Capsule network (CapsNet) is a recent new architecture that has achieved better robustness in representation learning by replacing pooling layers with dynamic routing and convolutional strides, which has shown potential results on popular tasks such as classification, recognition, segmentation, and natural language processing. Different from CNNs, which result in scalar outputs, CapsNet returns vector outputs, which aim to preserve the part-whole relationships. In this work, we first introduce the limitations of CNNs and fundamentals of CapsNet. We then provide recent developments of CapsNet for the task of medical image segmentation. We finally discuss various effective network architectures to implement a CapsNet for both 2D images and 3D volumetric medical image segmentation.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2203.08948v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4993,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Test-Time Adaptable Neural Networks for Robust Medical Image Segmentation",
+    "authors": [
+      "Neerav Karani",
+      "Ertunc Erdil",
+      "Krishna Chaitanya",
+      "Ender Konukoglu"
+    ],
+    "year": 2020,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2020.101907",
+    "arxiv_id": "2004.04668v4",
+    "url": "http://arxiv.org/abs/2004.04668v4",
+    "abstract": "Convolutional Neural Networks (CNNs) work very well for supervised learning problems when the training dataset is representative of the variations expected to be encountered at test time. In medical image segmentation, this premise is violated when there is a mismatch between training and test images in terms of their acquisition details, such as the scanner model or the protocol. Remarkable performance degradation of CNNs in this scenario is well documented in the literature. To address this problem, we design the segmentation CNN as a concatenation of two sub-networks: a relatively shallow image normalization CNN, followed by a deep CNN that segments the normalized image. We train both these sub-networks using a training dataset, consisting of annotated images from a particular scanner and protocol setting. Now, at test time, we adapt the image normalization sub-network for \\emph{each test image}, guided by an implicit prior on the predicted segmentation labels. We employ an independently trained denoising autoencoder (DAE) in order to model such an implicit prior on plausible anatomical segmentation labels. We validate the proposed idea on multi-center Magnetic Resonance imaging datasets of three anatomies: brain, heart and prostate. The proposed test-time adaptation consistently provides performance improvement, demonstrating the promise and generality of the approach. Being agnostic to the architecture of the deep CNN, the second sub-network, the proposed design can be utilized with any segmentation network to increase robustness to variations in imaging scanners and protocols. Our code is available at: \\url{https://github.com/neerakara/test-time-adaptable-neural-networks-for-domain-generalization}.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2004.04668v4",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4864,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Uncertainty-aware multi-view co-training for semi-supervised medical image segmentation and domain adaptation",
+    "authors": [
+      "Yingda Xia",
+      "Dong Yang",
+      "Zhiding Yu",
+      "Fengze Liu",
+      "Jinzheng Cai",
+      "Lequan Yu",
+      "Zhuotun Zhu",
+      "Daguang Xu",
+      "Alan Yuille",
+      "Holger Roth"
+    ],
+    "year": 2020,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2020.101766",
+    "arxiv_id": "2006.16806v1",
+    "url": "http://arxiv.org/abs/2006.16806v1",
+    "abstract": "Although having achieved great success in medical image segmentation, deep learning-based approaches usually require large amounts of well-annotated data, which can be extremely expensive in the field of medical image analysis. Unlabeled data, on the other hand, is much easier to acquire. Semi-supervised learning and unsupervised domain adaptation both take the advantage of unlabeled data, and they are closely related to each other. In this paper, we propose uncertainty-aware multi-view co-training (UMCT), a unified framework that addresses these two tasks for volumetric medical image segmentation. Our framework is capable of efficiently utilizing unlabeled data for better performance. We firstly rotate and permute the 3D volumes into multiple views and train a 3D deep network on each view. We then apply co-training by enforcing multi-view consistency on unlabeled data, where an uncertainty estimation of each view is utilized to achieve accurate labeling. Experiments on the NIH pancreas segmentation dataset and a multi-organ segmentation dataset show state-of-the-art performance of the proposed framework on semi-supervised medical image segmentation. Under unsupervised domain adaptation settings, we validate the effectiveness of this work by adapting our multi-organ segmentation model to two pathological organs from the Medical Segmentation Decathlon Datasets. Additionally, we show that our UMCT-DA model can even effectively handle the challenging situation where labeled source data is inaccessible, demonstrating strong potentials for real-world applications.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2006.16806v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4864,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Building medical image classifiers with very limited data using segmentation networks",
+    "authors": [
+      "Ken C. L. Wong",
+      "Tanveer Syeda-Mahmood",
+      "Mehdi Moradi"
+    ],
+    "year": 2018,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2018.07.010",
+    "arxiv_id": "1808.05205v1",
+    "url": "http://arxiv.org/abs/1808.05205v1",
+    "abstract": "Deep learning has shown promising results in medical image analysis, however, the lack of very large annotated datasets confines its full potential. Although transfer learning with ImageNet pre-trained classification models can alleviate the problem, constrained image sizes and model complexities can lead to unnecessary increase in computational cost and decrease in performance. As many common morphological features are usually shared by different classification tasks of an organ, it is greatly beneficial if we can extract such features to improve classification with limited samples. Therefore, inspired by the idea of curriculum learning, we propose a strategy for building medical image classifiers using features from segmentation networks. By using a segmentation network pre-trained on similar data as the classification task, the machine can first learn the simpler shape and structural concepts before tackling the actual classification problem which usually involves more complicated concepts. Using our proposed framework on a 3D three-class brain tumor type classification problem, we achieved 82% accuracy on 191 testing samples with 91 training samples. When applying to a 2D nine-class cardiac semantic level classification problem, we achieved 86% accuracy on 263 testing samples with 108 training samples. Comparisons with ImageNet pre-trained classifiers and classifiers trained from scratch are presented.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1808.05205v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4664,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "GAN-GA: A Generative Model based on Genetic Algorithm for Medical Image Generation",
+    "authors": [
+      "M. AbdulRazek",
+      "G. Khoriba",
+      "M. Belal"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "10.3389/978-2-8325-1231-9",
+    "arxiv_id": "2401.00314v1",
+    "url": "http://arxiv.org/abs/2401.00314v1",
+    "abstract": "Medical imaging is an essential tool for diagnosing and treating diseases. However, lacking medical images can lead to inaccurate diagnoses and ineffective treatments. Generative models offer a promising solution for addressing medical image shortage problems due to their ability to generate new data from existing datasets and detect anomalies in this data. Data augmentation with position augmentation methods like scaling, cropping, flipping, padding, rotation, and translation could lead to more overfitting in domains with little data, such as medical image data. This paper proposes the GAN-GA, a generative model optimized by embedding a genetic algorithm. The proposed model enhances image fidelity and diversity while preserving distinctive features. The proposed medical image synthesis approach improves the quality and fidelity of medical images, an essential aspect of image interpretation. To evaluate synthesized images: Frechet Inception Distance (FID) is used. The proposed GAN-GA model is tested by generating Acute lymphoblastic leukemia (ALL) medical images, an image dataset, and is the first time to be used in generative models. Our results were compared to those of InfoGAN as a baseline model. The experimental results show that the proposed optimized GAN-GA enhances FID scores by about 6.8\\%, especially in earlier training epochs. The source code and dataset will be available at: https://github.com/Mustafa-AbdulRazek/InfoGAN-GA.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2401.00314v1",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4593,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "TransMorph: Transformer for unsupervised medical image registration",
+    "authors": [
+      "Junyu Chen",
+      "Eric C. Frey",
+      "Yufan He",
+      "William P. Segars",
+      "Ye Li",
+      "Yong Du"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "10.1016/j.media.2022.102615",
+    "arxiv_id": "2111.10480v6",
+    "url": "http://arxiv.org/abs/2111.10480v6",
+    "abstract": "In the last decade, convolutional neural networks (ConvNets) have been a major focus of research in medical image analysis. However, the performances of ConvNets may be limited by a lack of explicit consideration of the long-range spatial relationships in an image. Recently Vision Transformer architectures have been proposed to address the shortcomings of ConvNets and have produced state-of-the-art performances in many medical imaging applications. Transformers may be a strong candidate for image registration because their substantially larger receptive field enables a more precise comprehension of the spatial correspondence between moving and fixed images. Here, we present TransMorph, a hybrid Transformer-ConvNet model for volumetric medical image registration. This paper also presents diffeomorphic and Bayesian variants of TransMorph: the diffeomorphic variants ensure the topology-preserving deformations, and the Bayesian variant produces a well-calibrated registration uncertainty estimate. We extensively validated the proposed models using 3D medical images from three applications: inter-patient and atlas-to-patient brain MRI registration and phantom-to-CT registration. The proposed models are evaluated in comparison to a variety of existing registration methods and Transformer architectures. Qualitative and quantitative results demonstrate that the proposed Transformer-based model leads to a substantial performance improvement over the baseline methods, confirming the effectiveness of Transformers for medical image registration.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/2111.10480v6",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4393,
+    "sources": [
+      "arxiv"
+    ]
+  },
+  {
+    "title": "Multiple Skip Connections of Dilated Convolution Network for Semantic Segmentation",
+    "authors": [
+      "Takayoshi Yamashita",
+      "Hironori Furukawa",
+      "Hironobu Fujiyoshi"
+    ],
+    "year": 2018,
+    "venue": "2018 25th IEEE International Conference on Image Processing (ICIP)",
+    "doi": "10.1109/icip.2018.8451033",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1109/icip.2018.8451033",
+    "abstract": "",
+    "source": "crossref",
+    "citation_count": 11,
+    "is_open_access": false,
+    "open_access_url": "http://xplorestaging.ieee.org/ielx7/8436606/8451009/08451033.pdf?arnumber=8451033",
+    "publication_type": "proceedings-article",
+    "keywords": [],
+    "score": 0.4231,
+    "sources": [
+      "crossref"
+    ]
+  },
+  {
+    "title": "Distribution Matching Losses Can Hallucinate Features in Medical Image Translation",
+    "authors": [
+      "Joseph Paul Cohen",
+      "Margaux Luck",
+      "Sina Honari"
+    ],
+    "year": 2018,
+    "venue": "arXiv",
+    "doi": "10.1007/978-3-030-00928-1_60",
+    "arxiv_id": "1805.08841v3",
+    "url": "http://arxiv.org/abs/1805.08841v3",
+    "abstract": "This paper discusses how distribution matching losses, such as those used in CycleGAN, when used to synthesize medical images can lead to mis-diagnosis of medical conditions. It seems appealing to use these new image synthesis methods for translating images from a source to a target domain because they can produce high quality images and some even do not require paired data. However, the basis of how these image translation models work is through matching the translation output to the distribution of the target domain. This can cause an issue when the data provided in the target domain has an over or under representation of some classes (e.g. healthy or sick). When the output of an algorithm is a transformed image there are uncertainties whether all known and unknown class labels have been preserved or changed. Therefore, we recommend that these translated images should not be used for direct interpretation (e.g. by doctors) because they may lead to misdiagnosis of patients based on hallucinated image features by an algorithm that matches a distribution. However there are many recent papers that seem as though this is the goal.",
+    "source": "arxiv",
+    "citation_count": 0,
+    "is_open_access": true,
+    "open_access_url": "https://arxiv.org/pdf/1805.08841v3",
+    "publication_type": "preprint",
+    "keywords": [],
+    "score": 0.4093,
+    "sources": [
+      "arxiv"
+    ]
+  }
+]

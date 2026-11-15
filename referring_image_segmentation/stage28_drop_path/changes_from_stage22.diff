@@ -1,0 +1,187 @@
+--- stage22/train.py
++++ stage28/train.py
+@@ -1,4 +1,4 @@
+-"""Paired frozen/late-stage adaptation with verified frozen-prefix caching."""
++"""Paired late-stage fine-tuning: only late DropPath training behavior differs."""
+ from pathlib import Path
+ import argparse, contextlib, copy, csv, gc, hashlib, importlib.util, json, math
+ import os, random, signal, sys, time, traceback
+@@ -22,7 +22,7 @@
+ 
+ HF = PROJECT/'stage14_mambavision_s_isic2018_seed42/official/hf'
+ WEIGHT_SHA = '006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180'
+-NAMES = ('frozen', 'finetune34')
++NAMES = ('control', 'drop_path')
+ GIB = 1024**3
+ STOP = False
+ 
+@@ -70,8 +70,10 @@
+     random.seed(42);np.random.seed(42);torch.manual_seed(42);torch.cuda.manual_seed_all(42)
+ 
+ class System(nn.Module):
+-    def __init__(self, finetune=False):
++    def __init__(self, finetune=False, stochastic_depth=False):
+         super().__init__()
++        self.stochastic_depth=bool(stochastic_depth)
++        assert not self.stochastic_depth or finetune
+         self.encoder,info=AutoModel.from_pretrained(str(HF),trust_remote_code=True,local_files_only=True,output_loading_info=True)
+         assert all(not info.get(k) for k in ('missing_keys','unexpected_keys','mismatched_keys','error_msgs')),info
+         state=load_file(str(HF/'model.safetensors'))
+@@ -87,6 +89,10 @@
+     def train(self, mode=True):
+         super().train(mode)
+         self.encoder.eval()
++        if self.stochastic_depth:
++            for level in self.encoder.model.levels[2:]:
++                for module in level.modules():
++                    if type(module).__name__=='DropPath': module.train(mode)
+         self.probe.train(mode)
+         return self
+ 
+@@ -176,6 +182,7 @@
+ @torch.no_grad()
+ def evaluate(model,cache,micro=64,export=False):
+     model.eval();counts=[];loss_total=0.;predictions=[]
++    bce_total=0.;soft_dice_total=0.;wrong_n=0;wrong_confidence=0.;wrong99=0
+     n=len(cache['target'])
+     for begin in range(0,n,micro):
+         ids=torch.arange(begin,min(begin+micro,n),device='cuda')
+@@ -183,9 +190,19 @@
+         target=cache['target'][ids]
+         loss_total+=float(segmentation_loss(logits,target))*len(ids)
+         prob=logits.float().sigmoid();pred=prob>=.5;truth=target>=.5
++        bce=torch.nn.functional.binary_cross_entropy_with_logits(logits.float(),target.float())
++        soft_dice=1-((2*(prob*target).sum((1,2,3))+1)/(prob.sum((1,2,3))+target.sum((1,2,3))+1)).mean()
++        bce_total+=float(bce)*len(ids);soft_dice_total+=float(soft_dice)*len(ids)
++        wrong=pred!=truth;confidence=torch.where(pred,prob,1-prob)
++        wrong_n+=int(wrong.sum());wrong_confidence+=float(confidence[wrong].double().sum())
++        wrong99+=int((wrong&(confidence>.99)).sum())
+         counts.append(torch.stack([(pred&truth).sum((1,2,3)),(pred&~truth).sum((1,2,3)),(~pred&truth).sum((1,2,3)),(~pred&~truth).sum((1,2,3))],1).cpu().numpy())
+         if export:predictions.append(prob[:,0].cpu().numpy())
+     c=np.concatenate(counts);result=aggregate_counts(*c.T);result['loss']=loss_total/n
++    assert abs(result['loss']-(bce_total+soft_dice_total)/n)<2e-6
++    result['diagnostics']=dict(bce_soft=bce_total/n,soft_dice_loss=soft_dice_total/n,
++        wrong_pixels=wrong_n,wrong_mean_confidence=wrong_confidence/max(wrong_n,1),
++        wrong_confidence_gt99_fraction=wrong99/max(wrong_n,1))
+     model.train()
+     return result,np.concatenate(predictions) if export else None
+ 
+@@ -195,7 +212,7 @@
+     memory_limit=torch.cuda.get_device_properties(0).total_memory-1.2*GIB
+     for micro in (64,48,32,24,16,8,4):
+         try:
+-            model=models['finetune34'];model.load_state_dict(initial['finetune34']);opt=optimizer(model)
++            model=models['drop_path'];model.load_state_dict(initial['drop_path']);opt=optimizer(model)
+             torch.cuda.empty_cache();torch.cuda.reset_peak_memory_stats();start=time.perf_counter()
+             for _ in range(2): update(model,opt,cache,torch.arange(64,device='cuda'),micro,check=True)
+             torch.cuda.synchronize();peak=torch.cuda.max_memory_allocated()
+@@ -209,7 +226,7 @@
+             records.append(dict(micro=micro,passed=False,error='CUDA OOM'))
+             try: del opt
+             except UnboundLocalError: pass
+-            models['finetune34'].zero_grad(set_to_none=True)
++            models['drop_path'].zero_grad(set_to_none=True)
+             gc.collect();torch.cuda.empty_cache()
+     if chosen is None:raise RuntimeError('No safe microbatch')
+     for n,m in models.items():m.load_state_dict(initial[n]);m.zero_grad(set_to_none=True);opts[n]=optimizer(m)
+@@ -222,15 +239,35 @@
+     before={n:cpu_tree(m.state_dict()) for n,m in models.items()}
+     ids=torch.arange(8,device='cuda');images,_=data.batch('train',ids)
+     checks={}
++    for model in models.values(): model.eval()
+     with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):
+-        _,official=models['frozen'].encoder(images)
+-        f1,f2,mid=models['frozen'].prefix(images);f3,f4=models['frozen'].suffix(mid)
++        _,official=models['control'].encoder(images)
++        f1,f2,mid=models['control'].prefix(images);f3,f4=models['control'].suffix(mid)
+         checks['official_feature_max_abs']=[float((a-b).abs().max()) for a,b in zip(official,[f1,f2,f3,f4])]
+         assert all(v==0 for v in checks['official_feature_max_abs'])
+-        a=models['frozen'](images);b=models['finetune34'](images)
++        a=models['control'](images);b=models['drop_path'](images)
+         assert torch.equal(a,b);checks['initial_logits_identical']=True
+-    checks['initial_probe_hash']=tensor_hash(models['frozen'].probe)
+-    assert checks['initial_probe_hash']==tensor_hash(models['finetune34'].probe)
++    checks['initial_probe_hash']=tensor_hash(models['control'].probe)
++    assert checks['initial_probe_hash']==tensor_hash(models['drop_path'].probe)
++    for name,model in models.items():
++        model.train()
++        entries=[dict(name=k,training=v.training,prob=v.drop_prob)
++                 for k,v in model.encoder.named_modules() if type(v).__name__=='DropPath']
++        late=[x for x in entries if x['name'].startswith(('model.levels.2.','model.levels.3.'))]
++        assert len(late)==12
++        assert sum(x['training'] for x in late)==(12 if name=='drop_path' else 0)
++        assert all(not x['training'] for x in entries if x not in late)
++        assert all(not b.training for b in model.encoder.modules() if isinstance(b,nn.modules.batchnorm._BatchNorm))
++        with torch.no_grad(),torch.autocast('cuda',dtype=torch.bfloat16):
++            state_rng=rng();a=model(images);b=model(images)
++            if name=='drop_path': assert not torch.equal(a,b),'DropPath inactive in training'
++            else: assert torch.equal(a,b),'Unexpected stochastic control behavior'
++            set_rng(state_rng);replayed=model(images)
++            assert torch.equal(a,replayed),'Stochastic forward RNG replay failed'
++            model.eval();a=model(images);b=model(images);assert torch.equal(a,b)
++        assert all(not x.training for x in model.encoder.modules() if type(x).__name__=='DropPath')
++        model.train()
++        checks[name+'_mode_policy']=dict(drop_paths=entries,evaluation_deterministic=True,train_rng_replay_exact=True)
+     for name,model in models.items():
+         h=frozen_hash(model)
+         loss,norms=update(model,opts[name],cache,torch.arange(64,device='cuda'),micro,check=True)
+@@ -301,14 +338,14 @@
+             basic,probs=evaluate(model,cache,micro,export=True)
+             with ThreadPoolExecutor(8) as pool:rows=list(pool.map(lambda pair:boundary_row(pair[0]>=.5,pair[1]),zip(probs,gt)))
+             for sid,row in zip(data.ids['val'],rows):row.update(id=sid,model=name,criterion=criterion)
+-            full=summarize_rows(rows);full.update(epoch=state['epoch'],loss=basic['loss']);summary[name+'/'+criterion]=full
++            full=summarize_rows(rows);full.update(epoch=state['epoch'],loss=basic['loss'],diagnostics=basic['diagnostics']);summary[name+'/'+criterion]=full
+             all_rows.extend(rows)
+             if criterion=='best_dice':
+                 best_probs[name]=probs;np.save(out/(name+'_probabilities.npy'),probs)
+             dump(out/f'{name}_{criterion}_metrics.json',full)
+     with (out/'per_image.csv').open('w',newline='') as f:
+         writer=csv.DictWriter(f,fieldnames=list(all_rows[0]));writer.writeheader();writer.writerows(all_rows)
+-    base=best_probs['frozen']>=.5;fine=best_probs['finetune34']>=.5
++    base=best_probs['control']>=.5;fine=best_probs['drop_path']>=.5
+     diffs=np.array([boundary_row(f,g)['dice']-boundary_row(b,g)['dice'] for f,b,g in zip(fine,base,gt)])
+     generator=np.random.default_rng(42);boot=np.array([diffs[generator.integers(len(diffs),size=len(diffs))].mean() for _ in range(2000)])
+     summary['paired']=dict(macro_dice_delta=float(diffs.mean()),image_bootstrap95=np.percentile(boot,[2.5,97.5]).tolist(),
+@@ -347,25 +384,27 @@
+     dump(out/'active_partition.json',partition)
+     for row in json.loads((HF.parent/'source_download.json').read_text())['files']:
+         assert digest(HF/row['path'])==row['sha256'],('Official source mismatch',row['path'])
+-    source_paths=[ROOT/'train.py',ROOT/'PROTOCOL.md',ROOT/'test_protocol.json',ROOT/'identity_partition.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
++    source_paths=[ROOT/'train.py',ROOT/'analyze.py',ROOT/'run_pipeline.py',ROOT/'PROTOCOL.md',ROOT/'test_protocol.json',ROOT/'identity_partition.json',PROJECT/'evaluation.py',PROJECT/'stage1_visual/data.py',PROJECT/'stage1_visual/models.py',PROJECT/'stage2_decoder/models.py',PROJECT/'stage3_confirmation/models.py',PROJECT/'stage3_confirmation/data.py']+list(HF.glob('*.py'))+[HF/'config.json']
+     provenance={str(p.relative_to(PROJECT)):digest(p) for p in source_paths}
+     config=dict(seed=42,epochs=2 if args.smoke else 300,effective_batch=64,encoder_lr=.0001,decoder_lr=.001,weight_decay=.01,
+       selection='max_validation_macro_dice_earliest_tie',data_manifest_sha256=digest(PROJECT/'stage1_visual/data_manifest.json'),
+-      weights_sha256=WEIGHT_SHA,sources=provenance,encoder_eval_both=True,precision='BF16_autocast_FP32_loss',
++      weights_sha256=WEIGHT_SHA,sources=provenance,encoder_mode_policy='eval_except_candidate_late_DropPath_during_training',drop_path_rates='unchanged_pretrained_schedule_0.070588_to_0.2',precision='BF16_autocast_FP32_loss',
+       deterministic_algorithms=True,cublas_workspace_config=os.environ['CUBLAS_WORKSPACE_CONFIG'],
+       partition_counts=partition['counts'],partition='image_identity_screened_v1')
+     if (out/'config.json').exists():assert json.loads((out/'config.json').read_text())==config
+     else:dump(out/'config.json',config)
+     dump(out/'environment.json',environment())
+-    models={name:System(name=='finetune34').cuda() for name in NAMES}
+-    assert tensor_hash(models['frozen'].probe)==tensor_hash(models['finetune34'].probe)
++    if not args.smoke:
++        assert json.loads((ROOT/'smoke/RESUME_AUDIT.json').read_text())['passed']
++    models={name:System(finetune=True,stochastic_depth=name=='drop_path').cuda() for name in NAMES}
++    assert tensor_hash(models['control'].probe)==tensor_hash(models['drop_path'].probe)
+     opts={name:optimizer(model) for name,model in models.items()}
+     frozen_before={n:frozen_hash(m) for n,m in models.items()}
+     dump(out/'parameters.json',{n:dict(total=sum(p.numel() for p in m.parameters()),trainable=sum(p.numel() for p in m.parameters() if p.requires_grad),encoder_trainable=sum(p.numel() for p in m.encoder.parameters() if p.requires_grad),probe_hash=tensor_hash(m.probe)) for n,m in models.items()})
+     train_cache=cache_new(len(data.ids['train']));val_cache=cache_new(len(data.ids['val']))
+     print('BUILDING_FROZEN_FEATURE_CACHES',flush=True)
+-    fill_cache(models['frozen'],data,'val',val_cache)
+-    fill_cache(models['frozen'],data,'train',train_cache)
++    fill_cache(models['control'],data,'val',val_cache)
++    fill_cache(models['control'],data,'train',train_cache)
+     if args.smoke:
+         micro=calibrate(models,opts,train_cache,out)
+         preflight(models,opts,data,train_cache,micro,out)
+@@ -389,7 +428,7 @@
+     signal.signal(signal.SIGTERM,stop_handler);signal.signal(signal.SIGINT,stop_handler)
+     for epoch in range(start,config['epochs']+1):
+         tick=time.perf_counter();order,matrices=data.geometry(epoch)
+-        fill_cache(models['frozen'],data,'train',train_cache,matrices)
++        fill_cache(models['control'],data,'train',train_cache,matrices)
+         for n in NAMES:models[n].train();lr_epoch(opts[n],epoch)
+         losses={n:0. for n in NAMES};gradients={}
+         torch.cuda.reset_peak_memory_stats()

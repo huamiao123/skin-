@@ -1,0 +1,36 @@
+{
+  "kind": "diagnostic_linear_coverage_probe",
+  "created_utc": "2026-11-10T02:49:13.687856+00:00",
+  "training_views": "original_training_images_only",
+  "regularization": 0.0001,
+  "max_lbfgs_iterations": 1000,
+  "selection": "training_gradient_convergence_only",
+  "checkpoint_selection": "previously_selected_best_dice",
+  "points": [
+    "encoder_f3",
+    "encoder_f4",
+    "decoder_coarse",
+    "decoder_final"
+  ],
+  "input_size": 256,
+  "coverage_size": 8,
+  "encoding_batch": 64,
+  "n_train": 1886,
+  "n_val": 762,
+  "test_evaluated": false,
+  "area_cutpoints": [
+    4309.5,
+    11763.0,
+    23343.5
+  ],
+  "source_sha256": {
+    "stage26_coverage_probes/run.py": "2949f0f75e939d5b060088be8ea43ad71eaf51461c508364f1d479f29964af3b",
+    "stage26_coverage_probes/PROTOCOL.txt": "2a8502d5d5242b87622777e4e2c346744e66e98906b4898bee9e3d5d61cc4360",
+    "stage22_partial_finetune/train.py": "773e91444eb6978d8acbf97b4348e2ab934e3ef7e19bbd5bce9ad3507683830f",
+    "stage1_visual/data.py": "3cd157300310ce8fe8850a5f8ceb702d8931b18584d3c65332f76dd71e815c9c",
+    "stage3_confirmation/data.py": "51e92937ab7b5ad85e615c018d96a24fe400e8d3ff685a770c5518b60e9cbfbb",
+    "stage2_decoder/models.py": "97b0a01be7138de7976d6d221436a17aad90ecd16cf8dcc830dc0bac1098ec2c",
+    "stage3_confirmation/models.py": "c4bcb5d9d4e9599e6ba0f89406ab17f05153b225bd5d20b08cd631190fc520ea",
+    "evaluation.py": "0c94d3fb67d9ce6d749e7fe44c75058c8f44328e6c56bbdaed3dd81541b57223"
+  }
+}

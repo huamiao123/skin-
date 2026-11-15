@@ -1,0 +1,84 @@
+{
+  "previous_stages_complete": true,
+  "selected_encoder_lr": 0.0001,
+  "decoder_lr": 0.001,
+  "training_seed": 43,
+  "stage22_best": {
+    "metric_version": "foreground_v1_20261016",
+    "n": 762,
+    "macro": {
+      "dice": 0.8876332753278046,
+      "iou": 0.8151129560727525,
+      "precision": 0.9183664580887406,
+      "recall": 0.891396415112459,
+      "boundary_f1": 0.3460240284878818,
+      "hd95_pixels": 15.261972404337174,
+      "hd95_diagonal": 0.04215564133354989
+    },
+    "pooled": {
+      "dice": 0.8922733093919195,
+      "iou": 0.8054995126118257,
+      "precision": 0.9229362695733968,
+      "recall": 0.8635822826972857
+    },
+    "prec_at": {
+      "0.5": 0.9461942257217848,
+      "0.6": 0.916010498687664,
+      "0.7": 0.8464566929133859,
+      "0.8": 0.6902887139107612,
+      "0.9": 0.33989501312335957
+    },
+    "threshold_jaccard_065": 0.7627978246459917,
+    "counts": {
+      "tp": 10425142,
+      "fp": 870483,
+      "fn": 1646831,
+      "tn": 36995976
+    },
+    "epoch": 18,
+    "loss": 0.3159632423105515
+  },
+  "stage23_best": {
+    "metric_version": "foreground_v1_20261016",
+    "n": 762,
+    "macro": {
+      "dice": 0.8836073261343957,
+      "iou": 0.808571057998027,
+      "precision": 0.9096556329933188,
+      "recall": 0.89354216733655,
+      "boundary_f1": 0.32670953092927907,
+      "hd95_pixels": 15.973198840507997,
+      "hd95_diagonal": 0.0441201453803293
+    },
+    "pooled": {
+      "dice": 0.8913263641321985,
+      "iou": 0.8039573913332241,
+      "precision": 0.9133122330483937,
+      "recall": 0.8703741302270971
+    },
+    "prec_at": {
+      "0.5": 0.9396325459317585,
+      "0.6": 0.910761154855643,
+      "0.7": 0.8359580052493438,
+      "0.8": 0.6758530183727034,
+      "0.9": 0.30971128608923887
+    },
+    "threshold_jaccard_065": 0.7532979755158232,
+    "counts": {
+      "tp": 10507133,
+      "fp": 997293,
+      "fn": 1564840,
+      "tn": 36869166
+    },
+    "epoch": 18,
+    "loss": 0.3096960032080102
+  },
+  "frozen_control_reproduced_across_all_300_epochs": true,
+  "rationale": "Lower encoder LR did not improve aggregate or boundary metrics; retain 1e-4 and assess whether the paired finetuning benefit repeats with a new seed before module claims.",
+  "planned_analysis": "Within-seed frozen vs finetune deltas for seeds42 and43; report both. Inspect large-lesion coverage and severe regressions. Do not select a winning seed.",
+  "source_summary_sha256": {
+    "stage22_partial_finetune": "4a364483a05d8b1d96aa962060292c496f12c68ad790e7e6f38a9a0aac11f1d6",
+    "stage23_encoder_lr3e5": "6afa9f5bfdd6a7fab970c273ef351cc759d8021d3ce2680713ff04a2f9dfeb59"
+  },
+  "test_evaluated": false
+}

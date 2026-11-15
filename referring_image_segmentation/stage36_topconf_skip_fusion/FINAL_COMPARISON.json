@@ -1,0 +1,120 @@
+{
+  "primary_comparison": "Attention minus paired concat control; full module minus same4090 Swin",
+  "paired": {
+    "validation": {
+      "uct_concat_minus_swin_control": {
+        "macro_dice_delta": 0.0008520897265613174,
+        "image_bootstrap95": [
+          -0.0026341818135613942,
+          0.00454131904245007
+        ],
+        "improved": 420,
+        "worsened": 342,
+        "gains_over5pp": 51,
+        "losses_over5pp": 49,
+        "net_reduced_fn": 64746,
+        "net_added_fp": 72507,
+        "severe_undercoverage": [
+          22,
+          26
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_uct_concat": {
+        "macro_dice_delta": -1.4447511034723105e-05,
+        "image_bootstrap95": [
+          -0.003042887473955573,
+          0.0032264317522632535
+        ],
+        "improved": 355,
+        "worsened": 407,
+        "gains_over5pp": 40,
+        "losses_over5pp": 48,
+        "net_reduced_fn": 53598,
+        "net_added_fp": 23727,
+        "severe_undercoverage": [
+          26,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": 0.0008376422155265947,
+        "image_bootstrap95": [
+          -0.0021621870002751426,
+          0.004325330474939703
+        ],
+        "improved": 395,
+        "worsened": 366,
+        "gains_over5pp": 36,
+        "losses_over5pp": 51,
+        "net_reduced_fn": 118344,
+        "net_added_fp": 96234,
+        "severe_undercoverage": [
+          22,
+          19
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    },
+    "test": {
+      "uct_concat_minus_swin_control": {
+        "macro_dice_delta": -0.0054593918481508534,
+        "image_bootstrap95": [
+          -0.008866423862771094,
+          -0.001893038528381475
+        ],
+        "improved": 370,
+        "worsened": 497,
+        "gains_over5pp": 40,
+        "losses_over5pp": 69,
+        "net_reduced_fn": 156558,
+        "net_added_fp": 266053,
+        "severe_undercoverage": [
+          19,
+          16
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_uct_concat": {
+        "macro_dice_delta": 0.0004089056459511792,
+        "image_bootstrap95": [
+          -0.0022221937914505122,
+          0.0030618305109814782
+        ],
+        "improved": 473,
+        "worsened": 394,
+        "gains_over5pp": 49,
+        "losses_over5pp": 41,
+        "net_reduced_fn": 53334,
+        "net_added_fp": 122004,
+        "severe_undercoverage": [
+          16,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      },
+      "uct_cca_minus_swin_control": {
+        "macro_dice_delta": -0.005050486202199674,
+        "image_bootstrap95": [
+          -0.00872772008198286,
+          -0.0015942825914222766
+        ],
+        "improved": 411,
+        "worsened": 456,
+        "gains_over5pp": 32,
+        "losses_over5pp": 69,
+        "net_reduced_fn": 209892,
+        "net_added_fp": 388057,
+        "severe_undercoverage": [
+          19,
+          15
+        ],
+        "note": "Single seed; paired image bootstrap is exploratory, not patient/seed uncertainty."
+      }
+    }
+  },
+  "seed": 42,
+  "test_n_per_arm": 867,
+  "complete": true
+}
