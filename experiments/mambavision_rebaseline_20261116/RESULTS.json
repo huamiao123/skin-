@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "snapshot_utc": "2026-11-17T08:09:20.629799+00:00",
+  "threshold": 0.5,
+  "selection": "validation macro Dice; test not used for selection",
+  "test_exposed": true,
+  "patient_disjointness_verified": false,
+  "results": [
+    {
+      "stage": "stageA_20261117",
+      "arm": "A-64-noaux",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8936031394068088,
+      "test_macro_dice": 0.8962862635075022,
+      "checkpoint_sha256": "92236dd0af3234ae7b9ec70aeea02351f620fa44e07b990dec6b3b733e805373",
+      "training_gpu": "NVIDIA GeForce RTX 3090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageA_20261117",
+      "arm": "B-512-noaux",
+      "best_epoch": 53,
+      "validation_macro_dice": 0.8890384512334814,
+      "test_macro_dice": 0.8871059988507587,
+      "checkpoint_sha256": "39bd0551f8f9d900417478dea056d26ce998bf2d8048295e7977a91b91f90594",
+      "training_gpu": "NVIDIA GeForce RTX 3090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageA_20261117",
+      "arm": "C-512-aux",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8889857886721197,
+      "test_macro_dice": 0.8940138735355075,
+      "checkpoint_sha256": "4b1f7416cc2948516d362eab6f4524f38e979f1259f90a730bbd2c55f2fdc907",
+      "training_gpu": "NVIDIA GeForce RTX 4090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageB_color_20261117",
+      "arm": "control",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8916949025839622,
+      "test_macro_dice": 0.8959189853547246,
+      "checkpoint_sha256": "694131e5c3e49be262d79bb9f9f4a2512cdcdd9b8d9278be3a51fdb7b2557734",
+      "training_gpu": "NVIDIA GeForce RTX 4090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageB_color_20261117",
+      "arm": "color",
+      "best_epoch": 56,
+      "validation_macro_dice": 0.8918706633675215,
+      "test_macro_dice": 0.8895489561337525,
+      "checkpoint_sha256": "351e76bb5d3b683a279e55dbccb7351df9f17ed8a34fecd0aa7adf253829b4f6",
+      "training_gpu": "NVIDIA GeForce RTX 4090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageB_scale_20261117",
+      "arm": "scale",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8903864514102733,
+      "test_macro_dice": 0.8896706669628263,
+      "checkpoint_sha256": "513fb0f7dd13763c9a3ecbc65bf4365f0248b709c3cfc5d080b37a621dde0f07",
+      "training_gpu": "NVIDIA GeForce RTX 4090",
+      "test_n": 867,
+      "validation_n": 762
+    },
+    {
+      "stage": "stageB_headlr_20261117",
+      "arm": "headlr3e4",
+      "best_epoch": 39,
+      "validation_macro_dice": 0.8892386555632905,
+      "test_macro_dice": 0.8967454139709339,
+      "checkpoint_sha256": "3550d7bfb82d13e0d91c6bfa4ec2c758912dd1c147a4f5a4f6bcce021e982a96",
+      "training_gpu": "NVIDIA GeForce RTX 4090",
+      "test_n": 867,
+      "validation_n": 762
+    }
+  ],
+  "excluded_incomplete": [
+    "stageB_enclr_20261117"
+  ]
+}
