@@ -1,0 +1,16 @@
+Frozen-feature diagnostic readouts; all scores are per-image macroDice.
+Key / best epoch / validationDice% / testDice% / trained parameters
+f1_direct / 100 / 53.9247 / 54.0381 / 97
+f1_linear32 / 75 / 62.4618 / 65.7533 / 3105
+f1_nonlinear32 / 75 / 63.6351 / 66.3741 / 3105
+f2_direct / 100 / 66.7878 / 69.8216 / 193
+f2_linear32 / 42 / 70.2145 / 72.8890 / 6177
+f2_nonlinear32 / 75 / 70.8281 / 73.0093 / 6177
+f3_direct / 5 / 87.2923 / 87.2622 / 385
+f3_linear32 / 32 / 87.3045 / 87.6768 / 12321
+f3_nonlinear32 / 48 / 87.5657 / 87.7452 / 12321
+f4_direct / 33 / 83.4765 / 86.0300 / 769
+f4_linear32 / 62 / 83.5220 / 86.1153 / 24609
+f4_nonlinear32 / 40 / 85.5914 / 86.3769 / 24609
+
+Encoder fixed to originalC best39. Each head selected on validation only. Single seed42; six finite paired training views. Linear32 and nonlinear32 share initialization and parameter budget within each layer. Direct1x1 heads are smaller. No claim that low readout accuracy proves missing information. Labels, splits and original results unchanged.

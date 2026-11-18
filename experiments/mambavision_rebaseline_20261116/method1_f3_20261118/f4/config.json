@@ -1,0 +1,23 @@
+{
+  "arm": "f4",
+  "device": "NVIDIA GeForce RTX 4090",
+  "seed": 42,
+  "physical_batch": 64,
+  "effective_batch": 64,
+  "epochs": 100,
+  "threshold": 0.5,
+  "optimizer": "AdamW decoder 0.001 / encoder 0.0001, wd .01, cosine100 floor .01; per-group clip 1",
+  "train_n": 1886,
+  "val_n": 762,
+  "stage3_4_tune": true,
+  "shared_coarse_loss_weight": 0.4,
+  "head_parameters": 277571,
+  "partition_sha256": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+  "source_hashes": {
+    "decoder.py": "240ac945e69d40bb4e5716ca5c77fbc178c5ffb078a307e52fc996e6fd40384c",
+    "train.py": "a569391585efc9ec74cfa86df6432aa42d2d9eeddef50b7e0c89bf9ee8f87fc1",
+    "model.py": "f3faf9d62307bfbbeaac61b88b2f578688de27b1976fc675ca17f9ff578562f4",
+    "train_stageB_color.py": "e23b8184b17565af581798856a4ccadcf2e9ea0d9e6524918b19e456d3b9225f"
+  },
+  "selection": "highest validation per-image foreground Dice, earliest tie; no test access"
+}

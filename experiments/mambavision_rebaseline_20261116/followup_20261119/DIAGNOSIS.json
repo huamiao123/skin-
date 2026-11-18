@@ -1,0 +1,166 @@
+{
+  "at_utc": "2026-11-17T09:33:54.161865+00:00",
+  "validation_diagnosis_only": true,
+  "test_predictions_read_for_diagnosis": false,
+  "paired_models": 8,
+  "validation_n": 762,
+  "fixed_weight_sensitivity_models": 2,
+  "sensitivity_modes_per_model": 7,
+  "source_pair_cases": 4,
+  "documented_noisy_cases": {
+    "val/511": "ISIC_0015251",
+    "val/536": "ISIC_0015353"
+  },
+  "findings": [
+    {
+      "hypothesis": "Most lesions share a uniform area bias",
+      "evidence": "Control Q1 predicted/GT area mean1.374,median1.036; Q4mean0.939,median0.998.",
+      "conclusion": "Tail cases strongly affect means; do not route or uniformly enlarge/shrink every case."
+    },
+    {
+      "hypothesis": "A global threshold adjustment is sufficient",
+      "evidence": "Control validation threshold scan gain0.0156pp; C512aux gain0.0465pp in fixed0.2..0.8 scan.",
+      "conclusion": "This limited global scan does not explain the observed failure modes. No calibrated threshold adopted."
+    },
+    {
+      "hypothesis": "Only boundary refinement is needed",
+      "evidence": "Control50.34%ofFN are>8px insideGT under original distance; zero-padding convention still48.29%.73.82%ofFN have probability<0.1.",
+      "conclusion": "Substantial internal/confident errors; final predictions alone do not locate encoder vs decoder cause."
+    },
+    {
+      "hypothesis": "Adding more global context is necessarily needed",
+      "evidence": "f4 zeroing strongly changes lightweight model; preserving its spatial mean causes much smaller damage. PPM zeroing changes A+0.0097pp,C-0.1512pp.",
+      "conclusion": "Current dependence is measurable but interventions are out of distribution; no causal proof of harmful fusion. Test retrained PPM removal first."
+    },
+    {
+      "hypothesis": "Worst masks are caused by mismatched local files",
+      "evidence": "Four selected cases match official photos r>0.999 and exact Bicubic-resized official masks.",
+      "conclusion": "No pairing error found in these4. Two cases are documented noisy labels in prior literature; cannot extrapolate all data are correct or wrong."
+    },
+    {
+      "hypothesis": "Noisy labels explain all unsuccessful modifications",
+      "evidence": "Only2 literature-documented examples established here; original complete-set metrics remain.",
+      "conclusion": "Unsupported. Do not exclude cases to manufacture improvement."
+    }
+  ],
+  "references": [
+    {
+      "title": "Skin Lesion Segmentation in Dermoscopic Images with Noisy Data",
+      "doi": "10.1007/s10278-023-00819-8",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10407008/",
+      "figure": "3",
+      "scope": "Study uses ISIC2017; the verified same imageIDs are present in the official ISIC2018 Task1 training archive. Not a quality estimate of our whole dataset."
+    },
+    {
+      "title": "Official ISIC challenge datasets",
+      "url": "https://challenge.isic-archive.com/data/"
+    }
+  ],
+  "ongoing_experiment": "C512-noPPM;100epochs then fixed-best867test",
+  "structural_caveat": "PPM removal reduces parameters; not a capacity-matched pooling effect or claimed novel method.",
+  "all_old_labels_scores_and_checkpoints_unchanged": true,
+  "full_mask_provenance": {
+    "exact_bicubic_unique_matches": 2694,
+    "total": 2694,
+    "image_pair_cases_verified": 4,
+    "all_image_pairs_verified": false
+  },
+  "legacy_split_provenance": {
+    "proof": {
+      "train_exactly_first1886_sorted_official_training": true,
+      "legacy_val_first708_exactly_remaining_official_training": true,
+      "legacy_val_last100_exactly_official_validation": true,
+      "actual_legacy_counts": {
+        "train": 1886,
+        "val": 808
+      },
+      "random_split": false,
+      "caveat": "This source-order split is distinct from common randomized partitions; it is not evidence of leakage by itself. Keep historical results and current diagnostic run unchanged. Patient independence not established."
+    },
+    "validation_subgroups": {
+      "A64": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8935233675228734
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8942220591959633
+        }
+      },
+      "B512": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8897328364200849
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8836509799581096
+        }
+      },
+      "C512aux": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8892376776103491
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8870314779444802
+        }
+      },
+      "control": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8919143406553498
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8899923658231965
+        }
+      },
+      "color": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8925152490110868
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8868695678571016
+        }
+      },
+      "scale": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8908774341904375
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8865771022538269
+        }
+      },
+      "headlr": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8887076765850662
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8933583200495147
+        }
+      },
+      "enclr": {
+        "Training": {
+          "n": 675,
+          "macro_dice": 0.8860407729986834
+        },
+        "Validation": {
+          "n": 87,
+          "macro_dice": 0.8860667333577974
+        }
+      }
+    },
+    "validation_only": true,
+    "test_read": false,
+    "no_partition_change": true
+  }
+}
