@@ -1,0 +1,49 @@
+{
+  "reference_rows_checked": 867,
+  "trained_arms": [
+    "local16"
+  ],
+  "test_inference_arms": [
+    "local16"
+  ],
+  "all": {
+    "n": 867,
+    "dice": {
+      "uper16": 0.8984177984434405,
+      "local16": 0.8942547987228472
+    },
+    "paired": {
+      "local16_minus_uper16": {
+        "delta": -0.004162999720593247,
+        "paired_group_bootstrap95": [
+          -0.007432506434435127,
+          -0.0005500454838243163
+        ],
+        "groups": 734,
+        "improved": 350,
+        "worse": 517,
+        "ties": 0
+      }
+    }
+  },
+  "filtered": {
+    "n": 814,
+    "dice": {
+      "uper16": 0.896684345431827,
+      "local16": 0.8923611358275143
+    },
+    "paired": {
+      "local16_minus_uper16": {
+        "delta": -0.004323209604312587,
+        "paired_group_bootstrap95": [
+          -0.007858056853130648,
+          -0.0007287729399419956
+        ],
+        "groups": 697,
+        "improved": 331,
+        "worse": 483,
+        "ties": 0
+      }
+    }
+  }
+}

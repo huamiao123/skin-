@@ -1,0 +1,66 @@
+{
+  "scores": {
+    "UPer64": {
+      "decoder_parameters": 1089089,
+      "best": {
+        "epoch": 39,
+        "train_mean": 0.9588911836781029,
+        "development_mean": 0.8910213278206355,
+        "gap_pp": 6.786985585746741,
+        "checkpoint_sha": "48572696cce9b8aa8c59ca9662af41a7c62960195b5da8c309d5a691b8e6a06e"
+      },
+      "last": {
+        "epoch": 100,
+        "train_mean": 0.9752630349441141,
+        "development_mean": 0.8862692981349974,
+        "gap_pp": 8.89937368091167,
+        "checkpoint_sha": "203317fd6258ac0cd8af4a87f8f0a0c8d03c9d0028e7c26b74ac71207a476b5f"
+      }
+    },
+    "SDI": {
+      "decoder_parameters": 1240961,
+      "best": {
+        "epoch": 39,
+        "train_mean": 0.9597292793300051,
+        "development_mean": 0.8936470497225316,
+        "gap_pp": 6.608222960747345,
+        "checkpoint_sha": "896c002c35d2005ef6737239e613ec49a83831b4c9c98e745e75ef2ef667e609"
+      },
+      "last": {
+        "epoch": 100,
+        "train_mean": 0.9754160598355504,
+        "development_mean": 0.8879126358315614,
+        "gap_pp": 8.750342400398893,
+        "checkpoint_sha": "ffad0eb8a722ea6635b2597df16c1e6db340fd4c7b7bf449ab5bae02a67944a0"
+      }
+    },
+    "SwinLocal": {
+      "decoder_parameters": 522692,
+      "best": {
+        "epoch": 10,
+        "train_mean": 0.9324906643468358,
+        "development_mean": 0.8888807013847083,
+        "gap_pp": 4.360996296212749,
+        "checkpoint_sha": "fc3075776e771aea71ac21538517b57a12693c649a010b6b8a86f1b07e36c6a4"
+      },
+      "last": {
+        "epoch": 100,
+        "train_mean": 0.9783822067388479,
+        "development_mean": 0.8834076615508618,
+        "gap_pp": 9.497454518798609,
+        "checkpoint_sha": "c678f9825a9f1ba810d13f816ddc9929aad8e764c1d834cde1951793ca97413e"
+      }
+    }
+  },
+  "train": 1886,
+  "development": 762,
+  "test_images_used": 0,
+  "windows": [
+    16,
+    8
+  ],
+  "normal_image_orientation": true,
+  "metric": "per-image foreground Dice with threshold 0.5, common eval mode; best vs epoch 100",
+  "selection": "checkpoints already locked by prior experiment; one seed; development used in best epoch selection",
+  "source_sha": "fd90afff42bcf9392d1c78972a4b5af63c48d102d245a9ccfe5d2edd09dc9266"
+}

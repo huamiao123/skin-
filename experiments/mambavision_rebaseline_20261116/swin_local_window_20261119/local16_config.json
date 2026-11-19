@@ -1,0 +1,27 @@
+{
+  "arm": "local16",
+  "seed": 42,
+  "epochs": 100,
+  "batch": 64,
+  "image_size": 256,
+  "threshold": 0.5,
+  "training_images": 1886,
+  "validation_images": 762,
+  "auxiliary_weight": 0,
+  "selection": "validation mean per-image foreground Dice, earliest tie",
+  "encoder_trainable_stages": [
+    3,
+    4
+  ],
+  "encoder_weight_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+  "head_parameters": 522692,
+  "source_hashes": {
+    "/home/featurize/work/mambavision_seg_rebaseline_20261116/uper64_feature_audit_20261119/train_feature.py": "fd0b6116e802492394be31dab4f9d957d391c6c311e0cf116c096f1a40264acd",
+    "/home/featurize/work/mambavision_seg_rebaseline_20261116/uper64_feature_audit_20261119/feature_decoder.py": "25b39c44546101755c9949fb67180fe55e5a527939ae4aa5a253dcbcfac1abb4",
+    "/home/featurize/work/mambavision_seg_rebaseline_20261116/src/model.py": "f3faf9d62307bfbbeaac61b88b2f578688de27b1976fc675ca17f9ff578562f4",
+    "/home/featurize/work/mambavision_seg_rebaseline_20261116/src/train_stageB_color.py": "e23b8184b17565af581798856a4ccadcf2e9ea0d9e6524918b19e456d3b9225f",
+    "/home/featurize/work/mambavision_seg_rebaseline_20261116/method1_f3_20261118/train.py": "12ae41dedc5ffb23be0bec454f0c2baed5aabb45a2f999ddcf972f0b117c089a",
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage45_upernet_decoder/train.py": "f031000f75cf3476f06639ecad3b163d0acff37d1d7bcda539711b18c88cadd8",
+    "/home/waas/mambavision_stage22/source/referring_image_segmentation/stage45_upernet_decoder/identity_partition.json": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126"
+  }
+}

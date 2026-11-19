@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "arms": [
+    "local16"
+  ],
+  "encoder_windows": [
+    16,
+    8
+  ],
+  "training_images": 1886,
+  "validation_images": 762,
+  "test_images": 867,
+  "group_filtered": 814,
+  "epochs": 100,
+  "cosine_horizon": 100,
+  "effective_and_physical_batch": 64,
+  "threshold": 0.5,
+  "model": "original Stage29 System(local_fusion), pretrained MambaVision-S; frozen stem and first two stages, train late stages in eval mode",
+  "decoder": "Original per-stage adapters, SwinPixelDecoder, original three local-route ResidualFusion modules",
+  "selection": "first highest validation per-image Dice of each independently trained arm",
+  "comparison": "Aligned Swin + local fusion vs previously verified 16/8 UPer64 per-image values",
+  "source_files": {
+    "stage29_context_fusion/train.py": "cd173f5483e099c6a3aa0e0c254fd5cfec9470196f4e6cf8d7f76de37da0a403",
+    "stage29_context_fusion/fusion.py": "efea23faa0e4128c9c927e7f4eb38b1ab3a6547ebc4491af7b6c382f764c2fdf",
+    "stage29_context_fusion/evaluate.py": "d122390dd7bb5c9eebe121ee71aa8521918c3d501c7b87c42e5cb956afaaa04c",
+    "stage29_context_fusion/run_pipeline.py": "79caf7d660f78f53eb2b169f1c87c276813655a5bb319a252a491a62d50f09bc",
+    "stage29_context_fusion/PROTOCOL.json": "1c81101cee8447c3053d3257614f26c50168fdb289889c958046e619e1cc427b",
+    "stage29_context_fusion/identity_partition.json": "6345a6264b072d99ee3e1ad9d20c8c125780a351533731b6e567417e68925126",
+    "stage28_drop_path/train.py": "0966cdf88612a399105e5b6642662ce2c7c12c6170a76d0d27ca52c5655a4acb",
+    "evaluation.py": "0c94d3fb67d9ce6d749e7fe44c75058c8f44328e6c56bbdaed3dd81541b57223",
+    "stage1_visual/data.py": "3cd157300310ce8fe8850a5f8ceb702d8931b18584d3c65332f76dd71e815c9c",
+    "stage1_visual/models.py": "b9fc9e9a59670243e14d6dfb48e68b1457b16724cc0f402bea993e7e5196eb3b",
+    "stage2_decoder/models.py": "97b0a01be7138de7976d6d221436a17aad90ecd16cf8dcc830dc0bac1098ec2c",
+    "stage3_confirmation/models.py": "c4bcb5d9d4e9599e6ba0f89406ab17f05153b225bd5d20b08cd631190fc520ea",
+    "stage3_confirmation/data.py": "51e92937ab7b5ad85e615c018d96a24fe400e8d3ff685a770c5518b60e9cbfbb",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/config.json": "0fb65bbc82a2f17ecb3a1df1f4d9ca8c67f8e4e997284df07a0203d2bb86f48d",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/mamba_vision.py": "d8d3d60b30cd4e013e351ed23caac0484bc970851ee79f741651f160d66ee2b6",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/configuration_mambavision.py": "5dabf456c3cd4fff9059705ee9deb444e42660ae93cd225763258a43d58e47c0",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/hf_model.py": "fca4ad917b713f1bab9b83e816ecf2447768db0fbc9f1e1fa68839a68061e337",
+    "stage14_mambavision_s_isic2018_seed42/official/hf/modeling_mambavision.py": "292edfdeeb8d145ec3a292911ce825fc7d35bd9df756e183c315c16d9f9dce5a"
+  },
+  "fit_sha": "a2c976d2b7cd30a612be0ec36b025bdc43dccdb3237e2bd04e27b4c36d370f0d",
+  "aligned_reference_row_sha": "d00830393c3004136a60a7bc1f26c59d8e66f4056bde0fa16517984866520602",
+  "reference_cfg_sha": "b56d61bbc2d30e5a2b3dbb0588596441dd909d9516a5257e373a339dc9b480e7"
+}
