@@ -1,0 +1,188 @@
+{
+  "verified_historical_arms": 4,
+  "verified_rows_per_arm": 867,
+  "all": {
+    "n": 867,
+    "dice": {
+      "plain14": 0.8956537198636322,
+      "plain16": 0.8984177984434405,
+      "sdi14": 0.8977512675782687,
+      "weak14": 0.8983188728496825,
+      "sdi16": 0.8982713287159457,
+      "weak16": 0.8987124330422139
+    },
+    "paired": {
+      "sdi16_minus_plain16": {
+        "delta": -0.00014646972749469657,
+        "paired_group_bootstrap95": [
+          -0.002192511856297603,
+          0.0018143157005036845
+        ],
+        "groups": 734,
+        "improved": 448,
+        "worse": 418,
+        "ties": 1
+      },
+      "weak16_minus_plain16": {
+        "delta": 0.00029463459877355786,
+        "paired_group_bootstrap95": [
+          -0.0016442895701465063,
+          0.002146054003370024
+        ],
+        "groups": 734,
+        "improved": 455,
+        "worse": 412,
+        "ties": 0
+      },
+      "weak16_minus_sdi16": {
+        "delta": 0.00044110432626825444,
+        "paired_group_bootstrap95": [
+          0.0001768024889987408,
+          0.0007158058810445818
+        ],
+        "groups": 734,
+        "improved": 513,
+        "worse": 350,
+        "ties": 4
+      },
+      "sdi16_minus_sdi14": {
+        "delta": 0.0005200611376770751,
+        "paired_group_bootstrap95": [
+          -0.001448381326775438,
+          0.0025906850674482598
+        ],
+        "groups": 734,
+        "improved": 432,
+        "worse": 435,
+        "ties": 0
+      },
+      "weak16_minus_weak14": {
+        "delta": 0.00039356019253145377,
+        "paired_group_bootstrap95": [
+          -0.0015234216357699457,
+          0.0023850667201014177
+        ],
+        "groups": 734,
+        "improved": 444,
+        "worse": 422,
+        "ties": 1
+      }
+    },
+    "interaction": {
+      "sdi": {
+        "delta": -0.0022440174421311776,
+        "paired_group_bootstrap95": [
+          -0.005310567096445485,
+          0.0007266371838713025
+        ],
+        "groups": 734,
+        "improved": 381,
+        "worse": 486,
+        "ties": 0
+      },
+      "weak": {
+        "delta": -0.002370518387276799,
+        "paired_group_bootstrap95": [
+          -0.00533138908266006,
+          0.0005533889900093292
+        ],
+        "groups": 734,
+        "improved": 384,
+        "worse": 483,
+        "ties": 0
+      }
+    }
+  },
+  "filtered": {
+    "n": 814,
+    "dice": {
+      "plain14": 0.8941245387827566,
+      "plain16": 0.896684345431827,
+      "sdi14": 0.8962343462848669,
+      "weak14": 0.8967837817475834,
+      "sdi16": 0.8962798939085689,
+      "weak16": 0.8967702491422757
+    },
+    "paired": {
+      "sdi16_minus_plain16": {
+        "delta": -0.0004044515232581364,
+        "paired_group_bootstrap95": [
+          -0.0025643224519988133,
+          0.0016080425994551568
+        ],
+        "groups": 697,
+        "improved": 420,
+        "worse": 393,
+        "ties": 1
+      },
+      "weak16_minus_plain16": {
+        "delta": 8.59037104487152e-05,
+        "paired_group_bootstrap95": [
+          -0.0019598130058170312,
+          0.0019785342051846016
+        ],
+        "groups": 697,
+        "improved": 428,
+        "worse": 386,
+        "ties": 0
+      },
+      "weak16_minus_sdi16": {
+        "delta": 0.0004903552337068517,
+        "paired_group_bootstrap95": [
+          0.0002093286035338016,
+          0.0007725176629785575
+        ],
+        "groups": 697,
+        "improved": 485,
+        "worse": 325,
+        "ties": 4
+      },
+      "sdi16_minus_sdi14": {
+        "delta": 4.5547623701949695e-05,
+        "paired_group_bootstrap95": [
+          -0.0019238057385480842,
+          0.001965847634035211
+        ],
+        "groups": 697,
+        "improved": 408,
+        "worse": 406,
+        "ties": 0
+      },
+      "weak16_minus_weak14": {
+        "delta": -1.3532605307945897e-05,
+        "paired_group_bootstrap95": [
+          -0.001933646543575298,
+          0.001900049186517713
+        ],
+        "groups": 697,
+        "improved": 419,
+        "worse": 394,
+        "ties": 1
+      }
+    },
+    "interaction": {
+      "sdi": {
+        "delta": -0.0025142590253683724,
+        "paired_group_bootstrap95": [
+          -0.005750459036111214,
+          0.0006719408220289557
+        ],
+        "groups": 697,
+        "improved": 359,
+        "worse": 455,
+        "ties": 0
+      },
+      "weak": {
+        "delta": -0.002573339254378268,
+        "paired_group_bootstrap95": [
+          -0.005740018272830226,
+          0.0006111461907379785
+        ],
+        "groups": 697,
+        "improved": 360,
+        "worse": 454,
+        "ties": 0
+      }
+    }
+  }
+}

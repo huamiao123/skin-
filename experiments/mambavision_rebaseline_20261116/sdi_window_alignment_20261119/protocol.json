@@ -1,0 +1,48 @@
+{
+  "seed": 42,
+  "windows": [
+    16,
+    8
+  ],
+  "epochs": 100,
+  "effective_batch": 64,
+  "train": 1886,
+  "validation": 762,
+  "test": 867,
+  "filtered": 814,
+  "input": [
+    256,
+    256
+  ],
+  "model": "MambaVision-S ImageNet initialization, native UPer64 plus original four-scale product SDI at F2",
+  "selection": "earliest highest validation mean per-image foreground Dice of unmodified SDI",
+  "training": "original fit_sdi.fit, train stages 3/4 in encoder eval; unchanged BCE + soft Dice",
+  "inference": [
+    "original product SDI (gain 1)",
+    "same weights with original fixed weak2 rule"
+  ],
+  "threshold": 0.5,
+  "paired_comparisons": [
+    "aligned SDI minus aligned UPer64",
+    "aligned weak2 minus aligned UPer64",
+    "aligned weak2 minus aligned SDI",
+    "window effect for each SDI readout",
+    "difference of window effects for SDI versus UPer64"
+  ],
+  "case_level_interval": "5000 resamples of prior image groups; single seed and previously exposed test",
+  "fit_sha": "4377e0d1a7cd8a4a8f186cf0138da4c55e92a59d97d0e0bd58164d3b8161f6c6",
+  "ref_config_sha": "b56d61bbc2d30e5a2b3dbb0588596441dd909d9516a5257e373a339dc9b480e7",
+  "prior_product": {
+    "arm": "product",
+    "seed": 42,
+    "ref_sha": "11f66770a464da9856be993cf26eb44c1f1879c5140cbebe4541c6e2cfe804c1",
+    "adapter_sha": "f502c696438b74093bb1598ed1cd84800eb67bd64e734d747a4c2b68ead97401",
+    "training_sha": "56367cbc83237843c2d395e4df0daa933ec7276dbb6c5f1574da141afb6ed08c",
+    "source_sha": "cc0d623d887e8f84b7999e236d4776aed543dbc18c5285821c820e8980732403",
+    "head_parameters": 1240961,
+    "epochs": 100,
+    "batch": 64
+  },
+  "weak_gain_sha": "3fff31919b57a5216bd281da363ef5214987533000b0439ab471a1c25c22c05a",
+  "plain_aligned_sha": "48572696cce9b8aa8c59ca9662af41a7c62960195b5da8c309d5a691b8e6a06e"
+}
