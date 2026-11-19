@@ -1,0 +1,29 @@
+{
+  "reference": "/home/featurize/work/mambavision_seg_rebaseline_20261116/uper64_feature_audit_20261119/runs/add",
+  "reference_config_sha": "11f66770a464da9856be993cf26eb44c1f1879c5140cbebe4541c6e2cfe804c1",
+  "reference_weight_sha": "a60c36dca9ab2addd1c5685319d92806df17005d3b673df75a3a6df9ad74b053",
+  "runner_sha": "b171e7c112b5ba079513ab2c2614cb1dc415042cd686c55a857d9f7932a85660",
+  "window_control": [
+    14,
+    7
+  ],
+  "window_candidate": [
+    16,
+    8
+  ],
+  "seed": 42,
+  "epochs": 100,
+  "batch": 64,
+  "input": [
+    256,
+    256
+  ],
+  "selection": "earliest maximum validation per-image foreground Dice",
+  "train": 1886,
+  "validation": 762,
+  "test": 867,
+  "sensitivity": 814,
+  "test_threshold": 0.5,
+  "initialization": "Same ImageNet-1K weights; same fresh native UPer64",
+  "training_policy": "As in reference, train stages 3 and 4 with encoder eval, no stage-output LN, no auxiliary head"
+}
