@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/featurize/work/mambavision_seg_rebaseline_20261116/isic2017_official_pair_20261120/run_pair.py", line 13, in <module>
+    from prepare import CACHE,COUNTS
+ImportError: cannot import name 'COUNTS' from 'prepare' (/home/featurize/work/mambavision_seg_rebaseline_20261116/ham10000_window16_20g_20261119/prepare.py)
+VERIFIED split and immutable common initialization e0d48941f24653c68cb7d5272b17ffa8ad10f5b0f0402c566dba373de28843d0 e28339a192f8ba4b7a468d235b08e7cd7be3b9783cffce6ba11e7eee514fcf30
+2026-11-20T09:49:30+00:00 waiting for 5090 GPU lock, baseline then native_two_branch
+2026-11-20T11:22:19+00:00 GPU acquired
+2026-11-20T11:22:19+00:00 start baseline
+2026-11-20T11:44:45+00:00 start native_two_branch
+{'test_n': 600, 'baseline': 0.8525068732943342, 'native_two_branch': 0.8501826719175501, 'delta_pp': -0.2324201376784087, 'paired_image_95ci_pp': [-0.40617265760543736, -0.06164138230924989], 'baseline_best_epoch': 23, 'branch_best_epoch': 23}
+2026-11-20T12:07:51+00:00 both complete

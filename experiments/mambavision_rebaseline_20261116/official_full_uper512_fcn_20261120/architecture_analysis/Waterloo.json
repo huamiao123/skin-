@@ -1,0 +1,76 @@
+{
+  "n": 41,
+  "macro": {
+    "main": 0.9430327361364389,
+    "aux": 0.9193399602766714,
+    "mean_logit_main_aux": 0.9386167833650819,
+    "flip_only": 0.9442201333037868,
+    "mean_logit_flip": 0.944431262692107,
+    "center": 0.08602607540967988,
+    "rim_ideal": 0.9957967070885837,
+    "far_ideal": 0.9472164560170618,
+    "rimfn_ideal": 0.9689409809106464,
+    "farfn_ideal": 0.9441518435228938,
+    "rimfp_ideal": 0.9698512688118374,
+    "farfp_ideal": 0.9460973268568033,
+    "mean_logit_flip_mean_delta_pp": 0.1399,
+    "mean_logit_flip_winloss": [
+      23,
+      18
+    ],
+    "mean_logit_main_aux_mean_delta_pp": -0.4416,
+    "mean_logit_main_aux_winloss": [
+      10,
+      31
+    ]
+  },
+  "counts": {
+    "fn": 10437,
+    "fp": 10790,
+    "farfn": 764,
+    "farfp": 1015,
+    "conf_farfn": 320,
+    "aux_correct_fn": 2978,
+    "aux_correct_farfn": 433,
+    "aux_added_fp": 6371,
+    "disagree_flip": 7391,
+    "disagree_aux": 16280,
+    "pixels": 2686976
+  },
+  "shapes": {
+    "features": [
+      [
+        96,
+        64,
+        64
+      ],
+      [
+        192,
+        32,
+        32
+      ],
+      [
+        384,
+        16,
+        16
+      ],
+      [
+        768,
+        8,
+        8
+      ]
+    ],
+    "main": [
+      1,
+      64,
+      64
+    ],
+    "aux": [
+      1,
+      16,
+      16
+    ]
+  },
+  "mean_reference_diff_pp": -0.0009152276305823825,
+  "protocol": "Fixed checkpoints, validation only; equal logits before threshold 0.5. Oracle diagnostic uses GT pixels, never for inference."
+}

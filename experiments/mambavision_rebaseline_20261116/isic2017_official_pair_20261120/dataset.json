@@ -1,0 +1,34 @@
+{
+  "dataset": "ISIC2017",
+  "official_task": "Part 1 lesion segmentation",
+  "counts": {
+    "train": 2000,
+    "val": 150,
+    "test": 600
+  },
+  "paired_raw_files_verified": 2750,
+  "split_sha256": "e0d48941f24653c68cb7d5272b17ffa8ad10f5b0f0402c566dba373de28843d0",
+  "source_manifest_sha256": "28e6de2ee3fb72a8c76ad77b991cb17302c8972239b57c11dab05c1936f9a481",
+  "size": 256,
+  "images_resize": "PIL bilinear",
+  "masks_resize": "PIL nearest",
+  "image_id_overlap_with_existing_ISIC2018_by_2017_split": {
+    "train": 1786,
+    "val": 119,
+    "test": 512
+  },
+  "urls": {
+    "train": [
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Training_Data.zip",
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Training_Part1_GroundTruth.zip"
+    ],
+    "val": [
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Validation_Data.zip",
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Validation_Part1_GroundTruth.zip"
+    ],
+    "test": [
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Test_v2_Data.zip",
+      "https://isic-archive.s3.amazonaws.com/challenges/2017/ISIC-2017_Test_v2_Part1_GroundTruth.zip"
+    ]
+  }
+}

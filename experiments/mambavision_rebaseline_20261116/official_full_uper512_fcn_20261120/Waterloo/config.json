@@ -1,0 +1,22 @@
+{
+  "dataset": "Waterloo",
+  "init_sha256": "e28339a192f8ba4b7a468d235b08e7cd7be3b9783cffce6ba11e7eee514fcf30",
+  "split_sha256": "378f22188a3dada3041b0384c1ec7af8c261d883bf42b0061fcc7b1b99ab0307",
+  "seed": 42,
+  "max_epochs": 100,
+  "patience": 25,
+  "batch": 64,
+  "microbatch": 64,
+  "aux_weight": 0.4,
+  "learning_rate_encoder": 0.0001,
+  "learning_rate_decoder": 0.001,
+  "weight_decay": 0.01,
+  "schedule": "cosine-to-1-percent",
+  "windows": [
+    16,
+    8
+  ],
+  "size": 256,
+  "full_encoder_train_mode": true,
+  "metric": "mean per-image foreground Dice at 0.5"
+}

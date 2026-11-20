@@ -1,0 +1,240 @@
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/environment/miniconda3/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/mamba_ssm/ops/selective_scan_interface.py:163: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @custom_fwd
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/mamba_ssm/ops/selective_scan_interface.py:239: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  @custom_bwd
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/mamba_ssm/ops/triton/layernorm.py:507: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @custom_fwd
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/mamba_ssm/ops/triton/layernorm.py:566: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  @custom_bwd
+/home/waas/mambavision_stage22/research/upernet_author_20261112/official_code/open-mmlab__mmsegmentation/mmseg/models/losses/cross_entropy_loss.py:250: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  warnings.warn(
+11/20 11:44:49 - mmengine - INFO - 
+conv_seg.weight - torch.Size([1, 512, 1, 1]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+11/20 11:44:49 - mmengine - INFO - 
+conv_seg.bias - torch.Size([1]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.0.1.conv.weight - torch.Size([512, 768, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.0.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.0.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.1.1.conv.weight - torch.Size([512, 768, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.1.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.1.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.2.1.conv.weight - torch.Size([512, 768, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.2.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.2.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.3.1.conv.weight - torch.Size([512, 768, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.3.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+psp_modules.3.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+bottleneck.conv.weight - torch.Size([512, 2816, 3, 3]): 
+Initialized by user-defined `init_weights` in ConvModule  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+bottleneck.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+bottleneck.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.0.conv.weight - torch.Size([512, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.0.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.0.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.1.conv.weight - torch.Size([512, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.2.conv.weight - torch.Size([512, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.2.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+lateral_convs.2.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.0.conv.weight - torch.Size([512, 512, 3, 3]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.0.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.0.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.1.conv.weight - torch.Size([512, 512, 3, 3]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.1.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.1.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.2.conv.weight - torch.Size([512, 512, 3, 3]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.2.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_convs.2.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_bottleneck.conv.weight - torch.Size([512, 2048, 3, 3]): 
+Initialized by user-defined `init_weights` in ConvModule  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_bottleneck.bn.weight - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+fpn_bottleneck.bn.bias - torch.Size([512]): 
+The value is the same before and after calling `init_weights` of UPerHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+conv_seg.weight - torch.Size([1, 256, 1, 1]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+11/20 11:44:49 - mmengine - INFO - 
+conv_seg.bias - torch.Size([1]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+11/20 11:44:49 - mmengine - INFO - 
+convs.0.conv.weight - torch.Size([256, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of FCNHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+convs.0.bn.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of FCNHead  
+ 
+11/20 11:44:49 - mmengine - INFO - 
+convs.0.bn.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of FCNHead  
+ 
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/torch/autograd/graph.py:829: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:93.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+/home/waas/mv_branch_sm120_20261120/venv/lib/python3.11/site-packages/torch/autograd/graph.py:829: UserWarning: Flash Attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:110.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+VERIFIED REAL UPDATE ISIC2017 1
+EPOCH ISIC2017 1 best_epoch 1 seconds 40.4
+EPOCH ISIC2017 2 best_epoch 2 seconds 63.3
+EPOCH ISIC2017 3 best_epoch 3 seconds 41.1
+EPOCH ISIC2017 4 best_epoch 3 seconds 18.6
+EPOCH ISIC2017 5 best_epoch 5 seconds 38.6
+EPOCH ISIC2017 6 best_epoch 5 seconds 18.3
+EPOCH ISIC2017 7 best_epoch 5 seconds 18.4
+EPOCH ISIC2017 8 best_epoch 5 seconds 18.4
+EPOCH ISIC2017 9 best_epoch 9 seconds 41.1
+EPOCH ISIC2017 10 best_epoch 9 seconds 32.4
+EPOCH ISIC2017 11 best_epoch 11 seconds 41.6
+EPOCH ISIC2017 12 best_epoch 11 seconds 18.3
+EPOCH ISIC2017 13 best_epoch 13 seconds 41.2
+EPOCH ISIC2017 14 best_epoch 13 seconds 18.5
+EPOCH ISIC2017 15 best_epoch 15 seconds 39.5
+EPOCH ISIC2017 16 best_epoch 15 seconds 18.3
+EPOCH ISIC2017 17 best_epoch 15 seconds 18.3
+EPOCH ISIC2017 18 best_epoch 15 seconds 18.4
+EPOCH ISIC2017 19 best_epoch 15 seconds 18.4
+EPOCH ISIC2017 20 best_epoch 15 seconds 33.5
+EPOCH ISIC2017 21 best_epoch 15 seconds 18.3
+EPOCH ISIC2017 22 best_epoch 15 seconds 33.2
+EPOCH ISIC2017 23 best_epoch 23 seconds 38.6
+EPOCH ISIC2017 24 best_epoch 23 seconds 18.2
+EPOCH ISIC2017 25 best_epoch 23 seconds 107.2
+EPOCH ISIC2017 26 best_epoch 23 seconds 18.2
+EPOCH ISIC2017 27 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 28 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 29 best_epoch 23 seconds 18.4
+EPOCH ISIC2017 30 best_epoch 23 seconds 32.1
+EPOCH ISIC2017 31 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 32 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 33 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 34 best_epoch 23 seconds 18.4
+EPOCH ISIC2017 35 best_epoch 23 seconds 39.3
+EPOCH ISIC2017 36 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 37 best_epoch 23 seconds 28.3
+EPOCH ISIC2017 38 best_epoch 23 seconds 18.6
+EPOCH ISIC2017 39 best_epoch 23 seconds 53.7
+EPOCH ISIC2017 40 best_epoch 23 seconds 49.8
+EPOCH ISIC2017 41 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 42 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 43 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 44 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 45 best_epoch 23 seconds 33.1
+EPOCH ISIC2017 46 best_epoch 23 seconds 18.3
+EPOCH ISIC2017 47 best_epoch 23 seconds 18.4
+EPOCH ISIC2017 48 best_epoch 23 seconds 35.2
+TEST final_test ISIC2017 600 0.8501826719175501

@@ -1,0 +1,54 @@
+[
+  {
+    "dataset": "ISIC2018",
+    "test_n": 867,
+    "baseline_test_dice": 0.8841293082257136,
+    "branch_test_dice": 0.8931356844950786,
+    "delta_pp": 0.9006376269364992,
+    "paired_image_ci95_pp": [
+      0.5771953289260653,
+      1.2178579693036191
+    ],
+    "best_epoch": 18,
+    "epochs": 43
+  },
+  {
+    "dataset": "PH2",
+    "test_n": 40,
+    "baseline_test_dice": 0.954669556486488,
+    "branch_test_dice": 0.954142353992974,
+    "delta_pp": -0.05272024935141395,
+    "paired_image_ci95_pp": [
+      -0.1315970704376362,
+      0.013069100779219519
+    ],
+    "best_epoch": 23,
+    "epochs": 48
+  },
+  {
+    "dataset": "Waterloo",
+    "test_n": 41,
+    "baseline_test_dice": 0.9452547027385246,
+    "branch_test_dice": 0.9447288701216193,
+    "delta_pp": -0.05258326169051216,
+    "paired_image_ci95_pp": [
+      -0.09782482709767444,
+      -0.008663601824135938
+    ],
+    "best_epoch": 92,
+    "epochs": 100
+  },
+  {
+    "dataset": "HAM10000",
+    "test_n": 1001,
+    "baseline_test_dice": 0.9457889560388454,
+    "branch_test_dice": 0.9463166424349655,
+    "delta_pp": 0.05276863961201577,
+    "paired_image_ci95_pp": [
+      -0.03243836312981059,
+      0.17801678600927692
+    ],
+    "best_epoch": 60,
+    "epochs": 85
+  }
+]
