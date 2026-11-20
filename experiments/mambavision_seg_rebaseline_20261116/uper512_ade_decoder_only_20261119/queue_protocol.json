@@ -1,0 +1,70 @@
+{
+  "ISIC2018": {
+    "split_sha256": "f67a45ecb7678ff8ec6a3b4f86c851ee5f7005442080883ec426f42a24edc6a3",
+    "counts": {
+      "train": 1886,
+      "val": 762,
+      "test": 867
+    },
+    "baseline_cap": 100,
+    "new_cap": 100,
+    "patience": 25,
+    "batch": 64,
+    "windows": [
+      16,
+      8
+    ],
+    "scheduler_epochs": 100
+  },
+  "PH2": {
+    "split_sha256": "c62efda857330c20ed527068a36df05c2bd9e6f66ff5048db323d3f21b702e13",
+    "counts": {
+      "train": 120,
+      "val": 40,
+      "test": 40
+    },
+    "baseline_cap": 200,
+    "new_cap": 100,
+    "patience": 25,
+    "batch": 64,
+    "windows": [
+      16,
+      8
+    ],
+    "scheduler_epochs": 100
+  },
+  "Waterloo": {
+    "split_sha256": "378f22188a3dada3041b0384c1ec7af8c261d883bf42b0061fcc7b1b99ab0307",
+    "counts": {
+      "train": 124,
+      "val": 41,
+      "test": 41
+    },
+    "baseline_cap": 100,
+    "new_cap": 100,
+    "patience": 25,
+    "batch": 64,
+    "windows": [
+      16,
+      8
+    ],
+    "scheduler_epochs": 100
+  },
+  "HAM10000": {
+    "split_sha256": "3b85b3dafb6feb153e9bdb6353786fb8474b50435d751a5ec4c36d29c12e11af",
+    "counts": {
+      "test": 1001,
+      "train": 8012,
+      "val": 1002
+    },
+    "baseline_cap": 200,
+    "new_cap": 100,
+    "patience": 25,
+    "batch": 64,
+    "windows": [
+      16,
+      8
+    ],
+    "scheduler_epochs": 100
+  }
+}

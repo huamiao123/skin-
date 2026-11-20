@@ -1,0 +1,26 @@
+{
+  "arm": "uper64",
+  "seed": 42,
+  "windows": [
+    16,
+    8
+  ],
+  "backbone": "MambaVision-S ImageNet-1K",
+  "backbone_sha256": "006af39903f2d88c5b455431d087d0fcbf5d5932114aef52542c0d2f0b1ec180",
+  "split_sha256": "3b85b3dafb6feb153e9bdb6353786fb8474b50435d751a5ec4c36d29c12e11af",
+  "training_code": "34f2f01288e508316a29693487d3d960f294fe84e5f48b57fc42e7218f19b8ae",
+  "prefix_cache": "BF16 all train / validation F1,F2,mid; refresh train every epoch after augmentation",
+  "max_epochs": 200,
+  "patience": 25,
+  "selection": "highest mean per-image foreground validation Dice, strict improvement, earliest tie",
+  "batch": 64,
+  "image_size": 256,
+  "lr_encoder": 0.0001,
+  "lr_decoder": 0.001,
+  "weight_decay": 0.01,
+  "scheduler": "cosine to 1% over 200 epochs",
+  "threshold": 0.5,
+  "stage3_4_trainable": true,
+  "encoder_eval": true,
+  "sdi": null
+}
